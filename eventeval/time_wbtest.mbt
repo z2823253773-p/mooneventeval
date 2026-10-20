@@ -112,3 +112,34 @@ test "event_factory_validation" {
   let untrimmed = event(" ", " A ", "0", "1").unwrap()
   inspect(untrimmed.id == " " && untrimmed.label == " A ", content="true")
 }
+
+// Catches invalid Unicode created through the pinned core's safe substring API.
+// The local deprecation exception only constructs the regression fixture.
+
+///|
+#warnings("-deprecated")
+test "event_rejects_unpaired_surrogates_from_safe_substring" {
+  let pair = "\u{10000}"
+  let high = pair.substring(start=0, end=1)
+  let low = pair.substring(start=1, end=2)
+  for bad in [high, low, high + "x", "x" + low, low + high] {
+    match event(bad, "a", "0", "1") {
+      Err(error) => {
+        inspect(error.code, content="INVALID_UNICODE")
+        inspect(
+          error.path == Some("id") && exit_code(error) == 2,
+          content="true",
+        )
+      }
+      Ok(_) => fail("invalid Unicode ID accepted by factory")
+    }
+    match event("r", bad, "0", "1") {
+      Err(error) => {
+        inspect(error.code, content="INVALID_UNICODE")
+        inspect(error.path == Some("label"), content="true")
+      }
+      Ok(_) => fail("invalid Unicode label accepted by factory")
+    }
+  }
+  inspect(event(high + low, "a", "0", "1") is Ok(_), content="true")
+}

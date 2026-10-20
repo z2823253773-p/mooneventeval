@@ -33,8 +33,29 @@ priv struct PairBasis {
 
 ///|
 fn validate_identifier(text : String, path : String) -> Result[Unit, EvalError] {
+  // Validate UTF-16 before counting code points: safe substring operations in
+  // the pinned core can split a surrogate pair, despite JSON rejecting it.
+  let units = text.code_units()
+  let mut index = 0
   let mut count = 0
-  for _ in text.iter() {
+  while index < units.length() {
+    let first = units[index]
+    if first.is_leading_surrogate() {
+      if index + 1 >= units.length() ||
+        !units[index + 1].is_trailing_surrogate() {
+        return Err(
+          input_error("INVALID_UNICODE", "Unpaired UTF-16 surrogate", path),
+        )
+      }
+      index = index + 2
+    } else {
+      if first.is_trailing_surrogate() {
+        return Err(
+          input_error("INVALID_UNICODE", "Unpaired UTF-16 surrogate", path),
+        )
+      }
+      index = index + 1
+    }
     count = count + 1
     if count > 256 {
       return Err(string_limit_error(path))
