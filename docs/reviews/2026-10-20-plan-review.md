@@ -2,6 +2,8 @@
 
 日期：2026-10-20（America/Phoenix）。对象：[实施计划](../superpowers/plans/2026-10-20-mooneventeval-implementation.md)。这是编写者对计划的自查，不是代码独立评审、技术可行性实测或产品验收。
 
+> 历史v1自查，当前执行入口已作废。后续反馈发现本次检查未捕获Counts.fn等可行性问题；当前处置见[外部反馈记录](2026-10-20-claude-feedback-disposition.md)。旧checker来源现存scripts/review/legacy_plan_audit.py，现行可复现文档检查为scripts/check_design_docs.py；旧plan-check.json仅代表原提交时的结构检查结果。
+
 ## 审阅输入与阶段
 
 - 用户已回复“确认进行实施计划”，PRD批准已记录；不再次请求同一规格批准。

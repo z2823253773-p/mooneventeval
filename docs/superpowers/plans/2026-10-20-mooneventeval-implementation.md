@@ -1,4 +1,6 @@
-# MoonEventEval v0.1 Implementation Plan
+# MoonEventEval v0.1 Implementation Plan（历史v1，停止用于执行）
+
+> 历史计划 v1：保留e8af47d时的规划记录，其中Counts.fn、参考前置和晚测密集图等已被评审指出。当前执行入口改为[修订v2](2026-10-20-mooneventeval-plan-v2.md)及docs/contracts.md；不要读取本文片段启动实现。
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "scripts/check_design_docs.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.04,
+  "log": "evidence/review/20261020T151435139774Z-docs.log",
+  "log_sha256": "393e43cb08c266401a33b85ac06917dc82940e357f1617596cbe783a830ecd97",
+  "scope": "review",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

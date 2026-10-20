@@ -4,6 +4,8 @@
 
 > 此文记录首次 PRD 交付时的状态。其后用户已回复“确认进行实施计划”；当前阶段见 [PROJECT_STATE](../PROJECT_STATE.md) 和 [计划自查](2026-10-20-plan-review.md)，下方历史“等待”不代表再次索要 PRD 批准。
 
+旧临时PRD审计脚本的来源现存scripts/review/legacy_prd_audit.py；它是历史文档/算术检查，不能证明MoonBit产品已运行。现行检查入口为scripts/check_design_docs.py。
+
 ## 已完成的设计工作
 
 - 核对仓库初始 `main` / `cd3c0fcda0896b3cd357d8b5cf3aaa80b6c2aeac`，两份文档，无 remote、代码、CI 或发布；本轮只修改本库文档。
