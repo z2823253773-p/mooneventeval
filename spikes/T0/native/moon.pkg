@@ -1,0 +1,4 @@
+
+pkgtype(kind: "executable")
+
+options("native-stub": ["io_stub.c"])

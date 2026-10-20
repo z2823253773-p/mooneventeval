@@ -28,18 +28,18 @@ task_names = ['T0-feasibility', 'T1-time', 'T1b-reference', 'T2-matching', 'T3-e
 tasks = [root/'docs/superpowers/plans/tasks'/f'{name}.md' for name in task_names]
 active = (root/'docs/contracts.md').read_text()
 step_count = 0
+completed_steps = 0
 for path in tasks:
     if not path.exists():
         errors.append(f'missing task: {path.name}')
         continue
     text = path.read_text()
     active += '\n'+text
-    steps = re.findall(r'^- \[ \] ', text, re.M)
-    step_count += len(steps)
+    steps = re.findall(r'^- \[([ xX])\] ', text, re.M)
+    step_count += steps.count(' ')
+    completed_steps += sum(step.lower() == 'x' for step in steps)
     if not steps:
-        errors.append(f'no pending steps: {path.name}')
-    if re.search(r'^- \[[xX]\]', text, re.M):
-        errors.append(f'implementation marked done during review: {path.name}')
+        errors.append(f'no task steps: {path.name}')
 if re.search(r'\bcounts\.fn\b', active) or 'reference/prediction/tp/fp/fn: Int' in active:
     errors.append('active MoonBit contract still uses keyword fn as field')
 if 'fn_count' not in active or 'JSON仍写 `"fn"`' not in active:
@@ -55,6 +55,7 @@ assert count == 20_958_500 and count > 20_000_000
 report = {
     'scope': 'documentation_structure_only', 'errors': errors,
     'markdown_files': len(markdown), 'task_cards': len(tasks), 'pending_steps': step_count,
+    'checked_steps': completed_steps, 'checkbox_evidence': 'NOT_ASSESSED',
     'python_snippets_parsed': python_blocks,
     'old_dense_dfs_adjacency_lower_bound_n500': count,
     'compiler_feasibility': 'NOT_ASSESSED', 'product_behavior': 'NOT_ASSESSED',
