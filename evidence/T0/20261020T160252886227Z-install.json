@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "scripts/install_toolchain.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 7.385,
+  "log": "evidence/T0/20261020T160252886227Z-install.log",
+  "log_sha256": "45af473f2f494814b1a37f2825cc80313ea7f4542c11820ccb9bbbe108cf096a",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

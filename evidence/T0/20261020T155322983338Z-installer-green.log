@@ -1,0 +1,8 @@
+/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/install_toolchain.py:14: ResourceWarning: unclosed file <_io.BufferedReader name='/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/tmpkzrrkcxo/archive'>
+  actual = hashlib.file_digest(path.open('rb'), 'sha256').hexdigest()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.018s
+
+OK

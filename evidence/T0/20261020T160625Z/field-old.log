@@ -1,0 +1,58 @@
+Error: [0009]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:1:8 ]
+   │
+ 1 │ struct Counts { fn : Int }
+   │        ───┬──  
+   │           ╰──── Error Warning (struct_never_constructed): The struct Counts is never constructed
+───╯
+Error: [3024]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:1:20 ]
+   │
+ 1 │ struct Counts { fn : Int }
+   │                    ┬  
+   │                    ╰── Constructor function of `struct` must have name `new`.
+───╯
+Error: [3002]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:1:20 ]
+   │
+ 1 │ struct Counts { fn : Int }
+   │                    ┬  
+   │                    ╰── Parse error, unexpected token `:`, you may expect id (lowercase start).
+───╯
+Error: [3002]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:1:20 ]
+   │
+ 1 │ struct Counts { fn : Int }
+   │                    ┬  
+   │                    ╰── Using `fn new(..)` inside `struct` to declare struct constructor is deprecated. Use a separated toplevel `fn Counts::Counts(..)` declaration instead.
+───╯
+Error: [4014]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:2:39 ]
+   │
+ 2 │ test "old field" { let c : Counts = { fn: 2 }; inspect(c.fn, content="2") }
+   │                                       ──┬──  
+   │                                         ╰──── Type Mismatch
+        has type : function type
+        wanted   : Counts
+───╯
+Error: [3002]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:2:41 ]
+   │
+ 2 │ test "old field" { let c : Counts = { fn: 2 }; inspect(c.fn, content="2") }
+   │                                         ┬  
+   │                                         ╰── Parse error, unexpected token `:`, you may expect func.
+───╯
+Error: [0013]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:2:41 ]
+   │
+ 2 │ test "old field" { let c : Counts = { fn: 2 }; inspect(c.fn, content="2") }
+   │                                         ─┬─  
+   │                                          ╰─── Error Warning (unresolved_type_variable): The type of this expression is _/0, which contains unresolved type variables. The type variable is default to Unit.
+───╯
+Error: [4091]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/field_old/probe_wbtest.mbt:2:56 ]
+   │
+ 2 │ test "old field" { let c : Counts = { fn: 2 }; inspect(c.fn, content="2") }
+   │                                                        ──┬─  
+   │                                                          ╰─── The type Counts has no field fn.
+───╯

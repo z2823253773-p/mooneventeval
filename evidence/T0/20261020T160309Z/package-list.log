@@ -1,0 +1,10 @@
+Warning: 'readme' field is not set or empty in module manifest
+Warning: 'repository' field is not set or empty in module manifest
+Warning: 'license' field is not set or empty in module manifest
+Running moon check ...
+Finished. moon: ran 3 tasks, now up to date
+Check passed
+moon.mod
+moon.pkg
+probe_wbtest.mbt
+Package to /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/modern/_build/publish/local-t0_modern-0.0.1.zip

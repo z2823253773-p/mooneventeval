@@ -1,0 +1,38 @@
+FFF
+======================================================================
+FAIL: test_digest_mismatch_rejected (test_toolchain.ToolchainSafety.test_digest_mismatch_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 19, in test_digest_mismatch_rejected
+    installer = self.load_installer()
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 12, in load_installer
+    self.assertTrue(SCRIPT.exists(), 'verified installer not implemented')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : verified installer not implemented
+
+======================================================================
+FAIL: test_regular_archive_extracted (test_toolchain.ToolchainSafety.test_regular_archive_extracted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 44, in test_regular_archive_extracted
+    installer = self.load_installer()
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 12, in load_installer
+    self.assertTrue(SCRIPT.exists(), 'verified installer not implemented')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : verified installer not implemented
+
+======================================================================
+FAIL: test_traversal_and_escaping_link_rejected_without_extraction (test_toolchain.ToolchainSafety.test_traversal_and_escaping_link_rejected_without_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 27, in test_traversal_and_escaping_link_rejected_without_extraction
+    installer = self.load_installer()
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 12, in load_installer
+    self.assertTrue(SCRIPT.exists(), 'verified installer not implemented')
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: False is not true : verified installer not implemented
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

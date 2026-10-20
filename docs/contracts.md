@@ -1,13 +1,18 @@
 # MoonEventEval 共享契约
 
-版本：评审修订 v2，待执行计划批准。当前无产品消费者，内部字段修正不改变JSON语义。已批准PRD的数学/资源/数据边界继续有效；下面明确标注的算法和阶段顺序修订须随本轮计划批准后启用。
+版本：评审修订 v2，T0已获用户授权并完成技术探针，独立评审中。当前无产品消费者。已批准PRD的数学/资源/数据边界继续有效；下面明确标注的算法和阶段顺序修订仍待相应批准。
 
 入口：docs/PROJECT_STATE.md。JSON字符串时间仍是唯一获批文件输入；TSV/CSV不在本轮已批准实施范围。
 
 ## 关键更正
 
-- MoonBit Counts字段为 `fn_count`，JSON仍写 `"fn"`；Python `counts["fn"]` 不变。`fn`关键字依据官方词法确认，尚未在目标编译器上实跑旧片段。
-- 目标工具链编译前提集中于T0；当前任何MoonBit片段都不是已编译交付。inspect/inspect!、JSON深度参数、borrow/stub、manifest和package命令逐项实际探针后冻结。
+- MoonBit Counts字段为 `fn_count`，JSON仍写 `"fn"`；Python `counts["fn"]` 不变。目标编译器已实证旧字段解析失败、新字段及JSON映射通过。
+- T0兼容性已实跑，见[结果](reviews/2026-10-20-t0-results.md)。统一使用`moon.mod`/`moon.pkg`、普通`inspect(...)`，不用已被目标版拒绝的`inspect!(...)`。旧JSON清单在目标版仍可运行但有弃用提示，不用于产品/消费者。
+- 锁定工具链与运行命令来自`docs/toolchain.lock.json`和`scripts/with-toolchain.sh`；只在项目`.tools`安装，不能用默认版代替。core哈希仅与历史记录一致，不是发布者认证。
+- 深度调用实证为`@json.parse(input, max_nesting_depth=16)`；该参数已弃用，需在唯一的小型解析兼容函数上加`#warnings("-deprecated")`，其余包/调用仍执行`--deny-warn`。这是固定版本兼容例外，不允许全局关闭警告。数组/对象16层成功、17层抛`@json.DepthLimitExceeded`，映射RESOURCE_LIMIT；普通语法错误另行映射。
+- 严格字节解码使用`@utf8.decode`，不可用lossy版本；目标core直接拒绝孤立代理转义，合法代理对通过。重名及转义等价JSON键均后值覆盖，仍是显式已知限制。
+- Native借用声明`#borrow(path, buffer)`/`#borrow(buffer)`及`options("native-stub": ["io_stub.c"])`通过。C stub只同步使用借用指针、不持有/释放它们；用`int32_t`封装有限`ssize_t`返回，不能直接把libc read/write的ssize_t当MoonBit Int。T0只证明短合成文件，完整I/O硬化仍在T5/T6。
+- `moon package --list --frozen`与`moon package`均实跑，产物在模块`_build/publish/<module>-<version>.zip`；本地打包不等于包外消费或发布。
 - **待批准算法修订：**保留最大基数及同版本确定性，建议在升序DFS前加入first-free搜索；T2立即验证500/1000完全图和穷举。算法身份与遍历策略在T2验收后记录；切换HK须记录决定及重验，不能悄悄替换所选配对。
 - **待批准阶段修订：**T1b参考环境三小时排障预算，不挡T1纯核心；T3核心证据满足可先进入demo，但A11原版参考仍是最终完整验收项，超时只能报告未完成。
 

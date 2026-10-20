@@ -1,0 +1,21 @@
+Error: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/json/moon.pkg:1:10 ]
+   │
+ 1 │ import { "moonbitlang/core/json", "moonbitlang/core/encoding/utf8", }
+   │          ───────────┬───────────  
+   │                     ╰───────────── Error Warning (unused_package): Unused package 'moonbitlang/core/json'
+───╯
+Error: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/json/moon.pkg:1:35 ]
+   │
+ 1 │ import { "moonbitlang/core/json", "moonbitlang/core/encoding/utf8", }
+   │                                   ────────────────┬───────────────  
+   │                                                   ╰───────────────── Error Warning (unused_package): Unused package 'moonbitlang/core/encoding/utf8'
+───╯
+Error: [0020]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/json/probe_wbtest.mbt:3:24 ]
+   │
+ 3 │     @json.parse(input, max_nesting_depth=16) |> ignore
+   │                        ────────┬────────  
+   │                                ╰────────── Error Warning (deprecated): 
+───╯

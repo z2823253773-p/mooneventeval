@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import json,platform,subprocess; print(json.dumps({\"platform\":platform.platform(),\"machine\":platform.machine(),\"python\":platform.python_version(),\"head\":subprocess.check_output([\"git\",\"rev-parse\",\"HEAD\"],text=True).strip(),\"worktrees\":subprocess.check_output([\"git\",\"worktree\",\"list\",\"--porcelain\"],text=True)},indent=2))"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.075,
+  "log": "evidence/T0/20261020T160157012344Z-host-baseline.log",
+  "log_sha256": "dc43858caa4f65d0af87c1756cb03c399f48910aa6d35f5f8ee7705a23bb5a40",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

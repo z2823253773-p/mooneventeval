@@ -1,0 +1,13 @@
+{
+  "scope": "documentation_structure_only",
+  "errors": [],
+  "markdown_files": 26,
+  "task_cards": 10,
+  "pending_steps": 71,
+  "python_snippets_parsed": 6,
+  "old_dense_dfs_adjacency_lower_bound_n500": 20958500,
+  "compiler_feasibility": "NOT_ASSESSED",
+  "product_behavior": "NOT_ASSESSED",
+  "independent_reference": "NOT_ASSESSED",
+  "human_manual_review": "NOT_ASSESSED"
+}

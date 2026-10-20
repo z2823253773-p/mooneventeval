@@ -27,7 +27,7 @@ test "evaluation_duplicate_counts" {
   inspect((m.counts.tp, m.counts.fp, m.counts.fn_count), content="(1, 1, 0)")
 }
 ```
-- [ ] **3. 实现 schema 与评测。** `decode_task` 先检查实际字节数、严格 UTF-8（允许一个开头 UTF-8 BOM 并在文档注明）、`@json.parse(max_nesting_depth=16)`，再校验字段；共享 typed 工厂防御性复制。先完成全输入校验才建图；按录制/类别分组并用唯一 budget，degree 支持未配对原因。排序计数/完整明细后生成 PRD 所列机器字段，输出数字只有计数和指标，时间不经 Double。
+- [ ] **3. 实现 schema 与评测。** `decode_task` 先检查实际字节数、严格 UTF-8（允许一个开头 UTF-8 BOM 并在文档注明），再用contracts规定的唯一兼容函数调用`@json.parse(input, max_nesting_depth=16)`，其局部`#warnings("-deprecated")`例外来自T0实证，不扩大到包；然后校验字段。共享 typed 工厂防御性复制，先完成全输入校验才建图；按录制/类别分组并用唯一 budget，degree 支持未配对原因。排序计数/完整明细后生成 PRD 所列机器字段，输出数字只有计数和指标，时间不经 Double。
 - [ ] **4. 运行 native GREEN。** `scripts/with-toolchain.sh moon test eventeval --target native --deny-warn`；用固定序列打乱输入，多最优解的配对身份及完整 JSON 同版本一致；改 ID 后计数相同。此时 report_json 已返回完整、受限 JSON，不能先返回部分 summary 占位。
 - [ ] **5. 创建可外部驱动的核心探针。** `cmd/probe` 只接受一个小 JSON 文本参数，转 bytes 调用 evaluate_json，将完整成功/错误 JSON 输出；不把参数传输尺寸用来宣称 8 MiB 文件契约已验证。`scripts/with-toolchain.sh moon build cmd/probe --target native --release --deny-warn`，用实际生成的 probe.exe 驱动三个 examples。
 - [ ] **6. 分开记录核心与参考状态。** T1b成功时运行 `validation/compare.py --phase prototype --product <probe.exe> --output evidence/T3/parity`：至少A1/A2、精确二进制网格案例及跨类别substitution反例，A2 optimal预期TP2；A3/A4由有理数裁定并保留sed_eval实际边界表现。原始参考与projected分开，TP精确一致，空定义差异按PRD记录，不要求最优配对身份相同。T1b超时时此项明确未完成，不生成成功parity文件，也不声称两方原始输出已取得。

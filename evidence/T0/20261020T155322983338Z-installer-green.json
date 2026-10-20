@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_toolchain.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.077,
+  "log": "evidence/T0/20261020T155322983338Z-installer-green.log",
+  "log_sha256": "1a64710186ae218a9dc66de718629c90c0ea53491b9e13f6193aee66ad9c33ed",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

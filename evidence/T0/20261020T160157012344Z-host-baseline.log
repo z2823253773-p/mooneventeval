@@ -1,0 +1,7 @@
+{
+  "platform": "macOS-26.4-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.14.6",
+  "head": "8a3075521312c9bf9ad196309422adaa0c67fbd2",
+  "worktrees": "worktree /Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval\nHEAD 8a3075521312c9bf9ad196309422adaa0c67fbd2\nbranch refs/heads/main\n\nworktree /Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0\nHEAD 8a3075521312c9bf9ad196309422adaa0c67fbd2\nbranch refs/heads/spike/t0-feasibility\n\n"
+}

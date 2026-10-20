@@ -1,0 +1,7 @@
+Error: [3002]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/spikes/T0/inspect_bang/probe_wbtest.mbt:1:22 ]
+   │
+ 1 │ test "bang" { inspect!(2, content="2") }
+   │                      ┬  
+   │                      ╰── Parse error, unexpected `f!(..)`, you may expect `f(..)`.
+───╯

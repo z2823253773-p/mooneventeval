@@ -10,7 +10,7 @@
 
 **Spec:** [PRD](../specs/2026-10-20-mooneventeval-prd-design.md)；[共享契约](../../contracts.md)；[反馈处置](../../reviews/2026-10-20-claude-feedback-disposition.md)。
 
-**Status:** 修订待审；没有执行T0或产品实现。v1计划停止作为执行入口，保留历史以供追溯。
+**Status:** 用户已授权T0并完成技术探针，独立评审中；产品未实现。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
 
 ## 本轮修正与需确认的变化
 
