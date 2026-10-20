@@ -1,0 +1,41 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "local/mooneventeval/eventeval"
+
+// Values
+pub fn config(String, String) -> Result[Config, EvalError]
+
+pub fn default_config() -> Config
+
+pub fn event(String, String, String, String) -> Result[Event, EvalError]
+
+pub fn exit_code(EvalError) -> Int
+
+// Errors
+
+// Types and methods
+pub struct Config {
+  // private fields
+}
+
+pub struct EvalError {
+  kind : FailureKind
+  code : String
+  message : String
+  path : String?
+  limit : Int64?
+  observed : Int64?
+}
+
+pub struct Event {
+  // private fields
+}
+
+pub(all) enum FailureKind {
+  Input
+  Resource
+  Internal
+}
+
+// Type aliases
+
+// Traits
