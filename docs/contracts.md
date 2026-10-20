@@ -68,6 +68,9 @@
 - `Event`、`Config`、`Recording`、`Task` 为封装类型；通过下列工厂创建。Task 不暴露内部数组，工厂验证并复制传入数组；新建事件/config 时也检查范围。
 - `Counts`：`reference/prediction/tp/fp/fn_count: Int`；`Metrics`：`counts: Counts`、`precision/recall/f1: Double?`。
 - `PairBasis`（包内）：`label_match/onset_pass/offset_pass/eligible: Bool`、`onset_delta_us/offset_delta_us/onset_limit_us/offset_limit_scaled: Int64`；scaled 的单位为微秒×1000000。
+- T1实证补充：两个delta始终是有符号`prediction-reference`，通过与否才比较绝对值；录制相同由调用方分组保证，eligibility只负责类别/时间，不把事件ID当配对条件。
+- T1工厂：Event/Config字段均`priv`；空ID/label报INVALID_SCHEMA，时间/比例语法报INVALID_DECIMAL，时间/比例范围及onset>=offset报OUT_OF_RANGE；码点超限报RESOURCE_LIMIT，observed记录首先观察到的257。字段path为工厂参数名，T3再加任务索引前缀。
+- T1阶段局部例外：Event/PairBasis声明仅屏蔽unused_field，eligibility/compare_codepoints仅屏蔽unused_value，因为正式消费者尚在T3/T4；类型及函数保持包内/封装，不为清警告扩展公开API。T3接入正式消费者时移除这些临时注解；其余检查继续deny-warn。这不扩大T0的deprecated兼容豁免。
 - `WorkBudget`（包内）：共享可变 `used/limit: Int64`；仅白盒测试可设小 limit。`Matching`（包内）：`pairs: Array[(Int,Int)]`、`reference_degree/prediction_degree: Array[Int]`、`steps: Int64`，索引对应规范排序后的顶点。
 - Matching.steps只记录本次调用消耗（退出used减进入used）；全任务work.matching_steps直接取最终共享budget.used，不再次累加各次累计值。
 - `Evaluation`、`PairExplanation` 为封装结果；`Evaluation::metrics() -> Metrics`，`Evaluation::pairs() -> Array[(String,String,String,String)]` 返回副本，四元组为录制/类别/参考ID/预测ID。完整数据通过报告函数访问。

@@ -1,0 +1,7 @@
+Error: [0027]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time.mbt:81:3 ]
+    │
+ 81 │   loop (left.next(), right.next()) {
+    │   ─────────────────┬────────────────  
+    │                    ╰────────────────── Error Warning (deprecated_syntax): The syntax loop (x, y) { ... } for functional loop is deprecated. Use rewrite this as `for i = x, j = y { ... }`, destructure values explicitly inside the loop body, and use an explicit `break` to return the final result. instead.
+────╯

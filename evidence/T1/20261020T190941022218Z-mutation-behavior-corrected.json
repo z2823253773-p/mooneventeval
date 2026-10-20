@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/T1/mutation_probe.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 5.925,
+  "log": "evidence/T1/20261020T190941022218Z-mutation-behavior-corrected.log",
+  "log_sha256": "0179763111eb0f64f5aba5fc22799989f75c02c055b410d05f5f89cdf58df22f",
+  "scope": "T1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

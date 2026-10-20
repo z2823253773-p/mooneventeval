@@ -1,0 +1,25 @@
+[local/mooneventeval] test eventeval/eligibility_wbtest.mbt:21 ("eligibility_A4_offset_boundary_and_reference_duration") failed
+expect test failed at /private/tmp/mooneventeval-T1-mutations-53yhzhka/eventeval/eligibility_wbtest.mbt:28:3-28:75
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+[local/mooneventeval] test eventeval/eligibility_wbtest.mbt:60 ("eligibility_collar_dominates_without_overlap") failed
+expect test failed at /private/tmp/mooneventeval-T1-mutations-53yhzhka/eventeval/eligibility_wbtest.mbt:64:3-64:73
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+[local/mooneventeval] test eventeval/eligibility_wbtest.mbt:79 ("eligibility_R3_fractional_microsecond") failed
+expect test failed at /private/tmp/mooneventeval-T1-mutations-53yhzhka/eventeval/eligibility_wbtest.mbt:83:3-83:65
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+Total tests: 12, passed: 9, failed: 3.

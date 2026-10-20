@@ -1,0 +1,574 @@
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:3:11 ]
+   │
+ 3 │   let r = event("r", "a", "10", "12").unwrap()
+   │           ──┬──  
+   │             ╰──── The value identifier event is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:4:13 ]
+   │
+ 4 │   let cfg = default_config()
+   │             ───────┬──────  
+   │                    ╰──────── The value identifier default_config is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:5:15 ]
+   │
+ 5 │   let equal = eligibility(r, event("p", "a", "10.2", "12").unwrap(), cfg)
+   │               ─────┬─────  
+   │                    ╰─────── The value identifier eligibility is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:5:30 ]
+   │
+ 5 │   let equal = eligibility(r, event("p", "a", "10.2", "12").unwrap(), cfg)
+   │                              ──┬──  
+   │                                ╰──── The value identifier event is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:8:11 ]
+   │
+ 8 │   inspect(eligibility(r, event("p", "a", "10.200001", "12").unwrap(), cfg).eligible, content="false")
+   │           ─────┬─────  
+   │                ╰─────── The value identifier eligibility is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:8:26 ]
+   │
+ 8 │   inspect(eligibility(r, event("p", "a", "10.200001", "12").unwrap(), cfg).eligible, content="false")
+   │                          ──┬──  
+   │                            ╰──── The value identifier event is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:9:15 ]
+   │
+ 9 │   let early = eligibility(r, event("p", "a", "9.8", "12").unwrap(), cfg)
+   │               ─────┬─────  
+   │                    ╰─────── The value identifier eligibility is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:9:30 ]
+   │
+ 9 │   let early = eligibility(r, event("p", "a", "9.8", "12").unwrap(), cfg)
+   │                              ──┬──  
+   │                                ╰──── The value identifier event is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:15:11 ]
+    │
+ 15 │   let r = event("r", "a", "10", "12").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:16:15 ]
+    │
+ 16 │   let equal = eligibility(r, event("p", "a", "10", "13").unwrap(), default_config())
+    │               ─────┬─────  
+    │                    ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:16:30 ]
+    │
+ 16 │   let equal = eligibility(r, event("p", "a", "10", "13").unwrap(), default_config())
+    │                              ──┬──  
+    │                                ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:16:68 ]
+    │
+ 16 │   let equal = eligibility(r, event("p", "a", "10", "13").unwrap(), default_config())
+    │                                                                    ───────┬──────  
+    │                                                                           ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:19:11 ]
+    │
+ 19 │   inspect(eligibility(r, event("p", "a", "10", "13.000001").unwrap(), default_config()).eligible, content="false")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:19:26 ]
+    │
+ 19 │   inspect(eligibility(r, event("p", "a", "10", "13.000001").unwrap(), default_config()).eligible, content="false")
+    │                          ──┬──  
+    │                            ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:19:71 ]
+    │
+ 19 │   inspect(eligibility(r, event("p", "a", "10", "13.000001").unwrap(), default_config()).eligible, content="false")
+    │                                                                       ───────┬──────  
+    │                                                                              ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:20:19 ]
+    │
+ 20 │   let shortened = eligibility(r, event("p", "a", "10", "11").unwrap(), default_config())
+    │                   ─────┬─────  
+    │                        ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:20:34 ]
+    │
+ 20 │   let shortened = eligibility(r, event("p", "a", "10", "11").unwrap(), default_config())
+    │                                  ──┬──  
+    │                                    ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:20:72 ]
+    │
+ 20 │   let shortened = eligibility(r, event("p", "a", "10", "11").unwrap(), default_config())
+    │                                                                        ───────┬──────  
+    │                                                                               ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:22:11 ]
+    │
+ 22 │   inspect(eligibility(r, event("p", "a", "10", "10.999999").unwrap(), default_config()).eligible, content="false")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:22:26 ]
+    │
+ 22 │   inspect(eligibility(r, event("p", "a", "10", "10.999999").unwrap(), default_config()).eligible, content="false")
+    │                          ──┬──  
+    │                            ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:22:71 ]
+    │
+ 22 │   inspect(eligibility(r, event("p", "a", "10", "10.999999").unwrap(), default_config()).eligible, content="false")
+    │                                                                       ───────┬──────  
+    │                                                                              ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:27:11 ]
+    │
+ 27 │   let r = event("r", "a", "0", "0.1").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:28:11 ]
+    │
+ 28 │   let p = event("p", "a", "0.2", "0.3").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:29:15 ]
+    │
+ 29 │   let basis = eligibility(r, p, default_config())
+    │               ─────┬─────  
+    │                    ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:29:33 ]
+    │
+ 29 │   let basis = eligibility(r, p, default_config())
+    │                                 ───────┬──────  
+    │                                        ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:32:11 ]
+    │
+ 32 │   inspect(eligibility(r, event("p", "a", "0.2", "0.300001").unwrap(), default_config()).eligible, content="false")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:32:26 ]
+    │
+ 32 │   inspect(eligibility(r, event("p", "a", "0.2", "0.300001").unwrap(), default_config()).eligible, content="false")
+    │                          ──┬──  
+    │                            ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:32:71 ]
+    │
+ 32 │   inspect(eligibility(r, event("p", "a", "0.2", "0.300001").unwrap(), default_config()).eligible, content="false")
+    │                                                                       ───────┬──────  
+    │                                                                              ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:37:11 ]
+    │
+ 37 │   let r = event("r", "a", "10", "10.000003").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:38:13 ]
+    │
+ 38 │   let cfg = config("0", "0.5").unwrap()
+    │             ───┬──  
+    │                ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:39:13 ]
+    │
+ 39 │   let one = eligibility(r, event("p", "a", "10", "10.000004").unwrap(), cfg)
+    │             ─────┬─────  
+    │                  ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:39:28 ]
+    │
+ 39 │   let one = eligibility(r, event("p", "a", "10", "10.000004").unwrap(), cfg)
+    │                            ──┬──  
+    │                              ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:42:11 ]
+    │
+ 42 │   inspect(eligibility(r, event("p", "a", "10", "10.000005").unwrap(), cfg).eligible, content="false")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:42:26 ]
+    │
+ 42 │   inspect(eligibility(r, event("p", "a", "10", "10.000005").unwrap(), cfg).eligible, content="false")
+    │                          ──┬──  
+    │                            ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:47:11 ]
+    │
+ 47 │   let r = event("r", "a", "0", "2592000").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:48:11 ]
+    │
+ 48 │   let p = event("p", "a", "0.000001", "0.000002").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:49:15 ]
+    │
+ 49 │   let basis = eligibility(r, p, config("2592000", "1").unwrap())
+    │               ─────┬─────  
+    │                    ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:49:33 ]
+    │
+ 49 │   let basis = eligibility(r, p, config("2592000", "1").unwrap())
+    │                                 ───┬──  
+    │                                    ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:52:15 ]
+    │
+ 52 │   let short = event("r", "a", "0", "1").unwrap()
+    │               ──┬──  
+    │                 ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:53:11 ]
+    │
+ 53 │   inspect(eligibility(short, short, config("0", "0").unwrap()).eligible, content="true")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:53:37 ]
+    │
+ 53 │   inspect(eligibility(short, short, config("0", "0").unwrap()).eligible, content="true")
+    │                                     ───┬──  
+    │                                        ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:54:11 ]
+    │
+ 54 │   inspect(eligibility(short, event("p", "a", "0", "1.000001").unwrap(), config("0", "0").unwrap()).eligible, content="false")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:54:30 ]
+    │
+ 54 │   inspect(eligibility(short, event("p", "a", "0", "1.000001").unwrap(), config("0", "0").unwrap()).eligible, content="false")
+    │                              ──┬──  
+    │                                ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:54:73 ]
+    │
+ 54 │   inspect(eligibility(short, event("p", "a", "0", "1.000001").unwrap(), config("0", "0").unwrap()).eligible, content="false")
+    │                                                                         ───┬──  
+    │                                                                            ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:59:11 ]
+    │
+ 59 │   let r = event("same", "A", "1", "2").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:60:11 ]
+    │
+ 60 │   let p = event("same", "a", "1", "2").unwrap()
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:61:15 ]
+    │
+ 61 │   let basis = eligibility(r, p, default_config())
+    │               ─────┬─────  
+    │                    ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:61:33 ]
+    │
+ 61 │   let basis = eligibility(r, p, default_config())
+    │                                 ───────┬──────  
+    │                                        ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:64:11 ]
+    │
+ 64 │   inspect(eligibility(r, event("different", "A", "1", "2").unwrap(), default_config()).eligible, content="true")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier eligibility is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:64:26 ]
+    │
+ 64 │   inspect(eligibility(r, event("different", "A", "1", "2").unwrap(), default_config()).eligible, content="true")
+    │                          ──┬──  
+    │                            ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:64:70 ]
+    │
+ 64 │   inspect(eligibility(r, event("different", "A", "1", "2").unwrap(), default_config()).eligible, content="true")
+    │                                                                      ───────┬──────  
+    │                                                                             ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:69:11 ]
+    │
+ 69 │   inspect(compare_codepoints("\u{E000}", "\u{10000}") < 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:70:11 ]
+    │
+ 70 │   inspect(compare_codepoints("\u{10000}", "\u{E000}") > 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:71:11 ]
+    │
+ 71 │   inspect(compare_codepoints("a", "aa") < 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:72:11 ]
+    │
+ 72 │   inspect(compare_codepoints("aa", "a") > 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:73:11 ]
+    │
+ 73 │   inspect(compare_codepoints("", "") == 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:74:11 ]
+    │
+ 74 │   inspect(compare_codepoints("a\u{10000}", "a\u{10000}") == 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility_wbtest.mbt:75:11 ]
+    │
+ 75 │   inspect(compare_codepoints("é", "e\u{301}") > 0, content="true")
+    │           ─────────┬────────  
+    │                    ╰────────── The value identifier compare_codepoints is unbound.
+────╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:9:13 ]
+   │
+ 9 │     inspect(parse_time_us(text, "onset_s").unwrap() == expected, content="true")
+   │             ──────┬──────  
+   │                   ╰──────── The value identifier parse_time_us is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:17:11 ]
+    │
+ 17 │     match parse_time_us(text, "onset_s") {
+    │           ──────┬──────  
+    │                 ╰──────── The value identifier parse_time_us is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:30:11 ]
+    │
+ 30 │     match parse_time_us(text, "offset_s") {
+    │           ──────┬──────  
+    │                 ╰──────── The value identifier parse_time_us is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:33:17 ]
+    │
+ 33 │         inspect(exit_code(error), content="2")
+    │                 ────┬────  
+    │                     ╰────── The value identifier exit_code is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:39:11 ]
+    │
+ 39 │   inspect(parse_time_us(huge, "offset_s") is Err(_), content="true")
+    │           ──────┬──────  
+    │                 ╰──────── The value identifier parse_time_us is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:40:9 ]
+    │
+ 40 │   match parse_time_us(huge + "x", "offset_s") {
+    │         ──────┬──────  
+    │               ╰──────── The value identifier parse_time_us is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:48:11 ]
+    │
+ 48 │   inspect(parse_ratio_ppm("0", "ratio").unwrap() == 0L, content="true")
+    │           ───────┬───────  
+    │                  ╰───────── The value identifier parse_ratio_ppm is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:49:11 ]
+    │
+ 49 │   inspect(parse_ratio_ppm("0.5", "ratio").unwrap() == 500_000L, content="true")
+    │           ───────┬───────  
+    │                  ╰───────── The value identifier parse_ratio_ppm is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:50:11 ]
+    │
+ 50 │   inspect(parse_ratio_ppm("1.000000", "ratio").unwrap() == 1_000_000L, content="true")
+    │           ───────┬───────  
+    │                  ╰───────── The value identifier parse_ratio_ppm is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:52:11 ]
+    │
+ 52 │     match parse_ratio_ppm(text, "ratio") {
+    │           ───────┬───────  
+    │                  ╰───────── The value identifier parse_ratio_ppm is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:57:14 ]
+    │
+ 57 │   let zero = config("0", "0").unwrap()
+    │              ───┬──  
+    │                 ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:59:18 ]
+    │
+ 59 │   let defaults = default_config()
+    │                  ───────┬──────  
+    │                         ╰──────── The value identifier default_config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:62:11 ]
+    │
+ 62 │   inspect(config("2592000.000001", "0.5") is Err(_), content="true")
+    │           ───┬──  
+    │              ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:63:11 ]
+    │
+ 63 │   inspect(config("0.2", "1.000001") is Err(_), content="true")
+    │           ───┬──  
+    │              ╰──── The value identifier config is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:68:11 ]
+    │
+ 68 │   inspect(event("r", "alarm", "0", "0.000001") is Ok(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:69:11 ]
+    │
+ 69 │   inspect(event("r", "alarm", "2591999", "2592000") is Ok(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:71:13 ]
+    │
+ 71 │     inspect(event("r", "alarm", onset, offset) is Err(_), content="true")
+    │             ──┬──  
+    │               ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:73:11 ]
+    │
+ 73 │   inspect(event("", "alarm", "0", "1") is Err(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:74:11 ]
+    │
+ 74 │   inspect(event("r", "", "0", "1") is Err(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:76:11 ]
+    │
+ 76 │   inspect(event(id256, "alarm", "0", "1") is Ok(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:77:9 ]
+    │
+ 77 │   match event(id256 + "x", "alarm", "0", "1") {
+    │         ──┬──  
+    │           ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:80:15 ]
+    │
+ 80 │       inspect(exit_code(error), content="3")
+    │               ────┬────  
+    │                   ╰────── The value identifier exit_code is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:85:11 ]
+    │
+ 85 │   inspect(event("r", id256 + "x", "0", "1") is Err(_), content="true")
+    │           ──┬──  
+    │             ╰──── The value identifier event is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time_wbtest.mbt:86:19 ]
+    │
+ 86 │   let untrimmed = event(" ", " A ", "0", "1").unwrap()
+    │                   ──┬──  
+    │                     ╰──── The value identifier event is unbound.
+────╯

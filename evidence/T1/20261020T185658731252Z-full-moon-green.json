@@ -1,0 +1,18 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "--target",
+    "native",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.143,
+  "log": "evidence/T1/20261020T185658731252Z-full-moon-green.log",
+  "log_sha256": "93c9e82a1dd3b474b47ec50aaa8d469426ac678830197ac3f32118be93f2c7ff",
+  "scope": "T1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "-C",
+    "spikes/T0/json",
+    "test",
+    "--target",
+    "native",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.082,
+  "log": "evidence/T1/20261020T190918551100Z-json-premises.log",
+  "log_sha256": "98566e3b0f8ddd392230312d4a93343c59922153eac8fd89fe88ef3a5e9815cd",
+  "scope": "T1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**用户已授权并完成T0；独立评审的1项Important已修复，主实施者最终验收PASS。产品未实现。**
+更新：2026-10-20（America/Phoenix）。**T0已完成；用户已授权T1，时间核心技术检查通过、独立评审中。完整产品尚未实现。**
 
 ## 当前入口与位置
 
@@ -26,7 +26,7 @@
 
 ## 下一步
 
-T0已结束；下一实施目标为T1时间核心，本轮未开始。独立评审原为PARTIAL，wrapper缺陷已修复、RED→GREEN及完整探针已验收；见[评审处置](reviews/2026-10-20-t0-independent-review.md)。不把修复后的主验收冒充第二轮独立评审。
+T1时间核心已实现，12项MoonBit测试/6项JSON前提/4项Python测试通过，5个定向公式篡改均被行为测试捕获；被测源码fd6aff0cf4c1729baccea19cd38c43a4afe7119e，证据evidence/T1/manifest.json。当前等待T1只读独立评审。T1b参考环境尚未执行。独立评审原为PARTIAL，wrapper缺陷已修复、RED→GREEN及完整探针已验收；见[评审处置](reviews/2026-10-20-t0-independent-review.md)。不把修复后的主验收冒充第二轮独立评审。
 
 复跑：`python3 spikes/T0/run_probes.py`；Python安全测试：`python3 -W error::ResourceWarning -m unittest discover -s tests`；结构：`python3 scripts/check_design_docs.py`。
 

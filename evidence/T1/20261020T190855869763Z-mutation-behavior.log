@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T1/mutation_probe.py", line 44, in <module>
+    assert match, (name, 'not a behavior result; inspect compile/runtime log')
+           ^^^^^
+AssertionError: ('collar_ratio_swapped', 'not a behavior result; inspect compile/runtime log')

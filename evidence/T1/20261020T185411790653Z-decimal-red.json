@@ -1,0 +1,20 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--filter",
+    "*decimal*"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.449,
+  "log": "evidence/T1/20261020T185411790653Z-decimal-red.log",
+  "log_sha256": "46e61492f8ad996fa47c9d319e4f87d9fbece9f75560ae5c4e66b69d86de17b8",
+  "scope": "T1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

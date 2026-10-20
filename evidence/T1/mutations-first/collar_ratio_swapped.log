@@ -1,0 +1,7 @@
+Error: [0007]
+    ╭─[ /private/tmp/mooneventeval-T1-mutations-ju_zyd27/eventeval/model.mbt:16:8 ]
+    │
+ 16 │   priv offset_ratio_ppm : Int64
+    │        ────────┬───────  
+    │                ╰───────── Error Warning (unused_field): Field 'offset_ratio_ppm' is never read
+────╯

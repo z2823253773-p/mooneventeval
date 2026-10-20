@@ -1,0 +1,100 @@
+Error: [0001]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/eligibility.mbt:4:4 ]
+   │
+ 4 │ fn eligibility(reference : Event, prediction : Event, config : Config) -> PairBasis {
+   │    ─────┬─────  
+   │         ╰─────── Error Warning (unused_value): Unused function 'eligibility'
+───╯
+Error: [0079]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/errors.mbt:6:10 ]
+   │
+ 6 │ } derive(Eq)
+   │          ─┬  
+   │           ╰── Error Warning (implicit_impl_as_method): The methods not_equal, equal from `impl Eq for FailureKind` are implicit promoted as regular method for `FailureKind`. This behavior is deprecated and will be removed in the future. Add a `pub extend FailureKind with Eq::{not_equal, equal}` declaration or manually define regular methods for type `FailureKind` instead. If the promotion is not desirable, add `#deprecated` on the `extend` declaration.
+───╯
+Error: [0007]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:3:8 ]
+   │
+ 3 │   priv id : String
+   │        ─┬  
+   │         ╰── Error Warning (unused_field): Field 'id' is never read
+───╯
+Error: [0004]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:16:8 ]
+    │
+ 16 │ struct PairBasis {
+    │        ────┬────  
+    │            ╰────── Error Warning (missing_priv): The type 'PairBasis' does not occur in public signature of current package, consider marking it as `priv`.
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:17:3 ]
+    │
+ 17 │   label_match : Bool
+    │   ─────┬─────  
+    │        ╰─────── Error Warning (unused_field): Field 'label_match' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:18:3 ]
+    │
+ 18 │   onset_pass : Bool
+    │   ─────┬────  
+    │        ╰────── Error Warning (unused_field): Field 'onset_pass' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:19:3 ]
+    │
+ 19 │   offset_pass : Bool
+    │   ─────┬─────  
+    │        ╰─────── Error Warning (unused_field): Field 'offset_pass' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:20:3 ]
+    │
+ 20 │   eligible : Bool
+    │   ────┬───  
+    │       ╰───── Error Warning (unused_field): Field 'eligible' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:21:3 ]
+    │
+ 21 │   onset_delta_us : Int64
+    │   ───────┬──────  
+    │          ╰──────── Error Warning (unused_field): Field 'onset_delta_us' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:22:3 ]
+    │
+ 22 │   offset_delta_us : Int64
+    │   ───────┬───────  
+    │          ╰───────── Error Warning (unused_field): Field 'offset_delta_us' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:23:3 ]
+    │
+ 23 │   onset_limit_us : Int64
+    │   ───────┬──────  
+    │          ╰──────── Error Warning (unused_field): Field 'onset_limit_us' is never read
+────╯
+Error: [0007]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/model.mbt:24:3 ]
+    │
+ 24 │   offset_limit_scaled : Int64
+    │   ─────────┬─────────  
+    │            ╰─────────── Error Warning (unused_field): Field 'offset_limit_scaled' is never read
+────╯
+Error: [0001]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time.mbt:77:4 ]
+    │
+ 77 │ fn compare_codepoints(a : String, b : String) -> Int {
+    │    ─────────┬────────  
+    │             ╰────────── Error Warning (unused_value): Unused function 'compare_codepoints'
+────╯
+Error: [4108]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/time.mbt:80:3 ]
+    │
+ 80 │ ╭─▶   while true {
+    ┆ ┆   
+ 90 │ ├─▶   }
+    │ │         
+    │ ╰───────── The while loop is expected to yield a value of type Int, please add a `nobreak` block.
+────╯
