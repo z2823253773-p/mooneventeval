@@ -9,7 +9,7 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT/'evidence/T1/mutations'
+OUT = ROOT/'evidence/T1/mutations-after-review'
 TOOL = ROOT/'.tools/moonbit/0.10.14+7d59c7ec9'
 ENV = dict(os.environ, MOON_HOME=str(TOOL), PATH=str(TOOL/'bin')+os.pathsep+os.environ['PATH'])
 

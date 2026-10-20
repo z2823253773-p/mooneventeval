@@ -1,0 +1,150 @@
+{
+  "scope": "five targeted eligibility mutations, not exhaustive mutation coverage",
+  "source_sha256": "0581f14928d2afb48cc311b2a19a49ea5c0e1ac0ee5c47092d6e8856931706c5",
+  "results": [
+    {
+      "name": "baseline",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 0,
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "killed": null,
+      "replacement": [
+        "",
+        ""
+      ],
+      "mutated_source_sha256": "0581f14928d2afb48cc311b2a19a49ea5c0e1ac0ee5c47092d6e8856931706c5",
+      "log": "evidence/T1/mutations-after-review/baseline.log",
+      "log_sha256": "8a4e7a01c3f5026ef0c27a47b536bea8872fe1fab2d6d673da8ccd9aea407092"
+    },
+    {
+      "name": "onset_strict",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 2,
+      "total": 13,
+      "passed": 9,
+      "failed": 4,
+      "killed": true,
+      "replacement": [
+        "onset_abs <= config.collar_us",
+        "onset_abs < config.collar_us"
+      ],
+      "mutated_source_sha256": "55e49f5f1d76fc386d713f35a6e3fdee62d8df2594bf35e8a58802a01e9270f1",
+      "log": "evidence/T1/mutations-after-review/onset_strict.log",
+      "log_sha256": "435315549abdc3377e8803d9d5f4596f0a34a4d42d1e61d229c11afc27e4fe3c"
+    },
+    {
+      "name": "offset_strict",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 2,
+      "total": 13,
+      "passed": 10,
+      "failed": 3,
+      "killed": true,
+      "replacement": [
+        "1_000_000L <= offset_limit_scaled",
+        "1_000_000L < offset_limit_scaled"
+      ],
+      "mutated_source_sha256": "dbec2154b783bbe12fc388e4e8fe0a3881cb8def735708dadd2cb9fe336507f2",
+      "log": "evidence/T1/mutations-after-review/offset_strict.log",
+      "log_sha256": "bccd61bd4d6a19d78a3e9b1a34effd0c30b1daca8a4f2a51b9569f5fd9f8dc5e"
+    },
+    {
+      "name": "minimum_instead_of_maximum",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 2,
+      "total": 13,
+      "passed": 10,
+      "failed": 3,
+      "killed": true,
+      "replacement": [
+        "fixed_scaled > ratio_scaled",
+        "fixed_scaled < ratio_scaled"
+      ],
+      "mutated_source_sha256": "54fc6f16e1beda6c2ac96ec95647c2b6909d34caf96d2a9de173613670568cb5",
+      "log": "evidence/T1/mutations-after-review/minimum_instead_of_maximum.log",
+      "log_sha256": "29d406f98c0f92024466f28c9a2486156e9a4009d8d1f00bb4d6d735c0166ae0"
+    },
+    {
+      "name": "prediction_duration",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 2,
+      "total": 13,
+      "passed": 11,
+      "failed": 2,
+      "killed": true,
+      "replacement": [
+        "(reference.offset_us - reference.onset_us)",
+        "(prediction.offset_us - prediction.onset_us)"
+      ],
+      "mutated_source_sha256": "a4c6f3fd5716be5d6401328a5595c7826db7641c1743251aee58ff2da24533fa",
+      "log": "evidence/T1/mutations-after-review/prediction_duration.log",
+      "log_sha256": "6ff375ba14fa5e2890a189cc790731266c242e5768e058d63be1601bd88da58b"
+    },
+    {
+      "name": "collar_ratio_swapped",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/bin/moon",
+        "-C",
+        "/private/tmp/mooneventeval-T1-mutations-shje85kk",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "exit_code": 2,
+      "total": 13,
+      "passed": 9,
+      "failed": 4,
+      "killed": true,
+      "replacement": [
+        "let fixed_scaled = config.collar_us * 1_000_000L\n  let ratio_scaled = (reference.offset_us - reference.onset_us) *\n    config.offset_ratio_ppm",
+        "let fixed_scaled = config.offset_ratio_ppm * 1_000_000L\n  let ratio_scaled = (reference.offset_us - reference.onset_us) *\n    config.collar_us"
+      ],
+      "mutated_source_sha256": "bcf751cc5bc57e8350412c3fd6016d8a3ad328499264b77da52362cd90498fe4",
+      "log": "evidence/T1/mutations-after-review/collar_ratio_swapped.log",
+      "log_sha256": "35aa95972177f5d874f6b15e9efd1e51081e515bcdef70665a5635e7da90dbdb"
+    }
+  ]
+}

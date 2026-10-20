@@ -1,7 +1,7 @@
 {
   "task": "T1-time",
-  "assessment": "technical checks PASS; independent review pending",
-  "tested_sha": "fd6aff0cf4c1729baccea19cd38c43a4afe7119e",
+  "assessment": "T1 PASS by primary after independent review fix",
+  "tested_sha": "650325eb981875df7e00b537c9648a8146ff8abb",
   "baseline_sha": "8d8f417c88542ee891379fdd158c6a4adc129ec8",
   "platform": "macOS arm64 native only",
   "created_utc": "2026-10-20T19:11:47.376979+00:00",
@@ -17,11 +17,11 @@
     "eventeval/eligibility.mbt": "0581f14928d2afb48cc311b2a19a49ea5c0e1ac0ee5c47092d6e8856931706c5",
     "eventeval/eligibility_wbtest.mbt": "3cb714c12942b0697259b1b17ff07e64b97182e3458f46180e5785fa511bcfec",
     "eventeval/errors.mbt": "f3bfb31d1a99377796a58d227f2aea9b9c8cea09938e6863c01a0bb06e76714b",
-    "eventeval/model.mbt": "85b44423ea1ed1e99740fa330db801b2dcb582fab3d0103780674e27d51544cd",
+    "eventeval/model.mbt": "39ace4d5c9748f029e631479b487be0be301984b2fe9094c40ed6a4a658a1580",
     "eventeval/moon.pkg": "7927f976f1f9e1514cf4657bbd29aa345b6e75ea1018b54896d49e2b8be1abc4",
     "eventeval/pkg.generated.mbti": "3c61e6873b2edfe53bb58e5c52054a73dc3c5e0fb476757d135fbaabc7d10e27",
     "eventeval/time.mbt": "af45b24f98836e6d7602e2d2a313640bef425cd49bbc004684124c40b0c19562",
-    "eventeval/time_wbtest.mbt": "2c8071824b10cb6b87146262815776d324b20560cbc605b15647ee6bbb4ea29b"
+    "eventeval/time_wbtest.mbt": "bc937e9f2f6167a39a03108f5862a62608a5aa805aa91c0601403476970ab32c"
   },
   "commands": [
     {
@@ -324,13 +324,211 @@
       "scope": "T1",
       "assessment": "command result only; not an automatic product acceptance claim",
       "record": "evidence/T1/20261020T191111378951Z-version.json"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_design_docs.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.023,
+      "log": "evidence/T1/20261020T191147441296Z-docs-before-review.log",
+      "log_sha256": "480634a6548ae01c0589ec6c4c46556d46fc7df21e9410afdbbdfb050c8c0906",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T191147441296Z-docs-before-review.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 2,
+      "reason": null,
+      "elapsed_seconds": 1.235,
+      "log": "evidence/T1/20261020T194917573697Z-unicode-regression-red.log",
+      "log_sha256": "dfd9f73aac6ed2dcfaf0674b4251855d4d31a945226ac2f34f690f424cda986e",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T194917573697Z-unicode-regression-red.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 1.242,
+      "log": "evidence/T1/20261020T195004571729Z-unicode-regression-green.log",
+      "log_sha256": "8a4e7a01c3f5026ef0c27a47b536bea8872fe1fab2d6d673da8ccd9aea407092",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195004571729Z-unicode-regression-green.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-W",
+        "error::ResourceWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.884,
+      "log": "evidence/T1/20261020T195005875454Z-final-python.log",
+      "log_sha256": "e39f76ed6dc6bec82f56da6f4f1967c6f298e53298245e6977c80a121de3c043",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195005875454Z-final-python.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "fmt",
+        "--check"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.046,
+      "log": "evidence/T1/20261020T195006809462Z-final-fmt.log",
+      "log_sha256": "b05caf99fa1a137ef24f969da747e31f858151f3056e1f17fec3062f2f875977",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195006809462Z-final-fmt.json"
+    },
+    {
+      "command": [
+        "python3",
+        "evidence/T1/mutation_probe.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 4.713,
+      "log": "evidence/T1/20261020T195036333228Z-mutations-after-review.log",
+      "log_sha256": "74be06dffaf7fc6d97fd306361991a847e24b5bd23bc94fa698907e37e71d7ce",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195036333228Z-mutations-after-review.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.085,
+      "log": "evidence/T1/20261020T195237228836Z-final-core-sha.log",
+      "log_sha256": "8a4e7a01c3f5026ef0c27a47b536bea8872fe1fab2d6d673da8ccd9aea407092",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195237228836Z-final-core-sha.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "build",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.09,
+      "log": "evidence/T1/20261020T195237349229Z-final-build.log",
+      "log_sha256": "81a677771334385895bc0ebfef26a4af4d319fd300182f0918976f6e1f185489",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195237349229Z-final-build.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "check",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.09,
+      "log": "evidence/T1/20261020T195237474134Z-final-check.log",
+      "log_sha256": "c79826b968ab80e4632fd7628b7c2b6b8300755d69c7d7c480e13ee010cac331",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195237474134Z-final-check.json"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_design_docs.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.024,
+      "log": "evidence/T1/20261020T195523077677Z-final-docs.log",
+      "log_sha256": "22e7ac7a15f42fb2baeb8c06ffcb4c97dde8616adca80861ab9ddfb75fa7291b",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195523077677Z-final-docs.json"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "8d8f417c88542ee891379fdd158c6a4adc129ec8",
+        "--",
+        ".",
+        ":!evidence/**"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.024,
+      "log": "evidence/T1/20261020T195523132054Z-final-source-whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "T1",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1/20261020T195523132054Z-final-source-whitespace.json"
     }
   ],
-  "mutation_results": "evidence/T1/mutations/results.json",
+  "mutation_results": "evidence/T1/mutations-after-review/results.json",
   "results": {
     "core_tests": [
-      12,
-      12
+      13,
+      13
     ],
     "json_premises": [
       6,
@@ -353,5 +551,18 @@
     "Linux",
     "remote CI",
     "publication"
-  ]
+  ],
+  "independent_review": {
+    "candidate": "c17041a12ab41b5e78f4a9f44723ee12908001da",
+    "verdict": "one Important; Unicode factory validation incomplete",
+    "fix_sha": "650325eb981875df7e00b537c9648a8146ff8abb",
+    "verification": "primary RED\u2192GREEN, 13/13 suite; no second independent verdict",
+    "report": "docs/reviews/2026-10-20-t1-review.md"
+  },
+  "finished_utc": "2026-10-20T19:55:53.202383+00:00",
+  "integrity": {
+    "source_files_verified": 10,
+    "command_logs_verified": 27,
+    "mutation_logs_verified": 6
+  }
 }

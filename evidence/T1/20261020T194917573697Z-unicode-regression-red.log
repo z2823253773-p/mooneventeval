@@ -1,0 +1,2 @@
+[local/mooneventeval] test eventeval/time_wbtest.mbt:119 ("event_rejects_unpaired_surrogates_from_safe_substring") failed: eventeval/time_wbtest.mbt:130:16-130:62@local/mooneventeval FAILED: invalid Unicode ID accepted by factory
+Total tests: 13, passed: 12, failed: 1.

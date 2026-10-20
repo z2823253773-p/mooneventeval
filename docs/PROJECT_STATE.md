@@ -1,33 +1,33 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**T0已完成；用户已授权T1，时间核心技术检查通过、独立评审中。完整产品尚未实现。**
+更新：2026-10-20（America/Phoenix）。**T0与T1完成；T1独立评审发现的Unicode工厂缺口已修复并主验收PASS。完整评测器和CLI尚未实现。**
 
-## 当前入口与位置
+## 入口与工作位置
 
-- [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [contracts](contracts.md) → [T0卡](superpowers/plans/tasks/T0-feasibility.md) → [实际结果](reviews/2026-10-20-t0-results.md)。旧单文件v1计划停止执行。
-- Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main保持`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote。
-- T0开始15:51:16 UTC；安装16:02:52 UTC完成，早于16:21:16网络预算；总截止17:51:16 UTC。
-- 被测源码`c491a4d28ce842b53a56657edd966632d61172d3`；最后证据`evidence/T0/20261020T163251Z/results.json`含命令、退出码、日志和源码哈希。文档/证据提交以git log为准。
+- [contracts](contracts.md) → [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [T1实际结果](reviews/2026-10-20-t1-results.md) → [下一T1b任务卡](superpowers/plans/tasks/T1b-reference.md)。旧单文件v1计划停止执行。
+- Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main基线`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote。继续时先核对真实git状态，不重复实施T0/T1。
+- 本轮T1基线`8d8f417c88542ee891379fdd158c6a4adc129ec8`；最终被测源码`650325eb981875df7e00b537c9648a8146ff8abb`；文档/证据提交以git log为准。证据[evidence/T1/manifest.json](../evidence/T1/manifest.json)。
 
-## 已完成与限制
+## 完成项与实测边界
 
-- 项目局部固定工具链已安装并校验：moonc v0.10.14+7d59c7ec9。二进制符合发布者sidecar及固定SHA；core仅符合历史观测SHA，不是发布者认证。
-- 实跑旧fn失败/新fn_count成功、JSON键fn不变；inspect成功/inspect!失败；新清单成功/旧JSON清单仍能运行但弃用；JSON6/6；native短读写和真实退出7；真实本地包产物CRC/文件表/哈希。
-- Python测试4/4（含wrapper全局回退回归），完整结构lint单列；均不代表产品正确。保留安装首次超时、JSON首轮警告失败、native首轮产物定位失败。
-- Native只测macOS arm64短合成输入，未实现完整I/O；Python只有开发工具。产品、独立参考、mutation、本人复算/讲解、包外消费、Linux/远端CI、正式发布均未完成。
+- T0：局部moonc v0.10.14+7d59c7ec9已安装校验；语法/清单/JSON/native短I/O/实际打包已验证。二进制符合发布者sidecar，core只符合历史SHA，不是发布者认证。
+- T1：有界ASCII十进制扫描转Int64微秒/ppm；验证后封装Event/Config；UTF-16代理配对和256码点限制；Unicode码点排序；有符号解释偏差与精确collar/参考时长资格判断。
+- MoonBit全套13/13、JSON前提6/6、Python4/4；native check/build、fmt检查通过。5个公式定向mutation均成功编译并导致行为断言失败，未把初次编译失败算作捕获。仅macOS arm64。
+- 独立评审原为T1未达完整验收，发现安全substring可制造孤立代理、工厂却接受；已先RED再修复，主验收13/13及5个mutation再验通过。[评审原结论与处置](reviews/2026-10-20-t1-review.md)，未声称第二轮独立PASS。
+- sed_eval固定源码仅只读核对公式，未安装/运行。T1b、独立parity/M2、匹配、完整JSON任务/报告/CLI/demo、本人纸笔复算/讲解、Linux/远端CI、包外消费与发布均未完成。
 
-## 决定、作废与阻塞
+## 决定与限制
 
-- 作废：旧Counts.fn和inspect!写法、把深度参数视作无警告、清单格式混用、把结构lint当可行性证据。有效兼容写法已写回contracts。
-- JSON深度参数在目标core弃用，但实际仍工作；唯一解析适配函数用局部#warnings("-deprecated")，其余仍deny-warn。升级目标版本必须重验，不扩大全局例外。
-- 裁决：原生worktree工具报Not a git repository，改建相邻Git工作树；成本为手动维护生命周期。模块化T0用显式矩阵替代数字任务解析；成本为人工核对完整性。当前仅执行T0，成本为后续阶段仍需安排。
-- first-free+DFS及T1b/T3阶段修订仍标待批准；TSV/CSV、JSON数字时间、删除最终原版对照未批准。A11原版参考仍为最终完整验收项。
-- 外部缺口：选题/换题资格、赛事现行规则、截止具体时区/时刻、真实需求未确认；没有外发、推送、报名变更或发布。
+- Event/Config保持私有字段；业务数学在MoonBit，Python仅开发验证。本轮无Python参考依赖安装，无临床/科研原始数据访问。
+- 解析深度参数deprecated局部兼容例外保持T0决定。T1另有声明级unused_field/unused_value暂时豁免，因为正式消费者在T3/T4；T3接入时移除，代价是此前会屏蔽这些声明的相应闲置告警，不能扩为全包关闭。
+- ID/label错误：空值INVALID_SCHEMA、非法代理配对INVALID_UNICODE、码点超限RESOURCE_LIMIT（首先观察257）；时间/比例语法INVALID_DECIMAL、超界或非正时长OUT_OF_RANGE。任务索引路径前缀留T3。
+- 本轮仅T1；参考环境归独立T1b，代价是parity未知。保留前次失败和原始日志，原日志尾随空格不做归一化；源码/文档空白检查排除evidence。
+- first-free+DFS及T1b/T3阶段修订仍待相应批准；TSV/CSV、JSON数字时间、删除最终原版对照未批准；A11保留。赛事当前资格/换题/截止细则及真实需求仍未确认，没有外发、推送、报名变更或发布。
 
-## 下一步
+## 下一步与命令
 
-T1时间核心已实现，12项MoonBit测试/6项JSON前提/4项Python测试通过，5个定向公式篡改均被行为测试捕获；被测源码fd6aff0cf4c1729baccea19cd38c43a4afe7119e，证据evidence/T1/manifest.json。当前等待T1只读独立评审。T1b参考环境尚未执行。独立评审原为PARTIAL，wrapper缺陷已修复、RED→GREEN及完整探针已验收；见[评审处置](reviews/2026-10-20-t0-independent-review.md)。不把修复后的主验收冒充第二轮独立评审。
+下一实施目标T1b参考环境，尚未开始；按任务卡单独记录依赖安装、固定版本/哈希、self-check与失败，不改写T1为原版对照。T2算法调整尚未实施。
 
-复跑：`python3 spikes/T0/run_probes.py`；Python安全测试：`python3 -W error::ResourceWarning -m unittest discover -s tests`；结构：`python3 scripts/check_design_docs.py`。
+本地复验：`scripts/with-toolchain.sh moon test --target native --deny-warn`（当前13项）；`python3 -W error::ResourceWarning -m unittest discover -s tests`（4项）；`scripts/with-toolchain.sh moon fmt --check`；`python3 scripts/check_design_docs.py`。
 
-新环境先`python3 scripts/install_toolchain.py`（Python>=3.12、curl、C编译器；仅支持锁文件内的平台；已有目标目录会拒绝覆盖），再用`scripts/with-toolchain.sh`执行命令。不要重新安装全局工具链，不把T0探针复制成产品。
+已有局部工具链无需重装。新checkout才运行`python3 scripts/install_toolchain.py`（Python>=3.12、curl、native C编译器）；禁止用默认版冒充固定版本。spikes/T0是历史一次性探针，不复制成产品实现。

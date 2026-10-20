@@ -1,0 +1,8 @@
+///|
+#warnings("-deprecated")
+test "review_safe_substring_unicode" {
+  let bad = "\u{10000}".substring(start=1, end=2)
+  inspect(bad.length(), content="1")
+  inspect(bad.iter().next().unwrap().to_int(), content="56320")
+  inspect(event(bad, "a", "0", "1") is Err(_), content="true")
+}
