@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "-c",
+    "import hashlib,json; from pathlib import Path; r=json.loads(Path(\"evidence/T0/20261020T160625Z/results.json\").read_text()); checks=[hashlib.sha256(Path(x[\"log\"]).read_bytes()).hexdigest()==x[\"log_sha256\"] for x in r[\"results\"]]; sources=[hashlib.sha256(Path(p).read_bytes()).hexdigest()==h for p,h in r[\"source_sha256\"].items()]; assert all(checks) and all(sources) and r[\"all_required_pass\"]; print(json.dumps({\"logs\":len(checks),\"source_files\":len(sources),\"integrity\":\"PASS\"}))"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.024,
+  "log": "evidence/T0/20261020T162832062289Z-evidence-integrity.log",
+  "log_sha256": "a4246103ef4f9b0f8e57ab00bfa54f0c04b1ac3cae242cf5c108b9a5e79706d2",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

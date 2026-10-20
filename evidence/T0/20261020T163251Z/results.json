@@ -1,0 +1,311 @@
+{
+  "baseline_sha": "c491a4d28ce842b53a56657edd966632d61172d3",
+  "scope": "T0 macOS arm64 throwaway probes only",
+  "results": [
+    {
+      "name": "versions",
+      "command": [
+        "moon",
+        "version",
+        "--all"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/versions.log",
+      "log_sha256": "65ff404058fa34c291228e3200006e8c9675d87399652c60fc62dcc9c48b09cf"
+    },
+    {
+      "name": "compiler",
+      "command": [
+        "moonc",
+        "-v"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/compiler.log",
+      "log_sha256": "33bf4fcce867d0cbdf9275dc6c8e2952efcaf8e3ac2537e7a7bc4dc1d7c445ae"
+    },
+    {
+      "name": "field-old",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/field_old",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 1,
+      "expected_exit": [
+        1,
+        255
+      ],
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/field-old.log",
+      "log_sha256": "6a2fae53378d59489078162e217dd1b1001a5e9a56ba97b8dbb3b0c0dd6e6fe5"
+    },
+    {
+      "name": "field_new",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/field_new",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/field_new.log",
+      "log_sha256": "b136ac6dbfa8a737c1c47b4ab55287d32add1374feaea7f839a55b45a9685782"
+    },
+    {
+      "name": "inspect_plain",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/inspect_plain",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/inspect_plain.log",
+      "log_sha256": "b136ac6dbfa8a737c1c47b4ab55287d32add1374feaea7f839a55b45a9685782"
+    },
+    {
+      "name": "modern",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/modern",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/modern.log",
+      "log_sha256": "b136ac6dbfa8a737c1c47b4ab55287d32add1374feaea7f839a55b45a9685782"
+    },
+    {
+      "name": "json",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/json",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/json.log",
+      "log_sha256": "98566e3b0f8ddd392230312d4a93343c59922153eac8fd89fe88ef3a5e9815cd"
+    },
+    {
+      "name": "inspect_bang",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/inspect_bang",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 1,
+      "expected_exit": [
+        0,
+        1,
+        255
+      ],
+      "observation_only": true,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/inspect_bang.log",
+      "log_sha256": "d4dffdd25e336f21330f463e62e1970c8fe27bf0f7aa4c22782dbfbf1aa4cd37"
+    },
+    {
+      "name": "legacy",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/legacy",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": [
+        0,
+        1,
+        255
+      ],
+      "observation_only": true,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/legacy.log",
+      "log_sha256": "8923f67d3105061dc6fc7dbf63bb09c018733fe056169563edf7afd212428576"
+    },
+    {
+      "name": "native-build",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/native",
+        "build",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/native-build.log",
+      "log_sha256": "30ec13dbdad8330682289e0f37415033da68d27500ec282757b7d943ce8227b5"
+    },
+    {
+      "name": "native-process",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/native/_build/native/debug/build/t0_native.exe"
+      ],
+      "cwd": "spikes/T0/native",
+      "exit_code": 7,
+      "expected_exit": 7,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/native-process.log",
+      "log_sha256": "eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2",
+      "stdout_exact": true,
+      "binary_sha256": "4e38a9b7970da97c38655b7c11b1a38a78832c6a369eae3b4e574e610aeea237"
+    },
+    {
+      "name": "package-help",
+      "command": [
+        "moon",
+        "package",
+        "--help"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/package-help.log",
+      "log_sha256": "03286508402b30b9f09b213e0e860c475ada396155197b64a85c4ab4bcf07a37"
+    },
+    {
+      "name": "package-list",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/modern",
+        "package",
+        "--list",
+        "--frozen"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/package-list.log",
+      "log_sha256": "65f8c413efb46eed94a57c32cb04dac958b63210e374014615d5ed2ca5bfa303"
+    },
+    {
+      "name": "package",
+      "command": [
+        "moon",
+        "-C",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/modern",
+        "package"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/package.log",
+      "log_sha256": "f58876e27ed70e96a00ad1cd78ccd9a01e6ea3ab803867864c2bfb36e86498c3"
+    },
+    {
+      "name": "package-artifact",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/spikes/T0/check_package.py",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T0/20261020T163251Z"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "observation_only": false,
+      "pass": true,
+      "log": "evidence/T0/20261020T163251Z/package-artifact.log",
+      "log_sha256": "b3a09a73321af7a7406686ec07b2eb2a00df4a39f8ecc9697c998bd5636d0e0d"
+    }
+  ],
+  "source_sha256": {
+    "spikes/T0/README.md": "4dd07533da19fa4ba44d494638ca9ed48bd0d36d502268998a99ff285f87a010",
+    "spikes/T0/assemble_download.py": "78cf8c55f7dc8c950e8b0976d41a251de10e9e4688c70fe91528a47c78a72d01",
+    "spikes/T0/check_package.py": "3daa4787d5b5c89a819af29ba107dd4a908030d9a3dc756e06844acd69467d07",
+    "spikes/T0/field_new/moon.mod": "394ba4671d421a7e6ce065b413c91324b579b0d1b00101655f596fa27693f3c5",
+    "spikes/T0/field_new/moon.pkg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spikes/T0/field_new/probe_wbtest.mbt": "ae8a158c12f841e8271e6ba52291e19f778b0419564fff1e858d24f5302ff836",
+    "spikes/T0/field_old/moon.mod": "9c5a9b81cc6e45b065f49b493a4dd59eff1cbcc6b74a942c12a5c1f37e67166f",
+    "spikes/T0/field_old/moon.pkg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spikes/T0/field_old/probe_wbtest.mbt": "8e229ceea4069c99a6daa8e714be23f3bfaf9b7bd5da016223ade86d5a353e3c",
+    "spikes/T0/inspect_bang/moon.mod": "4479825a72a47342945239c0314d9219c57106eb65f5a12c8962da411ce5119a",
+    "spikes/T0/inspect_bang/moon.pkg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spikes/T0/inspect_bang/probe_wbtest.mbt": "cd0cef8055f10a87c679ed376d63b54bd41010f6bfb4909bfc22326a8714d794",
+    "spikes/T0/inspect_plain/moon.mod": "0cbbd521b758b0faa03dfb919b00d64e75c242aa12ce658b9c3f8cdb20f438de",
+    "spikes/T0/inspect_plain/moon.pkg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spikes/T0/inspect_plain/probe_wbtest.mbt": "1e15040847d098ad132859c1e59082ba6ae5a3fdd7b1646715db28c204058aeb",
+    "spikes/T0/json/moon.mod": "f0f5902d2ec7223b8e05fefd148782fb3f8ac80bf80ba318248f0432a8e9b6ea",
+    "spikes/T0/json/moon.pkg": "1036c070bc31ef4e18714101adf4e21c57251efc0c76fb77ebc28d20ce7310a1",
+    "spikes/T0/json/probe_wbtest.mbt": "bde7c0602afcc42c5d307e595cdd689efe93d73aee517e92a2d0d9be22daa5db",
+    "spikes/T0/legacy/moon.mod.json": "50e8a9a1a3aa9967e8f33597e4f3a93d3642b219ddcae523d6995a2dec15f97c",
+    "spikes/T0/legacy/moon.pkg.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "spikes/T0/legacy/probe_wbtest.mbt": "2737ba165997fee7b405760220792bf2d660430cf59076e6a6301676ffecaee7",
+    "spikes/T0/make_probes.py": "a13a2ac59b6f7af8d5cef5cd4a012192ddfc6d909151f8c74ddf2870b5a204c8",
+    "spikes/T0/modern/moon.mod": "ce433384e669c07d15540ea0a5679d1a57b2c2bfabf521262f941a575241bf87",
+    "spikes/T0/modern/moon.pkg": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spikes/T0/modern/probe_wbtest.mbt": "2737ba165997fee7b405760220792bf2d660430cf59076e6a6301676ffecaee7",
+    "spikes/T0/native/io_stub.c": "f0e63c5daa4bfaa55bd907297449b827697851db1aaa52e79db3e49ed602beab",
+    "spikes/T0/native/main.mbt": "c64259dfc26806d82ba0b846a22bc4311b84df699d3bb4bd71e8fe02fdada45c",
+    "spikes/T0/native/moon.mod": "11def10dad2df507748a38910704e0dcdbaa0b5bb1e06cb8dcf985378592f6fb",
+    "spikes/T0/native/moon.pkg": "2f4f43dd2fffc4e94cd11533e026a997194bc94025d8c64321a0c885e7fbf82f",
+    "spikes/T0/native/spike-input.bin": "eb42d814f5f448b33f397bc908f120522ebe23540541126da89ab4dc7f36e8b2",
+    "spikes/T0/run_probes.py": "20858cb1b64ea7ede2e83774b0adf89b2dc57f423c56702aab0511ee2b410823"
+  },
+  "all_required_pass": true
+}

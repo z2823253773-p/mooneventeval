@@ -1,19 +1,19 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**用户已授权T0；技术探针通过，独立评审中。产品未实现。**
+更新：2026-10-20（America/Phoenix）。**用户已授权并完成T0；独立评审的1项Important已修复，主实施者最终验收PASS。产品未实现。**
 
 ## 当前入口与位置
 
 - [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [contracts](contracts.md) → [T0卡](superpowers/plans/tasks/T0-feasibility.md) → [实际结果](reviews/2026-10-20-t0-results.md)。旧单文件v1计划停止执行。
 - Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main保持`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote。
 - T0开始15:51:16 UTC；安装16:02:52 UTC完成，早于16:21:16网络预算；总截止17:51:16 UTC。
-- 被测源码`b69e6653bf0e1674226b2ceaa3e223cfd827e992`；最后证据`evidence/T0/20261020T160625Z/results.json`含命令、退出码、日志和源码哈希。文档/证据提交以git log为准。
+- 被测源码`c491a4d28ce842b53a56657edd966632d61172d3`；最后证据`evidence/T0/20261020T163251Z/results.json`含命令、退出码、日志和源码哈希。文档/证据提交以git log为准。
 
 ## 已完成与限制
 
 - 项目局部固定工具链已安装并校验：moonc v0.10.14+7d59c7ec9。二进制符合发布者sidecar及固定SHA；core仅符合历史观测SHA，不是发布者认证。
 - 实跑旧fn失败/新fn_count成功、JSON键fn不变；inspect成功/inspect!失败；新清单成功/旧JSON清单仍能运行但弃用；JSON6/6；native短读写和真实退出7；真实本地包产物CRC/文件表/哈希。
-- Python安装安全测试3/3，完整结构lint单列；均不代表产品正确。保留安装首次超时、JSON首轮警告失败、native首轮产物定位失败。
+- Python测试4/4（含wrapper全局回退回归），完整结构lint单列；均不代表产品正确。保留安装首次超时、JSON首轮警告失败、native首轮产物定位失败。
 - Native只测macOS arm64短合成输入，未实现完整I/O；Python只有开发工具。产品、独立参考、mutation、本人复算/讲解、包外消费、Linux/远端CI、正式发布均未完成。
 
 ## 决定、作废与阻塞
@@ -26,7 +26,7 @@
 
 ## 下一步
 
-完成T0 fresh只读评审，修复确实问题并记录结论。T1核心尚未开始。
+T0已结束；下一实施目标为T1时间核心，本轮未开始。独立评审原为PARTIAL，wrapper缺陷已修复、RED→GREEN及完整探针已验收；见[评审处置](reviews/2026-10-20-t0-independent-review.md)。不把修复后的主验收冒充第二轮独立评审。
 
 复跑：`python3 spikes/T0/run_probes.py`；Python安全测试：`python3 -W error::ResourceWarning -m unittest discover -s tests`；结构：`python3 scripts/check_design_docs.py`。
 

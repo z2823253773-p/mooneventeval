@@ -1,0 +1,19 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--check",
+    "8a3075521312c9bf9ad196309422adaa0c67fbd2..HEAD",
+    "--",
+    ".",
+    ":!evidence/**"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.024,
+  "log": "evidence/T0/20261020T162832005863Z-source-whitespace.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

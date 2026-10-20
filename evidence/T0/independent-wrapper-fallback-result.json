@@ -1,0 +1,6 @@
+{
+  "case": "locked moon absent, matching moonc present, fallback moon on PATH",
+  "exit": 0,
+  "stdout": "UNLOCKED_MOON_EXECUTED\n",
+  "stderr": ""
+}

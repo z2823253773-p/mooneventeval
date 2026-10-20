@@ -1,0 +1,14 @@
+...F
+======================================================================
+FAIL: test_wrapper_rejects_missing_local_moon_instead_of_global_fallback (test_toolchain.ToolchainSafety.test_wrapper_rejects_missing_local_moon_instead_of_global_fallback)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_toolchain.py", line 33, in test_wrapper_rejects_missing_local_moon_instead_of_global_fallback
+    self.assertNotEqual(result.returncode, 0, 'incomplete local install must fail closed')
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 == 0 : incomplete local install must fail closed
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.384s
+
+FAILED (failures=1)

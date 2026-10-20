@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.837,
+  "log": "evidence/T0/20261020T163034050911Z-wrapper-fallback-green.log",
+  "log_sha256": "297b9d5166655837d20933a2d43fc6f59980be43ca0240c157d700521368cf0d",
+  "scope": "T0",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

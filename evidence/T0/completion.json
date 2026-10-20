@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "scope": "T0 macOS arm64 feasibility only",
+  "finished_utc": "2026-10-20T16:37:18.570842+00:00",
+  "tested_source_sha": "c491a4d28ce842b53a56657edd966632d61172d3",
+  "matrix": "evidence/T0/20261020T163251Z/results.json",
+  "logs_verified": 15,
+  "source_files_verified": 31,
+  "independent_review": "original PARTIAL; one Important repaired and verified by primary; no second independent pass",
+  "not_product_acceptance": true
+}
