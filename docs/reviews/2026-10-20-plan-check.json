@@ -1,0 +1,25 @@
+{
+  "scope": "plan documentation audit, no product or reference execution",
+  "markdown_files_checked": 8,
+  "broken_local_links": [],
+  "tasks": 8,
+  "unchecked_steps_by_task": [
+    8,
+    6,
+    7,
+    5,
+    6,
+    7,
+    6,
+    6
+  ],
+  "checked_implementation_steps": 0,
+  "python_test_blocks_syntax_checked": 3,
+  "review_focus_classes": 5,
+  "acceptance_rows_mapped": 12,
+  "plan_lines": 315,
+  "spec_lines": 309,
+  "product_files_created": false,
+  "product_tests_run": false,
+  "sed_eval_run": false
+}

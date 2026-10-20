@@ -2,6 +2,8 @@
 
 2026-10-20（America/Phoenix）。审阅对象：[重写 PRD](../superpowers/specs/2026-10-20-mooneventeval-prd-design.md)。这是编写者自查，不是独立评审、产品验收或用户批准。
 
+> 此文记录首次 PRD 交付时的状态。其后用户已回复“确认进行实施计划”；当前阶段见 [PROJECT_STATE](../PROJECT_STATE.md) 和 [计划自查](2026-10-20-plan-review.md)，下方历史“等待”不代表再次索要 PRD 批准。
+
 ## 已完成的设计工作
 
 - 核对仓库初始 `main` / `cd3c0fcda0896b3cd357d8b5cf3aaa80b6c2aeac`，两份文档，无 remote、代码、CI 或发布；本轮只修改本库文档。
