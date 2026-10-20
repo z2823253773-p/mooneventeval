@@ -1,0 +1,203 @@
+{
+  "audit_date_user_timezone": "2026-10-20",
+  "timezone": "America/Phoenix",
+  "kind": "read-only source inspection; no competitor or sed_eval runtime",
+  "sources": [
+    {
+      "id": "rules",
+      "repository": "moonbitlang/Hackathon2026",
+      "ref": "a879c208b261ca500f65707d42504d06572fa9b0",
+      "paths": [
+        "src/App.tsx"
+      ],
+      "areas": [
+        "43-47",
+        "79-87",
+        "120-139",
+        "200-225"
+      ],
+      "finding": "官网源码注明十月报名及验收截止10月31日、最多提交三次、允许未通过项目修改，要求MoonBit主实现、公开持续记录、README/示例/测试及开源合规。页面指向正式章程；源码不能替代章程或个案审核。"
+    },
+    {
+      "id": "labelkit",
+      "repository": "Zy789kl/moonlabelkit",
+      "ref": "107087f53095ad6b341d4dde4b3d737d7fee9061",
+      "paths": [
+        "README.md",
+        "agreement/cohen_kappa.mbt"
+      ],
+      "finding": "按共同样本的多标注者标签构造一致性统计；本次所读内容未展示时间容差的事件最大匹配。"
+    },
+    {
+      "id": "metriclab",
+      "repository": "myc1234567/moon_metric_lab",
+      "ref": "47f7271ebb99702ae8f50a5189a57dadf9ca69ac",
+      "paths": [
+        "classification/pkg.generated.mbti",
+        "workflow/pkg.generated.mbti"
+      ],
+      "finding": "已包含一般分类指标和实验汇总/比较/质量门禁。新项目避免扩展这些能力，聚焦未对齐时间事件如何产生TP/FP/FN。"
+    },
+    {
+      "id": "deteval",
+      "repository": "python123-ops/moondeteval",
+      "ref": "10682e4806fc12d9b7c97c4670c9f32d799265de",
+      "paths": [
+        "pkg.generated.mbti",
+        "evaluation.mbt"
+      ],
+      "areas": [
+        "evaluation.mbt:577-594",
+        "evaluation.mbt:628-794"
+      ],
+      "finding": "图像框/掩码、IoU阈值、置信度排序及诊断；有解释报告不能成为本项目单独的差异理由，核心区别须落在时间起止容差与最大基数匹配。"
+    },
+    {
+      "id": "edf",
+      "repository": "peng-jun21/moonbit-edf",
+      "ref": "3be5fed558ff6acfb11f5916b1c2f64f495f49be",
+      "paths": [
+        "README.md",
+        "pkg.generated.mbti"
+      ],
+      "finding": "文件读写、注释和事件窗口已存在；新项目只接收外部形成的时间事件，不实现EDF解析或窗口取样。"
+    },
+    {
+      "id": "sed_eval",
+      "repository": "TUT-ARG/sed_eval",
+      "ref": "0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb",
+      "paths": [
+        "LICENSE.txt",
+        "sed_eval/sound_event.py",
+        "sed_eval/metric.py"
+      ],
+      "areas": [
+        "sound_event.py:1108-1182",
+        "sound_event.py:1233-1349",
+        "sound_event.py:1484-1528",
+        "sound_event.py:1604-1675",
+        "metric.py:31-119",
+        "sound_event.py:1458-1470",
+        "sound_event.py:1568-1578"
+      ],
+      "finding": "起点固定collar、终点max(固定collar,参考时长比例)、optimal调用二分图匹配；用浮点秒。零分母及F1计算路径需要按共同口径限定比较。源码许可证MIT；测试数据需单独确认可再分发性。 全局Nfp/Nfn会扣Nsubs，每类别不会扣；对照须保留原始值并显式投影共同口径。该发现仅为源码结论，尚未运行。"
+    }
+  ],
+  "gaps": [
+    {
+      "url": "https://moonbitlang.github.io/Hackathon2026/",
+      "status": "web工具返回空SPA正文；shell普通请求DNS失败，提权后连接重置；浏览器读取超时。已用官方仓库固定提交补证；未重新独立确认已部署bundle与此提交逐字一致。"
+    },
+    {
+      "url": "https://bxup9uklfcb.feishu.cn/wiki/Dx4Bwd6D1i3GfHkajQCcF7SznEd",
+      "status": "本轮web读取失败，未读取当前正式章程正文。CI、Mooncakes、至少10次有效提交及禁止AI代写申报书仅作为历史核查提示/自设交付要求，不能声称本轮官网逐条确认。"
+    },
+    {
+      "status": "git tree listing complete for LabelKit/MetricLab/DetEval; only selected files read. No exhaustive implementation audit or runtime tests."
+    },
+    {
+      "status": "sed_eval/util.py fetch did not yield file content; do not claim bipartite_match internal algorithm independently reviewed."
+    }
+  ],
+  "inherited_index": {
+    "source": "../../../选题复核/2026-10-20/检索快照.json",
+    "commit": "d31e957729fa2f845c9714ebfcce12b0b636775f",
+    "module_entries": 3157,
+    "status": "交接快照，本轮读取但未重跑全索引扫描。公开检索阴性不证明无重复。"
+  },
+  "files": [
+    {
+      "source": "rules",
+      "path": "src/App.tsx",
+      "url": "https://github.com/moonbitlang/Hackathon2026/blob/a879c208b261ca500f65707d42504d06572fa9b0/src/App.tsx",
+      "blob_sha": "e27e1d752b573ad88dccf6da681a1492c7dcfe0c",
+      "read_success": true
+    },
+    {
+      "source": "labelkit",
+      "path": "README.md",
+      "url": "https://github.com/Zy789kl/moonlabelkit/blob/107087f53095ad6b341d4dde4b3d737d7fee9061/README.md",
+      "blob_sha": "80f6771ae59ae9543b958399d6f988e9c01ddc44",
+      "read_success": true
+    },
+    {
+      "source": "labelkit",
+      "path": "agreement/cohen_kappa.mbt",
+      "url": "https://github.com/Zy789kl/moonlabelkit/blob/107087f53095ad6b341d4dde4b3d737d7fee9061/agreement/cohen_kappa.mbt",
+      "blob_sha": "873d31f901e5a8bb08154ede248f18a11556ace8",
+      "read_success": true
+    },
+    {
+      "source": "metriclab",
+      "path": "classification/pkg.generated.mbti",
+      "url": "https://github.com/myc1234567/moon_metric_lab/blob/47f7271ebb99702ae8f50a5189a57dadf9ca69ac/classification/pkg.generated.mbti",
+      "blob_sha": "70f6deb93ed2a390cb15a3ff664edf982a600556",
+      "read_success": true
+    },
+    {
+      "source": "metriclab",
+      "path": "workflow/pkg.generated.mbti",
+      "url": "https://github.com/myc1234567/moon_metric_lab/blob/47f7271ebb99702ae8f50a5189a57dadf9ca69ac/workflow/pkg.generated.mbti",
+      "blob_sha": "f5c38568572fd2f94bf584450a7585471324a0f6",
+      "read_success": true
+    },
+    {
+      "source": "deteval",
+      "path": "pkg.generated.mbti",
+      "url": "https://github.com/python123-ops/moondeteval/blob/10682e4806fc12d9b7c97c4670c9f32d799265de/pkg.generated.mbti",
+      "blob_sha": "8bb3b5dced55907cff44c44bcfce202cb2dcbf47",
+      "read_success": true
+    },
+    {
+      "source": "deteval",
+      "path": "evaluation.mbt",
+      "url": "https://github.com/python123-ops/moondeteval/blob/10682e4806fc12d9b7c97c4670c9f32d799265de/evaluation.mbt",
+      "blob_sha": "bcf045e37dbc55ac591415cd0e8f8ac90ea2bf80",
+      "read_success": true
+    },
+    {
+      "source": "edf",
+      "path": "README.md",
+      "url": "https://github.com/peng-jun21/moonbit-edf/blob/3be5fed558ff6acfb11f5916b1c2f64f495f49be/README.md",
+      "blob_sha": "24030db66e818783df893a3b6201611ac2c39519",
+      "read_success": true
+    },
+    {
+      "source": "edf",
+      "path": "pkg.generated.mbti",
+      "url": "https://github.com/peng-jun21/moonbit-edf/blob/3be5fed558ff6acfb11f5916b1c2f64f495f49be/pkg.generated.mbti",
+      "blob_sha": "449a13b60a76593e662eaab4d36d0203aef9afdc",
+      "read_success": true
+    },
+    {
+      "source": "sed_eval",
+      "path": "LICENSE.txt",
+      "url": "https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/LICENSE.txt",
+      "blob_sha": "b117fa63dbe04b8fa4048b49f48dd09dd513173f",
+      "read_success": true
+    },
+    {
+      "source": "sed_eval",
+      "path": "sed_eval/sound_event.py",
+      "url": "https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py",
+      "blob_sha": "a25432cc1b6e288a944a32d47ea1913940ba5a53",
+      "read_success": true
+    },
+    {
+      "source": "sed_eval",
+      "path": "sed_eval/metric.py",
+      "url": "https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/metric.py",
+      "blob_sha": "370da6c8dae37cd8143740ec5be2b26e1397314b",
+      "read_success": true
+    }
+  ],
+  "local_inspection": {
+    "toolchain": "moon 0.1.20260713; moonc v0.10.4+2cc641edf",
+    "file": "~/.moon/lib/core/json/parse.mbt",
+    "ranges": [
+      "29-42",
+      "71-99"
+    ],
+    "finding": "parse接受max_nesting_depth参数；对象成员通过map[name]赋值覆盖先前同名键。只读源码，未运行探针。"
+  }
+}
