@@ -1,0 +1,18 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "--target",
+    "native",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.187,
+  "log": "evidence/T2/20261021T085126396247Z-committed-moon-suite.log",
+  "log_sha256": "2c2b6c4826084967da5c895ad74cfe9c1ac5defe228e65dc0d3e893d5cd6e007",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

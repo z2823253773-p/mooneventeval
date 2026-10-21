@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/T2/independent-review/replay_hall.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.024,
+  "log": "evidence/T2/20261021T085916199577Z-hall-formula-author-replay.log",
+  "log_sha256": "267dd35afa9bea3b810f1f293f87ef84eb317e48f47fed073f1e76baff8658b9",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

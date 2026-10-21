@@ -1,0 +1,484 @@
+{
+  "utc": "2026-10-21T08:51:27.449530+00:00",
+  "platform": "macOS-26.4-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "git_head": "e96d130338ab379968a5cb4624788ba079dadda9",
+  "source_sha256": {
+    "eventeval/eligibility.mbt": "0581f14928d2afb48cc311b2a19a49ea5c0e1ac0ee5c47092d6e8856931706c5",
+    "eventeval/eligibility_wbtest.mbt": "3cb714c12942b0697259b1b17ff07e64b97182e3458f46180e5785fa511bcfec",
+    "eventeval/errors.mbt": "f3bfb31d1a99377796a58d227f2aea9b9c8cea09938e6863c01a0bb06e76714b",
+    "eventeval/matching.mbt": "ace4710b095ee8299bf135122989a7350431c98d68560811b8b103e5842405f8",
+    "eventeval/matching_benchmark_wbtest.mbt": "25b80c68e5afb4bc90cd3a9450c472cb529633ba1784a3491685618b8505a938",
+    "eventeval/matching_oracle_generated_wbtest.mbt": "3516404bbcd1b04a9ca3abbd17637c6848bb8df90d99cae588106bb5c79f4388",
+    "eventeval/matching_wbtest.mbt": "1755aac9c0d5fd12d93acc56b4dfdfd35cf8123a9ea10550fcdc3ab12946abe3",
+    "eventeval/model.mbt": "39ace4d5c9748f029e631479b487be0be301984b2fe9094c40ed6a4a658a1580",
+    "eventeval/time.mbt": "af45b24f98836e6d7602e2d2a313640bef425cd49bbc004684124c40b0c19562",
+    "eventeval/time_wbtest.mbt": "bc937e9f2f6167a39a03108f5862a62608a5aa805aa91c0601403476970ab32c",
+    "moon.mod": "f70f7e35598ce0fb3cf6451c62ac5e4cbac536db407cbec19c9a1a0755e78936",
+    "eventeval/moon.pkg": "7927f976f1f9e1514cf4657bbd29aa345b6e75ea1018b54896d49e2b8be1abc4",
+    "docs/toolchain.lock.json": "37192f9fea3a0b170e0d35a960b1b194646e3ea6a7a57b2b3bb533c87f792236",
+    "scripts/with-toolchain.sh": "c2157b7c8b92ff11e3b1b587308cbea4b9adc6cfdbe49d5f10b95ac033b9c2f6",
+    "validation/check_matching_native.py": "5eff45089bd2f51ff677fa6e99b7139b6bf8876534f80dfaf53b6fbc908347f8"
+  },
+  "artifact": "_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+  "artifact_sha256": "9f75d03b50141ef43e10978615ec6451b73ead7a4a4ae9b8675d536e20a8185d",
+  "build_command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn",
+    "--build-only"
+  ],
+  "build_exit_code": 0,
+  "timing_scope": "fresh native process including graph construction/assertions/protocol; excludes compilation; not isolated matcher time",
+  "graph_audit": {
+    "cases": 753,
+    "run": {
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+        "matching_oracle_generated_wbtest.mbt:0-1"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.006122249877080321,
+      "log": "evidence/T2/native-committed/release-graph-audit.log"
+    }
+  },
+  "benchmarks": [
+    {
+      "name": "matching_benchmark_complete_500",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.004118416924029589,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-0.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": true
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0037200001534074545,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-1.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.003438957966864109,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-2.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0034814998507499695,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-3.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0033054170198738575,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-4.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:0-1"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.003225875087082386,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_500-5.log",
+          "measurement": {
+            "benchmark": "complete-500",
+            "size_each_side": 500,
+            "pairs": 500,
+            "adjacency_checks": 125250,
+            "steps": 126250
+          },
+          "warmup": false
+        }
+      ],
+      "median_seconds": 0.003438957966864109
+    },
+    {
+      "name": "matching_benchmark_complete_1000",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006248375168070197,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-0.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": true
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006633125012740493,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-1.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006608541123569012,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-2.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006686333799734712,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-3.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006490542087703943,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-4.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:1-2"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.006828334182500839,
+          "log": "evidence/T2/native-committed/matching_benchmark_complete_1000-5.log",
+          "measurement": {
+            "benchmark": "complete-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 500500,
+            "steps": 502500
+          },
+          "warmup": false
+        }
+      ],
+      "median_seconds": 0.006633125012740493
+    },
+    {
+      "name": "matching_benchmark_sparse_1000",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0023529580794274807,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-0.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": true
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.002407750114798546,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-1.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.00217404100112617,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-2.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0021295410115271807,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-3.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0020750409457832575,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-4.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:2-3"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0021206249948590994,
+          "log": "evidence/T2/native-committed/matching_benchmark_sparse_1000-5.log",
+          "measurement": {
+            "benchmark": "sparse-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 1000,
+            "steps": 3000
+          },
+          "warmup": false
+        }
+      ],
+      "median_seconds": 0.0021295410115271807
+    },
+    {
+      "name": "matching_benchmark_chain_1000",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.002251375000923872,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-0.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": true
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0023334170691668987,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-1.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0022369578946381807,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-2.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0021867090836167336,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-3.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.002070832997560501,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-4.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": false
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/test/eventeval/eventeval.whitebox_test.exe",
+            "matching_benchmark_wbtest.mbt:3-4"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.0022623748518526554,
+          "log": "evidence/T2/native-committed/matching_benchmark_chain_1000-5.log",
+          "measurement": {
+            "benchmark": "chain-1000",
+            "size_each_side": 1000,
+            "pairs": 1000,
+            "adjacency_checks": 2999,
+            "steps": 6997
+          },
+          "warmup": false
+        }
+      ],
+      "median_seconds": 0.0022369578946381807
+    }
+  ]
+}

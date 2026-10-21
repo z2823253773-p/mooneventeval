@@ -1,0 +1,128 @@
+{
+  "scope": "T2 post-commit source and evidence integrity; not product or reference parity",
+  "tested_sha": "e96d130338ab379968a5cb4624788ba079dadda9",
+  "capture_records": [
+    {
+      "record": "evidence/T2/20261021T084144733906Z-matching-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084145252535Z-oracle-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084224252055Z-matching-first-green.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084324802019Z-matching-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084326498913Z-oracle-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084326620781Z-oracle-generate.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084409106397Z-oracle-final-generate.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084409226900Z-generated-graphs-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084530009507Z-release-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084620763081Z-oracle-audit-generate.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084621010645Z-audit-release-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084728705437Z-direct-native-release.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084826214619Z-mutation-gates.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084926084719Z-final-format.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084926204879Z-final-info.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084926327240Z-final-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T084926440374Z-final-check.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085005758245Z-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085005758255Z-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085005758261Z-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085126396242Z-committed-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085126396247Z-committed-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085126396259Z-committed-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T2/20261021T085127259225Z-committed-native-release.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    }
+  ],
+  "repeated_actual_pairs": 753,
+  "source_hash_check": "all native-committed recorded sources match current bytes"
+}

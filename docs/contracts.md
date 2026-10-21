@@ -102,3 +102,5 @@ JSON对象重名键仍依PRD后值覆盖，是已知限制；在T0/T3加入明�
 输入前置条件：规范排序的参考/预测索引，邻接行严格升序、无重复且索引在预测范围内；T3构图负责保证。root按参考索引升序，每个root进入计1步；先升序扫描该行，找到空闲预测就计1步改写配对并结束此root。没有空闲预测才清空本root访问标记，显式栈从root按邻接升序DFS；root不重复计进入步，每个新进入的占用者参考计1步。每次取出邻接边（含已访问预测）计1步，重复预测跳过；未访问的占用预测引向其参考，空闲预测触发从栈顶向root逆写路径，每条新配对计1步（两个方向数组维护算同一逻辑配对）。失败分支回退继续升序，不可撤销地停在贪心结果是错误。结果pairs按参考索引升序。预算不足时操作不执行，used保持已消费值，observed=used+1；整次只返回RESOURCE_LIMIT，不返回Matching。
 
 这些内部函数尚无T3产品调用，T2可在maximum_matching/Matching/WorkBudget上局部豁免unused_value/unused_field/struct_never_constructed，T3接入后移除；不扩大公开API。
+
+T2验收后固定策略标识：`first-free-iterative-dfs/v1`（开发记录，不增加报告字段）；源码提交e96d130，753图/四类native样例/两项mutation及独立评审通过，见docs/reviews/2026-10-21-t2-results.md。它不承诺全部合法图在预算内完成；输入排序/构图接入仍须T3端到端测试。

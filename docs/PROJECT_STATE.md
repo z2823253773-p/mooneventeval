@@ -1,37 +1,46 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**T0、T1、T1b完成；T2实施和本地验证已通过，待最终独立评审及交接。T1b原版参考self-check与哈希锁重建PASS；完整产品、产品parity/M2/A11尚未完成。**
+更新：2026-10-21（America/Phoenix）。**T0、T1、T1b、T2完成；T2独立评审PASS。完整JSON产品、CLI/demo、产品parity/M2/A11仍未完成。**
 
 ## 当前入口与位置
 
-- [contracts](contracts.md) → [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [T1b实际结果](reviews/2026-10-20-t1b-results.md) / [独立评审](reviews/2026-10-20-t1b-review.md) → [下一T2卡](superpowers/plans/tasks/T2-matching.md)。旧单文件v1计划已作废。
-- Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main保持`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote；先核对真实git状态，不重复T0/T1/T1b。
-- T1b基线`0b6fcf7b7368a7e6793cd815b0b2d29b2926c210`；最后被测候选`221916c56b945805c92119a1fca53a58b9b29c29`（运行代码/锁提交dd99ff4，候选仅增加validation README）。最新文档/证据提交以git log为准。
-- [T1b manifest](../evidence/T1b/manifest.json)含源码/锁hash、命令、退出码、失败及完整输出。安装/排障始于2026-10-21 06:11:27 UTC，三小时硬停止点09:11:27 UTC；本轮在预算内完成。
+- [contracts](contracts.md) → [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [T2实际结果](reviews/2026-10-21-t2-results.md) / [独立评审](reviews/2026-10-21-t2-review.md) → [下一T3卡](superpowers/plans/tasks/T3-evaluation.md)。旧单文件v1计划已作废。
+- Codex主实施者；工作树`/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支`spike/t0-feasibility`。原仓库main仍`8a3075521312c9bf9ad196309422adaa0c67fbd2`，干净且无remote。复用已有局部工具链/参考venv，不重复T0/T1/T1b/T2。
+- T2基线`bb23267ac56f040f17797106a36659bed1613cd8`；代码与被测SHA **`e96d130338ab379968a5cb4624788ba079dadda9`**。后续只提交状态/文档/证据，最新HEAD以git log为准；不把未测运行代码包装成已测。
+- [T2 manifest](../evidence/T2/manifest.json)列文件hash、命令/退出码/日志、独立配对期望与实际输出、每轮耗时、mutation、review原收据。
 
-## 已完成与证据边界
+## 已完成与实证
 
-- T0固定MoonBit工具链/清单/JSON/native短I/O/本地打包已验收；T1精确时间、工厂/Unicode、码点排序、候选资格已验收，MoonBit13/13与原Python工具4/4保持通过。T1历史上未装参考环境，现在T1b已独立完成，不混用两个阶段状态。
-- T1b：局部uv0.11.14/CPython3.11.14、NumPy1.26.4、dcase_util0.2.20、setuptools80.9.0；45个完整依赖版本/hash锁。先锁build后端，再require-hashes/no-build-isolation在全新.venv-reference中真实重建sed_eval与dcase_util，依赖检查通过。
-- 7项原版reference self-check及2项bootstrap安全检查共9/9；首轮/锁重建的45个依赖版本和4组完整结果一致；12个参考.py评测前核验hash。没有参考源码修改、NumPy别名补丁或产品输出充当oracle期望。
-- 原版实际结果：重复预测TP1、A2 optimal TP2；跨类raw Nsubs1且FP/FN0，显式共同口径投影FP/FN1。raw NaN标记保留，投影零分母null。开发参考CLI的实际输出也与API一致。
-- 独立评审未发现Critical/Important，评审者报告复跑9/9并核对来源/版本/完整输出；唯一Minor为候选STATE旧历史语句，本轮按计划最终状态更新消除，不改运行代码。
-- 未完成：匹配、完整JSON任务/报告/产品CLI/demo、独立产品parity/M2/A11、本人复算/讲解、有理数oracle、Linux/远端CI、包外消费与正式发布。参考self-check不是这些交付的替代。
+- T0固定MoonBit0.10.14+7d59c7ec9/清单/JSON/native短I/O/本地打包验收。T1精确时间、工厂/Unicode、码点排序、候选资格13项通过。
+- T1b局部uv0.11.14/CPython3.11.14、NumPy1.26.4、dcase_util0.2.20、setuptools80.9.0；45个依赖hash锁与全新venv重建通过；原版sed_eval12个.py评测前核验。详情保留[T1b结果](reviews/2026-10-20-t1b-results.md)，其自检不是产品parity。
+- T2包内first-free+完整显式栈DFS最大匹配，输出规范索引配对/度数/本次steps/search adjacency_checks；共享20M预算，操作前计步，失败不返回Matching。单边3、陷阱11、limit0..10逐界拒绝、跨组delta和1000层链通过。
+- 部分注入oracle6项自检；两侧各0..3所有689图加seed20261020的64张4..7图，共753。检查最大基数、边合法性、双方唯一、顺序与度数；真实配对native输出落盘，重跑753组一致，fixture生成字节一致。
+- native release直接二进制：完全500/1000为126250/502500步，稀疏1000为3000，长链1000为6997，均完整匹配；每图预热1轮+5轮，进程耗时含构图/断言/启动且排除编译，仅macOS arm64。没有全图/跨平台时间保证。
+- 两个独立副本mutation控制组通过，预测重复使用和跳过增广均编译成功、行为失败。
+- 被测SHA e96d130复验MoonBit25/25、原Python4/4、validation15/15；fmt/info/check/build经锁定wrapper通过，公开mbti无变化。
+- fresh独立评审Critical0/Important0/Minor0；新副本release25/25、直接二进制753图/四bench、Hall公式753图、oracle6/6、生成器字节一致、两mutation均复验；其对原Python4/4与全validation15/15仅核日志/hash。评审收据已复制入仓库。
 
-## 已作决定与适用限制
+## 决定、作废与限制
 
-- T1b历史范围只包含参考环境；当前轮次执行T2。uv缓存、解释器、venv和bootstrap运行缓存局部化；保留缺pkg_resources的真实失败，补其未声明运行依赖setuptools80.9.0。没有NumPy别名失败，故1.23.5备用轮NOT_RUN，不制造失败或强行降级。
-- 原版构造函数拒绝0 collar；适配器保留ValueError、flags明确不支持。产品0 collar仍合法，T3/T6须用有理数oracle并分类这一参考域限制，不能用epsilon或取消A11。
-- raw/class_wise/projected/metric_definition_flags四区已冻结，见contracts。参考时间为Float64，不能代替Int64/有理数边界裁定；raw global substitution与投影必须分开。
-- Python来源为uv选择的python-build-standalone，归档SHA及归档解释器/安装解释器一致；不冒称Python.org二进制认证。uv的PEP610 archive_info为空，来源证据依赖锁强制和源码核验，不伪称PEP610提供hash。
-- 保留上游pkg_resources弃用等告警。T1声明级unused暂时豁免仍需T3消费时移除。T0 core只有历史hash一致，来源缺口未升级为认证。
-- T1b三小时独立任务已获本轮授权并执行；T3先核心后参考的阶段门槛变更仍待相应批准。T2 first-free算法修订已随用户“下一步”获本阶段授权并实施；TSV/CSV/JSON数字时间及删除最终原版对照未批准。
-- 赛事当前资格/换题/截止细则与真实需求仍未确认；没有临床数据访问、外发、推送、报名变更或发布。
+- 用户“下一步”授权T2及first-free修订。固定开发策略标识`first-free-iterative-dfs/v1`；原v1纯DFS被该策略替代，预算不增加，未切HK。
+- T3保证规范图索引、严格升序/去重/范围内邻接及合法共享budget；T2不是公开schema校验。每个root进入一次，失败first-free后DFS不重复计root；逻辑配对两个方向数组维护合计1步。O(E)度数统计不属于搜索步，受事件2000上界约束；Matching.steps是调用delta，总报告取共享used。
+- T1声明级unused、T2 WorkBudget/Matching/maximum_matching局部临时豁免在T3正式消费后移除；不为消警告扩大公开接口。
+- 原版sed_eval拒绝0 collar，适配器保留ValueError并标记域限制；产品0 collar仍合法，T3/T6用有理数oracle分类，不能epsilon或取消A11。raw/projected/substitution区分继续有效。
+- TSV/CSV、数字时间、增加模式未批准；重名/转义等价JSON键后值覆盖仍是已披露限制。T3先核心后demo的门槛修订仍待相应批准，T1b成功不意味着A11通过。
+- 未验证：原事件重排→规范图的端到端稳定性、JSON任务/报告、CLI/demo、八例本人复算讲解、完整产品parity/M2/A11、Linux/远端CI、包外消费/发布。赛事当前资格/换题/截止细则与真实需求仍未确认。没有访问临床数据、外发、合并、推送、报名变更或发布。
 
 ## 下一步与命令
 
-下一实施目标T2最大匹配、小图穷举、提前密集图检查；按任务卡核对并明确算法修订，不在参考适配器里写产品算法。
+下一实施目标：**T3严格输入、全任务评测、稳定JSON报告与开发probe**。读AGENTS/contracts/T3卡，消费T1工厂及T2接口；固定工具链会拒绝tuple/array的旧Show调试用法，测试优先布尔相等或目标版Debug，避免照抄旧inspect示例扩大deprecated豁免。原版参考已可用，须实际跑并分类zero-collar/浮点边界，不拿self-check充parity。
 
-复验：`.venv-reference/bin/python -m unittest discover -s validation/tests -v`（9项）；`scripts/with-toolchain.sh moon test --target native --deny-warn`（13项）；`python3 -W error::ResourceWarning -m unittest discover -s tests`（4项）。
+复验：
 
-新checkout参考重建：`python3 validation/bootstrap_reference.py`。已有venv拒绝覆盖，需要新一套时用`--venv .venv-reference-rebuild`；仅macOS arm64资格已验。不要在agent-reach或全局Python安装。MoonBit局部工具链已在本工作树，无需重装。
+```sh
+scripts/with-toolchain.sh moon test --target native --deny-warn
+python3 -W error::ResourceWarning -m unittest discover -s tests
+.venv-reference/bin/python -W error::ResourceWarning -m unittest discover -s validation/tests -v
+python3 validation/check_matching_native.py --output-dir evidence/T2/recheck
+python3 validation/mutate_matching.py
+```
+
+新checkout参考重建：`python3 validation/bootstrap_reference.py`；已有venv拒绝覆盖，需要另建时用`--venv .venv-reference-rebuild`。仅macOS arm64资格已验，不在全局Python安装。
