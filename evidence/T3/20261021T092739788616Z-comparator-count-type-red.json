@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-p",
+    "test_comparison.py",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.085,
+  "log": "evidence/T3/20261021T092739788616Z-comparator-count-type-red.log",
+  "log_sha256": "ee16979310c32864b15b3d82918d79cf60463d4430da42b5cfad0c0d10886da1",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

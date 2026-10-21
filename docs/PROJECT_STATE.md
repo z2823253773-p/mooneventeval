@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-21（America/Phoenix）。**T0、T1、T1b、T2完成；T2独立评审PASS。完整JSON产品、CLI/demo、产品parity/M2/A11仍未完成。**
+更新：2026-10-21（America/Phoenix）。**T0、T1、T1b、T2完成；T3 JSON核心/开发probe本地验证通过，独立评审待进行。CLI/demo、本人复算/M2及最终A11仍未完成。**
 
 ## 当前入口与位置
 

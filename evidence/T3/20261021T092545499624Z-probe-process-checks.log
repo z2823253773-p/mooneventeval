@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_probe.py", line 72, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_probe.py", line 60, in main
+    assert report['status']=='failed' and report['error']['code']==code,(name,report)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('empty-labels', {'schema_version': 1, 'status': 'failed', 'error': {'kind': 'input', 'code': 'UNKNOWN_LABEL', 'message': 'Undeclared label', 'path': 'recordings[0].reference[0].label', 'limit': None, 'observed': None}})

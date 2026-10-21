@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "validation/mutate_eligibility.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 16.607,
+  "log": "evidence/T3/20261021T092723116668Z-eligibility-mutations.log",
+  "log_sha256": "da7745f385f6a1fbff44ad3ecf1452f8ac3bcfc4fcb26c71565f0e7380460d9f",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

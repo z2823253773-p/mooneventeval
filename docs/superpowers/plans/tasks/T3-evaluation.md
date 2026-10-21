@@ -1,6 +1,6 @@
 # T3-evaluation 任务卡
 
-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：用户“继续”授权执行中；核心/原型实证通过，独立评审与最终交接待完成。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 T3是核心证据门槛；原版参考未完成需单独列出，最终A11不因固定样例自动通过。
 
@@ -24,7 +24,7 @@ test "evaluation_duplicate_counts" {
   let rec = recording("clip-01", [r], [p1, p2]).unwrap()
   let input = task(["alarm"], [rec], default_config()).unwrap()
   let m = evaluate(input).unwrap().metrics()
-  inspect((m.counts.tp, m.counts.fp, m.counts.fn_count), content="(1, 1, 0)")
+  inspect((m.counts.tp, m.counts.fp, m.counts.fn_count) == (1, 1, 0), content="true")
 }
 ```
 - [ ] **3. 实现 schema 与评测。** `decode_task` 先检查实际字节数、严格 UTF-8（允许一个开头 UTF-8 BOM 并在文档注明），再用contracts规定的唯一兼容函数调用`@json.parse(input, max_nesting_depth=16)`，其局部`#warnings("-deprecated")`例外来自T0实证，不扩大到包；然后校验字段。共享 typed 工厂防御性复制，先完成全输入校验才建图；按录制/类别分组并用唯一 budget，degree 支持未配对原因。排序计数/完整明细后生成 PRD 所列机器字段，输出数字只有计数和指标，时间不经 Double。

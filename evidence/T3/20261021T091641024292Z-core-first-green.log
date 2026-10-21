@@ -1,0 +1,63 @@
+Error: [0027]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:29:88 ]
+    │
+ 29 │   let t = decode_task(b"\xEF\xBB\xBF{\"schema_version\":1,\"labels\":[\"wrong\"],\"labe\u006cs\":[\"a\"],\"recordings\":[]}").unwrap()
+    │                                                                                        ───┬──  
+    │                                                                                           ╰──── Error Warning (deprecated_syntax): The syntax `\u..` in string literal for type Bytes is deprecated. Use `\x..` instead.
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:41:78 ]
+    │
+ 41 │   inspect(task(["a"], [recording("x", [e], [e]).unwrap()], default_config()).is_ok(), content="true")
+    │                                                                              ──┬──  
+    │                                                                                ╰──── Error Warning (deprecated): use `x is Ok(_)` instead
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:49:92 ]
+    │
+ 49 │   inspect(decode_task(@utf8.encode(empty + String::make(8_388_608 - empty.length(), ' '))).is_ok(), content="true")
+    │                                                                                            ──┬──  
+    │                                                                                              ╰──── Error Warning (deprecated): use `x is Ok(_)` instead
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:57:46 ]
+    │
+ 57 │   inspect(task(labels, [], default_config()).is_ok(), content="true")
+    │                                              ──┬──  
+    │                                                ╰──── Error Warning (deprecated): use `x is Ok(_)` instead
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:61:47 ]
+    │
+ 61 │   inspect(task(["a"], recs, default_config()).is_ok(), content="true")
+    │                                               ──┬──  
+    │                                                 ╰──── Error Warning (deprecated): use `x is Ok(_)` instead
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:66:48 ]
+    │
+ 66 │   inspect(task(["a"], [rec], default_config()).is_ok(), content="true")
+    │                                                ──┬──  
+    │                                                  ╰──── Error Warning (deprecated): use `x is Ok(_)` instead
+────╯
+Error: [0082]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/validation.mbt:12:34 ]
+    │
+ 12 │   let seen : Map[String, Bool] = {}
+    │                                  ─┬  
+    │                                   ╰── Error Warning (ambiguous_braces): The `{}` is ambiguous among empty map literal, block expression, empty struct literal and empty JSON object. Use `Map([])` for an empty map, `TypeName::{}` for an empty struct literal, `Json::empty_object()` for an empty JSON object, or `{ () }` for an empty block.
+────╯
+Error: [0082]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/validation.mbt:38:34 ]
+    │
+ 38 │   let known : Map[String,Bool] = {}
+    │                                  ─┬  
+    │                                   ╰── Error Warning (ambiguous_braces): The `{}` is ambiguous among empty map literal, block expression, empty struct literal and empty JSON object. Use `Map([])` for an empty map, `TypeName::{}` for an empty struct literal, `Json::empty_object()` for an empty JSON object, or `{ () }` for an empty block.
+────╯
+Error: [0082]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/validation.mbt:44:33 ]
+    │
+ 44 │   let seen : Map[String,Bool] = {}
+    │                                 ─┬  
+    │                                  ╰── Error Warning (ambiguous_braces): The `{}` is ambiguous among empty map literal, block expression, empty struct literal and empty JSON object. Use `Map([])` for an empty map, `TypeName::{}` for an empty struct literal, `Json::empty_object()` for an empty JSON object, or `{ () }` for an empty block.
+────╯

@@ -8,7 +8,7 @@ pub(all) enum FailureKind {
 
 ///|
 /// Stable machine-readable error details. A missing observation stays absent.
-pub struct EvalError {
+pub(all) struct EvalError {
   kind : FailureKind
   code : String
   message : String

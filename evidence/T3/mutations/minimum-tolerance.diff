@@ -1,0 +1,11 @@
+--- baseline/eligibility.mbt
++++ minimum-tolerance/eligibility.mbt
+@@ -22,7 +22,7 @@
+   let fixed_scaled = config.collar_us * 1_000_000L
+   let ratio_scaled = (reference.offset_us - reference.onset_us) *
+     config.offset_ratio_ppm
+-  let offset_limit_scaled = if fixed_scaled > ratio_scaled {
++  let offset_limit_scaled = if fixed_scaled < ratio_scaled {
+     fixed_scaled
+   } else {
+     ratio_scaled

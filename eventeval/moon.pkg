@@ -1,1 +1,4 @@
-// Exact time and collar semantics; no runtime dependencies beyond MoonBit core.
+import {
+  "moonbitlang/core/json",
+  "moonbitlang/core/encoding/utf8",
+}

@@ -1,0 +1,5 @@
+{
+  "domain_error": "ValueError",
+  "message": "t_collar needs to be float > 0",
+  "zero_collar_supported": false
+}

@@ -1,0 +1,413 @@
+Error: [4032]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:3:74 ]
+   │
+ 3 │ fn evaluation_of(reference : Array[Event], prediction : Array[Event]) -> Evaluation {
+   │                                                                          ─────┬────  
+   │                                                                               ╰────── The type Evaluation is undefined.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:4:3 ]
+   │
+ 4 │   evaluate(task(["a"], [recording("x", reference, prediction).unwrap()], default_config()).unwrap()).unwrap()
+   │   ────┬───  
+   │       ╰───── The value identifier evaluate is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:4:12 ]
+   │
+ 4 │   evaluate(task(["a"], [recording("x", reference, prediction).unwrap()], default_config()).unwrap()).unwrap()
+   │            ──┬─  
+   │              ╰─── The value identifier task is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:4:25 ]
+   │
+ 4 │   evaluate(task(["a"], [recording("x", reference, prediction).unwrap()], default_config()).unwrap()).unwrap()
+   │                         ────┬────  
+   │                             ╰────── The value identifier recording is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:36:13 ]
+    │
+ 36 │   let rec = recording("x",refs,preds).unwrap()
+    │             ────┬────  
+    │                 ╰────── The value identifier recording is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:40:15 ]
+    │
+ 40 │   let input = task(labels,recs,default_config()).unwrap()
+    │               ──┬─  
+    │                 ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:42:16 ]
+    │
+ 42 │   let result = evaluate(input).unwrap()
+    │                ────┬───  
+    │                    ╰───── The value identifier evaluate is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:46:19 ]
+    │
+ 46 │   let reordered = task(["a"],[recording("x",[other,r],[event("p1","a","1","2").unwrap(),event("p2","a","1","2").unwrap()]).unwrap()],default_config()).unwrap()
+    │                   ──┬─  
+    │                     ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:46:31 ]
+    │
+ 46 │   let reordered = task(["a"],[recording("x",[other,r],[event("p1","a","1","2").unwrap(),event("p2","a","1","2").unwrap()]).unwrap()],default_config()).unwrap()
+    │                               ────┬────  
+    │                                   ╰────── The value identifier recording is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:47:11 ]
+    │
+ 47 │   inspect(report_json(result).unwrap() == report_json(evaluate(reordered).unwrap()).unwrap(), content="true")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier report_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:47:43 ]
+    │
+ 47 │   inspect(report_json(result).unwrap() == report_json(evaluate(reordered).unwrap()).unwrap(), content="true")
+    │                                           ─────┬─────  
+    │                                                ╰─────── The value identifier report_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:47:55 ]
+    │
+ 47 │   inspect(report_json(result).unwrap() == report_json(evaluate(reordered).unwrap()).unwrap(), content="true")
+    │                                                       ────┬───  
+    │                                                           ╰───── The value identifier evaluate is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:53:11 ]
+    │
+ 53 │   let t = task(["unused","b","a"],[recording("y",[],[a]).unwrap(),recording("x",[a],[b]).unwrap()],default_config()).unwrap()
+    │           ──┬─  
+    │             ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:53:36 ]
+    │
+ 53 │   let t = task(["unused","b","a"],[recording("y",[],[a]).unwrap(),recording("x",[a],[b]).unwrap()],default_config()).unwrap()
+    │                                    ────┬────  
+    │                                        ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:53:36 ]
+    │
+ 53 │   let t = task(["unused","b","a"],[recording("y",[],[a]).unwrap(),recording("x",[a],[b]).unwrap()],default_config()).unwrap()
+    │                                    ────┬────  
+    │                                        ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[_/0], Array[Event]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:53:67 ]
+    │
+ 53 │   let t = task(["unused","b","a"],[recording("y",[],[a]).unwrap(),recording("x",[a],[b]).unwrap()],default_config()).unwrap()
+    │                                                                   ────┬────  
+    │                                                                       ╰────── The value identifier recording is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:54:11 ]
+    │
+ 54 │   let e = evaluate(t).unwrap()
+    │           ────┬───  
+    │               ╰───── The value identifier evaluate is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:56:14 ]
+    │
+ 56 │   let json = report_json(e).unwrap()
+    │              ─────┬─────  
+    │                   ╰─────── The value identifier report_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:62:11 ]
+    │
+ 62 │   let e = evaluate(task(["a"],[recording("x",[event("r","a","10","10.000003").unwrap()],[event("p","a","10","10.000004").unwrap()]).unwrap()],config("0","0.5").unwrap()).unwrap()).unwrap()
+    │           ────┬───  
+    │               ╰───── The value identifier evaluate is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:62:20 ]
+    │
+ 62 │   let e = evaluate(task(["a"],[recording("x",[event("r","a","10","10.000003").unwrap()],[event("p","a","10","10.000004").unwrap()]).unwrap()],config("0","0.5").unwrap()).unwrap()).unwrap()
+    │                    ──┬─  
+    │                      ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:62:32 ]
+    │
+ 62 │   let e = evaluate(task(["a"],[recording("x",[event("r","a","10","10.000003").unwrap()],[event("p","a","10","10.000004").unwrap()]).unwrap()],config("0","0.5").unwrap()).unwrap()).unwrap()
+    │                                ────┬────  
+    │                                    ╰────── The value identifier recording is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:63:14 ]
+    │
+ 63 │   let json = report_json(e).unwrap()
+    │              ─────┬─────  
+    │                   ╰─────── The value identifier report_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:68:11 ]
+    │
+ 68 │   inspect(error_json(error), content="{\"schema_version\":1,\"status\":\"failed\",\"error\":{\"kind\":\"input\",\"code\":\"INVALID_SCHEMA\",\"message\":\"bad\",\"path\":\"$\",\"limit\":null,\"observed\":null}}")
+    │           ─────┬────  
+    │                ╰────── The value identifier error_json is unbound.
+────╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:4:9 ]
+   │
+ 4 │   match decode_task(@utf8.encode(text)) {
+   │         ─────┬─────  
+   │              ╰─────── The value identifier decode_task is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:14:11 ]
+    │
+ 14 │   let t = decode_task(b"{\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[]}").unwrap()
+    │           ─────┬─────  
+    │                ╰─────── The value identifier decode_task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:15:16 ]
+    │
+ 15 │   let report = report_json(evaluate(t).unwrap()).unwrap()
+    │                ─────┬─────  
+    │                     ╰─────── The value identifier report_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:15:28 ]
+    │
+ 15 │   let report = report_json(evaluate(t).unwrap()).unwrap()
+    │                            ────┬───  
+    │                                ╰───── The value identifier evaluate is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:26:9 ]
+    │
+ 26 │   match decode_task(b"\xFF") { Ok(_) => fail("bad UTF8 accepted"); Err(e) => inspect(e.code, content="INVALID_UTF8") }
+    │         ─────┬─────  
+    │              ╰─────── The value identifier decode_task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:29:11 ]
+    │
+ 29 │   let t = decode_task(b"\xEF\xBB\xBF{\"schema_version\":1,\"labels\":[\"wrong\"],\"labe\u006cs\":[\"a\"],\"recordings\":[]}").unwrap()
+    │           ─────┬─────  
+    │                ╰─────── The value identifier decode_task is unbound.
+────╯
+Warning: [0027]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:29:88 ]
+    │
+ 29 │   let t = decode_task(b"\xEF\xBB\xBF{\"schema_version\":1,\"labels\":[\"wrong\"],\"labe\u006cs\":[\"a\"],\"recordings\":[]}").unwrap()
+    │                                                                                        ───┬──  
+    │                                                                                           ╰──── Warning (deprecated_syntax): The syntax `\u..` in string literal for type Bytes is deprecated. Use `\x..` instead.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:41:11 ]
+    │
+ 41 │   inspect(task(["a"], [recording("x", [e], [e]).unwrap()], default_config()).is_ok(), content="true")
+    │           ──┬─  
+    │             ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:41:24 ]
+    │
+ 41 │   inspect(task(["a"], [recording("x", [e], [e]).unwrap()], default_config()).is_ok(), content="true")
+    │                        ────┬────  
+    │                            ╰────── The value identifier recording is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:42:9 ]
+    │
+ 42 │   match recording("x", [e,e], []) { Ok(_) => fail("duplicate event accepted"); Err(e) => inspect(e.code, content="DUPLICATE_ID") }
+    │         ────┬────  
+    │             ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:42:9 ]
+    │
+ 42 │   match recording("x", [e,e], []) { Ok(_) => fail("duplicate event accepted"); Err(e) => inspect(e.code, content="DUPLICATE_ID") }
+    │         ────┬────  
+    │             ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Event], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:43:13 ]
+    │
+ 43 │   let rec = recording("x", [e], []).unwrap()
+    │             ────┬────  
+    │                 ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:43:13 ]
+    │
+ 43 │   let rec = recording("x", [e], []).unwrap()
+    │             ────┬────  
+    │                 ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Event], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:44:9 ]
+    │
+ 44 │   match task(["a"], [rec,rec], default_config()) { Ok(_) => fail("duplicate recording accepted"); Err(e) => inspect(e.code, content="DUPLICATE_ID") }
+    │         ──┬─  
+    │           ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:49:11 ]
+    │
+ 49 │   inspect(decode_task(@utf8.encode(empty + String::make(8_388_608 - empty.length(), ' '))).is_ok(), content="true")
+    │           ─────┬─────  
+    │                ╰─────── The value identifier decode_task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:50:9 ]
+    │
+ 50 │   match decode_task(@utf8.encode(empty + String::make(8_388_609 - empty.length(), ' '))) {
+    │         ─────┬─────  
+    │              ╰─────── The value identifier decode_task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:57:11 ]
+    │
+ 57 │   inspect(task(labels, [], default_config()).is_ok(), content="true")
+    │           ──┬─  
+    │             ╰─── The value identifier task is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:57:11 ]
+    │
+ 57 │   inspect(task(labels, [], default_config()).is_ok(), content="true")
+    │           ──┬─  
+    │             ╰─── Warning (unresolved_type_variable): The type of this expression is (Array[String], Array[_/0], Config) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:59:9 ]
+    │
+ 59 │   match task(labels, [], default_config()) { Ok(_) => fail("label limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │         ──┬─  
+    │           ╰─── The value identifier task is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:59:9 ]
+    │
+ 59 │   match task(labels, [], default_config()) { Ok(_) => fail("label limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │         ──┬─  
+    │           ╰─── Warning (unresolved_type_variable): The type of this expression is (Array[String], Array[_/0], Config) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:60:38 ]
+    │
+ 60 │   let recs = Array::makei(1000, i => recording("r\{i}", [], []).unwrap())
+    │                                      ────┬────  
+    │                                          ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:60:38 ]
+    │
+ 60 │   let recs = Array::makei(1000, i => recording("r\{i}", [], []).unwrap())
+    │                                      ────┬────  
+    │                                          ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Unit], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:60:38 ]
+    │
+ 60 │   let recs = Array::makei(1000, i => recording("r\{i}", [], []).unwrap())
+    │                                      ────┬────  
+    │                                          ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[_/0], Array[_/1]) -> _/2, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:61:11 ]
+    │
+ 61 │   inspect(task(["a"], recs, default_config()).is_ok(), content="true")
+    │           ──┬─  
+    │             ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:62:13 ]
+    │
+ 62 │   recs.push(recording("extra", [], []).unwrap())
+    │             ────┬────  
+    │                 ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:62:13 ]
+    │
+ 62 │   recs.push(recording("extra", [], []).unwrap())
+    │             ────┬────  
+    │                 ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Unit], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:62:13 ]
+    │
+ 62 │   recs.push(recording("extra", [], []).unwrap())
+    │             ────┬────  
+    │                 ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[_/0], Array[_/1]) -> _/2, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:63:9 ]
+    │
+ 63 │   match task(["a"], recs, default_config()) { Ok(_) => fail("recording limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │         ──┬─  
+    │           ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:65:13 ]
+    │
+ 65 │   let rec = recording("x", events, []).unwrap()
+    │             ────┬────  
+    │                 ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:65:13 ]
+    │
+ 65 │   let rec = recording("x", events, []).unwrap()
+    │             ────┬────  
+    │                 ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Event], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:66:11 ]
+    │
+ 66 │   inspect(task(["a"], [rec], default_config()).is_ok(), content="true")
+    │           ──┬─  
+    │             ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:67:9 ]
+    │
+ 67 │   match task(["a"], [rec, recording("y", [events[0]], []).unwrap()], default_config()) { Ok(_) => fail("total event limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │         ──┬─  
+    │           ╰─── The value identifier task is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:67:27 ]
+    │
+ 67 │   match task(["a"], [rec, recording("y", [events[0]], []).unwrap()], default_config()) { Ok(_) => fail("total event limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │                           ────┬────  
+    │                               ╰────── The value identifier recording is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/input_wbtest.mbt:67:27 ]
+    │
+ 67 │   match task(["a"], [rec, recording("y", [events[0]], []).unwrap()], default_config()) { Ok(_) => fail("total event limit accepted"); Err(e) => inspect(exit_code(e) == 3, content="true") }
+    │                           ────┬────  
+    │                               ╰────── Warning (unresolved_type_variable): The type of this expression is (String, Array[Event], Array[_/0]) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Warning: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/moon.pkg:2:3 ]
+   │
+ 2 │   "moonbitlang/core/json",
+   │   ───────────┬───────────  
+   │              ╰───────────── Warning (unused_package): Unused package 'moonbitlang/core/json'
+───╯
+Warning: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/moon.pkg:3:3 ]
+   │
+ 3 │   "moonbitlang/core/encoding/utf8",
+   │   ────────────────┬───────────────  
+   │                   ╰───────────────── Warning (unused_package): Unused package 'moonbitlang/core/encoding/utf8'
+───╯

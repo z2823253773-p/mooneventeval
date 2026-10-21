@@ -1,0 +1,20 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "prototype",
+    "--product",
+    "_build/native/release/build/cmd/probe/probe.exe",
+    "--output",
+    "evidence/T3/parity"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.661,
+  "log": "evidence/T3/20261021T092300801360Z-prototype-parity.log",
+  "log_sha256": "c7b00bd8eb901b30f2a40476c1fdabf4c5d06f2d1e0d85fe9d7acb60e65e9064",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

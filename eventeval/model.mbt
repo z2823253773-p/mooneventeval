@@ -1,7 +1,5 @@
 ///|
 /// An event can only be constructed by the validated factory outside this package.
-// Temporary until T3 report/group consumers read id; keep the factory opaque.
-#warnings("-unused_field")
 pub struct Event {
   priv id : String
   priv label : String
@@ -18,8 +16,6 @@ pub struct Config {
 
 ///|
 /// Signed prediction-minus-reference deltas are retained for later explanation.
-// T1 returns this internal basis; T2/T3/T4 will consume its fields in production.
-#warnings("-unused_field")
 priv struct PairBasis {
   label_match : Bool
   onset_pass : Bool
@@ -118,4 +114,79 @@ pub fn config(
 ///|
 pub fn default_config() -> Config {
   { collar_us: 200_000L, offset_ratio_ppm: 500_000L, }
+}
+
+///|
+pub struct Recording {
+  priv id : String
+  priv reference : Array[Event]
+  priv prediction : Array[Event]
+}
+
+///|
+pub struct Task {
+  priv labels : Array[String]
+  priv recordings : Array[Recording]
+  priv config : Config
+}
+
+///|
+pub struct Counts {
+  reference : Int
+  prediction : Int
+  tp : Int
+  fp : Int
+  fn_count : Int
+}
+
+///|
+pub struct Metrics {
+  counts : Counts
+  precision : Double?
+  recall : Double?
+  f1 : Double?
+}
+
+///|
+priv struct SelectedPair {
+  recording_id : String
+  label : String
+  reference : Event
+  prediction : Event
+  basis : PairBasis
+}
+
+///|
+priv struct UnmatchedEvent {
+  recording_id : String
+  event : Event
+  candidate_count : Int
+}
+
+///|
+pub struct Evaluation {
+  priv config : Config
+  priv summary : Metrics
+  priv by_label : Array[(String, Metrics)]
+  priv by_recording : Array[(String, Metrics)]
+  priv matches : Array[SelectedPair]
+  priv false_positives : Array[UnmatchedEvent]
+  priv false_negatives : Array[UnmatchedEvent]
+  priv candidate_checks : Int
+  priv eligible_edges : Int
+  priv matching_steps : Int64
+}
+
+///|
+pub fn Evaluation::metrics(self : Evaluation) -> Metrics {
+  self.summary
+}
+
+///|
+pub fn Evaluation::pairs(
+  self : Evaluation,
+) -> Array[(String, String, String, String)] {
+  self.matches.map(p => {
+    (p.recording_id, p.label, p.reference.id, p.prediction.id)
+  })
 }

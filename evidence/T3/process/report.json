@@ -1,0 +1,456 @@
+{
+  "product": "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/probe/probe.exe",
+  "product_sha256": "8ffff8575f0281852de033d74c014e57011d0dce42dc8ab961244d7dfee9c9ae",
+  "git_head": "9c78a20aaa34514e218afd7ce26cae1e0ce03046",
+  "command_scope": "real argv probe only, not native file I/O",
+  "cases": [
+    {
+      "name": "no-argument",
+      "arguments": [],
+      "exit_code": 2,
+      "error_code": "INVALID_ARGUMENT"
+    },
+    {
+      "name": "too-many-arguments",
+      "arguments": [
+        "{}",
+        "{}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_ARGUMENT"
+    },
+    {
+      "name": "syntax",
+      "arguments": [
+        "{"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_JSON"
+    },
+    {
+      "name": "invalid-escape",
+      "arguments": [
+        "\"\\uD800\""
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_JSON"
+    },
+    {
+      "name": "depth",
+      "arguments": [
+        "[[[[[[[[[[[[[[[[[0]]]]]]]]]]]]]]]]]"
+      ],
+      "exit_code": 3,
+      "error_code": "RESOURCE_LIMIT"
+    },
+    {
+      "name": "missing-schema_version",
+      "arguments": [
+        "{\"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "missing-labels",
+      "arguments": [
+        "{\"schema_version\": 1, \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "missing-recordings",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "unknown-root",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"unexpected\": true}"
+      ],
+      "exit_code": 2,
+      "error_code": "UNKNOWN_FIELD"
+    },
+    {
+      "name": "unknown-config",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"unexpected\": true}}"
+      ],
+      "exit_code": 2,
+      "error_code": "UNKNOWN_FIELD"
+    },
+    {
+      "name": "unknown-recording",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": [], \"unexpected\": true}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "UNKNOWN_FIELD"
+    },
+    {
+      "name": "unknown-event",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\", \"unexpected\": true}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "UNKNOWN_FIELD"
+    },
+    {
+      "name": "type-onset_s-int",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": 1, \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-onset_s-bool",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": true, \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-onset_s-NoneType",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": null, \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-onset_s-list",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": [], \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-onset_s-dict",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": {}, \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_s-int",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": 1}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_s-bool",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": true}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_s-NoneType",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": null}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_s-list",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": []}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_s-dict",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": {}}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-collar_s-int",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"collar_s\": 1}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-collar_s-bool",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"collar_s\": true}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-collar_s-NoneType",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"collar_s\": null}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-collar_s-list",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"collar_s\": []}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-collar_s-dict",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"collar_s\": {}}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_ratio-int",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"offset_ratio\": 1}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_ratio-bool",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"offset_ratio\": true}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_ratio-NoneType",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"offset_ratio\": null}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_ratio-list",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"offset_ratio\": []}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "type-offset_ratio-dict",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {\"offset_ratio\": {}}}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_TYPE"
+    },
+    {
+      "name": "decimal-32",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1e0\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-33",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"+1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-34",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"-1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-35",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \" 1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-36",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"01\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-37",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1.\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-38",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1.0000001\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-39",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"NaN\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "decimal-40",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"１\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_DECIMAL"
+    },
+    {
+      "name": "event-missing-id",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "event-missing-label",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "event-missing-onset_s",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "event-missing-offset_s",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "MISSING_FIELD"
+    },
+    {
+      "name": "duplicate-reference",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}, {\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "DUPLICATE_ID"
+    },
+    {
+      "name": "duplicate-prediction",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}, {\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}]}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "DUPLICATE_ID"
+    },
+    {
+      "name": "duplicate-recording",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}, {\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "DUPLICATE_ID"
+    },
+    {
+      "name": "duplicate-label",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\", \"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "DUPLICATE_ID"
+    },
+    {
+      "name": "empty-labels",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "INVALID_SCHEMA"
+    },
+    {
+      "name": "unknown-label",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"b\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "UNKNOWN_LABEL"
+    },
+    {
+      "name": "zero-duration",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"1\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 2,
+      "error_code": "OUT_OF_RANGE"
+    },
+    {
+      "name": "bom",
+      "arguments": [
+        "﻿{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}]}"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "name": "duplicate-key-last-wins",
+      "arguments": [
+        "{\"schema_version\":2,\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[]}"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "name": "escaped-duplicate-key-last-wins",
+      "arguments": [
+        "{\"schema_version\":2,\"schema_versio\\u006e\":1,\"labels\":[\"a\"],\"recordings\":[]}"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    },
+    {
+      "name": "explicit-defaults",
+      "arguments": [
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [{\"id\": \"x\", \"reference\": [{\"id\": \"r\", \"label\": \"a\", \"onset_s\": \"1\", \"offset_s\": \"2\"}], \"prediction\": []}], \"config\": {}}"
+      ],
+      "exit_code": 0,
+      "error_code": null
+    }
+  ],
+  "passed": true
+}

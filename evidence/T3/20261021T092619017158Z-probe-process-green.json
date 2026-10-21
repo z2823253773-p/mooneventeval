@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_probe.py",
+    "--product",
+    "_build/native/release/build/cmd/probe/probe.exe",
+    "--output",
+    "evidence/T3/process"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.649,
+  "log": "evidence/T3/20261021T092619017158Z-probe-process-green.log",
+  "log_sha256": "42279f373e81e4d658c38315c7673c798e62eca5fb8b03212d360755acf6f037",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

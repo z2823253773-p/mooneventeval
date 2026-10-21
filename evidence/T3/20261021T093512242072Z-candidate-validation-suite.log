@@ -1,0 +1,32 @@
+test_refuses_overwriting_existing_environment (test_bootstrap.BootstrapSafety.test_refuses_overwriting_existing_environment) ... ok
+test_rejects_external_destination (test_bootstrap.BootstrapSafety.test_rejects_external_destination) ... ok
+test_counts_must_remain_integer_not_boolean_or_float (test_comparison.ComparatorTests.test_counts_must_remain_integer_not_boolean_or_float) ... ok
+test_hand_checked_empty_report (test_comparison.ComparatorTests.test_hand_checked_empty_report) ... ok
+test_missing_rows_or_partial_report_is_detected (test_comparison.ComparatorTests.test_missing_rows_or_partial_report_is_detected) ... ok
+test_reference_projection_mismatch_is_detected (test_comparison.ComparatorTests.test_reference_projection_mismatch_is_detected) ... ok
+test_undefined_metric_cannot_be_zero (test_comparison.ComparatorTests.test_undefined_metric_cannot_be_zero) ... ok
+test_wrong_count_is_detected (test_comparison.ComparatorTests.test_wrong_count_is_detected) ... ok
+test_complete_rectangles (test_oracles.GraphOracleTests.test_complete_rectangles) ... ok
+test_duplicate_predictions_are_one_to_one (test_oracles.GraphOracleTests.test_duplicate_predictions_are_one_to_one) ... ok
+test_empty_and_isolated (test_oracles.GraphOracleTests.test_empty_and_isolated) ... ok
+test_hall_deficiency_despite_nonempty_rows (test_oracles.GraphOracleTests.test_hall_deficiency_despite_nonempty_rows) ... ok
+test_longer_reassignment (test_oracles.GraphOracleTests.test_longer_reassignment) ... ok
+test_trap_needs_reassignment (test_oracles.GraphOracleTests.test_trap_needs_reassignment) ... ok
+test_fractional_microsecond_and_collar_dominance (test_rational.RationalOracleTests.test_fractional_microsecond_and_collar_dominance) ... ok
+test_labels_and_zero_ratio_do_not_disable_conditions (test_rational.RationalOracleTests.test_labels_and_zero_ratio_do_not_disable_conditions) ... ok
+test_offset_reference_duration_and_equality (test_rational.RationalOracleTests.test_offset_reference_duration_and_equality) ... ok
+test_onset_equality_and_microsecond_outside (test_rational.RationalOracleTests.test_onset_equality_and_microsecond_outside) ... ok
+test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching) ... /Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/lib/python3.11/site-packages/dcase_util/utils/utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+ok
+test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn) ... ok
+test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts) ... ok
+test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero) ... ok
+test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives) ... ok
+test_source_verification_rejects_modified_reference (test_reference.ReferenceSelfCheck.test_source_verification_rejects_modified_reference) ... ok
+test_zero_collar_is_explicit_upstream_domain_limit (test_reference.ReferenceSelfCheck.test_zero_collar_is_explicit_upstream_domain_limit) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.214s
+
+OK

@@ -68,3 +68,28 @@ and test protocol; compilation is excluded. They are macOS arm64 observations,
 not isolated matcher-call timings or a cross-platform performance guarantee.
 Mutation copies are disposable directories under ignored `.tools/`; controls
 must pass and mutant assertions must fail. Compiler failures do not count.
+
+## T3 exact and prototype checks
+
+`rational_oracle.py` converts Decimal input strings to Fraction and works in
+seconds, separately from product microsecond/ppm arithmetic. `compare.py` checks
+full report partitions/bases/degrees/metrics against independent time and graph
+oracles, then compares the original reference's explicit projection, per-label
+raw counts and independently rerun per-recording projections. Raw results are
+retained. Whole reports must remain byte-identical after reordering; renaming
+event IDs may change selected identities but must preserve summary counts.
+
+```sh
+.venv-reference/bin/python -W error::ResourceWarning -m unittest discover -s validation/tests -v
+.venv-reference/bin/python validation/compare.py --phase prototype --product _build/native/release/build/cmd/probe/probe.exe --output evidence/T3/parity
+python3 validation/check_probe.py --product _build/native/release/build/cmd/probe/probe.exe --output evidence/T3/process
+python3 validation/mutate_eligibility.py
+```
+
+Prototype cases are fixed synthetic and seeded binary grids, not the later
+non-boundary random corpus. Zero collar preserves the original reference error
+and uses exact-oracle checks; it is not reference parity. A declared decimal
+boundary difference is classified only when exact product checks pass, specific
+binary64 candidate flips exist, and original reference TP equals an independently
+built binary64 graph oracle. Unexplained differences block success. There is no
+epsilon or sample deletion. Product runtime never imports these Python tools.

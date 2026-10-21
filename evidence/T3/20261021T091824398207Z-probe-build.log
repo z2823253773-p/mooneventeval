@@ -1,0 +1,44 @@
+Error: [4036]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:7:40 ]
+   │
+ 7 │ ╭─▶     let error : @eventeval.EvalError = {
+   ┆ ┆   
+ 9 │ ├─▶     }
+   │ │           
+   │ ╰─────────── Cannot create values of the read-only type: @local/mooneventeval/eventeval.EvalError.
+───╯
+Error: [4033]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:7:40 ]
+   │
+ 7 │ ╭─▶     let error : @eventeval.EvalError = {
+   ┆ ┆   
+ 9 │ ├─▶     }
+   │ │           
+   │ ╰─────────── There is no record definition with the fields: kind, code, message, path, limit, observed.
+───╯
+Error: [0013]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:8:113 ]
+   │
+ 8 │       kind: @eventeval.Input, code: "INVALID_ARGUMENT", message: "Expected one small JSON task argument", path: None, limit: None, observed: None,
+   │                                                                                                                 ──┬─  
+   │                                                                                                                   ╰─── Error Warning (unresolved_type_variable): The type of this expression is _/0?, which contains unresolved type variables. The type variable is default to Unit.
+───╯
+Error: [0013]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:8:126 ]
+   │
+ 8 │       kind: @eventeval.Input, code: "INVALID_ARGUMENT", message: "Expected one small JSON task argument", path: None, limit: None, observed: None,
+   │                                                                                                                              ──┬─  
+   │                                                                                                                                ╰─── Error Warning (unresolved_type_variable): The type of this expression is _/0?, which contains unresolved type variables. The type variable is default to Unit.
+───╯
+Error: [0013]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:8:142 ]
+   │
+ 8 │       kind: @eventeval.Input, code: "INVALID_ARGUMENT", message: "Expected one small JSON task argument", path: None, limit: None, observed: None,
+   │                                                                                                                                              ──┬─  
+   │                                                                                                                                                ╰─── Error Warning (unresolved_type_variable): The type of this expression is _/0?, which contains unresolved type variables. The type variable is default to Unit.
+───╯
+Failed with 0 warnings, 5 errors.
+Error: failed to run build for target Native
+
+Caused by:
+    failed when building project

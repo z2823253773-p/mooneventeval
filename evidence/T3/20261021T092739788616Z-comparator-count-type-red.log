@@ -1,0 +1,20 @@
+test_counts_must_remain_integer_not_boolean_or_float (test_comparison.ComparatorTests.test_counts_must_remain_integer_not_boolean_or_float) ... FAIL
+test_hand_checked_empty_report (test_comparison.ComparatorTests.test_hand_checked_empty_report) ... ok
+test_missing_rows_or_partial_report_is_detected (test_comparison.ComparatorTests.test_missing_rows_or_partial_report_is_detected) ... ok
+test_reference_projection_mismatch_is_detected (test_comparison.ComparatorTests.test_reference_projection_mismatch_is_detected) ... ok
+test_undefined_metric_cannot_be_zero (test_comparison.ComparatorTests.test_undefined_metric_cannot_be_zero) ... ok
+test_wrong_count_is_detected (test_comparison.ComparatorTests.test_wrong_count_is_detected) ... ok
+
+======================================================================
+FAIL: test_counts_must_remain_integer_not_boolean_or_float (test_comparison.ComparatorTests.test_counts_must_remain_integer_not_boolean_or_float)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_comparison.py", line 39, in test_counts_must_remain_integer_not_boolean_or_float
+    self.assertTrue(compare_document(DOC,bad,REF))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "alarm"
+  ],
+  "recordings": [
+    {
+      "id": "clip-01",
+      "reference": [
+        {
+          "id": "r",
+          "label": "alarm",
+          "onset_s": "10",
+          "offset_s": "12"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p",
+          "label": "alarm",
+          "onset_s": "10",
+          "offset_s": "13.000001"
+        }
+      ]
+    }
+  ]
+}

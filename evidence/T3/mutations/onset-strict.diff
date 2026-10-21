@@ -1,0 +1,11 @@
+--- baseline/eligibility.mbt
++++ onset-strict/eligibility.mbt
+@@ -28,7 +28,7 @@
+     ratio_scaled
+   }
+   let label_match = reference.label == prediction.label
+-  let onset_pass = onset_abs <= config.collar_us
++  let onset_pass = onset_abs < config.collar_us
+   let offset_pass = offset_abs * 1_000_000L <= offset_limit_scaled
+   {
+     label_match,

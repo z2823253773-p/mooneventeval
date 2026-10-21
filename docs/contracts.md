@@ -104,3 +104,9 @@ JSON对象重名键仍依PRD后值覆盖，是已知限制；在T0/T3加入明�
 这些内部函数尚无T3产品调用，T2可在maximum_matching/Matching/WorkBudget上局部豁免unused_value/unused_field/struct_never_constructed，T3接入后移除；不扩大公开API。
 
 T2验收后固定策略标识：`first-free-iterative-dfs/v1`（开发记录，不增加报告字段）；源码提交e96d130，753图/四类native样例/两项mutation及独立评审通过，见docs/reviews/2026-10-21-t2-results.md。它不承诺全部合法图在预算内完成；输入排序/构图接入仍须T3端到端测试。
+
+### T3接入约定（执行中）
+
+用户“继续”授权当前T3；原版环境成功，本轮实际运行参考，不触发未批准的超时后demo门槛。`error_json(error: EvalError) -> String`作为唯一公开失败序列化函数供开发probe/后续CLI用；`evaluate_json`仍返回Result[String,EvalError]。JSON前允许一个UTF-8 BOM；schema_version比较JSON数值1（1.0/1e0同值可接受），时间数值仍拒绝。对象字段按schema声明顺序校验，未知键按Unicode码点排序决定首个错误；typed工厂也验证并复制数组，先完成输入校验才构图。八例推导由agent编写，不冒充用户本人复算，个人讲解验收仍需实际证据。
+
+T3真实包外probe暴露EvalError原pub struct不可构造；改为pub(all)，保持字段不可变，适配层可创建参数/文件错误。Event/Config/Recording/Task/Evaluation仍封装。

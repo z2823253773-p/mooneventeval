@@ -1,0 +1,19 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.264,
+  "log": "evidence/T3/20261021T092047805272Z-oracle-comparator-green.log",
+  "log_sha256": "a4ce145cc5842451ea31f6b32fc464fb19179f0bc3322ce43c61d77208a6e0ff",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,14 +1,10 @@
 ///|
-// Temporary until T3 constructs the task-wide budget.
-#warnings("-struct_never_constructed")
 priv struct WorkBudget {
   mut used : Int64
   limit : Int64
 }
 
 ///|
-// Temporary until T3 evaluation consumes all fields in production.
-#warnings("-unused_field")
 priv struct Matching {
   pairs : Array[(Int, Int)]
   reference_degree : Array[Int]
@@ -37,8 +33,6 @@ fn consume_step(budget : WorkBudget) -> Result[Unit, EvalError] {
 ///|
 // Input rows are strictly ascending, unique and in range (T3 graph builder).
 // No recursion: DFS frames retain the next edge and the path's incoming prediction.
-// Temporary until T3 evaluation calls this internal API.
-#warnings("-unused_value")
 fn maximum_matching(
   adjacency : Array[Array[Int]],
   prediction_count : Int,

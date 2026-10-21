@@ -1,0 +1,82 @@
+[
+  {
+    "name": "onset-strict",
+    "test": "eligibility_A3_onset_boundary",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "eligibility_A3_onset_boundary"
+    ],
+    "control_exit_code": 0,
+    "mutated_exit_code": 2,
+    "killed_by_behavior": true,
+    "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "mutated_sha256": "f24e1baa9541053966c084a574dd1fc869d972de03a835e5e44857876f5fbf2a"
+  },
+  {
+    "name": "offset-strict",
+    "test": "eligibility_A4_offset_boundary_and_reference_duration",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "eligibility_A4_offset_boundary_and_reference_duration"
+    ],
+    "control_exit_code": 0,
+    "mutated_exit_code": 2,
+    "killed_by_behavior": true,
+    "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "mutated_sha256": "1d2451347ba6ac673e1c1ff7690a12ed605ef3624f01e5d390d0daf4874a5258"
+  },
+  {
+    "name": "minimum-tolerance",
+    "test": "eligibility_collar_dominates_without_overlap",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "eligibility_collar_dominates_without_overlap"
+    ],
+    "control_exit_code": 0,
+    "mutated_exit_code": 2,
+    "killed_by_behavior": true,
+    "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "mutated_sha256": "cafacd2ba946cbefbbfbff8eae8aade922642e840b4c68117cbfe85fd00dd954"
+  },
+  {
+    "name": "prediction-duration",
+    "test": "eligibility_A4_offset_boundary_and_reference_duration",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "eligibility_A4_offset_boundary_and_reference_duration"
+    ],
+    "control_exit_code": 0,
+    "mutated_exit_code": 2,
+    "killed_by_behavior": true,
+    "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "mutated_sha256": "f34750f579464f19f3b936cabd346e688517975a0f8c34199b1e2683426cbe83"
+  }
+]

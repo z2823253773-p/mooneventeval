@@ -2,7 +2,6 @@
 /// Candidate timing is independent of matching and recording grouping. The
 /// caller must group by recording; labels and all timing flags remain available
 /// even when a pair is ineligible, so explanation shares exactly this basis.
-#warnings("-unused_value")
 fn eligibility(
   reference : Event,
   prediction : Event,

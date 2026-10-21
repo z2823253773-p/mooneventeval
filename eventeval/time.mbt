@@ -92,7 +92,6 @@ fn parse_ratio_ppm(text : String, path : String) -> Result[Int64, EvalError] {
 
 ///|
 /// Compare Unicode scalar values, rather than native String's representation.
-#warnings("-unused_value")
 fn compare_codepoints(a : String, b : String) -> Int {
   let left = a.iter()
   let right = b.iter()
