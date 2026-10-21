@@ -29,6 +29,10 @@
 - 退出码 0=完整评测/解释完成；2=输入、配置、参数或文件错误；3=资源限额导致未完成；4=内部非预期错误。失败不得含分数或部分配对；JSON 失败向 stdout 写结构化错误。
 - 输出语义标识 `collar-max-cardinality/v1`，时间为规范十进制秒字符串；有效终点容差可至十二位小数。完成报告不含日期、运行耗时或本机路径。
 - sed_eval 固定提交 `0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb`；保留原始 substitution/global FP/FN，共同口径投影必须显式命名；不宣称原始全局输出完全一致。
+- T1b参考环境已实跑：macOS arm64、uv0.11.14、CPython3.11.14；45个依赖版本/哈希在`validation/reference.lock`，构建后端先按`reference-build.lock`装入，后续sync用`--require-hashes --no-build-isolation`，不隐式使用未锁构建依赖。原版12个.py的哈希按`reference-sources.json`在每次评测导入前核验。
+- 开发接口`validation.sed_reference.evaluate_document(document)`只消费已验证的合成PRD文档，不代替产品schema校验；秒字符串显式转参考Float64，optimal参数固定为原版实现。结果四区为`raw:{counts,metrics}`（原始overall/overall metrics）、`class_wise:{label:{counts,metrics}}`、`projected:{counts:{reference,prediction,tp,fp,fn},precision,recall,f1}`、`metric_definition_flags`。projected TP来自原版class_wise TP之和，FP/FN重新按共同口径推导，不覆盖raw substitution/FP/FN。
+- 参考非有限浮点保留为`{"nonfinite":"NaN"}`、`+Infinity`或`-Infinity`对应标记，原始0仍为0；projected零分母为null。flags包含raw/projected的precision/recall/f1是否有定义、binary64时间、original_sed_eval_optimal和`zero_collar_supported=false`。
+- 实证参考域限制：原版构造函数拒绝collar=0，适配器保留ValueError，不用epsilon或改原版；产品0 collar仍有效，由有理数oracle验证。T3/T6必须将这一限制显式分类，不能记作一致/产品错误，也不能据此取消A11。T1b自检不等于产品parity或M2完成。
 - 只使用合成或许可已确认的公开数据；不访问临床数据。保留原 MoonReconcile。新增 UI、格式、评分模式不在本计划内。
 - 不创建远端、不发咨询、不修改表单、不推送、不正式发布；这些需用户另行明确授权。历史赛事规则不当作当前已确认条款，不为提交次数机械拆分提交。
 

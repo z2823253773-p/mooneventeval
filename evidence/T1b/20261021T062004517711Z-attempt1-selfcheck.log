@@ -1,0 +1,166 @@
+test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching) ... ERROR
+test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn) ... ERROR
+test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts) ... ERROR
+test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero) ... ERROR
+test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives) ... ERROR
+test_source_verification_rejects_modified_reference (test_reference.ReferenceSelfCheck.test_source_verification_rejects_modified_reference) ... ok
+
+======================================================================
+ERROR: test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 37, in test_A2_uses_original_optimal_matching
+    result = self.evaluate(task([
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 27, in evaluate
+    return self.reference.evaluate_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 46, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 25, in _reference_module
+    import sed_eval
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/__init__.py", line 5, in <module>
+    from . import sound_event
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/sound_event.py", line 233, in <module>
+    import dcase_util
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/__init__.py", line 6, in <module>
+    from . import containers
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/__init__.py", line 952, in <module>
+    from .mixins import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/mixins.py", line 12, in <module>
+    from dcase_util.utils import setup_logging, FileFormat, Path, get_file_hash, is_jupyter
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/__init__.py", line 206, in <module>
+    from .utils import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py", line 12, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'
+
+======================================================================
+ERROR: test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 44, in test_cross_label_substitution_is_not_projected_fp_fn
+    result = self.evaluate(task([event('r','A','1','2')], [event('p','B','1','2')], ['A','B']))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 27, in evaluate
+    return self.reference.evaluate_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 46, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 25, in _reference_module
+    import sed_eval
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/__init__.py", line 5, in <module>
+    from . import sound_event
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/sound_event.py", line 233, in <module>
+    import dcase_util
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/__init__.py", line 6, in <module>
+    from . import containers
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/__init__.py", line 952, in <module>
+    from .mixins import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/mixins.py", line 12, in <module>
+    from dcase_util.utils import setup_logging, FileFormat, Path, get_file_hash, is_jupyter
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/__init__.py", line 206, in <module>
+    from .utils import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py", line 12, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'
+
+======================================================================
+ERROR: test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 30, in test_duplicate_prediction_preserves_raw_counts
+    result = self.evaluate(task([event('r','a','10','12')], [
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 27, in evaluate
+    return self.reference.evaluate_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 46, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 25, in _reference_module
+    import sed_eval
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/__init__.py", line 5, in <module>
+    from . import sound_event
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/sound_event.py", line 233, in <module>
+    import dcase_util
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/__init__.py", line 6, in <module>
+    from . import containers
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/__init__.py", line 952, in <module>
+    from .mixins import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/mixins.py", line 12, in <module>
+    from dcase_util.utils import setup_logging, FileFormat, Path, get_file_hash, is_jupyter
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/__init__.py", line 206, in <module>
+    from .utils import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py", line 12, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'
+
+======================================================================
+ERROR: test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 52, in test_empty_denominators_are_explicit_not_zero
+    result = self.evaluate(task([],[]))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 27, in evaluate
+    return self.reference.evaluate_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 46, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 25, in _reference_module
+    import sed_eval
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/__init__.py", line 5, in <module>
+    from . import sound_event
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/sound_event.py", line 233, in <module>
+    import dcase_util
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/__init__.py", line 6, in <module>
+    from . import containers
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/__init__.py", line 952, in <module>
+    from .mixins import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/mixins.py", line 12, in <module>
+    from dcase_util.utils import setup_logging, FileFormat, Path, get_file_hash, is_jupyter
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/__init__.py", line 206, in <module>
+    from .utils import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py", line 12, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'
+
+======================================================================
+ERROR: test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 63, in test_empty_reference_recording_contributes_false_positives
+    result = self.evaluate(document)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 27, in evaluate
+    return self.reference.evaluate_document(document)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 46, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 25, in _reference_module
+    import sed_eval
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/__init__.py", line 5, in <module>
+    from . import sound_event
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/sed_eval/sound_event.py", line 233, in <module>
+    import dcase_util
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/__init__.py", line 6, in <module>
+    from . import containers
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/__init__.py", line 952, in <module>
+    from .mixins import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/mixins.py", line 12, in <module>
+    from dcase_util.utils import setup_logging, FileFormat, Path, get_file_hash, is_jupyter
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/__init__.py", line 206, in <module>
+    from .utils import *
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py", line 12, in <module>
+    import pkg_resources
+ModuleNotFoundError: No module named 'pkg_resources'
+
+----------------------------------------------------------------------
+Ran 6 tests in 7.847s
+
+FAILED (errors=5)

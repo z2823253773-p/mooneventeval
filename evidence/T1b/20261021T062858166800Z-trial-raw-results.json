@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".venv-reference-attempt1/bin/python",
+    "evidence/T1b/capture_results.py",
+    "evidence/T1b/trial-results.json"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.241,
+  "log": "evidence/T1b/20261021T062858166800Z-trial-raw-results.log",
+  "log_sha256": "7caa414f2106b10ab7f4764a622ecf1b53179df0356de901c2a8831dfebf44bc",
+  "scope": "T1b",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

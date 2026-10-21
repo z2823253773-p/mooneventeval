@@ -1,0 +1,7 @@
+Using Python 3.11.14 environment at: .venv-reference-attempt1
+Resolved 1 package in 1.05s
+Downloading setuptools (1.1MiB)
+ Downloaded setuptools
+Prepared 1 package in 1.62s
+Installed 1 package in 12ms
+ + setuptools==80.9.0

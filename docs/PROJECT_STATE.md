@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**T0与T1完成；T1独立评审发现的Unicode工厂缺口已修复并主验收PASS。完整评测器和CLI尚未实现。**
+更新：2026-10-20（America/Phoenix）。**T0/T1完成；用户已授权T1b，参考环境及锁重建技术检查通过，独立评审中。完整评测器/CLI与产品parity尚未完成。**
 
 ## 入口与工作位置
 
@@ -26,7 +26,7 @@
 
 ## 下一步与命令
 
-下一实施目标T1b参考环境，尚未开始；按任务卡单独记录依赖安装、固定版本/哈希、self-check与失败，不改写T1为原版对照。T2算法调整尚未实施。
+T1b已实跑7项reference self-check和2项bootstrap检查；45个依赖和4组原始完整输出在首轮/锁重建间一致，证据evidence/T1b/manifest.json，独立评审中。按任务卡单独记录依赖安装、固定版本/哈希、self-check与失败，不改写T1为原版对照。T2算法调整尚未实施。
 
 本地复验：`scripts/with-toolchain.sh moon test --target native --deny-warn`（当前13项）；`python3 -W error::ResourceWarning -m unittest discover -s tests`（4项）；`scripts/with-toolchain.sh moon fmt --check`；`python3 scripts/check_design_docs.py`。
 

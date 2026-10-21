@@ -1,0 +1,4 @@
+error: Couldn't parse requirement in `validation/reference-requirements.in` at position 78
+  Caused by: Expected direct URL (`https://codeload.github.com/TUT-ARG/sed_eval/tar.gz/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb`) to end in a supported file extension: `.whl`, `.tar.gz`, `.zip`, `.tar.bz2`, `.tar.lz`, `.tar.lzma`, `.tar.xz`, `.tar.zst`, `.tar`, `.tbz`, `.tgz`, `.tlz`, or `.txz`
+sed-eval @ https://codeload.github.com/TUT-ARG/sed_eval/tar.gz/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

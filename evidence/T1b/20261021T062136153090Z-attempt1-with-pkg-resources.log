@@ -1,0 +1,17 @@
+test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching) ... /Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/utils/utils.py:12: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/containers/parameters.py:591: DeprecationWarning: invalid escape sequence '\*'
+  """Process methods and recipes in the section
+/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference-attempt1/lib/python3.11/site-packages/dcase_util/tools/bibtex.py:370: DeprecationWarning: invalid escape sequence '\%'
+  [u'\%', u'%'],
+ok
+test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn) ... ok
+test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts) ... ok
+test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero) ... ok
+test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives) ... ok
+test_source_verification_rejects_modified_reference (test_reference.ReferenceSelfCheck.test_source_verification_rejects_modified_reference) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 3.141s
+
+OK

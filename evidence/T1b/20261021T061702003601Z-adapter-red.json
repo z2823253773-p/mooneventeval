@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-p",
+    "test_reference.py",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.074,
+  "log": "evidence/T1b/20261021T061702003601Z-adapter-red.log",
+  "log_sha256": "40d75d00a3a60a6cf24395eaf1b81bf2d3182dd5f7ae25f9f577a4774dcc90a0",
+  "scope": "T1b",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

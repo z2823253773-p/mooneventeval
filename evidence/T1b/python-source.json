@@ -1,0 +1,1 @@
+[{"key":"cpython-3.11.14-macos-aarch64-none","version":"3.11.14","version_parts":{"major":3,"minor":11,"patch":14},"path":".tools/python/cpython-3.11.14-macos-aarch64-none/bin/python3.11","symlink":null,"url":null,"os":"macos","variant":"default","implementation":"cpython","arch":"aarch64","libc":"none"}]

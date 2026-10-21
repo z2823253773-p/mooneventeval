@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "validation/bootstrap_reference.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 37.361,
+  "log": "evidence/T1b/20261021T062523189324Z-locked-rebuild.log",
+  "log_sha256": "76446cdc23d40570216d37b69d80b0c6f68e5a1dbe549cb127cd8736c237e6db",
+  "scope": "T1b",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

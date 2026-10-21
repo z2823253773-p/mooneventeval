@@ -1,0 +1,5 @@
+Downloading cpython-3.11.14-macos-aarch64-none (download) (19.1MiB)
+ Downloaded cpython-3.11.14-macos-aarch64-none (download)
+Installed Python 3.11.14 in 9.86s
+ + cpython-3.11.14-macos-aarch64-none (python3.11)
+warning: `/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python-bin` is not on your PATH. To use installed Python executables, run `export PATH="/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python-bin:$PATH"` or `uv python update-shell`.

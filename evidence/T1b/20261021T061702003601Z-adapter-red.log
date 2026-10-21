@@ -1,0 +1,78 @@
+test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching) ... FAIL
+test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn) ... FAIL
+test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts) ... FAIL
+test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero) ... FAIL
+test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives) ... FAIL
+test_source_verification_rejects_modified_reference (test_reference.ReferenceSelfCheck.test_source_verification_rejects_modified_reference) ... FAIL
+
+======================================================================
+FAIL: test_A2_uses_original_optimal_matching (test_reference.ReferenceSelfCheck.test_A2_uses_original_optimal_matching)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 37, in test_A2_uses_original_optimal_matching
+    result = self.evaluate(task([
+        event('r1','a','10','11'),event('r2','a','10.3','11.3')], [
+        event('p1','a','10.15','11.15'),event('p2','a','9.85','10.85')]))
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 26, in evaluate
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+======================================================================
+FAIL: test_cross_label_substitution_is_not_projected_fp_fn (test_reference.ReferenceSelfCheck.test_cross_label_substitution_is_not_projected_fp_fn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 44, in test_cross_label_substitution_is_not_projected_fp_fn
+    result = self.evaluate(task([event('r','A','1','2')], [event('p','B','1','2')], ['A','B']))
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 26, in evaluate
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+======================================================================
+FAIL: test_duplicate_prediction_preserves_raw_counts (test_reference.ReferenceSelfCheck.test_duplicate_prediction_preserves_raw_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 30, in test_duplicate_prediction_preserves_raw_counts
+    result = self.evaluate(task([event('r','a','10','12')], [
+        event('p1','a','10','12'),event('p2','a','10.05','12.05')]))
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 26, in evaluate
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+======================================================================
+FAIL: test_empty_denominators_are_explicit_not_zero (test_reference.ReferenceSelfCheck.test_empty_denominators_are_explicit_not_zero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 52, in test_empty_denominators_are_explicit_not_zero
+    result = self.evaluate(task([],[]))
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 26, in evaluate
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+======================================================================
+FAIL: test_empty_reference_recording_contributes_false_positives (test_reference.ReferenceSelfCheck.test_empty_reference_recording_contributes_false_positives)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 63, in test_empty_reference_recording_contributes_false_positives
+    result = self.evaluate(document)
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 26, in evaluate
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+======================================================================
+FAIL: test_source_verification_rejects_modified_reference (test_reference.ReferenceSelfCheck.test_source_verification_rejects_modified_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 68, in test_source_verification_rejects_modified_reference
+    self.assertIsNotNone(self.reference, 'reference adapter not implemented')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : reference adapter not implemented
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=6)
