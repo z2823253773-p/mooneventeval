@@ -1,0 +1,5 @@
+# Development reference only; exact upstream commit, no editable/VCS install.
+sed-eval @ https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz#sha256=3a56d4d2a8eecfebbaf8ad170f7cec9f049b07d83b2cf2cfcd1af338bd3521eb
+# dcase_util imports pkg_resources without declaring a runtime provider.
+# Added after actual first-run ModuleNotFoundError; never patch upstream source.
+setuptools==80.9.0

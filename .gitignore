@@ -3,3 +3,4 @@
 .tools/
 _build/
 __pycache__/
+.venv-reference*/

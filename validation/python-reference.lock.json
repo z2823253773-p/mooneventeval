@@ -1,0 +1,10 @@
+{
+  "python_version": "3.11.14",
+  "uv_version": "0.11.14",
+  "platform": "darwin-arm64",
+  "python_directory": "cpython-3.11.14-macos-aarch64-none",
+  "archive_url": "https://releases.astral.sh/github/python-build-standalone/releases/download/20260211/cpython-3.11.14%2B20260211-aarch64-apple-darwin-install_only_stripped.tar.gz",
+  "archive_sha256": "d5f10f6fdc6f4afb5d251578edb89d8c0ece8f9f56e38b0019e2a94e8f0f4852",
+  "executable_sha256": "e6eedfbc57422e986a0e3b24b18ee45764b809ff1385d3af42e9c22b5bd00de5",
+  "provenance": "uv-selected python-build-standalone archive, not Python.org binary; archive executable matches installed executable"
+}

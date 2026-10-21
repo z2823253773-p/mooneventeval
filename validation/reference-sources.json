@@ -1,0 +1,25 @@
+{
+  "commit": "0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb",
+  "archive_url": "https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz",
+  "archive_sha256": "3a56d4d2a8eecfebbaf8ad170f7cec9f049b07d83b2cf2cfcd1af338bd3521eb",
+  "source_sha256": {
+    "__init__.py": "df2c25fe15f75d53bc81a63bf832bb435f9a5ee8c67174dca82e2ecdc5b5429a",
+    "audio_tag.py": "2dfc1ba8134cd21a87581c8a3aa4520e0b42bbb2739a4dc2a4f3e6e86e4f476a",
+    "io.py": "78d662b34e86060fc3663988a08ff1ae12286118a8acce5c7687664fecdb2867",
+    "metric.py": "85e54d227233cbea47fd21c4f14605601c5133d60f4679b9c6321788da66fbe5",
+    "scene.py": "0d5cf54f079f13e24e7716b81e49966f05126ea3bca14ed3b9a497635563f191",
+    "sound_event.py": "8aee3f3b8e2c63d3d3e20a6d620859b7fd2068ee1d41d7c1a1ecfaeebcd8e46d",
+    "test.py": "e12de246ebe0ece4bc1976bdee368a3d2ee26635068463c2ed5721b3d9c8875d",
+    "util/__init__.py": "7636159a6335031d7db8e157e43fc6a1f9fb79bdf3cabad7c475b4ea5f7441a0",
+    "util/event_list.py": "5f4863d5d4350a20ed9ee11ee1e4ea8632a0298cc0361c324e9f695eb4700d8a",
+    "util/event_matching.py": "e4481c6adc27f1e1c63759f660708d3b3cb5282accacd2b7c8e451626dc79608",
+    "util/event_roll.py": "20af497274fa3c5a1fa368ddc27e77c67e2252475683967de26575c4e359016b",
+    "util/scene_list.py": "a68609afb574867dc0c5c410ef7cbc36b28284bbe2ace97e0e5e3439a3533105"
+  },
+  "license_sha256": "7bff78707f4aa1305cbee3320734776388512a474dca11fbe382383028d4edfe",
+  "known_git_blobs": {
+    "setup.py": "5efa4320e9b92bfdf64071145d8a5b502654f294",
+    "requirements.txt": "8155fdb36963a65e260c6204bb7520fc05e6a772",
+    "sed_eval/sound_event.py": "a25432cc1b6e288a944a32d47ea1913940ba5a53"
+  }
+}
