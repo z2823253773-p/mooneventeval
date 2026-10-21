@@ -1,8 +1,10 @@
 # MoonEventEval
 
 MoonBit event-time evaluation library under development. T1 provides validated
-event/config factories and an internal exact collar-eligibility core. Matching,
-JSON task evaluation, reports and the CLI are not implemented yet.
+event/config factories and an internal exact collar-eligibility core. T2 adds
+budgeted deterministic maximum-cardinality matching, checked against an independent
+partial-injection oracle. JSON task evaluation, reports and the CLI are not
+implemented yet.
 
 Times are ASCII decimal **strings**, with at most six fractional digits. Core
 comparisons use Int64 microseconds and integer ppm; no floating-point time
@@ -29,7 +31,7 @@ return `Result[Event, EvalError]` and `Result[Config, EvalError]`; Event and
 Config fields are private. This local module name is not a registry release.
 
 See [current state](docs/PROJECT_STATE.md), [contracts](docs/contracts.md) and
-[T1 task](docs/superpowers/plans/tasks/T1-time.md) for boundaries and evidence.
+[T2 task](docs/superpowers/plans/tasks/T2-matching.md) for boundaries and evidence.
 The modules under `spikes/T0/` are separate throwaway experiments, including
 deliberately invalid code. They are not product examples.
 

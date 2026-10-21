@@ -1,0 +1,44 @@
+[
+  {
+    "mutation": "prediction-reuse",
+    "test": "matching_one_to_one_duplicate_and_isolated",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "matching_one_to_one_duplicate_and_isolated"
+    ],
+    "control_exit": 0,
+    "mutated_exit": 2,
+    "killed_by_behavior": true,
+    "diff": "prediction-reuse.diff",
+    "baseline_sha256": "ace4710b095ee8299bf135122989a7350431c98d68560811b8b103e5842405f8",
+    "mutated_sha256": "9dfb8120a333761a6370375f2489ec35ac561a2fe4679f641e1083e6fdc5266c"
+  },
+  {
+    "mutation": "greedy-only",
+    "test": "matching_augmenting_trap",
+    "command": [
+      "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn",
+      "--filter",
+      "matching_augmenting_trap"
+    ],
+    "control_exit": 0,
+    "mutated_exit": 2,
+    "killed_by_behavior": true,
+    "diff": "greedy-only.diff",
+    "baseline_sha256": "ace4710b095ee8299bf135122989a7350431c98d68560811b8b103e5842405f8",
+    "mutated_sha256": "3343663cb5631e0de965dd8433b789ed4dfa895da733d0a8b261eb2fa12eac0e"
+  }
+]

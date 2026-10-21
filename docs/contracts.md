@@ -1,6 +1,6 @@
 # MoonEventEval 共享契约
 
-版本：评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。当前无产品消费者。已批准PRD的数学/资源/数据边界继续有效；下面明确标注的算法和阶段顺序修订仍待相应批准。
+版本：评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。当前无产品消费者。已批准PRD的数学/资源/数据边界继续有效；T2 first-free修订已随用户“下一步”获得本阶段执行授权；仍明确标注的阶段顺序修订待相应批准。
 
 入口：docs/PROJECT_STATE.md。JSON字符串时间仍是唯一获批文件输入；TSV/CSV不在本轮已批准实施范围。
 
@@ -13,7 +13,7 @@
 - 严格字节解码使用`@utf8.decode`，不可用lossy版本；目标core直接拒绝孤立代理转义，合法代理对通过。重名及转义等价JSON键均后值覆盖，仍是显式已知限制。
 - Native借用声明`#borrow(path, buffer)`/`#borrow(buffer)`及`options("native-stub": ["io_stub.c"])`通过。C stub只同步使用借用指针、不持有/释放它们；用`int32_t`封装有限`ssize_t`返回，不能直接把libc read/write的ssize_t当MoonBit Int。T0只证明短合成文件，完整I/O硬化仍在T5/T6。
 - `moon package --list --frozen`与`moon package`均实跑，产物在模块`_build/publish/<module>-<version>.zip`；本地打包不等于包外消费或发布。
-- **待批准算法修订：**保留最大基数及同版本确定性，建议在升序DFS前加入first-free搜索；T2立即验证500/1000完全图和穷举。算法身份与遍历策略在T2验收后记录；切换HK须记录决定及重验，不能悄悄替换所选配对。
+- **T2本阶段实施策略：**保留最大基数及同版本确定性，在升序DFS前加入first-free搜索；用户“下一步”授权执行当前T2卡。T2立即验证500/1000完全图和穷举；切换HK须另记决定及重验，不能悄悄替换所选配对。
 - **阶段状态：**T1b三小时独立排障任务已获本轮授权并完成；**仍待批准**的是T3核心证据满足后先进入demo的门槛调整。A11原版参考仍是最终完整验收项，T1b自检不能将其记为通过。
 
 ## 继承的业务约束与标出的待批准调整
@@ -22,9 +22,9 @@
 - 每个事件满足 `0 <= onset < offset <= 2592000` 秒；`collar_s` 范围 0–2592000 秒，默认 `"0.2"`；`offset_ratio` 范围 0–1，默认 `"0.5"`。
 - JSON `schema_version=1`；未知字段、缺失/错误类型、未知类别、重复录制 ID、同录制同侧重复事件 ID 为整任务错误；对象重名键后值覆盖；不去重事件。
 - 输入 8 MiB，JSON 容器嵌套深度 16；录制/类别 1000/256；两侧合计 2000 事件；每个 ID/类别 256 个 Unicode 码点；匹配工作量 20000000 步；序列化报告 16 MiB，全部含等号。
-- 每次邻接边检查、搜索顶点进入及增广配对改写各算一步，操作前扣预算；跨组累计。公开接口不增加预算配置字段。
+- 每次搜索邻接边检查、搜索顶点进入及增广配对改写各算一步，操作前扣预算；跨组累计。邻接表已由调用方构建；一次O(E)度数统计不属于搜索步，受2000事件的图规模上界约束。单边图为进入root、检查边、配对改写共3步。公开接口不增加预算配置字段。
 - 同录制同类别配对，起点 `abs(delta)<=collar`，终点 `abs(delta)*1000000<=max(collar*1000000, reference_duration*ratio_ppm)`；边界含等号，不增加区间相交要求。
-- 最大基数一对一匹配，不优化时间误差；Unicode码点排序、显式栈、输入重排结果稳定，改ID不应改TP/FP/FN。v2建议的first-free再DFS次序为本轮待批准调整；原v1固定DFS记录只作历史，不在同一实现中混用。
+- 最大基数一对一匹配，不优化时间误差；Unicode码点排序、显式栈、输入重排结果稳定，改ID不应改TP/FP/FN。T2采用first-free再DFS次序；原v1纯DFS记录只作历史，不在同一实现中混用。
 - `TP=配对数`、`FP=预测数−TP`、`FN=参考数−TP`；全局先累计再微平均；P/R/F1 各自零分母为 null，F1 直接从计数计算。
 - 退出码 0=完整评测/解释完成；2=输入、配置、参数或文件错误；3=资源限额导致未完成；4=内部非预期错误。失败不得含分数或部分配对；JSON 失败向 stdout 写结构化错误。
 - 输出语义标识 `collar-max-cardinality/v1`，时间为规范十进制秒字符串；有效终点容差可至十二位小数。完成报告不含日期、运行耗时或本机路径。
@@ -75,7 +75,7 @@
 - T1实证补充：两个delta始终是有符号`prediction-reference`，通过与否才比较绝对值；录制相同由调用方分组保证，eligibility只负责类别/时间，不把事件ID当配对条件。
 - T1工厂：Event/Config字段均`priv`；ID/label先按UTF-16 code units验证代理配对，非法Unicode报INVALID_UNICODE，不能只依赖JSON入口（目标core的安全substring可拆开代理对）。空ID/label报INVALID_SCHEMA，时间/比例语法报INVALID_DECIMAL，时间/比例范围及onset>=offset报OUT_OF_RANGE；码点超限报RESOURCE_LIMIT，observed记录首先观察到的257。字段path为工厂参数名，T3再加任务索引前缀。
 - T1阶段局部例外：Event/PairBasis声明仅屏蔽unused_field，eligibility/compare_codepoints仅屏蔽unused_value，因为正式消费者尚在T3/T4；类型及函数保持包内/封装，不为清警告扩展公开API。T3接入正式消费者时移除这些临时注解；其余检查继续deny-warn。这不扩大T0的deprecated兼容豁免。
-- `WorkBudget`（包内）：共享可变 `used/limit: Int64`；仅白盒测试可设小 limit。`Matching`（包内）：`pairs: Array[(Int,Int)]`、`reference_degree/prediction_degree: Array[Int]`、`steps: Int64`，索引对应规范排序后的顶点。
+- `WorkBudget`（包内）：共享可变 `used/limit: Int64`；仅白盒测试可设小 limit。`Matching`（包内）：`pairs: Array[(Int,Int)]`、`reference_degree/prediction_degree: Array[Int]`、`steps: Int64`、`adjacency_checks: Int64`，索引对应规范排序后的顶点。后者仅为本次搜索邻接检查数，不混作T3候选资格检查数。
 - Matching.steps只记录本次调用消耗（退出used减进入used）；全任务work.matching_steps直接取最终共享budget.used，不再次累加各次累计值。
 - `Evaluation`、`PairExplanation` 为封装结果；`Evaluation::metrics() -> Metrics`，`Evaluation::pairs() -> Array[(String,String,String,String)]` 返回副本，四元组为录制/类别/参考ID/预测ID。完整数据通过报告函数访问。
 
@@ -96,3 +96,9 @@ T3/T4实现如下形状，不能由不同任务各自命名：顶层 `schema_ver
 结构检查只证明文件结构；T0证明目标工具兼容性；T3证明核心行为；T6证明限定独立对照。命令、退出码、被测SHA、失败样例各自落盘，不能互相替代。
 
 JSON对象重名键仍依PRD后值覆盖，是已知限制；在T0/T3加入明确用例和文档警示。若改为拒绝，先设计能识别转义等价键的词法检查，另行修改契约，不引入天真的split预扫描。
+
+### T2确定性遍历细则（2026-10-21）
+
+输入前置条件：规范排序的参考/预测索引，邻接行严格升序、无重复且索引在预测范围内；T3构图负责保证。root按参考索引升序，每个root进入计1步；先升序扫描该行，找到空闲预测就计1步改写配对并结束此root。没有空闲预测才清空本root访问标记，显式栈从root按邻接升序DFS；root不重复计进入步，每个新进入的占用者参考计1步。每次取出邻接边（含已访问预测）计1步，重复预测跳过；未访问的占用预测引向其参考，空闲预测触发从栈顶向root逆写路径，每条新配对计1步（两个方向数组维护算同一逻辑配对）。失败分支回退继续升序，不可撤销地停在贪心结果是错误。结果pairs按参考索引升序。预算不足时操作不执行，used保持已消费值，observed=used+1；整次只返回RESOURCE_LIMIT，不返回Matching。
+
+这些内部函数尚无T3产品调用，T2可在maximum_matching/Matching/WorkBudget上局部豁免unused_value/unused_field/struct_never_constructed，T3接入后移除；不扩大公开API。

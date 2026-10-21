@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "validation/check_matching_native.py",
+    "--output-dir",
+    "evidence/T2/native"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 1.525,
+  "log": "evidence/T2/20261021T084728705437Z-direct-native-release.log",
+  "log_sha256": "0085023ce40a88b580f2c337787a600d1248838aec8ce33daeeab72a199cbbf1",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

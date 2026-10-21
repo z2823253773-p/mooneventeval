@@ -1,0 +1,161 @@
+Error: [4032]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:8:6 ]
+   │
+ 8 │ ) -> Matching raise {
+   │      ────┬───  
+   │          ╰───── The type Matching is undefined.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:9:16 ]
+   │
+ 9 │   let result = maximum_matching(
+   │                ────────┬───────  
+   │                        ╰───────── The value identifier maximum_matching is unbound.
+───╯
+Error: [4033]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:12:5 ]
+    │
+ 12 │     { used: 0L, limit: 20_000_000L },
+    │     ────────────────┬───────────────  
+    │                     ╰───────────────── There is no record definition with the fields: used, limit.
+────╯
+Error: [4032]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:70:16 ]
+    │
+ 70 │   let budget : WorkBudget = { used: 0L, limit: 3L }
+    │                ─────┬────  
+    │                     ╰────── The type WorkBudget is undefined.
+────╯
+Error: [4033]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:70:29 ]
+    │
+ 70 │   let budget : WorkBudget = { used: 0L, limit: 3L }
+    │                             ───────────┬───────────  
+    │                                        ╰───────────── There is no record definition with the fields: used, limit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:71:16 ]
+    │
+ 71 │   let result = maximum_matching([[0]], 1, budget).unwrap()
+    │                ────────┬───────  
+    │                        ╰───────── The value identifier maximum_matching is unbound.
+────╯
+Error: [4032]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:75:15 ]
+    │
+ 75 │   let short : WorkBudget = { used: 0L, limit: 2L }
+    │               ─────┬────  
+    │                    ╰────── The type WorkBudget is undefined.
+────╯
+Error: [4033]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:75:28 ]
+    │
+ 75 │   let short : WorkBudget = { used: 0L, limit: 2L }
+    │                            ───────────┬───────────  
+    │                                       ╰───────────── There is no record definition with the fields: used, limit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:76:9 ]
+    │
+ 76 │   match maximum_matching([[0]], 1, short) {
+    │         ────────┬───────  
+    │                 ╰───────── The value identifier maximum_matching is unbound.
+────╯
+Error: [4032]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:90:16 ]
+    │
+ 90 │   let budget : WorkBudget = { used: 0L, limit: 6L }
+    │                ─────┬────  
+    │                     ╰────── The type WorkBudget is undefined.
+────╯
+Error: [4033]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:90:29 ]
+    │
+ 90 │   let budget : WorkBudget = { used: 0L, limit: 6L }
+    │                             ───────────┬───────────  
+    │                                        ╰───────────── There is no record definition with the fields: used, limit.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:91:11 ]
+    │
+ 91 │   inspect(maximum_matching([[0]], 1, budget).unwrap().steps == 3L, content="true")
+    │           ────────┬───────  
+    │                   ╰───────── The value identifier maximum_matching is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:92:11 ]
+    │
+ 92 │   inspect(maximum_matching([[0]], 1, budget).unwrap().steps == 3L, content="true")
+    │           ────────┬───────  
+    │                   ╰───────── The value identifier maximum_matching is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:94:9 ]
+    │
+ 94 │   match maximum_matching([[]], 0, budget) {
+    │         ────────┬───────  
+    │                 ╰───────── The value identifier maximum_matching is unbound.
+────╯
+Warning: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:94:9 ]
+    │
+ 94 │   match maximum_matching([[]], 0, budget) {
+    │         ────────┬───────  
+    │                 ╰───────── Warning (unresolved_type_variable): The type of this expression is (Array[Array[_/0]], Int, Unit) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4021]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:101:11 ]
+     │
+ 101 │   inspect(maximum_matching([], 0, budget).unwrap().steps == 0L, content="true")
+     │           ────────┬───────  
+     │                   ╰───────── The value identifier maximum_matching is unbound.
+─────╯
+Warning: [0013]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:101:11 ]
+     │
+ 101 │   inspect(maximum_matching([], 0, budget).unwrap().steps == 0L, content="true")
+     │           ────────┬───────  
+     │                   ╰───────── Warning (unresolved_type_variable): The type of this expression is (Array[_/0], Int, Unit) -> _/1, which contains unresolved type variables. The type variable is default to Unit.
+─────╯
+Error: [4032]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:109:16 ]
+     │
+ 109 │   let budget : WorkBudget = { used: 0L, limit: 11L }
+     │                ─────┬────  
+     │                     ╰────── The type WorkBudget is undefined.
+─────╯
+Error: [4033]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:109:29 ]
+     │
+ 109 │   let budget : WorkBudget = { used: 0L, limit: 11L }
+     │                             ────────────┬───────────  
+     │                                         ╰───────────── There is no record definition with the fields: used, limit.
+─────╯
+Error: [4021]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:110:16 ]
+     │
+ 110 │   let result = maximum_matching([[0, 1], [0]], 2, budget).unwrap()
+     │                ────────┬───────  
+     │                        ╰───────── The value identifier maximum_matching is unbound.
+─────╯
+Error: [4032]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:114:17 ]
+     │
+ 114 │     let short : WorkBudget = { used: 0L, limit: limit.to_int64() }
+     │                 ─────┬────  
+     │                      ╰────── The type WorkBudget is undefined.
+─────╯
+Error: [4033]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:114:30 ]
+     │
+ 114 │     let short : WorkBudget = { used: 0L, limit: limit.to_int64() }
+     │                              ──────────────────┬──────────────────  
+     │                                                ╰──────────────────── There is no record definition with the fields: used, limit.
+─────╯
+Error: [4021]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:115:11 ]
+     │
+ 115 │     match maximum_matching([[0, 1], [0]], 2, short) {
+     │           ────────┬───────  
+     │                   ╰───────── The value identifier maximum_matching is unbound.
+─────╯

@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**T0、T1、T1b完成。T1b原版参考self-check与哈希锁重建PASS；完整产品、产品parity/M2/A11尚未完成。**
+更新：2026-10-20（America/Phoenix）。**T0、T1、T1b完成；T2实施和本地验证已通过，待最终独立评审及交接。T1b原版参考self-check与哈希锁重建PASS；完整产品、产品parity/M2/A11尚未完成。**
 
 ## 当前入口与位置
 
@@ -20,12 +20,12 @@
 
 ## 已作决定与适用限制
 
-- 本轮只T1b。uv缓存、解释器、venv和bootstrap运行缓存局部化；保留缺pkg_resources的真实失败，补其未声明运行依赖setuptools80.9.0。没有NumPy别名失败，故1.23.5备用轮NOT_RUN，不制造失败或强行降级。
+- T1b历史范围只包含参考环境；当前轮次执行T2。uv缓存、解释器、venv和bootstrap运行缓存局部化；保留缺pkg_resources的真实失败，补其未声明运行依赖setuptools80.9.0。没有NumPy别名失败，故1.23.5备用轮NOT_RUN，不制造失败或强行降级。
 - 原版构造函数拒绝0 collar；适配器保留ValueError、flags明确不支持。产品0 collar仍合法，T3/T6须用有理数oracle并分类这一参考域限制，不能用epsilon或取消A11。
 - raw/class_wise/projected/metric_definition_flags四区已冻结，见contracts。参考时间为Float64，不能代替Int64/有理数边界裁定；raw global substitution与投影必须分开。
 - Python来源为uv选择的python-build-standalone，归档SHA及归档解释器/安装解释器一致；不冒称Python.org二进制认证。uv的PEP610 archive_info为空，来源证据依赖锁强制和源码核验，不伪称PEP610提供hash。
 - 保留上游pkg_resources弃用等告警。T1声明级unused暂时豁免仍需T3消费时移除。T0 core只有历史hash一致，来源缺口未升级为认证。
-- T1b三小时独立任务已获本轮授权并执行；T3先核心后参考的阶段门槛变更仍待相应批准。T2 first-free算法修订仍待批准；TSV/CSV/JSON数字时间及删除最终原版对照未批准。
+- T1b三小时独立任务已获本轮授权并执行；T3先核心后参考的阶段门槛变更仍待相应批准。T2 first-free算法修订已随用户“下一步”获本阶段授权并实施；TSV/CSV/JSON数字时间及删除最终原版对照未批准。
 - 赛事当前资格/换题/截止细则与真实需求仍未确认；没有临床数据访问、外发、推送、报名变更或发布。
 
 ## 下一步与命令

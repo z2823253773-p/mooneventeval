@@ -1,0 +1,21 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-p",
+    "test_oracles.py",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.086,
+  "log": "evidence/T2/20261021T084326498913Z-oracle-green.log",
+  "log_sha256": "15325630ac1bff78e2e5a12bb575228b3f2c9bdcfe4c3bd447935601edbb54b7",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

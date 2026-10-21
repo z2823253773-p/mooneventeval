@@ -1,0 +1,11 @@
+test_complete_rectangles (test_oracles.GraphOracleTests.test_complete_rectangles) ... ok
+test_duplicate_predictions_are_one_to_one (test_oracles.GraphOracleTests.test_duplicate_predictions_are_one_to_one) ... ok
+test_empty_and_isolated (test_oracles.GraphOracleTests.test_empty_and_isolated) ... ok
+test_hall_deficiency_despite_nonempty_rows (test_oracles.GraphOracleTests.test_hall_deficiency_despite_nonempty_rows) ... ok
+test_longer_reassignment (test_oracles.GraphOracleTests.test_longer_reassignment) ... ok
+test_trap_needs_reassignment (test_oracles.GraphOracleTests.test_trap_needs_reassignment) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

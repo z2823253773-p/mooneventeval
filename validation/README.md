@@ -42,3 +42,29 @@ is preserved. No NumPy alias or reference algorithm is patched.
 sed_eval is MIT licensed, Copyright (c) 2016 Tampere University of Technology.
 Its archive's `LICENSE.txt` SHA is retained in `reference-sources.json`;
 the upstream commit is linked in `reference-requirements.in`.
+
+## Matching validation (T2)
+
+The stdlib-only graph oracle enumerates all legal partial injections; it does
+not share the product's augmenting-path algorithm. From the repository root:
+
+```sh
+python3 -m unittest discover -s validation/tests -p test_oracles.py -v
+python3 validation/graph_oracle.py --emit-mbt eventeval/matching_oracle_generated_wbtest.mbt --cases-json evidence/T2/graph-oracle-cases.json
+scripts/with-toolchain.sh moon test --target native --deny-warn
+python3 validation/check_matching_native.py --output-dir evidence/T2/native
+python3 validation/mutate_matching.py
+```
+
+The 753 fixed cases comprise every graph with 0–3 vertices per side and 64
+seeded graphs with 4–7 per side. The generated MoonBit file contains literals
+and test calls only. The generator invokes the locked formatter for byte-stable
+regeneration. Full inputs/expectations and actual selected pairs are retained.
+
+The native checker builds a release whitebox executable, then invokes that
+artifact directly; it checks MoonBit's result protocol as well as process status.
+Benchmark times include process startup, graph construction, validity assertions
+and test protocol; compilation is excluded. They are macOS arm64 observations,
+not isolated matcher-call timings or a cross-platform performance guarantee.
+Mutation copies are disposable directories under ignored `.tools/`; controls
+must pass and mutant assertions must fail. Compiler failures do not count.

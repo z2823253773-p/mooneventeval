@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/graph_oracle.py",
+    "--emit-mbt",
+    "eventeval/matching_oracle_generated_wbtest.mbt",
+    "--cases-json",
+    "evidence/T2/graph-oracle-cases.json"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.087,
+  "log": "evidence/T2/20261021T084409106397Z-oracle-final-generate.log",
+  "log_sha256": "d70f636c2cba4bd9d49d5b65121dcd5859c7ed56d9e89bae09c5524eedcede06",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

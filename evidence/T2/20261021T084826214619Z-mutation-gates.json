@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "validation/mutate_matching.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 5.594,
+  "log": "evidence/T2/20261021T084826214619Z-mutation-gates.log",
+  "log_sha256": "8b7e3108b9e0a0b59a6bd9a84a7f5251ea45802d5660d0f12cc7907e3b6d28c2",
+  "scope": "T2",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

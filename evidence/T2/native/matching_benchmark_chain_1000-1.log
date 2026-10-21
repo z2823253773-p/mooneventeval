@@ -1,0 +1,7 @@
+----- BEGIN MOON TEST RESULT -----
+{"type":"start","file":"matching_benchmark_wbtest.mbt","index":3}
+----- END MOON TEST RESULT -----
+{"benchmark":"chain-1000","size_each_side":1000,"pairs":1000,"adjacency_checks":2999,"steps":6997}
+----- BEGIN MOON TEST RESULT -----
+{"type":"result","file":"matching_benchmark_wbtest.mbt","index":3,"message":""}
+----- END MOON TEST RESULT -----

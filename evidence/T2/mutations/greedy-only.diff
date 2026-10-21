@@ -1,0 +1,10 @@
+--- baseline/matching.mbt
++++ greedy-only/matching.mbt
+@@ -84,6 +84,7 @@
+     if reference_match[root] != -1 {
+       continue
+     }
++    if reference_match[root] == -1 { continue }
+     let visited = Array::make(prediction_count, false)
+     let stack : Array[Int] = [root]
+     let next_edge : Array[Int] = [0]

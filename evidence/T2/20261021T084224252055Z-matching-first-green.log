@@ -1,0 +1,35 @@
+Error: [0009]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching.mbt:2:13 ]
+   │
+ 2 │ priv struct WorkBudget {
+   │             ─────┬────  
+   │                  ╰────── Error Warning (struct_never_constructed): The struct WorkBudget is never constructed
+───╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:43:11 ]
+    │
+ 43 │   inspect(result.pairs, content="[(0, 1), (1, 0)]")
+    │           ──────┬─────  
+    │                 ╰─────── Error Warning (deprecated): Use Debug instead of Show for debugging purposes. See https://github.com/moonbitlang/core/blob/main/debug/README.mbt.md
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:63:5 ]
+    │
+ 63 │     check_matching([[0, 1], [0, 1], [0, 1]], 2, 2).pairs,
+    │     ──────────────────────────┬─────────────────────────  
+    │                               ╰─────────────────────────── Error Warning (deprecated): Use Debug instead of Show for debugging purposes. See https://github.com/moonbitlang/core/blob/main/debug/README.mbt.md
+────╯
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:72:11 ]
+    │
+ 72 │   inspect(result.pairs, content="[(0, 0)]")
+    │           ──────┬─────  
+    │                 ╰─────── Error Warning (deprecated): Use Debug instead of Show for debugging purposes. See https://github.com/moonbitlang/core/blob/main/debug/README.mbt.md
+────╯
+Error: [0020]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/matching_wbtest.mbt:132:11 ]
+     │
+ 132 │   inspect(result.pairs[size - 1], content="(999, 0)")
+     │           ───────────┬──────────  
+     │                      ╰──────────── Error Warning (deprecated): Use Debug instead of Show for debugging purposes. See https://github.com/moonbitlang/core/blob/main/debug/README.mbt.md
+─────╯
