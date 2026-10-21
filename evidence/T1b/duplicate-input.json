@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "a"
+  ],
+  "recordings": [
+    {
+      "id": "clip",
+      "reference": [
+        {
+          "id": "r",
+          "label": "a",
+          "onset_s": "10",
+          "offset_s": "12"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "a",
+          "onset_s": "10",
+          "offset_s": "12"
+        },
+        {
+          "id": "p2",
+          "label": "a",
+          "onset_s": "10.05",
+          "offset_s": "12.05"
+        }
+      ]
+    }
+  ]
+}

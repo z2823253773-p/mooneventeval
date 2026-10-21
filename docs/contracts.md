@@ -14,7 +14,7 @@
 - Native借用声明`#borrow(path, buffer)`/`#borrow(buffer)`及`options("native-stub": ["io_stub.c"])`通过。C stub只同步使用借用指针、不持有/释放它们；用`int32_t`封装有限`ssize_t`返回，不能直接把libc read/write的ssize_t当MoonBit Int。T0只证明短合成文件，完整I/O硬化仍在T5/T6。
 - `moon package --list --frozen`与`moon package`均实跑，产物在模块`_build/publish/<module>-<version>.zip`；本地打包不等于包外消费或发布。
 - **待批准算法修订：**保留最大基数及同版本确定性，建议在升序DFS前加入first-free搜索；T2立即验证500/1000完全图和穷举。算法身份与遍历策略在T2验收后记录；切换HK须记录决定及重验，不能悄悄替换所选配对。
-- **待批准阶段修订：**T1b参考环境三小时排障预算，不挡T1纯核心；T3核心证据满足可先进入demo，但A11原版参考仍是最终完整验收项，超时只能报告未完成。
+- **阶段状态：**T1b三小时独立排障任务已获本轮授权并完成；**仍待批准**的是T3核心证据满足后先进入demo的门槛调整。A11原版参考仍是最终完整验收项，T1b自检不能将其记为通过。
 
 ## 继承的业务约束与标出的待批准调整
 

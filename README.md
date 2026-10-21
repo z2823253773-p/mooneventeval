@@ -32,3 +32,7 @@ See [current state](docs/PROJECT_STATE.md), [contracts](docs/contracts.md) and
 [T1 task](docs/superpowers/plans/tasks/T1-time.md) for boundaries and evidence.
 The modules under `spikes/T0/` are separate throwaway experiments, including
 deliberately invalid code. They are not product examples.
+
+The [development reference environment](validation/README.md) now provides a
+hash-locked original sed_eval self-check and an explicit common-count projection.
+It is separate from the product and does not establish product parity.

@@ -1,0 +1,342 @@
+{
+  "task": "T1b-reference",
+  "status": "technical checks PASS; independent review pending",
+  "base_sha": "0b6fcf7b7368a7e6793cd815b0b2d29b2926c210",
+  "tested_sha": "dd99ff4e31652304125fcb085f16c0c681a3e39a",
+  "deadline_utc": "2026-10-21T09:11:27Z",
+  "source_sha256": {
+    "validation/README.md": "b754a5806c4545eb4f79518a17a550812496f27a4ba050354a5c48163a8477a2",
+    "validation/bootstrap_reference.py": "0126ba3a4f1ed5a3f60deaab2e75237cd35d2a045453add39b692f5422d84672",
+    "validation/python-reference.lock.json": "c206861baa6fc4a563787c41b1def7479040854af6e68449b7ccbcedaf2aa753",
+    "validation/reference-build.lock": "b15f61c1c4e94467bbc927fc8df87eee8a585bf5064de009046fee03670886fc",
+    "validation/reference-constraints.txt": "3193ec59d17afde28e429fa8d5eaaa0d376ea5301b72c2f9a722b971a6dcd8b6",
+    "validation/reference-requirements.in": "ccfe3bac6afd515deed26f876d8b58358939d89a9611dc5623efcb76542d4dbf",
+    "validation/reference-sources.json": "becc7046dfb58c0351734ad7853dcffb84e843955877cdbefdc584e527ecb372",
+    "validation/reference.lock": "8d7ba6b84aa7aaa76a017e1dbe62edc2d4cf2e6fdf71251e120834eb485f3bde",
+    "validation/sed_reference.py": "53b68fcb3df4f4886c0a816bc1b6b176a54dd1e755359307de5b597a9dac96b2",
+    "validation/tests/test_bootstrap.py": "278d0665bd7707c42a422b51a24ae033b3a326ebdb69155aa158d4391e70c6ba",
+    "validation/tests/test_reference.py": "0ae7580d3751ccaa0fd249259e0a1e973bd97965e6fe6f7308fa2bf8631895a1"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_reference.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 1,
+      "reason": null,
+      "elapsed_seconds": 0.074,
+      "log": "evidence/T1b/20261021T061702003601Z-adapter-red.log",
+      "log_sha256": "40d75d00a3a60a6cf24395eaf1b81bf2d3182dd5f7ae25f9f577a4774dcc90a0",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T061702003601Z-adapter-red.json"
+    },
+    {
+      "command": [
+        ".venv-reference-attempt1/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_reference.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 1,
+      "reason": null,
+      "elapsed_seconds": 7.906,
+      "log": "evidence/T1b/20261021T062004517711Z-attempt1-selfcheck.log",
+      "log_sha256": "cee9c3c1573d83987147a4c491b02fefa86751bac11b3c0d74ee2da57165761e",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062004517711Z-attempt1-selfcheck.json"
+    },
+    {
+      "command": [
+        ".venv-reference-attempt1/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_reference.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 3.182,
+      "log": "evidence/T1b/20261021T062136153090Z-attempt1-with-pkg-resources.log",
+      "log_sha256": "ad4de62141d6fd87c3b3a23c9c1e3e87d56d338082f7cb1ef79fd5c4b7627923",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062136153090Z-attempt1-with-pkg-resources.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_bootstrap.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 1,
+      "reason": null,
+      "elapsed_seconds": 0.039,
+      "log": "evidence/T1b/20261021T062355301413Z-bootstrap-red.log",
+      "log_sha256": "fd559e539912b746ddf9fe1f86a15578e7d7feef5d19404769d94b13bd2dbbc1",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062355301413Z-bootstrap-red.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_bootstrap.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.074,
+      "log": "evidence/T1b/20261021T062518036731Z-bootstrap-green.log",
+      "log_sha256": "23d431b15ce197734615ef9d425ea45985347867e7f3ad14c86b4cdf05410a2a",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062518036731Z-bootstrap-green.json"
+    },
+    {
+      "command": [
+        "python3",
+        "validation/bootstrap_reference.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 37.361,
+      "log": "evidence/T1b/20261021T062523189324Z-locked-rebuild.log",
+      "log_sha256": "76446cdc23d40570216d37b69d80b0c6f68e5a1dbe549cb127cd8736c237e6db",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062523189324Z-locked-rebuild.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.201,
+      "log": "evidence/T1b/20261021T062646001157Z-rebuilt-full-tests.log",
+      "log_sha256": "926878df4197ac8dded88224b3b32882f22adc1ea4f2c3cd86b8b221413046c1",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062646001157Z-rebuilt-full-tests.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.188,
+      "log": "evidence/T1b/20261021T062814033552Z-qualified-reference-tests.log",
+      "log_sha256": "a4bfd602ea55a3de886d317f483558cb116c77c0cbe9e2cf21193dae50a9ce81",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062814033552Z-qualified-reference-tests.json"
+    },
+    {
+      "command": [
+        ".venv-reference-attempt1/bin/python",
+        "evidence/T1b/capture_results.py",
+        "evidence/T1b/trial-results.json"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.241,
+      "log": "evidence/T1b/20261021T062858166800Z-trial-raw-results.log",
+      "log_sha256": "7caa414f2106b10ab7f4764a622ecf1b53179df0356de901c2a8831dfebf44bc",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062858166800Z-trial-raw-results.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "evidence/T1b/capture_results.py",
+        "evidence/T1b/rebuilt-results.json"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.191,
+      "log": "evidence/T1b/20261021T062858444771Z-rebuilt-raw-results.log",
+      "log_sha256": "53b4b9288d4cb430f7dff02efe4e27de8cc58631299da8245a8e79bfa5a1579f",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062858444771Z-rebuilt-raw-results.json"
+    },
+    {
+      "command": [
+        "scripts/with-toolchain.sh",
+        "moon",
+        "test",
+        "--target",
+        "native",
+        "--deny-warn"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.24,
+      "log": "evidence/T1b/20261021T062858693596Z-product-regression.log",
+      "log_sha256": "8a4e7a01c3f5026ef0c27a47b536bea8872fe1fab2d6d673da8ccd9aea407092",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062858693596Z-product-regression.json"
+    },
+    {
+      "command": [
+        "python3",
+        "-W",
+        "error::ResourceWarning",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 1.904,
+      "log": "evidence/T1b/20261021T062858968797Z-tool-regression.log",
+      "log_sha256": "e780cae930054c7478fffb7464e2585e96ad534fda8a2a70f8b79fa3fa5ae6db",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062858968797Z-tool-regression.json"
+    },
+    {
+      "command": [
+        ".venv-reference-attempt1/bin/python",
+        "evidence/T1b/capture_results.py",
+        "evidence/T1b/trial-results.json"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.241,
+      "log": "evidence/T1b/20261021T062953051882Z-trial-full-output.log",
+      "log_sha256": "7caa414f2106b10ab7f4764a622ecf1b53179df0356de901c2a8831dfebf44bc",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062953051882Z-trial-full-output.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "evidence/T1b/capture_results.py",
+        "evidence/T1b/rebuilt-results.json"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.182,
+      "log": "evidence/T1b/20261021T062953330109Z-rebuilt-full-output.log",
+      "log_sha256": "53b4b9288d4cb430f7dff02efe4e27de8cc58631299da8245a8e79bfa5a1579f",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062953330109Z-rebuilt-full-output.json"
+    },
+    {
+      "command": [
+        "python3",
+        "evidence/T1b/compare_environments.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.02,
+      "log": "evidence/T1b/20261021T062953545581Z-compare-environments.log",
+      "log_sha256": "20edc4d01439e9d2d6fde9c485175bdebf501f069e9ab0bc5d0c4da8ea68edbe",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T062953545581Z-compare-environments.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.189,
+      "log": "evidence/T1b/20261021T063133225864Z-pinned-source-tests.log",
+      "log_sha256": "e3bf128a66d3633266c5493c19e7417260ffc598115cb931cef3d2f9fb93d6a2",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063133225864Z-pinned-source-tests.json"
+    }
+  ],
+  "results": {
+    "reference_selfchecks": 7,
+    "bootstrap_tests": 2,
+    "runtime_packages": 45,
+    "compared_output_cases": 4,
+    "product_regression_tests": 13,
+    "tool_regression_tests": 4
+  },
+  "numpy_fallback": "NOT_RUN; no alias failure, first numerical constraint succeeded after explicit runtime setuptools dependency",
+  "reference_domain_limit": "zero collar unsupported by original constructor; preserved ValueError",
+  "not_assessed": [
+    "product parity/M2/A11 completion",
+    "Linux",
+    "full matching/CLI",
+    "remote CI/publication"
+  ]
+}

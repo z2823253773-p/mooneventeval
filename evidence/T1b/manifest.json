@@ -1,8 +1,8 @@
 {
   "task": "T1b-reference",
-  "status": "technical checks PASS; independent review pending",
+  "status": "T1b PASS; original reference self-check and hash-lock rebuild only",
   "base_sha": "0b6fcf7b7368a7e6793cd815b0b2d29b2926c210",
-  "tested_sha": "dd99ff4e31652304125fcb085f16c0c681a3e39a",
+  "tested_sha": "221916c56b945805c92119a1fca53a58b9b29c29",
   "deadline_utc": "2026-10-21T09:11:27Z",
   "source_sha256": {
     "validation/README.md": "b754a5806c4545eb4f79518a17a550812496f27a4ba050354a5c48163a8477a2",
@@ -321,6 +321,112 @@
       "scope": "T1b",
       "assessment": "command result only; not an automatic product acceptance claim",
       "record": "evidence/T1b/20261021T063133225864Z-pinned-source-tests.json"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_design_docs.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.039,
+      "log": "evidence/T1b/20261021T063133484947Z-docs-before-review.log",
+      "log_sha256": "22e7ac7a15f42fb2baeb8c06ffcb4c97dde8616adca80861ab9ddfb75fa7291b",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063133484947Z-docs-before-review.json"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check",
+        "0b6fcf7b7368a7e6793cd815b0b2d29b2926c210..HEAD",
+        "--",
+        ".",
+        ":!evidence/**"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.02,
+      "log": "evidence/T1b/20261021T063431707764Z-source-whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063431707764Z-source-whitespace.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "validation/sed_reference.py",
+        "--help"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.02,
+      "log": "evidence/T1b/20261021T063431760840Z-reference-help.log",
+      "log_sha256": "22f4fc5a0ff3099ef92baa97ef4b2ad727a5a501878c25233047e62d43b0eac0",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063431760840Z-reference-help.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "validation/sed_reference.py",
+        "evidence/T1b/duplicate-input.json",
+        "--output",
+        "evidence/T1b/duplicate-cli-output.json"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.295,
+      "log": "evidence/T1b/20261021T063526805091Z-reference-cli.log",
+      "log_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063526805091Z-reference-cli.json"
+    },
+    {
+      "command": [
+        ".venv-reference/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "validation/tests",
+        "-p",
+        "test_reference.py",
+        "-v"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.19,
+      "log": "evidence/T1b/20261021T063844604682Z-final-reference-command.log",
+      "log_sha256": "aa23d6a4058af21d8341370c67b4a5d1e0ec9150e79b5fb23ab1b348ddb3251c",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T063844604682Z-final-reference-command.json"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/check_design_docs.py"
+      ],
+      "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+      "exit_code": 0,
+      "reason": null,
+      "elapsed_seconds": 0.04,
+      "log": "evidence/T1b/20261021T064042717345Z-final-docs.log",
+      "log_sha256": "4e406021e0304414465102d1393d2455c182cf35bce54c5611f4a25e19de8df6",
+      "scope": "T1b",
+      "assessment": "command result only; not an automatic product acceptance claim",
+      "record": "evidence/T1b/20261021T064042717345Z-final-docs.json"
     }
   ],
   "results": {
@@ -338,5 +444,83 @@
     "Linux",
     "full matching/CLI",
     "remote CI/publication"
-  ]
+  ],
+  "independent_review": {
+    "candidate": "221916c56b945805c92119a1fca53a58b9b29c29",
+    "verdict": "acceptable; no Critical/Important; one stale-state Minor resolved in planned final handoff",
+    "scope": "reviewer reran9 checks and4 outputs; not another independent full download/rebuild",
+    "report": "docs/reviews/2026-10-20-t1b-review.md"
+  },
+  "finished_utc": "2026-10-21T06:42:14.498690+00:00",
+  "artifacts_sha256": {
+    "evidence/T1b/20261021T061702003601Z-adapter-red.json": "f9ae460eb92ca0717472527e484773e810c212d7281c949f4f8c77101fa4d1c4",
+    "evidence/T1b/20261021T061702003601Z-adapter-red.log": "40d75d00a3a60a6cf24395eaf1b81bf2d3182dd5f7ae25f9f577a4774dcc90a0",
+    "evidence/T1b/20261021T062004517711Z-attempt1-selfcheck.json": "a421345b74488f60a9767acb3911084a5f9e5a78a97e6b33175f4960b3881494",
+    "evidence/T1b/20261021T062004517711Z-attempt1-selfcheck.log": "cee9c3c1573d83987147a4c491b02fefa86751bac11b3c0d74ee2da57165761e",
+    "evidence/T1b/20261021T062136153090Z-attempt1-with-pkg-resources.json": "9f4a3e0c44784c0e09be517b3670c5b42ba35f3dab9db353a2b512016e27d083",
+    "evidence/T1b/20261021T062136153090Z-attempt1-with-pkg-resources.log": "ad4de62141d6fd87c3b3a23c9c1e3e87d56d338082f7cb1ef79fd5c4b7627923",
+    "evidence/T1b/20261021T062355301413Z-bootstrap-red.json": "255f6ccb7ef84f4cdfafbf6785756eb1d151ce5f59c02f4307b52dd199d33a5d",
+    "evidence/T1b/20261021T062355301413Z-bootstrap-red.log": "fd559e539912b746ddf9fe1f86a15578e7d7feef5d19404769d94b13bd2dbbc1",
+    "evidence/T1b/20261021T062518036731Z-bootstrap-green.json": "25b58ff70108cedbefa0af24d70eed16275b0c82743fef1f359d2571773aee57",
+    "evidence/T1b/20261021T062518036731Z-bootstrap-green.log": "23d431b15ce197734615ef9d425ea45985347867e7f3ad14c86b4cdf05410a2a",
+    "evidence/T1b/20261021T062523189324Z-locked-rebuild.json": "17a2b7c0b07f286168337b1cc26f114ece278035fa51fddc5588dac1fdb8e6ab",
+    "evidence/T1b/20261021T062523189324Z-locked-rebuild.log": "76446cdc23d40570216d37b69d80b0c6f68e5a1dbe549cb127cd8736c237e6db",
+    "evidence/T1b/20261021T062646001157Z-rebuilt-full-tests.json": "06ad2646dfec74197cc31d8b9ae0be9823b37e7cbb7557d8e9ee5590813be14c",
+    "evidence/T1b/20261021T062646001157Z-rebuilt-full-tests.log": "926878df4197ac8dded88224b3b32882f22adc1ea4f2c3cd86b8b221413046c1",
+    "evidence/T1b/20261021T062814033552Z-qualified-reference-tests.json": "b6d83ee03dd1df5e1f375df36196448001d3717eb23d732fc1cb1dd1bc9e5c29",
+    "evidence/T1b/20261021T062814033552Z-qualified-reference-tests.log": "a4bfd602ea55a3de886d317f483558cb116c77c0cbe9e2cf21193dae50a9ce81",
+    "evidence/T1b/20261021T062858166800Z-trial-raw-results.json": "15122b19039f4aecbfe0d73ff6e086446b62d2615e2cc0b0e77706da77798d9d",
+    "evidence/T1b/20261021T062858166800Z-trial-raw-results.log": "7caa414f2106b10ab7f4764a622ecf1b53179df0356de901c2a8831dfebf44bc",
+    "evidence/T1b/20261021T062858444771Z-rebuilt-raw-results.json": "54a9e9094ae4478fa908f3192cbf87af1238c726a8ce69441c48073807fe1c4f",
+    "evidence/T1b/20261021T062858444771Z-rebuilt-raw-results.log": "53b4b9288d4cb430f7dff02efe4e27de8cc58631299da8245a8e79bfa5a1579f",
+    "evidence/T1b/20261021T062858693596Z-product-regression.json": "76f535ec0359d6b19be12c5e2f3a84ee27c0c85aa39163a833c959988788721f",
+    "evidence/T1b/20261021T062858693596Z-product-regression.log": "8a4e7a01c3f5026ef0c27a47b536bea8872fe1fab2d6d673da8ccd9aea407092",
+    "evidence/T1b/20261021T062858968797Z-tool-regression.json": "58a6608fe436aa990f803af72726675385ca88bad9a49f435eace76b788ba195",
+    "evidence/T1b/20261021T062858968797Z-tool-regression.log": "e780cae930054c7478fffb7464e2585e96ad534fda8a2a70f8b79fa3fa5ae6db",
+    "evidence/T1b/20261021T062953051882Z-trial-full-output.json": "26a7d3fce1b056b961d8563e4d7ebd0e6599c9dc23abe8fc687a73181b69aeb2",
+    "evidence/T1b/20261021T062953051882Z-trial-full-output.log": "7caa414f2106b10ab7f4764a622ecf1b53179df0356de901c2a8831dfebf44bc",
+    "evidence/T1b/20261021T062953330109Z-rebuilt-full-output.json": "fbea219a02a834deaffb824d95becb4fce26e2fc48f51c51d889b4ca48a9dcff",
+    "evidence/T1b/20261021T062953330109Z-rebuilt-full-output.log": "53b4b9288d4cb430f7dff02efe4e27de8cc58631299da8245a8e79bfa5a1579f",
+    "evidence/T1b/20261021T062953545581Z-compare-environments.json": "f8dc0b7f72fab2906600f569d35d8bcdf5af8eff789e67cca0b351192760308b",
+    "evidence/T1b/20261021T062953545581Z-compare-environments.log": "20edc4d01439e9d2d6fde9c485175bdebf501f069e9ab0bc5d0c4da8ea68edbe",
+    "evidence/T1b/20261021T063133225864Z-pinned-source-tests.json": "6b7c9c767708496d6a18e1ed7106524c5e2c2091513d4b879076e9c970d54370",
+    "evidence/T1b/20261021T063133225864Z-pinned-source-tests.log": "e3bf128a66d3633266c5493c19e7417260ffc598115cb931cef3d2f9fb93d6a2",
+    "evidence/T1b/20261021T063133484947Z-docs-before-review.json": "e894c0b360ec44e95bc3100abf6e3a20fc9a71a3010d38b4a9a1b118097477f3",
+    "evidence/T1b/20261021T063133484947Z-docs-before-review.log": "22e7ac7a15f42fb2baeb8c06ffcb4c97dde8616adca80861ab9ddfb75fa7291b",
+    "evidence/T1b/20261021T063431707764Z-source-whitespace.json": "237ac70cacfb11cbd0e7f2aa4efe61cc65d78bf6a4ff0188546d5de3f0fa20d6",
+    "evidence/T1b/20261021T063431707764Z-source-whitespace.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/T1b/20261021T063431760840Z-reference-help.json": "1f2a2c31afe57c7cad0cc4ccbddc852bac70f25635b1d5a0ae4d3e128ed44353",
+    "evidence/T1b/20261021T063431760840Z-reference-help.log": "22f4fc5a0ff3099ef92baa97ef4b2ad727a5a501878c25233047e62d43b0eac0",
+    "evidence/T1b/20261021T063526805091Z-reference-cli.json": "137526b3fbbe859fbacca1289b8183063c658519c624a73f0553ae67a552c7ed",
+    "evidence/T1b/20261021T063526805091Z-reference-cli.log": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+    "evidence/T1b/20261021T063844604682Z-final-reference-command.json": "ccc14b9df1d561f32623943171c87929b66ea6da7d305c36aeae6a007d01b234",
+    "evidence/T1b/20261021T063844604682Z-final-reference-command.log": "aa23d6a4058af21d8341370c67b4a5d1e0ec9150e79b5fb23ab1b348ddb3251c",
+    "evidence/T1b/20261021T064042717345Z-final-docs.json": "7f55d4af4ae7124379f2d696750f9fb88188657707837fdbf1d83ae3ec501f78",
+    "evidence/T1b/20261021T064042717345Z-final-docs.log": "4e406021e0304414465102d1393d2455c182cf35bce54c5611f4a25e19de8df6",
+    "evidence/T1b/attempt1-constraints.txt": "ec4a3e3752676dd434ad0b892c037c8ba72546ade89892a6d2e61f632570b370",
+    "evidence/T1b/attempt1-freeze.txt": "691167719d196dec69ea7cc05a996d55d8759cedf491fdbfff2751a8fdf69371",
+    "evidence/T1b/attempt1-install-corrected-url.log": "c5a953b460e4da79e2f56321466c7f1637567a03a5d93aabc4b85a3965e8d981",
+    "evidence/T1b/attempt1-install.log": "ade8642aa1b4b58006c55e2e5818f7100ded55bd6b7336a7e0234e7027d83f61",
+    "evidence/T1b/attempt1-pkg-resources-install.log": "52b2cc7e9dc1d478901d0d29bbc143af22ec3a002dfd8fac2028ab210f30c51f",
+    "evidence/T1b/attempt1-versions.txt": "226de3d458fa0043c01e12592b95969080b2501c6aae6179b611fd8c63b527e2",
+    "evidence/T1b/capture_results.py": "d4367f3976b54d3d64097e76fad455e2277c8e51cfb5aa07587e04ff723f20d4",
+    "evidence/T1b/compare_environments.py": "ac84b0c40b909c9abc8c8556f68f243856522c529755948f806d42ecead474d8",
+    "evidence/T1b/duplicate-cli-output.json": "4dec70fcf192c776b73fc2cd3200f15c1de739f3f4898eda5042f8c54dcd4750",
+    "evidence/T1b/duplicate-input.json": "55174e0fb597b12da825178593dc57654391bab878614fd63712fafb9985f02c",
+    "evidence/T1b/lock-compile.log": "944cb7cb1f0828c45e24142112b0152b5a54b40d4fa08e1034a7d2cd360289c1",
+    "evidence/T1b/manifest-before-review.json": "65a95f0cc86d20d6fcddc414fee0fe9eb9ff32abcc1003ed081f9c57090be1c7",
+    "evidence/T1b/python-archive-download.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/T1b/python-download-source.json": "e988941f0066d8580197c01dfab34d1922cbc7beb98ed5f8f0fee12e047402c4",
+    "evidence/T1b/python-install.log": "fc2530f2dba74c27d4106f0c0392b35d86d041d0b1b9c580823f31fe4dc1ef1f",
+    "evidence/T1b/python-source.json": "ec9798a585a299bca8e6202bf0ff5c15c1ed988f416717b240ed2c5a6116e441",
+    "evidence/T1b/rebuilt-results.json": "70d79a074cda7c25d66131b3349811e8fd2054301ae831398ef928bcb0e69377",
+    "evidence/T1b/sed-download.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence/T1b/trial-results.json": "70d79a074cda7c25d66131b3349811e8fd2054301ae831398ef928bcb0e69377"
+  },
+  "integrity": {
+    "source_files": 11,
+    "command_logs": 22,
+    "lock_requirements": 45,
+    "trial_rebuild_equal": true
+  }
 }

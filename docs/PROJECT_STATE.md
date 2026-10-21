@@ -1,33 +1,37 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-20（America/Phoenix）。**T0/T1完成；用户已授权T1b，参考环境及锁重建技术检查通过，独立评审中。完整评测器/CLI与产品parity尚未完成。**
+更新：2026-10-20（America/Phoenix）。**T0、T1、T1b完成。T1b原版参考self-check与哈希锁重建PASS；完整产品、产品parity/M2/A11尚未完成。**
 
-## 入口与工作位置
+## 当前入口与位置
 
-- [contracts](contracts.md) → [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [T1实际结果](reviews/2026-10-20-t1-results.md) → [下一T1b任务卡](superpowers/plans/tasks/T1b-reference.md)。旧单文件v1计划停止执行。
-- Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main基线`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote。继续时先核对真实git状态，不重复实施T0/T1。
-- 本轮T1基线`8d8f417c88542ee891379fdd158c6a4adc129ec8`；最终被测源码`650325eb981875df7e00b537c9648a8146ff8abb`；文档/证据提交以git log为准。证据[evidence/T1/manifest.json](../evidence/T1/manifest.json)。
+- [contracts](contracts.md) → [修订计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [T1b实际结果](reviews/2026-10-20-t1b-results.md) / [独立评审](reviews/2026-10-20-t1b-review.md) → [下一T2卡](superpowers/plans/tasks/T2-matching.md)。旧单文件v1计划已作废。
+- Codex主实施者；工作树 `/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支 `spike/t0-feasibility`。原仓库main保持`8a3075521312c9bf9ad196309422adaa0c67fbd2`，无remote；先核对真实git状态，不重复T0/T1/T1b。
+- T1b基线`0b6fcf7b7368a7e6793cd815b0b2d29b2926c210`；最后被测候选`221916c56b945805c92119a1fca53a58b9b29c29`（运行代码/锁提交dd99ff4，候选仅增加validation README）。最新文档/证据提交以git log为准。
+- [T1b manifest](../evidence/T1b/manifest.json)含源码/锁hash、命令、退出码、失败及完整输出。安装/排障始于2026-10-21 06:11:27 UTC，三小时硬停止点09:11:27 UTC；本轮在预算内完成。
 
-## 完成项与实测边界
+## 已完成与证据边界
 
-- T0：局部moonc v0.10.14+7d59c7ec9已安装校验；语法/清单/JSON/native短I/O/实际打包已验证。二进制符合发布者sidecar，core只符合历史SHA，不是发布者认证。
-- T1：有界ASCII十进制扫描转Int64微秒/ppm；验证后封装Event/Config；UTF-16代理配对和256码点限制；Unicode码点排序；有符号解释偏差与精确collar/参考时长资格判断。
-- MoonBit全套13/13、JSON前提6/6、Python4/4；native check/build、fmt检查通过。5个公式定向mutation均成功编译并导致行为断言失败，未把初次编译失败算作捕获。仅macOS arm64。
-- 独立评审原为T1未达完整验收，发现安全substring可制造孤立代理、工厂却接受；已先RED再修复，主验收13/13及5个mutation再验通过。[评审原结论与处置](reviews/2026-10-20-t1-review.md)，未声称第二轮独立PASS。
-- sed_eval固定源码仅只读核对公式，未安装/运行。T1b、独立parity/M2、匹配、完整JSON任务/报告/CLI/demo、本人纸笔复算/讲解、Linux/远端CI、包外消费与发布均未完成。
+- T0固定MoonBit工具链/清单/JSON/native短I/O/本地打包已验收；T1精确时间、工厂/Unicode、码点排序、候选资格已验收，MoonBit13/13与原Python工具4/4保持通过。T1历史上未装参考环境，现在T1b已独立完成，不混用两个阶段状态。
+- T1b：局部uv0.11.14/CPython3.11.14、NumPy1.26.4、dcase_util0.2.20、setuptools80.9.0；45个完整依赖版本/hash锁。先锁build后端，再require-hashes/no-build-isolation在全新.venv-reference中真实重建sed_eval与dcase_util，依赖检查通过。
+- 7项原版reference self-check及2项bootstrap安全检查共9/9；首轮/锁重建的45个依赖版本和4组完整结果一致；12个参考.py评测前核验hash。没有参考源码修改、NumPy别名补丁或产品输出充当oracle期望。
+- 原版实际结果：重复预测TP1、A2 optimal TP2；跨类raw Nsubs1且FP/FN0，显式共同口径投影FP/FN1。raw NaN标记保留，投影零分母null。开发参考CLI的实际输出也与API一致。
+- 独立评审未发现Critical/Important，评审者报告复跑9/9并核对来源/版本/完整输出；唯一Minor为候选STATE旧历史语句，本轮按计划最终状态更新消除，不改运行代码。
+- 未完成：匹配、完整JSON任务/报告/产品CLI/demo、独立产品parity/M2/A11、本人复算/讲解、有理数oracle、Linux/远端CI、包外消费与正式发布。参考self-check不是这些交付的替代。
 
-## 决定与限制
+## 已作决定与适用限制
 
-- Event/Config保持私有字段；业务数学在MoonBit，Python仅开发验证。本轮无Python参考依赖安装，无临床/科研原始数据访问。
-- 解析深度参数deprecated局部兼容例外保持T0决定。T1另有声明级unused_field/unused_value暂时豁免，因为正式消费者在T3/T4；T3接入时移除，代价是此前会屏蔽这些声明的相应闲置告警，不能扩为全包关闭。
-- ID/label错误：空值INVALID_SCHEMA、非法代理配对INVALID_UNICODE、码点超限RESOURCE_LIMIT（首先观察257）；时间/比例语法INVALID_DECIMAL、超界或非正时长OUT_OF_RANGE。任务索引路径前缀留T3。
-- 本轮仅T1；参考环境归独立T1b，代价是parity未知。保留前次失败和原始日志，原日志尾随空格不做归一化；源码/文档空白检查排除evidence。
-- first-free+DFS及T1b/T3阶段修订仍待相应批准；TSV/CSV、JSON数字时间、删除最终原版对照未批准；A11保留。赛事当前资格/换题/截止细则及真实需求仍未确认，没有外发、推送、报名变更或发布。
+- 本轮只T1b。uv缓存、解释器、venv和bootstrap运行缓存局部化；保留缺pkg_resources的真实失败，补其未声明运行依赖setuptools80.9.0。没有NumPy别名失败，故1.23.5备用轮NOT_RUN，不制造失败或强行降级。
+- 原版构造函数拒绝0 collar；适配器保留ValueError、flags明确不支持。产品0 collar仍合法，T3/T6须用有理数oracle并分类这一参考域限制，不能用epsilon或取消A11。
+- raw/class_wise/projected/metric_definition_flags四区已冻结，见contracts。参考时间为Float64，不能代替Int64/有理数边界裁定；raw global substitution与投影必须分开。
+- Python来源为uv选择的python-build-standalone，归档SHA及归档解释器/安装解释器一致；不冒称Python.org二进制认证。uv的PEP610 archive_info为空，来源证据依赖锁强制和源码核验，不伪称PEP610提供hash。
+- 保留上游pkg_resources弃用等告警。T1声明级unused暂时豁免仍需T3消费时移除。T0 core只有历史hash一致，来源缺口未升级为认证。
+- T1b三小时独立任务已获本轮授权并执行；T3先核心后参考的阶段门槛变更仍待相应批准。T2 first-free算法修订仍待批准；TSV/CSV/JSON数字时间及删除最终原版对照未批准。
+- 赛事当前资格/换题/截止细则与真实需求仍未确认；没有临床数据访问、外发、推送、报名变更或发布。
 
 ## 下一步与命令
 
-T1b已实跑7项reference self-check和2项bootstrap检查；45个依赖和4组原始完整输出在首轮/锁重建间一致，证据evidence/T1b/manifest.json，独立评审中。按任务卡单独记录依赖安装、固定版本/哈希、self-check与失败，不改写T1为原版对照。T2算法调整尚未实施。
+下一实施目标T2最大匹配、小图穷举、提前密集图检查；按任务卡核对并明确算法修订，不在参考适配器里写产品算法。
 
-本地复验：`scripts/with-toolchain.sh moon test --target native --deny-warn`（当前13项）；`python3 -W error::ResourceWarning -m unittest discover -s tests`（4项）；`scripts/with-toolchain.sh moon fmt --check`；`python3 scripts/check_design_docs.py`。
+复验：`.venv-reference/bin/python -m unittest discover -s validation/tests -v`（9项）；`scripts/with-toolchain.sh moon test --target native --deny-warn`（13项）；`python3 -W error::ResourceWarning -m unittest discover -s tests`（4项）。
 
-已有局部工具链无需重装。新checkout才运行`python3 scripts/install_toolchain.py`（Python>=3.12、curl、native C编译器）；禁止用默认版冒充固定版本。spikes/T0是历史一次性探针，不复制成产品实现。
+新checkout参考重建：`python3 validation/bootstrap_reference.py`。已有venv拒绝覆盖，需要新一套时用`--venv .venv-reference-rebuild`；仅macOS arm64资格已验。不要在agent-reach或全局Python安装。MoonBit局部工具链已在本工作树，无需重装。

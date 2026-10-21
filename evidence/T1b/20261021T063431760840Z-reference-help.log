@@ -1,0 +1,10 @@
+usage: sed_reference.py [-h] [--output OUTPUT] input
+
+Development-only adapter around the unmodified, hash-verified sed_eval.
+
+positional arguments:
+  input
+
+options:
+  -h, --help       show this help message and exit
+  --output OUTPUT
