@@ -181,13 +181,3 @@ failure, close EIO/EINTR and signal init failure. This is finite fault coverage,
 not all possible filesystem/concurrency/OS failures. Mutation artifacts separately
 record build-only success before behavior kills, restored control, and equivalent
 max-operand swapping. Equivalent does not count as killed.
-
-
-T6 final qualification is bound to 7b8a453 (see docs/reviews/2026-10-22-t6-review.md).
-The output decoder enforces strict UTF-8, terminal LF/no raw CR, unique keys,
-finite numbers and valid Unicode before comparison; violations retain serializable
-failed ledgers. Performance checks actual input membership, complete one-to-one
-coverage and independent eligibility true. Five original review corruptions were
-replayed by the author after repair, not independently re-reviewed. Deferred M1:
-timeouts fail correctly but do not yet persist partial TimeoutExpired streams or
-process receipts. Use new directories outside frozen evidence/T6 for reruns.

@@ -1,0 +1,9 @@
+{
+  "scope": "author closeout source-binding correction; no runtime code change",
+  "tested_sha": "7b8a453f58307e4118eeae7ad78d79859af6eeed",
+  "reason": "validation/README.md is included in tested_source_sha256; post-test explanatory addition caused current-file mismatch",
+  "resolution": "restored validation/README.md exactly from tested SHA; additional explanation remains in docs/reviews/2026-10-22-t6-review.md",
+  "frozen_snapshot_scope": "T6 document snapshots retain their original first-closeout bytes; snapshots are historical, not current-tree hash assertions",
+  "source_file_count": 77,
+  "all_current_source_hashes_match": true
+}
