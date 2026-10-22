@@ -30,10 +30,11 @@ def main():
         folder=output/name;folder.mkdir(parents=True,exist_ok=True)
         text=json.dumps(document,ensure_ascii=True,separators=(',',':'))
         command=[str(exe),text]+([mode] if mode else [])+list(ids)
-        result=subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=30)
-        (folder/'input.json').write_text(text+'\n');(folder/'stdout').write_text(result.stdout);(folder/'stderr').write_text(result.stderr)
+        result=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=30)
+        (folder/'input.json').write_text(text+'\n',encoding='utf-8');(folder/'stdout').write_bytes(result.stdout);(folder/'stderr').write_bytes(result.stderr)
         assert result.returncode==expected_exit and not result.stderr,(name,result.returncode,result.stderr,result.stdout[:400])
-        records.append(dict(name=name,mode=mode or 'evaluate-json',ids=list(ids),exit_code=result.returncode,stdout_sha256=hashlib.sha256(result.stdout.encode()).hexdigest()))
+        result.stdout.decode('utf-8')  # Strict validation only; retain original bytes below.
+        records.append(dict(name=name,mode=mode or 'evaluate-json',ids=list(ids),exit_code=result.returncode,stdout_sha256=hashlib.sha256(result.stdout).hexdigest()))
         return result.stdout
     prior=ROOT/'evidence/T3/parity-final'
     old=json.loads((prior/'report.json').read_text())
@@ -41,8 +42,8 @@ def main():
     for case in old['cases']:
         name=case['case'];document=json.loads((prior/name/'input.json').read_text())
         evaluation=run('regression/'+name,document)
-        assert evaluation==(prior/name/'product.stdout').read_text(),name+' changed evaluation JSON bytes'
-        text=run('text/'+name,document,'report-text')
+        assert evaluation==(prior/name/'product.stdout').read_bytes(),name+' changed evaluation JSON bytes'
+        text=run('text/'+name,document,'report-text').decode('utf-8')
         assert not any(unsafe(ord(ch)) for ch in text),name+' unsafe raw text control'
         assert text.startswith('MoonEventEval 0.1.0') and '所选配对' in text and text.endswith('\n')
         summary=json.loads(evaluation)['summary']
@@ -68,7 +69,7 @@ def main():
                     assert actual['recording_id']==rec['id'] and actual['reference']==canonical_event(r) and actual['prediction']==canonical_event(p)
                     assert actual['basis']==eligible(r,p,cfg)
                     assert all(type(actual['basis'][key]) is bool for key in ['label_match','onset_pass','offset_pass','eligible'])
-                    rendered=run(stem+'-text',document,'explain-text',ids)
+                    rendered=run(stem+'-text',document,'explain-text',ids).decode('utf-8')
                     assert not any(unsafe(ord(ch)) for ch in rendered)
                     assert '是否被选中' in rendered and '汇总：' not in rendered and '工作量：' not in rendered
                     for key in ['onset_delta_s','offset_delta_s','onset_limit_s','offset_limit_s']:
@@ -83,7 +84,7 @@ def main():
         doc=dict(schema_version=1,labels=[label],recordings=[dict(id=recid,reference=[event(rid)],prediction=[event(pid)])])
         raw=run(f'identities/{i}-json',doc,'explain-json',(recid,rid,pid));parsed=json.loads(raw)
         assert parsed['reference']['id']==rid and parsed['reference']['label']==label
-        text=run(f'identities/{i}-text',doc,'explain-text',(recid,rid,pid))
+        text=run(f'identities/{i}-text',doc,'explain-text',(recid,rid,pid)).decode('utf-8')
         assert not any(unsafe(ord(ch)) for ch in text)
         assert len(text.split('\n'))==9,'identity forged a line'
         decoder=json.JSONDecoder()
