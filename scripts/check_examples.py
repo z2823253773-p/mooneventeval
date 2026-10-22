@@ -49,6 +49,7 @@ def check(source,binary,output):
     else:
         report=machine_report((output/'explain/stdout').read_bytes())
         expected=dict(label_match=True,onset_pass=True,offset_pass=True,eligible=True,onset_delta_s='0.2',offset_delta_s='0.2',onset_limit_s='0.2',offset_limit_s='1')
+        if report.get('status')!='completed' or 'error' in report:differences.append('explain must be completed without error')
         if report['basis']!=expected or 'summary' in report or report['recording_id']!='clip-01':differences.append('explain basis')
     # Docs/API.md's first MoonBit block is the exact source exercised by the external consumer.
     import re
