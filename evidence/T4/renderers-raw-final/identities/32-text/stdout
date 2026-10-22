@@ -1,0 +1,8 @@
+MoonEventEval 0.1.0 | collar-max-cardinality/v1 | pair explanation
+状态：completed
+配置：collar_s=0.2 offset_ratio=0.5
+录制：recording="clip\u007f"
+参考：id="r\u007f" label="中文\u007f" onset_s=1 offset_s=2
+预测：id="p\u007f" label="中文\u007f" onset_s=1 offset_s=2
+判断：label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=0 onset_limit_s=0.2 offset_delta_s=0 offset_limit_s=0.5
+说明：这是配对条件解释，不推断是否被选中；不执行最大匹配。

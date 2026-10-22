@@ -100,7 +100,8 @@ epsilon or sample deletion. Product runtime never imports these Python tools.
 pair JSON/text, validates exact bases with the independent rational oracle,
 checks identity roundtrips/control escaping and unknown IDs, and requires the
 46 archived T3 evaluation reports to remain byte-identical. It does not rerun
-sed_eval or establish final A11. All raw argv inputs/outputs and report hashes
+sed_eval or establish final A11. Binary stdout/stderr are archived and hashed before any strict UTF8 decoding;
+universal-newline conversion is forbidden. All raw argv inputs/outputs and report hashes
 are retained under the chosen output directory.
 
 ```sh
@@ -115,3 +116,8 @@ The whitebox-only `bounded_serialize` adapter calls standard JSON stringify and
 the same production `bounded_output` gate; it is not a public tuning parameter
 or a second serializer. Public report and explanation JSON/text all use that
 gate. NUL IDs are tested through the typed API, as OS argv cannot carry NUL.
+
+`check_report_bytes.py --product <probe> --output <new-directory>` runs two
+negative controls: all-output CRLF and text-only raw CR. Both must fail the
+renderer checker at the intended assertion, with archived bytes matching direct
+binary witnesses. Pre-fix text-mode evidence is historical, not raw-byte proof.

@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["\u4e2d\u6587\b"],"recordings":[{"id":"clip\b","reference":[{"id":"r\b","label":"\u4e2d\u6587\b","onset_s":"1","offset_s":"2"}],"prediction":[{"id":"p\b","label":"\u4e2d\u6587\b","onset_s":"1","offset_s":"2"}]}]}

@@ -1,0 +1,15 @@
+MoonEventEval 0.1.0 | collar-max-cardinality/v1
+状态：completed
+配置：collar_s=0.2 offset_ratio=0.5
+汇总：reference=2 prediction=2 TP=2 FP=0 FN=0 precision=1 recall=1 F1=1
+按类别：
+  label="alarm" reference=2 prediction=2 TP=2 FP=0 FN=0 precision=1 recall=1 F1=1
+按录制：
+  recording="clip-01" reference=2 prediction=2 TP=2 FP=0 FN=0 precision=1 recall=1 F1=1
+所选配对（最大基数；不优化时间误差）：
+  recording="clip-01" label="alarm" reference=(id="r1" label="alarm" onset_s=10 offset_s=11) prediction=(id="p2" label="alarm" onset_s=9.85 offset_s=10.85) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=-0.15 onset_limit_s=0.2 offset_delta_s=-0.15 offset_limit_s=0.5
+  recording="clip-01" label="alarm" reference=(id="r2" label="alarm" onset_s=10.3 offset_s=11.3) prediction=(id="p1" label="alarm" onset_s=10.15 offset_s=11.15) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=-0.15 onset_limit_s=0.2 offset_delta_s=-0.15 offset_limit_s=0.5
+未匹配预测（FP）：
+未匹配参考（FN）：
+说明：有候选但未选中不表示该事件在所有最大匹配中均不可能被选中。
+工作量：candidate_checks=4 eligible_edges=3 matching_steps=11

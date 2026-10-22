@@ -1,0 +1,17 @@
+MoonEventEval 0.1.0 | collar-max-cardinality/v1
+状态：completed
+配置：collar_s=0.25 offset_ratio=0.5
+汇总：reference=2 prediction=0 TP=0 FP=0 FN=2 precision=未定义 recall=0 F1=0
+按类别：
+  label="A" reference=2 prediction=0 TP=0 FP=0 FN=2 precision=未定义 recall=0 F1=0
+  label="B" reference=0 prediction=0 TP=0 FP=0 FN=0 precision=未定义 recall=未定义 F1=未定义
+  label="unused" reference=0 prediction=0 TP=0 FP=0 FN=0 precision=未定义 recall=未定义 F1=未定义
+按录制：
+  recording="clip-01" reference=2 prediction=0 TP=0 FP=0 FN=2 precision=未定义 recall=0 F1=0
+所选配对（最大基数；不优化时间误差）：
+未匹配预测（FP）：
+未匹配参考（FN）：
+  recording="clip-01" id="r0" label="A" onset_s=2.125 offset_s=2.625 candidate_count=0 reason=no_eligible_candidate
+  recording="clip-01" id="r1" label="A" onset_s=1.125 offset_s=1.375 candidate_count=0 reason=no_eligible_candidate
+说明：有候选但未选中不表示该事件在所有最大匹配中均不可能被选中。
+工作量：candidate_checks=0 eligible_edges=0 matching_steps=2

@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"INVALID_SCHEMA","message":"Expected at least one label","path":"labels","limit":null,"observed":null}}

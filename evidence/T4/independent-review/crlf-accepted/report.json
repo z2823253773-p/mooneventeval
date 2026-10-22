@@ -1,0 +1,4395 @@
+{
+  "git_head": "d528d30b3e8b1feaea801c2058ec310206f78b65",
+  "product": "/private/tmp/mooneventeval-t4-review-sxuadgmt/crlf-probe.py",
+  "product_sha256": "b78f03a0efac4365c7cb01d10dfba89806f2a9ae0b2c2f5ba2cd2751d77817d7",
+  "source_sha256": {
+    "eventeval/eligibility.mbt": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "eventeval/eligibility_wbtest.mbt": "3cb714c12942b0697259b1b17ff07e64b97182e3458f46180e5785fa511bcfec",
+    "eventeval/errors.mbt": "cce85aa158230c55d1413c8ef9244a4e4bbe0791491e006f32f3d05109036380",
+    "eventeval/evaluation.mbt": "9a0b25521e688dc03792f9ec6b666128ab0db8bca305989ad79c729d1a9b2dea",
+    "eventeval/evaluation_wbtest.mbt": "a55d5de17c5d32e1180a5421d57cbdd0bff23c8af7ac443e30eddc9296c59ec7",
+    "eventeval/explain.mbt": "af32ca1e411031e2805c54287e2e2122f4205aaf150f0b13ddfb76eb0aa390b6",
+    "eventeval/explain_wbtest.mbt": "9ac8433ae8854175f7bf693cbc614d4dc6931752f2f92ff0f93090aaddddc335",
+    "eventeval/input.mbt": "f2130de124d842dfcc5bd833fec025653f893920d0c47abf6e5130e4327a1602",
+    "eventeval/input_wbtest.mbt": "3a9e96e7712c6c2e59de477e299acbc880ff12cc6f4ce741639969a6e1d246a1",
+    "eventeval/matching.mbt": "8a5b67feb4bf6dfa6a4f24cb61435682597e28609ded52992b00e482639add1d",
+    "eventeval/matching_benchmark_wbtest.mbt": "25b80c68e5afb4bc90cd3a9450c472cb529633ba1784a3491685618b8505a938",
+    "eventeval/matching_oracle_generated_wbtest.mbt": "3516404bbcd1b04a9ca3abbd17637c6848bb8df90d99cae588106bb5c79f4388",
+    "eventeval/matching_wbtest.mbt": "1755aac9c0d5fd12d93acc56b4dfdfd35cf8123a9ea10550fcdc3ab12946abe3",
+    "eventeval/model.mbt": "82d9739f412678d7aa0f60444836dbdfb7b43e7ffecc807f10fdac9be1f5ed30",
+    "eventeval/report_json.mbt": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+    "eventeval/report_text.mbt": "2c739cd62e1e48d222a4f4f2361d33cdb13564549979c3a47d977262ab81f805",
+    "eventeval/report_wbtest.mbt": "bc0ca2661d2db10cd2270b565b3a2a4f54ecb7b9bfaf8398b6de5df6f7d31397",
+    "eventeval/serialization.mbt": "b542b6c71d76dd158269548693a1cf641e6f2fcaf2bc737ba521b1c2d142b112",
+    "eventeval/serialization_wbtest.mbt": "8bc62b59c41a964c968713027ec30ead0589299b20e1e3c7fc741ef1887e6dd4",
+    "eventeval/time.mbt": "2c70fe527c767914934763965e78907bbf230a3a00321cca5d48f8605bdf0ef9",
+    "eventeval/time_wbtest.mbt": "bc937e9f2f6167a39a03108f5862a62608a5aa805aa91c0601403476970ab32c",
+    "eventeval/validation.mbt": "5e8dea9db2c34a4b69ea37e8cfe47958bae36617774e96a52f214ceb67238943",
+    "cmd/probe/main.mbt": "f338044ef012512e0b5de325063be39ac2a64603c59f05ab7830d09e3043f80c",
+    "cmd/probe/moon.pkg": "4ba88d35cd744eabb3369208805f776820d75484465eb3a57d261902b3bc5142",
+    "cmd/probe/pkg.generated.mbti": "239f0d5d5003c63c1a7713bcb41e5dffc00a9770e4c8104074845aa18ee55ffe",
+    "validation/check_reports.py": "0893489f18b9d0e06d06910a514648c118ff2dcf46ed531f258f305a6f3ec241"
+  },
+  "old_report_byte_regressions": 46,
+  "explanation_pairs": 122,
+  "identity_cases": 44,
+  "process_runs": 430,
+  "cases": [
+    {
+      "name": "regression/duplicate",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249"
+    },
+    {
+      "name": "text/duplicate",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "808893dc43efe0947714b952ef247929fd29b8dced90e30746ac814dcfa64dd1"
+    },
+    {
+      "name": "explanation/duplicate-0",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ced4dea6ac3812ebca440d2ec28c8a889025ab57d24ed77d45378e4fe5c6877a"
+    },
+    {
+      "name": "explanation/duplicate-0-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3b46e9bb9857e4ea44905b94e907488109842a2f0b9ab2460ca7ab8993bc0745"
+    },
+    {
+      "name": "explanation/duplicate-1",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a57992bf08516f59d166798eb6a45005b36f4175bb8357da4e8fc28d86167a82"
+    },
+    {
+      "name": "explanation/duplicate-1-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4d04ad4ff9e55c883bc2552274e1b3c40534029c1a7041de42c0de88c03d534d"
+    },
+    {
+      "name": "regression/greedy-trap",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8"
+    },
+    {
+      "name": "text/greedy-trap",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "6c3bd2b5e894033294aeff41c2619b7a2b4ff19bf7010d080f1f00236b60e4d8"
+    },
+    {
+      "name": "explanation/greedy-trap-2",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b76980a122f3e75d884d69767d3310d9fb78e7fffcdf66b91175f3be5e7f0612"
+    },
+    {
+      "name": "explanation/greedy-trap-2-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1a71d0be0b8da53d5c3731aed3f79514c2198aed263d789e564f0ac088ccddd6"
+    },
+    {
+      "name": "explanation/greedy-trap-3",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bb7c42560001b2639094c9fdde06a15365de6def792719d7ec84ff4f4b69aad1"
+    },
+    {
+      "name": "explanation/greedy-trap-3-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a599b8862d38994666fbfa98adbf1ac42fb9e9fb6263c8a670424d1d05c88f8c"
+    },
+    {
+      "name": "explanation/greedy-trap-4",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9f9c1cdcd0e36e11db61a9da5da36bfc1e2822cd474c837b027464dc85fa4ff0"
+    },
+    {
+      "name": "explanation/greedy-trap-4-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "47f376850d81440f66e1e9b3d344fc382bb4b1bb7f7f06a4bee150b658cdefea"
+    },
+    {
+      "name": "explanation/greedy-trap-5",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c53fea4094d5596afe5fc509a68cf07ab73c81f5e8ee8b85e51780ff052fc67d"
+    },
+    {
+      "name": "explanation/greedy-trap-5-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9cf0bffe77379aaca79349d05c526b32e80e744ab7909e96bd9b70388f296a0d"
+    },
+    {
+      "name": "regression/boundary",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c"
+    },
+    {
+      "name": "text/boundary",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a9d8a9f9f8a93accef0ae246a38f71528ceb099b8ca16926a60ead72d2df87d7"
+    },
+    {
+      "name": "explanation/boundary-6",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "50bd43b3fbcb90e4c1d1f6bc5ae10e27073fd0f8659cca3a9a2d12f7a7d33e83"
+    },
+    {
+      "name": "explanation/boundary-6-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e5cc71bab674733c2704ab0cadbe74002e1456f85a6430e3f54f3fbbaceb9946"
+    },
+    {
+      "name": "regression/decimal-onset-binary64-flip",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "eebcc09df3cbe29266eb8c898fb8f3a9e0c658294d65a8ff1043ba7c444b0980"
+    },
+    {
+      "name": "text/decimal-onset-binary64-flip",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "ff5bf1dca0639f24a27581c7601c37d70ccfc1ef6ee0e1aec2587af265ca15a2"
+    },
+    {
+      "name": "explanation/decimal-onset-binary64-flip-7",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "52502545fdbb0ac18877045733104a7e467f962a19f90458b6e5d89389a2d7c8"
+    },
+    {
+      "name": "explanation/decimal-onset-binary64-flip-7-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ec159a441df70c03d0f2cf24ad9e43270205b8f48c8f3dadb4ec29a31fd27391"
+    },
+    {
+      "name": "regression/E3-onset-outside",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a2177a299afd2d3b296b6f239991f817611d4dddd074dd0d702c85414966fe71"
+    },
+    {
+      "name": "text/E3-onset-outside",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "c1a241d3f7adbd8168ab2924a4995f81655afc1474ea195ce2544b90c6dfb1b4"
+    },
+    {
+      "name": "explanation/E3-onset-outside-8",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ca5ab53855cb4fefd3e99000211a32e5a0823eec73ea8be7839c89aaa0a38829"
+    },
+    {
+      "name": "explanation/E3-onset-outside-8-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "127b2f653f0b4695b8869951266242e8717a3cbe740fe5734e7c3305fd850766"
+    },
+    {
+      "name": "regression/E4-offset-equal",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "924b615cc2e3f9d3facd3567cb277b019f68a62299af6aa67a153dfaa748e17d"
+    },
+    {
+      "name": "text/E4-offset-equal",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "402220d71f081aef0ce770635201d42db419e198d6d19347d19222fdf4162e93"
+    },
+    {
+      "name": "explanation/E4-offset-equal-9",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4baf1ba0b93530e80c7372bacc0a340b78fd48932f54635474660715e2e0ec8d"
+    },
+    {
+      "name": "explanation/E4-offset-equal-9-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c786bb89a2473931ae6fd36ff07431621809bf73baf9c238960d5b004243bda4"
+    },
+    {
+      "name": "regression/E4-offset-outside",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "4600dce39b0d53d56bef3c048808546cf472ffd35a0c75a7dd0a3fb1c56da16b"
+    },
+    {
+      "name": "text/E4-offset-outside",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "93e9c0384e2c6056f9d9fb02f46d4fae5e6c98c06d5494de3cd1c845827b62af"
+    },
+    {
+      "name": "explanation/E4-offset-outside-10",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "944d8953ba3328141a351318383e074698af91361a759464309be1e4a827865e"
+    },
+    {
+      "name": "explanation/E4-offset-outside-10-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "21d4f9ac768fb6eaeee477947962f80cf93659de2d13d87ccf6f02299909acbc"
+    },
+    {
+      "name": "regression/E5-collar-dominates",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "51a0656fb55a73b019adaf36b967df436c7569490114d5245a27fbf79d91c41a"
+    },
+    {
+      "name": "text/E5-collar-dominates",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "6480622ed886b0987ddc6ee91958c6a19503857f816f3e80f51f5ddcaf0c2dfa"
+    },
+    {
+      "name": "explanation/E5-collar-dominates-11",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bbf8f4ca047c7669f9fa6b4874b0fcb8d721c6ec01d1893bd258c1b910e469cf"
+    },
+    {
+      "name": "explanation/E5-collar-dominates-11-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0e6184162fcc7d8d1fdf8158f102983adeb65b2b75c154616d7bddf9aa874c47"
+    },
+    {
+      "name": "regression/E6-reference-duration",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e0dcfa6de463ef52f43695f69ff307df7e619018fbbed51d3047ec259b47735c"
+    },
+    {
+      "name": "text/E6-reference-duration",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "eb9fa586ec99c1c36c3bb99448558c08ed5407efefac21c4a9951b15d95c6f01"
+    },
+    {
+      "name": "explanation/E6-reference-duration-12",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "546dc6ef9842f0e134340f2a46a2e34f78f908117fb71a2be0b7dde3bdb1aca5"
+    },
+    {
+      "name": "explanation/E6-reference-duration-12-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5f862339a59b50d6a650ec55ecc4d65a2f598b1dfabc5bf27f4fc820f0fc7a5f"
+    },
+    {
+      "name": "regression/E7-fractional-microsecond",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "2cb73151b675f1c407631f75bc1ef9168fa67b897c833d01011ef9be0dec3975"
+    },
+    {
+      "name": "text/E7-fractional-microsecond",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e9d8216a1704c635fc97a3d7dd199535ec448b505c6b1d11be371cb60c64a067"
+    },
+    {
+      "name": "explanation/E7-fractional-microsecond-13",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6dd6a70dad95c9a611bfc08e53662033c849a86542a29259777f974c9555bf83"
+    },
+    {
+      "name": "explanation/E7-fractional-microsecond-13-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5de60db864144ca13821ecdeb9f42f15db2b36d2daba7dfeea154a0e7cf4be9c"
+    },
+    {
+      "name": "regression/E7-fractional-outside",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e27d347bfe8b729289d5ce59335b533441c3733749282b0edaa4e27fc567c094"
+    },
+    {
+      "name": "text/E7-fractional-outside",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "3514c9793cfc4e15bf1c272a6dfc02f3489599899110a481e19a5b75eadd9f86"
+    },
+    {
+      "name": "explanation/E7-fractional-outside-14",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c76d5986a77e7b55265429702740830b79e3ae78204a982bfb1892684bb4f7d2"
+    },
+    {
+      "name": "explanation/E7-fractional-outside-14-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "21e110050d40c4378d3599fffdf4e8176b1adeb325dc119f1b327af32307f9ae"
+    },
+    {
+      "name": "regression/empty-both",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "057d5f20bca43e639e9d7d200f51e085233a8fd62b1bf66d008180b0d7c78c04"
+    },
+    {
+      "name": "text/empty-both",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "682548d2a32438a8c7d53f6589b6d64fdc1daea11dd49989f52f732811c9530f"
+    },
+    {
+      "name": "regression/empty-reference",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "ecf2964a9f4101edf2939a10be4299ff1305320b8b8197fa34d874e9dd9f8b34"
+    },
+    {
+      "name": "text/empty-reference",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a7dce91a2370d75f2ffc2dbe5fa222da89e5f015b72a1de2e9bfee928ff45c3e"
+    },
+    {
+      "name": "regression/empty-prediction",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "669e3e1972cdc865cab29ddcc2d55970cb720e3c9fc30927a7d6d4955012641e"
+    },
+    {
+      "name": "text/empty-prediction",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "7e8bfe8d41b4c8bba2442517697ad0674422c88510c8cf992250e612c311e729"
+    },
+    {
+      "name": "regression/no-edge",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e7f2eb77377468ac12741b665905896fc91b48f3ba61bfb7cc18a596021b81c9"
+    },
+    {
+      "name": "text/no-edge",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "b38074e01c0b969d2356cb0c900e74b44011fcc11c1dee201a43279da6f13246"
+    },
+    {
+      "name": "explanation/no-edge-15",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cf85d65b1bd825a857ba87043269b5ff0eaffa5164fab25d0cdf12b503c0ef4a"
+    },
+    {
+      "name": "explanation/no-edge-15-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c6b53fffb3c872a9abb460e18f1150a8431c9127866fd9b1a4cfd7154b0e11b1"
+    },
+    {
+      "name": "regression/cross-label-substitution",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "7bf22c7093dea3095a80456df89c0033a131ce6fc5be7a9f72a4bfb8a4176d14"
+    },
+    {
+      "name": "text/cross-label-substitution",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "719c30e8329aec012e6fd82450d846a77cd1b298d192b3d2db7c1d69c1b620b5"
+    },
+    {
+      "name": "explanation/cross-label-substitution-16",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5bd843533129803ee24a03836cfc28343f1e663e1f6145158fdf18305c83f4b3"
+    },
+    {
+      "name": "explanation/cross-label-substitution-16-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "78680e347a3aa42ea2fe6558dacea859d408583b8c70a4b1b36733791b89f2d1"
+    },
+    {
+      "name": "regression/binary-grid-equal",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "393a799eee2d07a0e12c8a5556e4eb21a7035b5d317df372d9e53c6a91cfc141"
+    },
+    {
+      "name": "text/binary-grid-equal",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "d0920fdc03948e9b3013ec3450a6caa4ed688f788402d7e7a57901add9cd6441"
+    },
+    {
+      "name": "explanation/binary-grid-equal-17",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8e3cab9578b8ff55bfec9fa352741ed47cb454d095108ec8bf251b116c46a7cb"
+    },
+    {
+      "name": "explanation/binary-grid-equal-17-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b67fff93ab8bd4d57205474f7ad0dc2dea3813b35a15ce6c8f5ebdbe74c9651c"
+    },
+    {
+      "name": "regression/binary-grid-outside",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "4433c4a43a41bbfc7cbf79b342a897547192df89e8879cbaa7af071df8502ed5"
+    },
+    {
+      "name": "text/binary-grid-outside",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a149549c98529662c2554399abc3c6f9454be42fce3b025531f2129af6d256b1"
+    },
+    {
+      "name": "explanation/binary-grid-outside-18",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "22e417b85d1cdbc96c8e9792b513bcfd0900604ab4a27f9348bce2855d63a418"
+    },
+    {
+      "name": "explanation/binary-grid-outside-18-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8959a11df803579c96cb1c79c2a30398c73e32c3af5ba98b153472f60987af6c"
+    },
+    {
+      "name": "regression/binary-grid-zero-ratio",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "7203196771ad2b3e17e55074d242b8eeddf80fa4f95b65f28d49297d1afd2a91"
+    },
+    {
+      "name": "text/binary-grid-zero-ratio",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "b972e62aa0ea1a6772c17686960a916f1fec8d88d060cebbeed31bf99736ccc9"
+    },
+    {
+      "name": "explanation/binary-grid-zero-ratio-19",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5632f0aecb64752483d4160f45e044f3d12df62d17592201bba6b5420b583ef5"
+    },
+    {
+      "name": "explanation/binary-grid-zero-ratio-19-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e4aa68966a1e3ec282fe5dcccaa235e1b3f1a51c12c10fbc4351d9dd969d114b"
+    },
+    {
+      "name": "regression/overlap-multiple-optima",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a22af5c30089762c1db17668b2b335bbf242672218152c984fb32814bcf7a8e0"
+    },
+    {
+      "name": "text/overlap-multiple-optima",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "579359defce5882aef58fabdffbc92e37fb4be0c1ecc228b249479202f384952"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-20",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a47b2e0b8616413b8727458cf23ba6efc96100231539e5e5a2d358fef5be405f"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-20-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3c92ac86d9917948ee115f9a38f71f9c62c6fb996477fdbdbc983d78f4643512"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-21",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5cd8f2cca37ca3e25a802b9d87ea099026ce5f0163decbc4b69717296f3d4f62"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-21-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d1e4bc0b95929eee763e6d91daaf151616e3ceb15098e6418010fb35264b5e0c"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-22",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8572fb70e29501d1c09d090a0196ea6d29c31ddd9df1eeabe80afed1585c0757"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-22-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f5996190a454faa9f3e46819002bfcbb0b82e7926358d5cb73cfff409ecbc865"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-23",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bc5ada4cd5e7262632e8b341d1dca5af825153fca0d4f78ef162caf4ec6f4b4b"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-23-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "020e6e9a4c027374d97915c7db7a9b5a558d21ed68d9ebdf22fcf2420208b4e9"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-24",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "66a6854cfba242a9d85c4366a509cbbdaa5c6ad08ccb26b312721fbd55dfb787"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-24-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6b7ef141834ddb132532909cd09d669486304398c57ed4d3e56c7d1b85c8df34"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-25",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "45eb0d8618693efff151d9553b9699406909c3d01e88714bb61ebc37d47aa95c"
+    },
+    {
+      "name": "explanation/overlap-multiple-optima-25-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4035cf89abcfd8d81f9d4683adf112517d739ae81e7b46b6fbe4cb3870b5c00f"
+    },
+    {
+      "name": "regression/recording-isolation",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "53783f172aae2835b91ec63ff667561db8f423595ad5a8c304698d1a3b7977e9"
+    },
+    {
+      "name": "text/recording-isolation",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "92140f662acdcf4eae44dd7b121076c1f55cefa6447aae77c8ce0c8ede23708f"
+    },
+    {
+      "name": "regression/unicode-order-and-escaping",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "0e135d2254550a479eceb59f70131b75152ad3dfe8f8d06f79e91c96cdc43240"
+    },
+    {
+      "name": "text/unicode-order-and-escaping",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "6c47570647c425a74909a1ac3ed48cf9db949d303c78caa53fffbb3814c5489f"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-26",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8aba5dd54a767449308af17fbe901e1e05acb37c5f03a7b80ddb28b241cc50dc"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-26-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a4af4be922979e4867af224cf0fbe03237e2986bd72823828b4a6465cc20ca31"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-27",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4aa1f691c4127fb00221303408ef6ef83e8a5e17b4e1b46236569c673351d4ca"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-27-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "05279bb30eaf1b3412ec1154c693a80104ef3f227ae7fa9d7b770a9907e494eb"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-28",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0ab5e6ba3829057c504ccb661993017d00b1885038f94fcd0326010a11084068"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-28-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "𐀀",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "06193a8addea8bb568450e0bfe0f956187b61936d19f54d7e9ec3b28c3b5a476"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-29",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ec5c0e8e41c838fd0da097ecdfd50b0d834b1ca123f890e1546195271841a4c8"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-29-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "efa08ebbff65e5f9bd12b0d1c8cc69814b3db6504a1a8310d62f9438c00905e5"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-30",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d91e2aca5788f9e57c46518ee5de17b19953b8e106a319678a0d9ac139d1221e"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-30-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c9e0fd8f091e91b47a67ee1d4518956e0e56a6b6b7fc777c9de3adfd0fa71543"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-31",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9945b05b38703306241e23f92f7e5fb5dd4bc9df10535fa9dc5fb3ba4a76a02c"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-31-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "22047a0867d61bd4ce90a434b283075d4328ce5222f132eb8ce1b8898e80399e"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-32",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fe44e1a93a326996cd281502ad6976b37929e6a5a7e0ce997197df6937ff97db"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-32-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0cac83a51b9c4cac50cc8ddc1529c13d1a5ebbf7014b7d7a3e5c44c82ad9b0f3"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-33",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "31a1d928de6efd3db9b60fb6fb034cd89fe0dec796c8a476a7557f669e6dccb6"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-33-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0d04d3c76f107b47d6b75332403eca293324a04ac23c41e2c12593688778e2c9"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-34",
+      "mode": "explain-json",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a3ef804bbef40babb72893fdc3973bc11b5ce35798c528198f2950dc4541591e"
+    },
+    {
+      "name": "explanation/unicode-order-and-escaping-34-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\"\n\\",
+        "r",
+        "p\"\n\\"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c979b3d7ed2f1c79ce665370ea82774d54a441c0d6e440f9a066948c48122fc1"
+    },
+    {
+      "name": "regression/seed-grid-0",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "cd51aabfe021b679156838325500dd2a437120d6ecacb504157309cc6f89e158"
+    },
+    {
+      "name": "text/seed-grid-0",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "8b1c707d5139816bd8a10e4383d247e92f6bd9ad8bed94850a552467ceab3c15"
+    },
+    {
+      "name": "regression/seed-grid-1",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "0b6ce704ababf585815358391cb691a4f23dc56e0c8bbd2e3c4b648052001796"
+    },
+    {
+      "name": "text/seed-grid-1",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "07e9520bbf8060e92874b249153ea7e5ebd66491c06f6e2311fcd02400404dd0"
+    },
+    {
+      "name": "regression/seed-grid-2",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "5760f3b614dfd5211862559fd14c86f266a07e315dbc6cbcb85be9ef79cae653"
+    },
+    {
+      "name": "text/seed-grid-2",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "521c20a8f3544a591f80e702c2493aab7024698010d2b714a0d9fcbd56776d98"
+    },
+    {
+      "name": "regression/seed-grid-3",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "4e119b1cdad685f54d03212ac9b7f49599bbff9d7006f81e0e734048405115af"
+    },
+    {
+      "name": "text/seed-grid-3",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "74b224c50842b29111db812aa9fc3bce1b267050c48f0cfba5c72a135cee4a84"
+    },
+    {
+      "name": "regression/seed-grid-4",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "18e5d99adfd7265758e57825fe3ed7de06d5c2e3ca7e3a362798911cfea307d3"
+    },
+    {
+      "name": "text/seed-grid-4",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "b596a38d96aa08358c30bebceb3ccd30b48ab82d7767aae288ec9861f178f949"
+    },
+    {
+      "name": "explanation/seed-grid-4-35",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1010527e277ff08491d4d8889795f2ea8a4b3645c1ec4beafec1564252a7fe53"
+    },
+    {
+      "name": "explanation/seed-grid-4-35-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3a57cd5e9efa7d3ec6863fb57e2344ed48cfc6a3a9e7506c29d72af50c82aad9"
+    },
+    {
+      "name": "explanation/seed-grid-4-36",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a9e206e0bfa2330db5861dfcb7214a7e0c3f6e95b245761df956acb9780e0abe"
+    },
+    {
+      "name": "explanation/seed-grid-4-36-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e0ee0aab144342e8fc6a6abc48e48d636f2da3d9e67260ee405e08ea1e45a586"
+    },
+    {
+      "name": "explanation/seed-grid-4-37",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4a182ff292df37ca0b0ba60376f717013915c3849c0ebb82d73231bff89cc8cb"
+    },
+    {
+      "name": "explanation/seed-grid-4-37-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bb82aa45470600ba75589c48406e42c2ca2b69043e7a3bd37294761ee6b86ad7"
+    },
+    {
+      "name": "explanation/seed-grid-4-38",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4d4bf2cf0d18d09dbe4569b075df55cb8e0ac3979e0b87369bb2fcadace311b7"
+    },
+    {
+      "name": "explanation/seed-grid-4-38-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6162649fabf2131af5fef90ea10b2a956c2bc0d3d8e805434a69114408aefa0e"
+    },
+    {
+      "name": "explanation/seed-grid-4-39",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "26eb6c1fc036fc8bc0c62cc670a6e2355631fadaee6575f8abdca2efc679d9b8"
+    },
+    {
+      "name": "explanation/seed-grid-4-39-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3a77bb0780e27b05ed03f7afd48c2fefd43ed1dae16fd5a92ab359f5a807d342"
+    },
+    {
+      "name": "explanation/seed-grid-4-40",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "27dc266c71513135080f48e8719ce62390242bc45b0077432aa7627250721a43"
+    },
+    {
+      "name": "explanation/seed-grid-4-40-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e7ba839b7fb5c2b4b73964e7a2b2ba74d4891f4ddebeb6339fae2f6a092f919d"
+    },
+    {
+      "name": "explanation/seed-grid-4-41",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8ce24387974c2041040d8e27f90e2060d46451447749e3f3dd9c0e17a3334e9a"
+    },
+    {
+      "name": "explanation/seed-grid-4-41-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ef8631baa6b724756b6d7564e0a4200b3d2f260b6c4c5e94d1e1f597d95f9254"
+    },
+    {
+      "name": "explanation/seed-grid-4-42",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7de74d0a3dde13221440a9df461f51d29c09ef130f4ce22280ef39b1816bc771"
+    },
+    {
+      "name": "explanation/seed-grid-4-42-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dd6c396581d2de85b1eadf063e8d3ace936927ff3d9de4e1450c96640ed89e78"
+    },
+    {
+      "name": "explanation/seed-grid-4-43",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6a173fd81174df303aa1fd1c5993f477f9349e6134530a49c2265c97ea2aa895"
+    },
+    {
+      "name": "explanation/seed-grid-4-43-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "223922fc7d422850ddc2c7d943c4ba7610ac15d5ba333eb6808dc205e134e4cb"
+    },
+    {
+      "name": "explanation/seed-grid-4-44",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e7e27643767a6d017006032f316f5bc9805d67df5858a2878e5a0862c441f000"
+    },
+    {
+      "name": "explanation/seed-grid-4-44-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cf56357549c5a306175c852e11fc21f1633ac8d6cedacd7e3039ca16e269a442"
+    },
+    {
+      "name": "explanation/seed-grid-4-45",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ecbf691553443c615447d0c3d12ca865e1c39ba25713825942bf41e743d5db7b"
+    },
+    {
+      "name": "explanation/seed-grid-4-45-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f1b4fdbcac4e648c46357e496217160d1a622e5d386fcb7222a6fb71a3274b68"
+    },
+    {
+      "name": "explanation/seed-grid-4-46",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1676a34e3ceee150fd568c12efc69ab1968cb03977e51c827ca209d25da37727"
+    },
+    {
+      "name": "explanation/seed-grid-4-46-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c1aa4a89d9d305d4088740be039babb0c775250979168fa7a03d8983f2bbc28"
+    },
+    {
+      "name": "regression/seed-grid-5",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "14a8664ead29815361570b4c5e22cedb69662827e2c217111f0d281fad56da26"
+    },
+    {
+      "name": "text/seed-grid-5",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a7bec2cdaf49dc814adffbd50ed20d2d1808c3e7f99fbd0c43dc9537a0a0a120"
+    },
+    {
+      "name": "explanation/seed-grid-5-47",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "390e02bde01140cb0f50ae31d132f68e841e1f2fac39b1daf88390bfeeebd7ff"
+    },
+    {
+      "name": "explanation/seed-grid-5-47-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dda2561315db50a29ae212211962795c9fbe06152e67e21f68d98c5f63801816"
+    },
+    {
+      "name": "explanation/seed-grid-5-48",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "10142974ba852c9978c57a17fd15b1c61b7784999e464a894970aa7989a4d6e0"
+    },
+    {
+      "name": "explanation/seed-grid-5-48-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9b226e7e9ac4d38c052b044e05f994880e2a80a4bd92c8f0bf2930c11f71b8f3"
+    },
+    {
+      "name": "explanation/seed-grid-5-49",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "227799902c0ea8ec2a83a8fdacaf2501c4a53543fd1f3f604c5ff22c696f73c5"
+    },
+    {
+      "name": "explanation/seed-grid-5-49-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2f2ec9faa1f6f40a6f82a33e6e6bfb584c46183fbcd71fa1add5c5cd6c97abe7"
+    },
+    {
+      "name": "explanation/seed-grid-5-50",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "185b74df490f857e4ea4d848ec7e28026032d7a6431c3e0cdbca2fd28e3c02a4"
+    },
+    {
+      "name": "explanation/seed-grid-5-50-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e014cd7d03a4519b64a0ffa4ab463925d17f671be4b5fb2b4b95146fa96a2b6e"
+    },
+    {
+      "name": "explanation/seed-grid-5-51",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7a5d07f30d32603f71939e882eaa0dfa05ed645d5b1ea8d2e1096203450e4c50"
+    },
+    {
+      "name": "explanation/seed-grid-5-51-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cf9e47eec0fba277eb5a935b46bc89b5629e0c072d9187b640d6da022822cd55"
+    },
+    {
+      "name": "explanation/seed-grid-5-52",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2072fb01d39dd58e2bcaf237cfebff05ac5012ea77c6e204a669e15c6afd98b5"
+    },
+    {
+      "name": "explanation/seed-grid-5-52-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7f3dc4748a48537164d534bca03abd4d59e96042a53e895441ec5a36883eb285"
+    },
+    {
+      "name": "explanation/seed-grid-5-53",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d3f98e8ef1f775237257266bb2b29928cbc86bc1fa0316c04f256c44ea52d475"
+    },
+    {
+      "name": "explanation/seed-grid-5-53-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1ee6babfebbd740dc5a94668f4b80ccb2080f7e6e4819181020725c0381cfd3a"
+    },
+    {
+      "name": "explanation/seed-grid-5-54",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b6c0edf00c5e29245c0b66105e34c8126324baa91c0d693faa754e2035dc2c91"
+    },
+    {
+      "name": "explanation/seed-grid-5-54-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ca0091df003a4b4f1fb93c69ebdc69a669c310976e026876d6e680ee70d75425"
+    },
+    {
+      "name": "explanation/seed-grid-5-55",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "487688ee647f736d41ec3d60efab0de1108db592d1e0b118047f3d900bca231f"
+    },
+    {
+      "name": "explanation/seed-grid-5-55-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "639cc59af43a3e9763f8d8a5db65c9c4c9cb281c15fa942c8a7ff9d2fd1fed5f"
+    },
+    {
+      "name": "explanation/seed-grid-5-56",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fe20632062e9b7144978b56bbfe2d34ba2673f9e1404f8073acd617c3e9f18e3"
+    },
+    {
+      "name": "explanation/seed-grid-5-56-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6ea5d0880692563fd2cab51e8d36adef0605ac34dd6cbedca6720d814e391ad8"
+    },
+    {
+      "name": "explanation/seed-grid-5-57",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9c2dc5733a498b45b99bce4d10331d7d371f192565d71a2bdb00f215e9614140"
+    },
+    {
+      "name": "explanation/seed-grid-5-57-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "215c93db7a546d7eafe983b6309f0b6053e0146095210c372e4c45c36ff28ca7"
+    },
+    {
+      "name": "explanation/seed-grid-5-58",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5d92bf017985968a5e3d8b22c8cd9aa39a8ffa05b0f15e6d0fa743bdd846b1ac"
+    },
+    {
+      "name": "explanation/seed-grid-5-58-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f5acdd437958061a755ddac925a9e3b7ec45836b22776aaa7c5bf132bde8256e"
+    },
+    {
+      "name": "explanation/seed-grid-5-59",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "79d38b48c685dba99e263aa6c50d481b5eb0e22436969c15c2f86f7abf405a17"
+    },
+    {
+      "name": "explanation/seed-grid-5-59-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0a1e7b1244bbd0fce559bec23fc1503b34397c80427debf4b86ca85040ddcb39"
+    },
+    {
+      "name": "explanation/seed-grid-5-60",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dfb7e4987b81b0194f9da11151cc94d4a017105091108d34516ba16bd6c539e3"
+    },
+    {
+      "name": "explanation/seed-grid-5-60-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a365b33da319b44a71a89c8581bd84b6d27c246fed21b81e3cdafec882d97faa"
+    },
+    {
+      "name": "explanation/seed-grid-5-61",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ac9f0d41f5e3f4075cdc007d110e83462f9507c93548794f4e8556c1fe331cdf"
+    },
+    {
+      "name": "explanation/seed-grid-5-61-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "487678fb1d6386e8d5e8c4616c20a9d182f2e7018649d13c9067e27fd334b584"
+    },
+    {
+      "name": "explanation/seed-grid-5-62",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a98394b8732708e82a9d6b95e242cff26d27f96d1263c8c87030d89cd2b2abe2"
+    },
+    {
+      "name": "explanation/seed-grid-5-62-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f699cf55f8169f70617c9f4b3686e0df5c475855cb220a5f617ed87c2de16eb8"
+    },
+    {
+      "name": "regression/seed-grid-6",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "494de38d4ff434179acbf4b11198be6c7908bfdf5d33b2ec07d4e504d1839753"
+    },
+    {
+      "name": "text/seed-grid-6",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "1e673d86489a494ba389c23721e5daaf01119fa2c3bde4a565f641c6ec7fea7c"
+    },
+    {
+      "name": "explanation/seed-grid-6-63",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2c210c9d8979ab43fe93a4a7980efb9ddfae90fb7bda529361ea2b04b8e81124"
+    },
+    {
+      "name": "explanation/seed-grid-6-63-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ecc1cf02f28dcbe53646a8c0f0c4f1e449de5b6cd99c2a841935711f0612adb5"
+    },
+    {
+      "name": "regression/seed-grid-7",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e830a470dbc504fe34febc54bd3df01e3e49d26bc7ec7e2cbfbbe912e79788bc"
+    },
+    {
+      "name": "text/seed-grid-7",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "9f0523ef207ca99208829be8392e30f115bd98ef0a1dbf8678f2405bafd15952"
+    },
+    {
+      "name": "regression/seed-grid-8",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "834e03fbdf9e86412532369d6b8b4e32aca4b56602ba1678ae81ed8d366ec231"
+    },
+    {
+      "name": "text/seed-grid-8",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a609caefe55284a459ebe605a4c78fda0b20b52bc98967671c8e0b22b63d10e4"
+    },
+    {
+      "name": "explanation/seed-grid-8-64",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "383838387497913681c7627c4a4f30e00f417dd2c43ec955ae6fd9e8e45bd1d6"
+    },
+    {
+      "name": "explanation/seed-grid-8-64-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1615bb4cc2176a3d44db7339c6a44ce71115a958af7f9b653615e79af3e2569a"
+    },
+    {
+      "name": "explanation/seed-grid-8-65",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "42c7ae8a45a3948d259924195b5a181351ac26120b0b27fb20cddc118541da43"
+    },
+    {
+      "name": "explanation/seed-grid-8-65-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4f35ed7f9a89ad323ef673b289d3ba5f54a6f6d0f916a0d97cec57d355539ce1"
+    },
+    {
+      "name": "regression/seed-grid-9",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "27a2fd4f3f7c8e56d48b1baa9c7729ab34a09a14b3426243befb7f5b22328d83"
+    },
+    {
+      "name": "text/seed-grid-9",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "b5c69c65d60da3e144c62a45c9963e0e8d59debfdce7fd6717e6f0fb69cb9021"
+    },
+    {
+      "name": "explanation/seed-grid-9-66",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f723df5be1874b23d82c3262ef76a40142e652c8edbc890fbe400aa76d8f489b"
+    },
+    {
+      "name": "explanation/seed-grid-9-66-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "099bc5cc2979d6da2289088b29a6adcaa34c1fe17cd4f036c3337062ce04ed9a"
+    },
+    {
+      "name": "explanation/seed-grid-9-67",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "28aa374e6d30b77cc1f5285437520a85346db9392da720dcada109d7635254dd"
+    },
+    {
+      "name": "explanation/seed-grid-9-67-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "edcd16f4f8f842688ca752da5dadf470d105c69f14ebac098581e62e0c98dfbc"
+    },
+    {
+      "name": "explanation/seed-grid-9-68",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "594e17f421973a2759c45a3f9a7c9b5225298642ec3cf9287d3fa3c70f78715b"
+    },
+    {
+      "name": "explanation/seed-grid-9-68-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "650f5c1b17f30b8c43e7ebbe46dd99cc9d538e3051f90f3a0d1a65e89a4d54c2"
+    },
+    {
+      "name": "explanation/seed-grid-9-69",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c1fa458ddfd6d3ff3483361ba05bc6e4c911345e07be08678c16c1e65bd451e8"
+    },
+    {
+      "name": "explanation/seed-grid-9-69-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9fde77a4ac6fb6a20c12b893f43a5e44f7b7b03e588def37c03229dd8617649f"
+    },
+    {
+      "name": "explanation/seed-grid-9-70",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a674c7767c863f24069bc08c7c95990b894cc2570a5dd6217e5dfe2e3ca578a7"
+    },
+    {
+      "name": "explanation/seed-grid-9-70-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "01b863a74f69b9c4caee9f369941829c4b436aa1bcda6ffc39ec0096253c3c7e"
+    },
+    {
+      "name": "explanation/seed-grid-9-71",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b0c3cf5f3dd49fcf7ff585f4cf5487c2ecb31f48e3655ad4d8ed2324168eb363"
+    },
+    {
+      "name": "explanation/seed-grid-9-71-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4298b9e219823d13e9308d578df5ef0140977f9757d5dcb3b95d4cecb368e260"
+    },
+    {
+      "name": "regression/seed-grid-10",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "cefa843d31533244eabfb22f63703b5a444f688de4b0f96954b5fbcb1539d355"
+    },
+    {
+      "name": "text/seed-grid-10",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "407ff5ba7d55f8c09208596005810f855dcf63bb0ecd7a391464afa00df0bb33"
+    },
+    {
+      "name": "explanation/seed-grid-10-72",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "631f23981cbb1d0b73e6d94cdb4d46cd3f9b9c67e170444f480ff82509d0ffea"
+    },
+    {
+      "name": "explanation/seed-grid-10-72-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "38f761fa972db5fd0c6962daf4cb7438516bdc2d1da7c7e39eb51fbb7690e7e7"
+    },
+    {
+      "name": "explanation/seed-grid-10-73",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d88716cad43dac1722e1091fc872895db0ba6f8e2366e48329beaba0e942cbee"
+    },
+    {
+      "name": "explanation/seed-grid-10-73-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0873abd29fd7d2471f1dc7a3938727ad7fc26448899a8259b8e91f2fb85b6364"
+    },
+    {
+      "name": "explanation/seed-grid-10-74",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "08de24eb396893784ec7562175dcd6e9aea6a784b2979f29f2486ce1daefb524"
+    },
+    {
+      "name": "explanation/seed-grid-10-74-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cc1e825b69cfa9b1b630b9568b0a661ab41fc9099f8e302be98eccad2f9bbf59"
+    },
+    {
+      "name": "explanation/seed-grid-10-75",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c509a87228b7c4b02cf61b55b110eafd55812343e1ea5109234b94ff19d660df"
+    },
+    {
+      "name": "explanation/seed-grid-10-75-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6afb9eeffbfd7730e080b7b4b7677c805c383971aa8840f853a618d9f2449196"
+    },
+    {
+      "name": "explanation/seed-grid-10-76",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4e1d4661e9e3b37cc43d569c3c29a68019ce1b9733922cb453dc22a4262efc7e"
+    },
+    {
+      "name": "explanation/seed-grid-10-76-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3c268f12baf75e0af661a0d7b938cb761f28ca697c1de57b9468b8cb538002d1"
+    },
+    {
+      "name": "explanation/seed-grid-10-77",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9d992ad069e9a65e6eb4bb1ad3dd4181c146de44551a64f3b170be1ae97fa4a1"
+    },
+    {
+      "name": "explanation/seed-grid-10-77-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0e147d6bc6684b676b2e5e31cca4382b23e35906a72cf533dbd9c14a679aba0f"
+    },
+    {
+      "name": "regression/seed-grid-11",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "f9296940f355bcac02e587e633efaea6ed9686869492c1421fcbc2868da46985"
+    },
+    {
+      "name": "text/seed-grid-11",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a73914b4f733d4e04ee84bbdd1178f088ac75279f1d74dadb13dfa16684faeb6"
+    },
+    {
+      "name": "regression/seed-grid-12",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "baae0ef4a1cc2d83d112c269d1bcfbab07a71e670d017c6122c0677a03580b7f"
+    },
+    {
+      "name": "text/seed-grid-12",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "3203ae58a9fbd82bd0f6eb87a7b9a3b0fab69d835d16ca96bc26c775f8bc664a"
+    },
+    {
+      "name": "regression/seed-grid-13",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "b8c190e54157b6a7571a80fafbc59016f91ad52b7ef6c077ec299825eb7fe7d5"
+    },
+    {
+      "name": "text/seed-grid-13",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "1c91b247c4515ab9df86fd9b044798db99267a15d813a2954fb070399695f6ac"
+    },
+    {
+      "name": "regression/seed-grid-14",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "edb00c92ac3a848c59552141afb834dbd362088cb74f4c13948dc887052420b7"
+    },
+    {
+      "name": "text/seed-grid-14",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "20322c870529970c0cb1cece9cf3f925612ca90b37f4ff3e1e80fcc5b9362160"
+    },
+    {
+      "name": "explanation/seed-grid-14-78",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dd16267287b1b48d23391d4f79d43218171410599072147de2cdeb05a89dcfd2"
+    },
+    {
+      "name": "explanation/seed-grid-14-78-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d9bc7193b409e0b0c11da53be75791c1d2bd903549544e29864b5b205caa0144"
+    },
+    {
+      "name": "explanation/seed-grid-14-79",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c6101d3557c18fc7da626479b9cae6ae1d3afec03144af023ad84964b6d302d"
+    },
+    {
+      "name": "explanation/seed-grid-14-79-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f9038952c78b6f30e642b86237c1069dc3391abd07b61861dce0caaf7710501b"
+    },
+    {
+      "name": "explanation/seed-grid-14-80",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dd5f6aa27dfbd6c805a965953a3ad12d2383781fb3548559e1e0d8a00f72e401"
+    },
+    {
+      "name": "explanation/seed-grid-14-80-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cc4ed333f141974c0b1587c21444b09c5a2fd137475ea5e299da2740b47be288"
+    },
+    {
+      "name": "explanation/seed-grid-14-81",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "40a9c1f5f9c0b24a0e9c971de6e6c38a96a228c5046edc9d348a8fb8dc9a8ed1"
+    },
+    {
+      "name": "explanation/seed-grid-14-81-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2cffb649db687bd670a933982874d730b743dccf34d42544163c9eff249fa3df"
+    },
+    {
+      "name": "regression/seed-grid-15",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "98c56c1560ccce17f647d0cbf8fece06da431ec30a82915965354bafe833586a"
+    },
+    {
+      "name": "text/seed-grid-15",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "44694f94d08a7c3747b796a2e6800dd8f14fd7129e3bf2b8763b142fe01eae30"
+    },
+    {
+      "name": "explanation/seed-grid-15-82",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "04812811bd7ab62f8fd10c01f0d96afcc7f35b1a7ec653d07b70c2c6c982bf9d"
+    },
+    {
+      "name": "explanation/seed-grid-15-82-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8055652968ebd2be5c7197e8683c426be8441f4d1d9a04287fd7af0ebf8932d5"
+    },
+    {
+      "name": "regression/seed-grid-16",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "a64c2ad2688fc620f8e296d6fe48dc25dbafe3b401e8aa255f5792cd9716b3aa"
+    },
+    {
+      "name": "text/seed-grid-16",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "fdde82f7ad2705a4afc9cee98556cd750f6d6fbece184b60e70fe5db5183cafb"
+    },
+    {
+      "name": "regression/seed-grid-17",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "4c59d50b2dba5a90c7662b9fd02a611399929020fd1980ac22f83fce755403b5"
+    },
+    {
+      "name": "text/seed-grid-17",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "42bdc35068cc33205a95b801bd7ad940a4eecca7e347d8c3a0368a33ea7f9f3a"
+    },
+    {
+      "name": "regression/seed-grid-18",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "16512375b45e68b9995de817096844e7c455a9b4f1ef35993fcc151ceea4e4df"
+    },
+    {
+      "name": "text/seed-grid-18",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "90d0a3ead817d431e3bb86bbb151a163ab0e05e3f0fb946f1bd3bafe336eaa5a"
+    },
+    {
+      "name": "regression/seed-grid-19",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "e5a8bc3c3a68a914c8ce6731190295e15f05230eb3bec28b9ed539238714fbe4"
+    },
+    {
+      "name": "text/seed-grid-19",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "0307701a8cf6e9bf1e6cc34696633ec58674f7a7696cc490e6bd65491060a893"
+    },
+    {
+      "name": "explanation/seed-grid-19-83",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "11b56eb07b2b9dc6fa72fc9f0d4a7c0dd283b5ab998aa54ffe0f55981382831a"
+    },
+    {
+      "name": "explanation/seed-grid-19-83-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "93191bb8c7b1d8e8f37a7bd66b518d610b075cdd9e89533d3b948b70cbb17e46"
+    },
+    {
+      "name": "explanation/seed-grid-19-84",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "905a924f15b0b507958f80632eb4898a5a74b9c648ff12f8cf2390e05bea3030"
+    },
+    {
+      "name": "explanation/seed-grid-19-84-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "49b1622a9e915edd246dacea4e63f75796ed8110d1ad2d3e0b1bd0ffcfa1f5f2"
+    },
+    {
+      "name": "explanation/seed-grid-19-85",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b14e01f3dd58f145d7ecf30de35058d271341564a4cf045e7939cb96f56db87f"
+    },
+    {
+      "name": "explanation/seed-grid-19-85-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "78e36bffee235238eefce8f6fa744760a6609c96fb2e75cfb5090e0a38c986ca"
+    },
+    {
+      "name": "explanation/seed-grid-19-86",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c5ea5605505d941a11d417340b4e0b5818a4fdce8a19636c5f9c6002a62e3ca9"
+    },
+    {
+      "name": "explanation/seed-grid-19-86-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "87f1e0e8d32622740db4ae302b25ab5067e863fb829d7310f67bb1b4f6ef04db"
+    },
+    {
+      "name": "explanation/seed-grid-19-87",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cae14d015b339192a5d0a03b27362336de565285ef38526c87dff8254dfb430e"
+    },
+    {
+      "name": "explanation/seed-grid-19-87-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2400a4b3cb57349f877f94f3b64d82ef93cc487695e8c57edb0d82e1ec2bfa08"
+    },
+    {
+      "name": "explanation/seed-grid-19-88",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0765f9d3182909ae0958c6386b6837185c36d239dcc4078cac0c03f48de61a6d"
+    },
+    {
+      "name": "explanation/seed-grid-19-88-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "da959b8d2f55d8798dac417388532da1078aeffb78c2f995a87f18014d9e3914"
+    },
+    {
+      "name": "explanation/seed-grid-19-89",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4de0b693473df8f2808a661d0d82d01277fc32d6605e363347649340da10c72c"
+    },
+    {
+      "name": "explanation/seed-grid-19-89-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bd2a336cab34b4d45890d512e8266402ddede26c8bd691dd101cc576d7b1c85d"
+    },
+    {
+      "name": "explanation/seed-grid-19-90",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0dd50ef59949e60519f87d8a727751ed60bcf6d0018fb8d4871d626741ab9b66"
+    },
+    {
+      "name": "explanation/seed-grid-19-90-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ef9504b23af1af010af3dff19d3712c0701441af91206791c3d98e492d994552"
+    },
+    {
+      "name": "explanation/seed-grid-19-91",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "34284c4041a33a9507ac25b56659c4e76dd9ce029176057756faafe5b3594517"
+    },
+    {
+      "name": "explanation/seed-grid-19-91-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "80f8d4eda68dba60a4c8d23739a49138165628f5feddff2ca2d65dea7c5cb58f"
+    },
+    {
+      "name": "explanation/seed-grid-19-92",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "eb2079e802162223e2206cc9e40a33988df7f74894504e0b6f9c2494410e4f60"
+    },
+    {
+      "name": "explanation/seed-grid-19-92-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b3b0231d4fd51722c13568fd86b75d53542b3119d4fa1798bf27c31ac06df664"
+    },
+    {
+      "name": "explanation/seed-grid-19-93",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "51364fbda794569cea90c8c2c92b10913c7c0a6c9b44ea7e4827ef14265da39b"
+    },
+    {
+      "name": "explanation/seed-grid-19-93-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e332fc38cc8e0462186d0e0a02811f2685182dd7665f678dadb35f51f3e90bec"
+    },
+    {
+      "name": "explanation/seed-grid-19-94",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2d17174b64b05253832f0bf7c2a06e6b91ede047d8790287d4c492e827c1f4fd"
+    },
+    {
+      "name": "explanation/seed-grid-19-94-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "341acb4fcae21757aa8a04d2c2724e88322622d4ad6138a0c151c2beb04f4105"
+    },
+    {
+      "name": "regression/seed-grid-20",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "12d595e049934d9ad6440ec02aff6639e5482014d1fc46b4b46a72e11229ec7e"
+    },
+    {
+      "name": "text/seed-grid-20",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "cdb1fe4b55cec28df2dadc131ec1fba332512744c4381100d83610d3168ef3b2"
+    },
+    {
+      "name": "explanation/seed-grid-20-95",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0f7efb61a04722b18e79c11cf859b0a6207c2784869ba68d75b527c7a9cd41b5"
+    },
+    {
+      "name": "explanation/seed-grid-20-95-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "598ebd78e1ab185027cae88cef8f289d95afbc7768075b12a9020f4b4c3cb88a"
+    },
+    {
+      "name": "explanation/seed-grid-20-96",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b1a740dabf734aa9a99175a238e70232c6f857c7259c8094527f5ae7dac08c9b"
+    },
+    {
+      "name": "explanation/seed-grid-20-96-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0c9b6cad028b4af0e3e7bd88e7416247d8ee4947b32bebe10db135141398b4f3"
+    },
+    {
+      "name": "explanation/seed-grid-20-97",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8db5b0b82486192df84e6105065d65984ed6b93f577514fdc1a0a8e1b1e90c23"
+    },
+    {
+      "name": "explanation/seed-grid-20-97-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3d919d329a5952b8d1aa6ab65f354c6cf5ffe98f583dfe3977c835346b6d877b"
+    },
+    {
+      "name": "explanation/seed-grid-20-98",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1256b2c11bfec7c7a294e38bd7e9a859fa046789bd20603004751ab156252600"
+    },
+    {
+      "name": "explanation/seed-grid-20-98-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e11a21eb989282878f65aabefdbf540fa5f8f515fe838457b9435ebcfb385785"
+    },
+    {
+      "name": "explanation/seed-grid-20-99",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "78452f392c6aa9ddc762f83c7106d037d0a166a4dde5c5e5665c3f4b4b07b8f7"
+    },
+    {
+      "name": "explanation/seed-grid-20-99-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "43b601ca72f10df8e64a606a1dc862d8b713e07263ba2890fc3681b8f6d5afc8"
+    },
+    {
+      "name": "explanation/seed-grid-20-100",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c5a3892b10fa09f71e6952fc076dccfea659cd42a6dc02dde913561a990e7594"
+    },
+    {
+      "name": "explanation/seed-grid-20-100-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "58b5126dbf0d9220af306565e9d20f587bda1183e8130498c8b7dcb3095c56ae"
+    },
+    {
+      "name": "explanation/seed-grid-20-101",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ce1f5ba74387166765a48b45004e416c05b3c4f28128442eb00cd1082fd28fd3"
+    },
+    {
+      "name": "explanation/seed-grid-20-101-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b4917246d4eeff1e462b27a1ff9e6cb3465c83fb405f24e8ab6153964ab3c9c4"
+    },
+    {
+      "name": "explanation/seed-grid-20-102",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b58558c8a8f31fdb514d4a2307b1792c76c92842d9a4d6edefa4092ea8149cfc"
+    },
+    {
+      "name": "explanation/seed-grid-20-102-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "01882d2d9c089ed65df0d70000970cae2490a593d10766b6856bd2656a22d96d"
+    },
+    {
+      "name": "explanation/seed-grid-20-103",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e2c56b1b5d641cd883e11e37ff601a6b18874b22caec1dae396a121b79aeb4d4"
+    },
+    {
+      "name": "explanation/seed-grid-20-103-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8ba95ca3f6767a57e4bcfe039b1afd644cd04d7dfe596302e8ea38fe46784fb0"
+    },
+    {
+      "name": "explanation/seed-grid-20-104",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9bcc471afee4276cdfe6c393d81a733537d5414e4f3b7d7b50b2debbc97a31d2"
+    },
+    {
+      "name": "explanation/seed-grid-20-104-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9b7ffdc896d1c116dc7e7fe83be704216de5fb8556ab3828cee2ba044af9bf59"
+    },
+    {
+      "name": "explanation/seed-grid-20-105",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d563286ff89b0cb0ec624bfa0dbba79d6f1c47766d5f02dd7665a4e7119dccb0"
+    },
+    {
+      "name": "explanation/seed-grid-20-105-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fef8635c636c973c07e19fba0d88efafcea30778c5cc8c7dddc690bca5b6395c"
+    },
+    {
+      "name": "explanation/seed-grid-20-106",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e4a8e0d87d0031d148980dcc85607b049c5dbefc0aca0374d84a6b1896f56136"
+    },
+    {
+      "name": "explanation/seed-grid-20-106-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6e54452251e74c6a0029f85dfac34fb3fb9eda4c79ca392bca595ba9fa2f2217"
+    },
+    {
+      "name": "explanation/seed-grid-20-107",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1fc61c794eb2fed491ff0d72f22e6ba5ba37406c7e17a9a4ea695af5b2581dc4"
+    },
+    {
+      "name": "explanation/seed-grid-20-107-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "44978d2b0b39e61368ca2fdba5fabb1fbd239549af506675800e938fec521489"
+    },
+    {
+      "name": "explanation/seed-grid-20-108",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dcf94e1ab81d3e1ae47e1ca816b6fea9f55e0f9084c0e7dee0f4a1213961ccbd"
+    },
+    {
+      "name": "explanation/seed-grid-20-108-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2803103826f5aac8c174fa412a03165d5e9c6e40e50e8de326616e60188a36f3"
+    },
+    {
+      "name": "explanation/seed-grid-20-109",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "49d1b88b071205299d2d080283c359b21c2b4a4fe500dac712d6fdc463a2c5e3"
+    },
+    {
+      "name": "explanation/seed-grid-20-109-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a055a413a2a32f3991133cc5e51a4e28bcfdd86621cfd0f02ff5ea8ab266ec43"
+    },
+    {
+      "name": "explanation/seed-grid-20-110",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4a753fb6fc10fcab34a18da754754233ceed9f28bea399d7f3462af7ea3f0298"
+    },
+    {
+      "name": "explanation/seed-grid-20-110-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p3"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7b48aeddf53053eebb3bde99461b377db010c870af6820204749f2ce8798751c"
+    },
+    {
+      "name": "regression/seed-grid-21",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "fa05ea98cc23a26fae98defdf6b53b5b66c12c4f48b940ba6cb47eb7f3786761"
+    },
+    {
+      "name": "text/seed-grid-21",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "06764d5856fc58a9a1f9a35ddadc89ac4e106937d590dfe17dc988d21ddd560a"
+    },
+    {
+      "name": "regression/seed-grid-22",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "eadc0ede3d0c3cd4cc88ca9af22b0e3ec227646dc3f13c9c444266dc8eba7f09"
+    },
+    {
+      "name": "text/seed-grid-22",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "635932a9fe55b8c2bc9f02213e4f148ecd51b2614700f852fc515d01f7927731"
+    },
+    {
+      "name": "explanation/seed-grid-22-111",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "107fe8f3380cbaacb1cca0d2834b27493bd621a3071ee541b2989971ecb60382"
+    },
+    {
+      "name": "explanation/seed-grid-22-111-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6455c718199de75202790d68f7dcec1bf4603bc75e2cfed21952327735fec1fc"
+    },
+    {
+      "name": "explanation/seed-grid-22-112",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "90b3b33c2a1f7449ab5edbba6674670d02ed862a3426c44fdba12a0cd5133b09"
+    },
+    {
+      "name": "explanation/seed-grid-22-112-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "696e71b947b59e1898c3a7e86320832a212d3dd90802bb6bde41cc5ca9cea71f"
+    },
+    {
+      "name": "explanation/seed-grid-22-113",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c616d09a33c6e8709034c34e88040c673b529c19586716b2d60e3fd5a6db808e"
+    },
+    {
+      "name": "explanation/seed-grid-22-113-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6dfaadc7c7c070b93ae01a141379818944e53ae6d3d56f2881de046f3e337b73"
+    },
+    {
+      "name": "explanation/seed-grid-22-114",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c42c5b1036c98a79d3fa8e8b137b178c6720134223a35bcf2871adbd9565dbb6"
+    },
+    {
+      "name": "explanation/seed-grid-22-114-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "933ac9a7dd4cf03b0737d74fd5bf8dc60578743da4fe92b4b41f1cf4e8f74209"
+    },
+    {
+      "name": "explanation/seed-grid-22-115",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4e08194057c83bd85e24d20e5ebac31bfcd4589149545b8f7b3e27497b4da299"
+    },
+    {
+      "name": "explanation/seed-grid-22-115-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dacc14f67aab34f7680b495d39823de63ba0e4029793e058d0830639133075ed"
+    },
+    {
+      "name": "explanation/seed-grid-22-116",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "43fbdf16d7c33c65355aa30ddcd38219afde272778295cdc611f9d52b1df2c17"
+    },
+    {
+      "name": "explanation/seed-grid-22-116-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r2",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6b5431a403304f13663e6d239f4885ca7183c7570998f98396f2d12baab00822"
+    },
+    {
+      "name": "explanation/seed-grid-22-117",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fd8e8e02322abc3dc5dd3a8040f8e13be57da778fa666e9369d299ca6a86a3d4"
+    },
+    {
+      "name": "explanation/seed-grid-22-117-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f558a2a99c52ab9031ac6d0b119bc88637d2a5c65a322e51b3a90c1828bcea06"
+    },
+    {
+      "name": "explanation/seed-grid-22-118",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "80d3c574f71778f740b223a1457ec1d0609f707409042690df1a868e7821130a"
+    },
+    {
+      "name": "explanation/seed-grid-22-118-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r3",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "89aeb4a097a7ec66f6308678a78f7cebfe574d5295c0009be34b7e1f80c2e05c"
+    },
+    {
+      "name": "regression/seed-grid-23",
+      "mode": "evaluate-json",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "67a10cdc012631b6d963458d0e39fe2b7f1ade47acd1023a2ceb347851a52036"
+    },
+    {
+      "name": "text/seed-grid-23",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "bac66fe921be97315b2a5050d601bf150ebb5ba4aad55b6d5de28b70999dda52"
+    },
+    {
+      "name": "explanation/seed-grid-23-119",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5176176020e75f161b48c645934256d6fb330a76174a27fcb7c68739ca5a36f6"
+    },
+    {
+      "name": "explanation/seed-grid-23-119-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p0"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9ff8a6cee0b75453f5d6a0d352a42edbfe2bd398a7d9f1879da19eeb7a0f81fa"
+    },
+    {
+      "name": "explanation/seed-grid-23-120",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d9205bdeb4ea55b9a213daa4dae37ba26f7483fee3a1ffa2591792dfd6dcc9e3"
+    },
+    {
+      "name": "explanation/seed-grid-23-120-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p1"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "61d1559011564767ef78660bf22f15449ffe83ba6ca133303bcbdb518df85beb"
+    },
+    {
+      "name": "explanation/seed-grid-23-121",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2f40a24fe03c692c18da30374696b0966020843cbe101912ef81c90e4a21eda7"
+    },
+    {
+      "name": "explanation/seed-grid-23-121-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip-01",
+        "r0",
+        "p2"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "48a729b891cd03d1e106e54768232076d0fb25472fc6025497d88db68aa486a1"
+    },
+    {
+      "name": "identities/0-json",
+      "mode": "explain-json",
+      "ids": [
+        "clipnul-query-fallback",
+        "rnul-query-fallback",
+        "pnul-query-fallback"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4adfa5a1758cbc0f0614aece1f12964c045dea5e3aea4c23da2b67917ef9e845"
+    },
+    {
+      "name": "identities/0-text",
+      "mode": "explain-text",
+      "ids": [
+        "clipnul-query-fallback",
+        "rnul-query-fallback",
+        "pnul-query-fallback"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a45a6b860c70f959dfd647ef51081a480132e6c6eba587df4e9c87ea1114ddc2"
+    },
+    {
+      "name": "identities/1-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0001",
+        "r\u0001",
+        "p\u0001"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "15914f2fd2cdac3da79985ce673f4a7f8862e06032a82469f20b60db0a0b20d8"
+    },
+    {
+      "name": "identities/1-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0001",
+        "r\u0001",
+        "p\u0001"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bc9bbca0b397f627cc136ae3dc30f7d006ba93bfa52b16efbef084d139e046f2"
+    },
+    {
+      "name": "identities/2-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0002",
+        "r\u0002",
+        "p\u0002"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a3c4f578ee80bf4e5fc66aac224732a0101d3fdce4ec3efb9c197d8e99cfd06a"
+    },
+    {
+      "name": "identities/2-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0002",
+        "r\u0002",
+        "p\u0002"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "42d735c579cd08b5a770777b7ab13df71716033d78b14c7fe9d3e8d14146488f"
+    },
+    {
+      "name": "identities/3-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0003",
+        "r\u0003",
+        "p\u0003"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "645944623c3902d466f5802bece80136923fc2fae81ba2ec278c3bf0d2e5422e"
+    },
+    {
+      "name": "identities/3-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0003",
+        "r\u0003",
+        "p\u0003"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5dda6999fa151e9a7f3a37bf95498c437b61919164424dcd01f0de4917e2a998"
+    },
+    {
+      "name": "identities/4-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0004",
+        "r\u0004",
+        "p\u0004"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c81d9c0fed20d8e282f2be3661b9c188e5947241572b1e0d355a5cf5a1daf03a"
+    },
+    {
+      "name": "identities/4-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0004",
+        "r\u0004",
+        "p\u0004"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "43dd0a5c3aefffd43d81c91ce6ec625d0ec266dc5c8cbf8f4141ea396c074bc1"
+    },
+    {
+      "name": "identities/5-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0005",
+        "r\u0005",
+        "p\u0005"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5ef024c396059226ed8c18ba67ff00cb961a7f6c40abd44208312962097298ee"
+    },
+    {
+      "name": "identities/5-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0005",
+        "r\u0005",
+        "p\u0005"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6cc2621acec3884e2c2e3398c4b0c0ea9234792eded720bebff9b807a225ad4d"
+    },
+    {
+      "name": "identities/6-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0006",
+        "r\u0006",
+        "p\u0006"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2b321231b5a8fd99a3de9cbac30fed0a11bb221f05841e5403cd18508e7961ea"
+    },
+    {
+      "name": "identities/6-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0006",
+        "r\u0006",
+        "p\u0006"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "65b894d2269b23e7b8bf32d6c0e4a60e58a6613409681896564c507795594792"
+    },
+    {
+      "name": "identities/7-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0007",
+        "r\u0007",
+        "p\u0007"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bfe4ee986c96b3d775e9e18f7173eb398e057d6fddce3f06494639ecb4873626"
+    },
+    {
+      "name": "identities/7-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0007",
+        "r\u0007",
+        "p\u0007"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "16868817db3413a0478e718c6cbdfa44bb73a5436c1274c8ddb154c1e0d99ace"
+    },
+    {
+      "name": "identities/8-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\b",
+        "r\b",
+        "p\b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d03599234230059275364dc0145470add709e39502dae3dc965a089af6ef647f"
+    },
+    {
+      "name": "identities/8-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\b",
+        "r\b",
+        "p\b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b899983b4baaa9cdf503d28755ecfc4f785d6bde8d3eef59a14f3de38170bb0b"
+    },
+    {
+      "name": "identities/9-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\t",
+        "r\t",
+        "p\t"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dfdd1be3ffdf57d42b42bcce170c18e99c6b3ec4a481e5da6492af3c61dddfc5"
+    },
+    {
+      "name": "identities/9-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\t",
+        "r\t",
+        "p\t"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ce060578bdde549bfa1d0b06805628e8c21537b8a720a9c0eecaac932c13dc6d"
+    },
+    {
+      "name": "identities/10-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\n",
+        "r\n",
+        "p\n"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5c82015c5db3f82735534decf456d8a5d437d437c765ab678d20f1ee63b8e73e"
+    },
+    {
+      "name": "identities/10-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\n",
+        "r\n",
+        "p\n"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6f645ae8f3059808a2d62667a1fb7cd243af0bd99701c2b5107afdecba7eee90"
+    },
+    {
+      "name": "identities/11-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u000b",
+        "r\u000b",
+        "p\u000b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6e2cdba1bb7c1e722a7e68e55b8bac438f03524f3879ef6c98e6309c7e85e84d"
+    },
+    {
+      "name": "identities/11-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u000b",
+        "r\u000b",
+        "p\u000b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "47f25d039b12b5025a290d046eab9d96dd32df483ac568cbb326325d89444692"
+    },
+    {
+      "name": "identities/12-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\f",
+        "r\f",
+        "p\f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5bfc9feb103721e26bd5b96aa82fd628e2dd22f4715cbd5e56284a9f1238ce97"
+    },
+    {
+      "name": "identities/12-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\f",
+        "r\f",
+        "p\f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5a698da895c217fe61aa2642679dd6044bb9714d2c3697ff2236617be8ab76e7"
+    },
+    {
+      "name": "identities/13-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\r",
+        "r\r",
+        "p\r"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "09bb78329ac35584a6caf4c33b9ddeaa0cfafa1b0c9a0b174d44947ec243d4b4"
+    },
+    {
+      "name": "identities/13-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\r",
+        "r\r",
+        "p\r"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7a46c32c831db1ad86f7e4c27270e9fec17ade508168d19750d5d0620702244d"
+    },
+    {
+      "name": "identities/14-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u000e",
+        "r\u000e",
+        "p\u000e"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d06d40529ea1205ed862e6e5fc1693c3eded2cda09baf90518639c13f442fddc"
+    },
+    {
+      "name": "identities/14-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u000e",
+        "r\u000e",
+        "p\u000e"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e454d69e091f91eb1206473c12479751e89c7269a4a73e11b3336323457c74bb"
+    },
+    {
+      "name": "identities/15-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u000f",
+        "r\u000f",
+        "p\u000f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "21f95f80d6ec057639e0ad2d672fd1abd6a96faaee7cb48587a17400659b47db"
+    },
+    {
+      "name": "identities/15-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u000f",
+        "r\u000f",
+        "p\u000f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e2492f233ea7b1aa5e3f5cbfecddd6dbb1a52119e1e10a1993c8aa394e94402e"
+    },
+    {
+      "name": "identities/16-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0010",
+        "r\u0010",
+        "p\u0010"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2a918543a288fa19ba2ed38b951a2394a2ea210cf0dc8792d4be5dab6fadf9c6"
+    },
+    {
+      "name": "identities/16-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0010",
+        "r\u0010",
+        "p\u0010"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b04d661a1fdf07717c0fee29ceec87d00c10adcbbfe1792ea3e67f692c885ada"
+    },
+    {
+      "name": "identities/17-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0011",
+        "r\u0011",
+        "p\u0011"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fbf235af1bc4882e249e267f476f99a8c885597be6f7a8f695637db8861955ca"
+    },
+    {
+      "name": "identities/17-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0011",
+        "r\u0011",
+        "p\u0011"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "79af73532e57fb948c3f0a4903d6abb98cfbb6f403804285cc3b5e376bf4a03d"
+    },
+    {
+      "name": "identities/18-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0012",
+        "r\u0012",
+        "p\u0012"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "204fdedb68e4f9e7f0793805ee32971ff8a9b32910115ab51221cb67f5ee9ce8"
+    },
+    {
+      "name": "identities/18-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0012",
+        "r\u0012",
+        "p\u0012"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dff7fbb806d0057e47e68d8c5d78a478930a1ce783c2a93c8e90924a6926b0bb"
+    },
+    {
+      "name": "identities/19-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0013",
+        "r\u0013",
+        "p\u0013"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9aad4d5889b8498dcab17ad8a52279e4b1b7e90f4e258b25ac1081b1aa214f81"
+    },
+    {
+      "name": "identities/19-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0013",
+        "r\u0013",
+        "p\u0013"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9daa976bb258b7a899b539cc7210626e2483ae7672af4e5b9dd060e7daabe6bf"
+    },
+    {
+      "name": "identities/20-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0014",
+        "r\u0014",
+        "p\u0014"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "36bccd7eaa128c4b6354b16e0cf42584e127f39d0511e318d05434942b4ea971"
+    },
+    {
+      "name": "identities/20-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0014",
+        "r\u0014",
+        "p\u0014"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "53eab19d463d63c3ca1446a38a36e7615d8e283f3f82135948d147e7142d7e4d"
+    },
+    {
+      "name": "identities/21-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0015",
+        "r\u0015",
+        "p\u0015"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fc7dd5be8d60cc98ae7d520283c367d9fc44e0fcc6ff0d94d32de9734c98aeb9"
+    },
+    {
+      "name": "identities/21-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0015",
+        "r\u0015",
+        "p\u0015"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "06667883490e6488232fe42a0e3046806e948825bb1149c7af35f60687ef6b5e"
+    },
+    {
+      "name": "identities/22-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0016",
+        "r\u0016",
+        "p\u0016"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8e94d9f1e76c64ae2a9dbf1ecf04589938973d33ebcdb44ee056ace043f5ef4d"
+    },
+    {
+      "name": "identities/22-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0016",
+        "r\u0016",
+        "p\u0016"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b0303f3366d5db2dc82a90310fb47f5982553598049a723863ad8a2eaa696aaf"
+    },
+    {
+      "name": "identities/23-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0017",
+        "r\u0017",
+        "p\u0017"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0a490faa6d46137d49d9e56d3982e0a7c048788939cdff204a2f6bfb40fdf20c"
+    },
+    {
+      "name": "identities/23-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0017",
+        "r\u0017",
+        "p\u0017"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c7b36198c255220b7afde182c587e18d67b60a1a8a5fa62ca5d7352ca9a321e"
+    },
+    {
+      "name": "identities/24-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0018",
+        "r\u0018",
+        "p\u0018"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "67171de409405d6f27c2a679b7e7b8a508b31f331fd57683f978ac63c1b993e5"
+    },
+    {
+      "name": "identities/24-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0018",
+        "r\u0018",
+        "p\u0018"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f8e376fce5b31d0a35f3a7eb2bb99ac736001b95d3e0fab46a371604dc68b620"
+    },
+    {
+      "name": "identities/25-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u0019",
+        "r\u0019",
+        "p\u0019"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e0a5fd0344fb932f78e8b0c85be1b88b2f5f570f53ba972929b6abcd1ee876d2"
+    },
+    {
+      "name": "identities/25-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u0019",
+        "r\u0019",
+        "p\u0019"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7e9d82e57ccff3b8c56df53a1c140f6f335ca2dcafd1cf5a10c60964b078212b"
+    },
+    {
+      "name": "identities/26-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001a",
+        "r\u001a",
+        "p\u001a"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2043fff73baf85f16cac198e739cfa96a45147d1e266b40df785568fc4a03ca9"
+    },
+    {
+      "name": "identities/26-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001a",
+        "r\u001a",
+        "p\u001a"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f679baabd0b9777d13978f943789ac32776d0cc729f60c8c038fc0c98934910e"
+    },
+    {
+      "name": "identities/27-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001b",
+        "r\u001b",
+        "p\u001b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "16b1945152aecc01d9eae06b726dba41bcdcd3f17d691b87df9878326b1292d3"
+    },
+    {
+      "name": "identities/27-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001b",
+        "r\u001b",
+        "p\u001b"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "c5b793fb2f700b41d5e1d53aa76fbbf4e8b9406eb4e5bcb62042276082981226"
+    },
+    {
+      "name": "identities/28-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001c",
+        "r\u001c",
+        "p\u001c"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4dbdd42f04c01816d43bb093699fc25bd5c07020da89788efa9d9f13b26f80ab"
+    },
+    {
+      "name": "identities/28-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001c",
+        "r\u001c",
+        "p\u001c"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dcbb53e10910879d9badef4ba5fdf209fdf3917b6f5b48f84ef8d7a01a03f35f"
+    },
+    {
+      "name": "identities/29-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001d",
+        "r\u001d",
+        "p\u001d"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "190ec34fcda76e6ff28f8cbd18717e7a22c49c7ee2211bddb7ca6bd1f58c4845"
+    },
+    {
+      "name": "identities/29-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001d",
+        "r\u001d",
+        "p\u001d"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a31f3fc3948fa86985c0fb7fc8260d7d5b7b16a883dd156e32493e3c3ed795d9"
+    },
+    {
+      "name": "identities/30-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001e",
+        "r\u001e",
+        "p\u001e"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "58ac89ef034d99e918a35b1de27b4b572d19a1d0badfb0dc8e9b7ad5e2ea9240"
+    },
+    {
+      "name": "identities/30-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001e",
+        "r\u001e",
+        "p\u001e"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d11d8abfbbeb25a472987386e70cd686d48240411718584139bf8c879ae76055"
+    },
+    {
+      "name": "identities/31-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip\u001f",
+        "r\u001f",
+        "p\u001f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a89c5fc6960115376619a17c788f0883e9f08525c80445b64013397b695e97ff"
+    },
+    {
+      "name": "identities/31-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip\u001f",
+        "r\u001f",
+        "p\u001f"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a9fc51cde888e7ababae74bd2187db18203448010da8e86f292112111ef7288e"
+    },
+    {
+      "name": "identities/32-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b7890cbff50f6109facae614e677aa4bd83f635e09394fa3816f13f5b5ac39e7"
+    },
+    {
+      "name": "identities/32-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "becdbb6555e4f5aa18bda072b88a167dffbd0dc418e1877f9b1e290c31964f9c"
+    },
+    {
+      "name": "identities/33-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "3f51513e49d4b7970532d7fa6dbd5e8d8b11818d49ce5dd7bc98b3f77b146d1b"
+    },
+    {
+      "name": "identities/33-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "9724bd86af501995a18c3e68836f89799b72e6e28299067a0df39c800818d40c"
+    },
+    {
+      "name": "identities/34-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f59b9386fb199bce20b6820b0aefb80bbc8128d8cd9d798754c26f3781a042e8"
+    },
+    {
+      "name": "identities/34-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip",
+        "r",
+        "p"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6216a43454204b78dcaf684ce0ab9a90b203485546a921e28bd49d57daabe47b"
+    },
+    {
+      "name": "identities/35-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip؜",
+        "r؜",
+        "p؜"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "bffb6a3ea6f69084acf3ccd269b08c2b7e5392844b0075fa7446f6ac81e6c6c1"
+    },
+    {
+      "name": "identities/35-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip؜",
+        "r؜",
+        "p؜"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "847d42ba245e435a43cbd876573cc7af1915cfaf87d799c9ba7d4dbcc76a75d6"
+    },
+    {
+      "name": "identities/36-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip​",
+        "r​",
+        "p​"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "912b1b6059e9c6d85a8251c4f20682b887d4e2c15fdab3e705f3658511c7455e"
+    },
+    {
+      "name": "identities/36-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip​",
+        "r​",
+        "p​"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "26a54ff4a9cef1ff2915a50b2840e7b5129e75fce588c9c655e17c6fb4a17db5"
+    },
+    {
+      "name": "identities/37-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip ",
+        "r ",
+        "p "
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "98ced8475e642cd0ca4b1cc8ad6b08c28b42f9cb37dde6f458d62fae1107a7e6"
+    },
+    {
+      "name": "identities/37-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip ",
+        "r ",
+        "p "
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e495c994809b209863a520a7462797b01c62bebb93f7f4d731f1ab151e740193"
+    },
+    {
+      "name": "identities/38-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip ",
+        "r ",
+        "p "
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1d52b030827657aeebd69ea1801cfe11a00765c8a22e33363478469b42d64619"
+    },
+    {
+      "name": "identities/38-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip ",
+        "r ",
+        "p "
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "738cc989a2cb871228f9138c98c9df2b8878c3736310c3e17a73d5a2a265ea7f"
+    },
+    {
+      "name": "identities/39-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip‮",
+        "r‮",
+        "p‮"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "766342375b53b5d054d839b2f28e0adfc524f32b271c8b049b3f6bf8fe669979"
+    },
+    {
+      "name": "identities/39-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip‮",
+        "r‮",
+        "p‮"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "af6882f5d7a14a4cacf1ff5a732f27b34288f09812cfdcbe0a6f415a56502e61"
+    },
+    {
+      "name": "identities/40-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip⁦",
+        "r⁦",
+        "p⁦"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "d0b143bfe51f33bc58f4bada819f2b0bd0437be3c09ab6ba78390efe37b0e3f3"
+    },
+    {
+      "name": "identities/40-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip⁦",
+        "r⁦",
+        "p⁦"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "20f22f0dc2687222a1b0915ce3b7282f433e8f04895af803fd1fd23bee653e41"
+    },
+    {
+      "name": "identities/41-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip﻿",
+        "r﻿",
+        "p﻿"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b12cd69cab4cd5bb7529e1dcd8c22c0a5abda17d66bc0d690e660bd6342be739"
+    },
+    {
+      "name": "identities/41-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip﻿",
+        "r﻿",
+        "p﻿"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "1017decd68a8e42c3e7259ca66c60e7794c050a083706161f5cac08e11568147"
+    },
+    {
+      "name": "identities/42-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip中",
+        "r中",
+        "p中"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dd7b24c7639f105ece893194793cc3ca998d50c65a657716250810d2cb268c10"
+    },
+    {
+      "name": "identities/42-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip中",
+        "r中",
+        "p中"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4900ef8762ba5d7239cee6017406662cb65f879399c5a40fe9d6b2d8b8e74009"
+    },
+    {
+      "name": "identities/43-json",
+      "mode": "explain-json",
+      "ids": [
+        "clip𐀀",
+        "r𐀀",
+        "p𐀀"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e13e10d827ce3a9b40ef73dbbcbc54c3534c0b582c4bed06d5ec5b79bf814373"
+    },
+    {
+      "name": "identities/43-text",
+      "mode": "explain-text",
+      "ids": [
+        "clip𐀀",
+        "r𐀀",
+        "p𐀀"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e5e3e318cdec58eb6d4b9331de43d16c7dc7c57edd956e08643d6adeeaad5512"
+    },
+    {
+      "name": "missing/recording_id",
+      "mode": "explain-json",
+      "ids": [
+        "absent",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 2,
+      "stdout_sha256": "eb7baaf61b9d985a6d9dc57ba4c563e383014cf588f52eab60d4b73304b002af"
+    },
+    {
+      "name": "missing/reference_id",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "absent",
+        "p1"
+      ],
+      "exit_code": 2,
+      "stdout_sha256": "80f3abe8be91d8146a4dcf800f5b5cddb16a9bec39196280d92c349caed0852e"
+    },
+    {
+      "name": "missing/prediction_id",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "absent"
+      ],
+      "exit_code": 2,
+      "stdout_sha256": "66b1cbc873bdd7d7a2eb7e4b14beb167be10c9827385a67eba7919e1ba4fe396"
+    },
+    {
+      "name": "full-validation-before-lookup",
+      "mode": "explain-json",
+      "ids": [
+        "clip-01",
+        "r1",
+        "p1"
+      ],
+      "exit_code": 2,
+      "stdout_sha256": "2938571a3b97ca7d4bf1d5733d08cf4ad8ec024d050cc82b1869a72aaf1737a2"
+    },
+    {
+      "name": "repeat-first",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "808893dc43efe0947714b952ef247929fd29b8dced90e30746ac814dcfa64dd1"
+    },
+    {
+      "name": "repeat-second",
+      "mode": "report-text",
+      "ids": [],
+      "exit_code": 0,
+      "stdout_sha256": "808893dc43efe0947714b952ef247929fd29b8dced90e30746ac814dcfa64dd1"
+    }
+  ],
+  "passed": true,
+  "scope": "native argv/library renderers only; no product file CLI, no final A11"
+}

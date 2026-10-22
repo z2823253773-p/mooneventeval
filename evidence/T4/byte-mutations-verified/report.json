@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "name": "crlf-all",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/validation/check_reports.py",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T4/byte-mutations-verified/crlf-all/mutant.py",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T4/byte-mutations-verified/crlf-all/capture"
+      ],
+      "checker_exit": 1,
+      "expected_assertion": "changed evaluation JSON bytes",
+      "rejected": true,
+      "witness_has_cr": true,
+      "archive_preserves_bytes": true,
+      "witness_sha256": "3acab333aef90d5949d43a20c2f302760dddf8d122547901b9d2698deec4c437",
+      "archive_sha256": "3acab333aef90d5949d43a20c2f302760dddf8d122547901b9d2698deec4c437"
+    },
+    {
+      "name": "cr-text",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/validation/check_reports.py",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T4/byte-mutations-verified/cr-text/mutant.py",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T4/byte-mutations-verified/cr-text/capture"
+      ],
+      "checker_exit": 1,
+      "expected_assertion": "unsafe raw text control",
+      "rejected": true,
+      "witness_has_cr": true,
+      "archive_preserves_bytes": true,
+      "witness_sha256": "3bb0fa75eaf0a27daa63443c1751fa296acda613ccdd5baa29aaa4a5bb4d492b",
+      "archive_sha256": "3bb0fa75eaf0a27daa63443c1751fa296acda613ccdd5baa29aaa4a5bb4d492b"
+    }
+  ],
+  "passed": true
+}

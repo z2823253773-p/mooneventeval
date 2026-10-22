@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_reports.py", line 112, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_reports.py", line 44, in main
+    assert evaluation==(prior/name/'product.stdout').read_bytes(),name+' changed evaluation JSON bytes'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: duplicate changed evaluation JSON bytes

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_reports.py",
+    "--product",
+    "_build/native/release/build/cmd/probe/probe.exe",
+    "--output",
+    "evidence/T4/renderers-committed"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 1.318,
+  "log": "evidence/T4/20261022T040938286111Z-committed-renderers.log",
+  "log_sha256": "14bb192c0cfdb9ec4038de88b9064f815d0d9abbb2c5a0927229a43a31d3e696",
+  "scope": "T4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

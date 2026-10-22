@@ -1,0 +1,19 @@
+MoonEventEval 0.1.0 | collar-max-cardinality/v1
+状态：completed
+配置：collar_s=0.2 offset_ratio=0.5
+汇总：reference=3 prediction=3 TP=3 FP=0 FN=0 precision=1 recall=1 F1=1
+按类别：
+  label="é" reference=1 prediction=1 TP=1 FP=0 FN=0 precision=1 recall=1 F1=1
+  label="é" reference=2 prediction=2 TP=2 FP=0 FN=0 precision=1 recall=1 F1=1
+  label="" reference=0 prediction=0 TP=0 FP=0 FN=0 precision=未定义 recall=未定义 F1=未定义
+  label="𐀀" reference=0 prediction=0 TP=0 FP=0 FN=0 precision=未定义 recall=未定义 F1=未定义
+按录制：
+  recording="clip\"\n\\" reference=3 prediction=3 TP=3 FP=0 FN=0 precision=1 recall=1 F1=1
+所选配对（最大基数；不优化时间误差）：
+  recording="clip\"\n\\" label="é" reference=(id="r" label="é" onset_s=1 offset_s=2) prediction=(id="p\"\n\\" label="é" onset_s=1 offset_s=2) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=0 onset_limit_s=0.2 offset_delta_s=0 offset_limit_s=0.5
+  recording="clip\"\n\\" label="é" reference=(id="" label="é" onset_s=1 offset_s=2) prediction=(id="p1" label="é" onset_s=1 offset_s=2) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=0 onset_limit_s=0.2 offset_delta_s=0 offset_limit_s=0.5
+  recording="clip\"\n\\" label="é" reference=(id="𐀀" label="é" onset_s=1 offset_s=2) prediction=(id="p2" label="é" onset_s=1 offset_s=2) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=0 onset_limit_s=0.2 offset_delta_s=0 offset_limit_s=0.5
+未匹配预测（FP）：
+未匹配参考（FN）：
+说明：有候选但未选中不表示该事件在所有最大匹配中均不可能被选中。
+工作量：candidate_checks=5 eligible_edges=5 matching_steps=10

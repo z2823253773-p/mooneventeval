@@ -1,0 +1,114 @@
+[
+  {
+    "name": "moon-suite",
+    "command": [
+      "scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "--target",
+      "native",
+      "--deny-warn"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 4.759905083104968,
+    "log": "moon-suite.log"
+  },
+  {
+    "name": "python-suite",
+    "command": [
+      "python3",
+      "-W",
+      "error::ResourceWarning",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 0.9210035838186741,
+    "log": "python-suite.log"
+  },
+  {
+    "name": "validation-suite",
+    "command": [
+      ".venv-reference/bin/python",
+      "-W",
+      "error::ResourceWarning",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "validation/tests",
+      "-v"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 0.16796424984931946,
+    "log": "validation-suite.log"
+  },
+  {
+    "name": "probe-build",
+    "command": [
+      "scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "cmd/probe",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 1.6824782500043511,
+    "log": "probe-build.log"
+  },
+  {
+    "name": "renderers",
+    "command": [
+      "python3",
+      "validation/check_reports.py",
+      "--product",
+      "_build/native/release/build/cmd/probe/probe.exe",
+      "--output",
+      "/private/tmp/mooneventeval-t4-review-sxuadgmt/renderers"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 1.831341124838218,
+    "log": "renderers.log"
+  },
+  {
+    "name": "probe-compatibility",
+    "command": [
+      "python3",
+      "validation/check_probe.py",
+      "--product",
+      "_build/native/release/build/cmd/probe/probe.exe",
+      "--output",
+      "/private/tmp/mooneventeval-t4-review-sxuadgmt/probe-compatibility"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 0.19672391680069268,
+    "log": "probe-compatibility.log"
+  },
+  {
+    "name": "json-controls",
+    "command": [
+      "python3",
+      "validation/check_json_controls.py",
+      "--product",
+      "_build/native/release/build/cmd/probe/probe.exe",
+      "--output",
+      "/private/tmp/mooneventeval-t4-review-sxuadgmt/json-controls"
+    ],
+    "cwd": "/private/tmp/mooneventeval-t4-review-sxuadgmt/source",
+    "exit_code": 0,
+    "seconds": 0.21275829104706645,
+    "log": "json-controls.log"
+  }
+]

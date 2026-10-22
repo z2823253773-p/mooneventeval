@@ -111,10 +111,12 @@ T2验收后固定策略标识：`first-free-iterative-dfs/v1`（开发记录，�
 
 T3真实包外probe暴露EvalError原pub struct不可构造；改为pub(all)，保持字段不可变，适配层可创建参数/文件错误。Event/Config/Recording/Task/Evaluation仍封装。
 
-T3最终运行代码/被测提交508d5cf，原候选e9c7f31的独立评审发现2项Important，已由作者单轮RED→GREEN修复，未二次独立复审。序列化必须统一用JSON专用字符串编码（当前包内String.quote_json调用Json::string(...).stringify()），不能用String.escape（MoonBit显示语法会产生非法JSON）。比较器先验证实际输出的类型/规范文本/嵌套精确键序，不能将实际数字时间修成字符串再比较。T4复用现有decimal_string/quote_json和错误JSON，不重新发明一套不一致的格式。个人M2/最终A11/CLI与解释报告仍按阶段验收。
+T3最终运行代码/被测提交508d5cf，原候选e9c7f31的独立评审发现2项Important，已由作者单轮RED→GREEN修复，未二次独立复审。序列化必须统一用JSON专用字符串编码（当前包内String.quote_json调用Json::string(...).stringify()），不能用String.escape（MoonBit显示语法会产生非法JSON）。比较器先验证实际输出的类型/规范文本/嵌套精确键序，不能将实际数字时间修成字符串再比较。T4复用原decimal_string（现名format_scaled_seconds）/quote_json和错误JSON，不重新发明一套不一致的格式。个人M2/最终A11/CLI仍按阶段验收，解释报告T4已单独完成。
 
-### T4实施约定（执行中）
+### T4实施约定（已完成）
 
 用户继续授权T4，不扩展产品CLI/格式/评分。包内decimal_string按T4地图改名format_scaled_seconds，返回未加引号的规范十进制正文（旧任务示例额外引号为笔误）；JSON用quote_json统一编码。bounded_serialize(Json, byte_limit)和现有固定键序JSON/新增文本共用最终UTF8字节检查bounded_output，公开上限仍16MiB、不开放参数。解释只查已验证Task中同录制两侧ID，缺ID均ID_NOT_FOUND，path分别recording_id/reference_id/prediction_id；不做匹配，不推断是否选中。文本身份字段JSON引用并转义DEL/C1/Unicode分行及方向格式控制，解码可还原原值；普通非ASCII保留可读。开发argv probe可增加report-text/explain-json/explain-text模式作包外验证，不作为文件CLI交付。
 
 T4实现细化：bounded_serialize(Json, limit)仅为标准JSON值边界测试的包内白盒适配器，置于serialization_wbtest；产品四渲染函数共用serialization.mbt里的bounded_output。这样不为满足测试名称添加unused运行函数，不重新解析完整JSON。T5不消费该白盒辅助函数；最终字节门及16MiB限额是产品代码。
+
+T4最终验证器/被测提交d00b0a6，产品实现d528d30。原始过程stdout/stderr必须binary capture/write/hash，字节回归read_bytes比较；严格UTF8解码只用于语义检查，不得先做通用换行规范化。CRLF/文本原始CR两negative controls必须拒绝且档案保持真实字节。T4完成不等于文件CLI或个人M2/最终A11。

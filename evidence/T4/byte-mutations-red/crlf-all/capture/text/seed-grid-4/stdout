@@ -1,0 +1,20 @@
+MoonEventEval 0.1.0 | collar-max-cardinality/v1
+状态：completed
+配置：collar_s=0.25 offset_ratio=0.5
+汇总：reference=4 prediction=3 TP=2 FP=1 FN=2 precision=0.6666666666666666 recall=0.5 F1=0.5714285714285714
+按类别：
+  label="A" reference=2 prediction=3 TP=2 FP=1 FN=0 precision=0.6666666666666666 recall=1 F1=0.8
+  label="B" reference=2 prediction=0 TP=0 FP=0 FN=2 precision=未定义 recall=0 F1=0
+  label="unused" reference=0 prediction=0 TP=0 FP=0 FN=0 precision=未定义 recall=未定义 F1=未定义
+按录制：
+  recording="clip-01" reference=4 prediction=3 TP=2 FP=1 FN=2 precision=0.6666666666666666 recall=0.5 F1=0.5714285714285714
+所选配对（最大基数；不优化时间误差）：
+  recording="clip-01" label="A" reference=(id="r0" label="A" onset_s=0.375 offset_s=0.75) prediction=(id="p2" label="A" onset_s=0.25 offset_s=0.875) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=-0.125 onset_limit_s=0.25 offset_delta_s=0.125 offset_limit_s=0.25
+  recording="clip-01" label="A" reference=(id="r1" label="A" onset_s=1.125 offset_s=2.125) prediction=(id="p1" label="A" onset_s=1.25 offset_s=1.875) label_match=true onset_pass=true offset_pass=true eligible=true onset_delta_s=0.125 onset_limit_s=0.25 offset_delta_s=-0.25 offset_limit_s=0.5
+未匹配预测（FP）：
+  recording="clip-01" id="p0" label="A" onset_s=0.75 offset_s=0.875 candidate_count=0 reason=no_eligible_candidate
+未匹配参考（FN）：
+  recording="clip-01" id="r2" label="B" onset_s=0.375 offset_s=0.875 candidate_count=0 reason=no_eligible_candidate
+  recording="clip-01" id="r3" label="B" onset_s=2.5 offset_s=2.75 candidate_count=0 reason=no_eligible_candidate
+说明：有候选但未选中不表示该事件在所有最大匹配中均不可能被选中。
+工作量：candidate_checks=6 eligible_edges=2 matching_steps=8

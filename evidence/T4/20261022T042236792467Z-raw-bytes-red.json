@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_report_bytes.py",
+    "--product",
+    "_build/native/release/build/cmd/probe/probe.exe",
+    "--output",
+    "evidence/T4/byte-mutations-red"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 27.678,
+  "log": "evidence/T4/20261022T042236792467Z-raw-bytes-red.log",
+  "log_sha256": "414638103181ba492668717672155685b912f27f12564c38ef84640060814db9",
+  "scope": "T4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

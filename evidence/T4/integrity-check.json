@@ -1,0 +1,141 @@
+{
+  "tested_sha": "d528d30b3e8b1feaea801c2058ec310206f78b65",
+  "runtime_sources_match": true,
+  "capture_records": [
+    {
+      "record": "evidence/T4/20261022T035448087451Z-reports-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T035711132345Z-reports-first-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T035851923285Z-probe-build.json",
+      "exit_code": 255,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T035907510280Z-probe-build-green.json",
+      "exit_code": 255,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T035933157137Z-probe-final-build.json",
+      "exit_code": 255,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040012093658Z-probe-owned-string-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040245862362Z-renderer-process-checks.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040248168938Z-capacity-and-full-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040444189575Z-bidi-marker-regression-red.json",
+      "exit_code": 2,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040446637754Z-bidi-marker-regression-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040451136360Z-format-check.json",
+      "exit_code": 255,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040451336832Z-api-info.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040451535848Z-package-check.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040451794389Z-package-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040626926194Z-format-check-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040627089269Z-final-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040628332521Z-renderer-final-candidate.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040630044827Z-original-probe-compatibility.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040630437923Z-original-json-controls.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040812608808Z-candidate-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040812608811Z-candidate-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040812608824Z-candidate-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040935873839Z-committed-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040935873852Z-committed-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040935873885Z-committed-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040938162950Z-committed-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T4/20261022T040938286111Z-committed-renderers.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    }
+  ]
+}

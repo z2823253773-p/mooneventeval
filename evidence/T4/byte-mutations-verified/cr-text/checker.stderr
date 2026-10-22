@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_reports.py", line 113, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/check_reports.py", line 47, in main
+    assert not any(unsafe(ord(ch)) for ch in text),name+' unsafe raw text control'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: duplicate unsafe raw text control

@@ -1,0 +1,6 @@
+{"benchmark":"complete-500","size_each_side":500,"pairs":500,"adjacency_checks":125250,"steps":126250}
+{"benchmark":"complete-1000","size_each_side":1000,"pairs":1000,"adjacency_checks":500500,"steps":502500}
+{"benchmark":"sparse-1000","size_each_side":1000,"pairs":1000,"adjacency_checks":1000,"steps":3000}
+{"benchmark":"chain-1000","size_each_side":1000,"pairs":1000,"adjacency_checks":2999,"steps":6997}
+Total tests: 49, passed: 49, failed: 0.
+ledger: Task 4: complete (commits 9886ce1..d00b0a6, tests: scripts/with-toolchain.sh moon test eventeval --target native --deny-warn → Total tests: 49, passed: 49, failed: 0.)

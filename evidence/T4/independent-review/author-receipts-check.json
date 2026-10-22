@@ -1,0 +1,31 @@
+[
+  {
+    "receipt": "20261022T040935873839Z-committed-moon-suite.json",
+    "log_hash_matches": true,
+    "exit_code": 0
+  },
+  {
+    "receipt": "20261022T040935873852Z-committed-validation-suite.json",
+    "log_hash_matches": true,
+    "exit_code": 0
+  },
+  {
+    "receipt": "20261022T040935873885Z-committed-python-suite.json",
+    "log_hash_matches": true,
+    "exit_code": 0
+  },
+  {
+    "receipt": "20261022T040938162950Z-committed-probe-build.json",
+    "log_hash_matches": true,
+    "exit_code": 0
+  },
+  {
+    "receipt": "20261022T040938286111Z-committed-renderers.json",
+    "log_hash_matches": true,
+    "exit_code": 0
+  },
+  {
+    "renderer_source_hashes_match_archive": true,
+    "renderer_product_hash_matches_original_binary": true
+  }
+]
