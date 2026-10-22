@@ -1,0 +1,17 @@
+{
+  "name": "unknown-value-format",
+  "args": [
+    "evaluate",
+    "absent",
+    "--unknown",
+    "--format",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "expected_exit": 2,
+  "expected_format": "json",
+  "passed": true,
+  "stdout_sha256": "9ef6b03918b82a85d51c919dcc506f25ef16909229fc2b8314e1e68e5aec92fb",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

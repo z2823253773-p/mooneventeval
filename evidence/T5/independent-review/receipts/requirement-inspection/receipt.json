@@ -1,0 +1,17 @@
+{
+  "command": [
+    "cat",
+    "AGENTS.md",
+    "docs/PROJECT_STATE.md",
+    "docs/contracts.md",
+    "docs/superpowers/plans/tasks/T5-cli-demo.md",
+    "docs/superpowers/specs/2026-10-20-mooneventeval-prd-design.md",
+    "docs/demo.md"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:54:53.715937+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "1997f3948746f6861b92c00214e8e2f25c5e4df302be36d2841e935ae4b3e368",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

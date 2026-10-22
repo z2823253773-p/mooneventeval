@@ -1,0 +1,13 @@
+{
+  "command": [
+    "git",
+    "rev-parse",
+    "HEAD"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:54:53.815057+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "80719d979c1095c737795e59c1d63d10b13a8a556d2773e78be906dc0691cf90",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

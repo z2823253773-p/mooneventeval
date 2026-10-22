@@ -1,0 +1,21 @@
+{
+  "name": "reserved-order-2",
+  "args": [
+    "explain-pair",
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t5-author-replay-5x_4cek2/extra/reserved.json",
+    "--recording",
+    "--format",
+    "--prediction",
+    "--reference",
+    "--reference",
+    "--prediction",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "expected_format": "json",
+  "passed": true,
+  "stdout_sha256": "713507037b999c5bbf2d260614b7142cebb792834a9745d717eb8682ed948d3a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

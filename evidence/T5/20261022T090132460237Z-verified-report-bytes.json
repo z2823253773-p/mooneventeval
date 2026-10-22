@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_cli_reports.py",
+    "--product",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "evidence/T5/cli-bytes-final-verified"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.228,
+  "log": "evidence/T5/20261022T090132460237Z-verified-report-bytes.log",
+  "log_sha256": "ab8ef2eb3c25bd06d5b1963f80297325d8198e2e9a0fa9b392bcc1c97205bbe0",
+  "scope": "T5",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

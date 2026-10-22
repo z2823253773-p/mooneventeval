@@ -10,7 +10,7 @@
 
 **Spec:** [PRD](../specs/2026-10-20-mooneventeval-prd-design.md)；[共享契约](../../contracts.md)；[反馈处置](../../reviews/2026-10-20-claude-feedback-disposition.md)。
 
-**Status:** T0/T1/T1b已执行并验收PASS；完整评测器/CLI和产品parity未完成。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
+**Status:** T0至T4机器实现完成，T5本机CLI/自动demo及评审修复复验完成；T5本人讲解/M2和最终parity/A11未完成。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
 
 ## 本轮修正与需确认的变化
 
@@ -51,4 +51,4 @@ T0最多2小时；T1b最多3小时排障。T2密集图不满足预算就先修�
 
 以AGENTS.md为主，CLAUDE.md只转到相同入口；不默认使用Claude Code的/clear，也不规定每任务必须新chat。任务结束把状态写盘；确需换chat由用户发起，主流程不自动创建聊天。独立评审用适用授权下的fresh只读agent，给契约/diff/真实结果，回传不超过20行结论及文件位置。
 
-T1b/T2/T3/T4已完成，各评审Important的作者修复已复验；下一目标为T5文件CLI与demo，其余待批准范围按contracts和STATE处理。此文不授权外发、推送、发包或改报名。
+T1b/T2/T3/T4已完成，各评审Important的作者修复已复验；下一机器目标为T6独立对照与硬化，T5本人讲解仍待实际发生，其余待批准范围按contracts和STATE处理。此文不授权外发、推送、发包或改报名。

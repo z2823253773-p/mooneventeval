@@ -1,0 +1,13 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moonc",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:54:53.762416+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "33bf4fcce867d0cbdf9275dc6c8e2952efcaf8e3ac2537e7a7bc4dc1d7c445ae",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

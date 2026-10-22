@@ -1,0 +1,164 @@
+{
+  "git_head": "1831fbc21199974b77c4a66675307d0071f88bb0",
+  "product": "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+  "product_sha256": "c8b4574e32764818b8ef45e269e69a846f8c40b892da4a4561274527d08b7293",
+  "commands": [
+    {
+      "name": "duplicate-text",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/duplicate.json",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "808893dc43efe0947714b952ef247929fd29b8dced90e30746ac814dcfa64dd1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "duplicate-json",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/duplicate.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "greedy-trap-text",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/greedy-trap.json",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "6c3bd2b5e894033294aeff41c2619b7a2b4ff19bf7010d080f1f00236b60e4d8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "greedy-trap-json",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/greedy-trap.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "boundary-text",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/boundary.json",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a9d8a9f9f8a93accef0ae246a38f71528ceb099b8ca16926a60ead72d2df87d7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "boundary-json",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/boundary.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "duplicate-explain-text",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/duplicate.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p2",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4d04ad4ff9e55c883bc2552274e1b3c40534029c1a7041de42c0de88c03d534d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "duplicate-explain-json",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/duplicate.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p2",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a57992bf08516f59d166798eb6a45005b36f4175bb8357da4e8fc28d86167a82",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "boundary-explain-text",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/boundary.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p1",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e5cc71bab674733c2704ab0cadbe74002e1456f85a6430e3f54f3fbbaceb9946",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "boundary-explain-json",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/boundary.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p1",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "50bd43b3fbcb90e4c1d1f6bc5ae10e27073fd0f8659cca3a9a2d12f7a7d33e83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "passed": true,
+  "personal_explanation": "NOT_PERFORMED",
+  "scope": "synthetic local native CLI transcripts; not a video or personal M2 evidence"
+}

@@ -1,0 +1,13 @@
+{
+  "candidate": "1831fbc21199974b77c4a66675307d0071f88bb0",
+  "verified_command_receipts": [
+    "evidence/T5/20261022T084836313760Z-committed-cli-build.json",
+    "evidence/T5/20261022T084836571480Z-committed-python.json",
+    "evidence/T5/20261022T084836572304Z-committed-moon.json",
+    "evidence/T5/20261022T084836572783Z-committed-validation.json",
+    "evidence/T5/20261022T084836577160Z-committed-report-bytes.json",
+    "evidence/T5/20261022T084836579099Z-committed-process.json",
+    "evidence/T5/20261022T084836582429Z-committed-demo.json"
+  ],
+  "status": "candidate evidence only; review Important remains pending"
+}

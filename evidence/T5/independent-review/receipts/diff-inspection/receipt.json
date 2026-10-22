@@ -1,0 +1,25 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "41890b84505e790efef6c2f981512af04539a51e",
+    "1831fbc21199974b77c4a66675307d0071f88bb0",
+    "--",
+    "cli",
+    "cmd/mooneventeval",
+    "tests/cli",
+    "scripts/demo.py",
+    "validation/check_cli_reports.py",
+    "validation/check_native_io.py",
+    "README.md",
+    "docs/contracts.md",
+    "docs/demo.md",
+    "docs/superpowers/plans/tasks/T5-cli-demo.md"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:51:56.106144+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "1f86740405b47eb568eb2fc42af896e4d5f01ce3b0ff08b121aa01a299851598",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

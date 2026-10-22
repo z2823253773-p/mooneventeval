@@ -1,0 +1,21 @@
+{
+  "name": "reserved-order-9",
+  "args": [
+    "explain-pair",
+    "/private/tmp/mee-t5-review-s5zp35lz/extra/reserved.json",
+    "--reference",
+    "--prediction",
+    "--prediction",
+    "--reference",
+    "--format",
+    "json",
+    "--recording",
+    "--format"
+  ],
+  "exit_code": 0,
+  "expected_exit": 0,
+  "expected_format": "json",
+  "passed": true,
+  "stdout_sha256": "713507037b999c5bbf2d260614b7142cebb792834a9745d717eb8682ed948d3a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

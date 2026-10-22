@@ -1,0 +1,12 @@
+{
+  "command": [
+    "uname",
+    "-a"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:54:53.739366+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "c33b3ac551e685eaa83b641b1381bd58f198edec83cf50e6f6db3d71c6b4ad8d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

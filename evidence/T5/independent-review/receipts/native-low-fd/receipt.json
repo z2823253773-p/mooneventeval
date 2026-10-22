@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "validation/check_native_io.py",
+    "--output",
+    "/private/tmp/mee-t5-review-s5zp35lz/native-low-fd"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:52:21.176277+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "e1605795def97ea638ac88cf6936c635b2f000ef54cd22f952dd4d740a7f4d00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

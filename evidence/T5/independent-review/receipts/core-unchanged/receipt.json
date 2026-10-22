@@ -1,0 +1,17 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--exit-code",
+    "41890b84505e790efef6c2f981512af04539a51e",
+    "1831fbc21199974b77c4a66675307d0071f88bb0",
+    "--",
+    "eventeval"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:54:53.682586+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

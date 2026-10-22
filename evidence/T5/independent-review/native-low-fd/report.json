@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "descriptor_limit": 64,
+  "repeated_opens": 20000,
+  "tests": [
+    {
+      "name": "native_read_nul_regular_and_repeated_close",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/test/cmd/mooneventeval/mooneventeval.whitebox_test.exe",
+        "native_io_wbtest.mbt:0-1"
+      ],
+      "exit_code": 0,
+      "test_protocol_passed": true,
+      "stdout_sha256": "0de4dd47c8acba5c7cb46d725b8953c128141528ffaf5af2a12bcaa5ae73ed94"
+    },
+    {
+      "name": "native_write_empty_and_invalid_descriptor",
+      "command": [
+        "/private/tmp/mee-t5-review-s5zp35lz/checkout/_build/native/release/test/cmd/mooneventeval/mooneventeval.whitebox_test.exe",
+        "native_io_wbtest.mbt:1-2"
+      ],
+      "exit_code": 0,
+      "test_protocol_passed": true,
+      "stdout_sha256": "8d051d44cec24ecc114c4561cf5e185366d189308d3b53d5efcb2bbdd0993f36"
+    }
+  ],
+  "executable_sha256": "db5c2930dbcde05bb8dedc4d335be45ddc856d511d2aa4151c8568e179dc0555",
+  "scope": "native NUL/directory/repeated close and invalid-fd write; not injected EINTR/short write/close failure"
+}

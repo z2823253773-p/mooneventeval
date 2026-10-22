@@ -1,0 +1,8 @@
+{
+  "args": [
+    "--version"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "6822e601892c692464df448e64d86157d69675aafa0c83798477a7a973f6d9db",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

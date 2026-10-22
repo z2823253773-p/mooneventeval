@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/demo.py",
+    "--bin",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/private/tmp/mee-t5-review-s5zp35lz/demo"
+  ],
+  "cwd": "/private/tmp/mee-t5-review-s5zp35lz/checkout",
+  "started": "2026-10-22T08:52:21.752909+00:00",
+  "exit_code": 0,
+  "stdout_sha256": "da1d0adac7f30a4631d2486b2e228bc273f5706f2747e6f06597e64ff5a71fa8",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "env": {}
+}

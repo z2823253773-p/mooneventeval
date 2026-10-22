@@ -1,0 +1,10 @@
+{
+  "cases": 42,
+  "passed": 42,
+  "failed": [],
+  "author_replay": true,
+  "independent_re_review": false,
+  "git_head": "2c0a06d7131eef059e91fcf91b9f68379a013411",
+  "reviewer_script_sha256": "52208e4c2622c741aee29d62b5bdc9d903fb6c557f6f11c53f8b8ae063d2987f",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d"
+}

@@ -1,0 +1,1283 @@
+diff --git a/README.md b/README.md
+index 440a9a6..b59d689 100644
+--- a/README.md
++++ b/README.md
+@@ -4,8 +4,8 @@ MoonBit event-time evaluation library under development. T3 provides validated
+ event/config/recording/task factories, strict JSON task decoding, budgeted
+ maximum-cardinality matching, complete stable JSON reports and a development
+ argv probe. T4 adds same-basis pair explanations, safe text reports and shared final-byte
+-limits. Product file CLI/demo, native file I/O and final packaging remain later
+-stages.
++limits. T5 adds the native file CLI and reproducible demo transcripts. Personal
++explanation, further I/O qualification and final packaging remain future gates.
+ 
+ Times are ASCII decimal **strings**, with at most six fractional digits. Core
+ comparisons use Int64 microseconds and integer ppm; no floating-point time
+@@ -51,7 +51,7 @@ python3 validation/check_probe.py --product _build/native/release/build/cmd/prob
+ `evaluate_json(Bytes)` returns `Result[String, EvalError]`; failures serialize
+ through `error_json(error)`. The development probe accepts one small JSON argv
+ argument and returns the full report/error with exit 0/2/3/4. This does not
+-establish the future file-reading CLI's 8 MiB I/O behavior. `decode_task` checks
++establish file-reading I/O behavior; T5 now verifies that through the native CLI. `decode_task` checks
+ the actual byte count, strict UTF-8 (one initial BOM allowed), nesting depth 16,
+ then schema and shared typed factories. JSON object duplicate keys, including
+ escape-equivalent keys, use the last value: reports describe the parsed task
+@@ -86,3 +86,35 @@ python3 validation/check_reports.py --product _build/native/release/build/cmd/pr
+ 
+ This checks the new renderers with a seconds-space Fraction oracle and performs
+ byte regressions against all 46 archived T3 reports; it does not rerun sed_eval.
++
++## Native file CLI (T5)
++
++The file CLI is implemented and locally verified on macOS arm64. Build with the
++project's pinned toolchain, then run the executable directly:
++
++```sh
++scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe --help
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/duplicate.json --format json
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1
++```
++
++The command comes first, input file second, followed by option/value pairs.
++Text is the default; `--format json` selects machine output, including argument
++and input failures. An invalid or repeated `--format` produces a text diagnostic.
++`--help` and `--version` must stand alone and do not read an input file. Query IDs
++may start with `--` or equal option names. A filename starting with `--` can be
++spelled with `./` to distinguish it from an option.
++
++Inputs are read only: regular UTF-8 JSON files, including symlinks to regular
++files, at most 8 MiB. Directories, FIFOs, devices and NUL paths are rejected.
++No stdin, TSV/CSV, output-file option or numeric-time extension is added.
++Successful reports go to stdout; text errors go to stderr; JSON errors go to
++stdout. Exit codes: 0 completed (including zero score/ineligible pairs),
++2 input/argument/file/output-I/O error, 3 resource limit, 4 unexpected internal
++error. An output-device failure can leave a prefix already written; its nonzero
++exit means that prefix is not a completed result.
++
++See the [three-minute demo](docs/demo.md). Its automated transcripts do not prove
++personal understanding or an actual spoken presentation. Linux/remote CI,
++injected EINTR/short-write/close failures and final A11 remain future gates.
+diff --git a/cli/args.mbt b/cli/args.mbt
+new file mode 100644
+index 0000000..49489cf
+--- /dev/null
++++ b/cli/args.mbt
+@@ -0,0 +1,132 @@
++///|
++pub(all) enum OutputFormat {
++  Text
++  Json
++} derive(Eq)
++
++///|
++pub extend OutputFormat with Eq::{equal, not_equal}
++
++///|
++pub(all) enum Operation {
++  Evaluate(String)
++  ExplainPair(String, String, String, String)
++  Help
++  Version
++} derive(Eq)
++
++///|
++pub extend Operation with Eq::{equal, not_equal}
++
++///|
++pub(all) struct CliRequest {
++  operation : Operation
++  format : OutputFormat
++}
++
++///|
++pub(all) struct ArgFailure {
++  format : OutputFormat
++  error : @eventeval.EvalError
++}
++
++///|
++fn arg_error(format : OutputFormat) -> ArgFailure {
++  {
++    format,
++    error: {
++      kind: @eventeval.Input,
++      code: "INVALID_ARGUMENT",
++      message: "Invalid command or options; use --help",
++      path: None,
++      limit: None,
++      observed: None,
++    },
++  }
++}
++
++///|
++pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
++  // Error format is selected before rejecting any other syntax.
++  let mut format_count = 0
++  let mut format = Text
++  let mut bad_format = false
++  let mut scan = 0
++  while scan < args.length() {
++    let i = scan
++    if args[i] == "--format" {
++      format_count = format_count + 1
++      if i + 1 >= args.length() {
++        bad_format = true
++      } else if args[i + 1] == "json" {
++        format = Json
++      } else if args[i + 1] != "text" {
++        bad_format = true
++      }
++    }
++    // ID values may literally be option names; they are not format flags.
++    if args[i] == "--recording" ||
++      args[i] == "--reference" ||
++      args[i] == "--prediction" ||
++      args[i] == "--format" {
++      scan = scan + 2
++    } else {
++      scan = scan + 1
++    }
++  }
++  if bad_format || format_count > 1 {
++    return Err(arg_error(Text))
++  }
++  if args.length() == 1 {
++    if args[0] == "--help" {
++      return Ok({ operation: Help, format: Text, })
++    }
++    if args[0] == "--version" {
++      return Ok({ operation: Version, format: Text, })
++    }
++  }
++  if args.length() < 2 {
++    return Err(arg_error(format))
++  }
++  let command = args[0]
++  if command != "evaluate" && command != "explain-pair" {
++    return Err(arg_error(format))
++  }
++  let path = args[1]
++  if path.is_empty() || path.has_prefix("--") {
++    return Err(arg_error(format))
++  }
++  let mut recording = None
++  let mut reference = None
++  let mut prediction = None
++  let mut i = 2
++  while i < args.length() {
++    if i + 1 >= args.length() {
++      return Err(arg_error(format))
++    }
++    let key = args[i]
++    let value = args[i + 1]
++    if value.is_empty() {
++      return Err(arg_error(format))
++    }
++    match key {
++      "--format" => ()
++      "--recording" if command == "explain-pair" && recording is None =>
++        recording = Some(value)
++      "--reference" if command == "explain-pair" && reference is None =>
++        reference = Some(value)
++      "--prediction" if command == "explain-pair" && prediction is None =>
++        prediction = Some(value)
++      _ => return Err(arg_error(format))
++    }
++    i = i + 2
++  }
++  if command == "evaluate" {
++    return Ok({ operation: Evaluate(path), format, })
++  }
++  match (recording, reference, prediction) {
++    (Some(c), Some(r), Some(p)) =>
++      Ok({ operation: ExplainPair(path, c, r, p), format, })
++    _ => Err(arg_error(format))
++  }
++}
+diff --git a/cli/args_test.mbt b/cli/args_test.mbt
+new file mode 100644
+index 0000000..65dcbcb
+--- /dev/null
++++ b/cli/args_test.mbt
+@@ -0,0 +1,140 @@
++// Catch lost JSON failure mode, permissive grammar and wrong dispatch/exit routing.
++
++///|
++test "args_success_default_and_exact_explanation" {
++  let r = @cli.parse_args(["evaluate", "task.json"]).unwrap()
++  inspect(r.format == @cli.Text, content="true")
++  inspect(r.operation == @cli.Evaluate("task.json"), content="true")
++  let r = @cli.parse_args([
++    "explain-pair", "t", "--prediction", "p", "--format", "json", "--recording",
++    "c", "--reference", "r",
++  ]).unwrap()
++  inspect(r.operation == @cli.ExplainPair("t", "c", "r", "p"), content="true")
++  inspect(r.format == @cli.Json, content="true")
++}
++
++///|
++test "args_query_ids_may_start_with_dashes" {
++  let result = @cli.parse_args([
++    "explain-pair", "t", "--recording", "--clip", "--reference", "--ref", "--prediction",
++    "--pred",
++  ])
++  inspect(result is Ok(_), content="true")
++  if result is Ok(r) {
++    inspect(
++      r.operation == @cli.ExplainPair("t", "--clip", "--ref", "--pred"),
++      content="true",
++    )
++  }
++  let reserved = @cli.parse_args([
++    "explain-pair", "t", "--recording", "--format", "--reference", "--reference",
++    "--prediction", "--format", "--format", "json",
++  ])
++  inspect(reserved is Ok(_), content="true")
++  if reserved is Ok(r) {
++    inspect(
++      r.format == @cli.Json &&
++      r.operation ==
++      @cli.ExplainPair("t", "--format", "--reference", "--format"),
++      content="true",
++    )
++  }
++}
++
++///|
++test "args_invalid_grammar_and_format_precedence" {
++  for
++    args in [
++      [],
++      ["evaluate"],
++      ["wat", "t"],
++      ["evaluate", "t", "--recording", "c"],
++      ["--format", "json", "evaluate", "t"],
++      ["evaluate", "--format", "json"],
++      ["--help", "t"],
++      ["--version", "--format", "json"],
++      ["explain-pair", "t", "--recording", "c"],
++      [
++        "explain-pair", "t", "--recording", "c", "--reference", "r", "--prediction",
++        "p", "--prediction", "p",
++      ],
++    ] {
++    inspect(@cli.parse_args(args) is Err(_), content="true")
++  }
++  for
++    args in [
++      ["wat", "--format", "json"],
++      ["evaluate", "t", "--bad", "x", "--format", "json"],
++      ["explain-pair", "t", "--format", "json"],
++    ] {
++    match @cli.parse_args(args) {
++      Err(e) => {
++        inspect(e.format == @cli.Json, content="true")
++        inspect(@cli.render_arg_failure(e).exit_code, content="2")
++      }
++      Ok(_) => abort("invalid arguments accepted")
++    }
++  }
++  for
++    args in [
++      ["evaluate", "t", "--format", "bad"],
++      ["evaluate", "t", "--format", "json", "--format", "json"],
++      ["evaluate", "t", "--format"],
++    ] {
++    match @cli.parse_args(args) {
++      Err(e) => inspect(e.format == @cli.Text, content="true")
++      Ok(_) => abort("invalid format accepted")
++    }
++  }
++}
++
++///|
++test "dispatch_help_version_ignore_failed_input" {
++  let failure : @eventeval.EvalError = {
++    kind: @eventeval.Input,
++    code: "FILE_ERROR",
++    message: "Unreadable",
++    path: None,
++    limit: None,
++    observed: None,
++  }
++  for arg in ["--help", "--version"] {
++    let o = @cli.run(@cli.parse_args([arg]).unwrap(), Err(failure))
++    inspect(o.exit_code, content="0")
++    inspect(o.stderr.length() == 0 && o.stdout.length() > 0, content="true")
++  }
++}
++
++///|
++test "dispatch_machine_errors_and_zero_success" {
++  let request = @cli.parse_args(["evaluate", "ignored", "--format", "json"]).unwrap()
++  let o = @cli.run(request, Ok(b"{}"))
++  inspect(o.exit_code, content="2")
++  inspect(o.stderr.length() == 0, content="true")
++  inspect(
++    @utf8.decode(o.stdout).contains("\"status\":\"failed\""),
++    content="true",
++  )
++  let input = b"{\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[]}"
++  let o = @cli.run(request, Ok(input))
++  inspect(o.exit_code, content="0")
++  inspect(@utf8.decode(o.stdout).contains("\"tp\":0"), content="true")
++  for kind in [@eventeval.Input, @eventeval.Resource, @eventeval.Internal] {
++    let e : @eventeval.EvalError = {
++      kind,
++      code: "test",
++      message: "a\nb",
++      path: None,
++      limit: None,
++      observed: None,
++    }
++    let o = @cli.run(request, Err(e))
++    inspect(o.exit_code == @eventeval.exit_code(e), content="true")
++    inspect(!@utf8.decode(o.stdout).contains("\"summary\""), content="true")
++  }
++  let text = @cli.run(@cli.parse_args(["evaluate", "x"]).unwrap(), Ok(b"{}"))
++  inspect(
++    text.stdout.length() == 0 && text.stderr.length() > 0 && text.exit_code == 2,
++    content="true",
++  )
++}
+diff --git a/cli/dispatch.mbt b/cli/dispatch.mbt
+new file mode 100644
+index 0000000..4520d7c
+--- /dev/null
++++ b/cli/dispatch.mbt
+@@ -0,0 +1,107 @@
++///|
++pub(all) struct CliOutput {
++  stdout : Bytes
++  stderr : Bytes
++  exit_code : Int
++}
++
++///|
++fn failure(format : OutputFormat, error : @eventeval.EvalError) -> CliOutput {
++  if format == Json {
++    {
++      stdout: @utf8.encode(@eventeval.error_json(error) + "\n"),
++      stderr: b"",
++      exit_code: @eventeval.exit_code(error),
++    }
++  } else {
++    {
++      stdout: b"",
++      stderr: @utf8.encode(
++        "MoonEventEval failed: " +
++        error.code +
++        " " +
++        Json::string(error.message).stringify() +
++        "\n",
++      ),
++      exit_code: @eventeval.exit_code(error),
++    }
++  }
++}
++
++///|
++pub fn render_arg_failure(error : ArgFailure) -> CliOutput {
++  failure(error.format, error.error)
++}
++
++///|
++fn render(
++  request : CliRequest,
++  bytes : Bytes,
++) -> Result[String, @eventeval.EvalError] {
++  let task = match @eventeval.decode_task(bytes) {
++    Ok(t) => t
++    Err(e) => return Err(e)
++  }
++  match request.operation {
++    Evaluate(_) => {
++      let evaluation = match @eventeval.evaluate(task) {
++        Ok(v) => v
++        Err(e) => return Err(e)
++      }
++      if request.format == Json {
++        @eventeval.report_json(evaluation)
++      } else {
++        @eventeval.report_text(evaluation)
++      }
++    }
++    ExplainPair(_, c, r, p) => {
++      let pair = match @eventeval.explain_pair(task, c, r, p) {
++        Ok(v) => v
++        Err(e) => return Err(e)
++      }
++      if request.format == Json {
++        @eventeval.explanation_json(pair)
++      } else {
++        @eventeval.explanation_text(pair)
++      }
++    }
++    Help | Version => abort("help/version handled before input")
++  }
++}
++
++///|
++pub fn run(
++  request : CliRequest,
++  input : Result[Bytes, @eventeval.EvalError],
++) -> CliOutput {
++  let help = "MoonEventEval 0.1.0\nUsage:\n  mooneventeval evaluate FILE [--format text|json]\n  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]\n  mooneventeval --help\n  mooneventeval --version\nInput: UTF-8 JSON task; default output: text. Files are read only.\nExit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.\n"
++  match request.operation {
++    Help => return { stdout: @utf8.encode(help), stderr: b"", exit_code: 0, }
++    Version =>
++      return { stdout: b"MoonEventEval 0.1.0\n", stderr: b"", exit_code: 0, }
++    _ => ()
++  }
++  let bytes = match input {
++    Ok(b) => b
++    Err(e) => return failure(request.format, e)
++  }
++  match render(request, bytes) {
++    Err(e) => failure(request.format, e)
++    Ok(text) => {
++      let framed = if text.has_suffix("\n") { text } else { text + "\n" }
++      let stdout = @utf8.encode(framed)
++      if stdout.length() > 16_777_216 {
++        failure(request.format, {
++          kind: @eventeval.Resource,
++          code: "RESOURCE_LIMIT",
++          message: "Serialized report exceeds byte limit",
++          path: Some("report"),
++          limit: Some(16_777_216L),
++          observed: Some(stdout.length().to_int64()),
++        })
++      } else {
++        { stdout, stderr: b"", exit_code: 0, }
++      }
++    }
++  }
++}
+diff --git a/cli/moon.pkg b/cli/moon.pkg
+new file mode 100644
+index 0000000..e3e9cea
+--- /dev/null
++++ b/cli/moon.pkg
+@@ -0,0 +1,4 @@
++import {
++  "local/mooneventeval/eventeval",
++  "moonbitlang/core/encoding/utf8",
++}
+diff --git a/cli/pkg.generated.mbti b/cli/pkg.generated.mbti
+new file mode 100644
+index 0000000..f7fb93f
+--- /dev/null
++++ b/cli/pkg.generated.mbti
+@@ -0,0 +1,52 @@
++// Generated using `moon info`, DON'T EDIT IT
++package "local/mooneventeval/cli"
++
++import {
++  "local/mooneventeval/eventeval",
++}
++
++// Values
++pub fn parse_args(Array[String]) -> Result[CliRequest, ArgFailure]
++
++pub fn render_arg_failure(ArgFailure) -> CliOutput
++
++pub fn run(CliRequest, Result[Bytes, @eventeval.EvalError]) -> CliOutput
++
++// Errors
++
++// Types and methods
++pub(all) struct ArgFailure {
++  format : OutputFormat
++  error : @eventeval.EvalError
++}
++
++pub(all) struct CliOutput {
++  stdout : Bytes
++  stderr : Bytes
++  exit_code : Int
++}
++
++pub(all) struct CliRequest {
++  operation : Operation
++  format : OutputFormat
++}
++
++pub(all) enum Operation {
++  Evaluate(String)
++  ExplainPair(String, String, String, String)
++  Help
++  Version
++} derive(Eq)
++pub fn Operation::equal(Self, Self) -> Bool
++pub fn Operation::not_equal(Self, Self) -> Bool
++
++pub(all) enum OutputFormat {
++  Text
++  Json
++} derive(Eq)
++pub fn OutputFormat::equal(Self, Self) -> Bool
++pub fn OutputFormat::not_equal(Self, Self) -> Bool
++
++// Type aliases
++
++// Traits
+diff --git a/cmd/mooneventeval/io_stub.c b/cmd/mooneventeval/io_stub.c
+new file mode 100644
+index 0000000..edc0220
+--- /dev/null
++++ b/cmd/mooneventeval/io_stub.c
+@@ -0,0 +1,48 @@
++#include <stdint.h>
++#include <limits.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <errno.h>
++#include <signal.h>
++#include <sys/stat.h>
++
++_Static_assert(sizeof(int32_t) == sizeof(int), "MoonBit Int must match C int");
++_Static_assert(SSIZE_MAX >= INT32_MAX, "ssize_t must cover bounded requests");
++
++// All borrowed pointers are used synchronously; none are stored or freed.
++// -1 = ordinary OS I/O failure; -2 = violated private wrapper precondition.
++int32_t mee_init(void) {
++  return signal(SIGPIPE, SIG_IGN) == SIG_ERR ? -1 : 0;
++}
++
++int32_t mee_open_readonly(const uint8_t *path) {
++  int fd;
++  do { fd = open((const char *)path, O_RDONLY | O_NONBLOCK | O_CLOEXEC); }
++  while (fd < 0 && errno == EINTR);
++  if (fd < 0) return -1;
++  struct stat st;
++  int result;
++  do { result = fstat(fd, &st); } while (result < 0 && errno == EINTR);
++  if (result < 0 || !S_ISREG(st.st_mode)) {
++    // Never retry close(EINTR): the descriptor may already have been released.
++    close(fd);
++    return -1;
++  }
++  return (int32_t)fd;
++}
++
++int32_t mee_read(int32_t fd, uint8_t *buffer, int32_t count) {
++  if (count < 0 || count > 65536) return -2;
++  ssize_t n;
++  do { n = read(fd, buffer, (size_t)count); } while (n < 0 && errno == EINTR);
++  return n < 0 ? -1 : (int32_t)n; // n <= count <= 65536
++}
++
++int32_t mee_close(int32_t fd) { return close(fd) < 0 ? -1 : 0; }
++
++int32_t mee_write(int32_t fd, const uint8_t *buffer, int32_t count) {
++  if (count < 0 || count > 65536) return -2;
++  ssize_t n;
++  do { n = write(fd, buffer, (size_t)count); } while (n < 0 && errno == EINTR);
++  return n < 0 ? -1 : (int32_t)n; // n <= count <= 65536
++}
+diff --git a/cmd/mooneventeval/main.mbt b/cmd/mooneventeval/main.mbt
+new file mode 100644
+index 0000000..d0bbc93
+--- /dev/null
++++ b/cmd/mooneventeval/main.mbt
+@@ -0,0 +1,47 @@
++///|
++extern "C" fn terminate(code : Int) -> Unit = "exit"
++
++///|
++fn emit(output : @cli.CliOutput) -> Int {
++  match write_all(1, output.stdout) {
++    Err(e) => {
++      let diagnostic = @cli.render_arg_failure({ format: @cli.Text, error: e, })
++      let _ = write_all(2, diagnostic.stderr)
++      return @eventeval.exit_code(e)
++    }
++    Ok(_) => ()
++  }
++  match write_all(2, output.stderr) {
++    Err(e) => @eventeval.exit_code(e)
++    Ok(_) => output.exit_code
++  }
++}
++
++///|
++fn main {
++  if native_init() < 0 {
++    let diagnostic = @cli.render_arg_failure({
++      format: @cli.Text,
++      error: internal_error(),
++    })
++    terminate(emit(diagnostic))
++  } else {
++    let all = @env.args()
++    let args = []
++    for i in 1..<all.length() {
++      args.push(all[i])
++    }
++    let output = match @cli.parse_args(args) {
++      Err(e) => @cli.render_arg_failure(e)
++      Ok(request) => {
++        let input = match request.operation {
++          @cli.Evaluate(path) | @cli.ExplainPair(path, _, _, _) =>
++            read_file_bounded(path)
++          @cli.Help | @cli.Version => Ok(b"")
++        }
++        @cli.run(request, input)
++      }
++    }
++    terminate(emit(output))
++  }
++}
+diff --git a/cmd/mooneventeval/moon.pkg b/cmd/mooneventeval/moon.pkg
+new file mode 100644
+index 0000000..a4d2758
+--- /dev/null
++++ b/cmd/mooneventeval/moon.pkg
+@@ -0,0 +1,13 @@
++import {
++  "local/mooneventeval/cli",
++  "local/mooneventeval/eventeval",
++  "moonbitlang/core/env",
++  "moonbitlang/core/encoding/utf8",
++  "moonbitlang/core/buffer",
++}
++
++pkgtype(kind: "executable")
++
++options(
++  "native-stub": [ "io_stub.c" ],
++)
+diff --git a/cmd/mooneventeval/native_io.mbt b/cmd/mooneventeval/native_io.mbt
+new file mode 100644
+index 0000000..a2823d6
+--- /dev/null
++++ b/cmd/mooneventeval/native_io.mbt
+@@ -0,0 +1,108 @@
++///|
++#borrow(path)
++extern "C" fn native_open(path : Bytes) -> Int = "mee_open_readonly"
++
++///|
++#borrow(buffer)
++extern "C" fn native_read(fd : Int, buffer : Bytes, count : Int) -> Int = "mee_read"
++
++///|
++extern "C" fn native_close(fd : Int) -> Int = "mee_close"
++
++///|
++#borrow(buffer)
++extern "C" fn native_write(fd : Int, buffer : Bytes, count : Int) -> Int = "mee_write"
++
++///|
++extern "C" fn native_init() -> Int = "mee_init"
++
++///|
++fn io_error() -> @eventeval.EvalError {
++  {
++    kind: @eventeval.Input,
++    code: "FILE_ERROR",
++    message: "Cannot read a regular input file or write output",
++    path: Some("file"),
++    limit: None,
++    observed: None,
++  }
++}
++
++///|
++fn internal_error() -> @eventeval.EvalError {
++  {
++    kind: @eventeval.Internal,
++    code: "INTERNAL_ERROR",
++    message: "Unexpected native I/O failure",
++    path: None,
++    limit: None,
++    observed: None,
++  }
++}
++
++///|
++fn read_file_bounded(path : String) -> Result[Bytes, @eventeval.EvalError] {
++  if path.contains("\u0000") {
++    return Err(io_error())
++  }
++  let fd = native_open(@utf8.encode(path + "\u0000"))
++  if fd < 0 {
++    return Err(io_error())
++  }
++  let collected = @buffer.Buffer::Buffer(size_hint=65536)
++  let buffer = Bytes::make(65536, b'\x00')
++  let mut failure = None
++  while collected.length() <= 8_388_608 {
++    let remaining = 8_388_609 - collected.length()
++    let wanted = if remaining < 65536 { remaining } else { 65536 }
++    let n = native_read(fd, buffer, wanted)
++    if n == 0 {
++      break
++    }
++    if n < 0 || n > wanted {
++      failure = Some(if n == -1 { io_error() } else { internal_error() })
++      break
++    }
++    collected.write_bytes(buffer[:n])
++  }
++  let closed = native_close(fd)
++  if collected.length() > 8_388_608 {
++    return Err({
++      kind: @eventeval.Resource,
++      code: "RESOURCE_LIMIT",
++      message: "Input exceeds byte limit",
++      path: Some("input"),
++      limit: Some(8_388_608L),
++      observed: Some(8_388_609L),
++    })
++  }
++  if failure is Some(e) {
++    return Err(e)
++  }
++  if closed < 0 {
++    return Err(io_error())
++  }
++  Ok(collected.to_bytes())
++}
++
++///|
++fn write_all(fd : Int, bytes : Bytes) -> Result[Unit, @eventeval.EvalError] {
++  let mut offset = 0
++  while offset < bytes.length() {
++    let remaining = bytes.length() - offset
++    let wanted = if remaining < 65536 { remaining } else { 65536 }
++    let chunk = bytes[offset:offset + wanted].to_owned()
++    let n = native_write(fd, chunk, wanted)
++    if n <= 0 || n > wanted {
++      return Err(
++        if n == -2 || n > wanted {
++          internal_error()
++        } else {
++          io_error()
++        },
++      )
++    }
++    offset = offset + n
++  }
++  Ok(())
++}
+diff --git a/cmd/mooneventeval/native_io_wbtest.mbt b/cmd/mooneventeval/native_io_wbtest.mbt
+new file mode 100644
+index 0000000..73032bf
+--- /dev/null
++++ b/cmd/mooneventeval/native_io_wbtest.mbt
+@@ -0,0 +1,28 @@
++// Removing close eventually exhausts descriptors; NUL must never truncate a path.
++
++///|
++test "native_read_nul_regular_and_repeated_close" {
++  match read_file_bounded("examples/duplicate.json\u0000suffix") {
++    Err(e) => inspect(e.code, content="FILE_ERROR")
++    Ok(_) => abort("NUL path accepted")
++  }
++  match read_file_bounded("examples") {
++    Err(e) => inspect(e.code, content="FILE_ERROR")
++    Ok(_) => abort("directory accepted")
++  }
++  for _ in 0..<20000 {
++    inspect(
++      read_file_bounded("examples/duplicate.json") is Ok(_),
++      content="true",
++    )
++  }
++}
++
++///|
++test "native_write_empty_and_invalid_descriptor" {
++  inspect(write_all(-1, b"") is Ok(_), content="true")
++  match write_all(-1, b"data") {
++    Err(e) => inspect(e.code, content="FILE_ERROR")
++    Ok(_) => abort("failed write accepted")
++  }
++}
+diff --git a/cmd/mooneventeval/pkg.generated.mbti b/cmd/mooneventeval/pkg.generated.mbti
+new file mode 100644
+index 0000000..2e721f3
+--- /dev/null
++++ b/cmd/mooneventeval/pkg.generated.mbti
+@@ -0,0 +1,12 @@
++// Generated using `moon info`, DON'T EDIT IT
++package "local/mooneventeval/cmd/mooneventeval"
++
++// Values
++
++// Errors
++
++// Types and methods
++
++// Type aliases
++
++// Traits
+diff --git a/docs/contracts.md b/docs/contracts.md
+index 1b7229c..f0e2dc1 100644
+--- a/docs/contracts.md
++++ b/docs/contracts.md
+@@ -120,3 +120,11 @@ T3最终运行代码/被测提交508d5cf，原候选e9c7f31的独立评审发现
+ T4实现细化：bounded_serialize(Json, limit)仅为标准JSON值边界测试的包内白盒适配器，置于serialization_wbtest；产品四渲染函数共用serialization.mbt里的bounded_output。这样不为满足测试名称添加unused运行函数，不重新解析完整JSON。T5不消费该白盒辅助函数；最终字节门及16MiB限额是产品代码。
+ 
+ T4最终验证器/被测提交d00b0a6，产品实现d528d30。原始过程stdout/stderr必须binary capture/write/hash，字节回归read_bytes比较；严格UTF8解码只用于语义检查，不得先做通用换行规范化。CRLF/文本原始CR两negative controls必须拒绝且档案保持真实字节。T4完成不等于文件CLI或个人M2/最终A11。
++
++### T5实施约定（本机CLI/自动demo实施中）
++
++用户“继续”授权当前T5；不扩大JSON输入/schema。parse_args参数不含exe，Help/Version仅独立--help/--version；命令首位、文件第二位、后续选项值成对。ID值允许以--开头/等于选项名，格式预扫描不把ID值误算成开关；文件名以--开头时用./前缀。有效单一--format json决定失败JSON协议，format本身非法或重复则Text。JSON失败stdout，text失败stderr，成功stdout单个终端LF，连同LF再次检查16MiB最终字节。
++
++native只处理I/O：O_RDONLY|O_NONBLOCK|O_CLOEXEC打开，fstat只允许普通文件（普通符号链接跟随）；NUL在编码前拒绝。每次最多65536字节，最多读取8MiB+1；所有已开FD在Moon聚合结束后关闭一次，不重试歧义close(EINTR)。C中open/fstat/read/write重试EINTR，Moon循环短读/短写；SIGPIPE忽略，使EPIPE归FILE_ERROR/exit2，不误报完成。输出失败可能已有前缀，不可撤回。重故障注入仍T6，CLI目前仅已验证macOS arm64。code4只作内部非预期错误。
++
++自动演示/图示/日志由agent交付，本人复算/口头讲解单列未完成；不伪装成M2证据。T5不重装参考环境或改核心数学。
+diff --git a/docs/demo.md b/docs/demo.md
+index 5537b79..44e5d05 100644
+--- a/docs/demo.md
++++ b/docs/demo.md
+@@ -1,36 +1,58 @@
+-# 三分钟演示与讲解草案
++# 三分钟演示与讲解稿
+ 
+-状态：供后续实现的演示脚本，**尚未运行**。示例算式由AI整理，须由参赛者本人复算/讲解后再记录其完成状态；不能写成“用户已手算”。
++这是可复跑的合成数据演示脚本。自动运行记录不等于本人讲解；**本人复算、口头讲解和M2仍未完成**。目标仅已验证本机macOS arm64 native，参考原版历史证据见[阶段结果](reviews/2026-10-20-t1b-results.md)。
+ 
+-## 0:00–0:40：重复预测为什么不能双计TP
++先构建，再在仓库根目录执行；每次输出用新目录：
+ 
+-展示 examples/duplicate.json：参考r1=[10,12]；预测p1=[10,12]、p2=[10.05,12.05]。c=0.2、q=0.5；两预测均合格，但同一参考只能使用一次，因此TP=1、FP=1、FN=0，P=1/2、R=1、F1=2/3。
++```sh
++scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn
++python3 scripts/demo.py --bin _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T5/demo-recheck
++```
++
++下面用`MEE`代指上述exe的路径；它是直接运行的本地产物，不是moon run。输入只读，不覆盖文件。
++
++## 0:00—0:45 重复预测为什么是FP
++
++```sh
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/duplicate.json --format text
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/duplicate.json --recording clip-01 --reference r1 --prediction p2 --format text
++```
+ 
+-待实现命令：`mooneventeval evaluate examples/duplicate.json --format text`。现场先说明容差由调用者声明，不代表算法自动挑选最佳评分规则。
++一个参考、两个重复预测：TP1/FP1/FN0。p2本身满足时间条件，但一对一配对已选p1；“有候选但未选中”不等于“时间不合格”。explain-pair只解释这两个事件的资格，不运行最大匹配，也不声称这对已选中。
+ 
+-## 0:40–1:40：贪心为什么少算，增广如何纠正
++## 0:45—1:50 贪心陷阱与增广路径
+ 
+-参考r1=[10,11]、r2=[10.3,11.3]；预测p1=[10.15,11.15]、p2=[9.85,10.85]。起点差分别为0.15、0.15、0.15、0.45；默认起点容差0.2。前三条边存在，r2-p2不合格。
++```sh
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/greedy-trap.json --format json
++```
++
++同类alarm、collar=0.2秒。r1起点10、r2起点10.3；p1起点10.15、p2起点9.85；各自长度1秒，终点容差max(0.2,1×0.5)=0.5秒。起点差绝对值分别为0.15、0.15、0.15、0.45，因此只有下列三条边：
+ 
+ ```mermaid
+-flowchart LR
++graph LR
+   r1["r1: 10–11"] --- p1["p1: 10.15–11.15"]
+   r1 --- p2["p2: 9.85–10.85"]
+   r2["r2: 10.3–11.3"] --- p1
+ ```
+ 
+-按r1-p1先到先配只得到1对；沿r2→p1→r1→p2调整，得到r1-p2、r2-p1两对。最大TP为2，因为参考只有2个且已有覆盖两者的合法匹配。
++不可回退的朴素贪心先取r1→p1，会让r2无处可配，只得TP1。沿r2→p1→r1→p2增广，改为r2→p1、r1→p2，得TP2。产品先找空闲预测，必要时用显式栈DFS增广，最大化配对数；不最小化时间误差。同版本规范ID排序固定选择，工作量跨所有分组共享20M预算，超限整任务失败。
+ 
+-**参考预期：**sed_eval固定版本的optimal模式也应得到TP=2；这是源码/数学推导，尚未实跑。这里的卖点是比朴素贪心可靠的MoonBit实现与解释，不把与sed_eval一致包装成超越它。若实跑不同，先排查配置、浮点与输入，不把差异自动当优势。
++**锁定sed_eval的optimal模式在本例预期也是TP2，T1b已实测。**这个例子展示最大匹配相对朴素贪心的必要性，不虚构超过成熟评测工具的成绩。
+ 
+-## 1:40–2:30：边界与解释
++## 1:50—2:35 精确边界与可解释性
+ 
+-参考[10,12]；分别独立评测预测[10.2,12.2]与[10.200001,12.2]。起点差0.2包含等号，超过1微秒则不合格。终点容差max(0.2,2×0.5)=1秒，两例终点均合格。
++```sh
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1 --format text
++```
+ 
+-待实现命令：`mooneventeval explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1 --format text`。解释合格不等于进入某个最大匹配；多最优解的配对身份由固定实现规则选择。
++10.2−10=0.2，起点等号通过。十进制秒字符串先精确转Int64微秒；参考时长与比例交叉乘法比较，终点有效阈值可显示到十二位秒，不用epsilon。偏差保留预测减参考的符号。该例eligible=true不需要匹配身份推断。
+ 
+-## 2:30–3:00：主动说明边界
++## 2:35—3:00 失败协议与取舍
++
++```sh
++_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/missing.json --format json
++```
+ 
+-讲明：用户提供参考标注；首版不检测信号、不做临床判断；不同类别不配对；空分母为未定义；资源耗尽明确失败。出示真实运行SHA/命令/输出与独立验证范围，不只放测试数量。
++真实缺文件exit2、status=failed、FILE_ERROR，无summary或部分分数。完成但零TP/事件对不合格仍exit0；资源超限exit3，内部非预期故障exit4。默认文本；机器JSON失败写stdout，文本诊断写stderr。只支持UTF8 JSON/字符串时间，重名键后值覆盖是已披露限制；TSV仍待批准。读取最多8MiB+1、仅普通文件（允许普通文件符号链接），输出失败可能已有前缀，无法撤回，但必须非零。
+ 
+-验收演示时记录：实际命令、退出码、原始输出、参赛者能否独立说明三处算式与一个取舍；还未发生的演示和本人讲解保持未完成。
++本人实际演示后另记日期、被演示SHA、亲手推导和可回答的问题；本稿及自动收据不替代该记录。
+diff --git a/docs/superpowers/plans/tasks/T5-cli-demo.md b/docs/superpowers/plans/tasks/T5-cli-demo.md
+index a6fb597..6376411 100644
+--- a/docs/superpowers/plans/tasks/T5-cli-demo.md
++++ b/docs/superpowers/plans/tasks/T5-cli-demo.md
+@@ -1,6 +1,6 @@
+ # T5-cli-demo 任务卡
+ 
+-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
++状态：用户“继续”授权本阶段实施中；历史待审标记不再阻止已批准PRD/当前卡执行。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+ 
+ demo在CLI任务中交付；当前输入仍JSON。安全边界不删除，较重故障注入可后移但不能称已通过。
+ 
+diff --git a/scripts/demo.py b/scripts/demo.py
+new file mode 100644
+index 0000000..6d91b91
+--- /dev/null
++++ b/scripts/demo.py
+@@ -0,0 +1,57 @@
++"""Record a reproducible native CLI demo; this is not personal explanation proof."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--bin', type=Path, required=True)
++    parser.add_argument('--output', type=Path, required=True)
++    args = parser.parse_args()
++    binary = args.bin.resolve(); output = args.output.resolve()
++    output.mkdir(parents=True, exist_ok=True)
++    assert not list(output.iterdir()), 'use a new output directory'
++    rows = []
++    for example, counts in [('duplicate', (1, 1, 0)), ('greedy-trap', (2, 0, 0)), ('boundary', (1, 0, 0))]:
++        for fmt in ['text', 'json']:
++            command = [str(binary), 'evaluate', f'examples/{example}.json', '--format', fmt]
++            rows.append(record(output, example + '-' + fmt, command))
++            if fmt == 'json':
++                actual = json.loads((output / (example + '-' + fmt) / 'stdout').read_bytes())
++                assert tuple(actual['summary']['counts'][k] for k in ['tp', 'fp', 'fn']) == counts
++    for example, prediction in [('duplicate', 'p2'), ('boundary', 'p1')]:
++        for fmt in ['text', 'json']:
++            command = [str(binary), 'explain-pair', f'examples/{example}.json', '--recording',
++                       'clip-01', '--reference', 'r1', '--prediction', prediction, '--format', fmt]
++            name = example + '-explain-' + fmt
++            rows.append(record(output, name, command))
++            if fmt == 'json':
++                actual = json.loads((output / name / 'stdout').read_bytes())
++                assert actual['basis']['eligible'] is True and 'summary' not in actual
++    for example in ['duplicate', 'greedy-trap', 'boundary']:
++        (output / (example + '.input.json')).write_bytes((ROOT / 'examples' / (example + '.json')).read_bytes())
++    report = dict(git_head=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
++                  product=str(binary), product_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
++                  commands=rows, passed=True, personal_explanation='NOT_PERFORMED',
++                  scope='synthetic local native CLI transcripts; not a video or personal M2 evidence')
++    (output / 'report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
++    print(json.dumps(dict(passed=True, native_calls=len(rows), personal_explanation='NOT_PERFORMED')))
++
++
++def record(output, name, command):
++    result = subprocess.run(command, cwd=ROOT, capture_output=True, timeout=10)
++    folder = output / name; folder.mkdir()
++    (folder / 'stdout').write_bytes(result.stdout); (folder / 'stderr').write_bytes(result.stderr)
++    assert result.returncode == 0 and result.stderr == b'', (command, result.returncode, result.stderr)
++    return dict(name=name, command=command, exit_code=result.returncode,
++                stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),
++                stderr_sha256=hashlib.sha256(result.stderr).hexdigest())
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/tests/cli/test_cli.py b/tests/cli/test_cli.py
+new file mode 100644
+index 0000000..a5b6e6f
+--- /dev/null
++++ b/tests/cli/test_cli.py
+@@ -0,0 +1,197 @@
++"""Real release-process contract; MEE_BIN must name the product, not moon run."""
++import hashlib
++import gzip
++import itertools
++import json
++import os
++from pathlib import Path
++import subprocess
++import tempfile
++import unittest
++
++ROOT = Path(__file__).resolve().parents[2]
++
++
++class NativeCli(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.exe = Path(os.environ['MEE_BIN']).resolve()
++        if not cls.exe.is_file():
++            raise AssertionError(f'Product CLI missing: {cls.exe}')
++        cls.tmp = tempfile.TemporaryDirectory(prefix='mee-cli-')
++        cls.folder = Path(cls.tmp.name)
++        cls.evidence = Path(os.environ.get('MEE_EVIDENCE', str(cls.folder / 'evidence'))).resolve()
++        cls.evidence.mkdir(parents=True, exist_ok=True)
++        cls.sequence = itertools.count()
++        (cls.evidence / 'product.json').write_text(json.dumps(dict(
++            path=str(cls.exe), sha256=hashlib.sha256(cls.exe.read_bytes()).hexdigest(),
++            head=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()), indent=2))
++
++    @classmethod
++    def tearDownClass(cls):
++        cls.tmp.cleanup()
++
++    def call(self, *args, expected=0):
++        result = subprocess.run([str(self.exe), *map(str, args)], cwd=ROOT,
++                                capture_output=True, timeout=8)
++        folder = self.evidence / f'{next(self.sequence):03d}-{self._testMethodName}'
++        folder.mkdir()
++        (folder / 'stdout').write_bytes(result.stdout)
++        (folder / 'stderr').write_bytes(result.stderr)
++        for i, arg in enumerate(args):
++            p = Path(str(arg))
++            if p.is_file() and p.stat().st_size <= 8_388_609 and p != self.exe:
++                try:
++                    raw = p.read_bytes()
++                    if len(raw) > 65536:
++                        (folder / f'input-{i}.bin.gz').write_bytes(gzip.compress(raw, mtime=0))
++                    else: (folder / f'input-{i}.bin').write_bytes(raw)
++                except PermissionError: pass  # unreadability is itself the fixture
++        (folder / 'receipt.json').write_text(json.dumps(dict(
++            args=list(map(str, args)), exit_code=result.returncode,
++            stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),
++            stderr_sha256=hashlib.sha256(result.stderr).hexdigest()), indent=2))
++        self.assertEqual(result.returncode, expected, result.stderr)
++        return result
++
++    def failure(self, path, code, exit_code=2):
++        result = self.call('evaluate', path, '--format', 'json', expected=exit_code)
++        self.assertEqual(result.stderr, b'')
++        actual = json.loads(result.stdout.decode('utf-8'))
++        self.assertEqual(list(actual), ['schema_version', 'status', 'error'])
++        self.assertEqual(actual['status'], 'failed')
++        self.assertEqual(actual['error']['code'], code)
++        self.assertNotIn('NaN', result.stdout.decode('utf-8'))
++        return actual
++
++    def test_examples_text_json_and_unchanged_files(self):
++        for example, counts in [('duplicate', (1, 1, 0)), ('greedy-trap', (2, 0, 0)), ('boundary', (1, 0, 0))]:
++            path = ROOT / 'examples' / (example + '.json')
++            before = path.read_bytes()
++            result = self.call('evaluate', path, '--format', 'json')
++            self.assertEqual(result.stderr, b'')
++            actual = json.loads(result.stdout.decode('utf-8'))['summary']['counts']
++            self.assertEqual(tuple(actual[k] for k in ['tp', 'fp', 'fn']), counts)
++            text = self.call('evaluate', path)
++            self.assertEqual(text.stderr, b'')
++            self.assertIn('所选配对', text.stdout.decode('utf-8'))
++            self.assertTrue(text.stdout.endswith(b'\n') and not text.stdout.endswith(b'\n\n'))
++            self.assertEqual(path.read_bytes(), before)
++
++    def test_explanation_and_ineligible_are_success(self):
++        args = ['explain-pair', 'examples/boundary.json', '--recording', 'clip-01', '--reference', 'r1', '--prediction', 'p1']
++        self.assertTrue(json.loads(self.call(*args, '--format', 'json').stdout)['basis']['eligible'])
++        self.assertIn('onset_delta_s=0.2', self.call(*args).stdout.decode('utf-8'))
++        document = json.loads((ROOT / 'examples/boundary.json').read_bytes())
++        document['recordings'][0]['prediction'][0]['onset_s'] = '10.200001'
++        path = self.folder / 'outside.json'; path.write_text(json.dumps(document))
++        args[1] = str(path)
++        self.assertFalse(json.loads(self.call(*args, '--format', 'json').stdout)['basis']['eligible'])
++        counts = json.loads(self.call('evaluate', path, '--format', 'json').stdout)['summary']['counts']
++        self.assertEqual((counts['tp'], counts['fp'], counts['fn']), (0, 1, 1))
++        args[args.index('--reference') + 1] = 'absent'
++        actual = self.call(*args, '--format', 'json', expected=2)
++        self.assertEqual(json.loads(actual.stdout)['error']['code'], 'ID_NOT_FOUND')
++
++    def test_bad_schema_utf8_depth(self):
++        for name, raw, code, exit_code in [('schema', b'{}', 'MISSING_FIELD', 2),
++                                          ('utf8', b'\xff', 'INVALID_UTF8', 2),
++                                          ('depth', b'['*17 + b'0' + b']'*17, 'RESOURCE_LIMIT', 3)]:
++            path = self.folder / name; path.write_bytes(raw)
++            self.failure(path, code, exit_code)
++
++    def test_dash_prefixed_query_ids(self):
++        document = json.loads((ROOT / 'examples/boundary.json').read_bytes())
++        rec = document['recordings'][0]; rec['id'] = '--clip'
++        rec['reference'][0]['id'] = '--ref'; rec['prediction'][0]['id'] = '--pred'
++        path = self.folder / 'dash-ids.json'; path.write_text(json.dumps(document))
++        result = self.call('explain-pair', path, '--recording', '--clip', '--reference', '--ref', '--prediction', '--pred', '--format', 'json')
++        actual = json.loads(result.stdout)
++        self.assertEqual((actual['recording_id'], actual['reference']['id'], actual['prediction']['id']), ('--clip', '--ref', '--pred'))
++        rec['id'] = '--format'; rec['reference'][0]['id'] = '--reference'; rec['prediction'][0]['id'] = '--format'
++        path.write_text(json.dumps(document))
++        result = self.call('explain-pair', path, '--recording', '--format', '--reference', '--reference', '--prediction', '--format', '--format', 'json')
++        self.assertEqual(json.loads(result.stdout)['recording_id'], '--format')
++
++    def test_input_size_equal_and_plus_one(self):
++        raw = b'{"schema_version":1,"labels":["a"],"recordings":[]}'
++        path = self.folder / 'limit.json'
++        path.write_bytes(raw + b' ' * (8_388_608 - len(raw)))
++        self.assertEqual(json.loads(self.call('evaluate', path, '--format', 'json').stdout)['status'], 'completed')
++        with path.open('ab') as f: f.write(b' ')
++        actual = self.failure(path, 'RESOURCE_LIMIT', 3)
++        self.assertEqual((actual['error']['limit'], actual['error']['observed']), (8_388_608, 8_388_609))
++
++    def test_files_missing_directory_fifo_unreadable_and_symlink(self):
++        self.failure(self.folder / 'absent', 'FILE_ERROR')
++        self.failure(self.folder, 'FILE_ERROR')
++        fifo = self.folder / 'pipe'; os.mkfifo(fifo)
++        self.failure(fifo, 'FILE_ERROR')
++        path = self.folder / 'denied.json'; path.write_bytes(b'{}'); path.chmod(0)
++        try:
++            self.assertNotEqual(os.geteuid(), 0, 'unreadable-file proof requires nonroot')
++            self.failure(path, 'FILE_ERROR')
++        finally: path.chmod(0o600)
++        link = self.folder / '任务链接.json'; link.symlink_to(ROOT / 'examples/duplicate.json')
++        self.assertEqual(json.loads(self.call('evaluate', link, '--format', 'json').stdout)['summary']['counts']['tp'], 1)
++        self.failure('/dev/null', 'FILE_ERROR')
++
++    def test_argument_formats_and_help(self):
++        for arg in ['--help', '--version']:
++            result = self.call(arg); self.assertEqual(result.stderr, b''); self.assertIn(b'MoonEventEval', result.stdout)
++        for args in [[], ['evaluate'], ['bad', '--format', 'json'], ['evaluate', 'absent', '--unknown', 'x', '--format', 'json'], ['--help', '--format', 'json']]:
++            result = self.call(*args, expected=2)
++            if 'json' in args:
++                self.assertEqual(json.loads(result.stdout)['error']['code'], 'INVALID_ARGUMENT')
++                self.assertEqual(result.stderr, b'')
++            else: self.assertEqual(result.stdout, b''); self.assertIn(b'INVALID_ARGUMENT', result.stderr)
++        for args in [['--format', 'bad'], ['--format', 'json', '--format', 'json']]:
++            result = self.call('evaluate', 'absent', *args, expected=2)
++            self.assertEqual(result.stdout, b''); self.assertIn(b'INVALID_ARGUMENT', result.stderr)
++
++    def test_closed_stdout_pipe_terminates_nonzero(self):
++        rfd, wfd = os.pipe(); os.close(rfd)
++        try:
++            result = subprocess.run([str(self.exe), 'evaluate', 'examples/duplicate.json', '--format', 'json'],
++                                    cwd=ROOT, stdout=wfd, stderr=subprocess.PIPE, timeout=8)
++        finally: os.close(wfd)
++        (self.evidence / 'closed-pipe.stderr').write_bytes(result.stderr)
++        (self.evidence / 'closed-pipe.json').write_text(json.dumps(dict(exit_code=result.returncode)))
++        self.assertEqual(result.returncode, 2)
++        self.assertIn(b'FILE_ERROR', result.stderr)
++
++    def test_large_unicode_output_chunking_and_partial_pipe_failure(self):
++        recordings = []
++        for i in range(64):
++            event = lambda id: dict(id=id, label='a', onset_s='1', offset_s='2')
++            recordings.append(dict(id='录' * 200 + str(i), reference=[event('参' * 200)], prediction=[event('预' * 200)]))
++        path = self.folder / 'large-output.json'
++        path.write_text(json.dumps(dict(schema_version=1, labels=['a'], recordings=recordings), ensure_ascii=False), encoding='utf-8')
++        result = self.call('evaluate', path, '--format', 'json')
++        self.assertGreater(len(result.stdout), 65536)
++        actual = json.loads(result.stdout.decode('utf-8'))
++        self.assertEqual(actual['summary']['counts']['tp'], 64)
++        self.assertEqual(len(actual['matches']), 64)
++        self.assertEqual({m['recording_id'] for m in actual['matches']}, {r['id'] for r in recordings})
++        text = self.call('evaluate', path).stdout
++        self.assertGreater(len(text), 65536)
++        self.assertIn(recordings[-1]['id'], text.decode('utf-8'))
++        proc = subprocess.Popen([str(self.exe), 'evaluate', str(path), '--format', 'json'], cwd=ROOT,
++                                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
++        try:
++            prefix = proc.stdout.read(1024)
++            proc.stdout.close(); proc.stdout = None
++            _, stderr = proc.communicate(timeout=8)
++        finally:
++            if proc.poll() is None: proc.kill(); proc.communicate()
++        (self.evidence / 'partial-pipe.prefix').write_bytes(prefix)
++        (self.evidence / 'partial-pipe.stderr').write_bytes(stderr)
++        (self.evidence / 'partial-pipe.json').write_text(json.dumps(dict(exit_code=proc.returncode, prefix_bytes=len(prefix))))
++        self.assertEqual(proc.returncode, 2)
++        self.assertIn(b'FILE_ERROR', stderr)
++        self.assertEqual(len(prefix), 1024)
++        with self.assertRaises(json.JSONDecodeError): json.loads(prefix)
++
++
++if __name__ == '__main__':
++    unittest.main()
+diff --git a/validation/check_cli_reports.py b/validation/check_cli_reports.py
+new file mode 100644
+index 0000000..6194ca6
+--- /dev/null
++++ b/validation/check_cli_reports.py
+@@ -0,0 +1,38 @@
++"""Compare the real file CLI with all 46 archived T3 report byte streams."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--product', type=Path, required=True)
++    parser.add_argument('--output', type=Path, required=True)
++    args = parser.parse_args(); binary = args.product.resolve(); output = args.output.resolve()
++    output.mkdir(parents=True, exist_ok=True)
++    prior = ROOT / 'evidence/T3/parity-final'
++    rows = []
++    for row in json.loads((prior / 'report.json').read_bytes())['cases']:
++        name = row['case']; folder = output / name; folder.mkdir()
++        input_path = folder / 'input.json'; input_path.write_bytes((prior / name / 'input.json').read_bytes())
++        command = [str(binary), 'evaluate', str(input_path), '--format', 'json']
++        result = subprocess.run(command, cwd=ROOT, capture_output=True, timeout=10)
++        (folder / 'stdout').write_bytes(result.stdout); (folder / 'stderr').write_bytes(result.stderr)
++        assert result.returncode == 0 and not result.stderr, (name, result.returncode, result.stderr)
++        assert result.stdout == (prior / name / 'product.stdout').read_bytes(), name
++        rows.append(dict(name=name, command=command, exit_code=result.returncode,
++                         stdout_sha256=hashlib.sha256(result.stdout).hexdigest()))
++    report = dict(passed=True, raw_byte_cases=len(rows), cases=rows, product=str(binary),
++                  product_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
++                  git_head=subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
++                  scope='file CLI against archived T3 bytes; no new sed_eval run or final A11')
++    (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
++    print(json.dumps(dict(passed=True, raw_byte_cases=len(rows))))
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/validation/check_native_io.py b/validation/check_native_io.py
+new file mode 100644
+index 0000000..7370ea7
+--- /dev/null
++++ b/validation/check_native_io.py
+@@ -0,0 +1,43 @@
++"""Run the actual native I/O whitebox executable with only 64 file descriptors."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import resource
++import subprocess
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument('--output', type=Path, required=True)
++    args = parser.parse_args(); output = args.output.resolve(); output.mkdir(parents=True, exist_ok=True)
++    build = [str(ROOT / 'scripts/with-toolchain.sh'), 'moon', 'test', 'cmd/mooneventeval',
++             '--target', 'native', '--release', '--deny-warn', '--build-only']
++    result = subprocess.run(build, cwd=ROOT, capture_output=True, timeout=120)
++    (output / 'build.stdout').write_bytes(result.stdout); (output / 'build.stderr').write_bytes(result.stderr)
++    assert result.returncode == 0, result.stderr
++    exe = ROOT / '_build/native/release/test/cmd/mooneventeval/mooneventeval.whitebox_test.exe'
++    tests = json.loads((exe.parent / '__whitebox_test_info.json').read_bytes())['tests']['native_io_wbtest.mbt']
++    rows = []
++    def limit_descriptors():
++        resource.setrlimit(resource.RLIMIT_NOFILE, (64, 64))
++    for test in tests:
++        i = test['index']; command = [str(exe), f'native_io_wbtest.mbt:{i}-{i+1}']
++        result = subprocess.run(command, cwd=ROOT, capture_output=True, preexec_fn=limit_descriptors, timeout=30)
++        (output / f'{i}.stdout').write_bytes(result.stdout); (output / f'{i}.stderr').write_bytes(result.stderr)
++        records = [json.loads(line) for line in result.stdout.splitlines() if line.startswith(b'{')]
++        results = [r for r in records if r.get('type') == 'result']
++        assert result.returncode == 0 and not result.stderr and len(results) == 1 and results[0]['message'] == '', (test, result.returncode, result.stdout, result.stderr)
++        rows.append(dict(name=test['name'], command=command, exit_code=result.returncode,
++                         test_protocol_passed=True, stdout_sha256=hashlib.sha256(result.stdout).hexdigest()))
++    report = dict(passed=True, descriptor_limit=64, repeated_opens=20000, tests=rows,
++                  executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),
++                  scope='native NUL/directory/repeated close and invalid-fd write; not injected EINTR/short write/close failure')
++    (output / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
++    print(json.dumps(dict(passed=True, descriptor_limit=64, tests=len(rows))))
++
++
++if __name__ == '__main__':
++    main()

@@ -1,0 +1,11 @@
+{
+  "critical": 0,
+  "important": 1,
+  "minor": 0,
+  "important_author_fixed": 1,
+  "independent_re_review": false,
+  "reviewed_sha": "1831fbc21199974b77c4a66675307d0071f88bb0",
+  "fixed_tested_sha": "2c0a06d7131eef059e91fcf91b9f68379a013411",
+  "resolution": "docs/reviews/2026-10-22-t5-review.md",
+  "author_replay": "evidence/T5/review-replay-fixed/report.json"
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "evidence/T5/replay_fixed_review.py",
+    "--output",
+    "evidence/T5/review-replay-fixed"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.283,
+  "log": "evidence/T5/20261022T090132464362Z-verified-review-replay.log",
+  "log_sha256": "bb6a94817f977f1cf8cd17c5759a7b07b3a1c0df524179e93ca5499ec488b59b",
+  "scope": "T5",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

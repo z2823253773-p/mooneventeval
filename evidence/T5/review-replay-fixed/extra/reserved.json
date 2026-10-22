@@ -1,0 +1,1 @@
+{"schema_version": 1, "labels": ["alarm"], "config": {"collar_s": "0.2", "offset_ratio": "0.5"}, "recordings": [{"id": "--format", "reference": [{"id": "--prediction", "label": "alarm", "onset_s": "10", "offset_s": "12"}], "prediction": [{"id": "--reference", "label": "alarm", "onset_s": "10.2", "offset_s": "12.2"}]}]}
