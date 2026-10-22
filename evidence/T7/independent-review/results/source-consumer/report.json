@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "source": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "source_manifest_sha256": "78760253ebf5f22a7766cf554b5633334c3481f477af6deeacc372cbb43a4462",
+  "public_api_sha256": "8ff2f5b2847fa3bf66138ad048eb801a006a8f9397aac97b35d7f0242035a8e7",
+  "consumer_imports": [
+    "local/mooneventeval/eventeval"
+  ],
+  "consumer_source_sha256": "5fe31051b5276e61cd30726dc128f29702230b5a6ee554a6e5d3ede4e0d5a1d7",
+  "build": {
+    "command": [
+      "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "main",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn",
+      "--target-dir",
+      "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-f_evmnev/_build"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-f_evmnev",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282"
+  },
+  "run": {
+    "command": [
+      "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-f_evmnev/_build/native/release/build/local/mooneventeval_consumer/main/main.exe"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-f_evmnev",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "differences": [],
+  "report": {
+    "schema_version": 1,
+    "semantics": "collar-max-cardinality/v1",
+    "implementation_version": "0.1.0",
+    "status": "completed",
+    "config": {
+      "collar_s": "0.2",
+      "offset_ratio": "0.5"
+    },
+    "summary": {
+      "counts": {
+        "reference": 1,
+        "prediction": 2,
+        "tp": 1,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.5,
+      "recall": 1,
+      "f1": 0.6666666666666666
+    },
+    "by_label": [
+      {
+        "label": "alarm",
+        "metrics": {
+          "counts": {
+            "reference": 1,
+            "prediction": 2,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0.5,
+          "recall": 1,
+          "f1": 0.6666666666666666
+        }
+      }
+    ],
+    "by_recording": [
+      {
+        "recording_id": "clip-01",
+        "metrics": {
+          "counts": {
+            "reference": 1,
+            "prediction": 2,
+            "tp": 1,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0.5,
+          "recall": 1,
+          "f1": 0.6666666666666666
+        }
+      }
+    ],
+    "matches": [
+      {
+        "recording_id": "clip-01",
+        "label": "alarm",
+        "reference": {
+          "id": "r1",
+          "label": "alarm",
+          "onset_s": "10",
+          "offset_s": "12"
+        },
+        "prediction": {
+          "id": "p1",
+          "label": "alarm",
+          "onset_s": "10",
+          "offset_s": "12"
+        },
+        "basis": {
+          "label_match": true,
+          "onset_pass": true,
+          "offset_pass": true,
+          "eligible": true,
+          "onset_delta_s": "0",
+          "offset_delta_s": "0",
+          "onset_limit_s": "0.2",
+          "offset_limit_s": "1"
+        }
+      }
+    ],
+    "false_positives": [
+      {
+        "recording_id": "clip-01",
+        "event": {
+          "id": "p2",
+          "label": "alarm",
+          "onset_s": "10.05",
+          "offset_s": "12.05"
+        },
+        "candidate_count": 1,
+        "reason": "unselected_in_maximum_matching"
+      }
+    ],
+    "false_negatives": [],
+    "work": {
+      "candidate_checks": 2,
+      "eligible_edges": 2,
+      "matching_steps": 3
+    }
+  },
+  "scope": "fresh external module with path dependency; no copied product implementation; local native only"
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T14:57:36.646748+00:00",
+  "elapsed_seconds": 2.0754108750261366,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "dd294be05c6874de4bbe6da6450353265e566e5cc903c70d2c021a503349f030"
+}

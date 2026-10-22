@@ -1,0 +1,7 @@
+{
+  "scope": "actual local source candidate files only; no platform eligibility or server-side claim",
+  "archive_sha256": "a0c33f35df2347b1241d4fcfac63f3beeb4f63bb4d1350f74d87ffa6be8110de",
+  "member_count": 38,
+  "private_path_or_author_email_matches": [],
+  "compiler_binaries_or_reference_sources_bundled": false
+}

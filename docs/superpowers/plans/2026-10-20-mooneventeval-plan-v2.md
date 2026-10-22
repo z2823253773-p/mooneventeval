@@ -10,7 +10,7 @@
 
 **Spec:** [PRD](../specs/2026-10-20-mooneventeval-prd-design.md)；[共享契约](../../contracts.md)；[反馈处置](../../reviews/2026-10-20-claude-feedback-disposition.md)。
 
-**Status:** T0至T6限定机器实现/验收完成，T5本机CLI/自动demo及T6限定parity/A11均有证据；T6评审Important作者修复、Minor M1延期，无第二次独立复审。下一T7包外消费者/候选包。T5本人讲解/M2、T7/T8与发布未完成。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
+**Status:** T0至T6限定机器实现/验收完成，T5本机CLI/自动demo及T6限定parity/A11均有证据；T6评审Important作者修复、Minor M1延期，无第二次独立复审。T7包外消费者/38文件候选及评审修复复验亦完成（代码bb24ce33）；下一T8统一检查/CI配置。T5本人讲解/M2、T8与正式发布未完成。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
 
 ## 本轮修正与需确认的变化
 

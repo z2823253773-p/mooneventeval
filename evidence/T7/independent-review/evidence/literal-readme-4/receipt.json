@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "examples/greedy-trap.json",
+    "--format",
+    "json"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked",
+  "started_utc": "2026-10-22T15:03:17.172059+00:00",
+  "elapsed_seconds": 0.004505458055064082,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

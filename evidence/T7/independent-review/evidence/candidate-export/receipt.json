@@ -1,0 +1,32 @@
+{
+  "command": [
+    "git",
+    "archive",
+    "--format=tar",
+    "a441ce89b57595c326031e8699b066777028f0b2",
+    ".gitignore",
+    ".moonignore",
+    "AGENTS.md",
+    "BACKLOG.md",
+    "CLAUDE.md",
+    "EXAMPLES.md",
+    "LICENSE",
+    "LICENSES",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "VALIDATION.md",
+    "cli",
+    "cmd",
+    "docs",
+    "eventeval",
+    "examples",
+    "moon.mod",
+    "scripts",
+    "tests",
+    "validation"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 0,
+  "stdout_sha256": "a2ef010ecc6ff2bc2c071765cbefca36bf1da3c54695a9d0ab0ae284cec7cc42",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/scripts/independent_checks.py", line 116, in <module>
+    if __name__ == '__main__': main()
+                               ~~~~^^
+  File "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/scripts/independent_checks.py", line 111, in main
+    require_zero(record('validation-tests', ['env','PYTHONDONTWRITEBYTECODE=1',SOURCE/'.venv-reference/bin/python','-W','error::ResourceWarning','-m','unittest','discover','-s','validation/tests','-v']))
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/scripts/independent_checks.py", line 16, in require_zero
+    assert receipt['exit_code'] == 0, receipt
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'command': ['env', 'PYTHONDONTWRITEBYTECODE=1', '/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/.venv-reference/bin/python', '-W', 'error::ResourceWarning', '-m', 'unittest', 'discover', '-s', 'validation/tests', '-v'], 'cwd': '/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate', 'started_utc': '2026-10-22T15:03:17.193609+00:00', 'elapsed_seconds': 5.354312791954726, 'exit_code': 1, 'timed_out': False, 'stdout_sha256': 'b1e19ac1a6dbcc5d25e469572800cfb40c4e88baf236a5a7fe9988abd9a6e29f', 'stderr_sha256': '80129621961a992c5d23da6d1ed3be81bc8a11f6caaddfc4382610d68afc0329'}

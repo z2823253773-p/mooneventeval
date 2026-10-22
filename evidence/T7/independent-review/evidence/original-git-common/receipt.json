@@ -1,0 +1,12 @@
+{
+  "command": [
+    "git",
+    "rev-parse",
+    "--path-format=absolute",
+    "--git-common-dir"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 0,
+  "stdout_sha256": "b53ddd019073f109e67f7e2e0da579846bda0a217b95f5b05f00e6debb8e9e46",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

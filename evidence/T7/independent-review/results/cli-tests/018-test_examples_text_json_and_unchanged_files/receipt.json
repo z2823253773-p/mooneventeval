@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/examples/boundary.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

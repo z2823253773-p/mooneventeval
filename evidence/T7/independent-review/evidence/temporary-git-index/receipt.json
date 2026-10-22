@@ -1,0 +1,11 @@
+{
+  "command": [
+    "git",
+    "read-tree",
+    "a441ce89b57595c326031e8699b066777028f0b2"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "exit_code": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--help"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked",
+  "started_utc": "2026-10-22T15:03:16.738811+00:00",
+  "elapsed_seconds": 0.4186937080230564,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "6213af0f583b56ed2112df87001c688de4a1af8a22da210fae6bc5579b5f4ef7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

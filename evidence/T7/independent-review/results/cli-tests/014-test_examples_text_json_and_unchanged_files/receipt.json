@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/examples/duplicate.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

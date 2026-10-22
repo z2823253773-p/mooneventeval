@@ -1,0 +1,16 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "914cffd301d40eff8f4b2ecd697adb5052ebb031",
+    "a441ce89b57595c326031e8699b066777028f0b2",
+    "--",
+    "eventeval",
+    "cli",
+    "cmd"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

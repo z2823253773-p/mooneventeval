@@ -1,0 +1,11 @@
+--- original/eventeval/report_json.mbt
++++ mutated/eventeval/report_json.mbt
+@@ -208,7 +208,7 @@
+     ("schema_version", "1"),
+     ("semantics", "\"collar-max-cardinality/v1\""),
+     ("implementation_version", "\"0.1.0\""),
+-    ("status", "\"completed\""),
++    ("status", "\"failed\""),
+     (
+       "config",
+       json_object([

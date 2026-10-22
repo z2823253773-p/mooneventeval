@@ -1,0 +1,14 @@
+{
+  "command": [
+    "git",
+    "show",
+    "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/decimal-onset-binary64-flip/product.json"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "started_utc": "2026-10-22T15:08:23.105506+00:00",
+  "elapsed_seconds": 0.013012083945795894,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "a075fd621a767cd2d32fb422788ac205f1dd5a7aab1fb30c1b92be56ec91917d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "source": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "source_manifest_sha256": "78760253ebf5f22a7766cf554b5633334c3481f477af6deeacc372cbb43a4462",
+  "public_api_sha256": "8ff2f5b2847fa3bf66138ad048eb801a006a8f9397aac97b35d7f0242035a8e7",
+  "consumer_imports": [
+    "local/mooneventeval/eventeval"
+  ],
+  "consumer_source_sha256": "703afc46591a45a8aac1dc31f67ef53bb56fc73e0a43d6f769ad5d3d8394e6a3",
+  "build": {
+    "command": [
+      "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "main",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn",
+      "--target-dir",
+      "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1/_build"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282"
+  },
+  "run": {
+    "command": [
+      "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1/_build/native/release/build/local/mooneventeval_consumer/main/main.exe"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1",
+    "exit_code": -6,
+    "timed_out": false,
+    "stdout_sha256": "c7ddd74d34daeb6b5833f8de83604c77e3486fbdfd42953cd12f567f36428c17",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "differences": [
+    "consumer execution failed"
+  ],
+  "report": null,
+  "scope": "fresh external module with path dependency; no copied product implementation; local native only"
+}

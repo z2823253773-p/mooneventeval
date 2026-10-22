@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "scripts/check_consumer.py",
+    "--source",
+    ".",
+    "--output",
+    "evidence/T7/consumer-verified"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 3.615,
+  "log": "evidence/T7/20261022T145229651987Z-verified-consumer.log",
+  "log_sha256": "14ec6681fb6d2dd36cbcbd59d451e9a9d948f926a46bdf9c76b108a2195ba8f0",
+  "scope": "T7",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

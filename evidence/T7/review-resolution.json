@@ -1,0 +1,12 @@
+{
+  "critical": 0,
+  "important": 1,
+  "minor": 0,
+  "important_author_fixed": 1,
+  "independent_re_review": false,
+  "reviewed_sha": "a441ce89b57595c326031e8699b066777028f0b2",
+  "fixed_tested_sha": "bb24ce33962ebf6276265075edb3df10e16e6601",
+  "manifest_sha256": "a69b10da8ec252bb0be2674685a51688d3ad16e0073dabaa2cc2fc9d0b59dcd9",
+  "resolution": "docs/reviews/2026-10-22-t7-review.md",
+  "inherited_deferred_minor": "T6 M1 timeout partial capture retention remains deferred"
+}

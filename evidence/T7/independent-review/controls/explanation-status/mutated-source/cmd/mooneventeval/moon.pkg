@@ -1,0 +1,13 @@
+import {
+  "local/mooneventeval/cli",
+  "local/mooneventeval/eventeval",
+  "moonbitlang/core/env",
+  "moonbitlang/core/encoding/utf8",
+  "moonbitlang/core/buffer",
+}
+
+pkgtype(kind: "executable")
+
+options(
+  "native-stub": [ "io_stub.c" ],
+)

@@ -1,0 +1,98 @@
+[
+  {
+    "path": "evidence/T3/parity-final/decimal-onset-binary64-flip/input.json",
+    "sha256": "9f0c090b916afec2cafeaef24d534a06b63fc948149b28b1f2f38039eaea545b",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/decimal-onset-binary64-flip/input.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/decimal-onset-binary64-flip/product.stdout",
+    "sha256": "eebcc09df3cbe29266eb8c898fb8f3a9e0c658294d65a8ff1043ba7c444b0980",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/decimal-onset-binary64-flip/product.stdout"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/decimal-onset-binary64-flip/comparison.json",
+    "sha256": "3ee05207fb0d8e736f29e499e93fccef8afc06eb56316dfc83009d99a2be3ff0",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/decimal-onset-binary64-flip/comparison.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/decimal-onset-binary64-flip/reference.json",
+    "sha256": "4003120381e9ce0508de8516b4e2f60d1c59b9cd3eaca26add7e71ce28bd1673",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/decimal-onset-binary64-flip/reference.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/E7-fractional-microsecond/input.json",
+    "sha256": "b28f824ecc516fda3f5c5cf46061ea4758ce0590facde4510aef9c1511ca3fa4",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/E7-fractional-microsecond/input.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/E7-fractional-microsecond/product.stdout",
+    "sha256": "2cb73151b675f1c407631f75bc1ef9168fa67b897c833d01011ef9be0dec3975",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/E7-fractional-microsecond/product.stdout"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/E7-fractional-microsecond/comparison.json",
+    "sha256": "ad84ec3de58d772b03912db495ef22b5e1f4226fbca2fb3b5a066a4c14fb671b",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/E7-fractional-microsecond/comparison.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  },
+  {
+    "path": "evidence/T3/parity-final/E7-fractional-microsecond/reference.json",
+    "sha256": "0852505c111588e50ee2157bbc2f9b2766752680ee45fd08f63e92685c0c8137",
+    "command": [
+      "git",
+      "show",
+      "a441ce89b57595c326031e8699b066777028f0b2:evidence/T3/parity-final/E7-fractional-microsecond/reference.json"
+    ],
+    "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+    "exit_code": 0,
+    "stderr": ""
+  }
+]

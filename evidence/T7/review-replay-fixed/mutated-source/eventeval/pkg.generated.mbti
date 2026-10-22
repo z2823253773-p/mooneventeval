@@ -1,0 +1,96 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "local/mooneventeval/eventeval"
+
+// Values
+pub fn config(String, String) -> Result[Config, EvalError]
+
+pub fn decode_task(Bytes) -> Result[Task, EvalError]
+
+pub fn default_config() -> Config
+
+pub fn error_json(EvalError) -> String
+
+pub fn evaluate(Task) -> Result[Evaluation, EvalError]
+
+pub fn evaluate_json(Bytes) -> Result[String, EvalError]
+
+pub fn event(String, String, String, String) -> Result[Event, EvalError]
+
+pub fn exit_code(EvalError) -> Int
+
+pub fn explain_pair(Task, String, String, String) -> Result[PairExplanation, EvalError]
+
+pub fn explanation_json(PairExplanation) -> Result[String, EvalError]
+
+pub fn explanation_text(PairExplanation) -> Result[String, EvalError]
+
+pub fn recording(String, Array[Event], Array[Event]) -> Result[Recording, EvalError]
+
+pub fn report_json(Evaluation) -> Result[String, EvalError]
+
+pub fn report_text(Evaluation) -> Result[String, EvalError]
+
+pub fn task(Array[String], Array[Recording], Config) -> Result[Task, EvalError]
+
+// Errors
+
+// Types and methods
+pub struct Config {
+  // private fields
+}
+
+pub struct Counts {
+  reference : Int
+  prediction : Int
+  tp : Int
+  fp : Int
+  fn_count : Int
+}
+
+pub(all) struct EvalError {
+  kind : FailureKind
+  code : String
+  message : String
+  path : String?
+  limit : Int64?
+  observed : Int64?
+}
+
+pub struct Evaluation {
+  // private fields
+}
+pub fn Evaluation::metrics(Self) -> Metrics
+pub fn Evaluation::pairs(Self) -> Array[(String, String, String, String)]
+
+pub struct Event {
+  // private fields
+}
+
+pub(all) enum FailureKind {
+  Input
+  Resource
+  Internal
+}
+
+pub struct Metrics {
+  counts : Counts
+  precision : Double?
+  recall : Double?
+  f1 : Double?
+}
+
+pub struct PairExplanation {
+  // private fields
+}
+
+pub struct Recording {
+  // private fields
+}
+
+pub struct Task {
+  // private fields
+}
+
+// Type aliases
+
+// Traits

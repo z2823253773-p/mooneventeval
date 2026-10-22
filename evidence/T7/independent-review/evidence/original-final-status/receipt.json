@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "GIT_OPTIONAL_LOCKS=0",
+    "git",
+    "status",
+    "--short"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "started_utc": "2026-10-22T15:08:29.249734+00:00",
+  "elapsed_seconds": 0.3840981249231845,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "36cb910001ab62665c1c8e8358e88aee424456bad9d3e61ef8f3af1bddb5f725",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

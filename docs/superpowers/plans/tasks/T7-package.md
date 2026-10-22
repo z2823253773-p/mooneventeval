@@ -1,6 +1,6 @@
 # T7-package 任务卡
 
-状态：用户“继续”授权本地T7；机器实现/初轮复验通过，准备唯一独立评审。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：T7限定本地机器验收完成；唯一独立评审1项Important已作者单轮RED→GREEN修复，无新增Minor，无第二次独立复审。最终代码/被测bb24ce33，正式namespace/URL/发布及本人M2/T8仍未完成。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 包内容/许可/包外消费者保留为最终交付检查，先让核心和demo可用，不声称评委看不到就无需检查。
 
@@ -29,6 +29,8 @@ test "consumer_duplicate" {
 - [x] **3. 补齐文档与许可。** 自有实现建议MIT，新增LICENSE/署名以确认的仓库作者信息为准；引入代码/数据逐项保留许可。README写实际工具链、安装/编译/两命令/空值/限制，EXAMPLES写三项任务的完整输入-操作-输出-解释；VALIDATION说明projection/浮点/空集边界及复现命令。未有真实反馈就只写开发者复现，未测后端不宣称支持。
 - [x] **4. 核对待公开身份。** 本地 `local/mooneventeval` 是开发名。无远端/namespace授权时，记录正式仓库URL和包名未完成，候选标为本地；不填虚构URL。收到具体授权后才替换namespace/URL，并重跑包外消费/包内容/链接检查；不能把原namespace候选当新包实测结果。
 - [x] **5. 运行 GREEN。** `python3 scripts/check_consumer.py --source . --output evidence/T7/consumer`；`python3 scripts/package_candidate.py --output evidence/T7/package`；实际运行README三案例及explain命令。归档清单、SHA-256、API快照、消费者输入输出/退出码分开保存。
-- [ ] **6. 保存并提交。** 提交 `docs: document runnable event evaluation and package contracts`；打包策略/消费者可单独成实质提交。更新ACCEPTANCE每项A1–A12的证据链接，未满足项明确列出，不以本地打包替代Mooncakes发布。
+- [x] **6. 保存并提交。** 提交 `docs: document runnable event evaluation and package contracts`；打包策略/消费者可单独成实质提交。更新ACCEPTANCE每项A1–A12的证据链接，未满足项明确列出，不以本地打包替代Mooncakes发布。
 
 兼容性裁定：现代moon.mod以import声明模块，临时moon.work的两个本地成员替代旧JSON path-deps；锁定工具实跑。完整初轮结果见docs/reviews/2026-10-22-t7-results.md（仓库根相对路径）。步骤勾选仅本地候选范围，无发布/正式namespace声明。
+
+实际最终结果：[结果](../../../reviews/2026-10-22-t7-results.md) / [评审处置](../../../reviews/2026-10-22-t7-review.md)。修复后12 Python/58 Moon，真实38文件归档及解包消费者/CLI/README命令全过；完成勾选不含远端或注册表。

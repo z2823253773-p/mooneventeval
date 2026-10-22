@@ -1,0 +1,17 @@
+{
+  "own_license": "MIT",
+  "own_attribution": "Hengrui Zhang (existing Git author name; no email redistributed)",
+  "core_notices": {
+    "LICENSES/moonbit-core-LICENSE": {
+      "source": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/lib/core/LICENSE",
+      "sha256": "86460c45017ffacb9aa9e18850fa9fdb036339dc8851125465f4a3f3442fc894",
+      "unchanged": true
+    },
+    "LICENSES/moonbit-core-NOTICE": {
+      "source": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/lib/core/NOTICE",
+      "sha256": "047a7cd5e93c10a8a753b7f152c371ef309b523c4d9b945ec5776321e7e602fb",
+      "unchanged": true
+    }
+  },
+  "reference_source_bundled": false
+}

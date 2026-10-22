@@ -1,0 +1,26 @@
+Error: [4021]
+   ╭─[ /private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-dllb3mmr/main/main.mbt:3:11 ]
+   │
+ 3 │   let r = @eventeval.event("r1", "alarm", "10", "12").unwrap()
+   │           ────────┬───────  
+   │                   ╰───────── Value event not found in package `eventeval`.
+───╯
+Error: [4021]
+   ╭─[ /private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-dllb3mmr/main/main.mbt:4:12 ]
+   │
+ 4 │   let p1 = @eventeval.event("p1", "alarm", "10", "12").unwrap()
+   │            ────────┬───────  
+   │                    ╰───────── Value event not found in package `eventeval`.
+───╯
+Error: [4021]
+   ╭─[ /private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-dllb3mmr/main/main.mbt:5:12 ]
+   │
+ 5 │   let p2 = @eventeval.event("p2", "alarm", "10.05", "12.05").unwrap()
+   │            ────────┬───────  
+   │                    ╰───────── Value event not found in package `eventeval`.
+───╯
+Failed with 0 warnings, 3 errors.
+Error: failed to run build for target Native
+
+Caused by:
+    failed when building project

@@ -1,0 +1,15 @@
+{"label": "locked-moon-version", "exit_code": 0, "timed_out": false, "elapsed_seconds": 1.804}
+{"label": "locked-moonc-version", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.035}
+{"label": "independent-consumer-build", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.797}
+{"label": "independent-consumer-run", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.433}
+{"label": "independent-cli-build", "exit_code": 0, "timed_out": false, "elapsed_seconds": 1.372}
+{"label": "literal-readme-1", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.419}
+{"label": "literal-readme-2", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.008}
+{"label": "literal-readme-3", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.006}
+{"label": "literal-readme-4", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.005}
+{"label": "literal-readme-5", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.004}
+{"label": "literal-readme-6", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.003}
+{"label": "documented-text-explanation", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.003}
+{"label": "documented-empty-metrics", "exit_code": 0, "timed_out": false, "elapsed_seconds": 0.002}
+{"label": "documented-invalid-json", "exit_code": 2, "timed_out": false, "elapsed_seconds": 0.003}
+{"label": "validation-tests", "exit_code": 1, "timed_out": false, "elapsed_seconds": 5.354}

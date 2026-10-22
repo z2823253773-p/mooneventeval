@@ -1,0 +1,7 @@
+{
+  "original_sha256": "82d9739f412678d7aa0f60444836dbdfb7b43e7ffecc807f10fdac9be1f5ed30",
+  "private_factory_sha256": "343cb908dfe6d57eac5ad686d94cc2ce69d0cc82cef3af797b610398bd454be2",
+  "mutation": "only pub fn event -> fn event in temporary unpack-like source",
+  "source": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-no-public-event-0xi4arb3",
+  "production_source_unchanged": true
+}

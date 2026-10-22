@@ -1,0 +1,2 @@
+{"passed": true, "members": 38, "published": false}
+ledger: Task 7: complete (commits 914cffd..bb24ce3, tests: python3 scripts/package_candidate.py --output evidence/T7/package-task-done-final → {"passed": true, "members": 38, "published": false})

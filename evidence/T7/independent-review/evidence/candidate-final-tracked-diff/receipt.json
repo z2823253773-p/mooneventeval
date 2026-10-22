@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "GIT_OPTIONAL_LOCKS=0",
+    "git",
+    "diff",
+    "--exit-code",
+    "HEAD"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T15:08:29.634047+00:00",
+  "elapsed_seconds": 0.9705090830102563,
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout_sha256": "20463bc4de0ce638b5e6c60ecbf7082f914833a9a7aa6e30e07c8f4437279c15",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

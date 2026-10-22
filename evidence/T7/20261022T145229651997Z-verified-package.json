@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "scripts/package_candidate.py",
+    "--output",
+    "evidence/T7/package-verified"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 6.548,
+  "log": "evidence/T7/20261022T145229651997Z-verified-package.log",
+  "log_sha256": "82542237d1c17376e218a425ad4dab8b772ac9b4955f245b6b666dd9e3f61395",
+  "scope": "T7",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

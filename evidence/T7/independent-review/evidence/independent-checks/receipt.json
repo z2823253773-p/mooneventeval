@@ -1,0 +1,13 @@
+{
+  "command": [
+    "python3",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/scripts/independent_checks.py"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886",
+  "started_utc": "2026-10-22T15:03:12.267547+00:00",
+  "elapsed_seconds": 10.296131249982864,
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout_sha256": "a46c3742509332c05344b265c233a799d3c0975a4862146f2f988535c33c7a8b",
+  "stderr_sha256": "50d6192c6df0c8723971fbb4340441e17d1d234271ba00d1523573eb13109e1d"
+}

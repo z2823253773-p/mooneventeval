@@ -1,0 +1,4 @@
+import {
+  "local/mooneventeval/eventeval",
+}
+pkgtype(kind: "executable")

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "scripts/check_consumer.py",
+    "--source",
+    ".",
+    "--output",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/results/source-consumer"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T14:57:38.722484+00:00",
+  "elapsed_seconds": 1.2610734160989523,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "14ec6681fb6d2dd36cbcbd59d451e9a9d948f926a46bdf9c76b108a2195ba8f0",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

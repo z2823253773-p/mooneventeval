@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "controls": {
+    "wrong_count": -6,
+    "private_factory": 255
+  },
+  "scope": "expected negative controls; compiler/runtime failures retained, not product mutation score"
+}

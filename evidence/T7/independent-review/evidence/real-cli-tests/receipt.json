@@ -1,0 +1,24 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "MEE_BIN=/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "MEE_EVIDENCE=/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/results/cli-tests",
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T15:06:32.897995+00:00",
+  "elapsed_seconds": 0.30261641601100564,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "ab26081363964b46f01aa9087cbbd6479b0b979ea1b558eef8258cdf25da4589"
+}

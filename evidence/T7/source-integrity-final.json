@@ -1,0 +1,7 @@
+{
+  "tested_sha": "bb24ce33962ebf6276265075edb3df10e16e6601",
+  "current_source_files_match": true,
+  "source_file_count": 61,
+  "production_binary_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "runtime_and_public_api_diff_from_T6_empty": true
+}

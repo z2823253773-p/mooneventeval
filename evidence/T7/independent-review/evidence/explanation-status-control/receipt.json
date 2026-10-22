@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/scripts/replay_explanation_status.py",
+    "--checkout",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+    "--output",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/controls/explanation-status"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886",
+  "started_utc": "2026-10-22T15:06:04.839153+00:00",
+  "elapsed_seconds": 5.627807582961395,
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout_sha256": "688d2c4d1ecc4a34f1a629354592ed349a202661dbcb9696cbe9363c50525198",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

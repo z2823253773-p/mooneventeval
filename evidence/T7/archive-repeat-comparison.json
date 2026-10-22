@@ -1,0 +1,7 @@
+{
+  "first_archive_sha256": "a0c33f35df2347b1241d4fcfac63f3beeb4f63bb4d1350f74d87ffa6be8110de",
+  "second_archive_sha256": "a0c33f35df2347b1241d4fcfac63f3beeb4f63bb4d1350f74d87ffa6be8110de",
+  "member_bytes_identical": true,
+  "metadata_changes": [],
+  "claim": "source/member reproducibility only; ZIP byte reproducibility not promised"
+}

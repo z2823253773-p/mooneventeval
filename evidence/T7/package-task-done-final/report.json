@@ -1,0 +1,377 @@
+{
+  "passed": true,
+  "local_candidate_only": true,
+  "published": false,
+  "archive": "local-mooneventeval-0.1.0.zip",
+  "archive_sha256": "a0c33f35df2347b1241d4fcfac63f3beeb4f63bb4d1350f74d87ffa6be8110de",
+  "members": [
+    "EXAMPLES.md",
+    "LICENSE",
+    "LICENSES/moonbit-core-LICENSE",
+    "LICENSES/moonbit-core-NOTICE",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+    "VALIDATION.md",
+    "cli/args.mbt",
+    "cli/dispatch.mbt",
+    "cli/moon.pkg",
+    "cli/pkg.generated.mbti",
+    "cmd/mooneventeval/io_stub.c",
+    "cmd/mooneventeval/main.mbt",
+    "cmd/mooneventeval/moon.pkg",
+    "cmd/mooneventeval/native_io.mbt",
+    "cmd/mooneventeval/pkg.generated.mbti",
+    "docs/API.md",
+    "docs/toolchain.lock.json",
+    "eventeval/eligibility.mbt",
+    "eventeval/errors.mbt",
+    "eventeval/evaluation.mbt",
+    "eventeval/explain.mbt",
+    "eventeval/input.mbt",
+    "eventeval/matching.mbt",
+    "eventeval/model.mbt",
+    "eventeval/moon.pkg",
+    "eventeval/pkg.generated.mbti",
+    "eventeval/report_json.mbt",
+    "eventeval/report_text.mbt",
+    "eventeval/serialization.mbt",
+    "eventeval/time.mbt",
+    "eventeval/validation.mbt",
+    "examples/boundary.json",
+    "examples/duplicate.json",
+    "examples/greedy-trap.json",
+    "moon.mod",
+    "scripts/install_toolchain.py",
+    "scripts/with-toolchain.sh"
+  ],
+  "member_sha256": {
+    "moon.mod": "78760253ebf5f22a7766cf554b5633334c3481f477af6deeacc372cbb43a4462",
+    "EXAMPLES.md": "7c99bb6d75a989a2669d912765bef50db2dbffb7474147c7f873c56952924d15",
+    "cmd/mooneventeval/moon.pkg": "41e01fe7874019fd316ae412c884f6fe93c72dbf5bd57abbbeaca22410261dd8",
+    "cmd/mooneventeval/main.mbt": "51a123f504038e726634719857fc1b6f4d0cdc6b857432ee6b6ebdb58f059fbb",
+    "cmd/mooneventeval/pkg.generated.mbti": "edffbe328548c632f1a9f4616d78a633bafe692444b7c4012110518c76ee7d7e",
+    "cmd/mooneventeval/native_io.mbt": "d53aaee40855f8fd3fbdff78dd442a902573abbdcb28216280d1e38d77e3753a",
+    "cmd/mooneventeval/io_stub.c": "76b30f0a621cf4207c4dadc54aef8e8ba869a4cbcaaed62832b2da7bc667de1c",
+    "LICENSE": "a6b8ce8c677a585f6f260bdec3c7bf9864f8c5531b83a897e6bd4c1bcdb282a4",
+    "LICENSES/moonbit-core-NOTICE": "047a7cd5e93c10a8a753b7f152c371ef309b523c4d9b945ec5776321e7e602fb",
+    "LICENSES/moonbit-core-LICENSE": "86460c45017ffacb9aa9e18850fa9fdb036339dc8851125465f4a3f3442fc894",
+    "VALIDATION.md": "cdcc5b683acbb41e6f4a91c62618b00278e7ce5388319eed896bb4c9b579e112",
+    "THIRD_PARTY_NOTICES.md": "6efc7e94f09f054cde2c3dae960cb7d8c25f014a9dd6ac26e6ea75471fb34685",
+    "docs/API.md": "84aab651068863989a77d26698405fb1043c37d09c41cf92a3e068bffd04d18e",
+    "docs/toolchain.lock.json": "37192f9fea3a0b170e0d35a960b1b194646e3ea6a7a57b2b3bb533c87f792236",
+    "cli/moon.pkg": "bdd9f01cfe5c8b64752ef13db882cd9a94263d9e4c8f8af810ce7f484e76f6c9",
+    "cli/pkg.generated.mbti": "e86632028c8e93fa039d920b2c321d3363c4e6de42438893557c1c52cc4cc9d7",
+    "cli/dispatch.mbt": "284851769833bb71f72d4c0cb05edaf089292656b0c2f02abe1c28cee022aa40",
+    "cli/args.mbt": "072d81cfe8eab293b8bbdda50ae57f87c95dec91e906226e7be03c5e56361a66",
+    "README.md": "ed6a791a4ddf417e50d86c40a49caf31eaab9cd84a947ce8123e344d10247cf6",
+    "eventeval/moon.pkg": "f29a9eca6935f077970c5c92a1a04ff0846d5c367e0864963ad9680e1f474e82",
+    "eventeval/model.mbt": "82d9739f412678d7aa0f60444836dbdfb7b43e7ffecc807f10fdac9be1f5ed30",
+    "eventeval/report_text.mbt": "2c739cd62e1e48d222a4f4f2361d33cdb13564549979c3a47d977262ab81f805",
+    "eventeval/serialization.mbt": "b542b6c71d76dd158269548693a1cf641e6f2fcaf2bc737ba521b1c2d142b112",
+    "eventeval/time.mbt": "2c70fe527c767914934763965e78907bbf230a3a00321cca5d48f8605bdf0ef9",
+    "eventeval/evaluation.mbt": "9a0b25521e688dc03792f9ec6b666128ab0db8bca305989ad79c729d1a9b2dea",
+    "eventeval/pkg.generated.mbti": "8ff2f5b2847fa3bf66138ad048eb801a006a8f9397aac97b35d7f0242035a8e7",
+    "eventeval/explain.mbt": "af32ca1e411031e2805c54287e2e2122f4205aaf150f0b13ddfb76eb0aa390b6",
+    "eventeval/errors.mbt": "cce85aa158230c55d1413c8ef9244a4e4bbe0791491e006f32f3d05109036380",
+    "eventeval/input.mbt": "f2130de124d842dfcc5bd833fec025653f893920d0c47abf6e5130e4327a1602",
+    "eventeval/validation.mbt": "5e8dea9db2c34a4b69ea37e8cfe47958bae36617774e96a52f214ceb67238943",
+    "eventeval/eligibility.mbt": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "eventeval/matching.mbt": "8a5b67feb4bf6dfa6a4f24cb61435682597e28609ded52992b00e482639add1d",
+    "eventeval/report_json.mbt": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+    "examples/greedy-trap.json": "f8cb4d7349c6513ac83d8f114eb1a1af3c8f9ad4d72cd2e21fd3435670d00f3b",
+    "examples/boundary.json": "d8e40d4c289a50729d719654e82e373b869928c7c58297ac14ab46906c33fc97",
+    "examples/duplicate.json": "3a600deca154c5f44ed3f1e43555c5a8cc40b4692c4480129d6d38227a2ada46",
+    "scripts/with-toolchain.sh": "c2157b7c8b92ff11e3b1b587308cbea4b9adc6cfdbe49d5f10b95ac033b9c2f6",
+    "scripts/install_toolchain.py": "a0eae627fc6a5f5d33e9232bd1933ae697161ed31e00ea04a2dd85f6f3ba62ff"
+  },
+  "list": {
+    "command": [
+      "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "package",
+      "--list",
+      "--frozen"
+    ],
+    "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "73c3113d196abd890a4791bd81ccce94592a3e58d2640696ec6e128f4e24cc56"
+  },
+  "package": {
+    "command": [
+      "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "package",
+      "--frozen"
+    ],
+    "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9dbf54acba6c05bdd0c7c637e0701b73f09d2fd6c26fc276afa050b07dc25a97"
+  },
+  "consumer": {
+    "passed": true,
+    "source": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+    "source_manifest_sha256": "78760253ebf5f22a7766cf554b5633334c3481f477af6deeacc372cbb43a4462",
+    "public_api_sha256": "8ff2f5b2847fa3bf66138ad048eb801a006a8f9397aac97b35d7f0242035a8e7",
+    "consumer_imports": [
+      "local/mooneventeval/eventeval"
+    ],
+    "consumer_source_sha256": "5fe31051b5276e61cd30726dc128f29702230b5a6ee554a6e5d3ede4e0d5a1d7",
+    "build": {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+        "moon",
+        "build",
+        "main",
+        "--target",
+        "native",
+        "--release",
+        "--deny-warn",
+        "--target-dir",
+        "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-ukzwul5a/_build"
+      ],
+      "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-ukzwul5a",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282"
+    },
+    "run": {
+      "command": [
+        "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-ukzwul5a/_build/native/release/build/local/mooneventeval_consumer/main/main.exe"
+      ],
+      "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-ukzwul5a",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "differences": [],
+    "report": {
+      "schema_version": 1,
+      "semantics": "collar-max-cardinality/v1",
+      "implementation_version": "0.1.0",
+      "status": "completed",
+      "config": {
+        "collar_s": "0.2",
+        "offset_ratio": "0.5"
+      },
+      "summary": {
+        "counts": {
+          "reference": 1,
+          "prediction": 2,
+          "tp": 1,
+          "fp": 1,
+          "fn": 0
+        },
+        "precision": 0.5,
+        "recall": 1,
+        "f1": 0.6666666666666666
+      },
+      "by_label": [
+        {
+          "label": "alarm",
+          "metrics": {
+            "counts": {
+              "reference": 1,
+              "prediction": 2,
+              "tp": 1,
+              "fp": 1,
+              "fn": 0
+            },
+            "precision": 0.5,
+            "recall": 1,
+            "f1": 0.6666666666666666
+          }
+        }
+      ],
+      "by_recording": [
+        {
+          "recording_id": "clip-01",
+          "metrics": {
+            "counts": {
+              "reference": 1,
+              "prediction": 2,
+              "tp": 1,
+              "fp": 1,
+              "fn": 0
+            },
+            "precision": 0.5,
+            "recall": 1,
+            "f1": 0.6666666666666666
+          }
+        }
+      ],
+      "matches": [
+        {
+          "recording_id": "clip-01",
+          "label": "alarm",
+          "reference": {
+            "id": "r1",
+            "label": "alarm",
+            "onset_s": "10",
+            "offset_s": "12"
+          },
+          "prediction": {
+            "id": "p1",
+            "label": "alarm",
+            "onset_s": "10",
+            "offset_s": "12"
+          },
+          "basis": {
+            "label_match": true,
+            "onset_pass": true,
+            "offset_pass": true,
+            "eligible": true,
+            "onset_delta_s": "0",
+            "offset_delta_s": "0",
+            "onset_limit_s": "0.2",
+            "offset_limit_s": "1"
+          }
+        }
+      ],
+      "false_positives": [
+        {
+          "recording_id": "clip-01",
+          "event": {
+            "id": "p2",
+            "label": "alarm",
+            "onset_s": "10.05",
+            "offset_s": "12.05"
+          },
+          "candidate_count": 1,
+          "reason": "unselected_in_maximum_matching"
+        }
+      ],
+      "false_negatives": [],
+      "work": {
+        "candidate_checks": 2,
+        "eligible_edges": 2,
+        "matching_steps": 3
+      }
+    },
+    "scope": "fresh external module with path dependency; no copied product implementation; local native only"
+  },
+  "cli_build": {
+    "command": [
+      "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "cmd/mooneventeval",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+    "exit_code": 0,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "37b9ce71b53427e25641d9a81ebde3687e1695cac663bdb56b92c48a83a44b18"
+  },
+  "examples": {
+    "passed": true,
+    "source": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+    "product_sha256": "75b1e8b517330f455f351b980de4fee0477f1fca36a0d41da4fbb45d8ba65964",
+    "commands": [
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "--help"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "6213af0f583b56ed2112df87001c688de4a1af8a22da210fae6bc5579b5f4ef7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "--version"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "6822e601892c692464df448e64d86157d69675aafa0c83798477a7a973f6d9db",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "evaluate",
+          "examples/duplicate.json",
+          "--format",
+          "json"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "evaluate",
+          "examples/greedy-trap.json",
+          "--format",
+          "json"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "evaluate",
+          "examples/boundary.json",
+          "--format",
+          "json"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": [
+          "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+          "explain-pair",
+          "examples/boundary.json",
+          "--recording",
+          "clip-01",
+          "--reference",
+          "r1",
+          "--prediction",
+          "p1",
+          "--format",
+          "json"
+        ],
+        "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-9kc7o23_",
+        "exit_code": 0,
+        "timed_out": false,
+        "stdout_sha256": "50bd43b3fbcb90e4c1d1f6bc5ae10e27073fd0f8659cca3a9a2d12f7a7d33e83",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "differences": [],
+    "input_sha256": {
+      "duplicate": "3a600deca154c5f44ed3f1e43555c5a8cc40b4692c4480129d6d38227a2ada46",
+      "greedy-trap": "f8cb4d7349c6513ac83d8f114eb1a1af3c8f9ad4d72cd2e21fd3435670d00f3b",
+      "boundary": "d8e40d4c289a50729d719654e82e373b869928c7c58297ac14ab46906c33fc97"
+    },
+    "scope": "actual README help/version/three JSON evaluations/boundary explanation; install command not rerun; API snippet bound to separately executed external consumer"
+  },
+  "source": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "toolchain_reused_from": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools",
+  "installer_download_performed": false,
+  "scope": "real local moon archive; fresh unpack, external API consumer and native CLI examples; no registry or remote"
+}

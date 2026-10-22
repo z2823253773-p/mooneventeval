@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "package",
+    "--frozen"
+  ],
+  "cwd": "/private/tmp/mee-t7-author-replay-bb24ce33/mutated-source",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "2c293c60560ce41cf89c954ae8bdfa4f5681feee3f1b7ee6166c52e1875fa4bf"
+}

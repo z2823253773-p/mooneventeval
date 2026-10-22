@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "package",
+    "--frozen"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T7/review-replay-fixed/mutated-source",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "285028ef7105c9416a6b112bbc72ec7e68c24b517ac3c59b811fc83b29d02530"
+}

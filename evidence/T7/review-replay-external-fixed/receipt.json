@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/package_candidate.py",
+    "--source",
+    "/private/tmp/mee-t7-author-replay-bb24ce33/mutated-source",
+    "--output",
+    "/private/tmp/mee-t7-author-replay-bb24ce33/gate"
+  ],
+  "cwd": "/private/tmp/mee-t7-author-replay-bb24ce33/mutated-source",
+  "exit_code": 1,
+  "stdout_sha256": "34bd4420a24eee71dd6108e17d79b3192fa1a3c57dfee3d46faeddda0d2e5121",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "original_source_sha256": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+  "mutated_source_sha256": "a0042f4fd24cb469b5cea2f7989d71084e7ceec5992701213a51a960b604b985"
+}

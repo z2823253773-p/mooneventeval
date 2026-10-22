@@ -1,0 +1,16 @@
+test_consumer_source_must_be_module (test_package.ReleaseGates.test_consumer_source_must_be_module) ... ok
+test_duplicate_archive_member_rejected (test_package.ReleaseGates.test_duplicate_archive_member_rejected) ... ok
+test_escaping_archive_rejected_before_extract (test_package.ReleaseGates.test_escaping_archive_rejected_before_extract) ... ok
+test_package_requires_runtime_and_excludes_private_files (test_package.ReleaseGates.test_package_requires_runtime_and_excludes_private_files) ... ok
+test_public_consumer_wrong_expected_count_fails (test_package.ReleaseGates.test_public_consumer_wrong_expected_count_fails) ... ok
+test_report_decoder_preserves_protocol_rejections (test_package.ReleaseGates.test_report_decoder_preserves_protocol_rejections) ... ok
+test_symlink_archive_rejected (test_package.ReleaseGates.test_symlink_archive_rejected) ... ok
+test_digest_mismatch_rejected (test_toolchain.ToolchainSafety.test_digest_mismatch_rejected) ... ok
+test_regular_archive_extracted (test_toolchain.ToolchainSafety.test_regular_archive_extracted) ... ok
+test_traversal_and_escaping_link_rejected_without_extraction (test_toolchain.ToolchainSafety.test_traversal_and_escaping_link_rejected_without_extraction) ... ok
+test_wrapper_rejects_missing_local_moon_instead_of_global_fallback (test_toolchain.ToolchainSafety.test_wrapper_rejects_missing_local_moon_instead_of_global_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.020s
+
+OK

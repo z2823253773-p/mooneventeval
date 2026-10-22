@@ -1,0 +1,52 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "local/mooneventeval/cli"
+
+import {
+  "local/mooneventeval/eventeval",
+}
+
+// Values
+pub fn parse_args(Array[String]) -> Result[CliRequest, ArgFailure]
+
+pub fn render_arg_failure(ArgFailure) -> CliOutput
+
+pub fn run(CliRequest, Result[Bytes, @eventeval.EvalError]) -> CliOutput
+
+// Errors
+
+// Types and methods
+pub(all) struct ArgFailure {
+  format : OutputFormat
+  error : @eventeval.EvalError
+}
+
+pub(all) struct CliOutput {
+  stdout : Bytes
+  stderr : Bytes
+  exit_code : Int
+}
+
+pub(all) struct CliRequest {
+  operation : Operation
+  format : OutputFormat
+}
+
+pub(all) enum Operation {
+  Evaluate(String)
+  ExplainPair(String, String, String, String)
+  Help
+  Version
+} derive(Eq)
+pub fn Operation::equal(Self, Self) -> Bool
+pub fn Operation::not_equal(Self, Self) -> Bool
+
+pub(all) enum OutputFormat {
+  Text
+  Json
+} derive(Eq)
+pub fn OutputFormat::equal(Self, Self) -> Bool
+pub fn OutputFormat::not_equal(Self, Self) -> Bool
+
+// Type aliases
+
+// Traits

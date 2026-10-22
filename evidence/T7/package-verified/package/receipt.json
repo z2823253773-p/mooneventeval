@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "package",
+    "--frozen"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "9dbf54acba6c05bdd0c7c637e0701b73f09d2fd6c26fc276afa050b07dc25a97"
+}

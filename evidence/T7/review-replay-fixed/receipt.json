@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/scripts/package_candidate.py",
+    "--source",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T7/review-replay-fixed/mutated-source",
+    "--output",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T7/review-replay-fixed/gate"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T7/review-replay-fixed/mutated-source",
+  "exit_code": 1,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "512074dad3b0e24738d5ca9a9735c759b2123b63465499a3e122111d4691c64a",
+  "original_source_sha256": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+  "mutated_source_sha256": "a0042f4fd24cb469b5cea2f7989d71084e7ceec5992701213a51a960b604b985"
+}

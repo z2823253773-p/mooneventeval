@@ -1,0 +1,22 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/.venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T15:08:23.118848+00:00",
+  "elapsed_seconds": 6.019892625045031,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2e7382e3e10602a2051cbf6d0e515d0692a09c81ccdced8c83b04952044af799",
+  "stderr_sha256": "11165dff2c2284fd889a5ffff28662b7bb1ca896bbea928233e10aaadce1b227"
+}

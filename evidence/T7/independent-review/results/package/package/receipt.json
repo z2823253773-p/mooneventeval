@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/scripts/with-toolchain.sh",
+    "moon",
+    "package",
+    "--frozen"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "0335faccf957755b5879cec36c1a36838b12c0a02d67811bea3f8ab76809a19e"
+}

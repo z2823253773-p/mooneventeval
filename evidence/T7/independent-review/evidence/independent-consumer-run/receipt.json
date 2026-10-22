@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-consumer/_build/native/release/build/local/mooneventeval_consumer/main/main.exe"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-consumer",
+  "started_utc": "2026-10-22T15:03:14.933544+00:00",
+  "elapsed_seconds": 0.43318691616877913,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

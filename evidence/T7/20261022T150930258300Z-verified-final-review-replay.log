@@ -1,0 +1,2 @@
+Control did not reach the actual explanation; inspect stderr before classifying.
+{"false_green": false, "gate_exit_code": 1, "package_passed": null, "actual_explanation_status": null, "scope": "one serializer literal changed in a fresh source copy; real moon archive/unpack/build/run"}

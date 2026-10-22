@@ -1,0 +1,20 @@
+{
+  "tested_sha": "bb24ce33962ebf6276265075edb3df10e16e6601",
+  "manifest_sha256": "c7b3f447c68eb06f4212d280dd8395d47a3308e7db2f8fea6b53be1e746466c8",
+  "documentation_structure_check": {
+    "scope": "documentation_structure_only",
+    "errors": [],
+    "markdown_files": 48,
+    "task_cards": 10,
+    "pending_steps": 7,
+    "checked_steps": 64,
+    "checkbox_evidence": "NOT_ASSESSED",
+    "python_snippets_parsed": 6,
+    "old_dense_dfs_adjacency_lower_bound_n500": 20958500,
+    "compiler_feasibility": "NOT_ASSESSED",
+    "product_behavior": "NOT_ASSESSED",
+    "independent_reference": "NOT_ASSESSED",
+    "human_manual_review": "NOT_ASSESSED"
+  },
+  "scope": "author closeout structure/hash check only; not independent re-review or remote/publish proof"
+}

@@ -1,0 +1,54 @@
+diff --git a/scripts/check_examples.py b/scripts/check_examples.py
+index f8e0e6c0..a55d60c3 100644
+--- a/scripts/check_examples.py
++++ b/scripts/check_examples.py
+@@ -49,6 +49,7 @@ def check(source,binary,output):
+     else:
+         report=machine_report((output/'explain/stdout').read_bytes())
+         expected=dict(label_match=True,onset_pass=True,offset_pass=True,eligible=True,onset_delta_s='0.2',offset_delta_s='0.2',onset_limit_s='0.2',offset_limit_s='1')
++        if report.get('status')!='completed' or 'error' in report:differences.append('explain must be completed without error')
+         if report['basis']!=expected or 'summary' in report or report['recording_id']!='clip-01':differences.append('explain basis')
+     # Docs/API.md's first MoonBit block is the exact source exercised by the external consumer.
+     import re
+diff --git a/tests/test_package.py b/tests/test_package.py
+index ef592919..70bb3702 100644
+--- a/tests/test_package.py
++++ b/tests/test_package.py
+@@ -5,6 +5,8 @@ import tempfile
+ import unittest
+ import zipfile
+ import warnings
++import shutil
++import json
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ sys.path.insert(0, str(ROOT/'scripts'))
+@@ -52,6 +54,28 @@ class ReleaseGates(unittest.TestCase):
+             with self.subTest(bad=bad), self.assertRaises(ValueError):package.validate_members(set(good)|{bad},good)
+         with self.assertRaises(ValueError):package.validate_members(set(good)-{'cmd/mooneventeval/io_stub.c'},good)
+ 
++    def test_failed_explanation_never_qualifies_package(self):
++        # Compile an actual serializer mutation through the complete archive gate.
++        with tempfile.TemporaryDirectory() as directory:
++            source=Path(directory)/'source';source.mkdir()
++            for name in package.expected_files(ROOT)|{'.moonignore'}:
++                target=source/name;target.parent.mkdir(parents=True,exist_ok=True)
++                shutil.copy2(ROOT/name,target)
++            path=source/'eventeval/report_json.mbt';original=path.read_text()
++            before,body=original.split('pub fn explanation_json(',1)
++            needle='("status", "\\\"completed\\\"")'
++            replacement='("status", "\\\"failed\\\"")'
++            self.assertEqual(body.count(needle),1)
++            path.write_text(before+'pub fn explanation_json('+body.replace(needle,replacement,1))
++            output=Path(directory)/'gate'
++            report=package.package(source,output)
++            self.assertEqual(report['cli_build']['exit_code'],0)
++            actual=json.loads((output/'unpacked-examples/explain/stdout').read_bytes())
++            self.assertEqual(actual['status'],'failed')
++            self.assertTrue(report['consumer']['passed'])
++            self.assertFalse(report['examples']['passed'])
++            self.assertFalse(report['passed'])
++
+     def test_public_consumer_wrong_expected_count_fails(self):
+         with tempfile.TemporaryDirectory() as d:
+             out=Path(d)/'run'

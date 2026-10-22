@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "explain-pair",
+    "examples/boundary.json",
+    "--recording",
+    "clip-01",
+    "--reference",
+    "r1",
+    "--prediction",
+    "p1",
+    "--format",
+    "text"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked",
+  "started_utc": "2026-10-22T15:03:17.184184+00:00",
+  "elapsed_seconds": 0.0029781670309603214,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e5cc71bab674733c2704ab0cadbe74002e1456f85a6430e3f54f3fbbaceb9946",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/scripts/with-toolchain.sh",
+    "moon",
+    "info"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate",
+  "started_utc": "2026-10-22T14:57:44.038632+00:00",
+  "elapsed_seconds": 0.053503042086958885,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "1efb63bf19504c385f6e39b93253c7a7f9475be0bf30c220dcf10da70eba7e6e"
+}

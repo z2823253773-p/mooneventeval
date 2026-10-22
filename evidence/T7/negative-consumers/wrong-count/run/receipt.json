@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1/_build/native/release/build/local/mooneventeval_consumer/main/main.exe"
+  ],
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-6j74nfj1",
+  "exit_code": -6,
+  "timed_out": false,
+  "stdout_sha256": "c7ddd74d34daeb6b5833f8de83604c77e3486fbdfd42953cd12f567f36428c17",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

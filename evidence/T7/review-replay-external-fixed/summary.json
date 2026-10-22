@@ -1,0 +1,7 @@
+{
+  "false_green": false,
+  "gate_exit_code": 1,
+  "package_passed": false,
+  "actual_explanation_status": "failed",
+  "scope": "one serializer literal changed in a fresh source copy; real moon archive/unpack/build/run"
+}

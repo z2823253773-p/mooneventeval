@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked/scripts/with-toolchain.sh",
+    "moonc",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/manual-unpacked",
+  "started_utc": "2026-10-22T15:03:14.100538+00:00",
+  "elapsed_seconds": 0.035085707902908325,
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "33bf4fcce867d0cbdf9275dc6c8e2952efcaf8e3ac2537e7a7bc4dc1d7c445ae",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

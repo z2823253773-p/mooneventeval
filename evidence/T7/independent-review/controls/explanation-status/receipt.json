@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/candidate/scripts/package_candidate.py",
+    "--source",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/controls/explanation-status/mutated-source",
+    "--output",
+    "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/controls/explanation-status/gate"
+  ],
+  "cwd": "/private/tmp/mooneventeval-t7-independent-a441ce89-az9yv886/controls/explanation-status/mutated-source",
+  "exit_code": 0,
+  "stdout_sha256": "82542237d1c17376e218a425ad4dab8b772ac9b4955f245b6b666dd9e3f61395",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "original_source_sha256": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+  "mutated_source_sha256": "a0042f4fd24cb469b5cea2f7989d71084e7ceec5992701213a51a960b604b985"
+}

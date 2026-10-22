@@ -1,6 +1,6 @@
 # MoonEventEval 共享契约
 
-版本：评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。当前无产品消费者。已批准PRD的数学/资源/数据边界继续有效；T2 first-free修订已随用户“下一步”获得本阶段执行授权；仍明确标注的阶段顺序修订待相应批准。
+版本：评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。T7已有本地包外消费者及解包复验，尚无注册表发布或外部用户验证。已批准PRD的数学/资源/数据边界继续有效；T2 first-free修订已随用户“下一步”获得本阶段执行授权；仍明确标注的阶段顺序修订待相应批准。
 
 入口：docs/PROJECT_STATE.md。JSON字符串时间仍是唯一获批文件输入；TSV/CSV不在本轮已批准实施范围。
 
@@ -139,3 +139,12 @@ T5最终代码/被测2c0a06d；候选1831fbc的I1已作者修复。格式预扫�
 验证机器输出必须在语义检查前严格UTF8、一个终端LF且无原始CR、各层唯一对象键、有限数和合法Unicode；保持原始bytes，解析失败形成可序列化差异。这不改变产品输入的已知last-key-wins限制。大图性能门用多项式输入成员/录制/类别/完整一对一覆盖及独立eligible=true检查，不调用小图指数oracle。
 
 9类临时实际源码故障注入及6错误mutation+1等价变体通过；不增加运行开关。性能只证明本机三个固定2000事件图族各3次。Minor M1明确延期：超时正确失败，但部分子进程stdout/stderr/process收据尚未落盘。本人M2、Linux/CI/包外消费/发布另行验收。详见T6结果、评审处置及manifest。
+
+
+### T7交付约定（本地候选完成）
+
+最终代码/被测bb24ce33，原评审候选a441ce89。运行源码/公开API不变；moon.mod新增本地readme/description/MIT元数据，正式namespace/URL未获授权仍不填写。现代moon.mod import配合临时moon.work本地成员替代旧path-deps；consumer仅import公开eventeval，归档消费时只指向解包副本，工具链单独复用。
+
+.moonignore为38文件闭合白名单：产品源/接口/native stub、三合成案例、公开README/API/EXAMPLES/VALIDATION、MIT/core原始声明、安装器/锁。Moon清单真实输出位于stderr并带头尾；逐成员/字节/hash/链接检查，不丢弃未知项。公开API首块代码与实际外部消费者一致，三案例输入/summary核对实际输出。check_examples对explain除basis外必须status=completed且无error；真实序列化failed状态变体须使整个package门非零并保留失败账本。CLI状态/产品评分没有改动。
+
+本地候选不等于正式包或远端发布；复用工具链不等于新下载安装通过。原独立评审及作者单轮修复分开记账，T6 Minor M1、本人M2与T8待办仍明确保留。

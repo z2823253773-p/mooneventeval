@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "author_replay": true,
+  "independent_re_review": false,
+  "fixed_sha": "bb24ce33962ebf6276265075edb3df10e16e6601",
+  "original_replay_script_sha256": "4ee315c9c30d42113944fc3a4ba28f9846684a15665f213500c05c63af8857df",
+  "summary": {
+    "false_green": false,
+    "gate_exit_code": 1,
+    "package_passed": false,
+    "actual_explanation_status": "failed",
+    "scope": "one serializer literal changed in a fresh source copy; real moon archive/unpack/build/run"
+  },
+  "initial_replay": "evidence/T7/review-replay-fixed was invalid control: nested mutated source under ignored evidence ancestor produced empty moon archive before reaching explanation; retained as failure history, not counted as rejection proof",
+  "final_control": "exact original script replayed outside checkout in fresh /private/tmp directory; actual compiled/unpacked explanation reached, failed status rejected"
+}
