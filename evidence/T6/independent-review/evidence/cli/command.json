@@ -1,0 +1,17 @@
+{
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source",
+  "argv": [
+    "env",
+    "MEE_BIN=_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "MEE_EVIDENCE=/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/cli-cases",
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-v"
+  ]
+}

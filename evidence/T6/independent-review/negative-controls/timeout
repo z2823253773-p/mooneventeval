@@ -1,0 +1,5 @@
+#!/Users/henryz/.agent-reach-venv/bin/python3
+import sys,time
+sys.stdout.buffer.write(b"partial stdout before timeout");sys.stdout.flush()
+sys.stderr.buffer.write(b"partial stderr before timeout");sys.stderr.flush()
+time.sleep(35)

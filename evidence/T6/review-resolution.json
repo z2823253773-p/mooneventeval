@@ -1,0 +1,11 @@
+{
+  "critical": 0,
+  "important": 2,
+  "minor": 1,
+  "important_author_fixed": 2,
+  "independent_re_review": false,
+  "reviewed_sha": "fb4de0bbb28f0bed48d0529db6ebc946027a2a81",
+  "fixed_tested_sha": "7b8a453f58307e4118eeae7ad78d79859af6eeed",
+  "minor_deferred": "M1 timeout fails correctly but discards partial captured child stdout/stderr/process receipt",
+  "resolution": "docs/reviews/2026-10-22-t6-review.md"
+}

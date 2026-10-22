@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/parity-cases/grid-041/doubled/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "b6503904bf0ebee27778484ca704d13d7c27719da860cf9275d39e17a5afe87a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

@@ -1,0 +1,13 @@
+{
+  "name": "baseline",
+  "category": "decimal_nonboundary",
+  "classification": "unexplained",
+  "differences": [
+    {
+      "path": "stdout",
+      "expected": "strict UTF8 finite unique-key JSON and terminal LF",
+      "actual": "Nonfinite JSON constant: NaN"
+    }
+  ],
+  "transforms": []
+}

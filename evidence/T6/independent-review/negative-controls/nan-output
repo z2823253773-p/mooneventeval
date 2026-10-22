@@ -1,0 +1,10 @@
+#!/Users/henryz/.agent-reach-venv/bin/python3
+import json, subprocess, sys
+sys.path.insert(0,'/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source')
+from validation.rational_oracle import eligible
+result=subprocess.run(['/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe']+sys.argv[1:],capture_output=True)
+sys.stderr.buffer.write(result.stderr)
+raw=result.stdout
+actual=json.loads(raw);actual['summary']['precision']=float('nan');raw=(json.dumps(actual)+'\n').encode()
+sys.stdout.buffer.write(raw)
+sys.exit(result.returncode)

@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "evidence/T6/replay_fixed_review.py",
+    "--output",
+    "evidence/T6/review-replay-fixed"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 5.841,
+  "log": "evidence/T6/20261022T142323548998Z-verified-review-replay.log",
+  "log_sha256": "5fd3bfed036c0b6b5da093d5cd0ac8274ec4f80f640c0dfa15e9d023aaea6443",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

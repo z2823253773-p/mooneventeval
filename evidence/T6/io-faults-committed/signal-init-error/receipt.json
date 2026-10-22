@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-0ghziyke/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/io-faults-committed/input.json",
+    "--format",
+    "json"
+  ],
+  "build_command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-0ghziyke/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/mooneventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "build_exit_code": 0,
+  "name": "signal-init-error",
+  "exit_code": 4,
+  "expected_exit": 4,
+  "syscalls": {
+    "open_calls": 0,
+    "stat_calls": 0,
+    "read_calls": 0,
+    "close_calls": 0,
+    "stdout_write_calls": 0,
+    "live_input_fds": 0
+  },
+  "instrumented_binary_sha256": "557a4bfa53abfc408e3f310afaec02990bb2e9e78335e75c8d25791de307cea5",
+  "instrumented_source_sha256": "30ddcd19e51b3ca89bf92fc86327da5767a46975a5347bc21b73269b6ce7e6ee",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "passed": true
+}

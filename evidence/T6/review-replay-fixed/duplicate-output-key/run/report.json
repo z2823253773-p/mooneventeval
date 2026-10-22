@@ -1,0 +1,88 @@
+{
+  "phase": "qualification",
+  "seed": 20261020,
+  "git_head": "7b8a453f58307e4118eeae7ad78d79859af6eeed",
+  "product": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T6/review-replay-fixed/duplicate-output-key/product-wrapper",
+  "product_sha256": "a3b639e2ab719e5a9ebe74e4c6b87d588b511f67dc4209de90cd66068cf325a0",
+  "source_sha256": {
+    "validation/benchmark.py": "81a4fa10fafac34cc712455689749009c040bd747e296fbb9f7398434b60670d",
+    "validation/bootstrap_reference.py": "0126ba3a4f1ed5a3f60deaab2e75237cd35d2a045453add39b692f5422d84672",
+    "validation/check_cli_reports.py": "ffe8ba0f0523d9ed59a83acccd00390c2ab0967fc73dc94085a5e49dfce9dbf8",
+    "validation/check_io_faults.py": "f18b6a60763bd63e41dd402314df6cb2cf21c8e40686ea708519ec99059a914a",
+    "validation/check_json_controls.py": "5c9c65eb4003dffc2251d22cd5c91b718e0a8b803215e1c5c4861b781c9ee8f7",
+    "validation/check_matching_native.py": "5eff45089bd2f51ff677fa6e99b7139b6bf8876534f80dfaf53b6fbc908347f8",
+    "validation/check_mutations.py": "d02de09fe299c3cf36c3e594689abb705cba67a4d6e7e447940143a6d4c21551",
+    "validation/check_native_io.py": "94c428048f19c46f3ba5dddc81989023ae7767b0f29d70542a7760cfa62a09e8",
+    "validation/check_probe.py": "1475a85996676e536ec412c9d53d26b9e1ebc332561611d9c18393627505f700",
+    "validation/check_report_bytes.py": "4905103ec359a12010d317150f246e28861a638767e9c44da91c697f8fc4f4b5",
+    "validation/check_reports.py": "5d76bff79e0a1000b732de05290bfabef7410bbde6bd9d9e17437278681c0993",
+    "validation/compare.py": "584dfe522d786175a7b1934ce56d3e4722db9280b8abe5de6b0a7e7d170d7144",
+    "validation/generate_cases.py": "2f30beda13d60bf46a3b611b893128decd93c680de60cc4f506202034714307c",
+    "validation/graph_oracle.py": "aeb3c01837e6a12636afcf359248aec4cae6a7a9cb367b52c620337705ba4895",
+    "validation/mutate_eligibility.py": "24da0faa744e22e71ec6584df54cd7b3690ae0b53156c6f7141f6c066ee888f5",
+    "validation/mutate_matching.py": "f1890ebef0fc9ecfcf2a34496da8c74dbdbb71a962cb66e6b639b6383b6da10b",
+    "validation/qualify.py": "2ded6fa56caa115b61d5676949c57c4300f0a1ba188d661f8a08a8f2cb651855",
+    "validation/rational_oracle.py": "30cad9d54498e4bbaf9cbc1f1fcdd74a27c53b53981d2d46451ef09c2c613d03",
+    "validation/sed_reference.py": "53b68fcb3df4f4886c0a816bc1b6b176a54dd1e755359307de5b597a9dac96b2",
+    "eventeval/eligibility.mbt": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+    "eventeval/eligibility_wbtest.mbt": "3cb714c12942b0697259b1b17ff07e64b97182e3458f46180e5785fa511bcfec",
+    "eventeval/errors.mbt": "cce85aa158230c55d1413c8ef9244a4e4bbe0791491e006f32f3d05109036380",
+    "eventeval/evaluation.mbt": "9a0b25521e688dc03792f9ec6b666128ab0db8bca305989ad79c729d1a9b2dea",
+    "eventeval/evaluation_wbtest.mbt": "a55d5de17c5d32e1180a5421d57cbdd0bff23c8af7ac443e30eddc9296c59ec7",
+    "eventeval/explain.mbt": "af32ca1e411031e2805c54287e2e2122f4205aaf150f0b13ddfb76eb0aa390b6",
+    "eventeval/explain_wbtest.mbt": "9ac8433ae8854175f7bf693cbc614d4dc6931752f2f92ff0f93090aaddddc335",
+    "eventeval/input.mbt": "f2130de124d842dfcc5bd833fec025653f893920d0c47abf6e5130e4327a1602",
+    "eventeval/input_wbtest.mbt": "3a9e96e7712c6c2e59de477e299acbc880ff12cc6f4ce741639969a6e1d246a1",
+    "eventeval/matching.mbt": "8a5b67feb4bf6dfa6a4f24cb61435682597e28609ded52992b00e482639add1d",
+    "eventeval/matching_benchmark_wbtest.mbt": "25b80c68e5afb4bc90cd3a9450c472cb529633ba1784a3491685618b8505a938",
+    "eventeval/matching_oracle_generated_wbtest.mbt": "3516404bbcd1b04a9ca3abbd17637c6848bb8df90d99cae588106bb5c79f4388",
+    "eventeval/matching_wbtest.mbt": "1755aac9c0d5fd12d93acc56b4dfdfd35cf8123a9ea10550fcdc3ab12946abe3",
+    "eventeval/model.mbt": "82d9739f412678d7aa0f60444836dbdfb7b43e7ffecc807f10fdac9be1f5ed30",
+    "eventeval/qualification_wbtest.mbt": "d0c7fa5fc15488ccd299fff80de627b1f24a59defae399109a3023a64d2e2242",
+    "eventeval/report_json.mbt": "b22d5effa876faf620c6c01eee88336b8f1b57ff43dbe7b945bdc12ff2a1a8ed",
+    "eventeval/report_text.mbt": "2c739cd62e1e48d222a4f4f2361d33cdb13564549979c3a47d977262ab81f805",
+    "eventeval/report_wbtest.mbt": "bc0ca2661d2db10cd2270b565b3a2a4f54ecb7b9bfaf8398b6de5df6f7d31397",
+    "eventeval/serialization.mbt": "b542b6c71d76dd158269548693a1cf641e6f2fcaf2bc737ba521b1c2d142b112",
+    "eventeval/serialization_wbtest.mbt": "8bc62b59c41a964c968713027ec30ead0589299b20e1e3c7fc741ef1887e6dd4",
+    "eventeval/time.mbt": "2c70fe527c767914934763965e78907bbf230a3a00321cca5d48f8605bdf0ef9",
+    "eventeval/time_wbtest.mbt": "bc937e9f2f6167a39a03108f5862a62608a5aa805aa91c0601403476970ab32c",
+    "eventeval/validation.mbt": "5e8dea9db2c34a4b69ea37e8cfe47958bae36617774e96a52f214ceb67238943",
+    "cli/args.mbt": "072d81cfe8eab293b8bbdda50ae57f87c95dec91e906226e7be03c5e56361a66",
+    "cli/args_test.mbt": "785102c43743b7903ea341f221c16357dc997f777f878ea6bb95645f90c7a950",
+    "cli/dispatch.mbt": "284851769833bb71f72d4c0cb05edaf089292656b0c2f02abe1c28cee022aa40",
+    "cmd/mooneventeval/io_stub.c": "76b30f0a621cf4207c4dadc54aef8e8ba869a4cbcaaed62832b2da7bc667de1c",
+    "cmd/mooneventeval/main.mbt": "51a123f504038e726634719857fc1b6f4d0cdc6b857432ee6b6ebdb58f059fbb",
+    "cmd/mooneventeval/moon.pkg": "41e01fe7874019fd316ae412c884f6fe93c72dbf5bd57abbbeaca22410261dd8",
+    "cmd/mooneventeval/native_io.mbt": "d53aaee40855f8fd3fbdff78dd442a902573abbdcb28216280d1e38d77e3753a",
+    "cmd/mooneventeval/native_io_wbtest.mbt": "8f8ace11d7f5eb4157194a97cff593e3751c5c4176c63825903d43dbaf382b06",
+    "cmd/mooneventeval/pkg.generated.mbti": "edffbe328548c632f1a9f4616d78a633bafe692444b7c4012110518c76ee7d7e"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "category": "decimal_nonboundary",
+      "classification": "unexplained",
+      "differences": [
+        {
+          "path": "stdout",
+          "expected": "strict UTF8 finite unique-key JSON and terminal LF",
+          "actual": "Duplicate output key: 'status'"
+        }
+      ],
+      "transforms": []
+    }
+  ],
+  "unexplained": [
+    "baseline"
+  ],
+  "passed": false,
+  "groups": {
+    "decimal_nonboundary": {
+      "cases": 1,
+      "classifications": {
+        "unexplained": 1
+      }
+    }
+  },
+  "scope": "synthetic fixed/seeded small graphs, original reference per base recording/class; four transforms checked by exact oracle; not personal M2/cross-platform proof"
+}

@@ -1,0 +1,16 @@
+--- eligibility.mbt
++++ eligibility.mbt
+@@ -22,10 +22,10 @@
+   let fixed_scaled = config.collar_us * 1_000_000L
+   let ratio_scaled = (reference.offset_us - reference.onset_us) *
+     config.offset_ratio_ppm
+-  let offset_limit_scaled = if fixed_scaled > ratio_scaled {
++  let offset_limit_scaled = if ratio_scaled > fixed_scaled {
++    ratio_scaled
++  } else {
+     fixed_scaled
+-  } else {
+-    ratio_scaled
+   }
+   let label_match = reference.label == prediction.label
+   let onset_pass = onset_abs <= config.collar_us

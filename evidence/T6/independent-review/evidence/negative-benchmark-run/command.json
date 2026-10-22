@@ -1,0 +1,13 @@
+{
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source",
+  "argv": [
+    "python3",
+    "validation/benchmark.py",
+    "--product",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+    "--output",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark",
+    "--cpu-name",
+    "Apple M5"
+  ]
+}

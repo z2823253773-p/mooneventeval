@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-0ghziyke/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/io-faults-committed/input.json",
+    "--format",
+    "json"
+  ],
+  "build_command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-0ghziyke/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/mooneventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "build_exit_code": 0,
+  "name": "partial-read-error",
+  "exit_code": 2,
+  "expected_exit": 2,
+  "syscalls": {
+    "open_calls": 1,
+    "stat_calls": 1,
+    "read_calls": 2,
+    "close_calls": 1,
+    "stdout_write_calls": 1,
+    "live_input_fds": 0
+  },
+  "instrumented_binary_sha256": "d03d1f669c2192a5e1ec69a618698097a34e1dac3a773b19e17b4b8f8fb3331a",
+  "instrumented_source_sha256": "7048b494eb4a618e51e05e130df913facf37528812108f01cad3a57ce6531ab2",
+  "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+  "passed": true
+}

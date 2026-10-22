@@ -1,0 +1,12 @@
+#!/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python
+import json,subprocess,sys
+sys.path.insert(0,'/Users/henryz/Desktop/比赛/mooneventeval-t0')
+from validation.rational_oracle import eligible
+result=subprocess.run(['/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe']+sys.argv[1:],capture_output=True)
+sys.stderr.buffer.write(result.stderr)
+raw=result.stdout
+actual=json.loads(raw);pairs=actual['matches'];pairs[0]['prediction'],pairs[1]['prediction']=pairs[1]['prediction'],pairs[0]['prediction']
+for m in pairs[:2]:m['basis']=eligible(m['reference'],m['prediction'],actual['config'])
+raw=(json.dumps(actual,ensure_ascii=False,separators=(',',':'))+'\n').encode()
+sys.stdout.buffer.write(raw)
+sys.exit(result.returncode)

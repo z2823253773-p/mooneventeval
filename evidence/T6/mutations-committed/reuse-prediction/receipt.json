@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-xa0qjo_k/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "matching_one_to_one_duplicate_and_isolated"
+  ],
+  "name": "reuse-prediction",
+  "target_test": "matching_one_to_one_duplicate_and_isolated",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "8a5b67feb4bf6dfa6a4f24cb61435682597e28609ded52992b00e482639add1d",
+  "mutant_sha256": "545d6a953da8d9803bb0cf81ba4d55f6f592b6d1aad269651133250ecb599c0a",
+  "restored_sha256": "8a5b67feb4bf6dfa6a4f24cb61435682597e28609ded52992b00e482639add1d"
+}

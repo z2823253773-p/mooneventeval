@@ -1,0 +1,1 @@
+{"passed": true, "cases": [{"name": "sparse", "max_wall_seconds": 0.04926820797845721, "max_rss_bytes": 6832128}, {"name": "dense", "max_wall_seconds": 0.02600433398038149, "max_rss_bytes": 8994816}, {"name": "chain", "max_wall_seconds": 0.025177957955747843, "max_rss_bytes": 6848512}]}

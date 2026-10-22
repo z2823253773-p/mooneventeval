@@ -1,0 +1,272 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 6,
+      "prediction": 8,
+      "tp": 2,
+      "fp": 6,
+      "fn": 4
+    },
+    "precision": 0.25,
+    "recall": 0.3333333333333333,
+    "f1": 0.2857142857142857
+  },
+  "by_label": {
+    "A": {
+      "counts": {
+        "reference": 3,
+        "prediction": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1
+      },
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8
+    },
+    "B": {
+      "counts": {
+        "reference": 3,
+        "prediction": 6,
+        "tp": 0,
+        "fp": 6,
+        "fn": 3
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "unused": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "by_recording": {
+    "rec-0": {
+      "counts": {
+        "reference": 0,
+        "prediction": 3,
+        "tp": 0,
+        "fp": 3,
+        "fn": 0
+      },
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    },
+    "rec-1": {
+      "counts": {
+        "reference": 4,
+        "prediction": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 3
+      },
+      "precision": 1.0,
+      "recall": 0.25,
+      "f1": 0.4
+    },
+    "rec-2": {
+      "counts": {
+        "reference": 2,
+        "prediction": 4,
+        "tp": 1,
+        "fp": 3,
+        "fn": 1
+      },
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1": 0.3333333333333333
+    }
+  },
+  "candidate_checks": 6,
+  "eligible_edges": 2,
+  "groups": [
+    {
+      "recording_id": "rec-0",
+      "label": "A",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "B",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "8.979868",
+          "offset_s": "10.097734"
+        },
+        {
+          "id": "p1",
+          "label": "B",
+          "onset_s": "2.035353",
+          "offset_s": "4.916402"
+        },
+        {
+          "id": "p2",
+          "label": "B",
+          "onset_s": "7.946342",
+          "offset_s": "10.825994"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "A",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "A",
+          "onset_s": "4.651867",
+          "offset_s": "5.329028"
+        },
+        {
+          "id": "r2",
+          "label": "A",
+          "onset_s": "4.065246",
+          "offset_s": "5.5818"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "A",
+          "onset_s": "4.763249",
+          "offset_s": "5.44041"
+        }
+      ],
+      "adjacency": [
+        [
+          0
+        ],
+        []
+      ],
+      "tp": 1
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "4.657846",
+          "offset_s": "7.258359"
+        },
+        {
+          "id": "r3",
+          "label": "B",
+          "onset_s": "1.518619",
+          "offset_s": "3.50752"
+        }
+      ],
+      "prediction": [],
+      "adjacency": [
+        [],
+        []
+      ],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "A",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "A",
+          "onset_s": "5.886209",
+          "offset_s": "8.029931"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p3",
+          "label": "A",
+          "onset_s": "6.075764",
+          "offset_s": "8.219486"
+        }
+      ],
+      "adjacency": [
+        [
+          0
+        ]
+      ],
+      "tp": 1
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "5.709677",
+          "offset_s": "7.68046"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "6.162203",
+          "offset_s": "8.132986"
+        },
+        {
+          "id": "p1",
+          "label": "B",
+          "onset_s": "3.307379",
+          "offset_s": "4.200396"
+        },
+        {
+          "id": "p2",
+          "label": "B",
+          "onset_s": "5.990083",
+          "offset_s": "7.960866"
+        }
+      ],
+      "adjacency": [
+        []
+      ],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    }
+  ]
+}

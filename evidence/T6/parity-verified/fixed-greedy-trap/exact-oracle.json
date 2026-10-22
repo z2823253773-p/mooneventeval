@@ -1,0 +1,88 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 2,
+      "prediction": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "by_label": {
+    "alarm": {
+      "counts": {
+        "reference": 2,
+        "prediction": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "by_recording": {
+    "clip-01": {
+      "counts": {
+        "reference": 2,
+        "prediction": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "candidate_checks": 4,
+  "eligible_edges": 3,
+  "groups": [
+    {
+      "recording_id": "clip-01",
+      "label": "alarm",
+      "reference": [
+        {
+          "id": "r1",
+          "label": "alarm",
+          "onset_s": "10",
+          "offset_s": "11"
+        },
+        {
+          "id": "r2",
+          "label": "alarm",
+          "onset_s": "10.3",
+          "offset_s": "11.3"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "alarm",
+          "onset_s": "10.15",
+          "offset_s": "11.15"
+        },
+        {
+          "id": "p2",
+          "label": "alarm",
+          "onset_s": "9.85",
+          "offset_s": "10.85"
+        }
+      ],
+      "adjacency": [
+        [
+          0,
+          1
+        ],
+        [
+          0
+        ]
+      ],
+      "tp": 2
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[
+  "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+  "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/validation/benchmark.py",
+  "--product",
+  "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/benchmark-ineligible/product-wrapper",
+  "--output",
+  "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/benchmark-ineligible/run",
+  "--cpu-name",
+  "Apple M5"
+]

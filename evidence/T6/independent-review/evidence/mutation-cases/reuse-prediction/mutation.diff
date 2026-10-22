@@ -1,0 +1,11 @@
+--- matching.mbt
++++ matching.mbt
+@@ -65,7 +65,7 @@
+         Ok(_) => ()
+       }
+       adjacency_checks = adjacency_checks + 1L
+-      if prediction_match[p] == -1 {
++      if true {
+         match consume_step(budget) {
+           Err(error) => return Err(error)
+           Ok(_) => ()

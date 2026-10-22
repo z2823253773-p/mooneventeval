@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "git_head": "fb4de0bbb28f0bed48d0529db6ebc946027a2a81",
+  "product": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+  "product_sha256": "d23958afb45c90c70d6b6b4656280377db1e2dc3b49b0e6f02c8025adeefd701",
+  "platform": "macOS-26.4-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu": "Apple M5",
+  "logical_cpus": 10,
+  "compiler": "v0.10.14+7d59c7ec9 (2026-09-18)",
+  "cases": [
+    {
+      "name": "sparse",
+      "samples": [
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 1.2520850410219282,
+          "peak_rss_bytes": 18890752,
+          "user_seconds": 0.043122999999999995,
+          "system_seconds": 0.009231,
+          "stdout_sha256": "6e012a1ef34165cbf1039b5e800d5b75c9804c9fb2caa7ff6902ab0e9b722021",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.04630462499335408,
+          "peak_rss_bytes": 18972672,
+          "user_seconds": 0.032189999999999996,
+          "system_seconds": 0.006699,
+          "stdout_sha256": "6e012a1ef34165cbf1039b5e800d5b75c9804c9fb2caa7ff6902ab0e9b722021",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.046146041015163064,
+          "peak_rss_bytes": 18989056,
+          "user_seconds": 0.031460999999999996,
+          "system_seconds": 0.006416,
+          "stdout_sha256": "6e012a1ef34165cbf1039b5e800d5b75c9804c9fb2caa7ff6902ab0e9b722021",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        }
+      ]
+    },
+    {
+      "name": "dense",
+      "samples": [
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.0462119160220027,
+          "peak_rss_bytes": 18694144,
+          "user_seconds": 0.034443,
+          "system_seconds": 0.006418,
+          "stdout_sha256": "15fd92dccf349e37bf3b743ec05328d81a7b41166e43a8cb3b2301dce2e55b22",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.04616554221138358,
+          "peak_rss_bytes": 18677760,
+          "user_seconds": 0.035061999999999996,
+          "system_seconds": 0.006802,
+          "stdout_sha256": "15fd92dccf349e37bf3b743ec05328d81a7b41166e43a8cb3b2301dce2e55b22",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.04620058415457606,
+          "peak_rss_bytes": 18677760,
+          "user_seconds": 0.034963,
+          "system_seconds": 0.006627999999999999,
+          "stdout_sha256": "15fd92dccf349e37bf3b743ec05328d81a7b41166e43a8cb3b2301dce2e55b22",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        }
+      ]
+    },
+    {
+      "name": "chain",
+      "samples": [
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.045675958041101694,
+          "peak_rss_bytes": 19152896,
+          "user_seconds": 0.033461,
+          "system_seconds": 0.006542999999999999,
+          "stdout_sha256": "8bb4937d822cc6fef0162a48693705b67299ebcc60b447a1a3cde553bfce0c11",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.04625850007869303,
+          "peak_rss_bytes": 19103744,
+          "user_seconds": 0.033964,
+          "system_seconds": 0.007096,
+          "stdout_sha256": "8bb4937d822cc6fef0162a48693705b67299ebcc60b447a1a3cde553bfce0c11",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative-controls/benchmark-ineligible",
+            "evaluate",
+            "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/negative-benchmark/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.04505920805968344,
+          "peak_rss_bytes": 19087360,
+          "user_seconds": 0.034388999999999996,
+          "system_seconds": 0.006745,
+          "stdout_sha256": "8bb4937d822cc6fef0162a48693705b67299ebcc60b447a1a3cde553bfce0c11",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        }
+      ]
+    }
+  ],
+  "measurement": "wall includes launch/read/evaluate/JSON/write to local file; wait4 per-child ru_maxrss; three independent release process samples",
+  "scope": "local samples only; not all-graph budget, cross-platform or universal peak/time guarantee"
+}

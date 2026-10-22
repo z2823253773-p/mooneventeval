@@ -1,0 +1,9 @@
+test_digest_mismatch_rejected (test_toolchain.ToolchainSafety.test_digest_mismatch_rejected) ... ok
+test_regular_archive_extracted (test_toolchain.ToolchainSafety.test_regular_archive_extracted) ... ok
+test_traversal_and_escaping_link_rejected_without_extraction (test_toolchain.ToolchainSafety.test_traversal_and_escaping_link_rejected_without_extraction) ... ok
+test_wrapper_rejects_missing_local_moon_instead_of_global_fallback (test_toolchain.ToolchainSafety.test_wrapper_rejects_missing_local_moon_instead_of_global_fallback) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.753s
+
+OK

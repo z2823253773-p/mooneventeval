@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/no-lf/product-wrapper",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/no-lf/run/baseline/base/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "18e082525ccbf5f8a2bee7342aec45e5439773113adcba9435da0a69685f292f",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": [
+    {
+      "path": "stdout",
+      "expected": "strict UTF8 finite unique-key JSON and terminal LF",
+      "actual": "Expected exactly one terminal LF and no raw CR"
+    }
+  ]
+}

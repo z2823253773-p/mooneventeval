@@ -1,0 +1,9 @@
+{
+  "args": [
+    "evaluate",
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source/examples/boundary.json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "a9d8a9f9f8a93accef0ae246a38f71528ceb099b8ca16926a60ead72d2df87d7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

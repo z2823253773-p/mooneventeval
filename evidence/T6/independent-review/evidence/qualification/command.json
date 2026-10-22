@@ -1,0 +1,13 @@
+{
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source",
+  "argv": [
+    ".venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "qualification",
+    "--product",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/parity-cases"
+  ]
+}

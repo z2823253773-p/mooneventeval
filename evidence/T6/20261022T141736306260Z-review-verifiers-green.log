@@ -1,0 +1,10 @@
+test_nonfinite_output_still_gets_failed_case_and_final_ledger (test_verifier_protocol.VerifierProtocolTests.test_nonfinite_output_still_gets_failed_case_and_final_ledger) ... ok
+test_performance_accepts_equivalent_legal_dense_pairing (test_verifier_protocol.VerifierProtocolTests.test_performance_accepts_equivalent_legal_dense_pairing) ... ok
+test_performance_rejects_truthful_illegal_or_foreign_pairs (test_verifier_protocol.VerifierProtocolTests.test_performance_rejects_truthful_illegal_or_foreign_pairs) ... ok
+test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 2.533s
+
+OK
+{"cases": 1, "unexplained": ["nonfinite"], "classifications": {"unexplained": 1}}

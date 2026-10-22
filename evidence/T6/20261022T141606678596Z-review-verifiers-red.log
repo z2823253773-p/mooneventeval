@@ -1,0 +1,104 @@
+test_nonfinite_output_still_gets_failed_case_and_final_ledger (test_verifier_protocol.VerifierProtocolTests.test_nonfinite_output_still_gets_failed_case_and_final_ledger) ... ERROR
+test_performance_accepts_equivalent_legal_dense_pairing (test_verifier_protocol.VerifierProtocolTests.test_performance_accepts_equivalent_legal_dense_pairing) ... ERROR
+test_performance_rejects_truthful_illegal_or_foreign_pairs (test_verifier_protocol.VerifierProtocolTests.test_performance_rejects_truthful_illegal_or_foreign_pairs) ... ERROR
+test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) ... 
+  test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-') ... FAIL
+  test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-') ... FAIL
+  test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-') ... FAIL
+  test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-') ... FAIL
+test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) ... FAIL
+
+======================================================================
+ERROR: test_nonfinite_output_still_gets_failed_case_and_final_ledger (test_verifier_protocol.VerifierProtocolTests.test_nonfinite_output_still_gets_failed_case_and_final_ledger)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 60, in test_nonfinite_output_still_gets_failed_case_and_final_ledger
+    self.assertEqual(run_qualification(exe,folder/'proof',cases=[case]),1)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/qualify.py", line 115, in run_qualification
+    save(folder/'comparison.json',row);records.append(row)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/qualify.py", line 17, in save
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 398, in _iterencode_dict
+    yield _floatstr(value)
+          ^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 240, in floatstr
+    raise ValueError(
+ValueError: Out of range float values are not JSON compliant: nan
+
+======================================================================
+ERROR: test_performance_accepts_equivalent_legal_dense_pairing (test_verifier_protocol.VerifierProtocolTests.test_performance_accepts_equivalent_legal_dense_pairing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 87, in test_performance_accepts_equivalent_legal_dense_pairing
+    self.assertEqual(benchmark.validate_performance_report(doc,report,'dense'),[])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'validation.benchmark' has no attribute 'validate_performance_report'
+
+======================================================================
+ERROR: test_performance_rejects_truthful_illegal_or_foreign_pairs (test_verifier_protocol.VerifierProtocolTests.test_performance_rejects_truthful_illegal_or_foreign_pairs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 69, in test_performance_rejects_truthful_illegal_or_foreign_pairs
+    self.assertEqual(benchmark.validate_performance_report(doc,good,name),[])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'validation.benchmark' has no attribute 'validate_performance_report'
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 52, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertTrue(result['differences'])
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 52, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertTrue(result['differences'])
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 52, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertTrue(result['differences'])
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 52, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertTrue(result['differences'])
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 48, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertNotEqual(raw,good)
+AssertionError: b'{"schema_version":1,"semantics":"collar-max-cardinality/v1","implementation_version":"0.1.0","status":"completed","config":{"collar_s":"0.2","offset_ratio":"0.5"},"summary":{"counts":{"reference":1,"prediction":1,"tp":0,"fp":1,"fn":1},"precision":0,"recall":0,"f1":0},"by_label":[{"label":"alarm","metrics":{"counts":{"reference":1,"prediction":1,"tp":0,"fp":1,"fn":1},"precision":0,"recall":0,"f1":0}}],"by_recording":[{"recording_id":"clip-01","metrics":{"counts":{"reference":1,"prediction":0,"tp":0,"fp":0,"fn":1},"precision":null,"recall":0,"f1":0}},{"recording_id":"prediction-only","metrics":{"counts":{"reference":0,"prediction":1,"tp":0,"fp":1,"fn":0},"precision":0,"recall":null,"f1":0}}],"matches":[],"false_positives":[{"recording_id":"prediction-only","event":{"id":"p","label":"alarm","onset_s":"1","offset_s":"2"},"candidate_count":0,"reason":"no_eligible_candidate"}],"false_negatives":[{"recording_id":"clip-01","event":{"id":"r","label":"alarm","onset_s":"1","offset_s":"2"},"candidate_count":0,"reason":"no_eligible_candidate"}],"work":{"candidate_checks":0,"eligible_edges":0,"matching_steps":1}}\n' == b'{"schema_version":1,"semantics":"collar-max-cardinality/v1","implementation_version":"0.1.0","status":"completed","config":{"collar_s":"0.2","offset_ratio":"0.5"},"summary":{"counts":{"reference":1,"prediction":1,"tp":0,"fp":1,"fn":1},"precision":0,"recall":0,"f1":0},"by_label":[{"label":"alarm","metrics":{"counts":{"reference":1,"prediction":1,"tp":0,"fp":1,"fn":1},"precision":0,"recall":0,"f1":0}}],"by_recording":[{"recording_id":"clip-01","metrics":{"counts":{"reference":1,"prediction":0,"tp":0,"fp":0,"fn":1},"precision":null,"recall":0,"f1":0}},{"recording_id":"prediction-only","metrics":{"counts":{"reference":0,"prediction":1,"tp":0,"fp":1,"fn":0},"precision":0,"recall":null,"f1":0}}],"matches":[],"false_positives":[{"recording_id":"prediction-only","event":{"id":"p","label":"alarm","onset_s":"1","offset_s":"2"},"candidate_count":0,"reason":"no_eligible_candidate"}],"false_negatives":[{"recording_id":"clip-01","event":{"id":"r","label":"alarm","onset_s":"1","offset_s":"2"},"candidate_count":0,"reason":"no_eligible_candidate"}],"work":{"candidate_checks":0,"eligible_edges":0,"matching_steps":1}}\n'
+
+----------------------------------------------------------------------
+Ran 4 tests in 5.183s
+
+FAILED (failures=5, errors=3)

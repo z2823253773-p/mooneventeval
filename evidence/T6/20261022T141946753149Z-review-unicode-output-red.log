@@ -1,0 +1,19 @@
+test_nonfinite_output_still_gets_failed_case_and_final_ledger (test_verifier_protocol.VerifierProtocolTests.test_nonfinite_output_still_gets_failed_case_and_final_ledger) ... ok
+test_performance_accepts_equivalent_legal_dense_pairing (test_verifier_protocol.VerifierProtocolTests.test_performance_accepts_equivalent_legal_dense_pairing) ... ok
+test_performance_rejects_truthful_illegal_or_foreign_pairs (test_verifier_protocol.VerifierProtocolTests.test_performance_rejects_truthful_illegal_or_foreign_pairs) ... ok
+test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) ... 
+  test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-') ... FAIL
+
+======================================================================
+FAIL: test_raw_protocol_violations_are_failed_without_rewriting_bytes (test_verifier_protocol.VerifierProtocolTests.test_raw_protocol_violations_are_failed_without_rewriting_bytes) (raw=b'{"schema_version":1,"semantics":"collar-')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_verifier_protocol.py", line 55, in test_raw_protocol_violations_are_failed_without_rewriting_bytes
+    self.assertTrue(result['differences'])
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 4 tests in 4.530s
+
+FAILED (failures=1)
+{"cases": 1, "unexplained": ["nonfinite"], "classifications": {"unexplained": 1}}

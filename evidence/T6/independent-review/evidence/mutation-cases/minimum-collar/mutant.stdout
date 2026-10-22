@@ -1,0 +1,9 @@
+[local/mooneventeval] test eventeval/eligibility_wbtest.mbt:21 ("eligibility_A4_offset_boundary_and_reference_duration") failed
+expect test failed at /private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-32e707sg/eventeval/eligibility_wbtest.mbt:28:3-28:75
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+Total tests: 1, passed: 0, failed: 1.

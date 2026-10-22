@@ -1,0 +1,50 @@
+{
+  "seed": 20261020,
+  "categories": {
+    "decimal_nonboundary": 1
+  },
+  "accepted": 1,
+  "excluded_count": 0,
+  "proposed": 1,
+  "accepted_inputs_and_margins": [
+    {
+      "name": "baseline",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "alarm"
+        ],
+        "recordings": [
+          {
+            "id": "clip-01",
+            "reference": [
+              {
+                "id": "r",
+                "label": "alarm",
+                "onset_s": "1",
+                "offset_s": "2"
+              }
+            ],
+            "prediction": []
+          },
+          {
+            "id": "prediction-only",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "alarm",
+                "onset_s": "1",
+                "offset_s": "2"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "excluded": [],
+  "inherited_prototype_seed": 20261021,
+  "rule": "Before evaluation, reject whole decimal input if any same-recording/same-label onset or offset margin <= 0.000001 seconds"
+}

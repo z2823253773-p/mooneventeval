@@ -130,3 +130,12 @@ native只处理I/O：O_RDONLY|O_NONBLOCK|O_CLOEXEC打开，fstat只允许普通�
 自动演示/图示/日志由agent交付，本人复算/口头讲解单列未完成；不伪装成M2证据。T5不重装参考环境或改核心数学。
 
 T5最终代码/被测2c0a06d；候选1831fbc的I1已作者修复。格式预扫描以位置成对处理所有key/value，未知key也消费其value，不把value中的--recording/--reference/--prediction/--format当作新开关。原候选的错误协议不能再作为最终通过证据。
+
+
+### T6验收约定（限定本地机器检查完成）
+
+最终代码/被测7b8a453；原评审候选fb4de0b。qualification通过真实文件CLI，315网格/安全十进制base共有口径一致；9精确边界单列（6一致/1具体binary64/2原版零collar限制），每base四种精确oracle变形，共1620产品进程。不是任意真实数据兼容保证。prototype仍仅历史argv探针。
+
+验证机器输出必须在语义检查前严格UTF8、一个终端LF且无原始CR、各层唯一对象键、有限数和合法Unicode；保持原始bytes，解析失败形成可序列化差异。这不改变产品输入的已知last-key-wins限制。大图性能门用多项式输入成员/录制/类别/完整一对一覆盖及独立eligible=true检查，不调用小图指数oracle。
+
+9类临时实际源码故障注入及6错误mutation+1等价变体通过；不增加运行开关。性能只证明本机三个固定2000事件图族各3次。Minor M1明确延期：超时正确失败，但部分子进程stdout/stderr/process收据尚未落盘。本人M2、Linux/CI/包外消费/发布另行验收。详见T6结果、评审处置及manifest。

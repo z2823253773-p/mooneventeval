@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["A","B","unused"],"recordings":[{"id":"rec-0","reference":[{"id":"r0","label":"A","onset_s":"6.395664","offset_s":"9.047587"},{"id":"r1","label":"B","onset_s":"4.29385","offset_s":"7.202022"}],"prediction":[{"id":"p0","label":"A","onset_s":"6.445467","offset_s":"9.09739"},{"id":"~no-candidate","label":"A","onset_s":"2591990","offset_s":"2591991"}]}]}

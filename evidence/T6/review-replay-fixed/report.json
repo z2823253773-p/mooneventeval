@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "author_replay": true,
+  "independent_re_review": false,
+  "cases": [
+    {
+      "mode": "benchmark-ineligible",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/independent-review/replay_negative.py",
+        "--source",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/benchmark-ineligible",
+        "--mode",
+        "benchmark-ineligible"
+      ],
+      "exit_code": 1,
+      "rejected_for_expected_reason": true,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "bb0c6f861c3e529d3ad2e85fdcef6560ea71421361484a2a26fd5cef1fbeee9e"
+    },
+    {
+      "mode": "no-lf",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/independent-review/replay_negative.py",
+        "--source",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/no-lf",
+        "--mode",
+        "no-lf"
+      ],
+      "exit_code": 1,
+      "rejected_for_expected_reason": true,
+      "stdout_sha256": "71539202815a2f012d2ff6a611948382bf66aa8d72e1f5f56bc9e183dd1e381e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "mode": "crlf",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/independent-review/replay_negative.py",
+        "--source",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/crlf",
+        "--mode",
+        "crlf"
+      ],
+      "exit_code": 1,
+      "rejected_for_expected_reason": true,
+      "stdout_sha256": "71539202815a2f012d2ff6a611948382bf66aa8d72e1f5f56bc9e183dd1e381e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "mode": "duplicate-output-key",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/independent-review/replay_negative.py",
+        "--source",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/duplicate-output-key",
+        "--mode",
+        "duplicate-output-key"
+      ],
+      "exit_code": 1,
+      "rejected_for_expected_reason": true,
+      "stdout_sha256": "71539202815a2f012d2ff6a611948382bf66aa8d72e1f5f56bc9e183dd1e381e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "mode": "nan-output",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/independent-review/replay_negative.py",
+        "--source",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+        "--product",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--output",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/nan-output",
+        "--mode",
+        "nan-output"
+      ],
+      "exit_code": 1,
+      "rejected_for_expected_reason": true,
+      "stdout_sha256": "71539202815a2f012d2ff6a611948382bf66aa8d72e1f5f56bc9e183dd1e381e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "git_head": "7b8a453f58307e4118eeae7ad78d79859af6eeed",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "original_script_sha256": "9806c386d2dde9431df9c59ae7bd6fd6c47bd9f22146cd45bacc175c48788275",
+  "minor_timeout_output_retention": "DEFERRED"
+}

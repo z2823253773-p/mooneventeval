@@ -1,0 +1,97 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 2,
+      "prediction": 3,
+      "tp": 2,
+      "fp": 1,
+      "fn": 0
+    },
+    "precision": 0.6666666666666666,
+    "recall": 1.0,
+    "f1": 0.8
+  },
+  "by_label": {
+    "alarm": {
+      "counts": {
+        "reference": 2,
+        "prediction": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    }
+  },
+  "by_recording": {
+    "clip-01": {
+      "counts": {
+        "reference": 2,
+        "prediction": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    }
+  },
+  "candidate_checks": 6,
+  "eligible_edges": 6,
+  "groups": [
+    {
+      "recording_id": "clip-01",
+      "label": "alarm",
+      "reference": [
+        {
+          "id": "r1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "r2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "p2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "p3",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "adjacency": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "tp": 2
+    }
+  ]
+}

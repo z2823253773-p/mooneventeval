@@ -1,0 +1,28 @@
+{
+  "name": "fixed-decimal-onset-binary64-flip",
+  "category": "exact_boundary",
+  "classification": "documented_binary64_boundary_difference",
+  "differences": [],
+  "transforms": [
+    {
+      "operation": "reordered",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "shifted",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "doubled",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "extra-prediction",
+      "exit_code": 0,
+      "passed": true
+    }
+  ]
+}

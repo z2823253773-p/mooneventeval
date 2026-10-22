@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/negative_qualification.py", line 9, in <module>
+    code=run_qualification(root/'negative-controls'/mode,root/'evidence'/('negative-'+mode),cases=[case])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source/validation/qualify.py", line 115, in run_qualification
+    save(folder/'comparison.json',row);records.append(row)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/source/validation/qualify.py", line 17, in save
+    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 326, in _iterencode_list
+    yield from chunks
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 398, in _iterencode_dict
+    yield _floatstr(value)
+          ^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/json/encoder.py", line 240, in floatstr
+    raise ValueError(
+ValueError: Out of range float values are not JSON compliant: nan

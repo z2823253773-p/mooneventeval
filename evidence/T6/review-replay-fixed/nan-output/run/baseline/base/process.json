@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/nan-output/product-wrapper",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/nan-output/run/baseline/base/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "c062025120226704be6bd48d88807802cd0b8c8808607d0eb1fb68c857e01c33",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": [
+    {
+      "path": "stdout",
+      "expected": "strict UTF8 finite unique-key JSON and terminal LF",
+      "actual": "Nonfinite JSON constant: NaN"
+    }
+  ]
+}

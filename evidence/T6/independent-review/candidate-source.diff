@@ -1,0 +1,2032 @@
+diff --git a/README.md b/README.md
+index b59d689..b6b68da 100644
+--- a/README.md
++++ b/README.md
+@@ -117,4 +117,5 @@ exit means that prefix is not a completed result.
+ 
+ See the [three-minute demo](docs/demo.md). Its automated transcripts do not prove
+ personal understanding or an actual spoken presentation. Linux/remote CI,
+-injected EINTR/short-write/close failures and final A11 remain future gates.
++T6 now exercises nine specific compile-time I/O fault cases and scoped A11
++qualification; personal M2, package consumers and cross-platform gates remain.
+diff --git a/docs/superpowers/plans/tasks/T6-qualification.md b/docs/superpowers/plans/tasks/T6-qualification.md
+index 3fee835..0f6e113 100644
+--- a/docs/superpowers/plans/tasks/T6-qualification.md
++++ b/docs/superpowers/plans/tasks/T6-qualification.md
+@@ -1,6 +1,6 @@
+ # T6-qualification 任务卡
+ 
+-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
++状态：用户“下一步”授权执行中；沿用固定PRD/契约，不取消最终验收。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+ 
+ 原版参考A11仍是最终验收条件；超时只能报告部分完成。mutation验证产品测试，而不只验证比较器。
+ 
+diff --git a/eventeval/qualification_wbtest.mbt b/eventeval/qualification_wbtest.mbt
+new file mode 100644
+index 0000000..542aaa2
+--- /dev/null
++++ b/eventeval/qualification_wbtest.mbt
+@@ -0,0 +1,22 @@
++// Actual default 20M boundary, using a pre-consumed internal counter, no public knob.
++
++///|
++test "qualification_default_work_budget_equality_and_next_step" {
++  let exact : WorkBudget = { used: 19_999_997L, limit: 20_000_000L, }
++  inspect(
++    maximum_matching([[0]], 1, exact).unwrap().steps == 3L,
++    content="true",
++  )
++  inspect(exact.used == 20_000_000L, content="true")
++  let over : WorkBudget = { used: 19_999_998L, limit: 20_000_000L, }
++  match maximum_matching([[0]], 1, over) {
++    Ok(_) => fail("partial matching returned beyond default limit")
++    Err(e) => {
++      inspect(
++        e.limit == Some(20_000_000L) && e.observed == Some(20_000_001L),
++        content="true",
++      )
++      inspect(over.used == 20_000_000L && exit_code(e) == 3, content="true")
++    }
++  }
++}
+diff --git a/tests/cli/test_resources.py b/tests/cli/test_resources.py
+new file mode 100644
+index 0000000..2f399f5
+--- /dev/null
++++ b/tests/cli/test_resources.py
+@@ -0,0 +1,68 @@
++"""Resource equality/+1 through the real file CLI; internal work/output gates separately."""
++import json
++import unittest
++
++import test_cli as protocol
++
++
++class Resources(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls): protocol.NativeCli.setUpClass.__func__(cls)
++
++    @classmethod
++    def tearDownClass(cls): protocol.NativeCli.tearDownClass.__func__(cls)
++
++    call = protocol.NativeCli.call
++    failure = protocol.NativeCli.failure
++
++    def document(self, value, name):
++        path = self.folder / name
++        path.write_text(json.dumps(value, ensure_ascii=False), encoding='utf-8')
++        return path
++
++    def check_limit(self, doc, name, limit, add):
++        path = self.document(doc, name)
++        self.assertEqual(json.loads(self.call('evaluate', path, '--format', 'json').stdout)['status'], 'completed')
++        add(doc); path = self.document(doc, name + '-over')
++        error = self.failure(path, 'RESOURCE_LIMIT', 3)['error']
++        self.assertEqual((error['limit'], error['observed']), (limit, limit+1))
++
++    def test_recording_and_label_counts(self):
++        doc = dict(schema_version=1, labels=['a'], recordings=[dict(id=f'r{i}', reference=[], prediction=[]) for i in range(1000)])
++        self.check_limit(doc, 'recordings', 1000, lambda d:d['recordings'].append(dict(id='over',reference=[],prediction=[])))
++        doc = dict(schema_version=1, labels=[f'l{i}' for i in range(256)], recordings=[])
++        self.check_limit(doc, 'labels', 256, lambda d:d['labels'].append('over'))
++
++    def test_combined_event_count(self):
++        event = lambda id,i:dict(id=id,label='a',onset_s=str(2*i),offset_s=str(2*i+1))
++        doc = dict(schema_version=1,labels=['a'],recordings=[dict(id='x',reference=[event(f'r{i}',i) for i in range(1000)],prediction=[event(f'p{i}',i) for i in range(1000)])])
++        self.check_limit(doc,'events',2000,lambda d:d['recordings'][0]['prediction'].append(event('over',1001)))
++
++    def test_codepoints_in_recording_event_and_label(self):
++        for field in ['recording','event','label']:
++            long = '😀'*256
++            event = dict(id=long if field=='event' else 'r',label=long if field=='label' else 'a',onset_s='0',offset_s='1')
++            doc = dict(schema_version=1,labels=[event['label']],recordings=[dict(id=long if field=='recording' else 'x',reference=[event],prediction=[])])
++            def add(d):
++                if field=='recording':d['recordings'][0]['id']+='😀'
++                elif field=='event':d['recordings'][0]['reference'][0]['id']+='😀'
++                else:d['labels'][0]+='😀';d['recordings'][0]['reference'][0]['label']+='😀'
++            self.check_limit(doc,field,256,add)
++
++    def test_time_and_collar_business_range(self):
++        for field in ['time','collar']:
++            doc = dict(schema_version=1,labels=['a'],recordings=[dict(id='x',reference=[dict(id='r',label='a',onset_s='2591999',offset_s='2592000')],prediction=[])])
++            if field=='collar':doc['config']=dict(collar_s='2592000')
++            path=self.document(doc,field);self.call('evaluate',path,'--format','json')
++            if field=='time':doc['recordings'][0]['reference'][0]['offset_s']='2592000.000001'
++            else:doc['config']['collar_s']='2592000.000001'
++            self.failure(self.document(doc,field+'-over'),'OUT_OF_RANGE',2)
++
++    def test_depth_equal_parses_but_schema_is_invalid(self):
++        for depth,code,exit_code in [(16,'INVALID_TYPE',2),(17,'RESOURCE_LIMIT',3)]:
++            path=self.folder/f'depth-{depth}'
++            path.write_bytes(b'['*depth+b'0'+b']'*depth)
++            self.failure(path,code,exit_code)
++
++
++if __name__ == '__main__':unittest.main()
+diff --git a/validation/README.md b/validation/README.md
+index 6874a9a..f320b5e 100644
+--- a/validation/README.md
++++ b/validation/README.md
+@@ -143,3 +143,41 @@ outputs, immediate/partial broken pipes, exact 8MiB/+1 input, depth17, invalid
+ UTF8, missing/unreadable/nonregular files and regular symlinks. Injected
+ EINTR/short-write/close failures, final A11 and cross-platform CI are not passed
+ by these tests. Demo transcripts are not personal explanation evidence.
++
++## T6 qualification (real file CLI)
++
++```sh
++.venv-reference/bin/python -W error::ResourceWarning -m unittest discover -s validation/tests -v
++.venv-reference/bin/python validation/compare.py --phase qualification --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-parity
++MEE_BIN=_build/native/release/build/cmd/mooneventeval/mooneventeval.exe MEE_EVIDENCE=evidence/T6/recheck-cli python3 -W error::ResourceWarning -m unittest discover -s tests/cli -v
++python3 validation/benchmark.py --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-performance
++python3 validation/check_io_faults.py --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-io
++python3 validation/check_mutations.py --output evidence/T6/recheck-mutations
++```
++
++All outputs need fresh directories. The prototype phase still targets the old
++JSON-argv development probe; qualification targets the real file CLI directly.
++New random populations use seed20261020 (128 binary grid, 160 ordinary decimal
++proposals), plus 46 inherited T3 cases (including24 old seed20261021 grid cases).
++Ten deliberately included unsafe decimal proposals are excluded *before* either
++implementation runs; generation.json retains all inputs and exact Fraction
++margins. Keep binary-grid, decimal-nonboundary and exact-boundary categories
++separate. Every retained base gets four product/oracle transforms; original
++sed_eval is run on each base globally and per recording, including class counts,
++both-defined metrics and explicit projection/raw substitution checks.
++
++Benchmark uses release executable, 2000-event sparse/dense/long-chain inputs,
++three processes each and per-child os.wait4 peak RSS. On Darwin it is already
++bytes (Linux KiB conversion is code only, not Linux qualification). CPU sysctl
++may require a separately approved read-only query in a sandbox; --cpu-name may
++reuse that measured result, whose command/result receipt must be kept.
++
++Fault injection compiles temporary copies of actual C/Moon sources. Syscalls
++are compile-time wrappers, with no production runtime switches or environment
++modes; production source is hash-checked unchanged. Reports distinguish these
++instrumented binary hashes from production. Nine cases cover control, combined
++EINTR/short read/write with Unicode, read/partial-read failure, zero/partial-write
++failure, close EIO/EINTR and signal init failure. This is finite fault coverage,
++not all possible filesystem/concurrency/OS failures. Mutation artifacts separately
++record build-only success before behavior kills, restored control, and equivalent
++max-operand swapping. Equivalent does not count as killed.
+diff --git a/validation/benchmark.py b/validation/benchmark.py
+new file mode 100644
+index 0000000..e452346
+--- /dev/null
++++ b/validation/benchmark.py
+@@ -0,0 +1,77 @@
++"""Native file CLI performance; per-child wait4 peak RSS, not cumulative rusage."""
++import argparse
++from fractions import Fraction
++import hashlib
++import json
++import os
++from pathlib import Path
++import platform
++import signal
++import subprocess
++import sys
++import time
++
++ROOT = Path(__file__).resolve().parents[1]
++if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
++from validation.rational_oracle import decimal_text, eligible
++
++
++def performance_cases(size=1000):
++    def e(id, onset):return dict(id=id,label='a',onset_s=decimal_text(onset),offset_s=decimal_text(onset+1))
++    for name in ['sparse','dense','chain']:
++        refs=[];preds=[]
++        for i in range(size):
++            p=Fraction(2*i if name=='sparse' else 1 if name=='dense' else 2+Fraction(i,8))
++            r=p if name!='chain' else p+Fraction(1,16) if i<size-1 else Fraction(2)-Fraction(1,16)
++            refs.append(e(f'r{i:04d}',r));preds.append(e(f'p{i:04d}',p))
++        yield name,dict(schema_version=1,labels=['a'],config=dict(collar_s='0.0625' if name=='chain' else '0.25',offset_ratio='0.5'),recordings=[dict(id='x',reference=refs,prediction=preds)])
++
++
++def measured(command,folder,timeout=30):
++    folder.mkdir();started=time.perf_counter();timed_out=False
++    with (folder/'stdout').open('wb') as stdout,(folder/'stderr').open('wb') as stderr:
++        proc=subprocess.Popen(command,cwd=ROOT,stdout=stdout,stderr=stderr)
++        while True:
++            pid,status,usage=os.wait4(proc.pid,os.WNOHANG)
++            if pid:break
++            if time.perf_counter()-started>timeout:
++                os.kill(proc.pid,signal.SIGKILL);pid,status,usage=os.wait4(proc.pid,0);timed_out=True;break
++            time.sleep(.005)
++        proc.returncode=os.waitstatus_to_exitcode(status)
++    return dict(command=command,exit_code=proc.returncode,timed_out=timed_out,
++                wall_seconds=time.perf_counter()-started,peak_rss_bytes=usage.ru_maxrss*(1 if sys.platform=='darwin' else 1024),
++                user_seconds=usage.ru_utime,system_seconds=usage.ru_stime,
++                stdout_sha256=hashlib.sha256((folder/'stdout').read_bytes()).hexdigest())
++
++
++def main():
++    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--product',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
++    parser.add_argument('--cpu-name',help='Previously measured CPU identity when sandbox denies sysctl; retain its separate receipt')
++    args=parser.parse_args();exe=args.product.resolve();output=args.output.resolve();output.mkdir(parents=True,exist_ok=True)
++    rows=[]
++    for name,doc in performance_cases():
++        folder=output/name;folder.mkdir();path=folder/'input.json';path.write_text(json.dumps(doc,separators=(',',':'))+'\n')
++        samples=[]
++        for i in range(3):
++            trial=folder/str(i);row=measured([str(exe),'evaluate',str(path),'--format','json'],trial)
++            assert row['exit_code']==0 and not (trial/'stderr').read_bytes(),row
++            actual=json.loads((trial/'stdout').read_bytes());counts=actual['summary']['counts']
++            assert counts==dict(reference=1000,prediction=1000,tp=1000,fp=0,fn=0),counts
++            assert len(actual['matches'])==len({m['reference']['id'] for m in actual['matches']})==len({m['prediction']['id'] for m in actual['matches']})==1000
++            assert all(m['basis']==eligible(m['reference'],m['prediction'],doc['config']) for m in actual['matches'])
++            edges=1000 if name=='sparse' else 1_000_000 if name=='dense' else 1999
++            steps=3000 if name=='sparse' else 502500 if name=='dense' else 6997
++            assert actual['work']==dict(candidate_checks=1_000_000,eligible_edges=edges,matching_steps=steps),actual['work']
++            row['work']=actual['work'];samples.append(row)
++        assert name!='sparse' or all(s['wall_seconds']<5 for s in samples),'sparse target missed'
++        rows.append(dict(name=name,samples=samples))
++    cpu=args.cpu_name or (subprocess.check_output(['sysctl','-n','machdep.cpu.brand_string'],text=True).strip() if sys.platform=='darwin' else platform.processor())
++    compiler=subprocess.check_output([str(ROOT/'scripts/with-toolchain.sh'),'moonc','-v'],text=True).strip()
++    report=dict(passed=True,git_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),product=str(exe),product_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),
++                platform=platform.platform(),machine=platform.machine(),cpu=cpu,logical_cpus=os.cpu_count(),compiler=compiler,cases=rows,
++                measurement='wall includes launch/read/evaluate/JSON/write to local file; wait4 per-child ru_maxrss; three independent release process samples',
++                scope='local samples only; not all-graph budget, cross-platform or universal peak/time guarantee')
++    (output/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(dict(passed=True,cases=[dict(name=r['name'],max_wall_seconds=max(s['wall_seconds'] for s in r['samples']),max_rss_bytes=max(s['peak_rss_bytes'] for s in r['samples'])) for r in rows])))
++
++
++if __name__=='__main__':main()
+diff --git a/validation/check_io_faults.py b/validation/check_io_faults.py
+new file mode 100644
+index 0000000..40b6a1e
+--- /dev/null
++++ b/validation/check_io_faults.py
+@@ -0,0 +1,98 @@
++"""Compile-time syscall injection into temporary native source copies, no runtime switches."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import shutil
++import subprocess
++import tempfile
++
++ROOT = Path(__file__).resolve().parents[1]
++
++
++def prefix(mode, stats):
++    return r'''
++#include <stdio.h>
++#include <stdlib.h>
++#include <stdint.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <errno.h>
++#include <signal.h>
++#include <sys/stat.h>
++#define FAULT_MODE MODE_VALUE
++static int oc,sc,rc,cc,wc,live;
++static void record_stats(void) {
++  FILE *f=fopen(STATS_PATH,"wb");
++  if(f){fprintf(f,"{\"open_calls\":%d,\"stat_calls\":%d,\"read_calls\":%d,\"close_calls\":%d,\"stdout_write_calls\":%d,\"live_input_fds\":%d}\n",oc,sc,rc,cc,wc,live);fclose(f);}
++}
++__attribute__((constructor)) static void init_stats(void){atexit(record_stats);}
++static int fault_open(const char *p,int flags){oc++;if(FAULT_MODE==1&&oc==1){errno=EINTR;return -1;}int fd=open(p,flags);if(fd>=0)live++;return fd;}
++static int fault_stat(int fd,struct stat *s){sc++;if(FAULT_MODE==1&&sc==1){errno=EINTR;return -1;}return fstat(fd,s);}
++static ssize_t fault_read(int fd,void *b,size_t n){rc++;if(FAULT_MODE==1&&rc==1){errno=EINTR;return -1;}if((FAULT_MODE==2&&rc==1)||(FAULT_MODE==3&&rc==2)){errno=EIO;return -1;}if((FAULT_MODE==1||FAULT_MODE==3)&&n>17)n=17;return read(fd,b,n);}
++static int fault_close(int fd){cc++;int r=close(fd);if(r==0)live--;if(FAULT_MODE==6||FAULT_MODE==7){errno=FAULT_MODE==7?EINTR:EIO;return -1;}return r;}
++static ssize_t fault_write(int fd,const void *b,size_t n){if(fd==1){wc++;if(FAULT_MODE==1&&wc==1){errno=EINTR;return -1;}if(FAULT_MODE==4)return 0;if(FAULT_MODE==5&&wc==2){errno=EIO;return -1;}if((FAULT_MODE==1||FAULT_MODE==5)&&n>7)n=7;}return write(fd,b,n);}
++typedef void (*handler)(int);
++static handler fault_signal(int s,handler h){if(FAULT_MODE==8)return SIG_ERR;return signal(s,h);}
++#define open fault_open
++#define fstat fault_stat
++#define read fault_read
++#define close fault_close
++#define write fault_write
++#define signal fault_signal
++'''.replace('MODE_VALUE',str(mode)).replace('STATS_PATH',json.dumps(str(stats)))
++
++
++def main():
++    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--product',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
++    args=parser.parse_args();output=args.output.resolve();output.mkdir(parents=True,exist_ok=True);exe=args.product.resolve()
++    original=ROOT/'cmd/mooneventeval/io_stub.c';data=original.read_bytes();source_hash=hashlib.sha256(data).hexdigest()
++    fixture=output/'input.json';fixture.write_bytes((ROOT/'evidence/T3/parity-final/unicode-order-and-escaping/input.json').read_bytes())
++    baseline=subprocess.run([str(exe),'evaluate',str(fixture),'--format','json'],capture_output=True,timeout=10)
++    assert baseline.returncode==0 and not baseline.stderr
++    (output/'production.stdout').write_bytes(baseline.stdout)
++    rows=[]
++    modes=['control','eintr-and-short-read-write','read-error','partial-read-error','zero-write','partial-write-error','close-error','close-eintr-no-retry','signal-init-error']
++    with tempfile.TemporaryDirectory(prefix='mee-io-faults-') as tmp:
++        work=Path(tmp)
++        for name in ['moon.mod','scripts/with-toolchain.sh','docs/toolchain.lock.json']:
++            target=work/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/name,target)
++        for name in ['eventeval','cli','cmd/mooneventeval']:shutil.copytree(ROOT/name,work/name)
++        (work/'.tools').symlink_to(ROOT/'.tools',target_is_directory=True)
++        for mode,name in enumerate(modes):
++            folder=output/name;folder.mkdir();stats=folder/'syscalls.json'
++            injected=prefix(mode,stats).encode()+data
++            (work/'cmd/mooneventeval/io_stub.c').write_bytes(injected);(folder/'instrumented-io_stub.c').write_bytes(injected)
++            build_command=[str(work/'scripts/with-toolchain.sh'),'moon','build','cmd/mooneventeval','--target','native','--release','--deny-warn']
++            build=subprocess.run(build_command,cwd=work,capture_output=True,timeout=120)
++            (folder/'build.stdout').write_bytes(build.stdout);(folder/'build.stderr').write_bytes(build.stderr)
++            assert build.returncode==0,(name,build.stderr)
++            binary=work/'_build/native/release/build/cmd/mooneventeval/mooneventeval.exe'
++            command=[str(binary),'evaluate',str(fixture),'--format','json']
++            result=subprocess.run(command,cwd=work,capture_output=True,timeout=10)
++            (folder/'stdout').write_bytes(result.stdout);(folder/'stderr').write_bytes(result.stderr)
++            observed=json.loads(stats.read_bytes());assert observed['live_input_fds']==0,(name,observed)
++            expected=0 if mode in [0,1] else 4 if mode==8 else 2
++            assert result.returncode==expected,(name,result.returncode,result.stderr)
++            if mode in [0,1]:assert result.stdout==baseline.stdout and not result.stderr
++            elif mode in [4,5,8]:
++                assert (b'INTERNAL_ERROR' if mode==8 else b'FILE_ERROR') in result.stderr
++                if mode==5:assert result.stdout==baseline.stdout[:7]
++                else:assert result.stdout==b''
++            else:
++                parsed=json.loads(result.stdout);assert not result.stderr
++                assert list(parsed)==['schema_version','status','error'] and parsed['status']=='failed' and parsed['error']['code']=='FILE_ERROR'
++            if mode==1:assert observed['open_calls']==2 and observed['stat_calls']==2 and observed['read_calls']>2 and observed['stdout_write_calls']>2
++            if mode!=8:assert observed['close_calls']==1
++            row=dict(name=name,exit_code=result.returncode,expected_exit=expected,syscalls=observed,
++                     instrumented_binary_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(),
++                     instrumented_source_sha256=hashlib.sha256(injected).hexdigest(),
++                     stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),passed=True)
++            (folder/'receipt.json').write_text(json.dumps(dict(command=command,build_command=build_command,build_exit_code=build.returncode,**row),indent=2)+'\n');rows.append(row)
++    assert hashlib.sha256(original.read_bytes()).hexdigest()==source_hash
++    report=dict(passed=True,production_source_sha256=source_hash,production_binary_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),cases=rows,
++                scope='temporary compile-time syscall wrappers around actual native C and unchanged Moon code; instrumented binaries are not the production binary; no runtime feature flags')
++    (output/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(dict(passed=True,cases=len(rows))))
++
++
++if __name__=='__main__':main()
+diff --git a/validation/check_mutations.py b/validation/check_mutations.py
+new file mode 100644
+index 0000000..1bc847b
+--- /dev/null
++++ b/validation/check_mutations.py
+@@ -0,0 +1,61 @@
++"""Compile each temporary mutant, require behavioral kills, preserve equivalent status."""
++import argparse
++import difflib
++import hashlib
++import json
++from pathlib import Path
++import shutil
++import subprocess
++import tempfile
++
++ROOT=Path(__file__).resolve().parents[1]
++
++
++def main():
++    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True)
++    args=parser.parse_args();out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
++    specs=[
++      ('onset-strict','eligibility.mbt','onset_abs <= config.collar_us','onset_abs < config.collar_us','eligibility_A3_onset_boundary',False),
++      ('offset-strict','eligibility.mbt','offset_abs * 1_000_000L <= offset_limit_scaled','offset_abs * 1_000_000L < offset_limit_scaled','eligibility_A4_offset_boundary_and_reference_duration',False),
++      ('minimum-collar','eligibility.mbt','if fixed_scaled > ratio_scaled','if fixed_scaled < ratio_scaled','eligibility_A4_offset_boundary_and_reference_duration',False),
++      ('prediction-duration','eligibility.mbt','(reference.offset_us - reference.onset_us)','(prediction.offset_us - prediction.onset_us)','eligibility_A4_offset_boundary_and_reference_duration',False),
++      ('reuse-prediction','matching.mbt','if prediction_match[p] == -1 {','if true {','matching_one_to_one_duplicate_and_isolated',False),
++      ('empty-f1-one','evaluation.mbt','f1: if reference + prediction == 0 {\n      None','f1: if reference + prediction == 0 {\n      Some(1.0)','evaluation_empty_denominators_and_no_edges',False),
++      ('swapped-max-equivalent','eligibility.mbt','if fixed_scaled > ratio_scaled {\n    fixed_scaled\n  } else {\n    ratio_scaled','if ratio_scaled > fixed_scaled {\n    ratio_scaled\n  } else {\n    fixed_scaled','*',True),
++    ]
++    originals={n:hashlib.sha256((ROOT/'eventeval'/n).read_bytes()).hexdigest() for n in {r[1] for r in specs}}
++    rows=[]
++    with tempfile.TemporaryDirectory(prefix='mee-mutations-') as temp:
++        work=Path(temp);shutil.copytree(ROOT/'eventeval',work/'eventeval');shutil.copy2(ROOT/'moon.mod',work/'moon.mod')
++        for n in ['scripts/with-toolchain.sh','docs/toolchain.lock.json']:
++            p=work/n;p.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/n,p)
++        (work/'.tools').symlink_to(ROOT/'.tools',target_is_directory=True)
++        for name,file,before,after,test,equivalent in specs:
++            folder=out/name;folder.mkdir();path=work/'eventeval'/file;data=path.read_text();assert data.count(before)==1,(name,data.count(before))
++            command=[str(work/'scripts/with-toolchain.sh'),'moon','test','eventeval','--target','native','--deny-warn','--filter',test]
++            def run(label,args):
++                result=subprocess.run(args,cwd=work,capture_output=True,timeout=120)
++                (folder/(label+'.stdout')).write_bytes(result.stdout);(folder/(label+'.stderr')).write_bytes(result.stderr)
++                return result
++            control=run('control',command);assert control.returncode==0 and b'failed: 0' in control.stdout,(name,control.stdout,control.stderr)
++            changed=data.replace(before,after);path.write_text(changed)
++            (folder/'mutation.diff').write_text(''.join(difflib.unified_diff(data.splitlines(True),changed.splitlines(True),fromfile=file,tofile=file)))
++            build=run('build',command+['--build-only'])
++            if build.returncode:status='invalid';result=build
++            else:
++                result=run('mutant',command)
++                killed=result.returncode!=0 and (b'failed\n' in result.stdout or b' failed' in result.stdout or b'PanicError' in result.stderr+result.stdout)
++                status='equivalent' if equivalent and result.returncode==0 else 'killed' if killed else 'survived'
++            path.write_text(data);assert hashlib.sha256(path.read_bytes()).hexdigest()==originals[file]
++            restored=run('restored',command);assert restored.returncode==0 and b'failed: 0' in restored.stdout
++            row=dict(name=name,target_test=test,status=status,compiled=build.returncode==0,control_exit=control.returncode,mutant_exit=result.returncode,restored_exit=restored.returncode,
++                     baseline_sha256=originals[file],mutant_sha256=hashlib.sha256(changed.encode()).hexdigest(),restored_sha256=hashlib.sha256(path.read_bytes()).hexdigest())
++            (folder/'receipt.json').write_text(json.dumps(dict(command=command,**row),indent=2)+'\n');rows.append(row)
++    for name,digest in originals.items():assert hashlib.sha256((ROOT/'eventeval'/name).read_bytes()).hexdigest()==digest
++    passed=all(r['status']==('equivalent' if s[-1] else 'killed') for r,s in zip(rows,specs))
++    (out/'report.json').write_text(json.dumps(dict(passed=passed,cases=rows,production_source_unchanged=True,status_counts={s:sum(r['status']==s for r in rows) for s in ['invalid','equivalent','survived','killed']}),indent=2)+'\n')
++    print(json.dumps(dict(passed=passed,statuses={r['name']:r['status'] for r in rows})))
++    raise SystemExit(0 if passed else 1)
++
++
++if __name__=='__main__':main()
+diff --git a/validation/compare.py b/validation/compare.py
+index 35928f8..0a5fa94 100644
+--- a/validation/compare.py
++++ b/validation/compare.py
+@@ -25,7 +25,7 @@ def metrics(reference, prediction, tp):
+                 f1=2*tp/(reference+prediction) if reference+prediction else None)
+ 
+ 
+-def oracle_document(document):
++def oracle_document(document, edge_predicate=eligible):
+     """Expected counts, per-group graph and bases from independent time/graph oracles."""
+     cfg = document.get('config', {})
+     groups = {}
+@@ -37,7 +37,7 @@ def oracle_document(document):
+         for label in document['labels']:
+             refs=sorted((e for e in rec['reference'] if e['label']==label),key=lambda e:e['id'])
+             preds=sorted((e for e in rec['prediction'] if e['label']==label),key=lambda e:e['id'])
+-            graph=[[p for p,pred in enumerate(preds) if eligible(ref,pred,cfg)['eligible']] for ref in refs]
++            graph=[[p for p,pred in enumerate(preds) if edge_predicate(ref,pred,cfg)['eligible']] for ref in refs]
+             tp=max_cardinality(graph,len(preds))
+             groups[(rec['id'],label)]=(refs,preds,graph,tp)
+             row=[len(refs),len(preds),tp]
+@@ -214,6 +214,58 @@ def compare_document(document: dict, product: dict, reference: dict) -> list[dic
+     return differences
+ 
+ 
++def compare_reference(document, reference, expected):
++    """Check original class counts/metrics and raw-vs-projection identities."""
++    errors=[]
++    def check(path,want,got):
++        if got!=want:errors.append(dict(path=path,expected=want,actual=got))
++    def metric(path,want,got):
++        check(path+'.counts',want['counts'],got['counts'])
++        for key in ['precision','recall','f1']:
++            value=got[key]
++            if want[key] is not None and (type(value) not in (int,float) or not math.isfinite(value) or abs(value-want[key])>1e-12):
++                errors.append(dict(path=path+'.'+key,expected=want[key],actual=value))
++            elif want[key] is None:check(path+'.'+key,None,value)
++    metric('reference.projected',expected['summary'],reference['projected'])
++    check('reference.class_wise.labels',sorted(document['labels']),sorted(reference['class_wise']))
++    for label,want in expected['by_label'].items():
++        raw=reference['class_wise'][label]
++        for key,rkey in [('reference','Nref'),('prediction','Nsys'),('tp','Ntp'),('fp','Nfp'),('fn','Nfn')]:
++            value=raw['counts'][rkey]
++            if type(value) not in (int,float) or value<0 or not math.isfinite(value) or value!=int(value):
++                errors.append(dict(path='reference.class_wise.'+label+'.'+rkey,expected='nonnegative integral count',actual=value))
++            check('reference.class_wise.'+label+'.'+rkey,want['counts'][key],value)
++        for key,rkey in [('precision','precision'),('recall','recall'),('f1','f_measure')]:
++            value=raw['metrics']['f_measure'][rkey]
++            if want[key] is not None and type(value) in (int,float) and math.isfinite(value) and abs(value-want[key])>1e-12:
++                errors.append(dict(path='reference.class_wise.'+label+'.'+key,expected=want[key],actual=value))
++    raw=reference['raw']['counts']; counts=reference['projected']['counts']
++    for key,rkey in [('reference','Nref'),('prediction','Nsys'),('tp','Ntp')]:check('reference.raw.'+rkey,counts[key],raw[rkey])
++    check('reference.raw.Nfp',raw['Nsys']-raw['Ntp']-raw['Nsubs'],raw['Nfp'])
++    check('reference.raw.Nfn',raw['Nref']-raw['Ntp']-raw['Nsubs'],raw['Nfn'])
++    for key,rkey in [('precision','precision'),('recall','recall'),('f1','f_measure')]:
++        want=expected['summary'][key];got=reference['raw']['metrics']['f_measure'][rkey]
++        if want is not None and type(got) in (int,float) and math.isfinite(got) and abs(want-got)>1e-12:
++            errors.append(dict(path='reference.raw.metrics.'+key,expected=want,actual=got))
++    return errors
++
++
++def run_file_product(product,document,folder):
++    """Binary capture, exit status first; no stdout repair or hidden child failure."""
++    folder.mkdir(parents=True,exist_ok=True)
++    path=folder/'input.json';path.write_text(json.dumps(document,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
++    command=[str(product),'evaluate',str(path.resolve()),'--format','json']
++    result=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=30)
++    (folder/'stdout').write_bytes(result.stdout);(folder/'stderr').write_bytes(result.stderr)
++    differences=[];actual=None
++    if result.returncode or result.stderr: differences.append(dict(path='process',expected='exit0 and empty stderr',actual=dict(exit_code=result.returncode,stderr=result.stderr.decode('utf-8',errors='replace'))))
++    try:actual=json.loads(result.stdout.decode('utf-8'))
++    except (ValueError,UnicodeError) as error:differences.append(dict(path='stdout',expected='strict UTF8 JSON',actual=str(error)))
++    row=dict(command=command,exit_code=result.returncode,stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),stderr_sha256=hashlib.sha256(result.stderr).hexdigest(),differences=differences)
++    (folder/'process.json').write_text(json.dumps(row,indent=2)+'\n')
++    return dict(**row,product=actual,stdout=result.stdout)
++
++
+ # Prototype corpus and process driver are below; the library comparator above is
+ # deliberately usable without importing sed_eval or a product binary.
+ def prototype_cases():
+@@ -382,8 +434,11 @@ def run_prototype(product,output):
+ 
+ if __name__=='__main__':
+     parser=argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--phase',choices=['prototype'],required=True)
++    parser.add_argument('--phase',choices=['prototype','qualification'],required=True)
+     parser.add_argument('--product',type=Path,required=True)
+     parser.add_argument('--output',type=Path,required=True)
+     args=parser.parse_args()
++    if args.phase=='qualification':
++        from validation.qualify import run_qualification
++        raise SystemExit(run_qualification(args.product.resolve(),args.output.resolve()))
+     raise SystemExit(run_prototype(args.product.resolve(),args.output.resolve()))
+diff --git a/validation/fixtures/comparison-baseline.json b/validation/fixtures/comparison-baseline.json
+new file mode 100644
+index 0000000..f8776d7
+--- /dev/null
++++ b/validation/fixtures/comparison-baseline.json
+@@ -0,0 +1,390 @@
++{
++  "input": {
++    "schema_version": 1,
++    "labels": [
++      "alarm"
++    ],
++    "recordings": [
++      {
++        "id": "clip-01",
++        "reference": [
++          {
++            "id": "r",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ],
++        "prediction": []
++      },
++      {
++        "id": "prediction-only",
++        "reference": [],
++        "prediction": [
++          {
++            "id": "p",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ]
++      }
++    ]
++  },
++  "product": {
++    "schema_version": 1,
++    "semantics": "collar-max-cardinality/v1",
++    "implementation_version": "0.1.0",
++    "status": "completed",
++    "config": {
++      "collar_s": "0.2",
++      "offset_ratio": "0.5"
++    },
++    "summary": {
++      "counts": {
++        "reference": 1,
++        "prediction": 1,
++        "tp": 0,
++        "fp": 1,
++        "fn": 1
++      },
++      "precision": 0,
++      "recall": 0,
++      "f1": 0
++    },
++    "by_label": [
++      {
++        "label": "alarm",
++        "metrics": {
++          "counts": {
++            "reference": 1,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 1
++          },
++          "precision": 0,
++          "recall": 0,
++          "f1": 0
++        }
++      }
++    ],
++    "by_recording": [
++      {
++        "recording_id": "clip-01",
++        "metrics": {
++          "counts": {
++            "reference": 1,
++            "prediction": 0,
++            "tp": 0,
++            "fp": 0,
++            "fn": 1
++          },
++          "precision": null,
++          "recall": 0,
++          "f1": 0
++        }
++      },
++      {
++        "recording_id": "prediction-only",
++        "metrics": {
++          "counts": {
++            "reference": 0,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0,
++          "recall": null,
++          "f1": 0
++        }
++      }
++    ],
++    "matches": [],
++    "false_positives": [
++      {
++        "recording_id": "prediction-only",
++        "event": {
++          "id": "p",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "candidate_count": 0,
++        "reason": "no_eligible_candidate"
++      }
++    ],
++    "false_negatives": [
++      {
++        "recording_id": "clip-01",
++        "event": {
++          "id": "r",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "candidate_count": 0,
++        "reason": "no_eligible_candidate"
++      }
++    ],
++    "work": {
++      "candidate_checks": 0,
++      "eligible_edges": 0,
++      "matching_steps": 1
++    }
++  },
++  "reference": {
++    "raw": {
++      "counts": {
++        "Nref": 1.0,
++        "Nsys": 1.0,
++        "Nsubs": 0.0,
++        "Ntp": 0.0,
++        "Nfp": 1.0,
++        "Nfn": 1.0
++      },
++      "metrics": {
++        "f_measure": {
++          "f_measure": 0.0,
++          "precision": 0.0,
++          "recall": 0.0
++        },
++        "error_rate": {
++          "error_rate": 1.9999999999999996,
++          "substitution_rate": 0.0,
++          "deletion_rate": 0.9999999999999998,
++          "insertion_rate": 0.9999999999999998
++        },
++        "accuracy": {}
++      }
++    },
++    "class_wise": {
++      "alarm": {
++        "counts": {
++          "Nref": 1.0,
++          "Nsys": 1.0,
++          "Ntp": 0.0,
++          "Ntn": 0.0,
++          "Nfp": 1.0,
++          "Nfn": 1.0
++        },
++        "metrics": {
++          "f_measure": {
++            "f_measure": 0.0,
++            "precision": 0.0,
++            "recall": 0.0
++          },
++          "accuracy": {},
++          "error_rate": {
++            "error_rate": 1.9999999999999996,
++            "deletion_rate": 0.9999999999999998,
++            "insertion_rate": 0.9999999999999998
++          },
++          "count": {
++            "Nref": 1.0,
++            "Nsys": 1.0
++          }
++        }
++      }
++    },
++    "projected": {
++      "counts": {
++        "reference": 1,
++        "prediction": 1,
++        "tp": 0,
++        "fp": 1,
++        "fn": 1
++      },
++      "precision": 0.0,
++      "recall": 0.0,
++      "f1": 0.0
++    },
++    "metric_definition_flags": {
++      "projected_precision_defined": true,
++      "projected_recall_defined": true,
++      "projected_f1_defined": true,
++      "raw_precision_defined": true,
++      "raw_recall_defined": true,
++      "raw_f1_defined": true,
++      "reference_time_representation": "binary64_from_decimal_strings",
++      "matching": "original_sed_eval_optimal",
++      "zero_collar_supported": false
++    },
++    "prototype_binary64_witnesses": [],
++    "prototype_by_recording": {
++      "clip-01": {
++        "raw": {
++          "counts": {
++            "Nref": 1.0,
++            "Nsys": 0.0,
++            "Nsubs": 0.0,
++            "Ntp": 0.0,
++            "Nfp": 0.0,
++            "Nfn": 1.0
++          },
++          "metrics": {
++            "f_measure": {
++              "f_measure": {
++                "nonfinite": "NaN"
++              },
++              "precision": {
++                "nonfinite": "NaN"
++              },
++              "recall": 0.0
++            },
++            "error_rate": {
++              "error_rate": 0.9999999999999998,
++              "substitution_rate": 0.0,
++              "deletion_rate": 0.9999999999999998,
++              "insertion_rate": 0.0
++            },
++            "accuracy": {}
++          }
++        },
++        "class_wise": {
++          "alarm": {
++            "counts": {
++              "Nref": 1.0,
++              "Nsys": 0.0,
++              "Ntp": 0.0,
++              "Ntn": 0.0,
++              "Nfp": 0.0,
++              "Nfn": 1.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": {
++                  "nonfinite": "NaN"
++                },
++                "precision": {
++                  "nonfinite": "NaN"
++                },
++                "recall": 0.0
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 0.9999999999999998,
++                "deletion_rate": 0.9999999999999998,
++                "insertion_rate": 0.0
++              },
++              "count": {
++                "Nref": 1.0,
++                "Nsys": 0.0
++              }
++            }
++          }
++        },
++        "projected": {
++          "counts": {
++            "reference": 1,
++            "prediction": 0,
++            "tp": 0,
++            "fp": 0,
++            "fn": 1
++          },
++          "precision": null,
++          "recall": 0.0,
++          "f1": 0.0
++        },
++        "metric_definition_flags": {
++          "projected_precision_defined": false,
++          "projected_recall_defined": true,
++          "projected_f1_defined": true,
++          "raw_precision_defined": false,
++          "raw_recall_defined": true,
++          "raw_f1_defined": false,
++          "reference_time_representation": "binary64_from_decimal_strings",
++          "matching": "original_sed_eval_optimal",
++          "zero_collar_supported": false
++        }
++      },
++      "prediction-only": {
++        "raw": {
++          "counts": {
++            "Nref": 0.0,
++            "Nsys": 1.0,
++            "Nsubs": 0.0,
++            "Ntp": 0.0,
++            "Nfp": 1.0,
++            "Nfn": 0.0
++          },
++          "metrics": {
++            "f_measure": {
++              "f_measure": {
++                "nonfinite": "NaN"
++              },
++              "precision": 0.0,
++              "recall": {
++                "nonfinite": "NaN"
++              }
++            },
++            "error_rate": {
++              "error_rate": 4503599627370496.0,
++              "substitution_rate": 0.0,
++              "deletion_rate": 0.0,
++              "insertion_rate": 4503599627370496.0
++            },
++            "accuracy": {}
++          }
++        },
++        "class_wise": {
++          "alarm": {
++            "counts": {
++              "Nref": 0.0,
++              "Nsys": 1.0,
++              "Ntp": 0.0,
++              "Ntn": 0.0,
++              "Nfp": 1.0,
++              "Nfn": 0.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": {
++                  "nonfinite": "NaN"
++                },
++                "precision": 0.0,
++                "recall": {
++                  "nonfinite": "NaN"
++                }
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 4503599627370496.0,
++                "deletion_rate": 0.0,
++                "insertion_rate": 4503599627370496.0
++              },
++              "count": {
++                "Nref": 0.0,
++                "Nsys": 1.0
++              }
++            }
++          }
++        },
++        "projected": {
++          "counts": {
++            "reference": 0,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0.0,
++          "recall": null,
++          "f1": 0.0
++        },
++        "metric_definition_flags": {
++          "projected_precision_defined": true,
++          "projected_recall_defined": false,
++          "projected_f1_defined": true,
++          "raw_precision_defined": true,
++          "raw_recall_defined": false,
++          "raw_f1_defined": false,
++          "reference_time_representation": "binary64_from_decimal_strings",
++          "matching": "original_sed_eval_optimal",
++          "zero_collar_supported": false
++        }
++      }
++    }
++  }
++}
+diff --git a/validation/fixtures/comparison-equivalent.json b/validation/fixtures/comparison-equivalent.json
+new file mode 100644
+index 0000000..278ba44
+--- /dev/null
++++ b/validation/fixtures/comparison-equivalent.json
+@@ -0,0 +1,335 @@
++{
++  "input": {
++    "schema_version": 1,
++    "labels": [
++      "alarm"
++    ],
++    "recordings": [
++      {
++        "id": "clip-01",
++        "reference": [
++          {
++            "id": "r2",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          },
++          {
++            "id": "r1",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ],
++        "prediction": [
++          {
++            "id": "p3",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          },
++          {
++            "id": "p2",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          },
++          {
++            "id": "p1",
++            "label": "alarm",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ]
++      }
++    ]
++  },
++  "product": {
++    "schema_version": 1,
++    "semantics": "collar-max-cardinality/v1",
++    "implementation_version": "0.1.0",
++    "status": "completed",
++    "config": {
++      "collar_s": "0.2",
++      "offset_ratio": "0.5"
++    },
++    "summary": {
++      "counts": {
++        "reference": 2,
++        "prediction": 3,
++        "tp": 2,
++        "fp": 1,
++        "fn": 0
++      },
++      "precision": 0.6666666666666666,
++      "recall": 1,
++      "f1": 0.8
++    },
++    "by_label": [
++      {
++        "label": "alarm",
++        "metrics": {
++          "counts": {
++            "reference": 2,
++            "prediction": 3,
++            "tp": 2,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0.6666666666666666,
++          "recall": 1,
++          "f1": 0.8
++        }
++      }
++    ],
++    "by_recording": [
++      {
++        "recording_id": "clip-01",
++        "metrics": {
++          "counts": {
++            "reference": 2,
++            "prediction": 3,
++            "tp": 2,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0.6666666666666666,
++          "recall": 1,
++          "f1": 0.8
++        }
++      }
++    ],
++    "matches": [
++      {
++        "recording_id": "clip-01",
++        "label": "alarm",
++        "reference": {
++          "id": "r1",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "prediction": {
++          "id": "p1",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "basis": {
++          "label_match": true,
++          "onset_pass": true,
++          "offset_pass": true,
++          "eligible": true,
++          "onset_delta_s": "0",
++          "offset_delta_s": "0",
++          "onset_limit_s": "0.2",
++          "offset_limit_s": "0.5"
++        }
++      },
++      {
++        "recording_id": "clip-01",
++        "label": "alarm",
++        "reference": {
++          "id": "r2",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "prediction": {
++          "id": "p2",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "basis": {
++          "label_match": true,
++          "onset_pass": true,
++          "offset_pass": true,
++          "eligible": true,
++          "onset_delta_s": "0",
++          "offset_delta_s": "0",
++          "onset_limit_s": "0.2",
++          "offset_limit_s": "0.5"
++        }
++      }
++    ],
++    "false_positives": [
++      {
++        "recording_id": "clip-01",
++        "event": {
++          "id": "p3",
++          "label": "alarm",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "candidate_count": 2,
++        "reason": "unselected_in_maximum_matching"
++      }
++    ],
++    "false_negatives": [],
++    "work": {
++      "candidate_checks": 6,
++      "eligible_edges": 6,
++      "matching_steps": 7
++    }
++  },
++  "reference": {
++    "raw": {
++      "counts": {
++        "Nref": 2.0,
++        "Nsys": 3.0,
++        "Nsubs": 0.0,
++        "Ntp": 2.0,
++        "Nfp": 1.0,
++        "Nfn": 0.0
++      },
++      "metrics": {
++        "f_measure": {
++          "f_measure": 0.8,
++          "precision": 0.6666666666666666,
++          "recall": 1.0
++        },
++        "error_rate": {
++          "error_rate": 0.5,
++          "substitution_rate": 0.0,
++          "deletion_rate": 0.0,
++          "insertion_rate": 0.5
++        },
++        "accuracy": {}
++      }
++    },
++    "class_wise": {
++      "alarm": {
++        "counts": {
++          "Nref": 2.0,
++          "Nsys": 3.0,
++          "Ntp": 2.0,
++          "Ntn": 0.0,
++          "Nfp": 1.0,
++          "Nfn": 0.0
++        },
++        "metrics": {
++          "f_measure": {
++            "f_measure": 0.8,
++            "precision": 0.6666666666666666,
++            "recall": 1.0
++          },
++          "accuracy": {},
++          "error_rate": {
++            "error_rate": 0.5,
++            "deletion_rate": 0.0,
++            "insertion_rate": 0.5
++          },
++          "count": {
++            "Nref": 2.0,
++            "Nsys": 3.0
++          }
++        }
++      }
++    },
++    "projected": {
++      "counts": {
++        "reference": 2,
++        "prediction": 3,
++        "tp": 2,
++        "fp": 1,
++        "fn": 0
++      },
++      "precision": 0.6666666666666666,
++      "recall": 1.0,
++      "f1": 0.8
++    },
++    "metric_definition_flags": {
++      "projected_precision_defined": true,
++      "projected_recall_defined": true,
++      "projected_f1_defined": true,
++      "raw_precision_defined": true,
++      "raw_recall_defined": true,
++      "raw_f1_defined": true,
++      "reference_time_representation": "binary64_from_decimal_strings",
++      "matching": "original_sed_eval_optimal",
++      "zero_collar_supported": false
++    },
++    "prototype_binary64_witnesses": [],
++    "prototype_by_recording": {
++      "clip-01": {
++        "raw": {
++          "counts": {
++            "Nref": 2.0,
++            "Nsys": 3.0,
++            "Nsubs": 0.0,
++            "Ntp": 2.0,
++            "Nfp": 1.0,
++            "Nfn": 0.0
++          },
++          "metrics": {
++            "f_measure": {
++              "f_measure": 0.8,
++              "precision": 0.6666666666666666,
++              "recall": 1.0
++            },
++            "error_rate": {
++              "error_rate": 0.5,
++              "substitution_rate": 0.0,
++              "deletion_rate": 0.0,
++              "insertion_rate": 0.5
++            },
++            "accuracy": {}
++          }
++        },
++        "class_wise": {
++          "alarm": {
++            "counts": {
++              "Nref": 2.0,
++              "Nsys": 3.0,
++              "Ntp": 2.0,
++              "Ntn": 0.0,
++              "Nfp": 1.0,
++              "Nfn": 0.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": 0.8,
++                "precision": 0.6666666666666666,
++                "recall": 1.0
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 0.5,
++                "deletion_rate": 0.0,
++                "insertion_rate": 0.5
++              },
++              "count": {
++                "Nref": 2.0,
++                "Nsys": 3.0
++              }
++            }
++          }
++        },
++        "projected": {
++          "counts": {
++            "reference": 2,
++            "prediction": 3,
++            "tp": 2,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0.6666666666666666,
++          "recall": 1.0,
++          "f1": 0.8
++        },
++        "metric_definition_flags": {
++          "projected_precision_defined": true,
++          "projected_recall_defined": true,
++          "projected_f1_defined": true,
++          "raw_precision_defined": true,
++          "raw_recall_defined": true,
++          "raw_f1_defined": true,
++          "reference_time_representation": "binary64_from_decimal_strings",
++          "matching": "original_sed_eval_optimal",
++          "zero_collar_supported": false
++        }
++      }
++    }
++  }
++}
+diff --git a/validation/fixtures/comparison-substitution.json b/validation/fixtures/comparison-substitution.json
+new file mode 100644
+index 0000000..ed47ee8
+--- /dev/null
++++ b/validation/fixtures/comparison-substitution.json
+@@ -0,0 +1,444 @@
++{
++  "input": {
++    "schema_version": 1,
++    "labels": [
++      "A",
++      "B",
++      "unused"
++    ],
++    "recordings": [
++      {
++        "id": "clip-01",
++        "reference": [
++          {
++            "id": "r",
++            "label": "A",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ],
++        "prediction": [
++          {
++            "id": "p",
++            "label": "B",
++            "onset_s": "1",
++            "offset_s": "2"
++          }
++        ]
++      }
++    ]
++  },
++  "product": {
++    "schema_version": 1,
++    "semantics": "collar-max-cardinality/v1",
++    "implementation_version": "0.1.0",
++    "status": "completed",
++    "config": {
++      "collar_s": "0.2",
++      "offset_ratio": "0.5"
++    },
++    "summary": {
++      "counts": {
++        "reference": 1,
++        "prediction": 1,
++        "tp": 0,
++        "fp": 1,
++        "fn": 1
++      },
++      "precision": 0,
++      "recall": 0,
++      "f1": 0
++    },
++    "by_label": [
++      {
++        "label": "A",
++        "metrics": {
++          "counts": {
++            "reference": 1,
++            "prediction": 0,
++            "tp": 0,
++            "fp": 0,
++            "fn": 1
++          },
++          "precision": null,
++          "recall": 0,
++          "f1": 0
++        }
++      },
++      {
++        "label": "B",
++        "metrics": {
++          "counts": {
++            "reference": 0,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 0
++          },
++          "precision": 0,
++          "recall": null,
++          "f1": 0
++        }
++      },
++      {
++        "label": "unused",
++        "metrics": {
++          "counts": {
++            "reference": 0,
++            "prediction": 0,
++            "tp": 0,
++            "fp": 0,
++            "fn": 0
++          },
++          "precision": null,
++          "recall": null,
++          "f1": null
++        }
++      }
++    ],
++    "by_recording": [
++      {
++        "recording_id": "clip-01",
++        "metrics": {
++          "counts": {
++            "reference": 1,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 1
++          },
++          "precision": 0,
++          "recall": 0,
++          "f1": 0
++        }
++      }
++    ],
++    "matches": [],
++    "false_positives": [
++      {
++        "recording_id": "clip-01",
++        "event": {
++          "id": "p",
++          "label": "B",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "candidate_count": 0,
++        "reason": "no_eligible_candidate"
++      }
++    ],
++    "false_negatives": [
++      {
++        "recording_id": "clip-01",
++        "event": {
++          "id": "r",
++          "label": "A",
++          "onset_s": "1",
++          "offset_s": "2"
++        },
++        "candidate_count": 0,
++        "reason": "no_eligible_candidate"
++      }
++    ],
++    "work": {
++      "candidate_checks": 0,
++      "eligible_edges": 0,
++      "matching_steps": 1
++    }
++  },
++  "reference": {
++    "raw": {
++      "counts": {
++        "Nref": 1.0,
++        "Nsys": 1.0,
++        "Nsubs": 1.0,
++        "Ntp": 0.0,
++        "Nfp": 0.0,
++        "Nfn": 0.0
++      },
++      "metrics": {
++        "f_measure": {
++          "f_measure": 0.0,
++          "precision": 0.0,
++          "recall": 0.0
++        },
++        "error_rate": {
++          "error_rate": 0.9999999999999998,
++          "substitution_rate": 0.9999999999999998,
++          "deletion_rate": 0.0,
++          "insertion_rate": 0.0
++        },
++        "accuracy": {}
++      }
++    },
++    "class_wise": {
++      "A": {
++        "counts": {
++          "Nref": 1.0,
++          "Nsys": 0.0,
++          "Ntp": 0.0,
++          "Ntn": 0.0,
++          "Nfp": 0.0,
++          "Nfn": 1.0
++        },
++        "metrics": {
++          "f_measure": {
++            "f_measure": {
++              "nonfinite": "NaN"
++            },
++            "precision": {
++              "nonfinite": "NaN"
++            },
++            "recall": 0.0
++          },
++          "accuracy": {},
++          "error_rate": {
++            "error_rate": 0.9999999999999998,
++            "deletion_rate": 0.9999999999999998,
++            "insertion_rate": 0.0
++          },
++          "count": {
++            "Nref": 1.0,
++            "Nsys": 0.0
++          }
++        }
++      },
++      "B": {
++        "counts": {
++          "Nref": 0.0,
++          "Nsys": 1.0,
++          "Ntp": 0.0,
++          "Ntn": 0.0,
++          "Nfp": 1.0,
++          "Nfn": 0.0
++        },
++        "metrics": {
++          "f_measure": {
++            "f_measure": {
++              "nonfinite": "NaN"
++            },
++            "precision": 0.0,
++            "recall": {
++              "nonfinite": "NaN"
++            }
++          },
++          "accuracy": {},
++          "error_rate": {
++            "error_rate": 4503599627370496.0,
++            "deletion_rate": 0.0,
++            "insertion_rate": 4503599627370496.0
++          },
++          "count": {
++            "Nref": 0.0,
++            "Nsys": 1.0
++          }
++        }
++      },
++      "unused": {
++        "counts": {
++          "Nref": 0.0,
++          "Nsys": 0.0,
++          "Ntp": 0.0,
++          "Ntn": 0.0,
++          "Nfp": 0.0,
++          "Nfn": 0.0
++        },
++        "metrics": {
++          "f_measure": {
++            "f_measure": {
++              "nonfinite": "NaN"
++            },
++            "precision": {
++              "nonfinite": "NaN"
++            },
++            "recall": {
++              "nonfinite": "NaN"
++            }
++          },
++          "accuracy": {},
++          "error_rate": {
++            "error_rate": 0.0,
++            "deletion_rate": 0.0,
++            "insertion_rate": 0.0
++          },
++          "count": {
++            "Nref": 0.0,
++            "Nsys": 0.0
++          }
++        }
++      }
++    },
++    "projected": {
++      "counts": {
++        "reference": 1,
++        "prediction": 1,
++        "tp": 0,
++        "fp": 1,
++        "fn": 1
++      },
++      "precision": 0.0,
++      "recall": 0.0,
++      "f1": 0.0
++    },
++    "metric_definition_flags": {
++      "projected_precision_defined": true,
++      "projected_recall_defined": true,
++      "projected_f1_defined": true,
++      "raw_precision_defined": true,
++      "raw_recall_defined": true,
++      "raw_f1_defined": true,
++      "reference_time_representation": "binary64_from_decimal_strings",
++      "matching": "original_sed_eval_optimal",
++      "zero_collar_supported": false
++    },
++    "prototype_binary64_witnesses": [],
++    "prototype_by_recording": {
++      "clip-01": {
++        "raw": {
++          "counts": {
++            "Nref": 1.0,
++            "Nsys": 1.0,
++            "Nsubs": 1.0,
++            "Ntp": 0.0,
++            "Nfp": 0.0,
++            "Nfn": 0.0
++          },
++          "metrics": {
++            "f_measure": {
++              "f_measure": 0.0,
++              "precision": 0.0,
++              "recall": 0.0
++            },
++            "error_rate": {
++              "error_rate": 0.9999999999999998,
++              "substitution_rate": 0.9999999999999998,
++              "deletion_rate": 0.0,
++              "insertion_rate": 0.0
++            },
++            "accuracy": {}
++          }
++        },
++        "class_wise": {
++          "A": {
++            "counts": {
++              "Nref": 1.0,
++              "Nsys": 0.0,
++              "Ntp": 0.0,
++              "Ntn": 0.0,
++              "Nfp": 0.0,
++              "Nfn": 1.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": {
++                  "nonfinite": "NaN"
++                },
++                "precision": {
++                  "nonfinite": "NaN"
++                },
++                "recall": 0.0
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 0.9999999999999998,
++                "deletion_rate": 0.9999999999999998,
++                "insertion_rate": 0.0
++              },
++              "count": {
++                "Nref": 1.0,
++                "Nsys": 0.0
++              }
++            }
++          },
++          "B": {
++            "counts": {
++              "Nref": 0.0,
++              "Nsys": 1.0,
++              "Ntp": 0.0,
++              "Ntn": 0.0,
++              "Nfp": 1.0,
++              "Nfn": 0.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": {
++                  "nonfinite": "NaN"
++                },
++                "precision": 0.0,
++                "recall": {
++                  "nonfinite": "NaN"
++                }
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 4503599627370496.0,
++                "deletion_rate": 0.0,
++                "insertion_rate": 4503599627370496.0
++              },
++              "count": {
++                "Nref": 0.0,
++                "Nsys": 1.0
++              }
++            }
++          },
++          "unused": {
++            "counts": {
++              "Nref": 0.0,
++              "Nsys": 0.0,
++              "Ntp": 0.0,
++              "Ntn": 0.0,
++              "Nfp": 0.0,
++              "Nfn": 0.0
++            },
++            "metrics": {
++              "f_measure": {
++                "f_measure": {
++                  "nonfinite": "NaN"
++                },
++                "precision": {
++                  "nonfinite": "NaN"
++                },
++                "recall": {
++                  "nonfinite": "NaN"
++                }
++              },
++              "accuracy": {},
++              "error_rate": {
++                "error_rate": 0.0,
++                "deletion_rate": 0.0,
++                "insertion_rate": 0.0
++              },
++              "count": {
++                "Nref": 0.0,
++                "Nsys": 0.0
++              }
++            }
++          }
++        },
++        "projected": {
++          "counts": {
++            "reference": 1,
++            "prediction": 1,
++            "tp": 0,
++            "fp": 1,
++            "fn": 1
++          },
++          "precision": 0.0,
++          "recall": 0.0,
++          "f1": 0.0
++        },
++        "metric_definition_flags": {
++          "projected_precision_defined": true,
++          "projected_recall_defined": true,
++          "projected_f1_defined": true,
++          "raw_precision_defined": true,
++          "raw_recall_defined": true,
++          "raw_f1_defined": true,
++          "reference_time_representation": "binary64_from_decimal_strings",
++          "matching": "original_sed_eval_optimal",
++          "zero_collar_supported": false
++        }
++      }
++    }
++  }
++}
+diff --git a/validation/generate_cases.py b/validation/generate_cases.py
+new file mode 100644
+index 0000000..4be7635
+--- /dev/null
++++ b/validation/generate_cases.py
+@@ -0,0 +1,78 @@
++"""Deterministic, preselected qualification inputs; no product/reference outputs."""
++import copy
++from fractions import Fraction
++import random
++
++from validation.rational_oracle import number, decimal_text
++
++SEED = 20261020
++
++
++def safe_margins(document):
++    cfg = document.get('config', {}); collar = number(cfg.get('collar_s', '0.2')); ratio = number(cfg.get('offset_ratio', '0.5'))
++    unsafe = []; minimum = None; comparisons = 0
++    for rec in document['recordings']:
++        for r in rec['reference']:
++            for p in rec['prediction']:
++                if r['label'] != p['label']: continue
++                onset = abs(number(p['onset_s']) - number(r['onset_s']))
++                offset = abs(number(p['offset_s']) - number(r['offset_s']))
++                limit = max(collar, (number(r['offset_s']) - number(r['onset_s'])) * ratio)
++                for kind, margin in [('onset', abs(onset - collar)), ('offset', abs(offset - limit))]:
++                    comparisons += 1
++                    minimum = margin if minimum is None else min(minimum, margin)
++                    if margin <= Fraction(1, 1_000_000):
++                        unsafe.append(dict(recording_id=rec['id'], reference=r['id'], prediction=p['id'],
++                                           condition=kind, margin_s=decimal_text(margin)))
++    return dict(comparisons=comparisons, minimum_margin_s=None if minimum is None else decimal_text(minimum), unsafe=unsafe)
++
++
++def event(id, onset, duration, label, unit):
++    return dict(id=id, label=label, onset_s=decimal_text(Fraction(onset, unit)), offset_s=decimal_text(Fraction(onset + duration, unit)))
++
++
++def random_document(rng, grid):
++    unit = 8 if grid else 1_000_000
++    document = dict(schema_version=1, labels=['A', 'B', 'unused'], recordings=[])
++    if grid: document['config'] = dict(collar_s='0.25', offset_ratio='0.5')
++    for i in range(rng.randint(1, 3)):
++        refs = []; preds = []
++        for j in range(rng.randint(0, 4)):
++            onset = rng.randint(unit, 10 * unit); duration = rng.randint(1 if grid else 100_000, 3 * unit)
++            refs.append(event('r' + str(j), onset, duration, rng.choice(['A', 'B']), unit))
++        for j in range(rng.randint(0, 4)):
++            if refs and rng.random() < .75:
++                r = rng.choice(refs); onset = int(number(r['onset_s']) * unit) + rng.randint(-unit // 2, unit // 2)
++                duration = int((number(r['offset_s']) - number(r['onset_s'])) * unit)
++                label = r['label'] if rng.random() < .8 else rng.choice(['A', 'B'])
++            else:
++                onset = rng.randint(unit, 10 * unit); duration = rng.randint(1 if grid else 100_000, 3 * unit); label = rng.choice(['A', 'B'])
++            preds.append(event('p' + str(j), onset, duration, label, unit))
++        document['recordings'].append(dict(id='rec-' + str(i), reference=refs, prediction=preds))
++    return document
++
++
++def qualification_cases():
++    from validation.compare import prototype_cases
++    rng = random.Random(SEED); accepted = []; excluded = []
++    for i in range(128):
++        accepted.append(dict(name=f'grid-{i:03d}', category='binary_grid', document=random_document(rng, True)))
++    for i in range(160):
++        doc = random_document(rng, False)
++        if i % 16 == 0:
++            # Deliberately include known preselection rejects, before any evaluation.
++            doc['recordings'].append(dict(id='boundary-reject', reference=[event('r', 10_000_000, 2_000_000, 'A', 1_000_000)],
++                                         prediction=[event('p', 10_200_000, 2_000_000, 'A', 1_000_000)]))
++        margins = safe_margins(doc)
++        row = dict(name=f'decimal-{i:03d}', category='decimal_nonboundary', document=doc, margins=margins)
++        (excluded if margins['unsafe'] else accepted).append(row)
++    for name, doc, category in prototype_cases():
++        if category in ['decimal_boundary', 'zero_collar']: group = 'exact_boundary'
++        elif doc.get('config', {}).get('collar_s') == '0.25': group = 'binary_grid'
++        else: group = 'decimal_nonboundary'
++        row = dict(name='fixed-' + name, category=group, document=copy.deepcopy(doc))
++        if group == 'decimal_nonboundary':
++            row['margins'] = safe_margins(doc)
++            if row['margins']['unsafe']: row['category'] = 'exact_boundary'
++        accepted.append(row)
++    return accepted, excluded
+diff --git a/validation/qualify.py b/validation/qualify.py
+new file mode 100644
+index 0000000..9249163
+--- /dev/null
++++ b/validation/qualify.py
+@@ -0,0 +1,125 @@
++"""Real file-CLI qualification with exact oracle, original reference and transforms."""
++import copy
++import hashlib
++import json
++from pathlib import Path
++import random
++import subprocess
++import traceback
++
++from validation.compare import (ROOT, binary64_witnesses, compare_document,
++                                compare_reference, oracle_document, run_file_product)
++from validation.generate_cases import SEED, qualification_cases
++from validation.rational_oracle import decimal_text, number
++
++
++def save(path, value):
++    path.write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + '\n', encoding='utf-8')
++
++
++def float_edge(r, p, cfg):
++    c = float(cfg.get('collar_s', '.2')); q = float(cfg.get('offset_ratio', '.5'))
++    return dict(eligible=r['label'] == p['label'] and abs(float(p['onset_s'])-float(r['onset_s'])) <= c
++                and abs(float(p['offset_s'])-float(r['offset_s'])) <= max(c, (float(r['offset_s'])-float(r['onset_s']))*q))
++
++
++def transformations(document, rng):
++    shuffled = copy.deepcopy(document); rng.shuffle(shuffled['labels']); rng.shuffle(shuffled['recordings'])
++    for rec in shuffled['recordings']:
++        rng.shuffle(rec['reference']); rng.shuffle(rec['prediction'])
++    shifted = copy.deepcopy(document)
++    for rec in shifted['recordings']:
++        for e in rec['reference'] + rec['prediction']:
++            for key in ['onset_s', 'offset_s']: e[key] = decimal_text(number(e[key]) + 1)
++    doubled = copy.deepcopy(document)
++    doubled['recordings'] += [{**copy.deepcopy(rec), 'id': 'clone:' + rec['id']} for rec in document['recordings']]
++    extra = copy.deepcopy(document)
++    extra['recordings'][0]['prediction'].append(dict(id='~no-candidate', label=document['labels'][0], onset_s='2591990', offset_s='2591991'))
++    return [('reordered', shuffled), ('shifted', shifted), ('doubled', doubled), ('extra-prediction', extra)]
++
++
++def serialize_oracle(oracle):
++    return {**{k:v for k,v in oracle.items() if k != 'groups'},
++            'groups':[dict(recording_id=k[0], label=k[1], reference=v[0], prediction=v[1], adjacency=v[2], tp=v[3])
++                      for k,v in oracle['groups'].items()]}
++
++
++def run_qualification(product, output, cases=None):
++    from validation.sed_reference import evaluate_document
++    output.mkdir(parents=True, exist_ok=True)
++    if any(output.iterdir()):raise FileExistsError('use a fresh empty qualification output directory')
++    if cases is None: cases, excluded = qualification_cases()
++    else: excluded = []
++    save(output/'generation.json', dict(seed=SEED, categories={k:sum(c['category']==k for c in cases) for k in sorted({c['category'] for c in cases})},
++                                       accepted=len(cases), excluded_count=len(excluded), proposed=len(cases)+len(excluded),
++                                       accepted_inputs_and_margins=cases, excluded=excluded,
++                                       inherited_prototype_seed=20261021,
++                                       rule='Before evaluation, reject whole decimal input if any same-recording/same-label onset or offset margin <= 0.000001 seconds'))
++    rng = random.Random(SEED); records = []; unexplained = []
++    for case in cases:
++        name=case['name']; document=case['document']; folder=output/name; folder.mkdir()
++        differences=[]; classification='unexplained'; transforms=[]
++        try:
++            base=run_file_product(product,document,folder/'base')
++            differences += base['differences']
++            exact=oracle_document(document); save(folder/'exact-oracle.json',serialize_oracle(exact))
++            if not differences:
++                differences += compare_document(document,base['product'],dict(projected=exact['summary']))
++            if not differences:
++                if number(document.get('config',{}).get('collar_s','0.2')) == 0:
++                    try:evaluate_document(document)
++                    except ValueError as error:
++                        if str(error)!='t_collar needs to be float > 0':raise
++                        save(folder/'reference.json',dict(domain_error='ValueError', message=str(error), exact_collar_s='0', zero_collar_supported=False))
++                        classification='reference_zero_collar_domain_limit_exact_checked'
++                    else: differences.append(dict(path='reference.domain',expected='original rejects zero collar',actual='accepted'))
++                else:
++                    reference=evaluate_document(document); save(folder/'reference.json',reference)
++                    ref_diffs=compare_reference(document,reference,exact)
++                    by_rec={rec['id']:evaluate_document({**document,'recordings':[rec]}) for rec in document['recordings']}
++                    save(folder/'reference-by-recording.json',by_rec)
++                    for rec in document['recordings']:
++                        expected=oracle_document({**document,'recordings':[rec]})
++                        ref_diffs += [{**d,'recording_id':rec['id']} for d in compare_reference({**document,'recordings':[rec]},by_rec[rec['id']],expected)]
++                    if not ref_diffs: classification='common_counts_and_both_defined_metrics_equal'
++                    elif case['category']=='exact_boundary':
++                        witnesses=binary64_witnesses(document); floating=oracle_document(document,float_edge)
++                        save(folder/'binary64-witnesses.json',witnesses); save(folder/'float-oracle.json',serialize_oracle(floating))
++                        float_diffs=compare_reference(document,reference,floating)
++                        for rec in document['recordings']:
++                            expected=oracle_document({**document,'recordings':[rec]},float_edge)
++                            float_diffs += compare_reference({**document,'recordings':[rec]},by_rec[rec['id']],expected)
++                        if witnesses and not float_diffs:
++                            classification='documented_binary64_boundary_difference'
++                            save(folder/'explained-differences.json',ref_diffs)
++                        else:differences += ref_diffs + float_diffs
++                    else:differences += ref_diffs
++            if not differences:
++                for operation, transformed in transformations(document,rng):
++                    result=run_file_product(product,transformed,folder/operation)
++                    ds=list(result['differences']); expected=oracle_document(transformed)
++                    if not ds:ds += compare_document(transformed,result['product'],dict(projected=expected['summary']))
++                    if not ds:
++                        counts=result['product']['summary']['counts']; original=base['product']['summary']['counts']
++                        want={k:2*v for k,v in original.items()} if operation=='doubled' else dict(original)
++                        if operation=='extra-prediction':want['prediction']+=1;want['fp']+=1
++                        if counts!=want:ds.append(dict(path='metamorphic.counts',expected=want,actual=counts))
++                        if operation=='reordered' and result['stdout']!=base['stdout']:ds.append(dict(path='reordered.bytes',expected='identical',actual='different'))
++                    differences += [{**d,'transform':operation} for d in ds]
++                    transforms.append(dict(operation=operation,exit_code=result['exit_code'],passed=not ds))
++        except Exception as error:
++            differences.append(dict(path='runner.exception',expected='successful run',actual=repr(error)))
++            (folder/'exception.txt').write_text(traceback.format_exc())
++        if differences:unexplained.append(name);classification='unexplained'
++        row=dict(name=name,category=case['category'],classification=classification,differences=differences,transforms=transforms)
++        save(folder/'comparison.json',row);records.append(row)
++    sources=sorted((ROOT/'validation').glob('*.py'))+sorted((ROOT/'eventeval').glob('*.mbt'))+sorted((ROOT/'cli').glob('*.mbt'))+sorted((ROOT/'cmd/mooneventeval').glob('*'))
++    report=dict(phase='qualification',seed=SEED,git_head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
++                product=str(product),product_sha256=hashlib.sha256(product.read_bytes()).hexdigest(),
++                source_sha256={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources if p.is_file()},
++                cases=records,unexplained=unexplained,passed=not unexplained,
++                groups={g:dict(cases=sum(c['category']==g for c in records),classifications={k:sum(c['category']==g and c['classification']==k for c in records) for k in sorted({c['classification'] for c in records if c['category']==g})}) for g in sorted({c['category'] for c in records})},
++                scope='synthetic fixed/seeded small graphs, original reference per base recording/class; four transforms checked by exact oracle; not personal M2/cross-platform proof')
++    save(output/'report.json',report)
++    print(json.dumps(dict(cases=len(records),unexplained=unexplained,classifications={k:sum(r['classification']==k for r in records) for k in sorted({r['classification'] for r in records})})))
++    return int(bool(unexplained))
+diff --git a/validation/tests/test_qualification.py b/validation/tests/test_qualification.py
+new file mode 100644
+index 0000000..141fcd7
+--- /dev/null
++++ b/validation/tests/test_qualification.py
+@@ -0,0 +1,105 @@
++import copy
++import json
++from pathlib import Path
++import subprocess
++import tempfile
++import sys
++import unittest
++from unittest.mock import patch
++
++from validation import compare
++
++ROOT = Path(__file__).resolve().parents[2]
++
++
++def fixture(name='comparison-baseline'):
++    return json.loads((ROOT / 'validation/fixtures' / (name + '.json')).read_bytes())
++
++
++class QualificationTests(unittest.TestCase):
++    def test_preserved_fixture_and_counterfeits(self):
++        f = fixture()
++        self.assertEqual(compare.compare_document(f['input'], f['product'], f['reference']), [])
++        bad = copy.deepcopy(f['product']); bad['summary']['counts']['tp'] += 1
++        self.assertTrue(compare.compare_document(f['input'], bad, f['reference']))
++        bad = copy.deepcopy(f['product']); bad['by_recording'].pop()
++        self.assertTrue(compare.compare_document(f['input'], bad, f['reference']))
++        f = fixture('comparison-substitution'); bad = copy.deepcopy(f['reference'])
++        bad['projected']['counts']['fp'] = bad['raw']['counts']['Nfp']
++        bad['projected']['counts']['fn'] = bad['raw']['counts']['Nfn']
++        self.assertTrue(compare.compare_document(f['input'], f['product'], bad))
++
++    def test_equivalent_maximum_identity_is_allowed(self):
++        f = fixture('comparison-equivalent'); report = copy.deepcopy(f['product'])
++        report['matches'][0]['prediction'], report['false_positives'][0]['event'] = report['false_positives'][0]['event'], report['matches'][0]['prediction']
++        self.assertEqual(compare.compare_document(f['input'], report, f['reference']), [])
++
++    def test_failed_product_exit_cannot_hide_behind_valid_stdout(self):
++        with tempfile.TemporaryDirectory() as tmp:
++            p = Path(tmp); script = p / 'bad'
++            script.write_text('#!/bin/sh\nprintf \'{"status":"completed"}\\n\'\nexit 2\n'); script.chmod(0o755)
++            result = compare.run_file_product(script, fixture()['input'], p / 'run')
++            self.assertEqual(result['exit_code'], 2)
++            self.assertTrue(result['differences'])
++            self.assertEqual((p / 'run/stdout').read_bytes(), b'{"status":"completed"}\n')
++
++    def test_raw_reference_corruption_is_not_hidden(self):
++        f = fixture('comparison-substitution')
++        self.assertEqual(compare.compare_reference(f['input'], f['reference'], compare.oracle_document(f['input'])), [])
++        bad = copy.deepcopy(f['reference']); bad['raw']['counts']['Nsubs'] = 0
++        self.assertTrue(compare.compare_reference(f['input'], bad, compare.oracle_document(f['input'])))
++        bad = copy.deepcopy(f['reference']); bad['raw']['metrics']['f_measure']['precision'] = 0.25
++        self.assertTrue(compare.compare_reference(f['input'], bad, compare.oracle_document(f['input'])))
++
++    def test_driver_retains_child_failure_and_returns_nonzero(self):
++        from validation.qualify import run_qualification
++        with tempfile.TemporaryDirectory() as tmp:
++            p = Path(tmp); exe = p / 'failed'
++            exe.write_text('#!/bin/sh\nprintf \'{"status":"completed"}\\n\'\nexit 2\n'); exe.chmod(0o755)
++            case = dict(name='failed-child', category='binary_grid', document=fixture()['input'])
++            self.assertEqual(run_qualification(exe, p / 'proof', cases=[case]), 1)
++            report = json.loads((p / 'proof/report.json').read_bytes())
++            self.assertEqual(report['unexplained'], ['failed-child'])
++            self.assertTrue((p / 'proof/failed-child/base/process.json').is_file())
++
++    def test_boundary_classification_cannot_hide_wrong_product(self):
++        from validation.qualify import run_qualification
++        with tempfile.TemporaryDirectory() as tmp:
++            p = Path(tmp); exe = p / 'wrong'
++            source = ROOT / 'evidence/T3/parity-final/decimal-onset-binary64-flip'
++            document = json.loads((source / 'input.json').read_bytes())
++            wrong = json.loads((source / 'product.json').read_bytes()); wrong['summary']['counts']['tp'] = 0
++            exe.write_text(f'#!{sys.executable}\nimport sys\nsys.stdout.write({json.dumps(wrong)!r}+"\\n")\n'); exe.chmod(0o755)
++            case = dict(name='wrong-boundary', category='exact_boundary', document=document)
++            self.assertEqual(run_qualification(exe, p / 'proof', cases=[case]), 1)
++            self.assertEqual(json.loads((p / 'proof/report.json').read_bytes())['unexplained'], ['wrong-boundary'])
++
++    def test_unrelated_value_error_is_not_zero_collar_domain_evidence(self):
++        from validation.qualify import run_qualification
++        with tempfile.TemporaryDirectory() as tmp:
++            p=Path(tmp);exe=p/'exact'
++            source=ROOT/'evidence/T3/parity-final/E7-fractional-microsecond'
++            raw=(source/'product.stdout').read_bytes()
++            exe.write_text(f'#!{sys.executable}\nimport sys\nsys.stdout.buffer.write({raw!r})\n');exe.chmod(0o755)
++            case=dict(name='unexpected-reference-error',category='exact_boundary',document=json.loads((source/'input.json').read_bytes()))
++            # Inject a reference-side error, and isolate this classification from
++            # transforms: the observable decision must remain a failed run.
++            with patch('validation.sed_reference.evaluate_document',side_effect=ValueError('unexpected adapter error')),patch('validation.qualify.transformations',return_value=[]):
++                self.assertEqual(run_qualification(exe,p/'proof',cases=[case]),1)
++            self.assertFalse(json.loads((p/'proof/report.json').read_bytes())['passed'])
++
++    def test_exact_margin_preselection_and_determinism(self):
++        from validation.generate_cases import qualification_cases, safe_margins
++        f = fixture(); doc = f['input']
++        self.assertEqual(safe_margins(doc)['unsafe'], [])
++        doc = json.loads((ROOT / 'examples/boundary.json').read_bytes())
++        self.assertTrue(safe_margins(doc)['unsafe'])
++        a, excluded = qualification_cases(); b, other = qualification_cases()
++        self.assertEqual((a, excluded), (b, other))
++        self.assertTrue(excluded)
++        self.assertGreaterEqual(sum(row['category'] == 'decimal_nonboundary' for row in a), 100)
++        self.assertTrue(all(not safe_margins(row['document'])['unsafe'] for row in a if row['category'] == 'decimal_nonboundary'))
++
++
++if __name__ == '__main__':
++    unittest.main()

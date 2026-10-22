@@ -1,0 +1,11 @@
+{
+  "command": [
+    "sysctl",
+    "-n",
+    "machdep.cpu.brand_string"
+  ],
+  "sandbox_attempt": "Operation not permitted",
+  "approved_readonly_retry_exit_code": 0,
+  "approved_readonly_retry_stdout": "Apple M5\n",
+  "method": "exec_command require_escalated; actual result retained from tool response; no inferred model"
+}

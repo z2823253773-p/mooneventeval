@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/duplicate-output-key/product-wrapper",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/review-replay-fixed/duplicate-output-key/run/baseline/base/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "f78c199e0cb80dc252fe6a75dcc7845c038bb0fd04990b413ebc6646664a2b7c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": [
+    {
+      "path": "stdout",
+      "expected": "strict UTF8 finite unique-key JSON and terminal LF",
+      "actual": "Duplicate output key: 'status'"
+    }
+  ]
+}

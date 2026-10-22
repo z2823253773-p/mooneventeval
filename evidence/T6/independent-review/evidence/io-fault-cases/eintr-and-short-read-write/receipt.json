@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-4yfu1nz0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-t6-independent-weo09xrc/evidence/io-fault-cases/input.json",
+    "--format",
+    "json"
+  ],
+  "build_command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-4yfu1nz0/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/mooneventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "build_exit_code": 0,
+  "name": "eintr-and-short-read-write",
+  "exit_code": 0,
+  "expected_exit": 0,
+  "syscalls": {
+    "open_calls": 2,
+    "stat_calls": 2,
+    "read_calls": 29,
+    "close_calls": 1,
+    "stdout_write_calls": 302,
+    "live_input_fds": 0
+  },
+  "instrumented_binary_sha256": "628e72d498fc037ab06a01044726138ed83e7669a972b89ae09b5e324f99bc51",
+  "instrumented_source_sha256": "5805524f717044ca78822b477b0ec79377a3ca5997143bf49320233076053e35",
+  "stdout_sha256": "0e135d2254550a479eceb59f70131b75152ad3dfe8f8d06f79e91c96cdc43240",
+  "passed": true
+}

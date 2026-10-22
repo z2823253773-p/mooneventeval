@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-xa0qjo_k/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "evaluation_empty_denominators_and_no_edges"
+  ],
+  "name": "empty-f1-one",
+  "target_test": "evaluation_empty_denominators_and_no_edges",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "9a0b25521e688dc03792f9ec6b666128ab0db8bca305989ad79c729d1a9b2dea",
+  "mutant_sha256": "9e9323eb7d8b439a30a661023e41e6d4adbea2d72013ecc1919c6d2a0c3f83b6",
+  "restored_sha256": "9a0b25521e688dc03792f9ec6b666128ab0db8bca305989ad79c729d1a9b2dea"
+}

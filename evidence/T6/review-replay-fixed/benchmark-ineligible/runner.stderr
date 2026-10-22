@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/benchmark.py", line 109, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/benchmark.py", line 96, in main
+    assert not differences,differences[:3]
+           ^^^^^^^^^^^^^^^
+AssertionError: [{'path': 'match.eligibility', 'expected': {'eligible': True, 'basis': {'label_match': True, 'onset_pass': False, 'offset_pass': False, 'eligible': False, 'onset_delta_s': '2', 'offset_delta_s': '2', 'onset_limit_s': '0.25', 'offset_limit_s': '0.5'}}, 'actual': {'label_match': True, 'onset_pass': False, 'offset_pass': False, 'eligible': False, 'onset_delta_s': '2', 'offset_delta_s': '2', 'onset_limit_s': '0.25', 'offset_limit_s': '0.5'}}, {'path': 'match.eligibility', 'expected': {'eligible': True, 'basis': {'label_match': True, 'onset_pass': False, 'offset_pass': False, 'eligible': False, 'onset_delta_s': '-2', 'offset_delta_s': '-2', 'onset_limit_s': '0.25', 'offset_limit_s': '0.5'}}, 'actual': {'label_match': True, 'onset_pass': False, 'offset_pass': False, 'eligible': False, 'onset_delta_s': '-2', 'offset_delta_s': '-2', 'onset_limit_s': '0.25', 'offset_limit_s': '0.5'}}]

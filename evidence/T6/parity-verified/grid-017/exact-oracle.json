@@ -1,0 +1,250 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 5,
+      "prediction": 6,
+      "tp": 3,
+      "fp": 3,
+      "fn": 2
+    },
+    "precision": 0.5,
+    "recall": 0.6,
+    "f1": 0.5454545454545454
+  },
+  "by_label": {
+    "A": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "B": {
+      "counts": {
+        "reference": 5,
+        "prediction": 6,
+        "tp": 3,
+        "fp": 3,
+        "fn": 2
+      },
+      "precision": 0.5,
+      "recall": 0.6,
+      "f1": 0.5454545454545454
+    },
+    "unused": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "by_recording": {
+    "rec-0": {
+      "counts": {
+        "reference": 4,
+        "prediction": 4,
+        "tp": 2,
+        "fp": 2,
+        "fn": 2
+      },
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1": 0.5
+    },
+    "rec-1": {
+      "counts": {
+        "reference": 0,
+        "prediction": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    },
+    "rec-2": {
+      "counts": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "candidate_checks": 17,
+  "eligible_edges": 3,
+  "groups": [
+    {
+      "recording_id": "rec-0",
+      "label": "A",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "B",
+          "onset_s": "5.5",
+          "offset_s": "7.875"
+        },
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "1.125",
+          "offset_s": "4"
+        },
+        {
+          "id": "r2",
+          "label": "B",
+          "onset_s": "2.5",
+          "offset_s": "4.125"
+        },
+        {
+          "id": "r3",
+          "label": "B",
+          "onset_s": "1.25",
+          "offset_s": "2.125"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "1.625",
+          "offset_s": "2.5"
+        },
+        {
+          "id": "p1",
+          "label": "B",
+          "onset_s": "1.5",
+          "offset_s": "2.375"
+        },
+        {
+          "id": "p2",
+          "label": "B",
+          "onset_s": "5.125",
+          "offset_s": "7.5"
+        },
+        {
+          "id": "p3",
+          "label": "B",
+          "onset_s": "5.25",
+          "offset_s": "7.625"
+        }
+      ],
+      "adjacency": [
+        [
+          3
+        ],
+        [],
+        [],
+        [
+          1
+        ]
+      ],
+      "tp": 2
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "A",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "B",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "3.25",
+          "offset_s": "3.625"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "A",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "B",
+          "onset_s": "6.875",
+          "offset_s": "8.125"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "7",
+          "offset_s": "8.25"
+        }
+      ],
+      "adjacency": [
+        [
+          0
+        ]
+      ],
+      "tp": 1
+    },
+    {
+      "recording_id": "rec-2",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+--- eligibility.mbt
++++ eligibility.mbt
+@@ -29,7 +29,7 @@
+   }
+   let label_match = reference.label == prediction.label
+   let onset_pass = onset_abs <= config.collar_us
+-  let offset_pass = offset_abs * 1_000_000L <= offset_limit_scaled
++  let offset_pass = offset_abs * 1_000_000L < offset_limit_scaled
+   {
+     label_match,
+     onset_pass,

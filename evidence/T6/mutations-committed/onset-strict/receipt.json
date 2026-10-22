@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-xa0qjo_k/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "eligibility_A3_onset_boundary"
+  ],
+  "name": "onset-strict",
+  "target_test": "eligibility_A3_onset_boundary",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+  "mutant_sha256": "f24e1baa9541053966c084a574dd1fc869d972de03a835e5e44857876f5fbf2a",
+  "restored_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6"
+}

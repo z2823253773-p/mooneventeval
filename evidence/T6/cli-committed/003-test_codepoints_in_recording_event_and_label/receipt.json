@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-g4jgy187/event-over",
+    "--format",
+    "json"
+  ],
+  "exit_code": 3,
+  "stdout_sha256": "090885deeaaccb8db886b0298844b22dc73de8f1f1828a03b4a83c9fa6eb04b7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,11 @@
+--- evaluation.mbt
++++ evaluation.mbt
+@@ -20,7 +20,7 @@
+       Some(tp.to_double() / reference.to_double())
+     },
+     f1: if reference + prediction == 0 {
+-      None
++      Some(1.0)
+     } else {
+       Some((2 * tp).to_double() / (reference + prediction).to_double())
+     },

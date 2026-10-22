@@ -1,0 +1,1 @@
+{"passed": true, "statuses": {"onset-strict": "killed", "offset-strict": "killed", "minimum-collar": "killed", "prediction-duration": "killed", "reuse-prediction": "killed", "empty-f1-one": "killed", "swapped-max-equivalent": "equivalent"}}

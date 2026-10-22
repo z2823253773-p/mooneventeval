@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-32e707sg/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "eligibility_A4_offset_boundary_and_reference_duration"
+  ],
+  "name": "minimum-collar",
+  "target_test": "eligibility_A4_offset_boundary_and_reference_duration",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+  "mutant_sha256": "cafacd2ba946cbefbbfbff8eae8aade922642e840b4c68117cbfe85fd00dd954",
+  "restored_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6"
+}

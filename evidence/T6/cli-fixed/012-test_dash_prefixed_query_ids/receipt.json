@@ -1,0 +1,17 @@
+{
+  "args": [
+    "explain-pair",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-wlz5g_q7/dash-ids.json",
+    "--recording",
+    "--clip",
+    "--reference",
+    "--ref",
+    "--prediction",
+    "--pred",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "644c9aced032f14806e7fb74614212f03c74e3180caf3a1b9282828da2df7cc4",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

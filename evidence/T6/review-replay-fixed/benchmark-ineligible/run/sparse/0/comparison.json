@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "differences": [
+    {
+      "path": "match.eligibility",
+      "expected": {
+        "eligible": true,
+        "basis": {
+          "label_match": true,
+          "onset_pass": false,
+          "offset_pass": false,
+          "eligible": false,
+          "onset_delta_s": "2",
+          "offset_delta_s": "2",
+          "onset_limit_s": "0.25",
+          "offset_limit_s": "0.5"
+        }
+      },
+      "actual": {
+        "label_match": true,
+        "onset_pass": false,
+        "offset_pass": false,
+        "eligible": false,
+        "onset_delta_s": "2",
+        "offset_delta_s": "2",
+        "onset_limit_s": "0.25",
+        "offset_limit_s": "0.5"
+      }
+    },
+    {
+      "path": "match.eligibility",
+      "expected": {
+        "eligible": true,
+        "basis": {
+          "label_match": true,
+          "onset_pass": false,
+          "offset_pass": false,
+          "eligible": false,
+          "onset_delta_s": "-2",
+          "offset_delta_s": "-2",
+          "onset_limit_s": "0.25",
+          "offset_limit_s": "0.5"
+        }
+      },
+      "actual": {
+        "label_match": true,
+        "onset_pass": false,
+        "offset_pass": false,
+        "eligible": false,
+        "onset_delta_s": "-2",
+        "offset_delta_s": "-2",
+        "onset_limit_s": "0.25",
+        "offset_limit_s": "0.5"
+      }
+    }
+  ]
+}

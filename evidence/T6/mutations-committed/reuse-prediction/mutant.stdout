@@ -1,0 +1,9 @@
+[local/mooneventeval] test eventeval/matching_wbtest.mbt:46 ("matching_one_to_one_duplicate_and_isolated") failed
+expect test failed at /private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-xa0qjo_k/eventeval/matching_wbtest.mbt:13:3-13:61
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+Total tests: 1, passed: 0, failed: 1.

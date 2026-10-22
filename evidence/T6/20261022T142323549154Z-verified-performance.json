@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "validation/benchmark.py",
+    "--product",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "evidence/T6/performance-verified",
+    "--cpu-name",
+    "Apple M5"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.732,
+  "log": "evidence/T6/20261022T142323549154Z-verified-performance.log",
+  "log_sha256": "4b82e5cfd88b63eb7c7c5f76f97dbbc96c60b491a14aeb99b58ee47c64d15003",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}
