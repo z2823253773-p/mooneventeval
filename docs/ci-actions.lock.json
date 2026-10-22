@@ -1,0 +1,31 @@
+{
+  "checked_date": "2026-10-22",
+  "scope": "official upstream release-to-full-commit lookup only; workflow not remotely executed",
+  "actions": {
+    "actions/checkout": {
+      "tag": "v6.0.2",
+      "sha": "de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+      "verified_release_url": "https://github.com/actions/checkout/releases/tag/v6.0.2",
+      "verified_commit_url": "https://github.com/actions/checkout/commit/de0fac2e4500dabe0009e67214ff5f5447ce83dd"
+    },
+    "actions/setup-python": {
+      "tag": "v6.2.0",
+      "sha": "a309ff8b426b58ec0e2a45f0f869d46889d02405",
+      "verified_release_url": "https://github.com/actions/setup-python/releases/tag/v6.2.0",
+      "verified_commit_url": "https://github.com/actions/setup-python/commit/a309ff8b426b58ec0e2a45f0f869d46889d02405"
+    },
+    "astral-sh/setup-uv": {
+      "tag": "v7.3.1",
+      "sha": "5a095e7a2014a4212f075830d4f7277575a9d098",
+      "verified_release_url": "https://github.com/astral-sh/setup-uv/releases/tag/v7.3.1",
+      "verified_commit_url": "https://github.com/astral-sh/setup-uv/commit/5a095e7a2014a4212f075830d4f7277575a9d098"
+    },
+    "actions/upload-artifact": {
+      "tag": "v4.6.2",
+      "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+      "verified_release_url": "https://github.com/actions/upload-artifact/releases/tag/v4.6.2",
+      "verified_commit_url": "https://github.com/actions/upload-artifact/commit/ea165f8d65b6e75b540449e92b4886f43607fa02"
+    }
+  },
+  "runner_reference": "https://docs.github.com/en/actions/reference/runners/github-hosted-runners"
+}

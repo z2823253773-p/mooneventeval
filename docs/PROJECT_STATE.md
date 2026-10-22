@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-22（America/Phoenix）。**T0至T6限定本地机器实现/验收完成；T6唯一独立评审的2项Important已作者单轮修复并复验，1项Minor延期，无第二次独立复审。T7本地消费者/38文件候选包/解包CLI及示例完成，唯一评审1项Important已作者单轮修复复验，无新增Minor或第二次独立复审。下一T8。本人M2/口头讲解、T8、发布与赛事资格未完成。**
+更新：2026-10-22（America/Phoenix）。**T0至T6限定本地机器实现/验收完成；T6唯一独立评审的2项Important已作者单轮修复并复验，1项Minor延期，无第二次独立复审。T7本地消费者/38文件候选包/解包CLI及示例完成，唯一评审1项Important已作者单轮修复复验，无新增Minor或第二次独立复审。T8统一验证器与手动CI配置已实现，失败测试初轮通过；首次完整本地总验证和整分支唯一评审待做。本人M2/口头讲解、远端CI/发布与赛事资格未完成。**
 
 ## 当前入口和SHA
 
@@ -50,3 +50,10 @@ scripts/with-toolchain.sh moon test --target native --deny-warn
 最终12 Python（8新发布门+4工具链）、58 Moon通过；fmt/check及info实际通过。初次moon info错误带--deny-warn和清单格式检查失败日志保留，不能称初次成功；修正工具参数/格式后才通过。EXAMPLES完整JSON输入和summary逐块核对真实输出；API首个MoonBit块与实际编译消费者逐字一致。
 
 LICENSE署名取当前git作者Hengrui Zhang（不分发邮箱）；MIT及core原始Apache-2.0 LICENSE/NOTICE保留。无sed_eval/Python依赖或下载数据进入候选。T7仅本地候选，正式作者身份/namespace/URL如未来更改须重验；T8/本人M2/发布仍待完成。原评审候选a441ce89b57595c326031e8699b066777028f0b2，最终代码/被测**bb24ce33962ebf6276265075edb3df10e16e6601**；后续收尾提交仅文档/证据。独立评审原样521文件在evidence/T7/independent-review，1 Important解释完成状态门缺口已真实编译反例RED→GREEN修复。作者原始脚本重放gate exit1/failed账本保留，非第二次独立复审。最终consumer-final、package-final、examples-final及[manifest](../evidence/T7/manifest.json)可复核；`python3 evidence/T7/freeze.py`。T7未改运行源码/公开API，T6历史冻结继续有效，但当前moon.mod/公开README已按T7更新，不以历史当前文件hash断言检验T7。
+
+
+## T8 实施中
+
+基线7f325643cf12d3cab5a60f9808af3ec94d11caed。scripts/verify.py仅检测当前cwd项目，不回退脚本所在目录，要求干净已提交源码；全17检查步骤/产物/hash绑定，缺失或跳过不通过。新tests/test_verify.py覆盖错误根目录、缺binary/参考、工具链hash变更、子命令非0、候选缺LICENSE、失败/跳过报告、CI权限/浮动pin/缩减命令、空/跳过测试协议。初轮10验证器测试通过；完整机器结果尚待实际运行。
+
+.github/workflows/ci.yml为标准JSON形式YAML，workflow_dispatch手动触发，macos-14 arm64/ubuntu-24.04 x86_64，四Actions完整SHA取官方release→commit实查，docs/ci-actions.lock.json记录来源；只保存配置，不推送/触发/发布。CI用相同verify；原版依赖同一hash锁，Linux身份另记，不伪称已完成跨平台认证。细节见[统一验证](VALIDATION.md)。

@@ -1,0 +1,13 @@
+test_archive_without_license_never_passes (test_verify.UnifiedGate.test_archive_without_license_never_passes) ... ok
+test_artifact_report_cannot_be_missing_skipped_or_failed (test_verify.UnifiedGate.test_artifact_report_cannot_be_missing_skipped_or_failed) ... ok
+test_current_directory_identity_not_script_location (test_verify.UnifiedGate.test_current_directory_identity_not_script_location) ... ok
+test_missing_binary_never_passes (test_verify.UnifiedGate.test_missing_binary_never_passes) ... ok
+test_missing_project_never_passes (test_verify.UnifiedGate.test_missing_project_never_passes) ... ok
+test_missing_reference_never_passes (test_verify.UnifiedGate.test_missing_reference_never_passes) ... ok
+test_mutated_toolchain_archive_never_passes (test_verify.UnifiedGate.test_mutated_toolchain_archive_never_passes) ... ok
+test_nonzero_subcommand_retains_failed_receipt (test_verify.UnifiedGate.test_nonzero_subcommand_retains_failed_receipt) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.060s
+
+OK

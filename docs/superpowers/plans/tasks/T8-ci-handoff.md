@@ -1,6 +1,6 @@
 # T8-ci-handoff 任务卡
 
-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：用户“继续”授权实施本地T8；统一验证器/手动CI已创建、初轮失败测试GREEN，完整本地总验证及整分支唯一评审待执行。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 没有远端授权时只有配置及本地结果，Linux/远端CI明确未运行；不要把不可取得的运行列为本机已完成。
 

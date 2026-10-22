@@ -79,3 +79,25 @@ installing the product installs the reference. Installer network/download
 verification is distinct from reuse of the already-installed pinned compiler.
 Formal registry namespace, public URL, publication and competition eligibility
 are not established by local archive/consumer checks.
+
+
+## Unified local delivery gate (full development checkout)
+
+```sh
+python3 scripts/verify.py --mode local --evidence evidence/local-delivery-recheck
+```
+
+Run from a clean committed project root, with the pinned local toolchain archive/
+installation and locked `.venv-reference` already present. The verifier performs
+no installs. It records version/format/interface/native build/test, Python and
+original-reference tests, actual CLI cases, independent qualification, external
+consumer, real package/unpack/examples and historical evidence checks. Missing,
+skipped, nonzero or failed artifacts cannot produce a passing total. Each run
+requires a fresh evidence directory and binds source bytes and tested commit.
+
+The saved manual-only CI matrix calls the same entry point for macOS arm64 and
+Linux x86_64, with full action commit pins and hash-locked dependencies. A saved
+workflow is configuration only; no remote job or Linux execution is claimed by
+this source candidate. Personal M2, formal namespace/URL, publication and
+competition acceptance remain separate. Internal execution detail belongs to
+`docs/VALIDATION.md` in the full development checkout, which is not bundled here.

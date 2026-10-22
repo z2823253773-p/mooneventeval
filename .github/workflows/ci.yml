@@ -1,0 +1,95 @@
+{
+  "name": "MoonEventEval local-equivalent verification",
+  "on": {
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "jobs": {
+    "verify": {
+      "runs-on": "${{ matrix.os }}",
+      "timeout-minutes": 45,
+      "strategy": {
+        "fail-fast": false,
+        "matrix": {
+          "include": [
+            {
+              "os": "macos-14",
+              "arch": "arm64"
+            },
+            {
+              "os": "ubuntu-24.04",
+              "arch": "x86_64"
+            }
+          ]
+        }
+      },
+      "defaults": {
+        "run": {
+          "shell": "bash"
+        }
+      },
+      "env": {
+        "EXPECTED_ARCH": "${{ matrix.arch }}",
+        "UV_CACHE_DIR": "${{ github.workspace }}/.tools/uv-cache",
+        "UV_PYTHON_INSTALL_DIR": "${{ github.workspace }}/.tools/python",
+        "UV_PYTHON_BIN_DIR": "${{ github.workspace }}/.tools/python-bin",
+        "MPLCONFIGDIR": "${{ github.workspace }}/.tools/reference-cache/matplotlib",
+        "NUMBA_CACHE_DIR": "${{ github.workspace }}/.tools/reference-cache/numba"
+      },
+      "steps": [
+        {
+          "name": "Checkout exact dispatched commit and historical proof objects",
+          "uses": "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+          "with": {
+            "fetch-depth": 0,
+            "persist-credentials": false
+          }
+        },
+        {
+          "name": "Developer Python (same release as local T8 tooling)",
+          "uses": "actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405",
+          "with": {
+            "python-version": "3.14.6"
+          }
+        },
+        {
+          "name": "Assert actual runner architecture",
+          "run": "python3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ[\"EXPECTED_ARCH\"]'"
+        },
+        {
+          "name": "Pinned reference installer",
+          "uses": "astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098",
+          "with": {
+            "version": "0.11.14",
+            "enable-cache": false
+          }
+        },
+        {
+          "name": "Install and hash-verify pinned MoonBit binary/core",
+          "run": "python3 scripts/install_toolchain.py"
+        },
+        {
+          "name": "Create locked original reference environment",
+          "run": "uv python install 3.11.14\nuv venv --python 3.11.14 .venv-reference\nuv pip install --python .venv-reference/bin/python --require-hashes --only-binary :all: -r validation/reference-build.lock\nuv pip sync --python .venv-reference/bin/python --require-hashes --no-build-isolation validation/reference.lock\nuv pip check --python .venv-reference/bin/python"
+        },
+        {
+          "name": "Same complete verifier as local",
+          "run": "python3 scripts/verify.py --mode local --evidence evidence/T8/ci"
+        },
+        {
+          "name": "Keep actual receipts on success or failure",
+          "if": "always()",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "verification-${{ matrix.os }}-${{ matrix.arch }}",
+            "path": "evidence/T8/ci",
+            "if-no-files-found": "error",
+            "retention-days": 14
+          }
+        }
+      ]
+    }
+  }
+}
