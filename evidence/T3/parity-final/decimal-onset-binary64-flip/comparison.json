@@ -1,0 +1,38 @@
+{
+  "category": "decimal_boundary",
+  "classification": "documented_binary64_boundary_difference",
+  "differences": [
+    {
+      "path": "reference.projected.counts",
+      "expected": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "actual": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1
+      }
+    },
+    {
+      "path": "reference.projected.precision",
+      "expected": 1.0,
+      "actual": 0.0
+    },
+    {
+      "path": "reference.projected.recall",
+      "expected": 1.0,
+      "actual": 0.0
+    },
+    {
+      "path": "reference.projected.f1",
+      "expected": 1.0,
+      "actual": 0.0
+    }
+  ]
+}

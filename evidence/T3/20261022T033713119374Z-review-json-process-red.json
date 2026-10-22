@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_json_controls.py",
+    "--product",
+    "_build/native/release/build/cmd/probe/probe.exe",
+    "--output",
+    "evidence/T3/json-controls-red"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.04,
+  "log": "evidence/T3/20261022T033713119374Z-review-json-process-red.log",
+  "log_sha256": "4b671df11b0c6ab5d19d3821d47d07a2a772bf4fb8ae21f066e7e20b9d71bc47",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

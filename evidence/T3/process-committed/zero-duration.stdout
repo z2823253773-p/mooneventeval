@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"OUT_OF_RANGE","message":"Expected onset_s < offset_s","path":"recordings[0].reference[0].offset_s","limit":null,"observed":null}}

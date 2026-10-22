@@ -1,0 +1,21 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "evaluation_json_control_characters_roundtrip_success_and_error"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 2.302,
+  "log": "evidence/T3/20261022T034052476263Z-review-json-controls-green.log",
+  "log_sha256": "b136ac6dbfa8a737c1c47b4ab55287d32add1374feaea7f839a55b45a9685782",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

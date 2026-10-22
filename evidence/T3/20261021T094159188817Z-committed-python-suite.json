@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 2.039,
+  "log": "evidence/T3/20261021T094159188817Z-committed-python-suite.log",
+  "log_sha256": "497191caf10603a7af39e28c168ea94c4e7411bd94cc6fdae7918acfdce1f363",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

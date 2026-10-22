@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "A",
+    "B",
+    "unused"
+  ],
+  "recordings": [
+    {
+      "id": "clip-01",
+      "reference": [
+        {
+          "id": "renamed-3",
+          "label": "A",
+          "onset_s": "2.5",
+          "offset_s": "3.25"
+        },
+        {
+          "id": "renamed-2",
+          "label": "B",
+          "onset_s": "2.875",
+          "offset_s": "3.375"
+        },
+        {
+          "id": "renamed-1",
+          "label": "B",
+          "onset_s": "0.125",
+          "offset_s": "0.625"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "renamed-2",
+          "label": "A",
+          "onset_s": "2",
+          "offset_s": "2.125"
+        },
+        {
+          "id": "renamed-1",
+          "label": "A",
+          "onset_s": "2.625",
+          "offset_s": "3.125"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "collar_s": "0.25",
+    "offset_ratio": "0.5"
+  }
+}

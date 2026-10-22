@@ -1,0 +1,31 @@
+[
+  {
+    "name": "moon-test",
+    "command": [
+      "scripts/with-toolchain.sh",
+      "moon",
+      "test",
+      "eventeval",
+      "--target",
+      "native",
+      "--deny-warn"
+    ],
+    "cwd": "/private/tmp/t3-independent-review-2o6zhped/source",
+    "exit_code": 0
+  },
+  {
+    "name": "probe-build",
+    "command": [
+      "scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "cmd/probe",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn"
+    ],
+    "cwd": "/private/tmp/t3-independent-review-2o6zhped/source",
+    "exit_code": 0
+  }
+]

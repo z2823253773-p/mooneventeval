@@ -1,0 +1,1 @@
+{"malformed_success": 0, "malformed_error": false, "comparator_mutations_accepted": [["schema_version_boolean", false], ["work_count_boolean", false], ["work_count_float", false], ["summary_extra_key", false], ["row_extra_key", false], ["work_extra_key", false], ["work_wrong_step", true], ["numeric_event_time", false]]}

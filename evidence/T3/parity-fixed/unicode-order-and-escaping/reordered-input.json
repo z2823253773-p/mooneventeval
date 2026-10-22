@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "é",
+    "𐀀",
+    "",
+    "é"
+  ],
+  "recordings": [
+    {
+      "id": "clip\"\n\\",
+      "reference": [
+        {
+          "id": "",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "r",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p\"\n\\",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "p1",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "p2",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "evidence/T3/review-replay-fixed/replay_review.py",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.129,
+  "log": "evidence/T3/20261022T034342085062Z-reviewer-script-author-fixed-replay.log",
+  "log_sha256": "edf2e238b4bed38166356eb079ccc31ac19f8159c69887f8d519ebd35d9e9f94",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

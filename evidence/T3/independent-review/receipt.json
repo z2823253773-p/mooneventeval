@@ -1,0 +1,7 @@
+{
+  "head": "e9c7f317bcd141aa34dbcc3e1ee6728415be3824",
+  "base": "9c78a20aaa34514e218afd7ce26cae1e0ce03046",
+  "source": "/private/tmp/t3-independent-review-2o6zhped/source",
+  "source_method": "git archive HEAD; .tools read-only reuse; all builds in temporary source",
+  "original_status": "?? docs/reviews/2026-10-21-t3-results.md\n?? evidence/T3/20261021T094159188817Z-committed-python-suite.json\n?? evidence/T3/20261021T094159188817Z-committed-python-suite.log\n?? evidence/T3/20261021T094159188822Z-committed-validation-suite.json\n?? evidence/T3/20261021T094159188822Z-committed-validation-suite.log\n?? evidence/T3/20261021T094159188907Z-committed-moon-suite.json\n?? evidence/T3/20261021T094159188907Z-committed-moon-suite.log\n?? evidence/T3/20261021T094201309941Z-committed-probe-build.json\n?? evidence/T3/20261021T094201309941Z-committed-probe-build.log\n?? evidence/T3/20261021T094201388038Z-committed-prototype-parity.json\n?? evidence/T3/20261021T094201388038Z-committed-prototype-parity.log\n?? evidence/T3/20261021T094201966340Z-committed-process-checks.json\n?? evidence/T3/20261021T094201966340Z-committed-process-checks.log\n?? evidence/T3/execution-ledger.md\n?? evidence/T3/integrity-check.json\n?? evidence/T3/parity-committed/\n?? evidence/T3/process-committed/\n?? evidence/T3/task-completion.log\n"
+}

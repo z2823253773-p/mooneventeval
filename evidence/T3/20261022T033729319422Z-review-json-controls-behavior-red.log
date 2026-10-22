@@ -1,0 +1,2 @@
+[local/mooneventeval] test eventeval/evaluation_wbtest.mbt:229 ("evaluation_json_control_characters_roundtrip_success_and_error") failed: Invalid character '{' at line 1, column 292
+Total tests: 1, passed: 0, failed: 1.

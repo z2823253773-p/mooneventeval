@@ -1,0 +1,51 @@
+test_counts_must_remain_integer_not_boolean_or_float (test_comparison.ComparatorTests.test_counts_must_remain_integer_not_boolean_or_float) ... ok
+test_hand_checked_empty_report (test_comparison.ComparatorTests.test_hand_checked_empty_report) ... ok
+test_machine_metadata_and_work_types_are_not_coerced (test_comparison.ComparatorTests.test_machine_metadata_and_work_types_are_not_coerced) ... FAIL
+test_match_and_unmatched_row_shapes_are_checked (test_comparison.ComparatorTests.test_match_and_unmatched_row_shapes_are_checked) ... FAIL
+test_missing_rows_or_partial_report_is_detected (test_comparison.ComparatorTests.test_missing_rows_or_partial_report_is_detected) ... ok
+test_nested_extra_fields_are_rejected (test_comparison.ComparatorTests.test_nested_extra_fields_are_rejected) ... FAIL
+test_reference_projection_mismatch_is_detected (test_comparison.ComparatorTests.test_reference_projection_mismatch_is_detected) ... ok
+test_selected_event_times_and_basis_keep_machine_types (test_comparison.ComparatorTests.test_selected_event_times_and_basis_keep_machine_types) ... FAIL
+test_undefined_metric_cannot_be_zero (test_comparison.ComparatorTests.test_undefined_metric_cannot_be_zero) ... ok
+test_wrong_count_is_detected (test_comparison.ComparatorTests.test_wrong_count_is_detected) ... ok
+
+======================================================================
+FAIL: test_machine_metadata_and_work_types_are_not_coerced (test_comparison.ComparatorTests.test_machine_metadata_and_work_types_are_not_coerced)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_comparison.py", line 44, in test_machine_metadata_and_work_types_are_not_coerced
+    self.assertTrue(compare_document(DOC,bad,REF))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_match_and_unmatched_row_shapes_are_checked (test_comparison.ComparatorTests.test_match_and_unmatched_row_shapes_are_checked)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_comparison.py", line 69, in test_match_and_unmatched_row_shapes_are_checked
+    self.assertTrue(compare_document(document,bad,reference))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_nested_extra_fields_are_rejected (test_comparison.ComparatorTests.test_nested_extra_fields_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_comparison.py", line 55, in test_nested_extra_fields_are_rejected
+    self.assertTrue(compare_document(DOC,bad,REF))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_selected_event_times_and_basis_keep_machine_types (test_comparison.ComparatorTests.test_selected_event_times_and_basis_keep_machine_types)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_comparison.py", line 62, in test_selected_event_times_and_basis_keep_machine_types
+    self.assertTrue(compare_document(document,bad,reference))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: [] is not true
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (failures=4)

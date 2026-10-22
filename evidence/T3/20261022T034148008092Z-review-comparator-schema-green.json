@@ -1,0 +1,21 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.348,
+  "log": "evidence/T3/20261022T034148008092Z-review-comparator-schema-green.log",
+  "log_sha256": "4b30f255f6794758b1fcab6703d14721cafb81d7a38ceda1f634bad8c414acad",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

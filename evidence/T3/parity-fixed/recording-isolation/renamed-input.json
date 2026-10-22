@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "alarm"
+  ],
+  "recordings": [
+    {
+      "id": "clip-01",
+      "reference": [
+        {
+          "id": "renamed-1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": []
+    },
+    {
+      "id": "prediction-only",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "renamed-1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ]
+    }
+  ]
+}

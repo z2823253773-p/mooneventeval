@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "label\u001e"
+  ],
+  "recordings": [
+    {
+      "id": "recording\u001e",
+      "reference": [
+        {
+          "id": "r\u001e",
+          "label": "label\u001e",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "orphan-r\u001e",
+          "label": "label\u001e",
+          "onset_s": "10",
+          "offset_s": "11"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p\u001e",
+          "label": "label\u001e",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "orphan-p\u001e",
+          "label": "label\u001e",
+          "onset_s": "20",
+          "offset_s": "21"
+        }
+      ]
+    }
+  ],
+  "unknown\u001e": 0
+}

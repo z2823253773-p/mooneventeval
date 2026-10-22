@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "unused",
+    "A",
+    "B"
+  ],
+  "recordings": [
+    {
+      "id": "clip-01",
+      "reference": [
+        {
+          "id": "r3",
+          "label": "B",
+          "onset_s": "0.625",
+          "offset_s": "1.625"
+        },
+        {
+          "id": "r2",
+          "label": "A",
+          "onset_s": "1.625",
+          "offset_s": "2.125"
+        },
+        {
+          "id": "r0",
+          "label": "B",
+          "onset_s": "1",
+          "offset_s": "1.875"
+        },
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "0.625",
+          "offset_s": "0.75"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "0.5",
+          "offset_s": "1.5"
+        }
+      ]
+    }
+  ],
+  "config": {
+    "collar_s": "0.25",
+    "offset_ratio": "0.5"
+  }
+}

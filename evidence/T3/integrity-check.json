@@ -1,0 +1,191 @@
+{
+  "tested_sha": "e9c7f317bcd141aa34dbcc3e1ee6728415be3824",
+  "runtime_sources_match": true,
+  "capture_records": [
+    {
+      "record": "evidence/T3/20261021T091337331676Z-core-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091641024292Z-core-first-green.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091703429369Z-core-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091821506077Z-full-core-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091824398207Z-probe-build.json",
+      "exit_code": 255,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091900521140Z-probe-build-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T091944579884Z-oracles-comparison-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092047733795Z-comparator-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092047805272Z-oracle-comparator-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092300801360Z-prototype-parity.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092408447330Z-prototype-parity-boundary.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092545499624Z-probe-process-checks.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092545854197Z-formatted-core.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092548908357Z-formatted-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092614380536Z-label-order-regression-red.json",
+      "exit_code": 2,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092616058735Z-label-order-regression-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092617920535Z-corrected-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092619017158Z-probe-process-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092723116668Z-eligibility-mutations.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092739788616Z-comparator-count-type-red.json",
+      "exit_code": 1,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092739924107Z-all-validation-green.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092948881095Z-format-check.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092949051929Z-api-info.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092949219134Z-package-check.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T092949385772Z-package-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093512242072Z-candidate-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093512242082Z-candidate-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093512242083Z-candidate-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093514430077Z-final-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093515641354Z-candidate-prototype-parity.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T093519401500Z-candidate-process-checks.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094159188817Z-committed-python-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094159188822Z-committed-validation-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094159188907Z-committed-moon-suite.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094201309941Z-committed-probe-build.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094201388038Z-committed-prototype-parity.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    },
+    {
+      "record": "evidence/T3/20261021T094201966340Z-committed-process-checks.json",
+      "exit_code": 0,
+      "log_sha256_verified": true
+    }
+  ]
+}

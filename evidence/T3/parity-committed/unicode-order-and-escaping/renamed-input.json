@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "é",
+    "é",
+    "𐀀",
+    ""
+  ],
+  "recordings": [
+    {
+      "id": "clip\"\n\\",
+      "reference": [
+        {
+          "id": "renamed-3",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-2",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-1",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "renamed-3",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-2",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-1",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ]
+    }
+  ]
+}

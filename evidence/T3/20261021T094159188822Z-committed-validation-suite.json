@@ -1,0 +1,21 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.203,
+  "log": "evidence/T3/20261021T094159188822Z-committed-validation-suite.log",
+  "log_sha256": "21749d679efe3eaf6ff030574891eecfa5718c106a93010828a6abd8cc783508",
+  "scope": "T3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

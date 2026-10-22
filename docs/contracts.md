@@ -105,8 +105,10 @@ JSON对象重名键仍依PRD后值覆盖，是已知限制；在T0/T3加入明�
 
 T2验收后固定策略标识：`first-free-iterative-dfs/v1`（开发记录，不增加报告字段）；源码提交e96d130，753图/四类native样例/两项mutation及独立评审通过，见docs/reviews/2026-10-21-t2-results.md。它不承诺全部合法图在预算内完成；输入排序/构图接入仍须T3端到端测试。
 
-### T3接入约定（执行中）
+### T3接入约定（实现及作者修复复验完成）
 
 用户“继续”授权当前T3；原版环境成功，本轮实际运行参考，不触发未批准的超时后demo门槛。`error_json(error: EvalError) -> String`作为唯一公开失败序列化函数供开发probe/后续CLI用；`evaluate_json`仍返回Result[String,EvalError]。JSON前允许一个UTF-8 BOM；schema_version比较JSON数值1（1.0/1e0同值可接受），时间数值仍拒绝。对象字段按schema声明顺序校验，未知键按Unicode码点排序决定首个错误；typed工厂也验证并复制数组，先完成输入校验才构图。八例推导由agent编写，不冒充用户本人复算，个人讲解验收仍需实际证据。
 
 T3真实包外probe暴露EvalError原pub struct不可构造；改为pub(all)，保持字段不可变，适配层可创建参数/文件错误。Event/Config/Recording/Task/Evaluation仍封装。
+
+T3最终运行代码/被测提交508d5cf，原候选e9c7f31的独立评审发现2项Important，已由作者单轮RED→GREEN修复，未二次独立复审。序列化必须统一用JSON专用字符串编码（当前包内String.quote_json调用Json::string(...).stringify()），不能用String.escape（MoonBit显示语法会产生非法JSON）。比较器先验证实际输出的类型/规范文本/嵌套精确键序，不能将实际数字时间修成字符串再比较。T4复用现有decimal_string/quote_json和错误JSON，不重新发明一套不一致的格式。个人M2/最终A11/CLI与解释报告仍按阶段验收。

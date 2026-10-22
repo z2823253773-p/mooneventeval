@@ -1,0 +1,759 @@
+{
+  "product_sha256": "7f7a4a87565123179693774f8ad24f144eed189708503b7a1e5112412cba0907",
+  "cases": [
+    {
+      "name": "label-control-00",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0000\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-01",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0001\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-02",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0002\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-03",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0003\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-04",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0004\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-05",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0005\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-06",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0006\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-07",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0007\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-08",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\b\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": true
+    },
+    {
+      "name": "label-control-09",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\t\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": true
+    },
+    {
+      "name": "label-control-0a",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\n\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": true
+    },
+    {
+      "name": "label-control-0b",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u000b\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-0c",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\f\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-0d",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\r\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": true
+    },
+    {
+      "name": "label-control-0e",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u000e\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-0f",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u000f\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-10",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0010\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-11",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0011\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-12",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0012\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-13",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0013\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-14",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0014\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-15",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0015\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-16",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0016\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-17",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0017\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-18",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0018\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-19",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u0019\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1a",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001a\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1b",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001b\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1c",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001c\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1d",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001d\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1e",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001e\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "label-control-1f",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"\\u001f\"], \"recordings\": []}"
+      ],
+      "exit_code": 0,
+      "valid_json": false
+    },
+    {
+      "name": "unknown-control",
+      "command": [
+        "/private/tmp/t3-independent-review-2o6zhped/source/_build/native/release/build/cmd/probe/probe.exe",
+        "{\"schema_version\": 1, \"labels\": [\"a\"], \"recordings\": [], \"\\u0001\": 0}"
+      ],
+      "exit_code": 2,
+      "valid_json": false
+    }
+  ],
+  "malformed_success": 28,
+  "comparator_mutations": [
+    {
+      "name": "schema_version_boolean",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": true,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 0
+        }
+      }
+    },
+    {
+      "name": "work_count_boolean",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": false,
+          "eligible_edges": 0,
+          "matching_steps": 0
+        }
+      }
+    },
+    {
+      "name": "work_count_float",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0.0,
+          "matching_steps": 0
+        }
+      }
+    },
+    {
+      "name": "summary_extra_key",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null,
+          "unexpected": 42
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 0
+        }
+      }
+    },
+    {
+      "name": "row_extra_key",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            },
+            "unexpected": 42
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 0
+        }
+      }
+    },
+    {
+      "name": "work_extra_key",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 0,
+          "unexpected": 42
+        }
+      }
+    },
+    {
+      "name": "work_wrong_step",
+      "differences": [],
+      "accepted": true,
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 0,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 0
+              },
+              "precision": null,
+              "recall": null,
+              "f1": null
+            }
+          }
+        ],
+        "by_recording": [],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 1
+        }
+      }
+    },
+    {
+      "name": "numeric_event_time",
+      "differences": [],
+      "product": {
+        "schema_version": 1,
+        "semantics": "collar-max-cardinality/v1",
+        "implementation_version": "0.1.0",
+        "status": "completed",
+        "config": {
+          "collar_s": "0.2",
+          "offset_ratio": "0.5"
+        },
+        "summary": {
+          "counts": {
+            "reference": 1,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "precision": null,
+          "recall": 0,
+          "f1": 0
+        },
+        "by_label": [
+          {
+            "label": "a",
+            "metrics": {
+              "counts": {
+                "reference": 1,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 1
+              },
+              "precision": null,
+              "recall": 0,
+              "f1": 0
+            }
+          }
+        ],
+        "by_recording": [
+          {
+            "recording_id": "x",
+            "metrics": {
+              "counts": {
+                "reference": 1,
+                "prediction": 0,
+                "tp": 0,
+                "fp": 0,
+                "fn": 1
+              },
+              "precision": null,
+              "recall": 0,
+              "f1": 0
+            }
+          }
+        ],
+        "matches": [],
+        "false_positives": [],
+        "false_negatives": [
+          {
+            "recording_id": "x",
+            "event": {
+              "id": "r",
+              "label": "a",
+              "onset_s": 1,
+              "offset_s": "2"
+            },
+            "candidate_count": 0,
+            "reason": "no_eligible_candidate"
+          }
+        ],
+        "work": {
+          "candidate_checks": 0,
+          "eligible_edges": 0,
+          "matching_steps": 1
+        }
+      }
+    }
+  ]
+}

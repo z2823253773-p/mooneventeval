@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "alarm"
+  ],
+  "recordings": [
+    {
+      "id": "clip-01",
+      "reference": [
+        {
+          "id": "renamed-2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "renamed-3",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "renamed-1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+Error: [4036]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:239:57 ]
+     │
+ 239 │         Object(row) => inspect(row.get("label") == Some(Json::String(controls)),content="true")
+     │                                                         ──────┬─────  
+     │                                                               ╰─────── Cannot create values of the read-only type: String.
+─────╯
+Error: [4036]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:250:42 ]
+     │
+ 250 │         inspect(body.get("code") == Some(Json::String(controls)),content="true")
+     │                                          ──────┬─────  
+     │                                                ╰─────── Cannot create values of the read-only type: String.
+─────╯
+Error: [4036]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:251:45 ]
+     │
+ 251 │         inspect(body.get("message") == Some(Json::String(controls)),content="true")
+     │                                             ──────┬─────  
+     │                                                   ╰─────── Cannot create values of the read-only type: String.
+─────╯
+Error: [4036]
+     ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/evaluation_wbtest.mbt:252:42 ]
+     │
+ 252 │         inspect(body.get("path") == Some(Json::String(controls)),content="true")
+     │                                          ──────┬─────  
+     │                                                ╰─────── Cannot create values of the read-only type: String.
+─────╯
