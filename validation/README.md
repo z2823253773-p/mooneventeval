@@ -121,3 +121,25 @@ gate. NUL IDs are tested through the typed API, as OS argv cannot carry NUL.
 negative controls: all-output CRLF and text-only raw CR. Both must fail the
 renderer checker at the intended assertion, with archived bytes matching direct
 binary witnesses. Pre-fix text-mode evidence is historical, not raw-byte proof.
+
+## T5 real file CLI
+
+```sh
+scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn
+MEE_BIN=_build/native/release/build/cmd/mooneventeval/mooneventeval.exe MEE_EVIDENCE=evidence/T5/recheck-process python3 -W error::ResourceWarning -m unittest discover -s tests/cli -v
+python3 validation/check_cli_reports.py --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T5/recheck-bytes
+python3 validation/check_native_io.py --output evidence/T5/recheck-native-io
+```
+
+Use fresh output directories. Process tests call the release executable directly
+and archive binary stdout/stderr plus actual argv/exit/hash receipts. Large raw
+inputs are losslessly gzipped (`input-N.bin.gz`, mtime=0); decompress to reproduce.
+The 46 byte regressions compare actual file CLI output to archived T3 native
+reports, without a new sed_eval run. The I/O checker builds the native whitebox
+executable then runs its real 20,000-read test under RLIMIT_NOFILE=64, checking
+Moon's result protocol in addition to exit status. It also covers NUL/directory
+rejection and invalid-descriptor write. Process coverage includes >64KiB Chinese
+outputs, immediate/partial broken pipes, exact 8MiB/+1 input, depth17, invalid
+UTF8, missing/unreadable/nonregular files and regular symlinks. Injected
+EINTR/short-write/close failures, final A11 and cross-platform CI are not passed
+by these tests. Demo transcripts are not personal explanation evidence.

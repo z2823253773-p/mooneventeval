@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "validation/check_native_io.py",
+    "--output",
+    "evidence/T5/native-fd-check"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 3.594,
+  "log": "evidence/T5/20261022T084304218121Z-native-fd-check.log",
+  "log_sha256": "e1605795def97ea638ac88cf6936c635b2f000ef54cd22f952dd4d740a7f4d00",
+  "scope": "T5",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

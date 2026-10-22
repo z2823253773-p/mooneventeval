@@ -1,0 +1,13 @@
+test_argument_formats_and_help (test_cli.NativeCli.test_argument_formats_and_help) ... ok
+test_bad_schema_utf8_depth (test_cli.NativeCli.test_bad_schema_utf8_depth) ... ok
+test_closed_stdout_pipe_terminates_nonzero (test_cli.NativeCli.test_closed_stdout_pipe_terminates_nonzero) ... ok
+test_dash_prefixed_query_ids (test_cli.NativeCli.test_dash_prefixed_query_ids) ... ok
+test_examples_text_json_and_unchanged_files (test_cli.NativeCli.test_examples_text_json_and_unchanged_files) ... ok
+test_explanation_and_ineligible_are_success (test_cli.NativeCli.test_explanation_and_ineligible_are_success) ... ok
+test_files_missing_directory_fifo_unreadable_and_symlink (test_cli.NativeCli.test_files_missing_directory_fifo_unreadable_and_symlink) ... ok
+test_input_size_equal_and_plus_one (test_cli.NativeCli.test_input_size_equal_and_plus_one) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.936s
+
+OK

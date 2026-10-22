@@ -1,0 +1,161 @@
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:3:11 ]
+   │
+ 3 │   let r = @cli.parse_args(["evaluate", "task.json"]).unwrap()
+   │           ───────┬───────  
+   │                  ╰───────── Value parse_args not found in package `cli`.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:4:23 ]
+   │
+ 4 │   inspect(r.format == @cli.Text, content="true")
+   │                       ────┬────  
+   │                           ╰────── Value Text not found in package `cli`.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:5:26 ]
+   │
+ 5 │   inspect(r.operation == @cli.Evaluate("task.json"), content="true")
+   │                          ──────┬──────  
+   │                                ╰──────── Value Evaluate not found in package `cli`.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:6:11 ]
+   │
+ 6 │   let r = @cli.parse_args(["explain-pair", "t", "--prediction", "p", "--format", "json", "--recording", "c", "--reference", "r"]).unwrap()
+   │           ───────┬───────  
+   │                  ╰───────── Value parse_args not found in package `cli`.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:7:26 ]
+   │
+ 7 │   inspect(r.operation == @cli.ExplainPair("t", "c", "r", "p"), content="true")
+   │                          ────────┬───────  
+   │                                  ╰───────── Value ExplainPair not found in package `cli`.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:8:23 ]
+   │
+ 8 │   inspect(r.format == @cli.Json, content="true")
+   │                       ────┬────  
+   │                           ╰────── Value Json not found in package `cli`.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:13:13 ]
+    │
+ 13 │     inspect(@cli.parse_args(args).is_err(), content="true")
+    │             ───────┬───────  
+    │                    ╰───────── Value parse_args not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:16:11 ]
+    │
+ 16 │     match @cli.parse_args(args) {
+    │           ───────┬───────  
+    │                  ╰───────── Value parse_args not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:17:39 ]
+    │
+ 17 │       Err(e) => { inspect(e.format == @cli.Json, content="true"); inspect(@cli.render_arg_failure(e).exit_code, content="2") }
+    │                                       ────┬────  
+    │                                           ╰────── Value Json not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:17:75 ]
+    │
+ 17 │       Err(e) => { inspect(e.format == @cli.Json, content="true"); inspect(@cli.render_arg_failure(e).exit_code, content="2") }
+    │                                                                           ───────────┬───────────  
+    │                                                                                      ╰───────────── Value render_arg_failure not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:22:11 ]
+    │
+ 22 │     match @cli.parse_args(args) {
+    │           ───────┬───────  
+    │                  ╰───────── Value parse_args not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:23:37 ]
+    │
+ 23 │       Err(e) => inspect(e.format == @cli.Text, content="true")
+    │                                     ────┬────  
+    │                                         ╰────── Value Text not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:32:13 ]
+    │
+ 32 │     let o = @cli.run(@cli.parse_args([arg]).unwrap(), Err(failure))
+    │             ────┬───  
+    │                 ╰───── Value run not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:32:22 ]
+    │
+ 32 │     let o = @cli.run(@cli.parse_args([arg]).unwrap(), Err(failure))
+    │                      ───────┬───────  
+    │                             ╰───────── Value parse_args not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:39:17 ]
+    │
+ 39 │   let request = @cli.parse_args(["evaluate", "ignored", "--format", "json"]).unwrap()
+    │                 ───────┬───────  
+    │                        ╰───────── Value parse_args not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:40:11 ]
+    │
+ 40 │   let o = @cli.run(request, Ok(b"{}"))
+    │           ────┬───  
+    │               ╰───── Value run not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:45:11 ]
+    │
+ 45 │   let o = @cli.run(request, Ok(input))
+    │           ────┬───  
+    │               ╰───── Value run not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:50:13 ]
+    │
+ 50 │     let o = @cli.run(request, Err(e))
+    │             ────┬───  
+    │                 ╰───── Value run not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:54:14 ]
+    │
+ 54 │   let text = @cli.run(@cli.parse_args(["evaluate", "x"]).unwrap(), Ok(b"{}"))
+    │              ────┬───  
+    │                  ╰───── Value run not found in package `cli`.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:54:23 ]
+    │
+ 54 │   let text = @cli.run(@cli.parse_args(["evaluate", "x"]).unwrap(), Ok(b"{}"))
+    │                       ───────┬───────  
+    │                              ╰───────── Value parse_args not found in package `cli`.
+────╯
+Warning: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/moon.pkg:2:3 ]
+   │
+ 2 │   "local/mooneventeval/eventeval",
+   │   ───────────────┬───────────────  
+   │                  ╰───────────────── Warning (unused_package): Unused package 'local/mooneventeval/eventeval'
+───╯
+Warning: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/moon.pkg:3:3 ]
+   │
+ 3 │   "moonbitlang/core/encoding/utf8",
+   │   ────────────────┬───────────────  
+   │                   ╰───────────────── Warning (unused_package): Unused package 'moonbitlang/core/encoding/utf8'
+───╯
+Warning: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/moon.pkg:4:3 ]
+   │
+ 4 │   "moonbitlang/core/json",
+   │   ───────────┬───────────  
+   │              ╰───────────── Warning (unused_package): Unused package 'moonbitlang/core/json'
+───╯

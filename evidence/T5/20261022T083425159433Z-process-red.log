@@ -1,0 +1,14 @@
+setUpClass (test_cli.NativeCli) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_cli.NativeCli)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/cli/test_cli.py", line 19, in setUpClass
+    raise AssertionError(f'Product CLI missing: {cls.exe}')
+AssertionError: Product CLI missing: /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+FAILED (errors=1)

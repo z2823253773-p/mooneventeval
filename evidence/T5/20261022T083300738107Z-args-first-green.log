@@ -1,0 +1,21 @@
+Error: [0079]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args.mbt:2:50 ]
+   │
+ 2 │ pub(all) enum OutputFormat { Text; Json } derive(Eq)
+   │                                                  ─┬  
+   │                                                   ╰── Error Warning (implicit_impl_as_method): The methods not_equal, equal from `impl Eq for OutputFormat` are implicit promoted as regular method for `OutputFormat`. This behavior is deprecated and will be removed in the future. Add a `pub extend OutputFormat with Eq::{not_equal, equal}` declaration or manually define regular methods for type `OutputFormat` instead. If the promotion is not desirable, add `#deprecated` on the `extend` declaration.
+───╯
+Error: [0079]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args.mbt:10:10 ]
+    │
+ 10 │ } derive(Eq)
+    │          ─┬  
+    │           ╰── Error Warning (implicit_impl_as_method): The methods not_equal, equal from `impl Eq for Operation` are implicit promoted as regular method for `Operation`. This behavior is deprecated and will be removed in the future. Add a `pub extend Operation with Eq::{not_equal, equal}` declaration or manually define regular methods for type `Operation` instead. If the promotion is not desirable, add `#deprecated` on the `extend` declaration.
+────╯
+Error: [0029]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/moon.pkg:4:3 ]
+   │
+ 4 │   "moonbitlang/core/json",
+   │   ───────────┬───────────  
+   │              ╰───────────── Error Warning (unused_package): Unused package 'moonbitlang/core/json'
+───╯

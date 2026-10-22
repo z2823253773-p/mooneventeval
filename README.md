@@ -4,8 +4,8 @@ MoonBit event-time evaluation library under development. T3 provides validated
 event/config/recording/task factories, strict JSON task decoding, budgeted
 maximum-cardinality matching, complete stable JSON reports and a development
 argv probe. T4 adds same-basis pair explanations, safe text reports and shared final-byte
-limits. Product file CLI/demo, native file I/O and final packaging remain later
-stages.
+limits. T5 adds the native file CLI and reproducible demo transcripts. Personal
+explanation, further I/O qualification and final packaging remain future gates.
 
 Times are ASCII decimal **strings**, with at most six fractional digits. Core
 comparisons use Int64 microseconds and integer ppm; no floating-point time
@@ -51,7 +51,7 @@ python3 validation/check_probe.py --product _build/native/release/build/cmd/prob
 `evaluate_json(Bytes)` returns `Result[String, EvalError]`; failures serialize
 through `error_json(error)`. The development probe accepts one small JSON argv
 argument and returns the full report/error with exit 0/2/3/4. This does not
-establish the future file-reading CLI's 8 MiB I/O behavior. `decode_task` checks
+establish file-reading I/O behavior; T5 now verifies that through the native CLI. `decode_task` checks
 the actual byte count, strict UTF-8 (one initial BOM allowed), nesting depth 16,
 then schema and shared typed factories. JSON object duplicate keys, including
 escape-equivalent keys, use the last value: reports describe the parsed task
@@ -86,3 +86,35 @@ python3 validation/check_reports.py --product _build/native/release/build/cmd/pr
 
 This checks the new renderers with a seconds-space Fraction oracle and performs
 byte regressions against all 46 archived T3 reports; it does not rerun sed_eval.
+
+## Native file CLI (T5)
+
+The file CLI is implemented and locally verified on macOS arm64. Build with the
+project's pinned toolchain, then run the executable directly:
+
+```sh
+scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe --help
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/duplicate.json --format json
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1
+```
+
+The command comes first, input file second, followed by option/value pairs.
+Text is the default; `--format json` selects machine output, including argument
+and input failures. An invalid or repeated `--format` produces a text diagnostic.
+`--help` and `--version` must stand alone and do not read an input file. Query IDs
+may start with `--` or equal option names. A filename starting with `--` can be
+spelled with `./` to distinguish it from an option.
+
+Inputs are read only: regular UTF-8 JSON files, including symlinks to regular
+files, at most 8 MiB. Directories, FIFOs, devices and NUL paths are rejected.
+No stdin, TSV/CSV, output-file option or numeric-time extension is added.
+Successful reports go to stdout; text errors go to stderr; JSON errors go to
+stdout. Exit codes: 0 completed (including zero score/ineligible pairs),
+2 input/argument/file/output-I/O error, 3 resource limit, 4 unexpected internal
+error. An output-device failure can leave a prefix already written; its nonzero
+exit means that prefix is not a completed result.
+
+See the [three-minute demo](docs/demo.md). Its automated transcripts do not prove
+personal understanding or an actual spoken presentation. Linux/remote CI,
+injected EINTR/short-write/close failures and final A11 remain future gates.

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/mooneventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 255,
+  "reason": null,
+  "elapsed_seconds": 0.21,
+  "log": "evidence/T5/20261022T083636409449Z-cli-first-build.log",
+  "log_sha256": "2796fc9d08ed7d421c996ffcf95148ef5264dca85322d52e83f294259c48de79",
+  "scope": "T5",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,0 +1,9 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-8yodfcpf/large-output.json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "0cb03a9872a2795a8784d66c0c1795eb8750328a5c4270d1fe850531249dc348",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

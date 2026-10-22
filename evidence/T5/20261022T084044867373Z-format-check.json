@@ -1,0 +1,16 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "fmt",
+    "--check"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 255,
+  "reason": null,
+  "elapsed_seconds": 0.185,
+  "log": "evidence/T5/20261022T084044867373Z-format-check.log",
+  "log_sha256": "ec8b018740420fe8ddb36afe1a6b6ef14d61b55c0628d61fc1daa2b350b48d47",
+  "scope": "T5",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

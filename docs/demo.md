@@ -1,36 +1,58 @@
-# 三分钟演示与讲解草案
+# 三分钟演示与讲解稿
 
-状态：供后续实现的演示脚本，**尚未运行**。示例算式由AI整理，须由参赛者本人复算/讲解后再记录其完成状态；不能写成“用户已手算”。
+这是可复跑的合成数据演示脚本。自动运行记录不等于本人讲解；**本人复算、口头讲解和M2仍未完成**。目标仅已验证本机macOS arm64 native，参考原版历史证据见[阶段结果](reviews/2026-10-20-t1b-results.md)。
 
-## 0:00–0:40：重复预测为什么不能双计TP
+先构建，再在仓库根目录执行；每次输出用新目录：
 
-展示 examples/duplicate.json：参考r1=[10,12]；预测p1=[10,12]、p2=[10.05,12.05]。c=0.2、q=0.5；两预测均合格，但同一参考只能使用一次，因此TP=1、FP=1、FN=0，P=1/2、R=1、F1=2/3。
+```sh
+scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn
+python3 scripts/demo.py --bin _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T5/demo-recheck
+```
 
-待实现命令：`mooneventeval evaluate examples/duplicate.json --format text`。现场先说明容差由调用者声明，不代表算法自动挑选最佳评分规则。
+下面用`MEE`代指上述exe的路径；它是直接运行的本地产物，不是moon run。输入只读，不覆盖文件。
 
-## 0:40–1:40：贪心为什么少算，增广如何纠正
+## 0:00—0:45 重复预测为什么是FP
 
-参考r1=[10,11]、r2=[10.3,11.3]；预测p1=[10.15,11.15]、p2=[9.85,10.85]。起点差分别为0.15、0.15、0.15、0.45；默认起点容差0.2。前三条边存在，r2-p2不合格。
+```sh
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/duplicate.json --format text
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/duplicate.json --recording clip-01 --reference r1 --prediction p2 --format text
+```
+
+一个参考、两个重复预测：TP1/FP1/FN0。p2本身满足时间条件，但一对一配对已选p1；“有候选但未选中”不等于“时间不合格”。explain-pair只解释这两个事件的资格，不运行最大匹配，也不声称这对已选中。
+
+## 0:45—1:50 贪心陷阱与增广路径
+
+```sh
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/greedy-trap.json --format json
+```
+
+同类alarm、collar=0.2秒。r1起点10、r2起点10.3；p1起点10.15、p2起点9.85；各自长度1秒，终点容差max(0.2,1×0.5)=0.5秒。起点差绝对值分别为0.15、0.15、0.15、0.45，因此只有下列三条边：
 
 ```mermaid
-flowchart LR
+graph LR
   r1["r1: 10–11"] --- p1["p1: 10.15–11.15"]
   r1 --- p2["p2: 9.85–10.85"]
   r2["r2: 10.3–11.3"] --- p1
 ```
 
-按r1-p1先到先配只得到1对；沿r2→p1→r1→p2调整，得到r1-p2、r2-p1两对。最大TP为2，因为参考只有2个且已有覆盖两者的合法匹配。
+不可回退的朴素贪心先取r1→p1，会让r2无处可配，只得TP1。沿r2→p1→r1→p2增广，改为r2→p1、r1→p2，得TP2。产品先找空闲预测，必要时用显式栈DFS增广，最大化配对数；不最小化时间误差。同版本规范ID排序固定选择，工作量跨所有分组共享20M预算，超限整任务失败。
 
-**参考预期：**sed_eval固定版本的optimal模式也应得到TP=2；这是源码/数学推导，尚未实跑。这里的卖点是比朴素贪心可靠的MoonBit实现与解释，不把与sed_eval一致包装成超越它。若实跑不同，先排查配置、浮点与输入，不把差异自动当优势。
+**锁定sed_eval的optimal模式在本例预期也是TP2，T1b已实测。**这个例子展示最大匹配相对朴素贪心的必要性，不虚构超过成熟评测工具的成绩。
 
-## 1:40–2:30：边界与解释
+## 1:50—2:35 精确边界与可解释性
 
-参考[10,12]；分别独立评测预测[10.2,12.2]与[10.200001,12.2]。起点差0.2包含等号，超过1微秒则不合格。终点容差max(0.2,2×0.5)=1秒，两例终点均合格。
+```sh
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1 --format text
+```
 
-待实现命令：`mooneventeval explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1 --format text`。解释合格不等于进入某个最大匹配；多最优解的配对身份由固定实现规则选择。
+10.2−10=0.2，起点等号通过。十进制秒字符串先精确转Int64微秒；参考时长与比例交叉乘法比较，终点有效阈值可显示到十二位秒，不用epsilon。偏差保留预测减参考的符号。该例eligible=true不需要匹配身份推断。
 
-## 2:30–3:00：主动说明边界
+## 2:35—3:00 失败协议与取舍
 
-讲明：用户提供参考标注；首版不检测信号、不做临床判断；不同类别不配对；空分母为未定义；资源耗尽明确失败。出示真实运行SHA/命令/输出与独立验证范围，不只放测试数量。
+```sh
+_build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate examples/missing.json --format json
+```
 
-验收演示时记录：实际命令、退出码、原始输出、参赛者能否独立说明三处算式与一个取舍；还未发生的演示和本人讲解保持未完成。
+真实缺文件exit2、status=failed、FILE_ERROR，无summary或部分分数。完成但零TP/事件对不合格仍exit0；资源超限exit3，内部非预期故障exit4。默认文本；机器JSON失败写stdout，文本诊断写stderr。只支持UTF8 JSON/字符串时间，重名键后值覆盖是已披露限制；TSV仍待批准。读取最多8MiB+1、仅普通文件（允许普通文件符号链接），输出失败可能已有前缀，无法撤回，但必须非零。
+
+本人实际演示后另记日期、被演示SHA、亲手推导和可回答的问题；本稿及自动收据不替代该记录。

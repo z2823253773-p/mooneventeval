@@ -1,0 +1,24 @@
+[1mdiff --git "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cmd/mooneventeval/native_io_wbtest.mbt" "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cmd/mooneventeval/native_io_wbtest.mbt"[m
+[1mindex 969ee09..73032bf 100644[m
+[1m--- "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cmd/mooneventeval/native_io_wbtest.mbt"[m
+[1m+++ "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cmd/mooneventeval/native_io_wbtest.mbt"[m
+[36m@@ -1,4 +1,5 @@[m
+ // Removing close eventually exhausts descriptors; NUL must never truncate a path.[m
+[32m+[m
+ ///|[m
+ test "native_read_nul_regular_and_repeated_close" {[m
+   match read_file_bounded("examples/duplicate.json\u0000suffix") {[m
+failed to execute `git --no-pager diff --color=always --no-index /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/mooneventeval/native_io_wbtest.mbt /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/wasm-gc/release/format/cmd/mooneventeval/native_io_wbtest.mbt`
+[1mdiff --git "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cli/args_test.mbt" "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cli/args_test.mbt"[m
+[1mindex bbfa486..65dcbcb 100644[m
+[1m--- "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cli/args_test.mbt"[m
+[1m+++ "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cli/args_test.mbt"[m
+[36m@@ -1,4 +1,5 @@[m
+ // Catch lost JSON failure mode, permissive grammar and wrong dispatch/exit routing.[m
+[32m+[m
+ ///|[m
+ test "args_success_default_and_exact_explanation" {[m
+   let r = @cli.parse_args(["evaluate", "task.json"]).unwrap()[m
+failed to execute `git --no-pager diff --color=always --no-index /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/wasm-gc/release/format/cli/args_test.mbt`
+Failed with 0 warnings, 0 errors.
+Error: failed when formatting project

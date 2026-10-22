@@ -1,0 +1,9 @@
+[local/mooneventeval] test cli/args_test.mbt:11 ("args_query_ids_may_start_with_dashes") failed
+expect test failed at /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:16:3-16:45
+Diff: (- expected, + actual)
+----
+-true
++false
+----
+
+Total tests: 5, passed: 4, failed: 1.

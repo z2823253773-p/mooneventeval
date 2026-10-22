@@ -1,0 +1,7 @@
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:13:35 ]
+    │
+ 13 │     inspect(@cli.parse_args(args).is_err(), content="true")
+    │                                   ───┬──  
+    │                                      ╰──── Error Warning (deprecated): use `x is Err(_)` instead
+────╯

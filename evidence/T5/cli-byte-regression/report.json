@@ -1,0 +1,562 @@
+{
+  "passed": true,
+  "raw_byte_cases": 46,
+  "cases": [
+    {
+      "name": "duplicate",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/duplicate/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249"
+    },
+    {
+      "name": "greedy-trap",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/greedy-trap/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8"
+    },
+    {
+      "name": "boundary",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/boundary/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c"
+    },
+    {
+      "name": "decimal-onset-binary64-flip",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/decimal-onset-binary64-flip/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "eebcc09df3cbe29266eb8c898fb8f3a9e0c658294d65a8ff1043ba7c444b0980"
+    },
+    {
+      "name": "E3-onset-outside",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E3-onset-outside/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a2177a299afd2d3b296b6f239991f817611d4dddd074dd0d702c85414966fe71"
+    },
+    {
+      "name": "E4-offset-equal",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E4-offset-equal/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "924b615cc2e3f9d3facd3567cb277b019f68a62299af6aa67a153dfaa748e17d"
+    },
+    {
+      "name": "E4-offset-outside",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E4-offset-outside/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4600dce39b0d53d56bef3c048808546cf472ffd35a0c75a7dd0a3fb1c56da16b"
+    },
+    {
+      "name": "E5-collar-dominates",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E5-collar-dominates/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "51a0656fb55a73b019adaf36b967df436c7569490114d5245a27fbf79d91c41a"
+    },
+    {
+      "name": "E6-reference-duration",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E6-reference-duration/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e0dcfa6de463ef52f43695f69ff307df7e619018fbbed51d3047ec259b47735c"
+    },
+    {
+      "name": "E7-fractional-microsecond",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E7-fractional-microsecond/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2cb73151b675f1c407631f75bc1ef9168fa67b897c833d01011ef9be0dec3975"
+    },
+    {
+      "name": "E7-fractional-outside",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/E7-fractional-outside/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e27d347bfe8b729289d5ce59335b533441c3733749282b0edaa4e27fc567c094"
+    },
+    {
+      "name": "empty-both",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/empty-both/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "057d5f20bca43e639e9d7d200f51e085233a8fd62b1bf66d008180b0d7c78c04"
+    },
+    {
+      "name": "empty-reference",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/empty-reference/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "ecf2964a9f4101edf2939a10be4299ff1305320b8b8197fa34d874e9dd9f8b34"
+    },
+    {
+      "name": "empty-prediction",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/empty-prediction/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "669e3e1972cdc865cab29ddcc2d55970cb720e3c9fc30927a7d6d4955012641e"
+    },
+    {
+      "name": "no-edge",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/no-edge/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e7f2eb77377468ac12741b665905896fc91b48f3ba61bfb7cc18a596021b81c9"
+    },
+    {
+      "name": "cross-label-substitution",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/cross-label-substitution/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7bf22c7093dea3095a80456df89c0033a131ce6fc5be7a9f72a4bfb8a4176d14"
+    },
+    {
+      "name": "binary-grid-equal",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/binary-grid-equal/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "393a799eee2d07a0e12c8a5556e4eb21a7035b5d317df372d9e53c6a91cfc141"
+    },
+    {
+      "name": "binary-grid-outside",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/binary-grid-outside/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4433c4a43a41bbfc7cbf79b342a897547192df89e8879cbaa7af071df8502ed5"
+    },
+    {
+      "name": "binary-grid-zero-ratio",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/binary-grid-zero-ratio/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "7203196771ad2b3e17e55074d242b8eeddf80fa4f95b65f28d49297d1afd2a91"
+    },
+    {
+      "name": "overlap-multiple-optima",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/overlap-multiple-optima/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a22af5c30089762c1db17668b2b335bbf242672218152c984fb32814bcf7a8e0"
+    },
+    {
+      "name": "recording-isolation",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/recording-isolation/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "53783f172aae2835b91ec63ff667561db8f423595ad5a8c304698d1a3b7977e9"
+    },
+    {
+      "name": "unicode-order-and-escaping",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/unicode-order-and-escaping/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0e135d2254550a479eceb59f70131b75152ad3dfe8f8d06f79e91c96cdc43240"
+    },
+    {
+      "name": "seed-grid-0",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-0/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cd51aabfe021b679156838325500dd2a437120d6ecacb504157309cc6f89e158"
+    },
+    {
+      "name": "seed-grid-1",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-1/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0b6ce704ababf585815358391cb691a4f23dc56e0c8bbd2e3c4b648052001796"
+    },
+    {
+      "name": "seed-grid-2",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-2/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "5760f3b614dfd5211862559fd14c86f266a07e315dbc6cbcb85be9ef79cae653"
+    },
+    {
+      "name": "seed-grid-3",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-3/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4e119b1cdad685f54d03212ac9b7f49599bbff9d7006f81e0e734048405115af"
+    },
+    {
+      "name": "seed-grid-4",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-4/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "18e5d99adfd7265758e57825fe3ed7de06d5c2e3ca7e3a362798911cfea307d3"
+    },
+    {
+      "name": "seed-grid-5",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-5/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "14a8664ead29815361570b4c5e22cedb69662827e2c217111f0d281fad56da26"
+    },
+    {
+      "name": "seed-grid-6",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-6/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "494de38d4ff434179acbf4b11198be6c7908bfdf5d33b2ec07d4e504d1839753"
+    },
+    {
+      "name": "seed-grid-7",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-7/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e830a470dbc504fe34febc54bd3df01e3e49d26bc7ec7e2cbfbbe912e79788bc"
+    },
+    {
+      "name": "seed-grid-8",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-8/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "834e03fbdf9e86412532369d6b8b4e32aca4b56602ba1678ae81ed8d366ec231"
+    },
+    {
+      "name": "seed-grid-9",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-9/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "27a2fd4f3f7c8e56d48b1baa9c7729ab34a09a14b3426243befb7f5b22328d83"
+    },
+    {
+      "name": "seed-grid-10",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-10/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "cefa843d31533244eabfb22f63703b5a444f688de4b0f96954b5fbcb1539d355"
+    },
+    {
+      "name": "seed-grid-11",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-11/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f9296940f355bcac02e587e633efaea6ed9686869492c1421fcbc2868da46985"
+    },
+    {
+      "name": "seed-grid-12",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-12/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "baae0ef4a1cc2d83d112c269d1bcfbab07a71e670d017c6122c0677a03580b7f"
+    },
+    {
+      "name": "seed-grid-13",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-13/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b8c190e54157b6a7571a80fafbc59016f91ad52b7ef6c077ec299825eb7fe7d5"
+    },
+    {
+      "name": "seed-grid-14",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-14/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "edb00c92ac3a848c59552141afb834dbd362088cb74f4c13948dc887052420b7"
+    },
+    {
+      "name": "seed-grid-15",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-15/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "98c56c1560ccce17f647d0cbf8fece06da431ec30a82915965354bafe833586a"
+    },
+    {
+      "name": "seed-grid-16",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-16/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a64c2ad2688fc620f8e296d6fe48dc25dbafe3b401e8aa255f5792cd9716b3aa"
+    },
+    {
+      "name": "seed-grid-17",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-17/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "4c59d50b2dba5a90c7662b9fd02a611399929020fd1980ac22f83fce755403b5"
+    },
+    {
+      "name": "seed-grid-18",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-18/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "16512375b45e68b9995de817096844e7c455a9b4f1ef35993fcc151ceea4e4df"
+    },
+    {
+      "name": "seed-grid-19",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-19/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e5a8bc3c3a68a914c8ce6731190295e15f05230eb3bec28b9ed539238714fbe4"
+    },
+    {
+      "name": "seed-grid-20",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-20/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "12d595e049934d9ad6440ec02aff6639e5482014d1fc46b4b46a72e11229ec7e"
+    },
+    {
+      "name": "seed-grid-21",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-21/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "fa05ea98cc23a26fae98defdf6b53b5b66c12c4f48b940ba6cb47eb7f3786761"
+    },
+    {
+      "name": "seed-grid-22",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-22/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "eadc0ede3d0c3cd4cc88ca9af22b0e3ec227646dc3f13c9c444266dc8eba7f09"
+    },
+    {
+      "name": "seed-grid-23",
+      "command": [
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T5/cli-byte-regression/seed-grid-23/input.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "67a10cdc012631b6d963458d0e39fe2b7f1ade47acd1023a2ceb347851a52036"
+    }
+  ],
+  "product": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+  "product_sha256": "abda3bad71c03f732d5c2492442dff5632968a279fc1502a1b2134c6e7957eec",
+  "git_head": "41890b84505e790efef6c2f981512af04539a51e",
+  "scope": "file CLI against archived T3 bytes; no new sed_eval run or final A11"
+}

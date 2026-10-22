@@ -1,6 +1,6 @@
 # T5-cli-demo 任务卡
 
-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：用户“继续”授权本阶段实施中；历史待审标记不再阻止已批准PRD/当前卡执行。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 demo在CLI任务中交付；当前输入仍JSON。安全边界不删除，较重故障注入可后移但不能称已通过。
 

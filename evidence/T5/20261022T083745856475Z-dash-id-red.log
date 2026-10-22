@@ -1,0 +1,18 @@
+called `Result::unwrap()` on an `Err` value
+PanicError
+    at @moonbitlang/core/abort.abort[@local/mooneventeval/cli.CliRequest] (/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/lib/core/abort/abort.mbt:50)
+    at @moonbitlang/core/result.Result::unwrap[@local/mooneventeval/cli.CliRequest, @local/mooneventeval/cli.ArgFailure] (/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/moonbit/0.10.14+7d59c7ec9/lib/core/builtin/result.mbt:263)
+    at @local/mooneventeval/cli_blackbox_test.__test_617267735f746573742e6d6274_1 (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:12)
+    at ??? (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:0)
+    at @local/mooneventeval/cli_blackbox_test.moonbit_test_driver_internal_catch_error (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:432)
+    at impl @local/mooneventeval/cli_blackbox_test.MoonBit_Test_Driver for @local/mooneventeval/cli_blackbox_test.MoonBit_Test_Driver_Internal_No_Args with run_test (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:479)
+    at @local/mooneventeval/cli_blackbox_test.moonbit_test_driver_internal_do_execute (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:652)
+    at moonbit_main (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:495)
+    at main (/Users/henryz/Desktop/比赛/mooneventeval-t0/cli/__generated_driver_for_blackbox_test.mbt:493)
+Error: failed to run test for target Native
+
+Caused by:
+    Failed to run the test: /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/debug/test/cli/cli.blackbox_test.exe
+    The test executable exited with signal: 6 (SIGABRT)
+    Active test at executable exit:
+      - /Users/henryz/Desktop/比赛/mooneventeval-t0/cli/args_test.mbt:11 "args_query_ids_may_start_with_dashes"

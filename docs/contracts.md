@@ -120,3 +120,11 @@ T3最终运行代码/被测提交508d5cf，原候选e9c7f31的独立评审发现
 T4实现细化：bounded_serialize(Json, limit)仅为标准JSON值边界测试的包内白盒适配器，置于serialization_wbtest；产品四渲染函数共用serialization.mbt里的bounded_output。这样不为满足测试名称添加unused运行函数，不重新解析完整JSON。T5不消费该白盒辅助函数；最终字节门及16MiB限额是产品代码。
 
 T4最终验证器/被测提交d00b0a6，产品实现d528d30。原始过程stdout/stderr必须binary capture/write/hash，字节回归read_bytes比较；严格UTF8解码只用于语义检查，不得先做通用换行规范化。CRLF/文本原始CR两negative controls必须拒绝且档案保持真实字节。T4完成不等于文件CLI或个人M2/最终A11。
+
+### T5实施约定（本机CLI/自动demo实施中）
+
+用户“继续”授权当前T5；不扩大JSON输入/schema。parse_args参数不含exe，Help/Version仅独立--help/--version；命令首位、文件第二位、后续选项值成对。ID值允许以--开头/等于选项名，格式预扫描不把ID值误算成开关；文件名以--开头时用./前缀。有效单一--format json决定失败JSON协议，format本身非法或重复则Text。JSON失败stdout，text失败stderr，成功stdout单个终端LF，连同LF再次检查16MiB最终字节。
+
+native只处理I/O：O_RDONLY|O_NONBLOCK|O_CLOEXEC打开，fstat只允许普通文件（普通符号链接跟随）；NUL在编码前拒绝。每次最多65536字节，最多读取8MiB+1；所有已开FD在Moon聚合结束后关闭一次，不重试歧义close(EINTR)。C中open/fstat/read/write重试EINTR，Moon循环短读/短写；SIGPIPE忽略，使EPIPE归FILE_ERROR/exit2，不误报完成。输出失败可能已有前缀，不可撤回。重故障注入仍T6，CLI目前仅已验证macOS arm64。code4只作内部非预期错误。
+
+自动演示/图示/日志由agent交付，本人复算/口头讲解单列未完成；不伪装成M2证据。T5不重装参考环境或改核心数学。

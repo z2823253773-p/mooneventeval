@@ -1,0 +1,5 @@
+Error: failed to run test for target Native
+
+Caused by:
+    0: Failed to run n2 graph
+    1: local/mooneventeval/cmd/mooneventeval@BuildCStub_0:0: input /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/mooneventeval/io_stub.c missing
