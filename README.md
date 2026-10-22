@@ -3,8 +3,9 @@
 MoonBit event-time evaluation library under development. T3 provides validated
 event/config/recording/task factories, strict JSON task decoding, budgeted
 maximum-cardinality matching, complete stable JSON reports and a development
-argv probe. Product CLI, explain-pair, native file I/O and final packaging remain
-later stages.
+argv probe. T4 adds same-basis pair explanations, safe text reports and shared final-byte
+limits. Product file CLI/demo, native file I/O and final packaging remain later
+stages.
 
 Times are ASCII decimal **strings**, with at most six fractional digits. Core
 comparisons use Int64 microseconds and integer ppm; no floating-point time
@@ -59,3 +60,29 @@ and do not prove the raw text had no duplicate keys. Numeric times are rejected.
 The [eight worked examples](docs/validation/T3-worked-examples.md) include the
 augmenting trap and exact boundaries; they are agent-authored derivations, not
 evidence of the user's own explanation. Full product acceptance/A11 is pending.
+
+## Pair explanations and text reports (T4)
+
+The opaque `PairExplanation` comes from
+`explain_pair(task, recording_id, reference_id, prediction_id)`.
+`explanation_json` and `explanation_text` render the same eligibility basis used
+by graph construction; they do not run matching or claim that an eligible pair
+was selected. `report_text(evaluation)` shows selected pairs, exact signed time
+deltas/tolerances, all label/recording metrics and unmatched candidate reasons.
+Undefined metrics display `未定义`. All four renderers check the final UTF-8
+output against 16 MiB, with no public budget override.
+
+Text identities use reversible JSON quoting and escape terminal/directional
+controls while preserving readable ordinary Unicode. This does not alter IDs.
+The development probe also accepts `report-text`, or `explain-json`/`explain-text`
+followed by recording/reference/prediction IDs after its JSON argument. It is
+still an argv development adapter, not the file-reading product CLI. NUL cannot
+be passed in OS argv IDs; the typed library API supports it and has whitebox
+roundtrip coverage.
+
+```sh
+python3 validation/check_reports.py --product _build/native/release/build/cmd/probe/probe.exe --output evidence/T4/recheck
+```
+
+This checks the new renderers with a seconds-space Fraction oracle and performs
+byte regressions against all 46 archived T3 reports; it does not rerun sed_eval.

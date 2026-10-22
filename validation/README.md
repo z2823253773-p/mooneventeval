@@ -93,3 +93,25 @@ boundary difference is classified only when exact product checks pass, specific
 binary64 candidate flips exist, and original reference TP equals an independently
 built binary64 graph oracle. Unexplained differences block success. There is no
 epsilon or sample deletion. Product runtime never imports these Python tools.
+
+## T4 renderer and byte-budget checks
+
+`check_reports.py` drives the real development probe for evaluation/text and
+pair JSON/text, validates exact bases with the independent rational oracle,
+checks identity roundtrips/control escaping and unknown IDs, and requires the
+46 archived T3 evaluation reports to remain byte-identical. It does not rerun
+sed_eval or establish final A11. All raw argv inputs/outputs and report hashes
+are retained under the chosen output directory.
+
+```sh
+scripts/with-toolchain.sh moon test --target native --deny-warn
+scripts/with-toolchain.sh moon build cmd/probe --target native --release --deny-warn
+python3 validation/check_reports.py --product _build/native/release/build/cmd/probe/probe.exe --output evidence/T4/renderers-final
+```
+
+The MoonBit tests directly exercise final UTF8 bytes (Chinese/escaped NUL),
+16,777,216 bytes exactly and 16,777,217 rejection, plus valid 2000-event capacity.
+The whitebox-only `bounded_serialize` adapter calls standard JSON stringify and
+the same production `bounded_output` gate; it is not a public tuning parameter
+or a second serializer. Public report and explanation JSON/text all use that
+gate. NUL IDs are tested through the typed API, as OS argv cannot carry NUL.

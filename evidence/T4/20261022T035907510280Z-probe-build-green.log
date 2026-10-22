@@ -1,0 +1,12 @@
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:9 ]
+    │
+ 28 │         print(report)
+    │         ──┬──  
+    │           ╰──── The value identifier print is unbound.
+────╯
+Failed with 0 warnings, 1 errors.
+Error: failed to run build for target Native
+
+Caused by:
+    failed when building project

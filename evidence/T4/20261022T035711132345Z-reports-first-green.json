@@ -1,0 +1,19 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 3.374,
+  "log": "evidence/T4/20261022T035711132345Z-reports-first-green.log",
+  "log_sha256": "f352802f5757c6fda2a57431b715bc484ba7ac8858a5f09b835b3de88cabf87b",
+  "scope": "T4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

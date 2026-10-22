@@ -1,0 +1,21 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "serialization_identity_quote_roundtrip_controls_and_direction"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 2,
+  "reason": null,
+  "elapsed_seconds": 2.367,
+  "log": "evidence/T4/20261022T040444189575Z-bidi-marker-regression-red.log",
+  "log_sha256": "b8de1a9aecc008eda2f40265a9056d362ae4e23259e93d28a2499a06cd9cf34b",
+  "scope": "T4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

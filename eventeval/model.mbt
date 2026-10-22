@@ -190,3 +190,12 @@ pub fn Evaluation::pairs(
     (p.recording_id, p.label, p.reference.id, p.prediction.id)
   })
 }
+
+///|
+pub struct PairExplanation {
+  priv config : Config
+  priv recording_id : String
+  priv reference : Event
+  priv prediction : Event
+  priv basis : PairBasis
+}

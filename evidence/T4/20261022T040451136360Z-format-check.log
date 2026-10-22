@@ -1,0 +1,13 @@
+[1mdiff --git "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cmd/probe/main.mbt" "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cmd/probe/main.mbt"[m
+[1mindex 8c4472d..2050e82 100644[m
+[1m--- "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/cmd/probe/main.mbt"[m
+[1m+++ "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/cmd/probe/main.mbt"[m
+[36m@@ -1,4 +1,5 @@[m
+ // Development-only argv probe. No file I/O or product CLI interface.[m
+[32m+[m
+ ///|[m
+ extern "C" fn terminate(code : Int) -> Unit = "exit"[m
+ [m
+failed to execute `git --no-pager diff --color=always --no-index /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/wasm-gc/release/format/cmd/probe/main.mbt`
+Failed with 0 warnings, 0 errors.
+Error: failed when formatting project

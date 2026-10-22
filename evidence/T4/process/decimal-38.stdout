@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"INVALID_DECIMAL","message":"Expected at most six fractional digits","path":"recordings[0].reference[0].onset_s","limit":null,"observed":null}}

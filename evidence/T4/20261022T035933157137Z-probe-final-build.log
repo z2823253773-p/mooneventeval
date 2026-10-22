@@ -1,0 +1,12 @@
+Error: [0020]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:45 ]
+    │
+ 28 │         println(report.trim_end(chars="\n").to_string())
+    │                                             ────┬────  
+    │                                                 ╰────── Error Warning (deprecated): Use `to_owned` to allocate an owned String from a StringView; use `Show::to_string` or format strings for display
+────╯
+Failed with 0 warnings, 1 errors.
+Error: failed to run build for target Native
+
+Caused by:
+    failed when building project

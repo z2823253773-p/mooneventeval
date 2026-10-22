@@ -1,0 +1,20 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/probe",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 255,
+  "reason": null,
+  "elapsed_seconds": 0.09,
+  "log": "evidence/T4/20261022T035933157137Z-probe-final-build.log",
+  "log_sha256": "4284adb959f55fe776073f3e0bfee9947ee6a360be435083c2d70268241a19b4",
+  "scope": "T4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

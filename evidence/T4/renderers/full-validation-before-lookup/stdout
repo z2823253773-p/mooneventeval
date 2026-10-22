@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"UNKNOWN_LABEL","message":"Undeclared label","path":"recordings[1].reference[0].label","limit":null,"observed":null}}

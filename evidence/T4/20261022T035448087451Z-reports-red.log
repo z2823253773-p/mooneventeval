@@ -1,0 +1,205 @@
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:12:11 ]
+    │
+ 12 │   let e = explain_pair(t,"x","r","p").unwrap()
+    │           ──────┬─────  
+    │                 ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:18:11 ]
+    │
+ 18 │   inspect(explain_pair(t,"x","r","p").unwrap().basis.eligible,content="false")
+    │           ──────┬─────  
+    │                 ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:25:9 ]
+    │
+ 25 │   let e=explain_pair(t,"x","r","p2").unwrap()
+    │         ──────┬─────  
+    │               ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:27:12 ]
+    │
+ 27 │   let json=explanation_json(e).unwrap()
+    │            ────────┬───────  
+    │                    ╰───────── The value identifier explanation_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:29:16 ]
+    │
+ 29 │   let mismatch=explain_pair(t,"x","r","p3").unwrap()
+    │                ──────┬─────  
+    │                      ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:33:11 ]
+    │
+ 33 │   inspect(explain_pair(far,"x","r","far").unwrap().basis.eligible,content="false")
+    │           ──────┬─────  
+    │                 ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:40:11 ]
+    │
+ 40 │     match explain_pair(t,pair.0,pair.1,pair.2) {
+    │           ──────┬─────  
+    │                 ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:52:9 ]
+    │
+ 52 │   let e=explain_pair(t,"x","r","p").unwrap()
+    │         ──────┬─────  
+    │               ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:53:11 ]
+    │
+ 53 │   inspect(explanation_json(e).unwrap().contains("\"offset_limit_s\":\"0.0000015\""),content="true")
+    │           ────────┬───────  
+    │                   ╰───────── The value identifier explanation_json is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:55:12 ]
+    │
+ 55 │   let text=explanation_text(explain_pair(t,"x","r","p").unwrap()).unwrap()
+    │            ────────┬───────  
+    │                    ╰───────── The value identifier explanation_text is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/explain_wbtest.mbt:55:29 ]
+    │
+ 55 │   let text=explanation_text(explain_pair(t,"x","r","p").unwrap()).unwrap()
+    │                             ──────┬─────  
+    │                                   ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:3:11 ]
+   │
+ 3 │   inspect(format_scaled_seconds(1_500_000L,12),content="0.0000015")
+   │           ──────────┬──────────  
+   │                     ╰──────────── The value identifier format_scaled_seconds is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:4:11 ]
+   │
+ 4 │   inspect(format_scaled_seconds(-200_000L,6),content="-0.2")
+   │           ──────────┬──────────  
+   │                     ╰──────────── The value identifier format_scaled_seconds is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:5:11 ]
+   │
+ 5 │   inspect(format_scaled_seconds(0L,12),content="0")
+   │           ──────────┬──────────  
+   │                     ╰──────────── The value identifier format_scaled_seconds is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:6:11 ]
+   │
+ 6 │   inspect(format_scaled_seconds(2_592_000_000_000_000_000L,12),content="2592000")
+   │           ──────────┬──────────  
+   │                     ╰──────────── The value identifier format_scaled_seconds is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:13:12 ]
+    │
+ 13 │   let text=report_text(report).unwrap()
+    │            ─────┬─────  
+    │                 ╰─────── The value identifier report_text is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:19:17 ]
+    │
+ 19 │   inspect(text==report_text(report).unwrap(),content="true")
+    │                 ─────┬─────  
+    │                      ╰─────── The value identifier report_text is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:26:19 ]
+    │
+ 26 │   let explanation=explain_pair(t,id,id,id).unwrap()
+    │                   ──────┬─────  
+    │                         ╰─────── The value identifier explain_pair is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/report_wbtest.mbt:35:12 ]
+    │
+ 35 │   let text=report_text(evaluate(t).unwrap()).unwrap()
+    │            ─────┬─────  
+    │                 ╰─────── The value identifier report_text is unbound.
+────╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:5:12 ]
+   │
+ 5 │   let text=bounded_serialize(value,5).unwrap()
+   │            ────────┬────────  
+   │                    ╰────────── The value identifier bounded_serialize is unbound.
+───╯
+Error: [4021]
+   ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:7:9 ]
+   │
+ 7 │   match bounded_serialize(value,4) {
+   │         ────────┬────────  
+   │                 ╰────────── The value identifier bounded_serialize is unbound.
+───╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:12:24 ]
+    │
+ 12 │   inspect(@utf8.encode(bounded_serialize(control,8).unwrap()).length()==8,content="true")
+    │                        ────────┬────────  
+    │                                ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:13:11 ]
+    │
+ 13 │   inspect(bounded_serialize(control,7) is Err(_),content="true")
+    │           ────────┬────────  
+    │                   ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:14:11 ]
+    │
+ 14 │   inspect(bounded_serialize(Json::string(""),2) is Ok(_),content="true")
+    │           ────────┬────────  
+    │                   ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:15:11 ]
+    │
+ 15 │   inspect(bounded_serialize(Json::string(""),1) is Err(_),content="true")
+    │           ────────┬────────  
+    │                   ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:20:10 ]
+    │
+ 20 │   let at=bounded_serialize(Json::string(String::make(limit-2,'a')),limit).unwrap()
+    │          ────────┬────────  
+    │                  ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:22:9 ]
+    │
+ 22 │   match bounded_serialize(Json::string(String::make(limit-1,'a')),limit) {
+    │         ────────┬────────  
+    │                 ╰────────── The value identifier bounded_serialize is unbound.
+────╯
+Error: [4014]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:24:76 ]
+    │
+ 24 │     Err(e) => { inspect(e.code,content="RESOURCE_LIMIT"); inspect(e.limit==Some(16_777_216L) && e.observed==Some(16_777_217L),content="true") }
+    │                                                                            ────────┬────────  
+    │                                                                                    ╰────────── Constr Type Mismatch(constructor Some)
+        has type : _/0?
+        wanted   : Int64
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/eventeval/serialization_wbtest.mbt:30:14 ]
+    │
+ 30 │   let quoted=text_identity(id)
+    │              ──────┬──────  
+    │                    ╰──────── The value identifier text_identity is unbound.
+────╯

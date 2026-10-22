@@ -18,9 +18,17 @@ pub fn event(String, String, String, String) -> Result[Event, EvalError]
 
 pub fn exit_code(EvalError) -> Int
 
+pub fn explain_pair(Task, String, String, String) -> Result[PairExplanation, EvalError]
+
+pub fn explanation_json(PairExplanation) -> Result[String, EvalError]
+
+pub fn explanation_text(PairExplanation) -> Result[String, EvalError]
+
 pub fn recording(String, Array[Event], Array[Event]) -> Result[Recording, EvalError]
 
 pub fn report_json(Evaluation) -> Result[String, EvalError]
+
+pub fn report_text(Evaluation) -> Result[String, EvalError]
 
 pub fn task(Array[String], Array[Recording], Config) -> Result[Task, EvalError]
 
@@ -69,6 +77,10 @@ pub struct Metrics {
   precision : Double?
   recall : Double?
   f1 : Double?
+}
+
+pub struct PairExplanation {
+  // private fields
 }
 
 pub struct Recording {

@@ -15,28 +15,6 @@ fn json_array(items : Array[String]) -> String {
 }
 
 ///|
-fn decimal_string(value : Int64, digits : Int) -> String {
-  let sign = if value < 0L { "-" } else { "" }
-  let number = if value < 0L { -value } else { value }
-  let mut factor = 1L
-  for _ in 0..<digits {
-    factor = factor * 10L
-  }
-  let whole = (number / factor).to_string()
-  let remainder = number % factor
-  if remainder == 0L {
-    return sign + whole
-  }
-  let fraction = remainder.to_string()
-  let padded = String::make(digits - fraction.length(), '0') + fraction
-  let chars = padded.to_array()
-  while chars.last() == Some('0') {
-    ignore(chars.pop())
-  }
-  sign + whole + "." + String::from_array(chars)
-}
-
-///|
 fn optional_double(value : Double?) -> String {
   match value {
     None => "null"
@@ -69,8 +47,8 @@ fn event_json(event : Event) -> String {
   json_object([
     ("id", event.id.quote_json()),
     ("label", event.label.quote_json()),
-    ("onset_s", decimal_string(event.onset_us, 6).quote_json()),
-    ("offset_s", decimal_string(event.offset_us, 6).quote_json()),
+    ("onset_s", format_scaled_seconds(event.onset_us, 6).quote_json()),
+    ("offset_s", format_scaled_seconds(event.offset_us, 6).quote_json()),
   ])
 }
 
@@ -81,12 +59,21 @@ fn basis_json(basis : PairBasis) -> String {
     ("onset_pass", basis.onset_pass.to_string()),
     ("offset_pass", basis.offset_pass.to_string()),
     ("eligible", basis.eligible.to_string()),
-    ("onset_delta_s", decimal_string(basis.onset_delta_us, 6).quote_json()),
-    ("offset_delta_s", decimal_string(basis.offset_delta_us, 6).quote_json()),
-    ("onset_limit_s", decimal_string(basis.onset_limit_us, 6).quote_json()),
+    (
+      "onset_delta_s",
+      format_scaled_seconds(basis.onset_delta_us, 6).quote_json(),
+    ),
+    (
+      "offset_delta_s",
+      format_scaled_seconds(basis.offset_delta_us, 6).quote_json(),
+    ),
+    (
+      "onset_limit_s",
+      format_scaled_seconds(basis.onset_limit_us, 6).quote_json(),
+    ),
     (
       "offset_limit_s",
-      decimal_string(basis.offset_limit_scaled, 12).quote_json(),
+      format_scaled_seconds(basis.offset_limit_scaled, 12).quote_json(),
     ),
   ])
 }
@@ -118,10 +105,13 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
     (
       "config",
       json_object([
-        ("collar_s", decimal_string(report.config.collar_us, 6).quote_json()),
+        (
+          "collar_s",
+          format_scaled_seconds(report.config.collar_us, 6).quote_json(),
+        ),
         (
           "offset_ratio",
-          decimal_string(report.config.offset_ratio_ppm, 6).quote_json(),
+          format_scaled_seconds(report.config.offset_ratio_ppm, 6).quote_json(),
         ),
       ]),
     ),
@@ -173,12 +163,7 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
       ]),
     ),
   ])
-  let size = @utf8.encode(text).length()
-  if size > 16_777_216 {
-    Err(resource_error("report", 16_777_216L, size.to_int64()))
-  } else {
-    Ok(text)
-  }
+  bounded_output(text, 16_777_216)
 }
 
 ///|
@@ -215,4 +200,32 @@ pub fn error_json(error : EvalError) -> String {
       ]),
     ),
   ])
+}
+
+///|
+pub fn explanation_json(value : PairExplanation) -> Result[String, EvalError] {
+  let text = json_object([
+    ("schema_version", "1"),
+    ("semantics", "\"collar-max-cardinality/v1\""),
+    ("implementation_version", "\"0.1.0\""),
+    ("status", "\"completed\""),
+    (
+      "config",
+      json_object([
+        (
+          "collar_s",
+          format_scaled_seconds(value.config.collar_us, 6).quote_json(),
+        ),
+        (
+          "offset_ratio",
+          format_scaled_seconds(value.config.offset_ratio_ppm, 6).quote_json(),
+        ),
+      ]),
+    ),
+    ("recording_id", value.recording_id.quote_json()),
+    ("reference", event_json(value.reference)),
+    ("prediction", event_json(value.prediction)),
+    ("basis", basis_json(value.basis)),
+  ])
+  bounded_output(text, 16_777_216)
 }

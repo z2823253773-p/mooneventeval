@@ -1,6 +1,6 @@
 # T4-reports 任务卡
 
-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：用户继续授权执行中；沿用T3固定接口与JSON编码。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 保留准确解释、规范输出及最终UTF-8字节数检查；不提前做不必要的定制序列化设施。
 
@@ -18,7 +18,7 @@
 
 ```moonbit
 test "report_fractional_microsecond" {
-  inspect(format_scaled_seconds(1_500_000L, 12), content="\"0.0000015\"")
+  inspect(format_scaled_seconds(1_500_000L, 12), content="0.0000015")
 }
 ```
 - [ ] **3. 实现同源解释与稳定序列化。** explain_pair 在完整已校验 Task 内选择同录制两侧事件，只调用 eligibility；阈值 scaled 用十二位秒精度规范格式化。JSON对象键固定顺序或使用统一规范写入器（不依赖 HashMap 遍历）；按编码后字节计预算，检查完整报告后才返回。匹配、FP/FN都带事件信息/degree/准确原因；不输出候选图。

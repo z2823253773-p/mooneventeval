@@ -1,0 +1,82 @@
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:27:21 ]
+    │
+ 27 │       Ok(report) => print(report+if report.has_suffix("\n") {""} else {"\n"})
+    │                     ──┬──  
+    │                       ╰──── The value identifier print is unbound.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:27:34 ]
+    │
+ 27 │       Ok(report) => print(report+if report.has_suffix("\n") {""} else {"\n"})
+    │                                  ─┬  
+    │                                   ╰── Parse error, unexpected token `if`, you may expect simple expression.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:27:61 ]
+    │
+ 27 │       Ok(report) => print(report+if report.has_suffix("\n") {""} else {"\n"})
+    │                                                             ┬  
+    │                                                             ╰── Parse error, unexpected token `{`, you may expect `;` or `}`.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:27:66 ]
+    │
+ 27 │       Ok(report) => print(report+if report.has_suffix("\n") {""} else {"\n"})
+    │                                                                  ──┬─  
+    │                                                                    ╰─── Parse error, unexpected token `else`, you may expect a statement or expression on a new line, or `}` to close the block.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:27:77 ]
+    │
+ 27 │       Ok(report) => print(report+if report.has_suffix("\n") {""} else {"\n"})
+    │                                                                             ┬  
+    │                                                                             ╰── Parse error, unexpected token `)`, you may expect a statement or expression on a new line, or `}` to close the block.
+────╯
+Error: [0013]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:7 ]
+    │
+ 28 │       Err(error) => {
+    │       ─┬─  
+    │        ╰─── Error Warning (unresolved_type_variable): The type of this expression is (Unit) -> Result[_/0, Unit], which contains unresolved type variables. The type variable is default to Unit.
+────╯
+Error: [4139]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:7 ]
+    │
+ 28 │       Err(error) => {
+    │       ─────┬────  
+    │            ╰────── This expression has type Result[_/0, _/1], its value cannot be implicitly ignored (hint: use `ignore(...)` or `let _ = ...` to explicitly ignore it).
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:11 ]
+    │
+ 28 │       Err(error) => {
+    │           ──┬──  
+    │             ╰──── The value identifier error is unbound.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:28:18 ]
+    │
+ 28 │       Err(error) => {
+    │                  ─┬  
+    │                   ╰── Parse error, unexpected token `=>`, you may expect a statement or expression on a new line, or `}` to close the block.
+────╯
+Error: [4021]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:30:40 ]
+    │
+ 30 │         terminate(@eventeval.exit_code(error))
+    │                                        ──┬──  
+    │                                          ╰──── The value identifier error is unbound.
+────╯
+Error: [3002]
+    ╭─[ /Users/henryz/Desktop/比赛/mooneventeval-t0/cmd/probe/main.mbt:34:2 ]
+    │
+ 34 │ }
+    │  │ 
+    │  ╰─ Parse error, unexpected token `}`, you may expect `pub`, `priv`, `type`, `suberror`, `extenum`, `async`, `fn`, `struct`, `enum`, `let`, `const`, `extern`, `test`, `impl`, `trait`, `enumview`, `#attribute`, `using` or `extend`.
+────╯
+Failed with 0 warnings, 11 errors.
+Error: failed to run build for target Native
+
+Caused by:
+    failed when building project
