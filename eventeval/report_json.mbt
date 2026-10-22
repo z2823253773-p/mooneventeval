@@ -1,6 +1,12 @@
 ///|
+// String.escape is a MoonBit display literal, not a JSON string encoder.
+fn String::quote_json(self : String) -> String {
+  Json::string(self).stringify()
+}
+
+///|
 fn json_object(fields : Array[(String, String)]) -> String {
-  "{" + fields.map(pair => pair.0.escape() + ":" + pair.1).join(",") + "}"
+  "{" + fields.map(pair => pair.0.quote_json() + ":" + pair.1).join(",") + "}"
 }
 
 ///|
@@ -61,10 +67,10 @@ fn metrics_json(metrics : Metrics) -> String {
 ///|
 fn event_json(event : Event) -> String {
   json_object([
-    ("id", event.id.escape()),
-    ("label", event.label.escape()),
-    ("onset_s", decimal_string(event.onset_us, 6).escape()),
-    ("offset_s", decimal_string(event.offset_us, 6).escape()),
+    ("id", event.id.quote_json()),
+    ("label", event.label.quote_json()),
+    ("onset_s", decimal_string(event.onset_us, 6).quote_json()),
+    ("offset_s", decimal_string(event.offset_us, 6).quote_json()),
   ])
 }
 
@@ -75,17 +81,20 @@ fn basis_json(basis : PairBasis) -> String {
     ("onset_pass", basis.onset_pass.to_string()),
     ("offset_pass", basis.offset_pass.to_string()),
     ("eligible", basis.eligible.to_string()),
-    ("onset_delta_s", decimal_string(basis.onset_delta_us, 6).escape()),
-    ("offset_delta_s", decimal_string(basis.offset_delta_us, 6).escape()),
-    ("onset_limit_s", decimal_string(basis.onset_limit_us, 6).escape()),
-    ("offset_limit_s", decimal_string(basis.offset_limit_scaled, 12).escape()),
+    ("onset_delta_s", decimal_string(basis.onset_delta_us, 6).quote_json()),
+    ("offset_delta_s", decimal_string(basis.offset_delta_us, 6).quote_json()),
+    ("onset_limit_s", decimal_string(basis.onset_limit_us, 6).quote_json()),
+    (
+      "offset_limit_s",
+      decimal_string(basis.offset_limit_scaled, 12).quote_json(),
+    ),
   ])
 }
 
 ///|
 fn unmatched_json(item : UnmatchedEvent) -> String {
   json_object([
-    ("recording_id", item.recording_id.escape()),
+    ("recording_id", item.recording_id.quote_json()),
     ("event", event_json(item.event)),
     ("candidate_count", item.candidate_count.to_string()),
     (
@@ -94,7 +103,7 @@ fn unmatched_json(item : UnmatchedEvent) -> String {
         "no_eligible_candidate"
       } else {
         "unselected_in_maximum_matching"
-      }).escape(),
+      }).quote_json(),
     ),
   ])
 }
@@ -109,10 +118,10 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
     (
       "config",
       json_object([
-        ("collar_s", decimal_string(report.config.collar_us, 6).escape()),
+        ("collar_s", decimal_string(report.config.collar_us, 6).quote_json()),
         (
           "offset_ratio",
-          decimal_string(report.config.offset_ratio_ppm, 6).escape(),
+          decimal_string(report.config.offset_ratio_ppm, 6).quote_json(),
         ),
       ]),
     ),
@@ -122,7 +131,7 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
       json_array(
         report.by_label.map(row => {
           json_object([
-            ("label", row.0.escape()),
+            ("label", row.0.quote_json()),
             ("metrics", metrics_json(row.1)),
           ])
         }),
@@ -133,7 +142,7 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
       json_array(
         report.by_recording.map(row => {
           json_object([
-            ("recording_id", row.0.escape()),
+            ("recording_id", row.0.quote_json()),
             ("metrics", metrics_json(row.1)),
           ])
         }),
@@ -144,8 +153,8 @@ pub fn report_json(report : Evaluation) -> Result[String, EvalError] {
       json_array(
         report.matches.map(pair => {
           json_object([
-            ("recording_id", pair.recording_id.escape()),
-            ("label", pair.label.escape()),
+            ("recording_id", pair.recording_id.quote_json()),
+            ("label", pair.label.quote_json()),
             ("reference", event_json(pair.reference)),
             ("prediction", event_json(pair.prediction)),
             ("basis", basis_json(pair.basis)),
@@ -181,7 +190,7 @@ pub fn error_json(error : EvalError) -> String {
   }
   let path = match error.path {
     None => "null"
-    Some(value) => value.escape()
+    Some(value) => value.quote_json()
   }
   let limit = match error.limit {
     None => "null"
@@ -197,9 +206,9 @@ pub fn error_json(error : EvalError) -> String {
     (
       "error",
       json_object([
-        ("kind", kind.escape()),
-        ("code", error.code.escape()),
-        ("message", error.message.escape()),
+        ("kind", kind.quote_json()),
+        ("code", error.code.quote_json()),
+        ("message", error.message.quote_json()),
         ("path", path),
         ("limit", limit),
         ("observed", observed),

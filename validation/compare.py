@@ -52,9 +52,84 @@ def oracle_document(document):
                 candidate_checks=candidate_checks,eligible_edges=eligible_edges)
 
 
+def report_shape_differences(product):
+    """Validate actual JSON types/keys before semantics; never repair product output."""
+    errors=[]
+    def issue(path,expected,actual):
+        errors.append(dict(path=path,expected=expected,actual=actual))
+    def obj(value,keys,path):
+        if type(value) is not dict:
+            issue(path,'object',value);return False
+        if list(value)!=keys:
+            issue(path+'.keys',keys,list(value));return False
+        return True
+    def text(value,path,decimal=False):
+        if type(value) is not str:
+            issue(path,'string',value);return
+        if decimal:
+            try:canonical=decimal_text(number(value))
+            except (ValueError,TypeError,OverflowError):
+                issue(path,'finite canonical decimal string',value);return
+            if canonical!=value:issue(path,'canonical decimal string',value)
+    def integer(value,path):
+        if type(value) is not int or value<0:issue(path,'nonnegative integer',value)
+    def metric(value,path):
+        if not obj(value,['counts','precision','recall','f1'],path):return
+        counts=value['counts']
+        if obj(counts,['reference','prediction','tp','fp','fn'],path+'.counts'):
+            for key,val in counts.items():integer(val,path+'.counts.'+key)
+        for key in ['precision','recall','f1']:
+            val=value[key]
+            if val is not None and (type(val) not in (int,float) or not math.isfinite(val)):
+                issue(path+'.'+key,'finite number or null',val)
+    def event(value,path):
+        if not obj(value,['id','label','onset_s','offset_s'],path):return
+        for key in ['id','label']:text(value[key],path+'.'+key)
+        for key in ['onset_s','offset_s']:text(value[key],path+'.'+key,True)
+    def rows(key):
+        value=product[key]
+        if type(value) is not list:issue(key,'array',value);return []
+        return value
+    keys=['schema_version','semantics','implementation_version','status','config','summary',
+          'by_label','by_recording','matches','false_positives','false_negatives','work']
+    if not obj(product,keys,'$'):return errors
+    integer(product['schema_version'],'schema_version')
+    for key in ['semantics','implementation_version','status']:text(product[key],key)
+    if obj(product['config'],['collar_s','offset_ratio'],'config'):
+        for key,val in product['config'].items():text(val,'config.'+key,True)
+    metric(product['summary'],'summary')
+    for section,identifier in [('by_label','label'),('by_recording','recording_id')]:
+        for i,row in enumerate(rows(section)):
+            path=f'{section}[{i}]'
+            if obj(row,[identifier,'metrics'],path):
+                text(row[identifier],path+'.'+identifier);metric(row['metrics'],path+'.metrics')
+    for i,row in enumerate(rows('matches')):
+        path=f'matches[{i}]'
+        if not obj(row,['recording_id','label','reference','prediction','basis'],path):continue
+        text(row['recording_id'],path+'.recording_id');text(row['label'],path+'.label')
+        event(row['reference'],path+'.reference');event(row['prediction'],path+'.prediction')
+        basis=row['basis']
+        flags=['label_match','onset_pass','offset_pass','eligible']
+        decimals=['onset_delta_s','offset_delta_s','onset_limit_s','offset_limit_s']
+        if obj(basis,flags+decimals,path+'.basis'):
+            for key in flags:
+                if type(basis[key]) is not bool:issue(path+'.basis.'+key,'boolean',basis[key])
+            for key in decimals:text(basis[key],path+'.basis.'+key,True)
+    for section in ['false_positives','false_negatives']:
+        for i,row in enumerate(rows(section)):
+            path=f'{section}[{i}]'
+            if obj(row,['recording_id','event','candidate_count','reason'],path):
+                text(row['recording_id'],path+'.recording_id');event(row['event'],path+'.event')
+                integer(row['candidate_count'],path+'.candidate_count');text(row['reason'],path+'.reason')
+    if obj(product['work'],['candidate_checks','eligible_edges','matching_steps'],'work'):
+        for key,val in product['work'].items():integer(val,'work.'+key)
+    return errors
+
+
 def compare_document(document: dict, product: dict, reference: dict) -> list[dict]:
     """Return discrepancies; never overwrite raw reference or product fields."""
-    differences=[]
+    differences=report_shape_differences(product)
+    if differences:return differences
     def diff(path,want,actual):
         differences.append(dict(path=path,expected=want,actual=actual))
     def metric(path,want,actual):
@@ -99,11 +174,7 @@ def compare_document(document: dict, product: dict, reference: dict) -> list[dic
     seen=set(); group_pairs={key:0 for key in oracle['groups']}
     def use(rec,side,event):
         identity=(rec,side,event.get('id'))
-        normalized=dict(event)
-        for key in ['onset_s','offset_s']:
-            if key in normalized:
-                try: normalized[key]=decimal_text(number(normalized[key]))
-                except Exception: pass
+        normalized=dict(event)  # Already validated; never normalize actual output.
         want=expected_events.get(identity)
         if want is not None:
             want={**want,'onset_s':decimal_text(number(want['onset_s'])),'offset_s':decimal_text(number(want['offset_s']))}

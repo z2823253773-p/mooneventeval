@@ -224,3 +224,60 @@ test "evaluation_micro_is_not_mean_and_row_totals_reconcile" {
     inspect((r, p, tp, fp, fn_count) == (1, 3, 1, 2, 0), content="true")
   }
 }
+
+///|
+test "evaluation_json_control_characters_roundtrip_success_and_error" {
+  let controls = "\u{0}\u{1}\u{2}\u{3}\u{4}\u{5}\u{6}\u{7}\u{8}\u{9}\u{a}\u{b}\u{c}\u{d}\u{e}\u{f}\u{10}\u{11}\u{12}\u{13}\u{14}\u{15}\u{16}\u{17}\u{18}\u{19}\u{1a}\u{1b}\u{1c}\u{1d}\u{1e}\u{1f}\"\\\u{10000}"
+  let e = event(controls, controls, "0", "1").unwrap()
+  let result = evaluate(
+    task([controls], [recording(controls, [e], [e]).unwrap()], default_config()).unwrap(),
+  ).unwrap()
+  let json = report_json(result).unwrap()
+  // Valid JSON must parse, unlike MoonBit's \u{xx} display syntax.
+  let parsed = @json.parse(json)
+  match parsed {
+    Object(fields) =>
+      match fields.get("by_label").unwrap() {
+        Array(rows) =>
+          match rows[0] {
+            Object(row) =>
+              inspect(
+                row.get("label") == Some(Json::string(controls)),
+                content="true",
+              )
+            _ => fail("invalid by_label row")
+          }
+        _ => fail("invalid by_label")
+      }
+    _ => fail("invalid report")
+  }
+  let error : EvalError = {
+    kind: Input,
+    code: controls,
+    message: controls,
+    path: Some(controls),
+    limit: None,
+    observed: None,
+  }
+  match @json.parse(error_json(error)) {
+    Object(fields) =>
+      match fields.get("error").unwrap() {
+        Object(body) => {
+          inspect(
+            body.get("code") == Some(Json::string(controls)),
+            content="true",
+          )
+          inspect(
+            body.get("message") == Some(Json::string(controls)),
+            content="true",
+          )
+          inspect(
+            body.get("path") == Some(Json::string(controls)),
+            content="true",
+          )
+        }
+        _ => fail("invalid error object")
+      }
+    _ => fail("invalid failed report")
+  }
+}
