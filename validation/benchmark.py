@@ -14,6 +14,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 from validation.rational_oracle import decimal_text, eligible
+from validation.compare import decode_machine_report, report_shape_differences
 
 
 def performance_cases(size=1000):
@@ -44,6 +45,40 @@ def measured(command,folder,timeout=30):
                 stdout_sha256=hashlib.sha256((folder/'stdout').read_bytes()).hexdigest())
 
 
+def validate_performance_report(document,actual,name):
+    """Polynomial membership/partition/eligibility checks for known perfect graphs."""
+    errors=report_shape_differences(actual)
+    if errors:return errors
+    def issue(path,want,got):errors.append(dict(path=path,expected=want,actual=got))
+    rec=document['recordings'][0];size=len(rec['reference'])
+    counts=dict(reference=size,prediction=size,tp=size,fp=0,fn=0)
+    if actual['summary']['counts']!=counts:issue('summary.counts',counts,actual['summary']['counts'])
+    for key in ['precision','recall','f1']:
+        value=actual['summary'][key]
+        if value is None or abs(value-1)>1e-12:issue('summary.'+key,1,value)
+    expected_metric=dict(counts=counts,precision=1,recall=1,f1=1)
+    for key,want in [('schema_version',1),('status','completed'),('semantics','collar-max-cardinality/v1'),('implementation_version','0.1.0'),
+                     ('config',document['config']),('by_label',[dict(label='a',metrics=expected_metric)]),
+                     ('by_recording',[dict(recording_id=rec['id'],metrics=expected_metric)]),('false_positives',[]),('false_negatives',[])]:
+        if actual[key]!=want:issue(key,want,actual[key])
+    refs={e['id']:e for e in rec['reference']};preds={e['id']:e for e in rec['prediction']}
+    seen_refs=set();seen_preds=set()
+    for pair in actual['matches']:
+        r=pair['reference'];p=pair['prediction']
+        if refs.get(r['id'])!=r or preds.get(p['id'])!=p:issue('match.membership','exact input events',pair)
+        if r['id'] in seen_refs or p['id'] in seen_preds:issue('match.one_to_one','unique sides',pair)
+        seen_refs.add(r['id']);seen_preds.add(p['id'])
+        if pair['recording_id']!=rec['id'] or pair['label']!='a':issue('match.group','input recording/label',pair)
+        basis=eligible(r,p,document['config'])
+        if not basis['eligible'] or pair['basis']!=basis:issue('match.eligibility',dict(eligible=True,basis=basis),pair['basis'])
+    if seen_refs!=set(refs) or seen_preds!=set(preds) or len(actual['matches'])!=size:issue('match.partition','every input event exactly once',dict(references=len(seen_refs),predictions=len(seen_preds),pairs=len(actual['matches'])))
+    edges=size if name=='sparse' else size*size if name=='dense' else 2*size-1
+    steps=3*size if name=='sparse' else size*(size+5)//2 if name=='dense' else 7*size-3
+    want=dict(candidate_checks=size*size,eligible_edges=edges,matching_steps=steps)
+    if actual['work']!=want:issue('work',want,actual['work'])
+    return errors
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--product',type=Path,required=True);parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--cpu-name',help='Previously measured CPU identity when sandbox denies sysctl; retain its separate receipt')
@@ -55,13 +90,10 @@ def main():
         for i in range(3):
             trial=folder/str(i);row=measured([str(exe),'evaluate',str(path),'--format','json'],trial)
             assert row['exit_code']==0 and not (trial/'stderr').read_bytes(),row
-            actual=json.loads((trial/'stdout').read_bytes());counts=actual['summary']['counts']
-            assert counts==dict(reference=1000,prediction=1000,tp=1000,fp=0,fn=0),counts
-            assert len(actual['matches'])==len({m['reference']['id'] for m in actual['matches']})==len({m['prediction']['id'] for m in actual['matches']})==1000
-            assert all(m['basis']==eligible(m['reference'],m['prediction'],doc['config']) for m in actual['matches'])
-            edges=1000 if name=='sparse' else 1_000_000 if name=='dense' else 1999
-            steps=3000 if name=='sparse' else 502500 if name=='dense' else 6997
-            assert actual['work']==dict(candidate_checks=1_000_000,eligible_edges=edges,matching_steps=steps),actual['work']
+            actual=decode_machine_report((trial/'stdout').read_bytes())
+            differences=validate_performance_report(doc,actual,name)
+            (trial/'comparison.json').write_text(json.dumps(dict(passed=not differences,differences=differences),indent=2)+'\n')
+            assert not differences,differences[:3]
             row['work']=actual['work'];samples.append(row)
         assert name!='sparse' or all(s['wall_seconds']<5 for s in samples),'sparse target missed'
         rows.append(dict(name=name,samples=samples))

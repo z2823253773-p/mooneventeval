@@ -250,6 +250,32 @@ def compare_reference(document, reference, expected):
     return errors
 
 
+def decode_machine_report(raw):
+    """Validate raw CLI framing and strict finite/unique-key JSON, without repair."""
+    if not raw.endswith(b'\n') or raw.endswith(b'\n\n') or b'\r' in raw:
+        raise ValueError('Expected exactly one terminal LF and no raw CR')
+    def constant(value):raise ValueError('Nonfinite JSON constant: '+value)
+    def finite_float(value):
+        result=float(value)
+        if not math.isfinite(result):raise ValueError('Nonfinite JSON number: '+value)
+        return result
+    def unique_object(pairs):
+        result={}
+        for key,value in pairs:
+            if key in result:raise ValueError('Duplicate output key: '+repr(key))
+            result[key]=value
+        return result
+    actual=json.loads(raw.decode('utf-8'),parse_constant=constant,parse_float=finite_float,object_pairs_hook=unique_object)
+    pending=[actual]
+    while pending:
+        value=pending.pop()
+        if isinstance(value,str) and any(0xD800<=ord(ch)<=0xDFFF for ch in value):
+            raise ValueError('Invalid Unicode surrogate in JSON string')
+        if isinstance(value,dict):pending.extend(value.keys());pending.extend(value.values())
+        elif isinstance(value,list):pending.extend(value)
+    return actual
+
+
 def run_file_product(product,document,folder):
     """Binary capture, exit status first; no stdout repair or hidden child failure."""
     folder.mkdir(parents=True,exist_ok=True)
@@ -259,8 +285,8 @@ def run_file_product(product,document,folder):
     (folder/'stdout').write_bytes(result.stdout);(folder/'stderr').write_bytes(result.stderr)
     differences=[];actual=None
     if result.returncode or result.stderr: differences.append(dict(path='process',expected='exit0 and empty stderr',actual=dict(exit_code=result.returncode,stderr=result.stderr.decode('utf-8',errors='replace'))))
-    try:actual=json.loads(result.stdout.decode('utf-8'))
-    except (ValueError,UnicodeError) as error:differences.append(dict(path='stdout',expected='strict UTF8 JSON',actual=str(error)))
+    try:actual=decode_machine_report(result.stdout)
+    except (ValueError,UnicodeError,RecursionError) as error:differences.append(dict(path='stdout',expected='strict UTF8 finite unique-key JSON and terminal LF',actual=str(error)))
     row=dict(command=command,exit_code=result.returncode,stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),stderr_sha256=hashlib.sha256(result.stderr).hexdigest(),differences=differences)
     (folder/'process.json').write_text(json.dumps(row,indent=2)+'\n')
     return dict(**row,product=actual,stdout=result.stdout)
