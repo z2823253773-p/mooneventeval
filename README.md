@@ -117,4 +117,5 @@ exit means that prefix is not a completed result.
 
 See the [three-minute demo](docs/demo.md). Its automated transcripts do not prove
 personal understanding or an actual spoken presentation. Linux/remote CI,
-injected EINTR/short-write/close failures and final A11 remain future gates.
+T6 now exercises nine specific compile-time I/O fault cases and scoped A11
+qualification; personal M2, package consumers and cross-platform gates remain.

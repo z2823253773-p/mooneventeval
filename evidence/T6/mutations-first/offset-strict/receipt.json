@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-239432cc/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "eligibility_A4_offset_boundary_and_reference_duration"
+  ],
+  "name": "offset-strict",
+  "target_test": "eligibility_A4_offset_boundary_and_reference_duration",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+  "mutant_sha256": "1d2451347ba6ac673e1c1ff7690a12ed605ef3624f01e5d390d0daf4874a5258",
+  "restored_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6"
+}

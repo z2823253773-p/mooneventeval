@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/check_io_faults.py",
+    "--product",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "evidence/T6/io-faults-first"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 16.174,
+  "log": "evidence/T6/20261022T094233548705Z-io-faults-first.log",
+  "log_sha256": "80c5935de3e106279b993e6558e826382e05125d9fbfb5c444bc2d2e8830796f",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

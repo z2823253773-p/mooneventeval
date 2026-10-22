@@ -1,0 +1,1157 @@
+{
+  "seed": 20261020,
+  "categories": {
+    "binary_grid": 155,
+    "decimal_nonboundary": 160,
+    "exact_boundary": 9
+  },
+  "accepted": 324,
+  "excluded_count": 10,
+  "excluded": [
+    {
+      "name": "decimal-000",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "9.052358",
+                "offset_s": "9.489427"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "8.222796",
+                "offset_s": "9.253716"
+              },
+              {
+                "id": "r2",
+                "label": "A",
+                "onset_s": "8.299762",
+                "offset_s": "10.473701"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "B",
+                "onset_s": "9.503492",
+                "offset_s": "9.940561"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "9.371134",
+                "offset_s": "9.808203"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "2.148096",
+                "offset_s": "2.308334"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 10,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-016",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "8.008347",
+                "offset_s": "8.208855"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "1.921649",
+                "offset_s": "3.244797"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "2.201049",
+                "offset_s": "4.695103"
+              },
+              {
+                "id": "r3",
+                "label": "B",
+                "onset_s": "1.984487",
+                "offset_s": "4.944497"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "7.809076",
+                "offset_s": "8.009584"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "7.22955",
+                "offset_s": "7.669265"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "2.017544",
+                "offset_s": "4.977554"
+              },
+              {
+                "id": "p3",
+                "label": "B",
+                "onset_s": "2.471755",
+                "offset_s": "4.965809"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "9.952595",
+                "offset_s": "11.665454"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "6.454137",
+                "offset_s": "9.19615"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 18,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-032",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "6.094227",
+                "offset_s": "7.076368"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "6.477173",
+                "offset_s": "7.459314"
+              },
+              {
+                "id": "p1",
+                "label": "A",
+                "onset_s": "5.874109",
+                "offset_s": "6.85625"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "5.806405",
+                "offset_s": "6.788546"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "1.561388",
+                "offset_s": "3.618068"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "B",
+                "onset_s": "5.997495",
+                "offset_s": "6.193272"
+              }
+            ]
+          },
+          {
+            "id": "rec-2",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "5.240468",
+                "offset_s": "6.719076"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "8.800066",
+                "offset_s": "11.616951"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 10,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-048",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "9.386149",
+                "offset_s": "10.030287"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "6.829578",
+                "offset_s": "9.065173"
+              },
+              {
+                "id": "r2",
+                "label": "A",
+                "onset_s": "6.017631",
+                "offset_s": "6.267244"
+              }
+            ],
+            "prediction": []
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 2,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-064",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "4.28219",
+                "offset_s": "4.731673"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "5.093812",
+                "offset_s": "5.42465"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "4.671926",
+                "offset_s": "5.231228"
+              },
+              {
+                "id": "r3",
+                "label": "B",
+                "onset_s": "3.643739",
+                "offset_s": "6.539351"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "5.451359",
+                "offset_s": "5.782197"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "4.856051",
+                "offset_s": "5.415353"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "5.140496",
+                "offset_s": "8.122161"
+              },
+              {
+                "id": "p3",
+                "label": "A",
+                "onset_s": "5.054601",
+                "offset_s": "5.385439"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 18,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-080",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "4.415067",
+                "offset_s": "7.264063"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "9.237381",
+                "offset_s": "10.768098"
+              },
+              {
+                "id": "r2",
+                "label": "A",
+                "onset_s": "5.547815",
+                "offset_s": "7.918793"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "5.941058",
+                "offset_s": "8.312036"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "9.01844",
+                "offset_s": "10.549157"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "1.804795",
+                "offset_s": "4.492871"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "3.397309",
+                "offset_s": "5.84018"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "9.526189",
+                "offset_s": "12.437527"
+              },
+              {
+                "id": "r3",
+                "label": "A",
+                "onset_s": "4.59462",
+                "offset_s": "5.227241"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "1.343845",
+                "offset_s": "4.031921"
+              }
+            ]
+          },
+          {
+            "id": "rec-2",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "5.453013",
+                "offset_s": "7.243606"
+              },
+              {
+                "id": "p1",
+                "label": "A",
+                "onset_s": "6.896429",
+                "offset_s": "8.600599"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "9.023541",
+                "offset_s": "10.588898"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 14,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-096",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "6.748454",
+                "offset_s": "9.214965"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "8.965201",
+                "offset_s": "11.004512"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "1.607049",
+                "offset_s": "1.871654"
+              },
+              {
+                "id": "r3",
+                "label": "B",
+                "onset_s": "3.301427",
+                "offset_s": "5.300206"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "B",
+                "onset_s": "3.051071",
+                "offset_s": "5.04985"
+              },
+              {
+                "id": "p1",
+                "label": "A",
+                "onset_s": "2.825998",
+                "offset_s": "3.313364"
+              },
+              {
+                "id": "p2",
+                "label": "A",
+                "onset_s": "7.03584",
+                "offset_s": "9.502351"
+              },
+              {
+                "id": "p3",
+                "label": "B",
+                "onset_s": "1.861461",
+                "offset_s": "2.126066"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "8.371503",
+                "offset_s": "9.831897"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "6.438369",
+                "offset_s": "6.650609"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "B",
+                "onset_s": "6.464664",
+                "offset_s": "6.676904"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "6.884365",
+                "offset_s": "7.096605"
+              },
+              {
+                "id": "p2",
+                "label": "B",
+                "onset_s": "6.867758",
+                "offset_s": "7.079998"
+              },
+              {
+                "id": "p3",
+                "label": "A",
+                "onset_s": "8.778984",
+                "offset_s": "9.382969"
+              }
+            ]
+          },
+          {
+            "id": "rec-2",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "3.276581",
+                "offset_s": "4.968133"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 26,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-112",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "3.797864",
+                "offset_s": "5.612847"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "7.37305",
+                "offset_s": "7.887097"
+              }
+            ]
+          },
+          {
+            "id": "rec-2",
+            "reference": [],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "7.298344",
+                "offset_s": "7.93042"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "7.111583",
+                "offset_s": "7.70096"
+              },
+              {
+                "id": "p2",
+                "label": "B",
+                "onset_s": "5.340907",
+                "offset_s": "5.459727"
+              },
+              {
+                "id": "p3",
+                "label": "A",
+                "onset_s": "5.053815",
+                "offset_s": "6.250823"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 2,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-128",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "6.817808",
+                "offset_s": "7.229615"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "7.586934",
+                "offset_s": "10.324157"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "4.629585",
+                "offset_s": "4.793273"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "6.333966",
+                "offset_s": "6.745773"
+              }
+            ]
+          },
+          {
+            "id": "rec-1",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "6.956417",
+                "offset_s": "7.724637"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "2.151379",
+                "offset_s": "4.035417"
+              }
+            ],
+            "prediction": []
+          },
+          {
+            "id": "rec-2",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "2.645556",
+                "offset_s": "4.567492"
+              },
+              {
+                "id": "r1",
+                "label": "B",
+                "onset_s": "4.443036",
+                "offset_s": "5.023055"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "A",
+                "onset_s": "2.207851",
+                "offset_s": "4.070181"
+              },
+              {
+                "id": "p1",
+                "label": "B",
+                "onset_s": "2.347502",
+                "offset_s": "4.269438"
+              }
+            ]
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 8,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    },
+    {
+      "name": "decimal-144",
+      "category": "decimal_nonboundary",
+      "document": {
+        "schema_version": 1,
+        "labels": [
+          "A",
+          "B",
+          "unused"
+        ],
+        "recordings": [
+          {
+            "id": "rec-0",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "7.096577",
+                "offset_s": "7.380626"
+              }
+            ],
+            "prediction": []
+          },
+          {
+            "id": "rec-1",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "B",
+                "onset_s": "5.297234",
+                "offset_s": "6.646487"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "4.928609",
+                "offset_s": "5.28048"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "7.357954",
+                "offset_s": "9.524413"
+              },
+              {
+                "id": "r3",
+                "label": "B",
+                "onset_s": "5.333088",
+                "offset_s": "7.427075"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p0",
+                "label": "B",
+                "onset_s": "5.076586",
+                "offset_s": "7.170573"
+              },
+              {
+                "id": "p1",
+                "label": "A",
+                "onset_s": "7.497715",
+                "offset_s": "8.357848"
+              }
+            ]
+          },
+          {
+            "id": "rec-2",
+            "reference": [
+              {
+                "id": "r0",
+                "label": "A",
+                "onset_s": "1.028069",
+                "offset_s": "2.195427"
+              },
+              {
+                "id": "r1",
+                "label": "A",
+                "onset_s": "9.627413",
+                "offset_s": "10.247654"
+              },
+              {
+                "id": "r2",
+                "label": "B",
+                "onset_s": "1.395275",
+                "offset_s": "2.21823"
+              }
+            ],
+            "prediction": []
+          },
+          {
+            "id": "boundary-reject",
+            "reference": [
+              {
+                "id": "r",
+                "label": "A",
+                "onset_s": "10",
+                "offset_s": "12"
+              }
+            ],
+            "prediction": [
+              {
+                "id": "p",
+                "label": "A",
+                "onset_s": "10.2",
+                "offset_s": "12.2"
+              }
+            ]
+          }
+        ]
+      },
+      "margins": {
+        "comparisons": 10,
+        "minimum_margin_s": "0",
+        "unsafe": [
+          {
+            "recording_id": "boundary-reject",
+            "reference": "r",
+            "prediction": "p",
+            "condition": "onset",
+            "margin_s": "0"
+          }
+        ]
+      }
+    }
+  ],
+  "rule": "Before evaluation, reject whole decimal input if any same-recording/same-label onset or offset margin <= 0.000001 seconds"
+}

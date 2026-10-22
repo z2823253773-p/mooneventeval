@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "production_source_sha256": "76b30f0a621cf4207c4dadc54aef8e8ba869a4cbcaaed62832b2da7bc667de1c",
+  "production_binary_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "cases": [
+    {
+      "name": "control",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "8f826fd65bc4d3f87312481a7cb373d7e6c787fe3a4d0d061fce06f1a3e3c542",
+      "instrumented_source_sha256": "37fb66d3e9362ac81036c51f052d6e052bafac9694c3ba11e4289ddc65b98d29",
+      "stdout_sha256": "0e135d2254550a479eceb59f70131b75152ad3dfe8f8d06f79e91c96cdc43240",
+      "passed": true
+    },
+    {
+      "name": "eintr-and-short-read-write",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "syscalls": {
+        "open_calls": 2,
+        "stat_calls": 2,
+        "read_calls": 29,
+        "close_calls": 1,
+        "stdout_write_calls": 302,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "5a214cd195ec25b1fc4efd5ad739c5ed13e600d8498a35731ed2305c288526a1",
+      "instrumented_source_sha256": "9052be24207a5273e704de6a98d251f5ae38cd416a654c9e194c77c9be5b6d8a",
+      "stdout_sha256": "0e135d2254550a479eceb59f70131b75152ad3dfe8f8d06f79e91c96cdc43240",
+      "passed": true
+    },
+    {
+      "name": "read-error",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 1,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "9b534775b18149588913a840046adbc25c8ee0fda57343383d708fec2c569679",
+      "instrumented_source_sha256": "5288fd714fdd08a89e5639da54d001b148f64f0ced6823db937c9ff4d901fce7",
+      "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+      "passed": true
+    },
+    {
+      "name": "partial-read-error",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "2871ad6c1ea10df7598155c102512b7605df9a4bd3722987bf6e548f8f8f2600",
+      "instrumented_source_sha256": "0bf79eb50d35c9d1e5a7cc42d121b982f97df6bda9f306a1e60b0be0772cc1fc",
+      "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+      "passed": true
+    },
+    {
+      "name": "zero-write",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "5122bb9ffd0f90caa6269d6ffd88750546d215ad0e684a7e1cc8cf60b7b1ca24",
+      "instrumented_source_sha256": "e6845eb10a93299531d69fa2600a70b8e635b7398003642690d208367aa051fc",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    },
+    {
+      "name": "partial-write-error",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 2,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "44a18dddc1e0ae0291ba2148c6ad89fb0e94d6bec17c954666de707b569c3870",
+      "instrumented_source_sha256": "361b6f07c2817a4215a2bbaf03b594f5790f68d85baf932dbfee6914749e57cb",
+      "stdout_sha256": "c0cc5a4ffaffaa209c0244ef5b7427ec0d2aa1c7a46ff5c922d81a10502b4cb7",
+      "passed": true
+    },
+    {
+      "name": "close-error",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "781efa8caf936918029cdf0ee9def06189e53b576693f570cac6da5ae827daf0",
+      "instrumented_source_sha256": "cad7d49ed488523ec30b545e0a545da6cd3b870cadb922ed1138ea130535bc23",
+      "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+      "passed": true
+    },
+    {
+      "name": "close-eintr-no-retry",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "syscalls": {
+        "open_calls": 1,
+        "stat_calls": 1,
+        "read_calls": 2,
+        "close_calls": 1,
+        "stdout_write_calls": 1,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "35ee446e46176c7af847581c17f55729381cd9982bc23585ddbd568ff01e5c97",
+      "instrumented_source_sha256": "806987f09f85a882d45e226bfd7aad1776097ccaceae732de709b8ce62630a53",
+      "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+      "passed": true
+    },
+    {
+      "name": "signal-init-error",
+      "exit_code": 4,
+      "expected_exit": 4,
+      "syscalls": {
+        "open_calls": 0,
+        "stat_calls": 0,
+        "read_calls": 0,
+        "close_calls": 0,
+        "stdout_write_calls": 0,
+        "live_input_fds": 0
+      },
+      "instrumented_binary_sha256": "cc2bda317dbd225de9963225385c8ca09f89f5427e752ff852ddc620b190de3a",
+      "instrumented_source_sha256": "ff25d7093c707893248b639208e9227d76859133c780bb4ad282bf7dbfcf9064",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "passed": true
+    }
+  ],
+  "scope": "temporary compile-time syscall wrappers around actual native C and unchanged Moon code; instrumented binaries are not the production binary; no runtime feature flags"
+}

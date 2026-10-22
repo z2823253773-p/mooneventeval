@@ -1,0 +1,24 @@
+test_boundary_classification_cannot_hide_wrong_product (test_qualification.QualificationTests.test_boundary_classification_cannot_hide_wrong_product) ... ok
+test_driver_retains_child_failure_and_returns_nonzero (test_qualification.QualificationTests.test_driver_retains_child_failure_and_returns_nonzero) ... ok
+test_equivalent_maximum_identity_is_allowed (test_qualification.QualificationTests.test_equivalent_maximum_identity_is_allowed) ... ok
+test_exact_margin_preselection_and_determinism (test_qualification.QualificationTests.test_exact_margin_preselection_and_determinism) ... ok
+test_failed_product_exit_cannot_hide_behind_valid_stdout (test_qualification.QualificationTests.test_failed_product_exit_cannot_hide_behind_valid_stdout) ... ok
+test_preserved_fixture_and_counterfeits (test_qualification.QualificationTests.test_preserved_fixture_and_counterfeits) ... ok
+test_raw_reference_corruption_is_not_hidden (test_qualification.QualificationTests.test_raw_reference_corruption_is_not_hidden) ... ok
+test_unrelated_value_error_is_not_zero_collar_domain_evidence (test_qualification.QualificationTests.test_unrelated_value_error_is_not_zero_collar_domain_evidence) ... FAIL
+
+======================================================================
+FAIL: test_unrelated_value_error_is_not_zero_collar_domain_evidence (test_qualification.QualificationTests.test_unrelated_value_error_is_not_zero_collar_domain_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 88, in test_unrelated_value_error_is_not_zero_collar_domain_evidence
+    self.assertEqual(run_qualification(exe,p/'proof',cases=[case]),1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.698s
+
+FAILED (failures=1)
+{"cases": 1, "unexplained": ["wrong-boundary"], "classifications": {"unexplained": 1}}
+{"cases": 1, "unexplained": ["failed-child"], "classifications": {"unexplained": 1}}
+{"cases": 1, "unexplained": [], "classifications": {"reference_zero_collar_domain_limit_exact_checked": 1}}

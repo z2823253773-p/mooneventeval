@@ -143,3 +143,41 @@ outputs, immediate/partial broken pipes, exact 8MiB/+1 input, depth17, invalid
 UTF8, missing/unreadable/nonregular files and regular symlinks. Injected
 EINTR/short-write/close failures, final A11 and cross-platform CI are not passed
 by these tests. Demo transcripts are not personal explanation evidence.
+
+## T6 qualification (real file CLI)
+
+```sh
+.venv-reference/bin/python -W error::ResourceWarning -m unittest discover -s validation/tests -v
+.venv-reference/bin/python validation/compare.py --phase qualification --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-parity
+MEE_BIN=_build/native/release/build/cmd/mooneventeval/mooneventeval.exe MEE_EVIDENCE=evidence/T6/recheck-cli python3 -W error::ResourceWarning -m unittest discover -s tests/cli -v
+python3 validation/benchmark.py --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-performance
+python3 validation/check_io_faults.py --product _build/native/release/build/cmd/mooneventeval/mooneventeval.exe --output evidence/T6/recheck-io
+python3 validation/check_mutations.py --output evidence/T6/recheck-mutations
+```
+
+All outputs need fresh directories. The prototype phase still targets the old
+JSON-argv development probe; qualification targets the real file CLI directly.
+New random populations use seed20261020 (128 binary grid, 160 ordinary decimal
+proposals), plus 46 inherited T3 cases (including24 old seed20261021 grid cases).
+Ten deliberately included unsafe decimal proposals are excluded *before* either
+implementation runs; generation.json retains all inputs and exact Fraction
+margins. Keep binary-grid, decimal-nonboundary and exact-boundary categories
+separate. Every retained base gets four product/oracle transforms; original
+sed_eval is run on each base globally and per recording, including class counts,
+both-defined metrics and explicit projection/raw substitution checks.
+
+Benchmark uses release executable, 2000-event sparse/dense/long-chain inputs,
+three processes each and per-child os.wait4 peak RSS. On Darwin it is already
+bytes (Linux KiB conversion is code only, not Linux qualification). CPU sysctl
+may require a separately approved read-only query in a sandbox; --cpu-name may
+reuse that measured result, whose command/result receipt must be kept.
+
+Fault injection compiles temporary copies of actual C/Moon sources. Syscalls
+are compile-time wrappers, with no production runtime switches or environment
+modes; production source is hash-checked unchanged. Reports distinguish these
+instrumented binary hashes from production. Nine cases cover control, combined
+EINTR/short read/write with Unicode, read/partial-read failure, zero/partial-write
+failure, close EIO/EINTR and signal init failure. This is finite fault coverage,
+not all possible filesystem/concurrency/OS failures. Mutation artifacts separately
+record build-only success before behavior kills, restored control, and equivalent
+max-operand swapping. Equivalent does not count as killed.

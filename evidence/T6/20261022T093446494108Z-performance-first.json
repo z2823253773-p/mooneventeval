@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "validation/benchmark.py",
+    "--product",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "evidence/T6/performance-first"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.379,
+  "log": "evidence/T6/20261022T093446494108Z-performance-first.log",
+  "log_sha256": "acf4266825f2bd225249660a21a63a3a01b6965e7af8447ff9b4ea00438915a5",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

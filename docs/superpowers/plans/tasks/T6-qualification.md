@@ -1,6 +1,6 @@
 # T6-qualification 任务卡
 
-状态：修订待审；未实施。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
+状态：用户“下一步”授权执行中；沿用固定PRD/契约，不取消最终验收。先读AGENTS.md、docs/PROJECT_STATE.md、docs/contracts.md，再读本卡；必要时读PRD相关章节。
 
 原版参考A11仍是最终验收条件；超时只能报告部分完成。mutation验证产品测试，而不只验证比较器。
 

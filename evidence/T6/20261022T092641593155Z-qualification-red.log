@@ -1,0 +1,36 @@
+test_equivalent_maximum_identity_is_allowed (test_qualification.QualificationTests.test_equivalent_maximum_identity_is_allowed) ... ok
+test_exact_margin_preselection_and_determinism (test_qualification.QualificationTests.test_exact_margin_preselection_and_determinism) ... ERROR
+test_failed_product_exit_cannot_hide_behind_valid_stdout (test_qualification.QualificationTests.test_failed_product_exit_cannot_hide_behind_valid_stdout) ... ERROR
+test_preserved_fixture_and_counterfeits (test_qualification.QualificationTests.test_preserved_fixture_and_counterfeits) ... ok
+test_raw_reference_corruption_is_not_hidden (test_qualification.QualificationTests.test_raw_reference_corruption_is_not_hidden) ... ERROR
+
+======================================================================
+ERROR: test_exact_margin_preselection_and_determinism (test_qualification.QualificationTests.test_exact_margin_preselection_and_determinism)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 51, in test_exact_margin_preselection_and_determinism
+    from validation.generate_cases import qualification_cases, safe_margins
+ModuleNotFoundError: No module named 'validation.generate_cases'
+
+======================================================================
+ERROR: test_failed_product_exit_cannot_hide_behind_valid_stdout (test_qualification.QualificationTests.test_failed_product_exit_cannot_hide_behind_valid_stdout)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 39, in test_failed_product_exit_cannot_hide_behind_valid_stdout
+    result = compare.run_file_product(script, fixture()['input'], p / 'run')
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'validation.compare' has no attribute 'run_file_product'
+
+======================================================================
+ERROR: test_raw_reference_corruption_is_not_hidden (test_qualification.QualificationTests.test_raw_reference_corruption_is_not_hidden)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 46, in test_raw_reference_corruption_is_not_hidden
+    self.assertEqual(compare.compare_reference(f['input'], f['reference'], compare.oracle_document(f['input'])), [])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'validation.compare' has no attribute 'compare_reference'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+FAILED (errors=3)

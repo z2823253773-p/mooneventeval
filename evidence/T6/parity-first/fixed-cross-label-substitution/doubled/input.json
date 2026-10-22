@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["A","B","unused"],"recordings":[{"id":"clip-01","reference":[{"id":"r","label":"A","onset_s":"1","offset_s":"2"}],"prediction":[{"id":"p","label":"B","onset_s":"1","offset_s":"2"}]},{"id":"clone:clip-01","reference":[{"id":"r","label":"A","onset_s":"1","offset_s":"2"}],"prediction":[{"id":"p","label":"B","onset_s":"1","offset_s":"2"}]}]}

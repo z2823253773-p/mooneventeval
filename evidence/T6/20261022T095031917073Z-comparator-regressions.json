@@ -1,0 +1,21 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-p",
+    "test_comparison.py",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.038,
+  "log": "evidence/T6/20261022T095031917073Z-comparator-regressions.log",
+  "log_sha256": "a8753de6f05b17c8b43d6f873c2415c152acc0f014aec786b6977cd954795e69",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,0 +1,335 @@
+{
+  "input": {
+    "schema_version": 1,
+    "labels": [
+      "alarm"
+    ],
+    "recordings": [
+      {
+        "id": "clip-01",
+        "reference": [
+          {
+            "id": "r2",
+            "label": "alarm",
+            "onset_s": "1",
+            "offset_s": "2"
+          },
+          {
+            "id": "r1",
+            "label": "alarm",
+            "onset_s": "1",
+            "offset_s": "2"
+          }
+        ],
+        "prediction": [
+          {
+            "id": "p3",
+            "label": "alarm",
+            "onset_s": "1",
+            "offset_s": "2"
+          },
+          {
+            "id": "p2",
+            "label": "alarm",
+            "onset_s": "1",
+            "offset_s": "2"
+          },
+          {
+            "id": "p1",
+            "label": "alarm",
+            "onset_s": "1",
+            "offset_s": "2"
+          }
+        ]
+      }
+    ]
+  },
+  "product": {
+    "schema_version": 1,
+    "semantics": "collar-max-cardinality/v1",
+    "implementation_version": "0.1.0",
+    "status": "completed",
+    "config": {
+      "collar_s": "0.2",
+      "offset_ratio": "0.5"
+    },
+    "summary": {
+      "counts": {
+        "reference": 2,
+        "prediction": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.6666666666666666,
+      "recall": 1,
+      "f1": 0.8
+    },
+    "by_label": [
+      {
+        "label": "alarm",
+        "metrics": {
+          "counts": {
+            "reference": 2,
+            "prediction": 3,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0.6666666666666666,
+          "recall": 1,
+          "f1": 0.8
+        }
+      }
+    ],
+    "by_recording": [
+      {
+        "recording_id": "clip-01",
+        "metrics": {
+          "counts": {
+            "reference": 2,
+            "prediction": 3,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0.6666666666666666,
+          "recall": 1,
+          "f1": 0.8
+        }
+      }
+    ],
+    "matches": [
+      {
+        "recording_id": "clip-01",
+        "label": "alarm",
+        "reference": {
+          "id": "r1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "prediction": {
+          "id": "p1",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "basis": {
+          "label_match": true,
+          "onset_pass": true,
+          "offset_pass": true,
+          "eligible": true,
+          "onset_delta_s": "0",
+          "offset_delta_s": "0",
+          "onset_limit_s": "0.2",
+          "offset_limit_s": "0.5"
+        }
+      },
+      {
+        "recording_id": "clip-01",
+        "label": "alarm",
+        "reference": {
+          "id": "r2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "prediction": {
+          "id": "p2",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "basis": {
+          "label_match": true,
+          "onset_pass": true,
+          "offset_pass": true,
+          "eligible": true,
+          "onset_delta_s": "0",
+          "offset_delta_s": "0",
+          "onset_limit_s": "0.2",
+          "offset_limit_s": "0.5"
+        }
+      }
+    ],
+    "false_positives": [
+      {
+        "recording_id": "clip-01",
+        "event": {
+          "id": "p3",
+          "label": "alarm",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "candidate_count": 2,
+        "reason": "unselected_in_maximum_matching"
+      }
+    ],
+    "false_negatives": [],
+    "work": {
+      "candidate_checks": 6,
+      "eligible_edges": 6,
+      "matching_steps": 7
+    }
+  },
+  "reference": {
+    "raw": {
+      "counts": {
+        "Nref": 2.0,
+        "Nsys": 3.0,
+        "Nsubs": 0.0,
+        "Ntp": 2.0,
+        "Nfp": 1.0,
+        "Nfn": 0.0
+      },
+      "metrics": {
+        "f_measure": {
+          "f_measure": 0.8,
+          "precision": 0.6666666666666666,
+          "recall": 1.0
+        },
+        "error_rate": {
+          "error_rate": 0.5,
+          "substitution_rate": 0.0,
+          "deletion_rate": 0.0,
+          "insertion_rate": 0.5
+        },
+        "accuracy": {}
+      }
+    },
+    "class_wise": {
+      "alarm": {
+        "counts": {
+          "Nref": 2.0,
+          "Nsys": 3.0,
+          "Ntp": 2.0,
+          "Ntn": 0.0,
+          "Nfp": 1.0,
+          "Nfn": 0.0
+        },
+        "metrics": {
+          "f_measure": {
+            "f_measure": 0.8,
+            "precision": 0.6666666666666666,
+            "recall": 1.0
+          },
+          "accuracy": {},
+          "error_rate": {
+            "error_rate": 0.5,
+            "deletion_rate": 0.0,
+            "insertion_rate": 0.5
+          },
+          "count": {
+            "Nref": 2.0,
+            "Nsys": 3.0
+          }
+        }
+      }
+    },
+    "projected": {
+      "counts": {
+        "reference": 2,
+        "prediction": 3,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0
+      },
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "metric_definition_flags": {
+      "projected_precision_defined": true,
+      "projected_recall_defined": true,
+      "projected_f1_defined": true,
+      "raw_precision_defined": true,
+      "raw_recall_defined": true,
+      "raw_f1_defined": true,
+      "reference_time_representation": "binary64_from_decimal_strings",
+      "matching": "original_sed_eval_optimal",
+      "zero_collar_supported": false
+    },
+    "prototype_binary64_witnesses": [],
+    "prototype_by_recording": {
+      "clip-01": {
+        "raw": {
+          "counts": {
+            "Nref": 2.0,
+            "Nsys": 3.0,
+            "Nsubs": 0.0,
+            "Ntp": 2.0,
+            "Nfp": 1.0,
+            "Nfn": 0.0
+          },
+          "metrics": {
+            "f_measure": {
+              "f_measure": 0.8,
+              "precision": 0.6666666666666666,
+              "recall": 1.0
+            },
+            "error_rate": {
+              "error_rate": 0.5,
+              "substitution_rate": 0.0,
+              "deletion_rate": 0.0,
+              "insertion_rate": 0.5
+            },
+            "accuracy": {}
+          }
+        },
+        "class_wise": {
+          "alarm": {
+            "counts": {
+              "Nref": 2.0,
+              "Nsys": 3.0,
+              "Ntp": 2.0,
+              "Ntn": 0.0,
+              "Nfp": 1.0,
+              "Nfn": 0.0
+            },
+            "metrics": {
+              "f_measure": {
+                "f_measure": 0.8,
+                "precision": 0.6666666666666666,
+                "recall": 1.0
+              },
+              "accuracy": {},
+              "error_rate": {
+                "error_rate": 0.5,
+                "deletion_rate": 0.0,
+                "insertion_rate": 0.5
+              },
+              "count": {
+                "Nref": 2.0,
+                "Nsys": 3.0
+              }
+            }
+          }
+        },
+        "projected": {
+          "counts": {
+            "reference": 2,
+            "prediction": 3,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8
+        },
+        "metric_definition_flags": {
+          "projected_precision_defined": true,
+          "projected_recall_defined": true,
+          "projected_f1_defined": true,
+          "raw_precision_defined": true,
+          "raw_recall_defined": true,
+          "raw_f1_defined": true,
+          "reference_time_representation": "binary64_from_decimal_strings",
+          "matching": "original_sed_eval_optimal",
+          "zero_collar_supported": false
+        }
+      }
+    }
+  }
+}

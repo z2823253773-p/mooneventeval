@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "validation/check_mutations.py",
+    "--output",
+    "evidence/T6/mutations-first"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 32.339,
+  "log": "evidence/T6/20261022T094422130514Z-mutations-first.log",
+  "log_sha256": "3f32c32e00f493b2f15bb2463450a8e2758a0a04d5c5fdcd159688d917e6130f",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

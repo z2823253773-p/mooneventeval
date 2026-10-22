@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-p",
+    "test_resources.py",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.144,
+  "log": "evidence/T6/20261022T093256802739Z-resources-first.log",
+  "log_sha256": "b6f00bea53471f9d85a1856f31d460cae9c98b51652fde673d10133183ddc0da",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

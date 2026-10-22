@@ -1,0 +1,14 @@
+test_boundary_classification_cannot_hide_wrong_product (test_qualification.QualificationTests.test_boundary_classification_cannot_hide_wrong_product) ... ok
+test_driver_retains_child_failure_and_returns_nonzero (test_qualification.QualificationTests.test_driver_retains_child_failure_and_returns_nonzero) ... ok
+test_equivalent_maximum_identity_is_allowed (test_qualification.QualificationTests.test_equivalent_maximum_identity_is_allowed) ... ok
+test_exact_margin_preselection_and_determinism (test_qualification.QualificationTests.test_exact_margin_preselection_and_determinism) ... ok
+test_failed_product_exit_cannot_hide_behind_valid_stdout (test_qualification.QualificationTests.test_failed_product_exit_cannot_hide_behind_valid_stdout) ... ok
+test_preserved_fixture_and_counterfeits (test_qualification.QualificationTests.test_preserved_fixture_and_counterfeits) ... ok
+test_raw_reference_corruption_is_not_hidden (test_qualification.QualificationTests.test_raw_reference_corruption_is_not_hidden) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.356s
+
+OK
+{"cases": 1, "unexplained": ["wrong-boundary"], "classifications": {"unexplained": 1}}
+{"cases": 1, "unexplained": ["failed-child"], "classifications": {"unexplained": 1}}

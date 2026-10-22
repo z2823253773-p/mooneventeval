@@ -25,7 +25,7 @@ def metrics(reference, prediction, tp):
                 f1=2*tp/(reference+prediction) if reference+prediction else None)
 
 
-def oracle_document(document):
+def oracle_document(document, edge_predicate=eligible):
     """Expected counts, per-group graph and bases from independent time/graph oracles."""
     cfg = document.get('config', {})
     groups = {}
@@ -37,7 +37,7 @@ def oracle_document(document):
         for label in document['labels']:
             refs=sorted((e for e in rec['reference'] if e['label']==label),key=lambda e:e['id'])
             preds=sorted((e for e in rec['prediction'] if e['label']==label),key=lambda e:e['id'])
-            graph=[[p for p,pred in enumerate(preds) if eligible(ref,pred,cfg)['eligible']] for ref in refs]
+            graph=[[p for p,pred in enumerate(preds) if edge_predicate(ref,pred,cfg)['eligible']] for ref in refs]
             tp=max_cardinality(graph,len(preds))
             groups[(rec['id'],label)]=(refs,preds,graph,tp)
             row=[len(refs),len(preds),tp]
@@ -214,6 +214,58 @@ def compare_document(document: dict, product: dict, reference: dict) -> list[dic
     return differences
 
 
+def compare_reference(document, reference, expected):
+    """Check original class counts/metrics and raw-vs-projection identities."""
+    errors=[]
+    def check(path,want,got):
+        if got!=want:errors.append(dict(path=path,expected=want,actual=got))
+    def metric(path,want,got):
+        check(path+'.counts',want['counts'],got['counts'])
+        for key in ['precision','recall','f1']:
+            value=got[key]
+            if want[key] is not None and (type(value) not in (int,float) or not math.isfinite(value) or abs(value-want[key])>1e-12):
+                errors.append(dict(path=path+'.'+key,expected=want[key],actual=value))
+            elif want[key] is None:check(path+'.'+key,None,value)
+    metric('reference.projected',expected['summary'],reference['projected'])
+    check('reference.class_wise.labels',sorted(document['labels']),sorted(reference['class_wise']))
+    for label,want in expected['by_label'].items():
+        raw=reference['class_wise'][label]
+        for key,rkey in [('reference','Nref'),('prediction','Nsys'),('tp','Ntp'),('fp','Nfp'),('fn','Nfn')]:
+            value=raw['counts'][rkey]
+            if type(value) not in (int,float) or value<0 or not math.isfinite(value) or value!=int(value):
+                errors.append(dict(path='reference.class_wise.'+label+'.'+rkey,expected='nonnegative integral count',actual=value))
+            check('reference.class_wise.'+label+'.'+rkey,want['counts'][key],value)
+        for key,rkey in [('precision','precision'),('recall','recall'),('f1','f_measure')]:
+            value=raw['metrics']['f_measure'][rkey]
+            if want[key] is not None and type(value) in (int,float) and math.isfinite(value) and abs(value-want[key])>1e-12:
+                errors.append(dict(path='reference.class_wise.'+label+'.'+key,expected=want[key],actual=value))
+    raw=reference['raw']['counts']; counts=reference['projected']['counts']
+    for key,rkey in [('reference','Nref'),('prediction','Nsys'),('tp','Ntp')]:check('reference.raw.'+rkey,counts[key],raw[rkey])
+    check('reference.raw.Nfp',raw['Nsys']-raw['Ntp']-raw['Nsubs'],raw['Nfp'])
+    check('reference.raw.Nfn',raw['Nref']-raw['Ntp']-raw['Nsubs'],raw['Nfn'])
+    for key,rkey in [('precision','precision'),('recall','recall'),('f1','f_measure')]:
+        want=expected['summary'][key];got=reference['raw']['metrics']['f_measure'][rkey]
+        if want is not None and type(got) in (int,float) and math.isfinite(got) and abs(want-got)>1e-12:
+            errors.append(dict(path='reference.raw.metrics.'+key,expected=want,actual=got))
+    return errors
+
+
+def run_file_product(product,document,folder):
+    """Binary capture, exit status first; no stdout repair or hidden child failure."""
+    folder.mkdir(parents=True,exist_ok=True)
+    path=folder/'input.json';path.write_text(json.dumps(document,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf-8')
+    command=[str(product),'evaluate',str(path.resolve()),'--format','json']
+    result=subprocess.run(command,cwd=ROOT,capture_output=True,timeout=30)
+    (folder/'stdout').write_bytes(result.stdout);(folder/'stderr').write_bytes(result.stderr)
+    differences=[];actual=None
+    if result.returncode or result.stderr: differences.append(dict(path='process',expected='exit0 and empty stderr',actual=dict(exit_code=result.returncode,stderr=result.stderr.decode('utf-8',errors='replace'))))
+    try:actual=json.loads(result.stdout.decode('utf-8'))
+    except (ValueError,UnicodeError) as error:differences.append(dict(path='stdout',expected='strict UTF8 JSON',actual=str(error)))
+    row=dict(command=command,exit_code=result.returncode,stdout_sha256=hashlib.sha256(result.stdout).hexdigest(),stderr_sha256=hashlib.sha256(result.stderr).hexdigest(),differences=differences)
+    (folder/'process.json').write_text(json.dumps(row,indent=2)+'\n')
+    return dict(**row,product=actual,stdout=result.stdout)
+
+
 # Prototype corpus and process driver are below; the library comparator above is
 # deliberately usable without importing sed_eval or a product binary.
 def prototype_cases():
@@ -382,8 +434,11 @@ def run_prototype(product,output):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase',choices=['prototype'],required=True)
+    parser.add_argument('--phase',choices=['prototype','qualification'],required=True)
     parser.add_argument('--product',type=Path,required=True)
     parser.add_argument('--output',type=Path,required=True)
     args=parser.parse_args()
+    if args.phase=='qualification':
+        from validation.qualify import run_qualification
+        raise SystemExit(run_qualification(args.product.resolve(),args.output.resolve()))
     raise SystemExit(run_prototype(args.product.resolve(),args.output.resolve()))

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "scripts/with-toolchain.sh",
+    "moon",
+    "info",
+    "--target",
+    "native"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.242,
+  "log": "evidence/T6/20261022T094658565753Z-info.log",
+  "log_sha256": "1efb63bf19504c385f6e39b93253c7a7f9475be0bf30c220dcf10da70eba7e6e",
+  "scope": "T6",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

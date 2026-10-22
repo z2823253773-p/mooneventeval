@@ -1,0 +1,15 @@
+test_counts_must_remain_integer_not_boolean_or_float (test_comparison.ComparatorTests.test_counts_must_remain_integer_not_boolean_or_float) ... ok
+test_hand_checked_empty_report (test_comparison.ComparatorTests.test_hand_checked_empty_report) ... ok
+test_machine_metadata_and_work_types_are_not_coerced (test_comparison.ComparatorTests.test_machine_metadata_and_work_types_are_not_coerced) ... ok
+test_match_row_extra_fields_are_rejected (test_comparison.ComparatorTests.test_match_row_extra_fields_are_rejected) ... ok
+test_missing_rows_or_partial_report_is_detected (test_comparison.ComparatorTests.test_missing_rows_or_partial_report_is_detected) ... ok
+test_nested_extra_fields_are_rejected (test_comparison.ComparatorTests.test_nested_extra_fields_are_rejected) ... ok
+test_reference_projection_mismatch_is_detected (test_comparison.ComparatorTests.test_reference_projection_mismatch_is_detected) ... ok
+test_selected_event_times_and_basis_keep_machine_types (test_comparison.ComparatorTests.test_selected_event_times_and_basis_keep_machine_types) ... ok
+test_undefined_metric_cannot_be_zero (test_comparison.ComparatorTests.test_undefined_metric_cannot_be_zero) ... ok
+test_wrong_count_is_detected (test_comparison.ComparatorTests.test_wrong_count_is_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

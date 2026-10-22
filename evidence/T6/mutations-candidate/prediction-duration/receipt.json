@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-mutations-c_2la16e/scripts/with-toolchain.sh",
+    "moon",
+    "test",
+    "eventeval",
+    "--target",
+    "native",
+    "--deny-warn",
+    "--filter",
+    "eligibility_A4_offset_boundary_and_reference_duration"
+  ],
+  "name": "prediction-duration",
+  "target_test": "eligibility_A4_offset_boundary_and_reference_duration",
+  "status": "killed",
+  "compiled": true,
+  "control_exit": 0,
+  "mutant_exit": 2,
+  "restored_exit": 0,
+  "baseline_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6",
+  "mutant_sha256": "f34750f579464f19f3b936cabd346e688517975a0f8c34199b1e2683426cbe83",
+  "restored_sha256": "fa0284dba1ca4d47997eb668412f03d8cc88870820f5e84eac973699f13676c6"
+}

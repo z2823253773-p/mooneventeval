@@ -1,0 +1,219 @@
+{
+  "passed": true,
+  "git_head": "b8cf27d02fa34a007185e15c23ea19bd0e412b4a",
+  "product": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "platform": "macOS-26.4-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "cpu": "Apple M5",
+  "logical_cpus": 10,
+  "compiler": "v0.10.14+7d59c7ec9 (2026-09-18)",
+  "cases": [
+    {
+      "name": "sparse",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.021380499936640263,
+          "peak_rss_bytes": 6750208,
+          "user_seconds": 0.015642,
+          "system_seconds": 0.001807,
+          "stdout_sha256": "4016715266ef7a69e272f68847142b67f12a0c26278e6baca53ad00f038e803b",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.020110375015065074,
+          "peak_rss_bytes": 6766592,
+          "user_seconds": 0.015163,
+          "system_seconds": 0.001243,
+          "stdout_sha256": "4016715266ef7a69e272f68847142b67f12a0c26278e6baca53ad00f038e803b",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/sparse/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.01997816702350974,
+          "peak_rss_bytes": 6766592,
+          "user_seconds": 0.015557999999999999,
+          "system_seconds": 0.0011719999999999999,
+          "stdout_sha256": "4016715266ef7a69e272f68847142b67f12a0c26278e6baca53ad00f038e803b",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000,
+            "matching_steps": 3000
+          }
+        }
+      ]
+    },
+    {
+      "name": "dense",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.026152041973546147,
+          "peak_rss_bytes": 9011200,
+          "user_seconds": 0.018265999999999998,
+          "system_seconds": 0.001295,
+          "stdout_sha256": "1cc996beacd7ee4b2070c6ceafa172cc1a52c0b90978738e934699193545f29a",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.02566324989311397,
+          "peak_rss_bytes": 9011200,
+          "user_seconds": 0.018105,
+          "system_seconds": 0.001346,
+          "stdout_sha256": "1cc996beacd7ee4b2070c6ceafa172cc1a52c0b90978738e934699193545f29a",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/dense/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.026450624922290444,
+          "peak_rss_bytes": 9011200,
+          "user_seconds": 0.018614,
+          "system_seconds": 0.001193,
+          "stdout_sha256": "1cc996beacd7ee4b2070c6ceafa172cc1a52c0b90978738e934699193545f29a",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1000000,
+            "matching_steps": 502500
+          }
+        }
+      ]
+    },
+    {
+      "name": "chain",
+      "samples": [
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.020042499992996454,
+          "peak_rss_bytes": 6832128,
+          "user_seconds": 0.016118,
+          "system_seconds": 0.001127,
+          "stdout_sha256": "ecdf645142b92d13398ae6f990208bcf49f311e71fba384086c7cd02f2f4a12e",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.020053999964147806,
+          "peak_rss_bytes": 6799360,
+          "user_seconds": 0.015830999999999998,
+          "system_seconds": 0.001093,
+          "stdout_sha256": "ecdf645142b92d13398ae6f990208bcf49f311e71fba384086c7cd02f2f4a12e",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        },
+        {
+          "command": [
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+            "evaluate",
+            "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/performance-green/chain/input.json",
+            "--format",
+            "json"
+          ],
+          "exit_code": 0,
+          "timed_out": false,
+          "wall_seconds": 0.019834207836538553,
+          "peak_rss_bytes": 6832128,
+          "user_seconds": 0.015874,
+          "system_seconds": 0.001076,
+          "stdout_sha256": "ecdf645142b92d13398ae6f990208bcf49f311e71fba384086c7cd02f2f4a12e",
+          "work": {
+            "candidate_checks": 1000000,
+            "eligible_edges": 1999,
+            "matching_steps": 6997
+          }
+        }
+      ]
+    }
+  ],
+  "measurement": "wall includes launch/read/evaluate/JSON/write to local file; wait4 per-child ru_maxrss; three independent release process samples",
+  "scope": "local samples only; not all-graph budget, cross-platform or universal peak/time guarantee"
+}

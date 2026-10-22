@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-io-faults-60iq4r4e/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T6/io-faults-first/input.json",
+    "--format",
+    "json"
+  ],
+  "name": "control",
+  "exit_code": 0,
+  "expected_exit": 0,
+  "syscalls": {
+    "open_calls": 1,
+    "stat_calls": 1,
+    "read_calls": 2,
+    "close_calls": 1,
+    "stdout_write_calls": 1,
+    "live_input_fds": 0
+  },
+  "instrumented_binary_sha256": "c175b20ed995fe384042441b9057f636cd9bbb7aeff22ccad6ba94dcfdeb8229",
+  "instrumented_source_sha256": "02b78c05533c4cf0bbad1577642c9c0a345928ab60cf4a1e4438c9caf81735da",
+  "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+  "passed": true
+}

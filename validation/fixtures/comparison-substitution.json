@@ -1,0 +1,444 @@
+{
+  "input": {
+    "schema_version": 1,
+    "labels": [
+      "A",
+      "B",
+      "unused"
+    ],
+    "recordings": [
+      {
+        "id": "clip-01",
+        "reference": [
+          {
+            "id": "r",
+            "label": "A",
+            "onset_s": "1",
+            "offset_s": "2"
+          }
+        ],
+        "prediction": [
+          {
+            "id": "p",
+            "label": "B",
+            "onset_s": "1",
+            "offset_s": "2"
+          }
+        ]
+      }
+    ]
+  },
+  "product": {
+    "schema_version": 1,
+    "semantics": "collar-max-cardinality/v1",
+    "implementation_version": "0.1.0",
+    "status": "completed",
+    "config": {
+      "collar_s": "0.2",
+      "offset_ratio": "0.5"
+    },
+    "summary": {
+      "counts": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1
+      },
+      "precision": 0,
+      "recall": 0,
+      "f1": 0
+    },
+    "by_label": [
+      {
+        "label": "A",
+        "metrics": {
+          "counts": {
+            "reference": 1,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 1
+          },
+          "precision": null,
+          "recall": 0,
+          "f1": 0
+        }
+      },
+      {
+        "label": "B",
+        "metrics": {
+          "counts": {
+            "reference": 0,
+            "prediction": 1,
+            "tp": 0,
+            "fp": 1,
+            "fn": 0
+          },
+          "precision": 0,
+          "recall": null,
+          "f1": 0
+        }
+      },
+      {
+        "label": "unused",
+        "metrics": {
+          "counts": {
+            "reference": 0,
+            "prediction": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0
+          },
+          "precision": null,
+          "recall": null,
+          "f1": null
+        }
+      }
+    ],
+    "by_recording": [
+      {
+        "recording_id": "clip-01",
+        "metrics": {
+          "counts": {
+            "reference": 1,
+            "prediction": 1,
+            "tp": 0,
+            "fp": 1,
+            "fn": 1
+          },
+          "precision": 0,
+          "recall": 0,
+          "f1": 0
+        }
+      }
+    ],
+    "matches": [],
+    "false_positives": [
+      {
+        "recording_id": "clip-01",
+        "event": {
+          "id": "p",
+          "label": "B",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "candidate_count": 0,
+        "reason": "no_eligible_candidate"
+      }
+    ],
+    "false_negatives": [
+      {
+        "recording_id": "clip-01",
+        "event": {
+          "id": "r",
+          "label": "A",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        "candidate_count": 0,
+        "reason": "no_eligible_candidate"
+      }
+    ],
+    "work": {
+      "candidate_checks": 0,
+      "eligible_edges": 0,
+      "matching_steps": 1
+    }
+  },
+  "reference": {
+    "raw": {
+      "counts": {
+        "Nref": 1.0,
+        "Nsys": 1.0,
+        "Nsubs": 1.0,
+        "Ntp": 0.0,
+        "Nfp": 0.0,
+        "Nfn": 0.0
+      },
+      "metrics": {
+        "f_measure": {
+          "f_measure": 0.0,
+          "precision": 0.0,
+          "recall": 0.0
+        },
+        "error_rate": {
+          "error_rate": 0.9999999999999998,
+          "substitution_rate": 0.9999999999999998,
+          "deletion_rate": 0.0,
+          "insertion_rate": 0.0
+        },
+        "accuracy": {}
+      }
+    },
+    "class_wise": {
+      "A": {
+        "counts": {
+          "Nref": 1.0,
+          "Nsys": 0.0,
+          "Ntp": 0.0,
+          "Ntn": 0.0,
+          "Nfp": 0.0,
+          "Nfn": 1.0
+        },
+        "metrics": {
+          "f_measure": {
+            "f_measure": {
+              "nonfinite": "NaN"
+            },
+            "precision": {
+              "nonfinite": "NaN"
+            },
+            "recall": 0.0
+          },
+          "accuracy": {},
+          "error_rate": {
+            "error_rate": 0.9999999999999998,
+            "deletion_rate": 0.9999999999999998,
+            "insertion_rate": 0.0
+          },
+          "count": {
+            "Nref": 1.0,
+            "Nsys": 0.0
+          }
+        }
+      },
+      "B": {
+        "counts": {
+          "Nref": 0.0,
+          "Nsys": 1.0,
+          "Ntp": 0.0,
+          "Ntn": 0.0,
+          "Nfp": 1.0,
+          "Nfn": 0.0
+        },
+        "metrics": {
+          "f_measure": {
+            "f_measure": {
+              "nonfinite": "NaN"
+            },
+            "precision": 0.0,
+            "recall": {
+              "nonfinite": "NaN"
+            }
+          },
+          "accuracy": {},
+          "error_rate": {
+            "error_rate": 4503599627370496.0,
+            "deletion_rate": 0.0,
+            "insertion_rate": 4503599627370496.0
+          },
+          "count": {
+            "Nref": 0.0,
+            "Nsys": 1.0
+          }
+        }
+      },
+      "unused": {
+        "counts": {
+          "Nref": 0.0,
+          "Nsys": 0.0,
+          "Ntp": 0.0,
+          "Ntn": 0.0,
+          "Nfp": 0.0,
+          "Nfn": 0.0
+        },
+        "metrics": {
+          "f_measure": {
+            "f_measure": {
+              "nonfinite": "NaN"
+            },
+            "precision": {
+              "nonfinite": "NaN"
+            },
+            "recall": {
+              "nonfinite": "NaN"
+            }
+          },
+          "accuracy": {},
+          "error_rate": {
+            "error_rate": 0.0,
+            "deletion_rate": 0.0,
+            "insertion_rate": 0.0
+          },
+          "count": {
+            "Nref": 0.0,
+            "Nsys": 0.0
+          }
+        }
+      }
+    },
+    "projected": {
+      "counts": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 0,
+        "fp": 1,
+        "fn": 1
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "metric_definition_flags": {
+      "projected_precision_defined": true,
+      "projected_recall_defined": true,
+      "projected_f1_defined": true,
+      "raw_precision_defined": true,
+      "raw_recall_defined": true,
+      "raw_f1_defined": true,
+      "reference_time_representation": "binary64_from_decimal_strings",
+      "matching": "original_sed_eval_optimal",
+      "zero_collar_supported": false
+    },
+    "prototype_binary64_witnesses": [],
+    "prototype_by_recording": {
+      "clip-01": {
+        "raw": {
+          "counts": {
+            "Nref": 1.0,
+            "Nsys": 1.0,
+            "Nsubs": 1.0,
+            "Ntp": 0.0,
+            "Nfp": 0.0,
+            "Nfn": 0.0
+          },
+          "metrics": {
+            "f_measure": {
+              "f_measure": 0.0,
+              "precision": 0.0,
+              "recall": 0.0
+            },
+            "error_rate": {
+              "error_rate": 0.9999999999999998,
+              "substitution_rate": 0.9999999999999998,
+              "deletion_rate": 0.0,
+              "insertion_rate": 0.0
+            },
+            "accuracy": {}
+          }
+        },
+        "class_wise": {
+          "A": {
+            "counts": {
+              "Nref": 1.0,
+              "Nsys": 0.0,
+              "Ntp": 0.0,
+              "Ntn": 0.0,
+              "Nfp": 0.0,
+              "Nfn": 1.0
+            },
+            "metrics": {
+              "f_measure": {
+                "f_measure": {
+                  "nonfinite": "NaN"
+                },
+                "precision": {
+                  "nonfinite": "NaN"
+                },
+                "recall": 0.0
+              },
+              "accuracy": {},
+              "error_rate": {
+                "error_rate": 0.9999999999999998,
+                "deletion_rate": 0.9999999999999998,
+                "insertion_rate": 0.0
+              },
+              "count": {
+                "Nref": 1.0,
+                "Nsys": 0.0
+              }
+            }
+          },
+          "B": {
+            "counts": {
+              "Nref": 0.0,
+              "Nsys": 1.0,
+              "Ntp": 0.0,
+              "Ntn": 0.0,
+              "Nfp": 1.0,
+              "Nfn": 0.0
+            },
+            "metrics": {
+              "f_measure": {
+                "f_measure": {
+                  "nonfinite": "NaN"
+                },
+                "precision": 0.0,
+                "recall": {
+                  "nonfinite": "NaN"
+                }
+              },
+              "accuracy": {},
+              "error_rate": {
+                "error_rate": 4503599627370496.0,
+                "deletion_rate": 0.0,
+                "insertion_rate": 4503599627370496.0
+              },
+              "count": {
+                "Nref": 0.0,
+                "Nsys": 1.0
+              }
+            }
+          },
+          "unused": {
+            "counts": {
+              "Nref": 0.0,
+              "Nsys": 0.0,
+              "Ntp": 0.0,
+              "Ntn": 0.0,
+              "Nfp": 0.0,
+              "Nfn": 0.0
+            },
+            "metrics": {
+              "f_measure": {
+                "f_measure": {
+                  "nonfinite": "NaN"
+                },
+                "precision": {
+                  "nonfinite": "NaN"
+                },
+                "recall": {
+                  "nonfinite": "NaN"
+                }
+              },
+              "accuracy": {},
+              "error_rate": {
+                "error_rate": 0.0,
+                "deletion_rate": 0.0,
+                "insertion_rate": 0.0
+              },
+              "count": {
+                "Nref": 0.0,
+                "Nsys": 0.0
+              }
+            }
+          }
+        },
+        "projected": {
+          "counts": {
+            "reference": 1,
+            "prediction": 1,
+            "tp": 0,
+            "fp": 1,
+            "fn": 1
+          },
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "metric_definition_flags": {
+          "projected_precision_defined": true,
+          "projected_recall_defined": true,
+          "projected_f1_defined": true,
+          "raw_precision_defined": true,
+          "raw_recall_defined": true,
+          "raw_f1_defined": true,
+          "reference_time_representation": "binary64_from_decimal_strings",
+          "matching": "original_sed_eval_optimal",
+          "zero_collar_supported": false
+        }
+      }
+    }
+  }
+}

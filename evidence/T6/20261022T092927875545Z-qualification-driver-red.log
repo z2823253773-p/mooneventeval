@@ -1,0 +1,28 @@
+test_boundary_classification_cannot_hide_wrong_product (test_qualification.QualificationTests.test_boundary_classification_cannot_hide_wrong_product) ... ERROR
+test_driver_retains_child_failure_and_returns_nonzero (test_qualification.QualificationTests.test_driver_retains_child_failure_and_returns_nonzero) ... ERROR
+test_equivalent_maximum_identity_is_allowed (test_qualification.QualificationTests.test_equivalent_maximum_identity_is_allowed) ... ok
+test_exact_margin_preselection_and_determinism (test_qualification.QualificationTests.test_exact_margin_preselection_and_determinism) ... ok
+test_failed_product_exit_cannot_hide_behind_valid_stdout (test_qualification.QualificationTests.test_failed_product_exit_cannot_hide_behind_valid_stdout) ... ok
+test_preserved_fixture_and_counterfeits (test_qualification.QualificationTests.test_preserved_fixture_and_counterfeits) ... ok
+test_raw_reference_corruption_is_not_hidden (test_qualification.QualificationTests.test_raw_reference_corruption_is_not_hidden) ... ok
+
+======================================================================
+ERROR: test_boundary_classification_cannot_hide_wrong_product (test_qualification.QualificationTests.test_boundary_classification_cannot_hide_wrong_product)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 63, in test_boundary_classification_cannot_hide_wrong_product
+    from validation.qualify import run_qualification
+ModuleNotFoundError: No module named 'validation.qualify'
+
+======================================================================
+ERROR: test_driver_retains_child_failure_and_returns_nonzero (test_qualification.QualificationTests.test_driver_retains_child_failure_and_returns_nonzero)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_qualification.py", line 52, in test_driver_retains_child_failure_and_returns_nonzero
+    from validation.qualify import run_qualification
+ModuleNotFoundError: No module named 'validation.qualify'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.968s
+
+FAILED (errors=2)
