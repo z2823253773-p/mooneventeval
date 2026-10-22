@@ -1,0 +1,37 @@
+test_consumer_source_must_be_module (test_package.ReleaseGates.test_consumer_source_must_be_module) ... ok
+test_escaping_archive_rejected_before_extract (test_package.ReleaseGates.test_escaping_archive_rejected_before_extract) ... ok
+test_package_requires_runtime_and_excludes_private_files (test_package.ReleaseGates.test_package_requires_runtime_and_excludes_private_files) ... ok
+test_public_consumer_wrong_expected_count_fails (test_package.ReleaseGates.test_public_consumer_wrong_expected_count_fails) ... ERROR
+test_symlink_and_duplicate_archive_rejected (test_package.ReleaseGates.test_symlink_and_duplicate_archive_rejected) ... ok
+
+======================================================================
+ERROR: test_public_consumer_wrong_expected_count_fails (test_package.ReleaseGates.test_public_consumer_wrong_expected_count_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_package.py", line 43, in test_public_consumer_wrong_expected_count_fails
+    report=consumer.check(ROOT,out,main_text=template)
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/check_consumer.py", line 29, in check
+    run=record([binary],consumer,output/'run')
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/release_support.py", line 31, in record
+    result=subprocess.run([str(x) for x in command],cwd=cwd,capture_output=True,timeout=timeout)
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 555, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 1990, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-t_v8un0i/_build/native/release/build/main/main.exe'
+
+----------------------------------------------------------------------
+Ran 5 tests in 1.184s
+
+FAILED (errors=1)

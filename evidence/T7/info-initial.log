@@ -1,0 +1,7 @@
+error: unexpected argument '--deny-warn' found
+
+  tip: a similar argument exists: '--dry-run'
+
+Usage: moon info --target <TARGET> --dry-run [PATH]...
+
+For more information, try '--help'.

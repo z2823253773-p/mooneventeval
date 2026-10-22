@@ -1,6 +1,6 @@
 # MoonEventEval 当前状态
 
-更新：2026-10-22（America/Phoenix）。**T0至T6限定本地机器实现/验收完成；T6唯一独立评审的2项Important已作者单轮修复并复验，1项Minor延期，无第二次独立复审。下一步T7包外消费者/候选包。本人M2/口头讲解、T7/T8、发布与赛事资格未完成。**
+更新：2026-10-22（America/Phoenix）。**T0至T6限定本地机器实现/验收完成；T6唯一独立评审的2项Important已作者单轮修复并复验，1项Minor延期，无第二次独立复审。T7本地消费者/38文件候选包/解包CLI及示例已实现，唯一独立评审准备中。本人M2/口头讲解、T7/T8、发布与赛事资格未完成。**
 
 ## 当前入口和SHA
 
@@ -39,3 +39,14 @@ scripts/with-toolchain.sh moon test --target native --deny-warn
 ```
 
 重新生成对照用全新未冻结目录，例如evidence/local-recheck-t6；不要向冻结T6新增日志。产品构建命令：`scripts/with-toolchain.sh moon build cmd/mooneventeval --target native --release --deny-warn`。T7第一步是独立临时模块仅import公开eventeval API，运行A1断言；不是发布或重做T6。
+
+
+## T7 当前实施（候选机器检查通过，待唯一独立评审）
+
+基线914cffd301d40eff8f4b2ecd697adb5052ebb031。新增scripts/check_consumer.py、package_candidate.py、check_examples.py、release_support.py及tests/consumer模板；未改eventeval/cli/native运行源码或公开API。moon.mod仅新增MIT/readme/description；namespace仍local/mooneventeval，无repository URL。
+
+独立临时consumer现代moon.mod import配合moon.work本地成员（旧path-deps语法不适用）；只import公开eventeval，A1 TP1/FP1/FN0并解析report。故意断言TP2时build成功、实际执行失败。包白名单38文件，保留运行源/native stub/生成接口/完整案例/公开文档/工具链安装器和锁；排除probe/原始证据/计划/本地工具。实际moon package --list --frozen与zip成员/源码bytes一致，解包到新临时目录后再跑包外consumer、解包原生CLI构建及README六命令（help/version/三案例/explain）；复用已有工具链，不重下载。
+
+当前11 Python（7新发布门+4工具链）、58 Moon通过；fmt/check及info实际通过。初次moon info错误带--deny-warn和清单格式检查失败日志保留，不能称初次成功；修正工具参数/格式后才通过。EXAMPLES完整JSON输入和summary逐块核对真实输出；API首个MoonBit块与实际编译消费者逐字一致。
+
+LICENSE署名取当前git作者Hengrui Zhang（不分发邮箱）；MIT及core原始Apache-2.0 LICENSE/NOTICE保留。无sed_eval/Python依赖或下载数据进入候选。T7仅本地候选，正式作者身份/namespace/URL如未来更改须重验；T8/本人M2/发布仍待完成。候选证据见evidence/T7，最终SHA/评审/manifest待本阶段收尾回填。

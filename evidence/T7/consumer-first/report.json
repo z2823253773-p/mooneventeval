@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "source": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "source_manifest_sha256": "f70f7e35598ce0fb3cf6451c62ac5e4cbac536db407cbec19c9a1a0755e78936",
+  "public_api_sha256": "8ff2f5b2847fa3bf66138ad048eb801a006a8f9397aac97b35d7f0242035a8e7",
+  "consumer_imports": [
+    "local/mooneventeval/eventeval"
+  ],
+  "consumer_source_sha256": "61a055472fd7a62ab9c3d7c50911bcd15a0330055ede375e1d4e2066216f9882",
+  "build": {
+    "command": [
+      "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+      "moon",
+      "build",
+      "main",
+      "--target",
+      "native",
+      "--release",
+      "--deny-warn"
+    ],
+    "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-0p8qko_z",
+    "exit_code": 255,
+    "timed_out": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "b0bf8789622b88e2a5bf9e054c3a74a2c985f5c91b0fa409a37a1a7bf24b54db"
+  },
+  "run": null,
+  "differences": [
+    "public consumer build failed"
+  ],
+  "report": null,
+  "scope": "fresh external module with path dependency; no copied product implementation; local native only"
+}

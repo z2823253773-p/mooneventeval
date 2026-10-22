@@ -1,0 +1,15 @@
+[1mdiff --git "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/moon.mod" "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/moon.mod"[m
+[1mindex 1b4db330..21e1d701 100644[m
+[1m--- "a/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/moon.mod"[m
+[1m+++ "b/Users/henryz/Desktop/\346\257\224\350\265\233/mooneventeval-t0/_build/wasm-gc/release/format/moon.mod"[m
+[36m@@ -5,5 +5,7 @@[m [mversion = "0.1.0"[m
+ preferred_target = "native"[m
+ [m
+ readme = "README.md"[m
+[32m+[m
+ license = "MIT"[m
+[32m+[m
+ description = "Exact-decimal event evaluation with maximum-cardinality matching; local source candidate"[m
+failed to execute `git --no-pager diff --color=always --no-index /Users/henryz/Desktop/比赛/mooneventeval-t0/moon.mod /Users/henryz/Desktop/比赛/mooneventeval-t0/_build/wasm-gc/release/format/moon.mod`
+Failed with 0 warnings, 0 errors.
+Error: failed when formatting project

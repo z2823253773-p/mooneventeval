@@ -1,0 +1,8 @@
+MoonEventEval 0.1.0
+Usage:
+  mooneventeval evaluate FILE [--format text|json]
+  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]
+  mooneventeval --help
+  mooneventeval --version
+Input: UTF-8 JSON task; default output: text. Files are read only.
+Exit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.

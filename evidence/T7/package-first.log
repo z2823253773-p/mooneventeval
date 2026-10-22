@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/package_candidate.py", line 106, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+                                             ~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/package_candidate.py", line 102, in main
+    args=parser.parse_args();report=package(args.source,args.output);print(json.dumps(dict(passed=report['passed'],members=len(report['members']),published=False)))
+                                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/package_candidate.py", line 74, in package
+    if listing_names!=expected:raise ValueError('moon list and expected file set differ: '+str(sorted(listing_names^expected)))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: moon list and expected file set differ: ['EXAMPLES.md', 'LICENSE', 'LICENSES/moonbit-core-LICENSE', 'LICENSES/moonbit-core-NOTICE', 'README.md', 'THIRD_PARTY_NOTICES.md', 'VALIDATION.md', 'cli/args.mbt', 'cli/dispatch.mbt', 'cli/moon.pkg', 'cli/pkg.generated.mbti', 'cmd/mooneventeval/io_stub.c', 'cmd/mooneventeval/main.mbt', 'cmd/mooneventeval/moon.pkg', 'cmd/mooneventeval/native_io.mbt', 'cmd/mooneventeval/pkg.generated.mbti', 'docs/API.md', 'docs/toolchain.lock.json', 'eventeval/eligibility.mbt', 'eventeval/errors.mbt', 'eventeval/evaluation.mbt', 'eventeval/explain.mbt', 'eventeval/input.mbt', 'eventeval/matching.mbt', 'eventeval/model.mbt', 'eventeval/moon.pkg', 'eventeval/pkg.generated.mbti', 'eventeval/report_json.mbt', 'eventeval/report_text.mbt', 'eventeval/serialization.mbt', 'eventeval/time.mbt', 'eventeval/validation.mbt', 'examples/boundary.json', 'examples/duplicate.json', 'examples/greedy-trap.json', 'moon.mod', 'scripts/install_toolchain.py', 'scripts/with-toolchain.sh']
