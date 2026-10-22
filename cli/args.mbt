@@ -51,7 +51,12 @@ pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
   let mut format_count = 0
   let mut format = Text
   let mut bad_format = false
-  let mut scan = 0
+  // Skip the command and positional file when present. A leading --format or
+  // missing file still selects the diagnostic protocol before syntax fails.
+  let mut scan = if args.length() > 0 && args[0] == "--format" { 0 } else { 1 }
+  if scan == 1 && args.length() > 1 && !args[1].has_prefix("--") {
+    scan = 2
+  }
   while scan < args.length() {
     let i = scan
     if args[i] == "--format" {
@@ -64,15 +69,9 @@ pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
         bad_format = true
       }
     }
-    // ID values may literally be option names; they are not format flags.
-    if args[i] == "--recording" ||
-      args[i] == "--reference" ||
-      args[i] == "--prediction" ||
-      args[i] == "--format" {
-      scan = scan + 2
-    } else {
-      scan = scan + 1
-    }
+    // Every option position consumes one value, including unknown keys. A
+    // value which literally equals --format or an ID option is not a flag.
+    scan = scan + 2
   }
   if bad_format || format_count > 1 {
     return Err(arg_error(Text))

@@ -149,6 +149,16 @@ class NativeCli(unittest.TestCase):
             result = self.call('evaluate', 'absent', *args, expected=2)
             self.assertEqual(result.stdout, b''); self.assertIn(b'INVALID_ARGUMENT', result.stderr)
 
+    def test_unknown_option_values_preserve_genuine_json_format(self):
+        for key in ['--unknown', 'unknown']:
+            for value in ['ordinary', '--recording', '--reference', '--prediction', '--format']:
+                with self.subTest(key=key, value=value):
+                    result = self.call('evaluate', 'absent', key, value, '--format', 'json', expected=2)
+                    self.assertEqual(result.stderr, b'')
+                    actual = json.loads(result.stdout.decode('utf-8'))
+                    self.assertEqual(actual['status'], 'failed')
+                    self.assertEqual(actual['error']['code'], 'INVALID_ARGUMENT')
+
     def test_closed_stdout_pipe_terminates_nonzero(self):
         rfd, wfd = os.pipe(); os.close(rfd)
         try:

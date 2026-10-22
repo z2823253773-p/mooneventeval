@@ -1,6 +1,28 @@
 // Catch lost JSON failure mode, permissive grammar and wrong dispatch/exit routing.
 
 ///|
+test "args_format_prescan_respects_unknown_option_values" {
+  for key in ["--unknown", "unknown"] {
+    for value in ["--recording", "--reference", "--prediction", "--format"] {
+      let result = @cli.parse_args([
+        "evaluate", "absent", key, value, "--format", "json",
+      ])
+      inspect(result is Err(_), content="true")
+      if result is Err(e) {
+        inspect(e.format == @cli.Json, content="true")
+        let output = @cli.render_arg_failure(e)
+        inspect(
+          output.stdout.length() > 0 &&
+          output.stderr.length() == 0 &&
+          output.exit_code == 2,
+          content="true",
+        )
+      }
+    }
+  }
+}
+
+///|
 test "args_success_default_and_exact_explanation" {
   let r = @cli.parse_args(["evaluate", "task.json"]).unwrap()
   inspect(r.format == @cli.Text, content="true")
