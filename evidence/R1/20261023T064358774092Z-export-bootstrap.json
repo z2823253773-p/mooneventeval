@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "scripts/restore_ci_history.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-ci",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.292,
+  "log": "evidence/R1/20261023T064358774092Z-export-bootstrap.log",
+  "log_sha256": "617dccfbc659e02217697bca90f9dd800442f42903b319726964764ba55b10c0",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

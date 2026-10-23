@@ -47,3 +47,5 @@ python3 scripts/verify.py --mode local --evidence evidence/local-delivery-rechec
 ## R1 私有远端CI实施中
 
 用户“授权”已覆盖目标z2823253773-p/mooneventeval的私有创建、代码/证据/历史推送及双平台CI；CLI账号与目标一致，API已确认仓库private=true。Git历史有150195290字节T7日志，超过GitHub普通Git单blob限制，采用独立导出图+完整原始历史bundle，按hash恢复原始对象和大日志再跑同一总门，本地原始历史不改写。见[远端验收记录](delivery/REMOTE_CI.md)。本地恢复器5项反例RED→GREEN及原始T7冻结复核；远端结果尚待发生。
+
+R1接续：首轮导出完整检查15步成功后，被原始T7缺失两份ignored reviewer binary阻断；已按原始冻结hash明确补交两文件，未删减历史门。唯一独立R1复核1 Important已有数据未绑定原始Git blob已作者RED→GREEN修复；当前28项Python通过，导出最终门与远端尚待实跑。

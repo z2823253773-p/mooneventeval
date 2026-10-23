@@ -1,0 +1,150 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 4,
+      "prediction": 4,
+      "tp": 0,
+      "fp": 4,
+      "fn": 4
+    },
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "by_label": {
+    "A": {
+      "counts": {
+        "reference": 0,
+        "prediction": 2,
+        "tp": 0,
+        "fp": 2,
+        "fn": 0
+      },
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    },
+    "B": {
+      "counts": {
+        "reference": 4,
+        "prediction": 2,
+        "tp": 0,
+        "fp": 2,
+        "fn": 4
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    },
+    "unused": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "by_recording": {
+    "clip-01": {
+      "counts": {
+        "reference": 4,
+        "prediction": 4,
+        "tp": 0,
+        "fp": 4,
+        "fn": 4
+      },
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "candidate_checks": 8,
+  "eligible_edges": 0,
+  "groups": [
+    {
+      "recording_id": "clip-01",
+      "label": "A",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "A",
+          "onset_s": "0.125",
+          "offset_s": "0.875"
+        },
+        {
+          "id": "p3",
+          "label": "A",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "clip-01",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "B",
+          "onset_s": "2.625",
+          "offset_s": "3.25"
+        },
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "0.625",
+          "offset_s": "1.25"
+        },
+        {
+          "id": "r2",
+          "label": "B",
+          "onset_s": "0.25",
+          "offset_s": "0.5"
+        },
+        {
+          "id": "r3",
+          "label": "B",
+          "onset_s": "0.375",
+          "offset_s": "0.75"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "B",
+          "onset_s": "1.25",
+          "offset_s": "2.125"
+        },
+        {
+          "id": "p2",
+          "label": "B",
+          "onset_s": "0",
+          "offset_s": "0.875"
+        }
+      ],
+      "adjacency": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "tp": 0
+    },
+    {
+      "recording_id": "clip-01",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-ci/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-ci/evidence/R1/export-local/parity/decimal-029/base/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "c2e5bc730f4ad305126654fccd6e6f4b4a55096cc41162bb12fc500728fa6418",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

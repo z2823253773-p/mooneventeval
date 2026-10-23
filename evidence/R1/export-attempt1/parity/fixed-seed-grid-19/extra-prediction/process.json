@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-ci/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-ci/evidence/R1/export-local/parity/fixed-seed-grid-19/extra-prediction/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "075f3a753f13e9afada71c25e860a94d7a69e658a2f47f2fd0d8517146c633d9",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

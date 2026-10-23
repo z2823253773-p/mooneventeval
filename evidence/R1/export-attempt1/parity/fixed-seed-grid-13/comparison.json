@@ -1,0 +1,28 @@
+{
+  "name": "fixed-seed-grid-13",
+  "category": "binary_grid",
+  "classification": "common_counts_and_both_defined_metrics_equal",
+  "differences": [],
+  "transforms": [
+    {
+      "operation": "reordered",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "shifted",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "doubled",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "extra-prediction",
+      "exit_code": 0,
+      "passed": true
+    }
+  ]
+}

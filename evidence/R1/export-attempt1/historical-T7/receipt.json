@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "evidence/T7/freeze.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-ci",
+  "exit_code": 1,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "125af66be6c8f6eef4a5432e28bcdb5348235e991e120b32d89fc484ef8631a8",
+  "name": "historical-T7",
+  "elapsed_seconds": 0.7062,
+  "passed": false
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "original frozen manifest files present on disk but ignored/untracked; hash verified before explicit add",
+  "files": {
+    "evidence/T7/independent-review/manual-consumer/_build/native/release/build/local/mooneventeval_consumer/main/main.exe": {
+      "sha256": "a3a793f4847afb699483b068e49bc8d029c993f696a84873fa25d2c807a7a9f6",
+      "bytes": 444968
+    },
+    "evidence/T7/independent-review/manual-unpacked/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe": {
+      "sha256": "1ffda4b6e306d9f427e3e5acb0ed429d5b07e69fb37d3356bb96709518c89e8b",
+      "bytes": 609248
+    }
+  }
+}

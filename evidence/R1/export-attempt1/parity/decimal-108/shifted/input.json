@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["A","B","unused"],"recordings":[{"id":"rec-0","reference":[{"id":"r0","label":"A","onset_s":"4.160962","offset_s":"5.165989"},{"id":"r1","label":"A","onset_s":"2.658373","offset_s":"3.854176"}],"prediction":[{"id":"p0","label":"A","onset_s":"4.119946","offset_s":"5.124973"}]}]}

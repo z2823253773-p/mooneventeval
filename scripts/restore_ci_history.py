@@ -24,10 +24,12 @@ def restore(root):
  git(root,'fetch','--no-tags','--no-write-fetch-head',str(bundle),ref+':refs/ci-evidence/original')
  if git(root,'rev-parse','refs/ci-evidence/original').decode().strip()!=tip:raise ValueError('original history tip differs')
  for name,target,row in targets:
-  if int(git(root,'cat-file','-s',tip+':'+name))!=row['bytes']:raise ValueError('original proof size differs')
+  object_name=tip+':'+name
+  if int(git(root,'cat-file','-s',object_name))!=row['bytes']:raise ValueError('original proof size differs')
+  if target.exists() and git(root,'hash-object',str(target)).strip()!=git(root,'rev-parse',object_name).strip():raise ValueError('existing proof differs from original blob')
   if not target.exists():
    target.parent.mkdir(parents=True,exist_ok=True);part=target.with_name(target.name+'.restore-part')
-   with part.open('xb') as stream:subprocess.run(['git','show',tip+':'+name],cwd=root,stdout=stream,stderr=subprocess.PIPE,check=True)
+   with part.open('xb') as stream:subprocess.run(['git','show',object_name],cwd=root,stdout=stream,stderr=subprocess.PIPE,check=True)
    if part.stat().st_size!=row['bytes'] or sha(part)!=row['sha256']:raise ValueError('original proof digest differs')
    part.replace(target)
  return dict(passed=True,scope='lossless original history/proof restoration, not qualification by itself',original_tip=tip,bundle_sha256=meta['bundle_sha256'],restored_proofs={name:row for name,_,row in targets})

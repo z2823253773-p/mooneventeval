@@ -1,0 +1,24 @@
+[
+  {
+    "name": "self_consistent_wrong_existing",
+    "reported_passed": true,
+    "existing_matches_original": false,
+    "expected_original_sha256": "d2db0e8a5da9b6cc679f1005a7b8a9fcd333584a7f052ab9cb7e7ae86e7cbe8d",
+    "accepted_existing_sha256": "6f3226f77f030743e85dc8075aa901b63270626845a5585466bad787f530ce8e"
+  },
+  {
+    "name": "external_parent_symlink",
+    "outcome": "ValueError: unsafe proof path",
+    "external_written": false
+  },
+  {
+    "name": "leaf_symlink",
+    "outcome": "ValueError: unsafe proof path",
+    "other_unchanged": true
+  },
+  {
+    "name": "wrong_tip",
+    "outcome": "ValueError: original history tip differs",
+    "proof_written": false
+  }
+]

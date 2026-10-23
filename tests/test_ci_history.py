@@ -50,4 +50,11 @@ class OriginalHistory(unittest.TestCase):
   row=self.meta['omitted_files'].pop(self.relative);self.meta['omitted_files']['../escape']=row;self.save()
   with self.assertRaisesRegex(ValueError,'path'):
    self.restore()
+ def test_existing_metadata_matched_bytes_must_equal_original_blob(self):
+  wrong=b'X'*len(self.payload);target=self.root/self.relative
+  target.parent.mkdir(parents=True);target.write_bytes(wrong)
+  self.meta['omitted_files'][self.relative]['sha256']=hashlib.sha256(wrong).hexdigest();self.save()
+  with self.assertRaisesRegex(ValueError,'original'):
+   self.restore()
+  self.assertEqual(target.read_bytes(),wrong)
 if __name__=='__main__':unittest.main()

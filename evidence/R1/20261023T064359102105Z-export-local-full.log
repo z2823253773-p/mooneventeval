@@ -1,0 +1,1 @@
+{"passed": false, "git_head": "f87eb4bb3dc9f7e5555a555fb69fc892da734637", "steps": 15, "error": {"type": "VerificationFailure", "message": "historical-T7 subprocess failed; see /Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-ci/evidence/R1/export-local/historical-T7"}, "remote_ci": "NOT_RUN"}

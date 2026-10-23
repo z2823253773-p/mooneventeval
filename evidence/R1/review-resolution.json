@@ -1,0 +1,11 @@
+{
+  "reviewed_candidate": "07906089e24ec06772e3b176107d5613911a7b93",
+  "manifest_sha256": "f188dd93d328890504b88596c26dbe86a2a1665a679a438571881687d985218d",
+  "important": 1,
+  "critical": 0,
+  "minor": 0,
+  "disposition": "I1 fixed: real existing-metadata-matched-wrong-bytes RED, actual Git blob comparison GREEN; final6 transport/28 root tests pass; full export and remote suite pending",
+  "second_review": false,
+  "author_followup": "Fresh export full gate exposed2 ignored original reviewer binaries missing from Git; exact frozen hashes verified and files explicitly added, no supplemental-ref mechanism needed; initial exploratory supplemental test/log retained as abandoned approach",
+  "declined_boundaries": "review certifies neither remote execution/privacy nor broad full gate/history map/giant-log bytes/races/followup; author must verify actual export and CI, keeping claims bounded"
+}

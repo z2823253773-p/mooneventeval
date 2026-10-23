@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"FILE_ERROR","message":"Cannot read a regular input file or write output","path":"file","limit":null,"observed":null}}

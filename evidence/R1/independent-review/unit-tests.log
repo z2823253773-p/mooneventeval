@@ -1,0 +1,10 @@
+test_corrupt_bundle_never_imports_or_restores (test_ci_history.OriginalHistory.test_corrupt_bundle_never_imports_or_restores) ... ok
+test_exact_restore_preserves_checkout_and_is_repeatable (test_ci_history.OriginalHistory.test_exact_restore_preserves_checkout_and_is_repeatable) ... ok
+test_existing_different_proof_is_preserved (test_ci_history.OriginalHistory.test_existing_different_proof_is_preserved) ... ok
+test_path_escape_is_rejected (test_ci_history.OriginalHistory.test_path_escape_is_rejected) ... ok
+test_wrong_expected_proof_never_becomes_valid_evidence (test_ci_history.OriginalHistory.test_wrong_expected_proof_never_becomes_valid_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.792s
+
+OK

@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "scripts/package_candidate.py",
+    "--output",
+    "/Users/henryz/Desktop/比赛/mooneventeval-ci/evidence/R1/export-local/package-cases"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-ci",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "82542237d1c17376e218a425ad4dab8b772ac9b4955f245b6b666dd9e3f61395",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "package",
+  "elapsed_seconds": 5.6251,
+  "passed": true
+}

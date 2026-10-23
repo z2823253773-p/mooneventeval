@@ -1,0 +1,47 @@
+test_corrupt_bundle_never_imports_or_restores (test_ci_history.OriginalHistory.test_corrupt_bundle_never_imports_or_restores) ... ok
+test_exact_restore_preserves_checkout_and_is_repeatable (test_ci_history.OriginalHistory.test_exact_restore_preserves_checkout_and_is_repeatable) ... ok
+test_existing_different_proof_is_preserved (test_ci_history.OriginalHistory.test_existing_different_proof_is_preserved) ... ok
+test_existing_metadata_matched_bytes_must_equal_original_blob (test_ci_history.OriginalHistory.test_existing_metadata_matched_bytes_must_equal_original_blob) ... FAIL
+test_path_escape_is_rejected (test_ci_history.OriginalHistory.test_path_escape_is_rejected) ... ok
+test_supplemental_snapshot_restores_previously_ignored_proof (test_ci_history.OriginalHistory.test_supplemental_snapshot_restores_previously_ignored_proof) ... ERROR
+test_wrong_expected_proof_never_becomes_valid_evidence (test_ci_history.OriginalHistory.test_wrong_expected_proof_never_becomes_valid_evidence) ... ok
+
+======================================================================
+ERROR: test_supplemental_snapshot_restores_previously_ignored_proof (test_ci_history.OriginalHistory.test_supplemental_snapshot_restores_previously_ignored_proof)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 69, in test_supplemental_snapshot_restores_previously_ignored_proof
+    self.assertTrue(self.restore()['passed'])
+                    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 28, in restore
+    return self.module.restore(self.root)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/restore_ci_history.py", line 27, in restore
+    if int(git(root,'cat-file','-s',tip+':'+name))!=row['bytes']:raise ValueError('original proof size differs')
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/restore_ci_history.py", line 7, in git
+    def git(root,*args):return subprocess.check_output(['git',*args],cwd=root,stderr=subprocess.PIPE)
+                               ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.6/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', 'cat-file', '-s', 'e7a75e31a30ad9749a00e03af31301628e220f4a:evidence/review/_build/proof.bin']' returned non-zero exit status 128.
+
+======================================================================
+FAIL: test_existing_metadata_matched_bytes_must_equal_original_blob (test_ci_history.OriginalHistory.test_existing_metadata_matched_bytes_must_equal_original_blob)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 57, in test_existing_metadata_matched_bytes_must_equal_original_blob
+    with self.assertRaisesRegex(ValueError,'original'):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.200s
+
+FAILED (failures=1, errors=1)
