@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/evidence/T8/negative-controls-isolated/archive-missing-license/parity/decimal-136/shifted/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "052165941937998e183eb9afaf795741ed47346ec6bebd322d10909b9eca8e84",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

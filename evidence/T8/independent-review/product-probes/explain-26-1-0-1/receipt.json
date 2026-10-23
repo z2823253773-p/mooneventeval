@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "explain-pair",
+    "/private/tmp/mooneventeval-review-available/product-probes/input-26.json",
+    "--recording",
+    "",
+    "--reference",
+    "𐀀",
+    "--prediction",
+    "",
+    "--format",
+    "json"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "exit_code": 0,
+  "stdout_sha256": "236bbd091cc6c0df658eae5678c917c42a5a9983ad2f75f4a1e858f6633a4b34",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

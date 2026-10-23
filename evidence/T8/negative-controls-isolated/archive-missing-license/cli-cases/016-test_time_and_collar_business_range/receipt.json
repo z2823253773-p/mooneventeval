@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-9xjtzyi0/collar",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "55a23646e5e57a9327cf22747eaf7e9aeb0eaf0dd806d36f08533b42fbf3fdc1",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

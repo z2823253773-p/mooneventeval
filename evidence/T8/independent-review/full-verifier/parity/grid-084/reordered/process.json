@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/private/tmp/mooneventeval-review-available/full-verifier/parity/grid-084/reordered/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "a4ad2fcd8f8fcd51fb6f62a288593005efe645df7cf2e4ab1afbaf1567b4718c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

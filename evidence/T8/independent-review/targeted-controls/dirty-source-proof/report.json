@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "mode": "local",
+  "root": "/private/tmp/mooneventeval-review-available/checkout",
+  "steps": [],
+  "scope": "current-checkout local native delivery gate",
+  "remote_ci": "NOT_RUN",
+  "published": false,
+  "personal_M2": "NOT_PERFORMED",
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.14.6"
+  },
+  "error": {
+    "type": "ValueError",
+    "message": "commit source/document/config changes before verification: README.md"
+  }
+}

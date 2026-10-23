@@ -1,0 +1,21 @@
+{
+  "candidate_sha": "df2142688e991c244cae0a94623ccf8acf55f257",
+  "final_code_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
+  "manifest_sha256": "c1cc63a1b5e0e1ca89bffc6faa6504a15b7e15659185727bb4485371767fc254",
+  "review_sha256": "e457e310aad7b299d628c41d35e03ba26268fc98f4f5d9a1da525ec40234f6e5",
+  "review_artifacts": 9134,
+  "verdict": "with fixes",
+  "critical": 0,
+  "important": 1,
+  "minor": 1,
+  "fixed": [
+    "I1 selected reference bytecode compared to fresh compile of hash-verified source BEFORE import; identity uses same gate"
+  ],
+  "deferred": [
+    "T8 M1 accepted NUL ID cannot be addressed via literal argv; evaluation/API remain usable",
+    "inherited T6 M1 timeout partial-output receipt gap"
+  ],
+  "verification": "author single RED-to-GREEN pass: both identity/scoring cache negatives; 42 validation tests; final full17-step suite PASS at 8aa37c5; exact original immutable cache fixture replay rejects both entrypoints",
+  "second_review": false,
+  "independent_scope": "candidate df214268 only; author fixes and later docs excluded; strongest model quota failure replaced with available fresh reviewer"
+}

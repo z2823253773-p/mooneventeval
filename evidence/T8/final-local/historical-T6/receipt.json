@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "evidence/T6/freeze.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "4c987ec3a1a24c2ad67dffee11acbbf1fda379258e0c93b829027633f701e9a7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "historical-T6",
+  "elapsed_seconds": 3.5883,
+  "passed": true
+}

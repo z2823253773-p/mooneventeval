@@ -1,0 +1,39 @@
+# MoonEventEval 当前状态
+
+更新2026-10-22（America/Phoenix）。**T0–T8本地工程任务完成；T5本人手算/口头demo/M2仍未完成。T8整分支唯一有效独立评审的1项Important已作者单轮RED→GREEN修复并通过最终总门，无第二次独立复审；1项新Minor和1项继承Minor延期。远端CI/Linux、新安装、正式发布与赛事资格未完成。**
+
+## 当前入口与身份
+
+[契约](contracts.md) → [有效计划v2](superpowers/plans/2026-10-20-mooneventeval-plan-v2.md) → [验收地图](ACCEPTANCE.md) → [T8结果](reviews/2026-10-22-t8-results.md) / [评审处置](reviews/2026-10-22-t8-review.md) → [最终交接](DELIVERY_HANDOFF.md) / [已实现选题事实](PROJECT_POSITIONING.md)。v1已作废。本人部分见[T5卡](superpowers/plans/tasks/T5-cli-demo.md)与[demo稿](demo.md)。
+
+- 工作树`/Users/henryz/Desktop/比赛/mooneventeval-t0`；分支`spike/t0-feasibility`，保留待用户后续决定。原main基线8a3075521312c9bf9ad196309422adaa0c67fbd2；无remote/merge/push/CI触发/发布/报名变更，无临床数据访问。
+- T8最终代码/被测 **8aa37c5aa55821d40a527e42ee9bc47ffc32371f**；独立评审候选df2142688e991c244cae0a94623ccf8acf55f257。之后内部文档/证据提交与代码被测SHA分开，当前HEAD用git查询。
+- 最终实际17/17：Moon58、Python22、validation42、CLI15，324bases+1296变形共1620产品调用；38文件真实源候选包、解包后consumer/native CLI及README六命令通过。源码193hash测试前后不变；后续文档按Git历史绑定。[总表](../evidence/T8/final-local/report.json) / [manifest](../evidence/T8/manifest.json)。
+- 生产binary SHA256 `7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d`。候选archive SHA256 `9ac08e51914ef39a9ecafc51b1b9daabd1b47397701a33d65b67330235d43b31`，只限定本机Darwin arm64。local/mooneventeval@0.1.0不是注册表发布身份。
+
+## 已完成及证据范围
+
+T0工具链/版本语法实编译；T1精确十进制/Unicode/资格；T1b原版参考hash锁；T2显式栈first-free+DFS、753小图；T3封装输入/评测；T4同源解释/稳定报告/16MiB字节门；T5真实文件CLI与agent自动demo；T6限定对照/变形/预算/I/O注入/mutation；T7公开API包外消费及解包；T8当前cwd统一检查器、真实失败控制、未触发手动CI、整分支复核和交接。
+
+T6参考324基础任务：155网格/160安全十进制/9边界。315共有口径一致；边界6一致/1具体binary64差异/2零collar原版域限制，未解释0。保留raw substitutions并显式projection；合成/固定seed范围，不认证任意真实数据普遍兼容。每base原版全局/逐录制/类实跑，四变形由独立有理数/图oracle核验；1620不是1620次原版对照。
+
+[T6结果](reviews/2026-10-22-t6-results.md) / [评审](reviews/2026-10-22-t6-review.md)：代码/被测7b8a453f58307e4118eeae7ad78d79859af6eeed，2 Important作者修复；真实限额/9类I/O注入/6可编译mutation杀死，本机性能样本，无全部图/OS/竞态保证。[T7结果](reviews/2026-10-22-t7-results.md) / [评审](reviews/2026-10-22-t7-review.md)：代码/被测bb24ce33962ebf6276265075edb3df10e16e6601，1 Important作者修复。各历史manifest只对其历史SHA；不可按旧源码hash检验新文档。
+
+T8复核原样9134文件；独立17步骤、额外48输入/281产品调用/7拒绝控制通过。I1缓存字节码绕过源码核验，作者已修复：身份与评分导入前都比较选中缓存与已hash源码新编译代码，两个入口真实RED→GREEN和原fixture作者重放均拒绝，最终总门GREEN。没有第二次独立复审。最强review席位额度失败后由可用gpt-6.1-sol xhigh替补，原失败未计为有效评审。
+
+## 固定决定、延期与未完成
+
+- 输入仅UTF8 JSON/字符串时间；重名及转义等价键last-wins。TSV/CSV、数字时间、sed_eval dict、stdin、新评分仍[BACKLOG](../BACKLOG.md)，未获范围修订。
+- T8 M1延期：含NUL的合法ID可评测/API解释，CLI literal argv无法选中。T6 M1延期：超时正确非零，但部分stdout/stderr/process收据缺口。不称两者已修复。
+- 机器输出单LF；I/O错误2、资源3、内部4；可能已输出前缀不等于完成。预算/large collar/等价匹配身份语义仍按契约，不保证所有合法图总能完成。
+- [八例](validation/T3-worked-examples.md)和demo稿是agent材料，不能替代本人纸笔复算/三分钟讲解/M2或外部反馈。
+- 手动CI保存Mac ARM/Linux x64矩阵及完整SHA action pins，调用同一verify；无远端执行或Linux资格化。正式作者/namespace/仓库URL/赛事资格仍待确认，不能编造。无自动发布、远端创建或报名授权。
+
+## 复验与下一步
+
+```sh
+python3 evidence/T8/freeze.py
+python3 scripts/verify.py --mode local --evidence evidence/local-delivery-recheck
+```
+
+总门须干净已提交根目录、新证据目录、现有锁定工具/档和参考venv，不自动下载/跳过。新复验认证当时HEAD，不改冻结T8。下一步由本人按demo稿实际复算并讲解，记录真实M2结果；需要新输入格式或远端操作时先明确相应范围。后续Codex/Claude Code先读本文件、AGENTS、contracts与对应任务，核实际git状态，不重做已完成阶段。

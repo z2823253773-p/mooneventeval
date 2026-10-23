@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv-reference/bin/python",
+    "-m",
+    "unittest",
+    "validation.tests.test_reference.ReferenceSelfCheck.test_poisoned_bytecode_cannot_pass_identity_or_scoring",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.04,
+  "log": "evidence/T8/20261023T055400403376Z-reference-bytecode-red.log",
+  "log_sha256": "f418241f98c8056a93e08f4a11e753ddac8acd04a4c6aafa312d2641696c696d",
+  "scope": "T8",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

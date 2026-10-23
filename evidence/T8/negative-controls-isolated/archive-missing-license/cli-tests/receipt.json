@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-v"
+  ],
+  "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt",
+  "environment_overrides": {
+    "MEE_BIN": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "MEE_EVIDENCE": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/negative-controls-isolated/archive-missing-license/cli-cases"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "d9ec03d126df07d46c2ed116c9a4e97086a747163a4db8b268ca59e235169ce2",
+  "name": "cli-tests",
+  "elapsed_seconds": 0.7373,
+  "passed": true
+}

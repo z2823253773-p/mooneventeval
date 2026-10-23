@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-c",
+    "import sys;print(\"injected child failure\");sys.exit(7)"
+  ],
+  "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-tawwuy_6",
+  "exit_code": 7,
+  "timed_out": false,
+  "stdout_sha256": "2541f3eb2fc8ec16050b46572479cfa48df3d4c70914829536f1146e0201d207",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "format",
+  "elapsed_seconds": 0.0173,
+  "passed": false
+}

@@ -1,0 +1,17 @@
+{
+  "args": [
+    "explain-pair",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-l8reroxe/outside.json",
+    "--recording",
+    "clip-01",
+    "--reference",
+    "absent",
+    "--prediction",
+    "p1",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "80f3abe8be91d8146a4dcf800f5b5cddb16a9bec39196280d92c349caed0852e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

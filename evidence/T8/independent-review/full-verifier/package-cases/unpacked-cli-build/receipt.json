@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-8c6mzfpz/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "cmd/mooneventeval",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn"
+  ],
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-unpacked-8c6mzfpz",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "37b9ce71b53427e25641d9a81ebde3687e1695cac663bdb56b92c48a83a44b18"
+}

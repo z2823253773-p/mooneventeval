@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "main",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn",
+    "--target-dir",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-sor1t1r6/_build"
+  ],
+  "cwd": "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-consumer-sor1t1r6",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282"
+}

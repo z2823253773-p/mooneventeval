@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "scripts/check_examples.py",
+    "--source",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+    "--bin",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/local/example-cases"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "14ec6681fb6d2dd36cbcbd59d451e9a9d948f926a46bdf9c76b108a2195ba8f0",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "examples",
+  "elapsed_seconds": 0.0583,
+  "passed": true
+}

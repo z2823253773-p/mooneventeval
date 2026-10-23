@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/mooneventeval-review-available/checkout/scripts/verify.py",
+    "--mode",
+    "local",
+    "--evidence",
+    "/private/tmp/mooneventeval-review-available/targeted-controls/dirty-source-proof"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "exit_code": 1,
+  "stdout_sha256": "91bcb195146ab9caf041220bfade43a73a3bc63f13c372577e3dfa95a9a7f63b",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

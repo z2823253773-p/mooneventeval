@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["alarm"],"recordings":[{"id":"clip-01","reference":[{"id":"r","label":"alarm","onset_s":"0","offset_s":"0.1"}],"prediction":[{"id":"p","label":"alarm","onset_s":"0.2","offset_s":"0.3"},{"id":"~no-candidate","label":"alarm","onset_s":"2591990","offset_s":"2591991"}]}]}

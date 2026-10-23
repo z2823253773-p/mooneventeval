@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+    "-c",
+    "import hashlib,importlib.metadata as md,json,pathlib,platform,re,sys\nroot=pathlib.Path(sys.argv[1]);sys.path.insert(0,str(root/'validation'))\nimport sed_reference,sed_eval\nsed_reference.verify_sources(pathlib.Path(sed_eval.__file__).parent)\nexpected=dict(re.findall(r'^([A-Za-z0-9_.-]+)==([^\\s]+)',(root/'validation/reference.lock').read_text(),re.M))\nactual={name:md.version(name) for name in expected}\nassert expected==actual,(expected,actual)\nexe=pathlib.Path(sys.executable).resolve()\nprint(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True)))\n",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "d15a31726783a21afe423efb206f09da8e9ede9a26081b7dd60be5cbc772108d",
+  "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+  "name": "reference-identity",
+  "elapsed_seconds": 0.1696,
+  "passed": true
+}

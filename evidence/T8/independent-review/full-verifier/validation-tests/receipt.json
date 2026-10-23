@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-review-available/checkout/.venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2e7382e3e10602a2051cbf6d0e515d0692a09c81ccdced8c83b04952044af799",
+  "stderr_sha256": "df7bddec32218a95e37598a081ae8cac759cb03e63be5a110fdb0979e09783bf",
+  "name": "validation-tests",
+  "elapsed_seconds": 6.0807,
+  "passed": true
+}

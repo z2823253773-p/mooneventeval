@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 33, in verify_sources
+    raise ValueError('cached code differs from verified source')
+ValueError: cached code differs from verified source
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 64, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 42, in _reference_module
+    verify_sources(next(iter(spec.submodule_search_locations)))
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 35, in verify_sources
+    raise RuntimeError('reference bytecode mismatch; refusing cached sed_eval: '+name) from exc
+RuntimeError: reference bytecode mismatch; refusing cached sed_eval: __init__.py

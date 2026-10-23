@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2e7382e3e10602a2051cbf6d0e515d0692a09c81ccdced8c83b04952044af799",
+  "stderr_sha256": "d43b1ee703cd06107bc27ad443907d098b3b55a218b5f847fa3f956aefeb0d31",
+  "name": "validation-tests",
+  "elapsed_seconds": 6.3487,
+  "passed": true
+}

@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-f945izj6/recording-over",
+    "--format",
+    "json"
+  ],
+  "exit_code": 3,
+  "stdout_sha256": "19c12797c3140302ee38400497760e460b9185cf5d918888259c472876f0ea3e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -29,7 +29,7 @@
 - 退出码 0=完整评测/解释完成；2=输入、配置、参数或文件错误；3=资源限额导致未完成；4=内部非预期错误。失败不得含分数或部分配对；JSON 失败向 stdout 写结构化错误。
 - 输出语义标识 `collar-max-cardinality/v1`，时间为规范十进制秒字符串；有效终点容差可至十二位小数。完成报告不含日期、运行耗时或本机路径。
 - sed_eval 固定提交 `0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb`；保留原始 substitution/global FP/FN，共同口径投影必须显式命名；不宣称原始全局输出完全一致。
-- T1b参考环境已实跑：macOS arm64、uv0.11.14、CPython3.11.14；45个依赖版本/哈希在`validation/reference.lock`，构建后端先按`reference-build.lock`装入，后续sync用`--require-hashes --no-build-isolation`，不隐式使用未锁构建依赖。原版12个.py的哈希按`reference-sources.json`在每次评测导入前核验。
+- T1b参考环境已实跑：macOS arm64、uv0.11.14、CPython3.11.14；45个依赖版本/哈希在`validation/reference.lock`，构建后端先按`reference-build.lock`装入，后续sync用`--require-hashes --no-build-isolation`，不隐式使用未锁构建依赖。原版12个.py的哈希按`reference-sources.json`在每次评测导入前核验；当前解释器选中的现存.pyc须与已核验源码新编译代码相同，缓存不符在导入前拒绝（T8 I1）。
 - 开发接口`validation.sed_reference.evaluate_document(document)`只消费已验证的合成PRD文档，不代替产品schema校验；秒字符串显式转参考Float64，optimal参数固定为原版实现。结果四区为`raw:{counts,metrics}`（原始overall/overall metrics）、`class_wise:{label:{counts,metrics}}`、`projected:{counts:{reference,prediction,tp,fp,fn},precision,recall,f1}`、`metric_definition_flags`。projected TP来自原版class_wise TP之和，FP/FN重新按共同口径推导，不覆盖raw substitution/FP/FN。
 - 参考非有限浮点保留为`{"nonfinite":"NaN"}`、`+Infinity`或`-Infinity`对应标记，原始0仍为0；projected零分母为null。flags包含raw/projected的precision/recall/f1是否有定义、binary64时间、original_sed_eval_optimal和`zero_collar_supported=false`。
 - 实证参考域限制：原版构造函数拒绝collar=0，适配器保留ValueError，不用epsilon或改原版；产品0 collar仍有效，由有理数oracle验证。T3/T6必须将这一限制显式分类，不能记作一致/产品错误，也不能据此取消A11。T1b自检不等于产品parity或M2完成。
@@ -148,3 +148,7 @@ T5最终代码/被测2c0a06d；候选1831fbc的I1已作者修复。格式预扫�
 .moonignore为38文件闭合白名单：产品源/接口/native stub、三合成案例、公开README/API/EXAMPLES/VALIDATION、MIT/core原始声明、安装器/锁。Moon清单真实输出位于stderr并带头尾；逐成员/字节/hash/链接检查，不丢弃未知项。公开API首块代码与实际外部消费者一致，三案例输入/summary核对实际输出。check_examples对explain除basis外必须status=completed且无error；真实序列化failed状态变体须使整个package门非零并保留失败账本。CLI状态/产品评分没有改动。
 
 本地候选不等于正式包或远端发布；复用工具链不等于新下载安装通过。原独立评审及作者单轮修复分开记账，T6 Minor M1、本人M2与T8待办仍明确保留。
+
+## 已披露的CLI标识符边界
+
+合法JSON/API ID可含U+0000，评测保留其值；OS argv不容NUL，literal CLI explain-pair选择器无法寻址该ID，转义文本不自动解码。T8 M1延期，不改变现有schema或公开API；可通过库调用解释。

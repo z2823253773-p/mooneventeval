@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/private/tmp/mooneventeval-review-available/checkout/scripts/verify.py",
+    "--mode",
+    "local",
+    "--evidence",
+    "/private/tmp/mooneventeval-review-available/targeted-controls/wrong-cwd-proof"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/targeted-controls/empty-cwd",
+  "exit_code": 1,
+  "stdout_sha256": "3d85d283c8222d892b79122fe139916be12d31d6eeb748a97818bee101e8722b",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

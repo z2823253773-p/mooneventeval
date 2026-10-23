@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/T8/replay_reference_cache.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.125,
+  "log": "evidence/T8/20261023T055732654631Z-author-original-cache-replay.log",
+  "log_sha256": "7d5d5d1a8e16b43e941b72fcbbe122ab3b49d58c3f0432889dc68dda89cd681a",
+  "scope": "T8",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

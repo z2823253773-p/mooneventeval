@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "scripts/verify.py",
+    "--mode",
+    "local",
+    "--evidence",
+    "/private/tmp/mooneventeval-review-available/full-verifier"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "exit_code": 0,
+  "elapsed_seconds": 41.882310833083466,
+  "stdout_sha256": "7419e345131d86680cc6ac6e68de9dce77191430721b57a5aee4bdfb252c1c5c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

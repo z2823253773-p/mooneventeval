@@ -1,0 +1,21 @@
+{
+  "format/receipt.json": "58334ee65cc96a9c7f54517278373d5319660b44df14f103f1161ba81c84d41d",
+  "format/stderr": "2ed06b1609d6c63b62d53b33d79af9c93a0e4455fafbcafda19b489f3314e0a2",
+  "format/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "interfaces/receipt.json": "4bb22ed8b1ba9bf7e83e905a6839c5cb00f26f913cdf015bac16d3494c0e6c09",
+  "interfaces/stderr": "b05caf99fa1a137ef24f969da747e31f858151f3056e1f17fec3062f2f875977",
+  "interfaces/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "native-check/receipt.json": "da06ee35261aaa3fa00707db55784e712aa9a85bcea35a080ae84baa371a6d72",
+  "native-check/stderr": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282",
+  "native-check/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "native-tests/receipt.json": "1a8c1a1bce2fc92d8f48a44aca8688ce17464f8b10ca7117fbd88b21ef998426",
+  "native-tests/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "native-tests/stdout": "6e54cb8f62feb41fc4eee0512a7370c16ce49e0c7143423696ccebc2bed30ec0",
+  "release-build/receipt.json": "cb484b987013c545d86df9dce7aa579249bf14299439041e7a2171b61a2cfe76",
+  "release-build/stderr": "37b9ce71b53427e25641d9a81ebde3687e1695cac663bdb56b92c48a83a44b18",
+  "release-build/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "report.json": "ae47fd8b12ae7084c66e64635bc3908122bc27369b5773ca85f97d22f626f376",
+  "versions/receipt.json": "38d66955f7135785d45bed6be98c5ffa50fb0f23365250582e2e6433197ae233",
+  "versions/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "versions/stdout": "37719d7f77ea2dc0cb156f90370951496903cdc813c5056aa089e3e4630d183e"
+}

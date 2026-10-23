@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "/private/tmp/mooneventeval-review-available/reference_pyc_probe.py"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available",
+  "exit_code": 0,
+  "stdout_sha256": "fb1b95570c96ac030464c375c31341d0a9cc2554cfa231f2d2d26d16d328e76d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

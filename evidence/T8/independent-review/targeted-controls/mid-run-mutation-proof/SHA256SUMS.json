@@ -1,0 +1,12 @@
+{
+  "format/receipt.json": "cf67d08ef2c43a4b125de662edc41aa846c6d738ee7f737ec9fae4a92670ec51",
+  "format/stderr": "30ec13dbdad8330682289e0f37415033da68d27500ec282757b7d943ce8227b5",
+  "format/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "interfaces/receipt.json": "aa6d78f8fc7a8675aabb8fb8147e0def3f6b22c1f1f378dd6e29b4ccc2932fc9",
+  "interfaces/stderr": "30ec13dbdad8330682289e0f37415033da68d27500ec282757b7d943ce8227b5",
+  "interfaces/stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "report.json": "f174ba81b2fd5ebbc4baac482cdbdc447158dceb78b806a28e508478c93c517f",
+  "versions/receipt.json": "f7aac9634cdc42721c7b044f8bcf67e8fbf734b9fb4b6d48279a70cf7f9f590e",
+  "versions/stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "versions/stdout": "c17a6d9683ad926f1e68328d1ac27ce8870b6a6face71762fc92d7a5c99465f8"
+}

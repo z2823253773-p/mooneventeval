@@ -1,0 +1,11 @@
+{
+  "original": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "copy": "/private/tmp/mooneventeval-review-available/checkout",
+  "candidate": "df2142688e991c244cae0a94623ccf8acf55f257",
+  "objects_alternates": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval/.git/objects",
+  "tracked_non_evidence_files": 193,
+  "historical_evidence": "T0-T7 symlinked read only; historical freeze scripts resolve original root",
+  "shared_tools": "read-only use; fresh own reference-cache",
+  "original_status": "?? evidence/T8/20261022T154807316849Z-local.json\n?? evidence/T8/20261022T154807316849Z-local.log\n?? evidence/T8/20261022T155003325361Z-live-negative-controls.json\n?? evidence/T8/20261022T155003325361Z-live-negative-controls.log\n?? evidence/T8/20261022T155108132191Z-live-negative-controls-isolated.json\n?? evidence/T8/20261022T155108132191Z-live-negative-controls-isolated.log\n?? evidence/T8/local/\n?? evidence/T8/negative-controls-isolated/\n?? evidence/T8/negative-controls/\n?? evidence/T8/review-dispatch.json\n?? evidence/T8/run_negative_controls.py\n",
+  "copy_diff_evidence_omitted_count": 68809
+}

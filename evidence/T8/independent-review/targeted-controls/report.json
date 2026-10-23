@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "wrong-cwd",
+      "expected_failure": true,
+      "receipt": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/private/tmp/mooneventeval-review-available/checkout/scripts/verify.py",
+          "--mode",
+          "local",
+          "--evidence",
+          "/private/tmp/mooneventeval-review-available/targeted-controls/wrong-cwd-proof"
+        ],
+        "cwd": "/private/tmp/mooneventeval-review-available/targeted-controls/empty-cwd",
+        "exit_code": 1,
+        "stdout_sha256": "3d85d283c8222d892b79122fe139916be12d31d6eeb748a97818bee101e8722b",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "error": {
+        "type": "ValueError",
+        "message": "current directory is not the MoonEventEval module root"
+      }
+    },
+    {
+      "case": "dirty-source",
+      "expected_failure": true,
+      "receipt": {
+        "argv": [
+          "/opt/homebrew/opt/python@3.14/bin/python3.14",
+          "/private/tmp/mooneventeval-review-available/checkout/scripts/verify.py",
+          "--mode",
+          "local",
+          "--evidence",
+          "/private/tmp/mooneventeval-review-available/targeted-controls/dirty-source-proof"
+        ],
+        "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+        "exit_code": 1,
+        "stdout_sha256": "91bcb195146ab9caf041220bfade43a73a3bc63f13c372577e3dfa95a9a7f63b",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "error": {
+        "type": "ValueError",
+        "message": "commit source/document/config changes before verification: README.md"
+      }
+    },
+    {
+      "case": "mid-run-source-mutation",
+      "expected_failure": true,
+      "completed_real_steps": 3,
+      "error": {
+        "type": "ValueError",
+        "message": "generated interfaces changed tracked source files"
+      }
+    },
+    {
+      "case": "installed-file-corruption",
+      "expected_failure": true,
+      "error": "installed toolchain SHA-256 mismatch: bin/moonc",
+      "real_compiler_sha256": "8a49fb209d896b8ce72322883aa53a2395a1bdd88d35423ebfd841fc66b8f127"
+    },
+    {
+      "case": "empty-python",
+      "expected_failure": true,
+      "error": "invalid/empty/skipped unittest success protocol"
+    },
+    {
+      "case": "skipped-python",
+      "expected_failure": true,
+      "error": "invalid/empty/skipped unittest success protocol"
+    },
+    {
+      "case": "failed-moon",
+      "expected_failure": true,
+      "error": "invalid/empty native test success protocol"
+    }
+  ],
+  "scope": "fresh bounded actual verifier negatives; runtime source untouched; shared tools read only"
+}

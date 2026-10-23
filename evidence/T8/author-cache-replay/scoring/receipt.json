@@ -1,0 +1,14 @@
+{
+  "name": "scoring",
+  "argv": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+    "-c",
+    "import sys;sys.path.insert(0,sys.argv[1]+'/validation');from sed_reference import evaluate_document;print(evaluate_document(dict(schema_version=1,labels=['a'],recordings=[])))",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 1,
+  "expected_rejection": true,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "01d4e1b2aab88edc3366b7d92710a13fe857a58bcdee952346de091c032ef027"
+}

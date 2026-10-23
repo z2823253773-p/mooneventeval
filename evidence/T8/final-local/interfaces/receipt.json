@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/with-toolchain.sh",
+    "moon",
+    "info",
+    "--target",
+    "native"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "30ec13dbdad8330682289e0f37415033da68d27500ec282757b7d943ce8227b5",
+  "name": "interfaces",
+  "elapsed_seconds": 0.4505,
+  "passed": true
+}

@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-zvxulw_3/large-output.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "63145deb4ff59e378e57a09695dd2b2c8bb74b64d8f324aa153848912f2b0022",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

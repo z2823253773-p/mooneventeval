@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "labels": [
+    "A",
+    "",
+    "𐀀",
+    "é",
+    "é",
+    "q\n\"\\\u0000"
+  ],
+  "config": {
+    "collar_s": "0",
+    "offset_ratio": "0.333333"
+  },
+  "recordings": [
+    {
+      "id": "𐀀",
+      "reference": [
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "1.000002",
+          "offset_s": "2.999995"
+        },
+        {
+          "id": "",
+          "label": "𐀀",
+          "onset_s": "0.000006",
+          "offset_s": "0.000009"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "0.000005",
+          "offset_s": "0.000008"
+        },
+        {
+          "id": "",
+          "label": "q\n\"\\\u0000",
+          "onset_s": "0.000002",
+          "offset_s": "1.000002"
+        }
+      ]
+    },
+    {
+      "id": "",
+      "reference": [
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "0.000005",
+          "offset_s": "0.000008"
+        },
+        {
+          "id": "",
+          "label": "",
+          "onset_s": "0.000006",
+          "offset_s": "0.000007"
+        },
+        {
+          "id": "id\n\"\\\u0000",
+          "label": "",
+          "onset_s": "1.000005",
+          "offset_s": "1.000008"
+        },
+        {
+          "id": "0",
+          "label": "q\n\"\\\u0000",
+          "onset_s": "0",
+          "offset_s": "0.000001"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "1.000003",
+          "offset_s": "1.000006"
+        }
+      ]
+    }
+  ]
+}

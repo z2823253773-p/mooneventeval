@@ -1,0 +1,18 @@
+test_poisoned_bytecode_cannot_pass_identity_or_scoring (validation.tests.test_reference.ReferenceSelfCheck.test_poisoned_bytecode_cannot_pass_identity_or_scoring) ... ERROR
+
+======================================================================
+ERROR: test_poisoned_bytecode_cannot_pass_identity_or_scoring (validation.tests.test_reference.ReferenceSelfCheck.test_poisoned_bytecode_cannot_pass_identity_or_scoring)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/tests/test_reference.py", line 87, in test_poisoned_bytecode_cannot_pass_identity_or_scoring
+    spec.loader.exec_module(gate)
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/scripts/verify.py", line 18, in <module>
+    from release_support import fresh,record,save,sha
+ModuleNotFoundError: No module named 'release_support'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.005s
+
+FAILED (errors=1)

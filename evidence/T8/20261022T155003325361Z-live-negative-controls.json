@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "evidence/T8/run_negative_controls.py",
+    "evidence/T8/negative-controls"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 0.399,
+  "log": "evidence/T8/20261022T155003325361Z-live-negative-controls.log",
+  "log_sha256": "70b2cef3a0f3616a6b4d4d9b364a04a31b241155d09543947943583bd36f28e7",
+  "scope": "T8",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

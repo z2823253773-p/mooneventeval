@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/.venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "qualification",
+    "--product",
+    "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/negative-controls-isolated/archive-missing-license/parity"
+  ],
+  "cwd": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/private/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-verify-negative-3c0p0lyt/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "18fd73c79324257f4cefad66c0a6e5ed7e97ef516cc99eba4a21b6675b8ba578",
+  "stderr_sha256": "9a5457aed91d6a27155654faaa9252bfbf7255a5fd47871a245f8af0c6b7e36b",
+  "name": "qualification",
+  "elapsed_seconds": 5.8911,
+  "passed": true
+}

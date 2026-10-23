@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "/private/tmp/mooneventeval-review-available/checkout/.venv-reference/bin/python",
+    "-c",
+    "import json,sys\nsys.path.insert(0,sys.argv[1])\nfrom validation.sed_reference import evaluate_document\nD=dict(schema_version=1,labels=['a'],config=dict(collar_s='0.2',offset_ratio='0.5'),recordings=[dict(id='x',reference=[dict(id='r',label='a',onset_s='1',offset_s='2')],prediction=[dict(id='p',label='a',onset_s='3',offset_s='4')])])\nprint(json.dumps(evaluate_document(D)))\n",
+    "/private/tmp/mooneventeval-review-available/checkout"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "environment_overrides": {
+    "PYTHONPATH": "/private/tmp/mooneventeval-review-available/reference-pyc-probe/pythonpath",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "MPLCONFIGDIR": "/private/tmp/mooneventeval-review-available/reference-pyc-probe/matplotlib",
+    "NUMBA_CACHE_DIR": "/private/tmp/mooneventeval-review-available/reference-pyc-probe/numba"
+  },
+  "exit_code": 0,
+  "stdout_sha256": "fbccc3fd87bcb99541ce13bd7077581baf044ac0564f31a9dfd82142b0bcbd21",
+  "stderr_sha256": "854376b96558740f8dfc35ec4dcbfd46fce2eb2514ceb169c0580f254864a946"
+}

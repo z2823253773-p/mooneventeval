@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/run_negative_controls.py", line 70, in <module>
+    if __name__=='__main__':run(Path(sys.argv[1]))
+                            ~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/run_negative_controls.py", line 61, in run
+    assert expected in message,(case,report.get('error'))
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError: ('missing-reference', {'type': 'ValueError', 'message': 'commit source/document/config changes before verification: .tools'})

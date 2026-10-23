@@ -1,0 +1,62 @@
+{
+  "confirmed": true,
+  "evaluation": {
+    "argv": [
+      "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+      "evaluate",
+      "/private/tmp/mooneventeval-review-available/nul-id-probe/input.json",
+      "--format",
+      "json"
+    ],
+    "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+    "exit_code": 0,
+    "spawned": true,
+    "stdout_sha256": "be83a2212c06897526e34a66eb3ca7a7944fdb1f13510b4a71400894cc56995f",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "raw_nul_selector": {
+    "argv": [
+      "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+      "explain-pair",
+      "/private/tmp/mooneventeval-review-available/nul-id-probe/input.json",
+      "--recording",
+      "clip",
+      "--reference",
+      "r\u0000",
+      "--prediction",
+      "p",
+      "--format",
+      "json"
+    ],
+    "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+    "exit_code": null,
+    "spawned": false,
+    "host_error": {
+      "type": "ValueError",
+      "message": "embedded null byte"
+    },
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "escaped_selector": {
+    "argv": [
+      "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+      "explain-pair",
+      "/private/tmp/mooneventeval-review-available/nul-id-probe/input.json",
+      "--recording",
+      "clip",
+      "--reference",
+      "r\\u0000",
+      "--prediction",
+      "p",
+      "--format",
+      "json"
+    ],
+    "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+    "exit_code": 2,
+    "spawned": true,
+    "stdout_sha256": "80f3abe8be91d8146a4dcf800f5b5cddb16a9bec39196280d92c349caed0852e",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "consequence": "Accepted ID U+0000 cannot be selected by raw argv and CLI has no escaping syntax; literal backslash-u0000 is a different ID"
+}

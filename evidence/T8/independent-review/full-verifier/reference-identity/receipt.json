@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-review-available/checkout/.venv-reference/bin/python",
+    "-c",
+    "import hashlib,importlib.metadata as md,json,pathlib,platform,re,sys\nroot=pathlib.Path(sys.argv[1]);sys.path.insert(0,str(root/'validation'))\nimport sed_reference,sed_eval\nsed_reference.verify_sources(pathlib.Path(sed_eval.__file__).parent)\nexpected=dict(re.findall(r'^([A-Za-z0-9_.-]+)==([^\\s]+)',(root/'validation/reference.lock').read_text(),re.M))\nactual={name:md.version(name) for name in expected}\nassert expected==actual,(expected,actual)\nexe=pathlib.Path(sys.executable).resolve()\nprint(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True)))\n",
+    "/private/tmp/mooneventeval-review-available/checkout"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "d15a31726783a21afe423efb206f09da8e9ede9a26081b7dd60be5cbc772108d",
+  "stderr_sha256": "854376b96558740f8dfc35ec4dcbfd46fce2eb2514ceb169c0580f254864a946",
+  "name": "reference-identity",
+  "elapsed_seconds": 1.2962,
+  "passed": true
+}

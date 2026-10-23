@@ -1,0 +1,9 @@
+{
+  "confirmed": true,
+  "source_file_hash_unchanged": true,
+  "identity_source_verified": true,
+  "identity_all_package_versions_verified": true,
+  "expected_tp_from_exact_rule": 0,
+  "patched_cached_code_tp": 1,
+  "scope": "isolated package mirror via PYTHONPATH; original venv and source read only; no claim entire qualification passes with this intentionally broad mutation"
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "documentation/evidence-only closeout after final source gate; not a new runtime verification",
+  "tested_code_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
+  "T8_manifest_sha256": "dfafa99e5279a64a4daad576fd2a6c8f420487d1b70dac029a6f397a792cabca",
+  "frozen_files": 33663,
+  "documentation_structure": {
+    "scope": "documentation_structure_only",
+    "errors": [],
+    "markdown_files": 53,
+    "task_cards": 10,
+    "pending_steps": 1,
+    "checked_steps": 70,
+    "checkbox_evidence": "NOT_ASSESSED",
+    "python_snippets_parsed": 6,
+    "old_dense_dfs_adjacency_lower_bound_n500": 20958500,
+    "compiler_feasibility": "NOT_ASSESSED",
+    "product_behavior": "NOT_ASSESSED",
+    "independent_reference": "NOT_ASSESSED",
+    "human_manual_review": "NOT_ASSESSED"
+  },
+  "original_main_sha": "8a3075521312c9bf9ad196309422adaa0c67fbd2",
+  "original_main_clean": true,
+  "original_main_remote": "",
+  "branch": "spike/t0-feasibility",
+  "disposition": "preserve branch/worktree; no merge/push/publish/CI trigger",
+  "pending": [
+    "personal M2/oral demo",
+    "Linux/remote CI/new install",
+    "namespace/URL/publication",
+    "competition eligibility"
+  ],
+  "deferred": [
+    "T8 M1 NUL literal argv selector",
+    "T6 M1 timeout partial output receipt"
+  ]
+}

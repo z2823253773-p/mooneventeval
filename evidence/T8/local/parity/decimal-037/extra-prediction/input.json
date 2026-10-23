@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["A","B","unused"],"recordings":[{"id":"rec-0","reference":[{"id":"r0","label":"B","onset_s":"2.67803","offset_s":"3.865509"}],"prediction":[{"id":"~no-candidate","label":"A","onset_s":"2591990","offset_s":"2591991"}]}]}

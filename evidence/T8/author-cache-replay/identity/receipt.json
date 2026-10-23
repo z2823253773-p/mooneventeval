@@ -1,0 +1,14 @@
+{
+  "name": "identity",
+  "argv": [
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0/.venv-reference/bin/python",
+    "-c",
+    "import hashlib,importlib.metadata as md,json,pathlib,platform,re,sys\nroot=pathlib.Path(sys.argv[1]);sys.path.insert(0,str(root/'validation'))\nimport sed_reference\nsed_eval=sed_reference._reference_module()\nexpected=dict(re.findall(r'^([A-Za-z0-9_.-]+)==([^\\s]+)',(root/'validation/reference.lock').read_text(),re.M))\nactual={name:md.version(name) for name in expected}\nassert expected==actual,(expected,actual)\nexe=pathlib.Path(sys.executable).resolve()\nprint(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True,sed_eval_bytecode_verified=True)))\n",
+    "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 1,
+  "expected_rejection": true,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "03cd7c5853b63a2757f74e86d3794fb4f4471a08ff8e428c7b97f097c568b4bf"
+}

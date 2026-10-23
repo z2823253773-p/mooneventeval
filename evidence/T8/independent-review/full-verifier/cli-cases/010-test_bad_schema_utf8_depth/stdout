@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"INVALID_UTF8","message":"Expected strict UTF-8","path":"$","limit":null,"observed":null}}

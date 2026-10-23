@@ -1,0 +1,1 @@
+{"passed": false, "git_head": null, "steps": 0, "error": {"type": "ValueError", "message": "current directory is not the MoonEventEval module root"}, "remote_ci": "NOT_RUN"}

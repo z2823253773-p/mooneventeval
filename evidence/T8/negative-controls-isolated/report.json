@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "source_sha": "df2142688e991c244cae0a94623ccf8acf55f257",
+  "cases": [
+    {
+      "case": "missing-reference",
+      "passed": false,
+      "rejected_for_expected_reason": true,
+      "error": {
+        "type": "ValueError",
+        "message": "missing reference Python environment"
+      },
+      "completed_subprocesses": 0,
+      "fixture_sha": "c0e860cca9c6c1ba340f46b9f470349384d55b9a"
+    },
+    {
+      "case": "bad-toolchain-hash",
+      "passed": false,
+      "rejected_for_expected_reason": true,
+      "error": {
+        "type": "ValueError",
+        "message": "toolchain SHA-256 mismatch: moonbit.tar.gz"
+      },
+      "completed_subprocesses": 0,
+      "fixture_sha": "cfd15f5d2acffdc9357d57c87f8e3c9f0e23dab1"
+    },
+    {
+      "case": "child-nonzero",
+      "passed": false,
+      "rejected_for_expected_reason": true,
+      "error": {
+        "type": "VerificationFailure",
+        "message": "format subprocess failed; see /Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/T8/negative-controls-isolated/child-nonzero/format"
+      },
+      "completed_subprocesses": 1,
+      "fixture_sha": "cfd15f5d2acffdc9357d57c87f8e3c9f0e23dab1"
+    },
+    {
+      "case": "missing-binary",
+      "passed": false,
+      "rejected_for_expected_reason": true,
+      "error": {
+        "type": "ValueError",
+        "message": "actual release binary is missing or not executable"
+      },
+      "completed_subprocesses": 6,
+      "fixture_sha": "2dd21fa17639bc875bd552fac8928f4fd97075bb"
+    },
+    {
+      "case": "archive-missing-license",
+      "passed": false,
+      "rejected_for_expected_reason": true,
+      "error": {
+        "type": "ValueError",
+        "message": "archive missing LICENSE"
+      },
+      "completed_subprocesses": 17,
+      "fixture_sha": "f03114cfed0f685647f77be3aa0e7390e6b93222"
+    }
+  ],
+  "scope": "expected top-level verifier failures in fresh fixture repositories; no product mutation score, no skip mode or modified production source",
+  "original_runtime_sources_unchanged": true
+}

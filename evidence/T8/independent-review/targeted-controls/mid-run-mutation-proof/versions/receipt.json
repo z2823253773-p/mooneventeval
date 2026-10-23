@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-review-available/checkout/scripts/with-toolchain.sh",
+    "moon",
+    "version",
+    "--all"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "c17a6d9683ad926f1e68328d1ac27ce8870b6a6face71762fc92d7a5c99465f8",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "versions",
+  "elapsed_seconds": 0.0412,
+  "passed": true
+}

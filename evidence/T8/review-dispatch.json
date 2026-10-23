@@ -1,0 +1,17 @@
+{
+  "candidate": "df2142688e991c244cae0a94623ccf8acf55f257",
+  "whole_branch_base": "8a3075521312c9bf9ad196309422adaa0c67fbd2",
+  "first_attempt": {
+    "agent": "t8_whole_branch_review",
+    "model": "gpt-6-astra",
+    "status": "failed: usage limit; no verdict",
+    "counts_as_completed_review": false
+  },
+  "replacement": {
+    "agent": "t8_whole_branch_review_available",
+    "model": "gpt-6.1-sol",
+    "status": "running",
+    "purpose": "one productive independent review, not re-review of fixes"
+  },
+  "source_implementation_unchanged": true
+}

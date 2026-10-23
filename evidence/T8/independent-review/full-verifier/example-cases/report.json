@@ -1,0 +1,98 @@
+{
+  "passed": true,
+  "source": "/private/tmp/mooneventeval-review-available/checkout",
+  "product_sha256": "8644fcc90426bfb89343e6855f54dc087cd904d2859f5d0884f686918877bb80",
+  "commands": [
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--help"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "6213af0f583b56ed2112df87001c688de4a1af8a22da210fae6bc5579b5f4ef7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "--version"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "6822e601892c692464df448e64d86157d69675aafa0c83798477a7a973f6d9db",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/duplicate.json",
+        "--format",
+        "json"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/greedy-trap.json",
+        "--format",
+        "json"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/boundary.json",
+        "--format",
+        "json"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/boundary.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p1",
+        "--format",
+        "json"
+      ],
+      "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout_sha256": "50bd43b3fbcb90e4c1d1f6bc5ae10e27073fd0f8659cca3a9a2d12f7a7d33e83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "differences": [],
+  "input_sha256": {
+    "duplicate": "3a600deca154c5f44ed3f1e43555c5a8cc40b4692c4480129d6d38227a2ada46",
+    "greedy-trap": "f8cb4d7349c6513ac83d8f114eb1a1af3c8f9ad4d72cd2e21fd3435670d00f3b",
+    "boundary": "d8e40d4c289a50729d719654e82e373b869928c7c58297ac14ab46906c33fc97"
+  },
+  "scope": "actual README help/version/three JSON evaluations/boundary explanation; install command not rerun; API snippet bound to separately executed external consumer"
+}

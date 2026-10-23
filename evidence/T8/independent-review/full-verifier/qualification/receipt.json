@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/private/tmp/mooneventeval-review-available/checkout/.venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "qualification",
+    "--product",
+    "/private/tmp/mooneventeval-review-available/checkout/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/private/tmp/mooneventeval-review-available/full-verifier/parity"
+  ],
+  "cwd": "/private/tmp/mooneventeval-review-available/checkout",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/private/tmp/mooneventeval-review-available/checkout/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "18fd73c79324257f4cefad66c0a6e5ed7e97ef516cc99eba4a21b6675b8ba578",
+  "stderr_sha256": "854376b96558740f8dfc35ec4dcbfd46fce2eb2514ceb169c0580f254864a946",
+  "name": "qualification",
+  "elapsed_seconds": 5.5739,
+  "passed": true
+}
