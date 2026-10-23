@@ -1,0 +1,1 @@
+{"schema_version":1,"status":"failed","error":{"kind":"input","code":"INVALID_ARGUMENT","message":"Invalid command or options; use --help","path":null,"limit":null,"observed":null}}

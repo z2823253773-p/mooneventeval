@@ -1,0 +1,6 @@
+{
+  "method": "curl -q, no authentication supplied",
+  "exit_code": 56,
+  "result": "network receive timeout; not anonymous-access proof",
+  "body_bytes": 6131
+}

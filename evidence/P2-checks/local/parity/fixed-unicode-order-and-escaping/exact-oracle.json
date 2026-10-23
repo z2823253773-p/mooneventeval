@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 3,
+      "prediction": 3,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0
+    },
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0
+  },
+  "by_label": {
+    "é": {
+      "counts": {
+        "reference": 2,
+        "prediction": 2,
+        "tp": 2,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "é": {
+      "counts": {
+        "reference": 1,
+        "prediction": 1,
+        "tp": 1,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "𐀀": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    },
+    "": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "by_recording": {
+    "clip\"\n\\": {
+      "counts": {
+        "reference": 3,
+        "prediction": 3,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    }
+  },
+  "candidate_checks": 5,
+  "eligible_edges": 5,
+  "groups": [
+    {
+      "recording_id": "clip\"\n\\",
+      "label": "é",
+      "reference": [
+        {
+          "id": "",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "𐀀",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        },
+        {
+          "id": "p2",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "adjacency": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "tp": 2
+    },
+    {
+      "recording_id": "clip\"\n\\",
+      "label": "é",
+      "reference": [
+        {
+          "id": "r",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p\"\n\\",
+          "label": "é",
+          "onset_s": "1",
+          "offset_s": "2"
+        }
+      ],
+      "adjacency": [
+        [
+          0
+        ]
+      ],
+      "tp": 1
+    },
+    {
+      "recording_id": "clip\"\n\\",
+      "label": "𐀀",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "clip\"\n\\",
+      "label": "",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    }
+  ]
+}

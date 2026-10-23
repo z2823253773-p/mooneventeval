@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/home/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity/decimal-083/extra-prediction/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "f154781caed7136ce4c736a4588e930f83a5307307d5340395a1575ce6534417",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

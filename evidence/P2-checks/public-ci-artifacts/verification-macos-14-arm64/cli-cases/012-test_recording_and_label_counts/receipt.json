@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/mee-cli-xjbjx4b3/labels",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "a35ed7e0699505eb019f045182f08ec657d96bff1a9f9050ebcbac3d46f71b83",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

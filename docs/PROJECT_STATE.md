@@ -1,10 +1,8 @@
 # MoonEventEval 当前状态
 
-更新2026-10-23（America/Phoenix）。**P2：用户已授权公开仓库；公开前检查完成，正在更新公开说明和最终复核。申报书保存在仓库外，手机号/邮箱不上传；正式报名未执行。**
+更新2026-10-23（America/Phoenix）。**P2：仓库已公开，匿名Git访问通过；公开后实际双平台CI成功，产物已下载复核。T0–T8/P1/R1工程均完成。注册表发布、赛事接受与本人理解不作已完成声明。**
 
-此前阶段：**T0–T8/P1本地工程与R1私有双平台CI完成。用户取消自行复测，由Codex验收；PRD M2最小核心已完成。公开发布、赛事接受与本人理解不作已完成声明。**
-
-P2范围和执行进展见[公开交付记录](delivery/PUBLIC_RELEASE.md)。此前“保持私有/公开未授权”描述R1当时边界，由本轮直接授权更新。
+P2完整记录见[公开交付](delivery/PUBLIC_RELEASE.md)。用户直接授权公开，更新了R1当时“保持私有/公开未授权”的边界。报名尚未提交；个人联系方式和新版申报书只在仓库外本地目录。
 
 ## 当前入口
 
@@ -12,7 +10,8 @@ P2范围和执行进展见[公开交付记录](delivery/PUBLIC_RELEASE.md)。此
 
 ## 当前身份与证据
 
-- 私有仓库：https://github.com/z2823253773-p/mooneventeval，默认main；最终API确认private=true。
+- 当前公开仓库：https://github.com/z2823253773-p/mooneventeval，默认main；P2 API确认private=false，禁用凭证助手/认证头的匿名ls-remote成功。R1 frozen private=true只描述其历史时刻。
+- P2公开候选原始文档代码23af827f87adad36b06cf11b30a82982848fd1f5，对应实际远端被测f406084d7f702fd569401b76ae86b65817f7aafa；[run39925966715](https://github.com/z2823253773-p/mooneventeval/actions/runs/39925966715)两OS各17步成功。各205源码hash相同、各8144产物hash下载复验通过，产品运行源码/API/工作流未变。后续证据文档HEAD不冒称重新运行。
 - R1原始作者代码/被测等价源码 **69f544fdcfd6bdd13bff273279da7dd5fdfc56d6**；实际远端被测导出 **c1e74f58b495e8bf83986715f57d6d8f3bff76bd**；[run39914869650](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650)整次success，Mac14 arm64与Ubuntu24.04 x86_64均success。两OS各204非证据源码hash相同，逐一绑定原始作者Git blobs。
 - 每OS完整17步：Moon58、Python28、validation42、CLI15；各324bases+1296变形=1620产品调用、38文件源包/包外消费/解包CLI/六README命令。新工具链与原版参考环境在两runner实际安装。各8144产物hash已下载复验，[总表](../evidence/R1/remote-verified.json) / [冻结清单](../evidence/R1/manifest.json)。
 - 本机原始工作树`/Users/henryz/Desktop/比赛/mooneventeval-t0`，分支`spike/t0-feasibility`；导出工作树`/Users/henryz/Desktop/比赛/mooneventeval-ci`，分支main。原main代码仍8a3075521312c9bf9ad196309422adaa0c67fbd2。后续文档/证据收尾HEAD用git查询，不与远端被测SHA混同。
@@ -32,8 +31,8 @@ R1推送副本首轮本地总门暴露两份ignored reviewer binary未提交，�
 - T8 Minor：合法NUL ID可评测/API解释，literal OS argv不能选中。T6 Minor：超时非零，但部分stdout/stderr/process收据不完整。均未修复。
 - 本人讲解/外部反馈无实际证据；用户已取消自行复测，不作工程阻塞。历史“本人M2”混用作废，PRD M2机器条件已完成。
 - P1十九文件本地交付包、复制/ZIP解出程序三案例通过；本机binary含构建路径，未作公开脱敏。HTML结构/内容已验，file协议观察被浏览器安全策略拒绝，视觉核验未完成；不要求用户补测。
-- 当前许可MIT，namespace仍local/mooneventeval；私有GitHub不是公开参赛/注册表发布。两OS binary/ZIP容器hash不同，源成员hash相同；不承诺跨平台/路径bit一致。
-- 已获授权仅私有建仓、代码/证据/真实历史推送及CI/失败修复。保持私有；公开、发包、报名变更、外发消息仍须另有明确授权。无临床数据访问。赛事个案资格/换题/次数/截止具体时区或时刻仍待外部证据。
+- 当前许可MIT，namespace仍local/mooneventeval；P2 GitHub已公开，注册表仍未发布。两OS binary/ZIP容器hash不同，源成员hash相同；不承诺跨平台/路径bit一致。
+- 已获授权并执行私有建仓、推送/CI修复及P2公开仓库；正式发包、报名变更、外发消息未执行。无临床数据访问。赛事个案资格/换题/次数/截止具体时区或时刻仍待外部证据。
 
 ## 复核与后续
 
@@ -45,4 +44,4 @@ python3 evidence/R1/freeze.py
 python3 evidence/R1/verify_remote.py --check-only
 ```
 
-当前授权范围已完成；后续代理先读AGENTS、contracts、本文及REMOTE_CI，核实际git与远端run，不重做已完成阶段。公开发布前仍需单独做公开内容/身份与赛事要求核对；不自动改变可见性或提交报名。
+当前授权范围已完成；后续代理先读AGENTS、contracts、本文及REMOTE_CI，核实际git与远端run，不重做已完成阶段。仓库公开已完成；正式报名仍须满足表单要求，包括一页Markdown、不使用AI编写申报书、至少三个完整预期场景及有效开发记录。代理材料不声明由本人独立撰写，不替代正式报名或本人理解。

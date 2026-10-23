@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "examples/boundary.json",
+    "--format",
+    "json"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

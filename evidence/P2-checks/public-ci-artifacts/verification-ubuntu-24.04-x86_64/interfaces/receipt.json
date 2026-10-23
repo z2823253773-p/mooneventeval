@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/scripts/with-toolchain.sh",
+    "moon",
+    "info",
+    "--target",
+    "native"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "b05caf99fa1a137ef24f969da747e31f858151f3056e1f17fec3062f2f875977",
+  "name": "interfaces",
+  "elapsed_seconds": 0.6803,
+  "passed": true
+}

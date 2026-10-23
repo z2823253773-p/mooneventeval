@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/home/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity/grid-024/extra-prediction/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "fec71e44bf314fb2ae8a7a2e04061dda9117de78a085486b2644605167b9cce6",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

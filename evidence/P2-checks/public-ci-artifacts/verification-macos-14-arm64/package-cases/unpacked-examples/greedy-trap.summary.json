@@ -1,0 +1,12 @@
+{
+  "counts": {
+    "reference": 2,
+    "prediction": 2,
+    "tp": 2,
+    "fp": 0,
+    "fn": 0
+  },
+  "precision": 1,
+  "recall": 1,
+  "f1": 1
+}

@@ -1,0 +1,85 @@
+{
+  "scope": "selected credential formats and participant contacts in all reachable main/bundled-author Git blobs plus ZIP members",
+  "head": "f406084d7f702fd569401b76ae86b65817f7aafa",
+  "original_roots": [
+    "4d5d3fbb93972e4d64866528b4f8919bc6d3c8aa",
+    "69f544fdcfd6bdd13bff273279da7dd5fdfc56d6"
+  ],
+  "bundles": [
+    {
+      "path": ".ci/original-history.bundle",
+      "sha256": "13b8ca0a030bc5918586b2788e159ea99a0b425b8d371442b145da08a544e630",
+      "original_tip": "4d5d3fbb93972e4d64866528b4f8919bc6d3c8aa"
+    },
+    {
+      "path": "evidence/R1-provenance/author-code.bundle",
+      "sha256": "0c3c473b985c51a604d670453b60e704738f633771444fcb01ac7bbf77edb901",
+      "original_tip": "69f544fdcfd6bdd13bff273279da7dd5fdfc56d6"
+    }
+  ],
+  "blobs": 31653,
+  "bytes": 313850860,
+  "zip_members": 306,
+  "tar_members": 8027,
+  "archive_types": {
+    ".bundle": 2,
+    ".zip": 11,
+    ".gz": 11,
+    ".tar": 2
+  },
+  "informational_counts": {
+    "objects_with_clinical_word": 114,
+    "objects_with_local_or_runner_build_paths": 19212,
+    "invalid_tar_or_gzip_fixture": 10
+  },
+  "findings": [],
+  "clinical_word_contexts": [
+    " = Counter(); findings = []; zip_members = 0; tar_members = 0; archive_types = Counter(); clinical_contexts = set()\n\n    def inspect(data, oid, path):\n        for kind, pattern in patterns.items():\n            matches = list(pattern.finditer(data))\n            if matche",
+    "/worktree reused; baseline native58/58 clean. No remote creation/trigger/push/publication/clinical access.\nPre-flight: T1–T7 checks have separate output protocols; unified gate must require current-cwd identity, pinned toolchain archive/installed-tool integrity, origi",
+    "/发布。赛事当前资格/换题/截止细则与真实需求仍未确认。没有访问临床数据、外发、合并、推送、报名变更或发布。\n\n## 下一步与命令\n\n下一实施目标：**T3严格输入、全任务评测、稳定JSON报告与开发probe*",
+    "/发布。赛事当前资格/换题/截止细则与真实需求仍未确认。没有访问临床数据、外发、合并、推送、报名变更或发布。\\n\\n## 下一步与命令\\n\\n下一实施目标：**T3严格输入、全任务评测、稳定JSON报告与开发pr",
+    "/完整资源I/O，T7消费者/包，T8 CI仍未完成；没有外发、推送、合并、临床数据或发布。\n",
+    "0：主动说明边界\n\n讲明：用户提供参考标注；首版不检测信号、不做临床判断；不同类别不配对；空分母为未定义；资源耗尽明确失败。出示真实运行SHA/命令/输出与独立验证范围，不只放测试数量。\n\n验�",
+    "1312c9bf9ad196309422adaa0c67fbd2；无remote/merge/push/CI触发/发布/报名变更，无临床数据访问。\n- T8最终代码/被测 **8aa37c5aa55821d40a527e42ee9bc47ffc32371f**；独立评审候选df2142688e991c244cae0a94623ccf8acf55f257。之后内部文档/证据�",
+    "1312c9bf9ad196309422adaa0c67fbd2；无remote/merge/push/CI触发/发布/报名变更，无临床数据访问。\n- T8最终代码/被测 **{code}**；独立评审候选df2142688e991c244cae0a94623ccf8acf55f257。之后内部文档/证据提交与代码被测SHA分开，�",
+    "TAR/GZIP 是安装器负例素材；已扫描其原始字节，不冒称能解包。含“临床”的抽查上下文均为不访问临床数据/不作临床判断等边界说明。\n\n这不是完整凭证检测认证；真实 Git 作者身份、Mac/runner 构建路径�",
+    "acOS native证据；没有全合法图必在20M或墙钟/峰值内存保证。没有访问临床数据、合并、外发、推送、报名变更或发布。\n\n## 下一步与复验命令\n\n下一目标：**T4指定事件对解释、文本报告与输出预算**。读AGENT",
+    "acOS native证据；没有全合法图必在20M或墙钟/峰值内存保证。没有访问临床数据、合并、外发、推送、报名变更或发布。\n-\n-## 下一步与复验命令\n-\n-下一目标：**T4指定事件对解释、文本报告与输出预算**。读A",
+    "bjects_with_local_or_runner_build_paths'] += 1\n        if b'clinical' in data.lower() or '临床'.encode() in data:\n            info['objects_with_clinical_word'] += 1\n            for needle in [b'clinical', '临床'.encode()]:\n                at=data.lower().find(needl",
+    "ion: no authorized live target here; local Darwin arm64 results do not establish them.\n3. Clinical or real business performance/data quality: corpus is synthetic and no clinical data was accessed.\n4. Universal 20M/time/memory guarantee for every legal 2,000-event graph:",
+    "n --format json\n+```\n \n-讲明：用户提供参考标注；首版不检测信号、不做临床判断；不同类别不配对；空分母为未定义；资源耗尽明确失败。出示真实运行SHA/命令/输出与独立验证范围，不只放测试数量。\n+真�",
+    "ng isolated worktree reused, baseline Moon58/58, clean. No network/install/remote/publish/clinical access.\nPre-flight: T6 public eventeval API -> external module path dependency; opaque fields accessible only through factories/metrics/report. Archive must include C stub",
+    "on: no authorized live target here; local Darwin arm64 results do not establish them.\n-3. Clinical or real business performance/data quality: corpus is synthetic and no clinical data was accessed.\n-4. Universal 20M/time/memory guarantee for every legal 2,000-event graph",
+    "tion, remote repository operations, competition eligibility/registration, external users, clinical data, and personal M2/oral explanation: outside this local engineering review; no operations or acceptance claims were made.\n- T6 performance/mutation/native fault-injecti",
+    "tions were reused through local links. No remote, network, install, global configuration, clinical-data or additional CPU-discovery operation was performed. Concurrent or subsequent author fixes and closeout are outside this review.\n\nAll 156 exported candidate source/do",
+    "tures created for this project; they\n+contain no recordings, downloaded benchmark data or clinical data.\n+\n+The product imports `moonbitlang/core` from the pinned local MoonBit toolchain\n+`0.10.14+7d59c7ec9`. Its local module manifest declares Apache-2.0. The unchanged\n",
+    "xtures created for this project; they\ncontain no recordings, downloaded benchmark data or clinical data.\n\nThe product imports `moonbitlang/core` from the pinned local MoonBit toolchain\n`0.10.14+7d59c7ec9`. Its local module manifest declares Apache-2.0. The unchanged\n[co",
+    "zip\": 11,\n    \".gz\": 11,\n    \".tar\": 2\n  },\n  \"informational_counts\": {\n    \"objects_with_clinical_word\": 110,\n    \"objects_with_local_or_runner_build_paths\": 19208,\n    \"invalid_tar_or_gzip_fixture\": 10\n  },\n  \"findings\": [],\n  \"clinical_word_contexts\": [\n    \"/worktre",
+    "、合并、推送、报名变更、发布仍需明确授权；本轮无上述操作，无临床数据访问。赛事当前资格/换题/截止未核实。\n\n## 复验和继续\n\n先核实际git状态，再读AGENTS/contracts/T7卡。快速核冻结证据：\n\n```sh\npython",
+    "、合并、推送、报名变更、发布仍需明确授权；本轮无上述操作，无临床数据访问。赛事当前资格/换题/截止未核实。\n\n## 复验和继续\n\n先核实际git状态，再读AGENTS/contracts/T8卡。快速核冻结证据：\n\n```sh\npython",
+    "保持私有；公开、发包、报名变更、外发消息仍须另有明确授权。无临床数据访问。赛事个案资格/换题/次数/截止具体时区或时刻仍待外部证据。\n\n## 复核与后续\n\n```sh\npython3 evidence/R1/freeze.py\npython3 evidence/R1/",
+    "保持私有；公开、发包、报名变更、外发消息仍须另有明确授权。无临床数据访问。赛事个案资格/换题/次数/截止具体时区或时刻仍待外部证据。\n\n## 复核与后续\n\n独立克隆先导入[原始作者对象](../evidence/R1",
+    "全局输出完全一致。\n- 只使用合成或许可已确认的公开数据；不访问临床数据。保留原 MoonReconcile。新增 UI、格式、评分模式不在本计划内。\n- 不创建远端、不发咨询、不修改表单、不推送、不正式发布；�",
+    "操作。\n\n### 不纳入 v0.1\n\n信号/音频/EEG 检测模型、EDF/BDF 或音频解析、临床判断、标注正确性裁定、点事件/零时长事件、无结束时间事件、时区或绝对时间推断、采样点换算、CSV/XLSX 导入、模糊类别匹配、�",
+    "终交接。仅本机macOS native，不保证全合法图在20M内成功。\n- 没有访问临床数据、外发、推送、合并、报名变更或发布；赛事当前资格/换题/截止尚未核实。\n\n## 下一步\n\n读AGENTS/contracts/T5卡，先核对实际git状�",
+    "�产品parity或M2完成。\n- 只使用合成或许可已确认的公开数据；不访问临床数据。保留原 MoonReconcile。新增 UI、格式、评分模式不在本计划内。\n- 不创建远端、不发咨询、不修改表单、不推送、不正式发布；�",
+    "�差下的一对一事件匹配。\n\n不扩展信号检测模型、原始 EEG/EDF 读取、临床判定、通用标注治理、图像框评测、数据库对账、人工实体匹配或完整 Web 平台。首版没有宏平均、AP/ROC、IoU 评分或最小时间误差匹",
+    "�未批准。\n- 赛事当前资格/换题/截止细则与真实需求仍未确认；没有临床数据访问、外发、推送、报名变更或发布。\n\n## 下一步与命令\n\n下一实施目标T2最大匹配、小图穷举、提前密集图检查；按任务卡核对",
+    "�通过当作CLI全链通过。**T7消费者/许可/包、T8CI/交接仍待做。\n- 没有临床数据访问、外发、合并、推送、报名变更或发布。赛事当前资格/换题/截止未核实。\n\n## 复验和继续\n\n```sh\nscripts/with-toolchain.sh moon test ",
+    "�验收。\n- 数学规则和产品语义在 MoonBit；Python只作开发验证。不访问临床原始数据，不改动旧 MoonReconcile。\n- 远端创建、外发消息、报名变更、推送和正式发布仍须用户明确授权；遵守适用技能的阶段门槛�",
+    "��业务数学在MoonBit，Python仅开发验证。本轮无Python参考依赖安装，无临床/科研原始数据访问。\n- 解析深度参数deprecated局部兼容例外保持T0决定。T1另有声明级unused_field/unused_value暂时豁免，因为正式消费者�",
+    "��会误报跨平台或交付完成。\n3. 仅声明合成数据验证；理由：未访问临床或真实业务数据；代价：若外推会误报实际适用性。\n4. 不承诺全部合法2000事件输入均满足20M/时空预算；理由：有限样本和内部门不",
+    "��先更新 PRD 并复核算术、口径和范围。\n\n原 MoonReconcile 保留；不访问临床数据，不安装参考环境或产品依赖，不创建远端、不发送咨询、不修改表单、不推送或发布。这里记录的是当前已授权工作阶段，并",
+    "��包外消费/候选交付；没有注册表、远端、报名或发布操作，未访问临床数据。数学/CLI/native源码及公开接口不变。\n\n- 临时独立模块仅import公开eventeval；public工厂→evaluate→metrics得到A1 TP1/FP1/FN0，真实report ",
+    "��包外消费/候选交付；没有注册表、远端、报名或发布操作，未访问临床数据。数学/CLI/native源码及公开接口不变。\n+\n+- 临时独立模块仅import公开eventeval；public工厂→evaluate→metrics得到A1 TP1/FP1/FN0，真实repor",
+    "��命周期、Int32/ssize_t边界和输出；不实现完整文件库，不读取科研或临床目录。\n- [ ] 7. 实跑 `moon package --list --frozen` 与普通打包，核对实际产物路径。只产生本地测试包，不publish、不登录、不推送。把可�",
+    "��命周期、Int32/ssize_t边界和输出；不实现完整文件库，不读取科研或临床目录。\n- [x] 7. 实跑 `moon package --list --frozen` 与普通打包，核对实际产物路径。只产生本地测试包，不publish、不登录、不推送。把可�",
+    "��实施任务尚未完成；下一次在计划获批后继续，保持原MoonReconcile与临床数据边界。\n",
+    "��误报跨平台或交付完成.\nFinal: Ruling: 仅声明合成数据验证 — 未访问临床或真实业务数据 — 若外推会误报实际适用性.\nFinal: Ruling: 不承诺全部合法2000事件输入均满足20M/时空预算 — 有限样本和内部门不能�"
+  ],
+  "limitations": [
+    "No universal secret detection claim",
+    "Build paths and Git author identity are retained in real development evidence",
+    "Private hosted artifacts are checked separately from Git objects"
+  ]
+}

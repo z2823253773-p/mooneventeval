@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity/grid-125/reordered/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "ad68ebaf53992968412dc6983376f39016c65546fdd4fcf1873c0c208583aa0e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

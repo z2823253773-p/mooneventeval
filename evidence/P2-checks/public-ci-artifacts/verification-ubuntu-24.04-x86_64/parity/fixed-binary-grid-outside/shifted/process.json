@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/home/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity/fixed-binary-grid-outside/shifted/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "13c7601d79d3927754c29bbefc5a6f70ce09ecd252636cf7b76905a80528e786",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/runner/work/mooneventeval/mooneventeval/.venv-reference/bin/python",
+    "-c",
+    "import hashlib,importlib.metadata as md,json,pathlib,platform,re,sys\nroot=pathlib.Path(sys.argv[1]);sys.path.insert(0,str(root/'validation'))\nimport sed_reference\nsed_eval=sed_reference._reference_module()\nexpected=dict(re.findall(r'^([A-Za-z0-9_.-]+)==([^\\s]+)',(root/'validation/reference.lock').read_text(),re.M))\nactual={name:md.version(name) for name in expected}\nassert expected==actual,(expected,actual)\nexe=pathlib.Path(sys.executable).resolve()\nprint(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True,sed_eval_bytecode_verified=True)))\n",
+    "/Users/runner/work/mooneventeval/mooneventeval"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "be8b4e83e89e3a34b7b578f4883386ce7824e1ca228ab1864ef2175982b56d85",
+  "stderr_sha256": "3077f890565b4e3212fd5bc5f2224f362963ae66a182930a6b734236e5273c30",
+  "name": "reference-identity",
+  "elapsed_seconds": 1.039,
+  "passed": true
+}

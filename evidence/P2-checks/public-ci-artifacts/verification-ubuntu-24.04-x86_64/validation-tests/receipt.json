@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/.venv-reference/bin/python",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "validation/tests",
+    "-v"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2e7382e3e10602a2051cbf6d0e515d0692a09c81ccdced8c83b04952044af799",
+  "stderr_sha256": "421b5c7d0e65749f48db773019b7f47ccb2f842819da82e152946d12670e3e65",
+  "name": "validation-tests",
+  "elapsed_seconds": 0.6059,
+  "passed": true
+}

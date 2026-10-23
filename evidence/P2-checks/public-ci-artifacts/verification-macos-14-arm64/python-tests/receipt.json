@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "9fac53e977b40a90898605bbc6f586cf5f464e9e7111703f1d889d12a378242c",
+  "name": "python-tests",
+  "elapsed_seconds": 9.8,
+  "passed": true
+}

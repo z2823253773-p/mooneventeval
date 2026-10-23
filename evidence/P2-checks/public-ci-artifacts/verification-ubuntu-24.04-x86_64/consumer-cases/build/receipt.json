@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/scripts/with-toolchain.sh",
+    "moon",
+    "build",
+    "main",
+    "--target",
+    "native",
+    "--release",
+    "--deny-warn",
+    "--target-dir",
+    "/tmp/mee-consumer-2s8vlxso/_build"
+  ],
+  "cwd": "/tmp/mee-consumer-2s8vlxso",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e2c27d6f60e0a8e8eceafe70f4a9959d7ba956579d28122a409e788c1831a282"
+}

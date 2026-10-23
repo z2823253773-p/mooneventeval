@@ -1,6 +1,6 @@
 # P2 公开交付记录
 
-2026-10-23，用户明确授权公开 z2823253773-p/mooneventeval，同时要求补充项目说明的通用性和三个完整预期使用场景。此文初版记录公开前准备，不代替实际可见性回执。
+2026-10-23，用户明确授权公开 z2823253773-p/mooneventeval，同时要求补充项目说明的通用性和三个完整预期使用场景。仓库现已公开；以下分开记录公开前检查与实际执行结果。
 
 ## 公开内容检查
 
@@ -16,4 +16,10 @@
 
 ## 当前执行状态
 
-公开前检查完成；待候选提交的完整本地门、推送、实际可见性切换及匿名访问核验。未报名、未Mooncakes发布。
+GitHub API回执private=false、visibility=public；未携带Git认证头、禁用凭证助手/提示的ls-remote成功，返回f406084d7。首次匿名curl API请求网络接收超时（exit56），保留失败记录，不把它当匿名API成功证明。
+
+原始候选23af827f / 导出被测f406084d7：本地完整17步成功；[公开后run39925966715](https://github.com/z2823253773-p/mooneventeval/actions/runs/39925966715)的macOS arm64、Ubuntu x86_64均成功。每OS58 Moon、28 Python、42验证、15 CLI、1620产品进程、38成员源包/解包消费均通过；各8144产物逐一hash复核，两OS205非证据源码hash一致并绑定公开Git提交f406084d7。后续文档收尾HEAD不冒称重新CI。
+
+三个工作流用合成数据实际运行4次evaluate和1次explain，分别覆盖声音多录制/多类别、视频候选竞争和两个模型版本的边界回归；不是外部用户采用证据。新版申报书约900汉字，使用10.5pt正文在A4渲染为一页并检查无溢出；Markdown排版取决于接收方渲染。申报文件和联系方式没有加入Git。个人理解/独立撰写要求及正式报名未由此完成；未报名、未Mooncakes发布。
+
+复核命令：`python3 evidence/P2-checks/freeze.py`；`python3 evidence/P2-checks/verify_public_ci.py --check-only`。独立克隆所需公开候选f406084d7在原生Git提交图中，可直接查询；旧R1原始对象仍按其provenance恢复工具获取，不重写冻结清单。

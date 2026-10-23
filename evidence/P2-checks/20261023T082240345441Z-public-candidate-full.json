@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "scripts/verify.py",
+    "--mode",
+    "local",
+    "--evidence",
+    "evidence/P2-checks/local"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 47.846,
+  "log": "evidence/P2-checks/20261023T082240345441Z-public-candidate-full.log",
+  "log_sha256": "144f470990082dfa8e34a986bc686452d5296b99ebc8e1e693f17ae67dc2780d",
+  "scope": "P2-checks",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -1,0 +1,15 @@
+{
+  "args": [
+    "explain-pair",
+    "examples/boundary.json",
+    "--recording",
+    "clip-01",
+    "--reference",
+    "r1",
+    "--prediction",
+    "p1"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "e5cc71bab674733c2704ab0cadbe74002e1456f85a6430e3f54f3fbbaceb9946",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

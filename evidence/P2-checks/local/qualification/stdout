@@ -1,0 +1,1 @@
+{"cases": 324, "unexplained": [], "classifications": {"common_counts_and_both_defined_metrics_equal": 321, "documented_binary64_boundary_difference": 1, "reference_zero_collar_domain_limit_exact_checked": 2}}

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "qualification",
+    "--product",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P2-checks/local/parity"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/Users/henryz/Desktop/比赛/mooneventeval-t0/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "18fd73c79324257f4cefad66c0a6e5ed7e97ef516cc99eba4a21b6675b8ba578",
+  "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+  "name": "qualification",
+  "elapsed_seconds": 11.2353,
+  "passed": true
+}

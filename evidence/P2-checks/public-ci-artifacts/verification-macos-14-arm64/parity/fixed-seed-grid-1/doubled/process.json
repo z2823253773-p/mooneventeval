@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "/Users/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity/fixed-seed-grid-1/doubled/input.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "06665293faf154f96d3a04ca551d92005866f997e36321d7e71d383b62d5fbbc",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "differences": []
+}

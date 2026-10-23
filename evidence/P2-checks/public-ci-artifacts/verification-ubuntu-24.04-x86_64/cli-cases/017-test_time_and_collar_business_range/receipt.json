@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/tmp/mee-cli-acchihho/collar-over",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "4f3096dd988eff0fca20e9831b5b0c50e9a0bb5f16effe0614387c41ea190ae3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

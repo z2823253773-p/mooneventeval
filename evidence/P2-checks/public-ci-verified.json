@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "scope": "actual successful two-job GitHub CI plus downloaded artifact/source bindings",
+  "run_id": 39925966715,
+  "run_url": "https://github.com/z2823253773-p/mooneventeval/actions/runs/39925966715",
+  "event": "workflow_dispatch",
+  "export_tested_sha": "f406084d7f702fd569401b76ae86b65817f7aafa",
+  "git_source_sha": "f406084d7f702fd569401b76ae86b65817f7aafa",
+  "source_inventories_equal": true,
+  "jobs": [
+    {
+      "artifact": "verification-macos-14-arm64",
+      "system": "Darwin",
+      "machine": "arm64",
+      "steps": 17,
+      "moon": 58,
+      "python": 28,
+      "validation": 42,
+      "cli": 15,
+      "qualification_calls": 1620,
+      "source_files": 205,
+      "files_rehashed": 8144,
+      "product_sha256": "753084b76184cf0a651d58e5053f10aea5dc030b4ae1904ed7039741b5c35e5c",
+      "archive_sha256": "99aedbbbfece4b6def89346044a8a5917e9fd4eab812e4316ce28536ebbc08de",
+      "reference_executable_sha256": "e6eedfbc57422e986a0e3b24b18ee45764b809ff1385d3af42e9c22b5bd00de5",
+      "installed_tool_files": 1384
+    },
+    {
+      "artifact": "verification-ubuntu-24.04-x86_64",
+      "system": "Linux",
+      "machine": "x86_64",
+      "steps": 17,
+      "moon": 58,
+      "python": 28,
+      "validation": 42,
+      "cli": 15,
+      "qualification_calls": 1620,
+      "source_files": 205,
+      "files_rehashed": 8144,
+      "product_sha256": "2ccda19d64abff2726f0cb200a4ef97e89ce777431fe2fb0b3d47c0b7b05e8f7",
+      "archive_sha256": "31985565955a911e5faac123415b1753db19ce4066b90989d06dc2181cedf428",
+      "reference_executable_sha256": "6ff97f602038740073dca96714310a30e303332326268e0f1bb2767edc820944",
+      "installed_tool_files": 1383
+    }
+  ],
+  "registry_published": false,
+  "repository_visibility": "public (separate API receipt)",
+  "personal_explanation": "NOT_PERFORMED"
+}

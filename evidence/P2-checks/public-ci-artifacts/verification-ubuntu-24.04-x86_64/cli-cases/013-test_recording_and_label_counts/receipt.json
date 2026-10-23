@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/tmp/mee-cli-acchihho/labels-over",
+    "--format",
+    "json"
+  ],
+  "exit_code": 3,
+  "stdout_sha256": "b6c2c8825caef29508c553f98a1147caf17f75c5883c5e71efcd13953e81c596",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

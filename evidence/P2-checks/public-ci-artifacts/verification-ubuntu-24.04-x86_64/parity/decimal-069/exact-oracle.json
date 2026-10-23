@@ -1,0 +1,207 @@
+{
+  "summary": {
+    "counts": {
+      "reference": 3,
+      "prediction": 8,
+      "tp": 1,
+      "fp": 7,
+      "fn": 2
+    },
+    "precision": 0.125,
+    "recall": 0.3333333333333333,
+    "f1": 0.18181818181818182
+  },
+  "by_label": {
+    "A": {
+      "counts": {
+        "reference": 0,
+        "prediction": 2,
+        "tp": 0,
+        "fp": 2,
+        "fn": 0
+      },
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    },
+    "B": {
+      "counts": {
+        "reference": 3,
+        "prediction": 6,
+        "tp": 1,
+        "fp": 5,
+        "fn": 2
+      },
+      "precision": 0.16666666666666666,
+      "recall": 0.3333333333333333,
+      "f1": 0.2222222222222222
+    },
+    "unused": {
+      "counts": {
+        "reference": 0,
+        "prediction": 0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0
+      },
+      "precision": null,
+      "recall": null,
+      "f1": null
+    }
+  },
+  "by_recording": {
+    "rec-0": {
+      "counts": {
+        "reference": 3,
+        "prediction": 4,
+        "tp": 1,
+        "fp": 3,
+        "fn": 2
+      },
+      "precision": 0.25,
+      "recall": 0.3333333333333333,
+      "f1": 0.2857142857142857
+    },
+    "rec-1": {
+      "counts": {
+        "reference": 0,
+        "prediction": 4,
+        "tp": 0,
+        "fp": 4,
+        "fn": 0
+      },
+      "precision": 0.0,
+      "recall": null,
+      "f1": 0.0
+    }
+  },
+  "candidate_checks": 9,
+  "eligible_edges": 1,
+  "groups": [
+    {
+      "recording_id": "rec-0",
+      "label": "A",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p2",
+          "label": "A",
+          "onset_s": "2.905362",
+          "offset_s": "3.862989"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "B",
+      "reference": [
+        {
+          "id": "r0",
+          "label": "B",
+          "onset_s": "6.587357",
+          "offset_s": "8.488186"
+        },
+        {
+          "id": "r1",
+          "label": "B",
+          "onset_s": "4.902927",
+          "offset_s": "6.270706"
+        },
+        {
+          "id": "r2",
+          "label": "B",
+          "onset_s": "3.748208",
+          "offset_s": "4.598213"
+        }
+      ],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "4.588975",
+          "offset_s": "5.956754"
+        },
+        {
+          "id": "p1",
+          "label": "B",
+          "onset_s": "4.64251",
+          "offset_s": "6.010289"
+        },
+        {
+          "id": "p3",
+          "label": "B",
+          "onset_s": "4.788108",
+          "offset_s": "6.155887"
+        }
+      ],
+      "adjacency": [
+        [],
+        [
+          2
+        ],
+        []
+      ],
+      "tp": 1
+    },
+    {
+      "recording_id": "rec-0",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "A",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p1",
+          "label": "A",
+          "onset_s": "5.564848",
+          "offset_s": "7.330028"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "B",
+      "reference": [],
+      "prediction": [
+        {
+          "id": "p0",
+          "label": "B",
+          "onset_s": "1.816325",
+          "offset_s": "1.98167"
+        },
+        {
+          "id": "p2",
+          "label": "B",
+          "onset_s": "7.9183",
+          "offset_s": "9.568286"
+        },
+        {
+          "id": "p3",
+          "label": "B",
+          "onset_s": "3.156525",
+          "offset_s": "5.897418"
+        }
+      ],
+      "adjacency": [],
+      "tp": 0
+    },
+    {
+      "recording_id": "rec-1",
+      "label": "unused",
+      "reference": [],
+      "prediction": [],
+      "adjacency": [],
+      "tp": 0
+    }
+  ]
+}

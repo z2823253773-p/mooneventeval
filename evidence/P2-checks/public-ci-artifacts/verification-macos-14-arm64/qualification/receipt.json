@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/Users/runner/work/mooneventeval/mooneventeval/.venv-reference/bin/python",
+    "validation/compare.py",
+    "--phase",
+    "qualification",
+    "--product",
+    "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/Users/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/parity"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "environment_overrides": {
+    "MPLCONFIGDIR": "/Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib",
+    "NUMBA_CACHE_DIR": "/Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "18fd73c79324257f4cefad66c0a6e5ed7e97ef516cc99eba4a21b6675b8ba578",
+  "stderr_sha256": "3077f890565b4e3212fd5bc5f2224f362963ae66a182930a6b734236e5273c30",
+  "name": "qualification",
+  "elapsed_seconds": 18.8205,
+  "passed": true
+}

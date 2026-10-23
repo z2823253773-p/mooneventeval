@@ -1,0 +1,20 @@
+test_argument_formats_and_help (test_cli.NativeCli.test_argument_formats_and_help) ... ok
+test_bad_schema_utf8_depth (test_cli.NativeCli.test_bad_schema_utf8_depth) ... ok
+test_closed_stdout_pipe_terminates_nonzero (test_cli.NativeCli.test_closed_stdout_pipe_terminates_nonzero) ... ok
+test_dash_prefixed_query_ids (test_cli.NativeCli.test_dash_prefixed_query_ids) ... ok
+test_examples_text_json_and_unchanged_files (test_cli.NativeCli.test_examples_text_json_and_unchanged_files) ... ok
+test_explanation_and_ineligible_are_success (test_cli.NativeCli.test_explanation_and_ineligible_are_success) ... ok
+test_files_missing_directory_fifo_unreadable_and_symlink (test_cli.NativeCli.test_files_missing_directory_fifo_unreadable_and_symlink) ... ok
+test_input_size_equal_and_plus_one (test_cli.NativeCli.test_input_size_equal_and_plus_one) ... ok
+test_large_unicode_output_chunking_and_partial_pipe_failure (test_cli.NativeCli.test_large_unicode_output_chunking_and_partial_pipe_failure) ... ok
+test_unknown_option_values_preserve_genuine_json_format (test_cli.NativeCli.test_unknown_option_values_preserve_genuine_json_format) ... ok
+test_codepoints_in_recording_event_and_label (test_resources.Resources.test_codepoints_in_recording_event_and_label) ... ok
+test_combined_event_count (test_resources.Resources.test_combined_event_count) ... ok
+test_depth_equal_parses_but_schema_is_invalid (test_resources.Resources.test_depth_equal_parses_but_schema_is_invalid) ... ok
+test_recording_and_label_counts (test_resources.Resources.test_recording_and_label_counts) ... ok
+test_time_and_collar_business_range (test_resources.Resources.test_time_and_collar_business_range) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.203s
+
+OK

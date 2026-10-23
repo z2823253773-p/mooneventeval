@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/scripts/with-toolchain.sh",
+    "moon",
+    "package",
+    "--list",
+    "--frozen"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "c99ba003a905ebea3701e89fb8116e24e582c286739f9d0f923f5380a3e766af"
+}

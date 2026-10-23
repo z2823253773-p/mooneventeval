@@ -1,6 +1,6 @@
 # MoonEventEval 当前交接
 
-更新2026-10-23。用户将技术验证交由Codex，PRD M2机器门已完成，无需用户自行复测。最新结果以[REMOTE_CI](delivery/REMOTE_CI.md)和[PROJECT_STATE](PROJECT_STATE.md)为准。
+更新2026-10-23。**P2已获直接授权并完成仓库公开；最新入口为[PUBLIC_RELEASE](delivery/PUBLIC_RELEASE.md)。匿名Git访问通过，公开后run39925966715两OS各17步成功，各8144产物下载复验。** 用户将技术验证交由Codex，PRD M2机器门已完成，无需用户自行复测。最新结果以[REMOTE_CI](delivery/REMOTE_CI.md)和[PROJECT_STATE](PROJECT_STATE.md)为准。
 
 私有仓库：https://github.com/z2823253773-p/mooneventeval；[实际双平台CI](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650)成功，实际被测导出SHA`c1e74f58b495e8bf83986715f57d6d8f3bff76bd`对应原始作者代码`69f544fdcfd6bdd13bff273279da7dd5fdfc56d6`。各OS17/17、58 Moon/28 Python/42验证/15CLI、1620产品调用及38文件包/解包消费通过；新安装和Linux实跑已有证据。两OS204源码hash一致，各8144产物hash下载复核通过。
 

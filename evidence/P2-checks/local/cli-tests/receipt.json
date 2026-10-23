@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "environment_overrides": {
+    "MEE_BIN": "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "MEE_EVIDENCE": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P2-checks/local/cli-cases"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "c4531758eeb66d5ac4f03b4aeba9a062de0400f4dc3ad074dedbdb99ecbae75b",
+  "name": "cli-tests",
+  "elapsed_seconds": 0.3085,
+  "passed": true
+}

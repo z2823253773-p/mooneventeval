@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/P2-checks/verify_public_ci.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 2.57,
+  "log": "evidence/P2-checks/20261023T084230327341Z-verify-public-ci.log",
+  "log_sha256": "228dd5bcbb10a5ab7bd12b13f49862184d2208c75301853ffb3709ed0b436226",
+  "scope": "P2-checks",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

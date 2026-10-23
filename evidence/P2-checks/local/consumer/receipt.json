@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "scripts/check_consumer.py",
+    "--source",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+    "--output",
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P2-checks/local/consumer-cases"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "14ec6681fb6d2dd36cbcbd59d451e9a9d948f926a46bdf9c76b108a2195ba8f0",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "consumer",
+  "elapsed_seconds": 2.5857,
+  "passed": true
+}
