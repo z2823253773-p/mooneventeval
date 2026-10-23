@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 9.097,
+  "log": "evidence/R1/20261023T063925491808Z-history-green.log",
+  "log_sha256": "085d1e946ef73a5256283f732e53bbb6e4b0544f9fc2e1e65b3ebe4ce5b78a49",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

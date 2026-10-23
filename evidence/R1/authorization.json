@@ -1,0 +1,22 @@
+{
+  "user_authorization": "授权",
+  "authorized_scope": [
+    "create z2823253773-p/mooneventeval PRIVATE",
+    "push code/tests/evidence and authentic history",
+    "dispatch macOS/Linux CI and inspect/fix results"
+  ],
+  "not_authorized": [
+    "public visibility",
+    "registry publication",
+    "registration",
+    "messages to organizers"
+  ],
+  "cli_login": "z2823253773-p",
+  "repository_created": true,
+  "private_verified": true,
+  "html_url": "https://github.com/z2823253773-p/mooneventeval",
+  "original_local_head": "4d5d3fbb93972e4d64866528b4f8919bc6d3c8aa",
+  "remote_initial_size": 0,
+  "large_blob_bytes": 150195290,
+  "transport": "GitHub transport omits one >100MiB raw log from export history; complete original commits/bytes are preserved in this bundle and restored before the unchanged verifier; original local branch not rewritten"
+}

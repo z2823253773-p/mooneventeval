@@ -55,6 +55,10 @@
           }
         },
         {
+          "name": "Restore exact original history and oversized historical proof",
+          "run": "python3 scripts/restore_ci_history.py"
+        },
+        {
           "name": "Assert actual runner architecture",
           "run": "python3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ[\"EXPECTED_ARCH\"]'"
         },

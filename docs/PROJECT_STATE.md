@@ -42,4 +42,8 @@ python3 scripts/verify.py --mode local --evidence evidence/local-delivery-rechec
 
 用户已取消自行复测。当前19文件交付ZIP见[交付准备](delivery/READINESS.md)；38文件源zip在f24e7e68重新打包/解包消费/native CLI及六示例验收通过，修正公开说明中M2的混用。完整17步仍绑定8aa37c5，当前新源包SHA256为`44c002bf3aecd3b8de6b7e4f7c65a7484fb3a14445c1b3adf68f77fec2e1a255`；程序binary/API与其一致未变。最终ZIP再解出运行三案例通过。页面结构/实际JSON检查通过，file协议内容观察被浏览器安全策略拒绝，视觉核验未完成，临时本机预览服务已关闭，不要求用户补测。
 
-下一步可审阅的远端范围：账号z2823253773-p，拟私有仓库mooneventeval，推送代码/测试证据/真实Git历史并手动跑双平台CI；尚未授权或执行。不自动改为公开、发包、改报名或发消息。
+下一步可审阅的远端范围：账号z2823253773-p，拟私有仓库mooneventeval，推送代码/测试证据/真实Git历史并手动跑双平台CI；用户现已明确授权创建私有仓库、推送及运行CI；仓库已创建并确认私有，尚待推送/dispatch/实测结果。不自动改为公开、发包、改报名或发消息。
+
+## R1 私有远端CI实施中
+
+用户“授权”已覆盖目标z2823253773-p/mooneventeval的私有创建、代码/证据/历史推送及双平台CI；CLI账号与目标一致，API已确认仓库private=true。Git历史有150195290字节T7日志，超过GitHub普通Git单blob限制，采用独立导出图+完整原始历史bundle，按hash恢复原始对象和大日志再跑同一总门，本地原始历史不改写。见[远端验收记录](delivery/REMOTE_CI.md)。本地恢复器5项反例RED→GREEN及原始T7冻结复核；远端结果尚待发生。

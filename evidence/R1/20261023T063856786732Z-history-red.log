@@ -1,0 +1,70 @@
+test_corrupt_bundle_never_imports_or_restores (test_ci_history.OriginalHistory.test_corrupt_bundle_never_imports_or_restores) ... FAIL
+test_exact_restore_preserves_checkout_and_is_repeatable (test_ci_history.OriginalHistory.test_exact_restore_preserves_checkout_and_is_repeatable) ... FAIL
+test_existing_different_proof_is_preserved (test_ci_history.OriginalHistory.test_existing_different_proof_is_preserved) ... FAIL
+test_path_escape_is_rejected (test_ci_history.OriginalHistory.test_path_escape_is_rejected) ... FAIL
+test_wrong_expected_proof_never_becomes_valid_evidence (test_ci_history.OriginalHistory.test_wrong_expected_proof_never_becomes_valid_evidence) ... FAIL
+
+======================================================================
+FAIL: test_corrupt_bundle_never_imports_or_restores (test_ci_history.OriginalHistory.test_corrupt_bundle_never_imports_or_restores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 37, in test_corrupt_bundle_never_imports_or_restores
+    self.restore()
+    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 27, in restore
+    self.assertIsNotNone(self.module,'history transport restore missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : history transport restore missing
+
+======================================================================
+FAIL: test_exact_restore_preserves_checkout_and_is_repeatable (test_ci_history.OriginalHistory.test_exact_restore_preserves_checkout_and_is_repeatable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 30, in test_exact_restore_preserves_checkout_and_is_repeatable
+    before=self.git(self.root,'rev-parse','HEAD');r=self.restore()
+                                                    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 27, in restore
+    self.assertIsNotNone(self.module,'history transport restore missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : history transport restore missing
+
+======================================================================
+FAIL: test_existing_different_proof_is_preserved (test_ci_history.OriginalHistory.test_existing_different_proof_is_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 42, in test_existing_different_proof_is_preserved
+    self.restore()
+    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 27, in restore
+    self.assertIsNotNone(self.module,'history transport restore missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : history transport restore missing
+
+======================================================================
+FAIL: test_path_escape_is_rejected (test_ci_history.OriginalHistory.test_path_escape_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 52, in test_path_escape_is_rejected
+    self.restore()
+    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 27, in restore
+    self.assertIsNotNone(self.module,'history transport restore missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : history transport restore missing
+
+======================================================================
+FAIL: test_wrong_expected_proof_never_becomes_valid_evidence (test_ci_history.OriginalHistory.test_wrong_expected_proof_never_becomes_valid_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 47, in test_wrong_expected_proof_never_becomes_valid_evidence
+    self.restore()
+    ~~~~~~~~~~~~^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/tests/test_ci_history.py", line 27, in restore
+    self.assertIsNotNone(self.module,'history transport restore missing')
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unexpectedly None : history transport restore missing
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.609s
+
+FAILED (failures=5)
