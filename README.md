@@ -4,10 +4,12 @@ Evaluate labelled time events with exact decimal boundaries and deterministic
 maximum-cardinality one-to-one matching. Explain why a reference/prediction
 pair is eligible, including the exact onset and offset tolerances.
 
-This is **local/mooneventeval 0.1.0, a local source candidate**. There is no
-registered package or public repository URL claimed here. Native execution has
-been verified on macOS arm64; other platforms and remote CI remain unverified.
-Python is development tooling, not the scoring implementation.
+Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
+Native execution has been verified on **macOS arm64 and Linux x86_64** in
+[the complete two-platform CI run](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650).
+The module identity is **local/mooneventeval 0.1.0**, a source candidate that
+has not been published to a package registry. Python is development tooling,
+not the scoring implementation.
 
 ## Build and run
 
@@ -20,7 +22,8 @@ python3 scripts/install_toolchain.py
 
 It installs only under `.tools`, checks pinned hashes and refuses to overwrite
 an existing installation. No global installation is changed. Current local
-verification reused the existing toolchain; it did not repeat a download.
+verification reused the existing toolchain; the linked CI run independently
+installed and verified it on both runner platforms.
 Pinned compiler: `v0.10.14+7d59c7ec9`.
 
 ```sh
@@ -89,8 +92,10 @@ large graph may exhaust the work budget; no universal runtime guarantee is made.
 
 [Validation](VALIDATION.md) explains the independent original-reference scope,
 exact boundary differences, resource tests, mutations and remaining gaps.
+The linked CI run passed all 17 verification steps on each platform, including
+58 MoonBit tests, 15 CLI tests and 1,620 actual product invocations per platform.
 These are synthetic developer checks, not user feedback, personal presentation
-proof, remote CI or competition acceptance.
+proof or competition acceptance.
 
 Own source/docs: [MIT](LICENSE). External core/runtime notices are retained in
 [third-party notices](THIRD_PARTY_NOTICES.md). The source candidate excludes

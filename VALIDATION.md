@@ -56,8 +56,12 @@ parsing, then replayed five original corruptions successfully. This was author
 verification, not a second independent review. Deferred Minor M1: timeouts
 correctly fail, but the T6 comparator still does not persist partial captured
 stdout/stderr/process receipts. Runtime input duplicate-key last-wins remains
-an explicit limitation. Linux, remote CI and participant understanding/explanation evidence
-remain unverified.
+an explicit limitation. Linux and remote CI were subsequently verified in
+[run 39914869650](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650):
+macOS arm64 and Ubuntu x86_64 each passed the same full 17-step gate, including
+58 MoonBit tests, 28 root Python tests, 42 reference/validator tests, 15 CLI tests
+and 1,620 actual product invocations. This does not establish participant
+understanding/explanation or organizer acceptance.
 
 ## Reproduce in the full development checkout
 
@@ -95,10 +99,11 @@ consumer, real package/unpack/examples and historical evidence checks. Missing,
 skipped, nonzero or failed artifacts cannot produce a passing total. Each run
 requires a fresh evidence directory and binds source bytes and tested commit.
 
-The saved manual-only CI matrix calls the same entry point for macOS arm64 and
-Linux x86_64, with full action commit pins and hash-locked dependencies. A saved
-workflow is configuration only; no remote job or Linux execution is claimed by
-this source candidate. Participant understanding, formal namespace/URL, publication and
+The manual-only CI matrix calls the same entry point for macOS arm64 and
+Linux x86_64, with full action commit pins and hash-locked dependencies. The
+linked completed run tested export commit c1e74f58b495e8bf83986715f57d6d8f3bff76bd;
+later documentation commits do not inherit a claim of a fresh CI execution.
+Participant understanding, formal registry namespace/publication and
 competition acceptance remain separate. Internal execution detail belongs to
 `docs/VALIDATION.md` in the full development checkout, which is not bundled here.
 
