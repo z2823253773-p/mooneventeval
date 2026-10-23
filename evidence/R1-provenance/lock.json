@@ -1,0 +1,7 @@
+{
+  "scope": "self-contained original author history through R1 code69f544fd; required by frozen original-SHA lookups, no rewrite or Git replacement",
+  "ref": "refs/ci-author/code",
+  "tip": "69f544fdcfd6bdd13bff273279da7dd5fdfc56d6",
+  "bytes": 46767238,
+  "sha256": "0c3c473b985c51a604d670453b60e704738f633771444fcb01ac7bbf77edb901"
+}

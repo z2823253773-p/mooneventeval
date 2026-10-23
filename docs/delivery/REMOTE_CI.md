@@ -26,7 +26,10 @@ GitHub普通Git拒绝超过100MiB的blob；原T7评审原始diff为150195290字�
 
 原始工作树mooneventeval-t0/spike/t0-feasibility保留；远端导出工作树mooneventeval-ci/main保留。原main分支/代码保持8a307552。本轮之后的内部文档/证据收尾提交与远端被测c1e74f58分开，不冒称后来HEAD重跑过CI。
 
+独立克隆先导入[原始作者对象](../../evidence/R1-provenance/README.md)：自包含bundle提供冻结验证器所需69f544fd，不依赖本机缓存；原有CI历史包仍保持不变。
+
 ```sh
+python3 evidence/R1-provenance/restore.py
 python3 evidence/R1/freeze.py
 python3 evidence/R1/verify_remote.py --check-only
 ```

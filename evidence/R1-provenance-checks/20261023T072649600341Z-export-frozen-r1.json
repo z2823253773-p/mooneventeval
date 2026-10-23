@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "../mooneventeval-ci/evidence/R1/freeze.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 4.004,
+  "log": "evidence/R1-provenance-checks/20261023T072649600341Z-export-frozen-r1.log",
+  "log_sha256": "f655ac655c70995552cf08bb55aed1a39ae675268d155797767c76d2a08039ee",
+  "scope": "R1-provenance-checks",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

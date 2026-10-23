@@ -33,7 +33,10 @@ R1推送副本首轮本地总门暴露两份ignored reviewer binary未提交，�
 
 ## 复核与后续
 
+独立克隆先导入[原始作者对象](../evidence/R1-provenance/README.md)，再按冻结原始SHA复核；不依赖本机Git缓存。该补充不改变产品代码或实际CI被测提交。
+
 ```sh
+python3 evidence/R1-provenance/restore.py
 python3 evidence/R1/freeze.py
 python3 evidence/R1/verify_remote.py --check-only
 ```

@@ -8,4 +8,4 @@
 
 [P1交付包及原样本机程序](delivery/READINESS.md)仍是其历史身份；binary含构建路径，仅作本地候选。视觉核验受file协议策略限制未认证。正式公开候选不直接拿全部原始证据/历史或本机binary公开。
 
-后续复核：`python3 evidence/R1/freeze.py`、`python3 evidence/R1/verify_remote.py --check-only`。新总门用干净已提交根、新证据目录；不要覆盖冻结阶段。当前授权范围已完成，保持私有；正式namespace/Mooncakes/公开/报名/个案资格与本人理解无新增完成证明。NUL CLI选择和timeout部分取证Minor保留，TSV等仍BACKLOG。不得按旧状态要求用户补做本地验证。
+独立克隆先运行`python3 evidence/R1-provenance/restore.py`导入锁定原始作者Git对象，不依赖本机缓存；产品和CI被测提交不变。后续复核：`python3 evidence/R1/freeze.py`、`python3 evidence/R1/verify_remote.py --check-only`。新总门用干净已提交根、新证据目录；不要覆盖冻结阶段。当前授权范围已完成，保持私有；正式namespace/Mooncakes/公开/报名/个案资格与本人理解无新增完成证明。NUL CLI选择和timeout部分取证Minor保留，TSV等仍BACKLOG。不得按旧状态要求用户补做本地验证。

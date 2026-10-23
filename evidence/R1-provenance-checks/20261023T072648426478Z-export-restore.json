@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "../mooneventeval-ci/evidence/R1-provenance/restore.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 1.141,
+  "log": "evidence/R1-provenance-checks/20261023T072648426478Z-export-restore.log",
+  "log_sha256": "d82f82bdd980ef1543c2f1eecf51b9549d29737958d187a72c66e6916317fd2d",
+  "scope": "R1-provenance-checks",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

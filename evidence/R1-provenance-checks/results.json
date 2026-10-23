@@ -1,0 +1,15 @@
+{
+  "scope": "offline artifact provenance only; product code and tested CI SHA unchanged",
+  "export_before_restore_original_commit": "git cat-file -e 69f544fd^{commit} returned 128 before restore",
+  "negative_checks": [
+    "wrong-size bundle rejected",
+    "same-length wrong-hash bundle rejected"
+  ],
+  "commands": {
+    "20261023T072648426478Z-export-restore.json": "613731f93c87fb0c1d70df93f8193db056bac4ccd2cc96f7ae236f4d86339551",
+    "20261023T072649600341Z-export-frozen-r1.json": "2458878775c7aa3b209bc8ce3b6a6402114a777b013e906c4ba5c7b97cac6693",
+    "20261023T072712252142Z-documentation.json": "a21123712c357e036725731e87b2c699722f3dc13c332f59f5b61612a3f44935",
+    "20261023T072729728107Z-frozen-p1.json": "28977e1e25779e7e2eed1fe868b47dd49e821d1ff09cede39d658543d70e65c2",
+    "20261023T072729728370Z-frozen-t8.json": "8c2f334d79b71aabb64488aaf941495f80aff716483c773fcda75a51e5adcbc3"
+  }
+}
