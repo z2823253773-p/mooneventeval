@@ -6,7 +6,7 @@
   "demo_checkout_sha": "7dd8801edcbe9ee885efdfd9c896250c79d0dacb",
   "native_platform": "Darwin arm64; no Linux/Windows runtime qualification",
   "binary_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
-  "source_archive_sha256": "9ac08e51914ef39a9ecafc51b1b9daabd1b47397701a33d65b67330235d43b31",
+  "source_archive_sha256": "44c002bf3aecd3b8de6b7e4f7c65a7484fb3a14445c1b3adf68f77fec2e1a255",
   "acceptance": {
     "local_steps": 17,
     "moon_tests": 58,
@@ -456,5 +456,7 @@
     }
   ],
   "native_binary_contains_build_paths": true,
-  "public_redaction_complete": false
+  "public_redaction_complete": false,
+  "full_gate_tested_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
+  "source_package_checkout_sha": "f24e7e68e5314250b6a7a2534567a59151d062c0"
 }

@@ -33,3 +33,5 @@ T6固定合成范围：315非边界共同口径一致；9边界中6一致、1具
 最终证据冻结：`python3 evidence/T8/freeze.py`。后续内部文档/证据收尾HEAD与被测代码分别记账；使用git rev-parse HEAD查询当前HEAD。本轮保留原分支和工作树，无集成操作。
 
 2026-10-22接续：用户将验证全权交给Codex，取消本地人工复测要求。历史“本人M2”混用已更正；本人讲解没有证据仍不编造。P1交付包及下一远端阶段见[交付准备](delivery/READINESS.md)。
+
+P1最终38文件源包在f24e7e68重新验收，包含M2用语更正；原生binary未变。当前交付ZIP的准确hash及解包运行结果见[READINESS](delivery/READINESS.md)，T8源zip仅保留历史身份。

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/P1/refresh_package.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.427,
+  "log": "evidence/P1/20261023T062723438408Z-refresh-current-package.log",
+  "log_sha256": "f8506b709baee405606575bc54f328cac62f1e1eea9efe77defc54170d838c6d",
+  "scope": "P1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

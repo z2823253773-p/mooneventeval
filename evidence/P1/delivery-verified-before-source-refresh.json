@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "delivery_members": 19,
+  "files_rehashed": 18,
+  "extracted_binary_cases": [
+    {
+      "name": "duplicate",
+      "exit_code": 0,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249"
+    },
+    {
+      "name": "greedy-trap",
+      "exit_code": 0,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8"
+    },
+    {
+      "name": "boundary",
+      "exit_code": 0,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c"
+    }
+  ],
+  "html_structure_passed": true,
+  "html_json_transcripts": 5,
+  "visual_render_verified": false,
+  "scope": "actual ZIP/extracted native binary plus offline HTML structure/content; no browser render claim"
+}

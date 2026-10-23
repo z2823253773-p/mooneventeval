@@ -4,8 +4,8 @@
   "checkout_sha": "7dd8801edcbe9ee885efdfd9c896250c79d0dacb",
   "tested_code_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
   "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
-  "source_archive_sha256": "9ac08e51914ef39a9ecafc51b1b9daabd1b47397701a33d65b67330235d43b31",
-  "delivery_zip_sha256": "574959650fcbb624d15c487935c48e40b0c8472264067a55698911623fd5f6b9",
+  "source_archive_sha256": "44c002bf3aecd3b8de6b7e4f7c65a7484fb3a14445c1b3adf68f77fec2e1a255",
+  "delivery_zip_sha256": "a2892f2a6278d13c79be12ddd0e7182ac55d518e09d52917a667f578f98030c3",
   "delivery_members": 19,
   "copied_binary_calls": 5,
   "actual_exit_codes": [
@@ -24,5 +24,7 @@
   "export_text_host_path_scan_passed": true,
   "source_archive_host_path_scan_passed": true,
   "native_binary_contains_build_paths": true,
-  "public_redaction_complete": false
+  "public_redaction_complete": false,
+  "source_package_checkout_sha": "f24e7e68e5314250b6a7a2534567a59151d062c0",
+  "full_gate_tested_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f"
 }

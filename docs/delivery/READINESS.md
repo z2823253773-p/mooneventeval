@@ -8,7 +8,7 @@
 - [离线演示实录](../../evidence/P1/delivery/MoonEventEval-0.1.0-local/DEMO.html)：三案例、增广路径图、边界解释和失败协议；静态本地文档，无网页依赖/联网请求，不是在线评分功能或本人录屏。
 - [技术事实提纲](../../evidence/P1/delivery/MoonEventEval-0.1.0-local/TECHNICAL_FACTS.md)是代理材料，不能假称本人原创申报书或实际答辩经历。
 - [交付验收](../../evidence/P1/delivery-verified.json)：实际ZIP CRC/19成员、18文件hash、HTML结构/五份实际JSON逐项核对；ZIP解出binary后再运行三个案例，全部正确。此前本轮demo10条命令及复制binary的5条命令也通过。
-- [产品身份](../../evidence/P1/delivery-report.json)：仍为最终被测8aa37c5的原样binary/源zip；本轮运行所在文档HEAD7dd8801e，不冒称又一次完整17步验收。T8冻结完整性本轮实际复核通过。
+- [产品身份](../../evidence/P1/delivery-report.json)：binary仍为最终被测8aa37c5的原样bytes；三案例demo运行所在文档HEAD7dd8801e。公开说明的M2用语更正后，在f24e7e68重新制作并验收38文件源zip（包外consumer、解包CLI及六条示例均通过）；不是又一次完整17步验收。T8冻结完整性本轮实际复核通过。
 
 首次组装在HTML页标题处遇未定义变量，失败日志及部分材料留在evidence/P1/failed-attempt；修正后才形成最终ZIP。初次成功ZIP因随后补充本地路径披露而重新打包，最终ZIP再次解出并运行三个案例，不把旧hash当最终值。
 
@@ -35,3 +35,9 @@ T5步骤7的代理演示和材料完成；用户现取消本地人工复测条�
 本轮尚未创建/推送/触发CI/改为公开/发包/报名。需要用户明确授权的仅这一步远端操作，原因是[AGENTS](../../AGENTS.md)现有约定要求明确授权。先私有，是因为原始证据/Git元数据和native binary尚未做公开脱敏；远端验证成功也不自动改变公开性或正式发布。
 
 后续执行先读PROJECT_STATE、contracts、本文件；保留冻结T8和原main，远端结果记录确切代码SHA/run URL/各OS，不用配置或本机通过代替远端结果。
+
+## 最终产物身份
+
+完整17步被测代码：8aa37c5aa55821d40a527e42ee9bc47ffc32371f；当前38文件源码包被测文档提交：f24e7e68e5314250b6a7a2534567a59151d062c0。
+
+本地交付ZIP SHA256：`a2892f2a6278d13c79be12ddd0e7182ac55d518e09d52917a667f578f98030c3`；内含源zip SHA256：`44c002bf3aecd3b8de6b7e4f7c65a7484fb3a14445c1b3adf68f77fec2e1a255`。最终刷新源包后又一次ZIP解出binary跑三个案例通过；旧组装/旧hash记录仅为历史，当前以delivery-report.json和delivery-verified.json为准。
