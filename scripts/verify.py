@@ -164,13 +164,13 @@ def validate_ci_config(root):
 def reference_probe_code(root):
     return '''import hashlib,importlib.metadata as md,json,pathlib,platform,re,sys
 root=pathlib.Path(sys.argv[1]);sys.path.insert(0,str(root/'validation'))
-import sed_reference,sed_eval
-sed_reference.verify_sources(pathlib.Path(sed_eval.__file__).parent)
+import sed_reference
+sed_eval=sed_reference._reference_module()
 expected=dict(re.findall(r'^([A-Za-z0-9_.-]+)==([^\\s]+)',(root/'validation/reference.lock').read_text(),re.M))
 actual={name:md.version(name) for name in expected}
 assert expected==actual,(expected,actual)
 exe=pathlib.Path(sys.executable).resolve()
-print(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True)))
+print(json.dumps(dict(python_version=platform.python_version(),executable=str(exe),executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),packages=actual,sed_eval_source_verified=True,sed_eval_bytecode_verified=True)))
 '''
 
 
@@ -216,7 +216,7 @@ def verify(root,output):
             if name=='release-build':result['product_sha256']=require_binary(binary)
             if name=='reference-identity':
                 identity=json.loads((output/name/'stdout').read_bytes());lock=json.loads((root/'validation/python-reference.lock.json').read_bytes())
-                if identity['python_version']!=lock['python_version'] or identity['sed_eval_source_verified'] is not True:raise ValueError('reference Python/source identity mismatch')
+                if identity['python_version']!=lock['python_version'] or identity['sed_eval_source_verified'] is not True or identity.get('sed_eval_bytecode_verified') is not True:raise ValueError('reference Python/source/bytecode identity mismatch')
                 if platform.system()=='Darwin' and identity['executable_sha256']!=lock['executable_sha256']:raise ValueError('qualified Mac reference executable hash differs')
                 result['reference_identity']=identity
             if name in {'python-tests','validation-tests','cli-tests'}:

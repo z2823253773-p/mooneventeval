@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import importlib.util
 import json
+import marshal
 import math
 from pathlib import Path
 
@@ -15,6 +16,23 @@ def verify_sources(package):
               for p in package.rglob('*.py')}
     if actual != expected:
         raise RuntimeError('reference source mismatch; refusing patched or incomplete sed_eval')
+    # -B disables writes, not reads. A timestamp-valid cache can contain code
+    # unrelated to the original .py. Check the cache selected by this interpreter
+    # against a fresh compilation before any reference import executes it.
+    for name in expected:
+        source = package/name
+        cache = Path(importlib.util.cache_from_source(str(source)))
+        if cache.exists():
+            try:
+                data = cache.read_bytes()
+                if data[:4] != importlib.util.MAGIC_NUMBER or len(data) < 16:
+                    raise ValueError('invalid cache header')
+                code = marshal.loads(data[16:])
+                original = compile(source.read_bytes(), str(source), 'exec', dont_inherit=True)
+                if code != original:
+                    raise ValueError('cached code differs from verified source')
+            except Exception as exc:
+                raise RuntimeError('reference bytecode mismatch; refusing cached sed_eval: '+name) from exc
 
 def _reference_module():
     # Inspect the package without importing it; validate before executing source.

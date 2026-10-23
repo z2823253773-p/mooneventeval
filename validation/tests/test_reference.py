@@ -73,6 +73,45 @@ class ReferenceSelfCheck(unittest.TestCase):
             with self.assertRaisesRegex(RuntimeError,'source'):
                 self.reference.verify_sources(package)
 
+    def test_poisoned_bytecode_cannot_pass_identity_or_scoring(self):
+        # Break caught: checking .py hashes while executing a different valid .pyc.
+        import importlib._bootstrap_external as bytecode
+        import os
+        import shutil
+        import subprocess
+        import sys
+        import tempfile
+        root = ADAPTER.parents[1]
+        spec = importlib.util.spec_from_file_location('verify_for_test', root/'scripts/verify.py')
+        gate = importlib.util.module_from_spec(spec)
+        sys.path.insert(0, str(root/'scripts'))
+        try:
+            spec.loader.exec_module(gate)
+        finally:
+            sys.path.pop(0)
+        with tempfile.TemporaryDirectory() as directory:
+            package = Path(directory)/'sed_eval'
+            original = next(iter(importlib.util.find_spec('sed_eval').submodule_search_locations))
+            shutil.copytree(original, package, ignore=shutil.ignore_patterns('__pycache__'))
+            source = package/'__init__.py'
+            stat = source.stat()
+            payload = "\n_original=sound_event.EventBasedMetrics\nclass _Changed(_original):\n def __init__(self,*a,**kw):\n  kw['t_collar']=1000.0\n  super().__init__(*a,**kw)\nsound_event.EventBasedMetrics=_Changed\n"
+            code = compile(source.read_text()+payload, str(source), 'exec')
+            cache = Path(importlib.util.cache_from_source(str(source)))
+            cache.parent.mkdir()
+            cache.write_bytes(bytecode._code_to_timestamp_pyc(code, int(stat.st_mtime), stat.st_size))
+            document = task([event('r','a','1','2')], [event('p','a','3','4')])
+            commands = {
+                'identity': gate.reference_probe_code(root),
+                'scoring': "import sys;sys.path.insert(0,sys.argv[1]+'/validation');from sed_reference import evaluate_document;print(evaluate_document("+repr(document)+"))",
+            }
+            for name, command in commands.items():
+                with self.subTest(entry=name):
+                    run = subprocess.run([sys.executable, '-c', command, str(root)], cwd=root,
+                        env=dict(os.environ, PYTHONPATH=directory, PYTHONDONTWRITEBYTECODE='1'), capture_output=True)
+                    self.assertNotEqual(run.returncode, 0, run.stdout.decode(errors='replace'))
+                    self.assertIn(b'bytecode', run.stderr)
+
     def test_zero_collar_is_explicit_upstream_domain_limit(self):
         document = task([],[])
         document['config'] = dict(collar_s='0', offset_ratio='0.5')
