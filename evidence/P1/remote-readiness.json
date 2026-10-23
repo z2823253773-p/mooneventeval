@@ -1,0 +1,29 @@
+{
+  "authenticated_connector_login": "z2823253773-p",
+  "profile_method": "GitHub connector get_user_login read-only",
+  "visible_repository_list": [],
+  "repository_list_limit": "empty connector-visible list does not prove target repository absent",
+  "proposed_target": "z2823253773-p/mooneventeval",
+  "proposed_visibility": "private initially",
+  "scope_if_authorized": [
+    "create private repo",
+    "push code/tests/evidence and authentic Git history",
+    "manually dispatch existing macOS-arm64/Linux-x64 workflow",
+    "inspect actual results and resolve failures"
+  ],
+  "not_authorized_or_performed": [
+    "repo creation",
+    "push",
+    "workflow dispatch",
+    "public visibility",
+    "Mooncakes release",
+    "registration or contacting organizers"
+  ],
+  "gh_cli_available": true,
+  "cli_account_identity_verified": false,
+  "pre_action_checks": [
+    "verify gh API authenticated login equals intended owner",
+    "check target repository does not already contain unrelated work",
+    "preserve local branch/main; no history rewriting or automatic publication"
+  ]
+}

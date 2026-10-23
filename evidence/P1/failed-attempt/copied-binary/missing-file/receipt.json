@@ -1,0 +1,15 @@
+{
+  "name": "missing-file",
+  "argv": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P1/delivery/MoonEventEval-0.1.0-local/bin/mooneventeval",
+    "evaluate",
+    "examples/missing.json",
+    "--format",
+    "json"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P1/delivery/MoonEventEval-0.1.0-local",
+  "exit_code": 2,
+  "elapsed_seconds": 0.0033042500726878643,
+  "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

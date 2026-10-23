@@ -1,0 +1,34 @@
+{
+  "checked_user_date": "2026-10-22",
+  "timezone": "America/Phoenix",
+  "method": "read-only official public source inspection via web tool; deployed SPA body unavailable",
+  "sources": [
+    {
+      "url": "https://raw.githubusercontent.com/moonbitlang/Hackathon2026/main/src/App.tsx",
+      "reference": "mutable main fetched this turn; current commit hash not obtained",
+      "areas": [
+        "43-47",
+        "79-87",
+        "200-225",
+        "284-293"
+      ],
+      "observations": [
+        "October31 registration and acceptance date; exact time/timezone not established",
+        "public repository with traceable development, runnable examples/tests, open-source compliance",
+        "participant must understand goals/technical choices and own quality; AI permitted",
+        "up to three October submissions; individual remaining count/change-topic approval unknown"
+      ]
+    },
+    {
+      "url": "https://bxup9uklfcb.feishu.cn/wiki/Dx4Bwd6D1i3GfHkajQCcF7SznEd",
+      "status": "body inaccessible via web tool; no formal charter compliance claim"
+    },
+    {
+      "url": "https://moonbitlang.github.io/Hackathon2026/",
+      "status": "web tool returned no body; browser setup timeout; no deployed-source byte-equivalence claim"
+    }
+  ],
+  "scope": "public rules observations only, not organizer approval or individual eligibility",
+  "user_manual_retest": "waived by direct user request; engineering verification delegated to Codex",
+  "correction": "PRD M2 means minimum core, already verified; historical phrase personal M2 conflated this with participant understanding and is superseded"
+}

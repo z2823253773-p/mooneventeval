@@ -1,0 +1,357 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'"><title>MoonEventEval · 离线演示实录</title><style>*{box-sizing:border-box}body{margin:0;background:#f2f0e9;color:#202a25;font:17px/1.75 system-ui,-apple-system,sans-serif}main{max-width:940px;margin:auto;padding:48px 24px}header{padding:24px 0 48px}h1{font-size:clamp(38px,7vw,70px);line-height:1.1;letter-spacing:-2px;margin:16px 0}h2{font-size:26px;line-height:1.4}section{background:#fffefb;border:1px solid #deded5;border-radius:16px;padding:30px;margin:22px 0}.eyebrow{color:#177157;font-size:13px;letter-spacing:2px;font-weight:700}.badge{display:inline-block;background:#dfede3;border-radius:20px;padding:4px 14px;font-size:13px}nav a{color:#185d49;margin-right:16px}pre{overflow:auto;font:13px/1.7 ui-monospace,Menlo,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f0f1eb;padding:18px;border-radius:8px}.cmd{background:#202c26;color:#e4f3e7}summary{cursor:pointer;color:#155c46;font-weight:600}svg{width:100%;max-height:240px}.meta{color:#626e65;font-size:14px}footer{padding:24px 0;font-size:14px}a{color:#155c46}@media(max-width:520px){section{padding:20px}main{padding:28px 16px}h2{font-size:22px}}@media print{details{display:block}pre{font-size:10px}section{break-inside:avoid}}</style><main><header><span class="badge">本机真实输出 · 离线可读 · 代理执行</span><h1>MoonEventEval</h1><p>时间事件先配对，再计算指标。用三个反例讲清重复预测、最大匹配与精确边界。</p><p class="meta">产品0.1.0 / Darwin arm64 / 被测代码 8aa37c5aa558</p><nav><a href="#duplicate">重复预测</a><a href="#greedy-trap">增广陷阱</a><a href="#boundary">精确边界</a><a href="#missing-file">失败协议</a></nav></header><section id="duplicate"><p class="eyebrow">01 / 重复预测</p><h2>一条参考、两条预测 → TP 1 · FP 1 · FN 0</h2><p>合格不等于被选中；重复预测不会被去重。</p><pre class="cmd">$ bin/mooneventeval evaluate examples/duplicate.json --format json</pre><details><summary>展开实际JSON输出 · exit 0</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;semantics&quot;: &quot;collar-max-cardinality/v1&quot;,
+  &quot;implementation_version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;config&quot;: {
+    &quot;collar_s&quot;: &quot;0.2&quot;,
+    &quot;offset_ratio&quot;: &quot;0.5&quot;
+  },
+  &quot;summary&quot;: {
+    &quot;counts&quot;: {
+      &quot;reference&quot;: 1,
+      &quot;prediction&quot;: 2,
+      &quot;tp&quot;: 1,
+      &quot;fp&quot;: 1,
+      &quot;fn&quot;: 0
+    },
+    &quot;precision&quot;: 0.5,
+    &quot;recall&quot;: 1,
+    &quot;f1&quot;: 0.6666666666666666
+  },
+  &quot;by_label&quot;: [
+    {
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 1,
+          &quot;prediction&quot;: 2,
+          &quot;tp&quot;: 1,
+          &quot;fp&quot;: 1,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 0.5,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 0.6666666666666666
+      }
+    }
+  ],
+  &quot;by_recording&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 1,
+          &quot;prediction&quot;: 2,
+          &quot;tp&quot;: 1,
+          &quot;fp&quot;: 1,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 0.5,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 0.6666666666666666
+      }
+    }
+  ],
+  &quot;matches&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;reference&quot;: {
+        &quot;id&quot;: &quot;r1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10&quot;,
+        &quot;offset_s&quot;: &quot;12&quot;
+      },
+      &quot;prediction&quot;: {
+        &quot;id&quot;: &quot;p1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10&quot;,
+        &quot;offset_s&quot;: &quot;12&quot;
+      },
+      &quot;basis&quot;: {
+        &quot;label_match&quot;: true,
+        &quot;onset_pass&quot;: true,
+        &quot;offset_pass&quot;: true,
+        &quot;eligible&quot;: true,
+        &quot;onset_delta_s&quot;: &quot;0&quot;,
+        &quot;offset_delta_s&quot;: &quot;0&quot;,
+        &quot;onset_limit_s&quot;: &quot;0.2&quot;,
+        &quot;offset_limit_s&quot;: &quot;1&quot;
+      }
+    }
+  ],
+  &quot;false_positives&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;event&quot;: {
+        &quot;id&quot;: &quot;p2&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10.05&quot;,
+        &quot;offset_s&quot;: &quot;12.05&quot;
+      },
+      &quot;candidate_count&quot;: 1,
+      &quot;reason&quot;: &quot;unselected_in_maximum_matching&quot;
+    }
+  ],
+  &quot;false_negatives&quot;: [],
+  &quot;work&quot;: {
+    &quot;candidate_checks&quot;: 2,
+    &quot;eligible_edges&quot;: 2,
+    &quot;matching_steps&quot;: 3
+  }
+}
+</pre></details></section><section id="greedy-trap"><p class="eyebrow">02 / 增广路径</p><h2>三条候选边 → 最大配对数 2</h2><p>朴素贪心可能只得到1；sed_eval optimal在此例也得到2。</p><pre class="cmd">$ bin/mooneventeval evaluate examples/greedy-trap.json --format json</pre><details><summary>展开实际JSON输出 · exit 0</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;semantics&quot;: &quot;collar-max-cardinality/v1&quot;,
+  &quot;implementation_version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;config&quot;: {
+    &quot;collar_s&quot;: &quot;0.2&quot;,
+    &quot;offset_ratio&quot;: &quot;0.5&quot;
+  },
+  &quot;summary&quot;: {
+    &quot;counts&quot;: {
+      &quot;reference&quot;: 2,
+      &quot;prediction&quot;: 2,
+      &quot;tp&quot;: 2,
+      &quot;fp&quot;: 0,
+      &quot;fn&quot;: 0
+    },
+    &quot;precision&quot;: 1,
+    &quot;recall&quot;: 1,
+    &quot;f1&quot;: 1
+  },
+  &quot;by_label&quot;: [
+    {
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 2,
+          &quot;prediction&quot;: 2,
+          &quot;tp&quot;: 2,
+          &quot;fp&quot;: 0,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 1,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 1
+      }
+    }
+  ],
+  &quot;by_recording&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 2,
+          &quot;prediction&quot;: 2,
+          &quot;tp&quot;: 2,
+          &quot;fp&quot;: 0,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 1,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 1
+      }
+    }
+  ],
+  &quot;matches&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;reference&quot;: {
+        &quot;id&quot;: &quot;r1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10&quot;,
+        &quot;offset_s&quot;: &quot;11&quot;
+      },
+      &quot;prediction&quot;: {
+        &quot;id&quot;: &quot;p2&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;9.85&quot;,
+        &quot;offset_s&quot;: &quot;10.85&quot;
+      },
+      &quot;basis&quot;: {
+        &quot;label_match&quot;: true,
+        &quot;onset_pass&quot;: true,
+        &quot;offset_pass&quot;: true,
+        &quot;eligible&quot;: true,
+        &quot;onset_delta_s&quot;: &quot;-0.15&quot;,
+        &quot;offset_delta_s&quot;: &quot;-0.15&quot;,
+        &quot;onset_limit_s&quot;: &quot;0.2&quot;,
+        &quot;offset_limit_s&quot;: &quot;0.5&quot;
+      }
+    },
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;reference&quot;: {
+        &quot;id&quot;: &quot;r2&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10.3&quot;,
+        &quot;offset_s&quot;: &quot;11.3&quot;
+      },
+      &quot;prediction&quot;: {
+        &quot;id&quot;: &quot;p1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10.15&quot;,
+        &quot;offset_s&quot;: &quot;11.15&quot;
+      },
+      &quot;basis&quot;: {
+        &quot;label_match&quot;: true,
+        &quot;onset_pass&quot;: true,
+        &quot;offset_pass&quot;: true,
+        &quot;eligible&quot;: true,
+        &quot;onset_delta_s&quot;: &quot;-0.15&quot;,
+        &quot;offset_delta_s&quot;: &quot;-0.15&quot;,
+        &quot;onset_limit_s&quot;: &quot;0.2&quot;,
+        &quot;offset_limit_s&quot;: &quot;0.5&quot;
+      }
+    }
+  ],
+  &quot;false_positives&quot;: [],
+  &quot;false_negatives&quot;: [],
+  &quot;work&quot;: {
+    &quot;candidate_checks&quot;: 4,
+    &quot;eligible_edges&quot;: 3,
+    &quot;matching_steps&quot;: 11
+  }
+}
+</pre></details></section><section><p class="eyebrow">增广路径 / 算法讲解</p><h2>从一次选择，找到两个配对</h2><svg viewBox="0 0 620 220" role="img" aria-label="三条边r1-p1、r1-p2、r2-p1。最终选择r1-p2和r2-p1。"><path d="M100 55H510" stroke="#b8b6b0" stroke-width="2" stroke-dasharray="6 6"/><path d="M100 55L510 165M100 165L510 55" stroke="#16876c" stroke-width="5"/><g fill="#fff" stroke="#212925" stroke-width="2"><circle cx="100" cy="55" r="28"/><circle cx="100" cy="165" r="28"/><circle cx="510" cy="55" r="28"/><circle cx="510" cy="165" r="28"/></g><g fill="#212925" text-anchor="middle" font-size="19"><text x="100" y="61">r1</text><text x="100" y="171">r2</text><text x="510" y="61">p1</text><text x="510" y="171">p2</text></g></svg><p>先占r1→p1后，沿r2→p1→r1→p2增广。灰虚线是被替换的早期选择，绿线是最终两对。这个图是讲解示意，候选及结果由实际案例输出核对。</p></section><section id="boundary"><p class="eyebrow">03 / 精确边界</p><h2>10.2 − 10 = 0.2 → 等号通过</h2><p>微秒/ppm整数比较，无epsilon；终点容差取max(collar,参考时长×比例)。</p><pre class="cmd">$ bin/mooneventeval evaluate examples/boundary.json --format json</pre><details><summary>展开实际JSON输出 · exit 0</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;semantics&quot;: &quot;collar-max-cardinality/v1&quot;,
+  &quot;implementation_version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;config&quot;: {
+    &quot;collar_s&quot;: &quot;0.2&quot;,
+    &quot;offset_ratio&quot;: &quot;0.5&quot;
+  },
+  &quot;summary&quot;: {
+    &quot;counts&quot;: {
+      &quot;reference&quot;: 1,
+      &quot;prediction&quot;: 1,
+      &quot;tp&quot;: 1,
+      &quot;fp&quot;: 0,
+      &quot;fn&quot;: 0
+    },
+    &quot;precision&quot;: 1,
+    &quot;recall&quot;: 1,
+    &quot;f1&quot;: 1
+  },
+  &quot;by_label&quot;: [
+    {
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 1,
+          &quot;prediction&quot;: 1,
+          &quot;tp&quot;: 1,
+          &quot;fp&quot;: 0,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 1,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 1
+      }
+    }
+  ],
+  &quot;by_recording&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;metrics&quot;: {
+        &quot;counts&quot;: {
+          &quot;reference&quot;: 1,
+          &quot;prediction&quot;: 1,
+          &quot;tp&quot;: 1,
+          &quot;fp&quot;: 0,
+          &quot;fn&quot;: 0
+        },
+        &quot;precision&quot;: 1,
+        &quot;recall&quot;: 1,
+        &quot;f1&quot;: 1
+      }
+    }
+  ],
+  &quot;matches&quot;: [
+    {
+      &quot;recording_id&quot;: &quot;clip-01&quot;,
+      &quot;label&quot;: &quot;alarm&quot;,
+      &quot;reference&quot;: {
+        &quot;id&quot;: &quot;r1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10&quot;,
+        &quot;offset_s&quot;: &quot;12&quot;
+      },
+      &quot;prediction&quot;: {
+        &quot;id&quot;: &quot;p1&quot;,
+        &quot;label&quot;: &quot;alarm&quot;,
+        &quot;onset_s&quot;: &quot;10.2&quot;,
+        &quot;offset_s&quot;: &quot;12.2&quot;
+      },
+      &quot;basis&quot;: {
+        &quot;label_match&quot;: true,
+        &quot;onset_pass&quot;: true,
+        &quot;offset_pass&quot;: true,
+        &quot;eligible&quot;: true,
+        &quot;onset_delta_s&quot;: &quot;0.2&quot;,
+        &quot;offset_delta_s&quot;: &quot;0.2&quot;,
+        &quot;onset_limit_s&quot;: &quot;0.2&quot;,
+        &quot;offset_limit_s&quot;: &quot;1&quot;
+      }
+    }
+  ],
+  &quot;false_positives&quot;: [],
+  &quot;false_negatives&quot;: [],
+  &quot;work&quot;: {
+    &quot;candidate_checks&quot;: 1,
+    &quot;eligible_edges&quot;: 1,
+    &quot;matching_steps&quot;: 3
+  }
+}
+</pre></details></section><section id="boundary-explain"><p class="eyebrow">04 / 边界解释</p><h2>起点偏差 0.2 / 阈值 0.2</h2><p>该指定事件对eligible=true，不作全局匹配身份承诺。</p><pre class="cmd">$ bin/mooneventeval explain-pair examples/boundary.json --recording clip-01 --reference r1 --prediction p1 --format json</pre><details><summary>展开实际JSON输出 · exit 0</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;semantics&quot;: &quot;collar-max-cardinality/v1&quot;,
+  &quot;implementation_version&quot;: &quot;0.1.0&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;config&quot;: {
+    &quot;collar_s&quot;: &quot;0.2&quot;,
+    &quot;offset_ratio&quot;: &quot;0.5&quot;
+  },
+  &quot;recording_id&quot;: &quot;clip-01&quot;,
+  &quot;reference&quot;: {
+    &quot;id&quot;: &quot;r1&quot;,
+    &quot;label&quot;: &quot;alarm&quot;,
+    &quot;onset_s&quot;: &quot;10&quot;,
+    &quot;offset_s&quot;: &quot;12&quot;
+  },
+  &quot;prediction&quot;: {
+    &quot;id&quot;: &quot;p1&quot;,
+    &quot;label&quot;: &quot;alarm&quot;,
+    &quot;onset_s&quot;: &quot;10.2&quot;,
+    &quot;offset_s&quot;: &quot;12.2&quot;
+  },
+  &quot;basis&quot;: {
+    &quot;label_match&quot;: true,
+    &quot;onset_pass&quot;: true,
+    &quot;offset_pass&quot;: true,
+    &quot;eligible&quot;: true,
+    &quot;onset_delta_s&quot;: &quot;0.2&quot;,
+    &quot;offset_delta_s&quot;: &quot;0.2&quot;,
+    &quot;onset_limit_s&quot;: &quot;0.2&quot;,
+    &quot;offset_limit_s&quot;: &quot;1&quot;
+  }
+}
+</pre></details></section><section id="missing-file"><p class="eyebrow">05 / 失败也有协议</p><h2>缺文件 → exit 2 · FILE_ERROR</h2><p>失败输出没有summary或部分分数。</p><pre class="cmd">$ bin/mooneventeval evaluate examples/missing.json --format json</pre><details><summary>展开实际JSON输出 · exit 2</summary><pre>{
+  &quot;schema_version&quot;: 1,
+  &quot;status&quot;: &quot;failed&quot;,
+  &quot;error&quot;: {
+    &quot;kind&quot;: &quot;input&quot;,
+    &quot;code&quot;: &quot;FILE_ERROR&quot;,
+    &quot;message&quot;: &quot;Cannot read a regular input file or write output&quot;,
+    &quot;path&quot;: &quot;file&quot;,
+    &quot;limit&quot;: null,
+    &quot;observed&quot;: null
+  }
+}
+</pre></details></section><footer>这是本轮复制binary后的命令实录，不是在线评分服务、视频或本人讲解记录。技术验收由Codex完成；公开仓库、远端CI/Linux、新安装、发布与赛事资格未完成。输入只支持JSON字符串时间；已知限制见START_HERE.md。源码包、许可、逐文件hash和完整事实材料随目录提供。</footer></main></html>

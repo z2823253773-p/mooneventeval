@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "scope": "agent-run local handoff assembly; no remote publication or personal demonstration",
+  "checkout_sha": "7dd8801edcbe9ee885efdfd9c896250c79d0dacb",
+  "tested_code_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "source_archive_sha256": "9ac08e51914ef39a9ecafc51b1b9daabd1b47397701a33d65b67330235d43b31",
+  "delivery_zip_sha256": "d40270c18104cb6bb475addc4e20f47939a770c42b28f5975ce3830213b5c47a",
+  "delivery_members": 19,
+  "copied_binary_calls": 5,
+  "actual_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    2
+  ],
+  "host_path_scan_passed": true,
+  "browser_render_verified": false,
+  "browser_note": "two CUA browser access attempts timed out; no visual verification claimed",
+  "remote_ci": "NOT_RUN",
+  "published": false,
+  "user_manual_retest": "WAIVED_BY_USER_2026-10-22",
+  "personal_explanation": "NOT_PERFORMED"
+}
+

@@ -56,7 +56,7 @@ parsing, then replayed five original corruptions successfully. This was author
 verification, not a second independent review. Deferred Minor M1: timeouts
 correctly fail, but the T6 comparator still does not persist partial captured
 stdout/stderr/process receipts. Runtime input duplicate-key last-wins remains
-an explicit limitation. Linux, remote CI and personal oral/paper M2 evidence
+an explicit limitation. Linux, remote CI and participant understanding/explanation evidence
 remain unverified.
 
 ## Reproduce in the full development checkout
@@ -98,6 +98,11 @@ requires a fresh evidence directory and binds source bytes and tested commit.
 The saved manual-only CI matrix calls the same entry point for macOS arm64 and
 Linux x86_64, with full action commit pins and hash-locked dependencies. A saved
 workflow is configuration only; no remote job or Linux execution is claimed by
-this source candidate. Personal M2, formal namespace/URL, publication and
+this source candidate. Participant understanding, formal namespace/URL, publication and
 competition acceptance remain separate. Internal execution detail belongs to
 `docs/VALIDATION.md` in the full development checkout, which is not bundled here.
+
+The internal M2 minimum-core milestone has passed its machine checks. User-run
+retesting was waived on 2026-10-22; automated engineering acceptance is delegated
+to Codex. This does not assert that the participant has personally demonstrated
+understanding or received organizer approval.

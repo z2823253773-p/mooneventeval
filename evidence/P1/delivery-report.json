@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "agent-run local handoff assembly; no remote publication or personal demonstration",
+  "checkout_sha": "7dd8801edcbe9ee885efdfd9c896250c79d0dacb",
+  "tested_code_sha": "8aa37c5aa55821d40a527e42ee9bc47ffc32371f",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "source_archive_sha256": "9ac08e51914ef39a9ecafc51b1b9daabd1b47397701a33d65b67330235d43b31",
+  "delivery_zip_sha256": "574959650fcbb624d15c487935c48e40b0c8472264067a55698911623fd5f6b9",
+  "delivery_members": 19,
+  "copied_binary_calls": 5,
+  "actual_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    2
+  ],
+  "browser_render_verified": false,
+  "browser_note": "in-app and extension setup timed out; native navigation reached a titled local tab but URL security policy refused file-protocol content inspection; no render verification claimed; temporary loopback server was closed without a browser preview",
+  "remote_ci": "NOT_RUN",
+  "published": false,
+  "user_manual_retest": "WAIVED_BY_USER_2026-10-22",
+  "personal_explanation": "NOT_PERFORMED",
+  "export_text_host_path_scan_passed": true,
+  "source_archive_host_path_scan_passed": true,
+  "native_binary_contains_build_paths": true,
+  "public_redaction_complete": false
+}

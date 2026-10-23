@@ -10,7 +10,7 @@
 
 **Spec:** [PRD](../specs/2026-10-20-mooneventeval-prd-design.md)；[共享契约](../../contracts.md)；[反馈处置](../../reviews/2026-10-20-claude-feedback-disposition.md)。
 
-**Status:** T0至T6限定机器实现/验收完成，T5本机CLI/自动demo及T6限定parity/A11均有证据；T6评审Important作者修复、Minor M1延期，无第二次独立复审。T7包外消费者/38文件候选及评审修复复验亦完成（代码bb24ce33）；下一T8统一检查/CI配置。T5本人讲解/M2、T8与正式发布未完成。其余标记待批准的算法/阶段修订保持待批准。v1计划停止作为执行入口，保留历史以供追溯。
+**Status:** T0–T8本地工程任务完成，最终代码/被测8aa37c5；P1本地交付包与代理实录检查完成。PRD M2最小核心已完成，历史“本人M2”混用作废；用户取消自行复测，由Codex验收。本人讲解/外部资格无实际完成证据，Linux/远端CI/正式发布未完成。当前以PROJECT_STATE与docs/delivery/READINESS.md为入口。v1计划保留历史，不再执行。
 
 ## 本轮修正与需确认的变化
 
@@ -51,4 +51,4 @@ T0最多2小时；T1b最多3小时排障。T2密集图不满足预算就先修�
 
 以AGENTS.md为主，CLAUDE.md只转到相同入口；不默认使用Claude Code的/clear，也不规定每任务必须新chat。任务结束把状态写盘；确需换chat由用户发起，主流程不自动创建聊天。独立评审用适用授权下的fresh只读agent，给契约/diff/真实结果，回传不超过20行结论及文件位置。
 
-T0–T8本地工程阶段已完成，各有效评审Important的作者修复已复验，最终代码/被测8aa37c5；T5本人讲解/M2仍待实际发生，Linux/远端/发布未运行，其余待批准范围按contracts和STATE处理。此文不授权外发、推送、发包或改报名。
+T0–T8本地工程阶段已完成，各有效评审Important的作者修复已复验，最终代码/被测8aa37c5；PRD M2最小核心已完成，T5本人讲解仍无实际证据但不再设置用户人工复测门，Linux/远端/发布未运行，其余待批准范围按contracts和STATE处理。此文不授权外发、推送、发包或改报名。

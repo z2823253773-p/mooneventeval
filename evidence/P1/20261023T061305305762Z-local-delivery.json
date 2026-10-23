@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/P1/prepare_delivery.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 1,
+  "reason": null,
+  "elapsed_seconds": 1.144,
+  "log": "evidence/P1/20261023T061305305762Z-local-delivery.log",
+  "log_sha256": "74b3fe2d15117ece18a4c7dcbe730f58b5ec194a6abcafd68ffe64d5a8a5c6d7",
+  "scope": "P1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

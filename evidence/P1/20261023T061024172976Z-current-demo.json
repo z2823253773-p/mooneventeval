@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "scripts/demo.py",
+    "--bin",
+    "_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "evidence/P1/demo"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.074,
+  "log": "evidence/P1/20261023T061024172976Z-current-demo.log",
+  "log_sha256": "da1d0adac7f30a4631d2486b2e228bc273f5706f2747e6f06597e64ff5a71fa8",
+  "scope": "P1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

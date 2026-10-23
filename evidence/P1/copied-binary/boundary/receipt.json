@@ -1,0 +1,15 @@
+{
+  "name": "boundary",
+  "argv": [
+    "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P1/delivery/MoonEventEval-0.1.0-local/bin/mooneventeval",
+    "evaluate",
+    "examples/boundary.json",
+    "--format",
+    "json"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0/evidence/P1/delivery/MoonEventEval-0.1.0-local",
+  "exit_code": 0,
+  "elapsed_seconds": 0.005259749945253134,
+  "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

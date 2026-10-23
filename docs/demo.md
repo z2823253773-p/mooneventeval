@@ -1,6 +1,6 @@
 # 三分钟演示与讲解稿
 
-这是可复跑的合成数据演示脚本。自动运行记录不等于本人讲解；**本人复算、口头讲解和M2仍未完成**。目标仅已验证本机macOS arm64 native，参考原版历史证据见[阶段结果](reviews/2026-10-20-t1b-results.md)。
+这是可复跑的合成数据演示脚本。自动运行记录不等于本人讲解；本人复算/口头讲解无实际证据；用户于2026-10-22取消自行复测，由Codex负责工程验收。PRD M2最小核心已完成，历史“本人M2”混用作废。目标仅已验证本机macOS arm64 native，参考原版历史证据见[阶段结果](reviews/2026-10-20-t1b-results.md)。
 
 先构建，再在仓库根目录执行；每次输出用新目录：
 
@@ -56,3 +56,5 @@ _build/native/release/build/cmd/mooneventeval/mooneventeval.exe evaluate example
 真实缺文件exit2、status=failed、FILE_ERROR，无summary或部分分数。完成但零TP/事件对不合格仍exit0；资源超限exit3，内部非预期故障exit4。默认文本；机器JSON失败写stdout，文本诊断写stderr。只支持UTF8 JSON/字符串时间，重名键后值覆盖是已披露限制；TSV仍待批准。读取最多8MiB+1、仅普通文件（允许普通文件符号链接），输出失败可能已有前缀，无法撤回，但必须非零。
 
 本人实际演示后另记日期、被演示SHA、亲手推导和可回答的问题；本稿及自动收据不替代该记录。
+
+当前已整理为[离线演示实录](../evidence/P1/delivery/MoonEventEval-0.1.0-local/DEMO.html)与[交付包/边界](delivery/READINESS.md)。无需用户补做本地测试；外部要求以已核对正式来源为准。
