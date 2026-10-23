@@ -1,0 +1,150 @@
+{
+  "raw": {
+    "counts": {
+      "Nref": 4.0,
+      "Nsys": 0.0,
+      "Nsubs": 0.0,
+      "Ntp": 0.0,
+      "Nfp": 0.0,
+      "Nfn": 4.0
+    },
+    "metrics": {
+      "f_measure": {
+        "f_measure": {
+          "nonfinite": "NaN"
+        },
+        "precision": {
+          "nonfinite": "NaN"
+        },
+        "recall": 0.0
+      },
+      "error_rate": {
+        "error_rate": 1.0,
+        "substitution_rate": 0.0,
+        "deletion_rate": 1.0,
+        "insertion_rate": 0.0
+      },
+      "accuracy": {}
+    }
+  },
+  "class_wise": {
+    "A": {
+      "counts": {
+        "Nref": 2.0,
+        "Nsys": 0.0,
+        "Ntp": 0.0,
+        "Ntn": 0.0,
+        "Nfp": 0.0,
+        "Nfn": 2.0
+      },
+      "metrics": {
+        "f_measure": {
+          "f_measure": {
+            "nonfinite": "NaN"
+          },
+          "precision": {
+            "nonfinite": "NaN"
+          },
+          "recall": 0.0
+        },
+        "accuracy": {},
+        "error_rate": {
+          "error_rate": 1.0,
+          "deletion_rate": 1.0,
+          "insertion_rate": 0.0
+        },
+        "count": {
+          "Nref": 2.0,
+          "Nsys": 0.0
+        }
+      }
+    },
+    "B": {
+      "counts": {
+        "Nref": 2.0,
+        "Nsys": 0.0,
+        "Ntp": 0.0,
+        "Ntn": 0.0,
+        "Nfp": 0.0,
+        "Nfn": 2.0
+      },
+      "metrics": {
+        "f_measure": {
+          "f_measure": {
+            "nonfinite": "NaN"
+          },
+          "precision": {
+            "nonfinite": "NaN"
+          },
+          "recall": 0.0
+        },
+        "accuracy": {},
+        "error_rate": {
+          "error_rate": 1.0,
+          "deletion_rate": 1.0,
+          "insertion_rate": 0.0
+        },
+        "count": {
+          "Nref": 2.0,
+          "Nsys": 0.0
+        }
+      }
+    },
+    "unused": {
+      "counts": {
+        "Nref": 0.0,
+        "Nsys": 0.0,
+        "Ntp": 0.0,
+        "Ntn": 0.0,
+        "Nfp": 0.0,
+        "Nfn": 0.0
+      },
+      "metrics": {
+        "f_measure": {
+          "f_measure": {
+            "nonfinite": "NaN"
+          },
+          "precision": {
+            "nonfinite": "NaN"
+          },
+          "recall": {
+            "nonfinite": "NaN"
+          }
+        },
+        "accuracy": {},
+        "error_rate": {
+          "error_rate": 0.0,
+          "deletion_rate": 0.0,
+          "insertion_rate": 0.0
+        },
+        "count": {
+          "Nref": 0.0,
+          "Nsys": 0.0
+        }
+      }
+    }
+  },
+  "projected": {
+    "counts": {
+      "reference": 4,
+      "prediction": 0,
+      "tp": 0,
+      "fp": 0,
+      "fn": 4
+    },
+    "precision": null,
+    "recall": 0.0,
+    "f1": 0.0
+  },
+  "metric_definition_flags": {
+    "projected_precision_defined": false,
+    "projected_recall_defined": true,
+    "projected_f1_defined": true,
+    "raw_precision_defined": false,
+    "raw_recall_defined": true,
+    "raw_f1_defined": false,
+    "reference_time_representation": "binary64_from_decimal_strings",
+    "matching": "original_sed_eval_optimal",
+    "zero_collar_supported": false
+  }
+}

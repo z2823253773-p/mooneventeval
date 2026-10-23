@@ -1,0 +1,28 @@
+{
+  "name": "fixed-E7-fractional-outside",
+  "category": "exact_boundary",
+  "classification": "reference_zero_collar_domain_limit_exact_checked",
+  "differences": [],
+  "transforms": [
+    {
+      "operation": "reordered",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "shifted",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "doubled",
+      "exit_code": 0,
+      "passed": true
+    },
+    {
+      "operation": "extra-prediction",
+      "exit_code": 0,
+      "passed": true
+    }
+  ]
+}

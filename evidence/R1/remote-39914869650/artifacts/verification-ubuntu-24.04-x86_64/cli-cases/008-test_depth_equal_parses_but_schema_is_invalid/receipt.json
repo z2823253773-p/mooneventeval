@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/tmp/mee-cli-9jtycimx/depth-16",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "669bebffe72920f69a978320e0e0169c6cc5850f24645a95fe0f0d2bc51949f7",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

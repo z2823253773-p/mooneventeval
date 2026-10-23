@@ -15,3 +15,5 @@ python3 scripts/verify.py --mode local --evidence evidence/T8/recheck
 CI文件.github/workflows/ci.yml采用JSON形式的YAML子集以便标准库解析，手动workflow_dispatch、contents:read、checkout不保留凭据、第三方Actions固定完整40位SHA；Mac arm64/Linux x64矩阵先断言实际架构，使用同一verify，不发包、不改表单。官方来源锁在ci-actions.lock.json。当前只保存配置，远端/其他OS/新安装在执行前均未认证。
 
 最终实测8aa37c5总17/17、Moon58/Python22/validation42/CLI15。整分支唯一评审候选df214268的缓存Important已作者RED→GREEN修复并通过总门，未第二次独立复审。收尾内部文档HEAD与被测SHA分别记账，见[T8结果](reviews/2026-10-22-t8-results.md)。PRD M2最小核心已完成；用户取消自行复测，由Codex负责技术验收。个人讲解、外部反馈和赛事资格不能由自动日志代替。
+
+R1新增实际远端证据（2026-10-23）：私有仓库run39914869650的macOS14 arm64与Ubuntu24.04 x86_64各完整17步骤成功，新安装/构建/运行已完成。实际被测c1e74f58对应原始代码69f544fd，两个OS各58/28/42/15及1620调用、38文件包通过，产物下载hash复验。历史T8“未运行”仅限其阶段；当前见[REMOTE_CI](delivery/REMOTE_CI.md)。不把私有CI成功当公开、注册表发布或赛事接受。

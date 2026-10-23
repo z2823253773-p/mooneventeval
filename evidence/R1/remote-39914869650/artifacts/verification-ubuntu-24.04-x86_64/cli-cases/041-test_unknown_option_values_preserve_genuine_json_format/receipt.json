@@ -1,0 +1,13 @@
+{
+  "args": [
+    "evaluate",
+    "absent",
+    "unknown",
+    "--recording",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "9ef6b03918b82a85d51c919dcc506f25ef16909229fc2b8314e1e68e5aec92fb",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

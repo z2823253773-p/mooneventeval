@@ -1,0 +1,1 @@
+{"schema_version": 1, "labels": ["a"], "recordings": [{"id": "x", "reference": [{"id": "r", "label": "a", "onset_s": "2591999", "offset_s": "2592000"}], "prediction": []}], "config": {"collar_s": "2592000.000001"}}

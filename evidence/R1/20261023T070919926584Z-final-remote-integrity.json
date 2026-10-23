@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "evidence/R1/verify_remote.py",
+    "--check-only"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 2.229,
+  "log": "evidence/R1/20261023T070919926584Z-final-remote-integrity.log",
+  "log_sha256": "b497b9a903982870731aa8d0a000dcedd515dfef01fdeec70790b245052a4000",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

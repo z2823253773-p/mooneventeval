@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/cli",
+    "-v"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "environment_overrides": {
+    "MEE_BIN": "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "MEE_EVIDENCE": "/Users/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/cli-cases"
+  },
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "d2b05f07c345c664c415ba315ed22c350f655101a2a492e4cbbfade5ee3396e2",
+  "name": "cli-tests",
+  "elapsed_seconds": 0.3692,
+  "passed": true
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "scripts/verify.py",
+    "--mode",
+    "local",
+    "--evidence",
+    "evidence/R1/export-final"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-ci",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 44.421,
+  "log": "evidence/R1/20261023T065538247816Z-export-final-full.log",
+  "log_sha256": "9388c5f1edf6132fc7409d89e7125d34b35eaf847f25dbef8717c344a5760972",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

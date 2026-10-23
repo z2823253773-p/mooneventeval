@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "evidence/T7/freeze.py"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "6b09edb852cb2f19f19ec6a113c2313a02d847c62c5a9285c7d0a50878228d0d",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "historical-T7",
+  "elapsed_seconds": 0.8105,
+  "passed": true
+}

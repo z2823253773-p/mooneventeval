@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/mee-cli-u7neuibc/time-over",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "a60779f0d323d9d196c74efe4f26248dd9eb24bb4ce72f925122ba47f0bb730e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

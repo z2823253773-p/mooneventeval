@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/tmp/mee-cli-fcjkjf__/limit.json",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "623b30a446b2f6294734e853ee4f6a10ce23b399accccf9248eef91148dc505c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

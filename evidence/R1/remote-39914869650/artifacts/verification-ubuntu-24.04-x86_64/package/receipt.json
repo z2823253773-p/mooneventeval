@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.14.6/x64/bin/python3",
+    "scripts/package_candidate.py",
+    "--output",
+    "/home/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/package-cases"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "82542237d1c17376e218a425ad4dab8b772ac9b4955f245b6b666dd9e3f61395",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "package",
+  "elapsed_seconds": 7.6791,
+  "passed": true
+}

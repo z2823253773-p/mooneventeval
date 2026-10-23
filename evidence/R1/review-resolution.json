@@ -4,8 +4,13 @@
   "important": 1,
   "critical": 0,
   "minor": 0,
-  "disposition": "I1 fixed: real existing-metadata-matched-wrong-bytes RED, actual Git blob comparison GREEN; final6 transport/28 root tests pass; full export and remote suite pending",
+  "disposition": "I1 real RED-to-GREEN, final6 transport/28 Python; original and export final17 gates pass; actual macOS/Linux CI17 steps plus downloaded artifact bindings pass; no second independent review",
   "second_review": false,
   "author_followup": "Fresh export full gate exposed2 ignored original reviewer binaries missing from Git; exact frozen hashes verified and files explicitly added, no supplemental-ref mechanism needed; initial exploratory supplemental test/log retained as abandoned approach",
-  "declined_boundaries": "review certifies neither remote execution/privacy nor broad full gate/history map/giant-log bytes/races/followup; author must verify actual export and CI, keeping claims bounded"
+  "declined_boundaries": "review certifies neither remote execution/privacy nor broad full gate/history map/giant-log bytes/races/followup; author must verify actual export and CI, keeping claims bounded",
+  "rulings": [
+    "Independent review excluded remote/privacy/full graph/log/races/followup; author has bounded actual API/run/artifact/hash proof, no universal race or supply-chain claim",
+    "Original history remains unchanged; separate native GitHub graph mapped and full original history through4d5 bundled; extra2 ignored frozen reviewer binaries explicitly added in current commit",
+    "Transport and missing-proof corrections retain every historical gate; exploratory supplemental-ref path abandoned"
+  ]
 }

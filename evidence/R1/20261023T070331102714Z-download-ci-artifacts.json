@@ -1,0 +1,20 @@
+{
+  "command": [
+    "gh",
+    "run",
+    "download",
+    "39914869650",
+    "--repo",
+    "z2823253773-p/mooneventeval",
+    "--dir",
+    "evidence/R1/remote-39914869650/artifacts"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 8.117,
+  "log": "evidence/R1/20261023T070331102714Z-download-ci-artifacts.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

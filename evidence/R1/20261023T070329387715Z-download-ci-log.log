@@ -1,0 +1,1187 @@
+verify (macos-14, arm64)	Set up job	﻿2026-10-23T06:59:18.8133060Z Current runner version: '2.338.0'
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8151120Z ##[group]Runner Image Provisioner
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8151730Z Hosted Compute Agent
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8152280Z Version: 20260828.587
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8152740Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8153440Z Build Date: 2026-08-28T16:44:25Z
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8153910Z Worker ID: {9ad2f2a5-620f-42c9-abec-dcce73f235e0}
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8154490Z Azure Region: westus
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8154900Z ##[endgroup]
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8155800Z ##[group]Operating System
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8156260Z macOS
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8156760Z 14.8.9
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8157120Z 23J631
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8157450Z ##[endgroup]
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8157780Z ##[group]Runner Image
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8158270Z Image: macos-14-arm64
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8158710Z Version: 20260831.0302.1
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8159450Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8198900Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8199640Z ##[endgroup]
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8200350Z ##[group]GITHUB_TOKEN Permissions
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8202310Z Contents: read
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8202660Z Metadata: read
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8202990Z ##[endgroup]
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8204590Z Secret source: Actions
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8205220Z Cache mode: write
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8205690Z Prepare workflow directory
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8626360Z Prepare all required actions
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:18.8661650Z Getting action download info
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:19.1021710Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:19.4915080Z Download action repository 'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405' (SHA:a309ff8b426b58ec0e2a45f0f869d46889d02405)
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:19.6055690Z Download action repository 'astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098' (SHA:5a095e7a2014a4212f075830d4f7277575a9d098)
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:20.4307240Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify (macos-14, arm64)	Set up job	2026-10-23T06:59:20.6120280Z Complete job name: verify (macos-14, arm64)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	﻿2026-10-23T06:59:20.6502290Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6503140Z with:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6503610Z   fetch-depth: 0
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6504000Z   persist-credentials: false
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6504450Z   repository: z2823253773-p/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6507630Z   token: ***
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6507980Z   ssh-strict: true
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6508350Z   ssh-user: git
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6508810Z   clean: true
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6509320Z   sparse-checkout-cone-mode: true
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6509770Z   fetch-tags: false
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6510150Z   show-progress: true
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6510590Z   lfs: false
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6510980Z   submodules: false
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6511380Z   set-safe-directory: true
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6511880Z env:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6512220Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6512750Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6513620Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6514480Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6515310Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6516240Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.6516890Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.7997340Z Syncing repository: z2823253773-p/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.7999040Z ##[group]Getting Git version info
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8000210Z Working directory is '/Users/runner/work/mooneventeval/mooneventeval'
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8002360Z [command]/opt/homebrew/bin/git version
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8173240Z git version 2.55.0
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8184670Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8191040Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/dc44e671-7c81-4f3b-aff4-691d1a3d298a/.gitconfig'
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8198160Z Temporarily overriding HOME='/Users/runner/work/_temp/dc44e671-7c81-4f3b-aff4-691d1a3d298a' before making global git config changes
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8199180Z Adding repository directory to the temporary git global config as a safe directory
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8201240Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/mooneventeval/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8286210Z Deleting the contents of '/Users/runner/work/mooneventeval/mooneventeval'
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8289360Z ##[group]Initializing the repository
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8291850Z [command]/opt/homebrew/bin/git init /Users/runner/work/mooneventeval/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8450850Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8451880Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8452720Z hint: to use in all of your new repositories, which will suppress this warning,
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8453320Z hint: call:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8453670Z hint:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8454090Z hint: 	git config --global init.defaultBranch <name>
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8454610Z hint:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8455070Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8455790Z hint: 'development'. The just-created branch can be renamed via this command:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8456380Z hint:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8456720Z hint: 	git branch -m <name>
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8457070Z hint:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8457530Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8458300Z Initialized empty Git repository in /Users/runner/work/mooneventeval/mooneventeval/.git/
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8459870Z [command]/opt/homebrew/bin/git remote add origin https://github.com/z2823253773-p/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8508670Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8509260Z ##[group]Disabling automatic garbage collection
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8511410Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8556580Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8557490Z ##[group]Setting up auth
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8558350Z Removing SSH command configuration
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8562370Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.8618130Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.9387950Z Removing HTTP extra header
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.9392850Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:20.9517930Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.0772850Z Removing includeIf entries pointing to credentials config files
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.0782980Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.0829610Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1674690Z [command]/opt/homebrew/bin/git config --file /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1728710Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git.path /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1780210Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1832060Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1909710Z [command]/opt/homebrew/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1957400Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1958120Z ##[group]Fetching the repository
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:21.1962980Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8963780Z From https://github.com/z2823253773-p/mooneventeval
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8964860Z  * [new branch]        main       -> origin/main
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8972310Z [command]/opt/homebrew/bin/git branch --list --remote origin/main
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9022610Z   origin/main
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9028600Z [command]/opt/homebrew/bin/git rev-parse refs/remotes/origin/main
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9063690Z c1e74f58b495e8bf83986715f57d6d8f3bff76bd
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9066270Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9066950Z ##[group]Determining the checkout info
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9067800Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9070490Z [command]/opt/homebrew/bin/git sparse-checkout disable
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9121710Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9159520Z ##[group]Checking out the ref
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.9161690Z [command]/opt/homebrew/bin/git checkout --progress --force -B main refs/remotes/origin/main
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.1156920Z Updating files:   5% (5993/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.2504810Z Updating files:   6% (6663/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.3600210Z Updating files:   7% (7774/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.4857500Z Updating files:   8% (8884/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.5600360Z Updating files:   9% (9995/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.6560460Z Updating files:  10% (11105/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.7286550Z Updating files:  11% (12216/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:25.8025090Z Updating files:  12% (13326/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.0001540Z Updating files:  13% (14436/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.0247000Z Updating files:  13% (15348/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.1713370Z Updating files:  14% (15547/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.3589990Z Updating files:  15% (16657/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.5510010Z Updating files:  16% (17768/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.7690830Z Updating files:  17% (18878/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.9989900Z Updating files:  18% (19989/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.0116390Z Updating files:  18% (20936/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.0955200Z Updating files:  19% (21099/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.1757010Z Updating files:  20% (22210/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.3096470Z Updating files:  21% (23320/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.4325960Z Updating files:  22% (24431/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.6483210Z Updating files:  23% (25541/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.7617590Z Updating files:  24% (26652/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.9531630Z Updating files:  25% (27762/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.9996120Z Updating files:  26% (28872/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.0991190Z Updating files:  26% (29070/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.2006640Z Updating files:  27% (29983/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.3307900Z Updating files:  28% (31093/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.4662260Z Updating files:  29% (32204/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.5515780Z Updating files:  30% (33314/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.6292170Z Updating files:  31% (34425/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.7258170Z Updating files:  32% (35535/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.8062420Z Updating files:  33% (36646/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.8793360Z Updating files:  34% (37756/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.9546800Z Updating files:  35% (38867/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.0000700Z Updating files:  36% (39977/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.1667230Z Updating files:  36% (40210/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.3033620Z Updating files:  37% (41088/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.4716760Z Updating files:  38% (42198/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.5466900Z Updating files:  39% (43308/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.6801470Z Updating files:  40% (44419/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.8683170Z Updating files:  41% (45529/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.9453490Z Updating files:  42% (46640/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.0005350Z Updating files:  43% (47750/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.0230080Z Updating files:  43% (48514/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.1033640Z Updating files:  44% (48861/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.1921710Z Updating files:  45% (49971/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.3021050Z Updating files:  46% (51082/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.3922580Z Updating files:  47% (52192/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.4730360Z Updating files:  48% (53303/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.5871960Z Updating files:  49% (54413/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.7010940Z Updating files:  50% (55523/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.7719520Z Updating files:  51% (56634/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.8565500Z Updating files:  52% (57744/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.9348870Z Updating files:  53% (58855/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.0013860Z Updating files:  54% (59965/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.0244020Z Updating files:  54% (60746/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.1041250Z Updating files:  55% (61076/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.1857290Z Updating files:  56% (62186/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.2742320Z Updating files:  57% (63297/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.3802880Z Updating files:  58% (64407/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.5734330Z Updating files:  59% (65518/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.6494520Z Updating files:  60% (66628/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.7407500Z Updating files:  61% (67739/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.8449670Z Updating files:  62% (68849/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.9292360Z Updating files:  63% (69959/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.0009040Z Updating files:  64% (71070/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.0361090Z Updating files:  64% (71841/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.1089280Z Updating files:  65% (72180/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.1973800Z Updating files:  66% (73291/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.2694560Z Updating files:  67% (74401/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.3676210Z Updating files:  68% (75512/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.4597420Z Updating files:  69% (76622/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.5338020Z Updating files:  70% (77733/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.6061350Z Updating files:  71% (78843/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.6833440Z Updating files:  72% (79954/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.7574700Z Updating files:  73% (81064/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.8578010Z Updating files:  74% (82175/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.9401550Z Updating files:  75% (83285/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.0023760Z Updating files:  76% (84395/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.0193410Z Updating files:  76% (85308/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.0954490Z Updating files:  77% (85506/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.1702260Z Updating files:  78% (86616/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.2431660Z Updating files:  79% (87727/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.3174960Z Updating files:  80% (88837/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.3905820Z Updating files:  81% (89948/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.4643480Z Updating files:  82% (91058/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.5605010Z Updating files:  83% (92169/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.6505380Z Updating files:  84% (93279/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.7266520Z Updating files:  85% (94390/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.8019730Z Updating files:  86% (95500/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.8924090Z Updating files:  87% (96611/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.9645100Z Updating files:  88% (97721/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.0025560Z Updating files:  89% (98831/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.0345200Z Updating files:  89% (99450/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.1018050Z Updating files:  90% (99942/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.1713580Z Updating files:  91% (101052/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.2596810Z Updating files:  92% (102163/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.3345980Z Updating files:  93% (103273/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.4121690Z Updating files:  94% (104384/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.5137650Z Updating files:  95% (105494/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.5898600Z Updating files:  96% (106605/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.6691340Z Updating files:  97% (107715/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.7432580Z Updating files:  98% (108826/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8231210Z Updating files:  99% (109936/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8231630Z Updating files: 100% (111046/111046)
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8232210Z Updating files: 100% (111046/111046), done.
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9311670Z Switched to a new branch 'main'
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9315800Z branch 'main' set up to track 'origin/main'.
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9334710Z ##[endgroup]
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9411220Z [command]/opt/homebrew/bin/git log -1 --format=%H
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9457990Z c1e74f58b495e8bf83986715f57d6d8f3bff76bd
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9465860Z ##[group]Removing auth
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9466060Z Removing SSH command configuration
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9468510Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9509400Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0139660Z Removing HTTP extra header
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0142420Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0209000Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0797800Z Removing includeIf entries pointing to credentials config files
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0800500Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0839870Z includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0840330Z includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0841210Z includeif.gitdir:/github/workspace/.git.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0841460Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0844920Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0877850Z /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0883770Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git.path /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0922850Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0955010Z /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.0960890Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/Users/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path /Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1001970Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1033560Z /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1039150Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1077650Z [command]/opt/homebrew/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1106390Z /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1111910Z [command]/opt/homebrew/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1153390Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1836480Z Removing credentials config '/Users/runner/work/_temp/git-credentials-a96b3453-40ce-4863-9255-038d2d0bcb1f.config'
+verify (macos-14, arm64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.1845070Z ##[endgroup]
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	﻿2026-10-23T06:59:35.2003730Z ##[group]Run actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2004020Z with:
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2004150Z   python-version: 3.14.6
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2004300Z   check-latest: false
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006210Z   token: ***
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006340Z   update-environment: true
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006500Z   allow-prereleases: false
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006650Z   freethreaded: false
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006780Z env:
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2006890Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2007120Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2007480Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2007940Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2008360Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2008810Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2009150Z ##[endgroup]
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2964790Z ##[group]Installed versions
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.2985110Z Version 3.14.6 was not found in the local cache
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.2485820Z Version 3.14.6 is available for downloading
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.2486750Z Download from "https://github.com/actions/python-versions/releases/download/3.14.6-27283001424/python-3.14.6-darwin-arm64.tar.gz"
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.2639180Z Extract downloaded archive
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.2755170Z [command]/usr/bin/tar xz -C /Users/runner/work/_temp/020f9775-92db-47d8-9436-84b71d9e2917 -f /Users/runner/work/_temp/a60b11d1-cd87-46b0-896f-91500ae79df1
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.3901060Z Execute installation script
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.4074760Z Check if Python hostedtoolcache folder exist...
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.4130420Z Deleting Python /Users/runner/hostedtoolcache/Python/3.14.7/arm64
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:37.4192550Z Install Python binaries from prebuilt package
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2817450Z installer: Package name is Python
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2817970Z installer: choices changes file '/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/tmp.AhayWR40EU' applied
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2818420Z installer: Upgrading at base path /
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2818630Z installer: The upgrade was successful.
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2834870Z Create hostedtoolcach symlinks (Required for the backward compatibility)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2835810Z Create Python 3.14.6 folder
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2922020Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2966590Z Upgrading pip...
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.8194010Z Collecting pip
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.8691850Z Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.8921840Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9595810Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 41.8 MB/s  0:00:00
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9596150Z 
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9735620Z Installing collected packages: pip
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9736060Z Attempting uninstall: pip
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9746690Z Found existing installation: pip 26.2.1
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.9926210Z Uninstalling pip-26.2.1:
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.0836890Z Successfully uninstalled pip-26.2.1
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.6998990Z Successfully installed pip-26.2.2
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.7393470Z Install OpenSSL certificates
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.9666840Z Requirement already satisfied: certifi in /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages (2026.7.22)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.0244210Z Collecting certifi
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.0706720Z Downloading certifi-2026.10.19-py3-none-any.whl.metadata (2.5 kB)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.0874790Z Downloading certifi-2026.10.19-py3-none-any.whl (136 kB)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1220950Z Installing collected packages: certifi
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1222500Z Attempting uninstall: certifi
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1236370Z Found existing installation: certifi 2026.7.22
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1248660Z Uninstalling certifi-2026.7.22:
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1265280Z Successfully uninstalled certifi-2026.7.22
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1329780Z Successfully installed certifi-2026.10.19
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1828750Z -- pip install --upgrade certifi
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1829130Z  -- removing any existing file or link
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1829380Z  -- creating symlink to certifi certificate bundle
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1829700Z  -- setting permissions
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1829850Z  -- update complete
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1882220Z Create complete file
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1938880Z Successfully set up CPython (3.14.6)
+verify (macos-14, arm64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:51.1940460Z ##[endgroup]
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	﻿2026-10-23T06:59:51.2066160Z ##[group]Run python3 scripts/restore_ci_history.py
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2066500Z ^[[36;1mpython3 scripts/restore_ci_history.py^[[0m
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2135450Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2135690Z env:
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2135810Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2136080Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2136480Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2136870Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2137280Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2137720Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2138120Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2138480Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2138870Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2139170Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2139470Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.2139700Z ##[endgroup]
+verify (macos-14, arm64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:52.8508250Z {"passed": true, "scope": "lossless original history/proof restoration, not qualification by itself", "original_tip": "4d5d3fbb93972e4d64866528b4f8919bc6d3c8aa", "bundle_sha256": "13b8ca0a030bc5918586b2788e159ea99a0b425b8d371442b145da08a544e630", "restored_proofs": {"evidence/T7/independent-review/evidence/candidate-final-tracked-diff/stdout": {"bytes": 150195290, "sha256": "20463bc4de0ce638b5e6c60ecbf7082f914833a9a7aa6e30e07c8f4437279c15"}}}
+verify (macos-14, arm64)	Assert actual runner architecture	﻿2026-10-23T06:59:52.8599570Z ##[group]Run python3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ["EXPECTED_ARCH"]'
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8600390Z ^[[36;1mpython3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ["EXPECTED_ARCH"]'^[[0m
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8672930Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8673310Z env:
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8673510Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8673870Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8674610Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8675020Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8675510Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8676020Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8676510Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8676870Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8677220Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8677540Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8677850Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.8678090Z ##[endgroup]
+verify (macos-14, arm64)	Assert actual runner architecture	2026-10-23T06:59:52.9225520Z Darwin arm64
+verify (macos-14, arm64)	Pinned reference installer	﻿2026-10-23T06:59:52.9354190Z ##[group]Run astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9354500Z with:
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9354630Z   version: 0.11.14
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9354760Z   enable-cache: false
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9354910Z   activate-environment: false
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9355150Z   working-directory: /Users/runner/work/mooneventeval/mooneventeval
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9357430Z   github-token: ***
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9357840Z   cache-dependency-glob: **/*requirements*.txt
+verify (macos-14, arm64)	Pinned reference installer	**/*requirements*.in
+verify (macos-14, arm64)	Pinned reference installer	**/*constraints*.txt
+verify (macos-14, arm64)	Pinned reference installer	**/*constraints*.in
+verify (macos-14, arm64)	Pinned reference installer	**/pyproject.toml
+verify (macos-14, arm64)	Pinned reference installer	**/uv.lock
+verify (macos-14, arm64)	Pinned reference installer	**/*.py.lock
+verify (macos-14, arm64)	Pinned reference installer	
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9358280Z   restore-cache: true
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9358420Z   save-cache: true
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9358550Z   prune-cache: true
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9358680Z   cache-python: false
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9358830Z   ignore-nothing-to-cache: false
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9359010Z   ignore-empty-workdir: false
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9359220Z   add-problem-matchers: true
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9359380Z   resolution-strategy: highest
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9359580Z env:
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9359700Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9360020Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9360450Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9360850Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9361290Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9361800Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9362270Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9362640Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9363100Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9363430Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9363750Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:52.9363990Z ##[endgroup]
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0484540Z UV_CACHE_DIR is already set to /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0487300Z UV_PYTHON_INSTALL_DIR is already set to /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0528110Z (node:2895) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0529160Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0535390Z manifest-file not provided, reading from local file.
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0581670Z manifest-file does not contain version 0.11.14, arch aarch64, platform apple-darwin. Falling back to GitHub releases.
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.0582710Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.11.14/uv-aarch64-apple-darwin.tar.gz" ...
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.5785440Z [command]/usr/bin/tar xz -C /Users/runner/work/_temp/e3be882f-251e-489b-830f-7c7600ba2d2c -f /Users/runner/work/_temp/3b2819a7-2141-43c4-a38b-e0f92a9f7393
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7238860Z Added /Users/runner/.local/bin to the path
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7242940Z Added /Users/runner/hostedtoolcache/uv/0.11.14/aarch64 to the path
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7243650Z Set UV_PYTHON_INSTALL_DIR to /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7244630Z Added /Users/runner/work/mooneventeval/mooneventeval/.tools/python to the path
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7264450Z Set UV_CACHE_DIR to /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Pinned reference installer	2026-10-23T06:59:53.7264790Z Successfully installed uv version 0.11.14
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	﻿2026-10-23T06:59:53.8986220Z ##[group]Run python3 scripts/install_toolchain.py
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.8986550Z ^[[36;1mpython3 scripts/install_toolchain.py^[[0m
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9034090Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9034290Z env:
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9034400Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9034620Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9034970Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9035320Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9035760Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9036190Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9036540Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9036860Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9037210Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9037540Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9037820Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.9038040Z ##[endgroup]
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T07:00:01.8993140Z Finished. moon: ran 328 tasks, now up to date
+verify (macos-14, arm64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T07:00:01.9159450Z {"target": "darwin-aarch64", "moonc": "v0.10.14+7d59c7ec9 (2026-09-18)", "binary_sha256": "20967f9389ac54508899ee2fc051a3470d051452bac5818a9696ed4c144f3ec3", "binary_provenance": "pinned digest matches publisher sidecar and archive", "core_sha256": "6f18b8fdea18f85e628a75e4a1bd3977c5a5c9c6a836fd8824192b0e6bd91b14", "core_provenance": "Historical single-machine digest, not a publisher attestation. Mismatch is fatal."}
+verify (macos-14, arm64)	Create locked original reference environment	﻿2026-10-23T07:00:01.9239830Z ##[group]Run uv python install 3.11.14
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9240110Z ^[[36;1muv python install 3.11.14^[[0m
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9240390Z ^[[36;1muv venv --python 3.11.14 .venv-reference^[[0m
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9240870Z ^[[36;1muv pip install --python .venv-reference/bin/python --require-hashes --only-binary :all: -r validation/reference-build.lock^[[0m
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9241500Z ^[[36;1muv pip sync --python .venv-reference/bin/python --require-hashes --no-build-isolation validation/reference.lock^[[0m
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9241930Z ^[[36;1muv pip check --python .venv-reference/bin/python^[[0m
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9298380Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9298600Z env:
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9298720Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9298960Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9299330Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9299720Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9300560Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9301010Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9301400Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9301740Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9302070Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9302380Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9302680Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:01.9302920Z ##[endgroup]
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:02.1034640Z Downloading cpython-3.11.14-macos-aarch64-none (download) (19.1MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:02.9700280Z  Downloaded cpython-3.11.14-macos-aarch64-none (download)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.8668900Z Installed Python 3.11.14 in 1.90s
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.8670360Z  + cpython-3.11.14-macos-aarch64-none (python3.11)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.8682820Z warning: `/Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin` is not on your PATH. To use installed Python executables, run `export PATH="/Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin:$PATH"` or `uv python update-shell`.
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.9975360Z Using CPython 3.11.14
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.9975860Z Creating virtual environment at: .venv-reference
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:03.9988990Z Activate with: source .venv-reference/bin/activate
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.0742600Z Using Python 3.11.14 environment at: .venv-reference
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.2171940Z Resolved 1 package in 137ms
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.2318260Z Downloading setuptools (1.1MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.3764630Z  Downloaded setuptools
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.3771690Z Prepared 1 package in 159ms
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.3849240Z Installed 1 package in 7ms
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.3849770Z  + setuptools==80.9.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:04.3946360Z Using Python 3.11.14 environment at: .venv-reference
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:05.8347750Z Resolved 45 packages in 1.43s
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:05.9762200Z    Building sed-eval @ https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0681240Z Downloading numba (2.6MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0686020Z Downloading soundfile (1.1MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0689560Z Downloading scikit-learn (7.9MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0691200Z Downloading llvmlite (38.7MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0694240Z Downloading fonttools (3.0MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0695940Z Downloading numpy (13.3MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0698000Z Downloading scipy (19.4MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0699230Z Downloading pillow (4.6MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.0701700Z Downloading matplotlib (8.9MiB)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.2506960Z       Built sed-eval @ https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.4357250Z  Downloaded soundfile
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.7076220Z    Building dcase-util==0.2.20
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:06.9722300Z  Downloaded fonttools
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:07.0683840Z       Built dcase-util==0.2.20
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:07.0719160Z  Downloaded pillow
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:07.4303810Z  Downloaded matplotlib
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:07.5247820Z  Downloaded numba
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.0281360Z  Downloaded scikit-learn
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.1491700Z  Downloaded llvmlite
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.2151230Z  Downloaded numpy
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.3695320Z  Downloaded scipy
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.3698840Z Prepared 44 packages in 2.53s
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4683590Z Installed 44 packages in 98ms
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4683950Z  + audioread==3.1.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4684160Z  + certifi==2026.10.19
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4684490Z  + cffi==2.1.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4684680Z  + charset-normalizer==3.5.2
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4684880Z  + cloudpickle==3.1.2
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4685020Z  + contourpy==1.3.3
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4685160Z  + cycler==0.12.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4685310Z  + dcase-util==0.2.20
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4686780Z  + decorator==5.3.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4687480Z  + fonttools==4.67.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4687650Z  + future==1.0.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4687820Z  + idna==3.20
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4687950Z  + joblib==1.6.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688090Z  + kiwisolver==1.5.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688220Z  + lazy-loader==0.6
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688380Z  + librosa==0.11.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688520Z  + llvmlite==0.50.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688750Z  + matplotlib==3.11.2
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4688900Z  + msgpack==1.2.3
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4689060Z  + narwhals==2.27.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4689210Z  + numba==0.68.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4689460Z  + numpy==1.26.4
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4689650Z  + packaging==26.3
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4689850Z  + pillow==13.0.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690000Z  + platformdirs==4.13.5
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690170Z  + pooch==1.9.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690300Z  + pycparser==3.11
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690500Z  + pydot-ng==2.0.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690700Z  + pyparsing==3.3.3
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4690890Z  + python-dateutil==2.9.0.post0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4691110Z  + python-magic==0.4.27
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4691270Z  + pyyaml==6.0.3
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4691410Z  + requests==2.34.2
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4691560Z  + scikit-learn==1.9.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4691760Z  + scipy==1.17.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4692120Z  + sed-eval==0.2.1 (from https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz)
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4692510Z  + six==1.17.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4692650Z  + soundfile==0.14.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4692780Z  + soxr==1.1.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4692900Z  + threadpoolctl==3.7.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4693040Z  + tqdm==4.70.1
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4693170Z  + typing-extensions==4.16.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4693330Z  + urllib3==2.8.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4693460Z  + validators==0.36.0
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4803770Z Using Python 3.11.14 environment at: .venv-reference
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4815300Z Checked 45 packages in 1ms
+verify (macos-14, arm64)	Create locked original reference environment	2026-10-23T07:00:08.4936210Z All installed packages are compatible
+verify (macos-14, arm64)	Same complete verifier as local	﻿2026-10-23T07:00:08.5042250Z ##[group]Run python3 scripts/verify.py --mode local --evidence evidence/T8/ci
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5042680Z ^[[36;1mpython3 scripts/verify.py --mode local --evidence evidence/T8/ci^[[0m
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5106520Z shell: /bin/bash --noprofile --norc -e -o pipefail {0}
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5106740Z env:
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5106870Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5107100Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5107480Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5107880Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5108310Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5108870Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5109250Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5109650Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5109980Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5110290Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5110590Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:08.5110830Z ##[endgroup]
+verify (macos-14, arm64)	Same complete verifier as local	2026-10-23T07:00:59.5787520Z {"passed": true, "git_head": "c1e74f58b495e8bf83986715f57d6d8f3bff76bd", "steps": 17, "error": null, "remote_ci": "CURRENT_JOB_ONLY"}
+verify (macos-14, arm64)	Keep actual receipts on success or failure	﻿2026-10-23T07:00:59.5943690Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5943990Z with:
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5944130Z   name: verification-macos-14-arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5944350Z   path: evidence/T8/ci
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5944500Z   if-no-files-found: error
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5944650Z   retention-days: 14
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5944790Z   compression-level: 6
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5945300Z   overwrite: false
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5945440Z   include-hidden-files: false
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5945580Z env:
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5945720Z   EXPECTED_ARCH: arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5946030Z   UV_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5946410Z   UV_PYTHON_INSTALL_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5946800Z   UV_PYTHON_BIN_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5947220Z   MPLCONFIGDIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5947730Z   NUMBA_CACHE_DIR: /Users/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5948110Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5948450Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.14.6/arm64/lib/pkgconfig
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5948790Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5949090Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5949390Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.14.6/arm64
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.5949650Z ##[endgroup]
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.7058140Z (node:6719) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:00:59.7070090Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:00.5065760Z With the provided path, there will be 8145 files uploaded
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:00.5067380Z Artifact name is valid!
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:00.5067840Z Root directory input is valid!
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:00.8539940Z Beginning upload of artifact content to blob storage
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:02.8125320Z (node:6719) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:03.8312650Z Uploaded bytes 4276483
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:03.8700710Z Finished uploading artifact content to blob storage!
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:03.8702040Z SHA256 digest of uploaded artifact zip is 97f3cea422b6a502f4c6ade6c1e03d9c82fe2ffe3bfc82b41141ef17a119baf2
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:03.8703190Z Finalizing artifact upload
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:04.2863140Z Artifact verification-macos-14-arm64.zip successfully finalized. Artifact ID 12483713877
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:04.2863860Z Artifact verification-macos-14-arm64 has been successfully uploaded! Final size is 4276483 bytes. Artifact ID is 12483713877
+verify (macos-14, arm64)	Keep actual receipts on success or failure	2026-10-23T07:01:04.2870340Z Artifact download URL: https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650/artifacts/12483713877
+verify (macos-14, arm64)	Post Pinned reference installer	﻿2026-10-23T07:01:04.3120860Z Post job cleanup.
+verify (macos-14, arm64)	Post Pinned reference installer	2026-10-23T07:01:04.3994250Z UV_CACHE_DIR is already set to /Users/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (macos-14, arm64)	Post Pinned reference installer	2026-10-23T07:01:04.3996130Z UV_PYTHON_INSTALL_DIR is already set to /Users/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (macos-14, arm64)	Post Pinned reference installer	2026-10-23T07:01:04.3997740Z (node:6830) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (macos-14, arm64)	Post Pinned reference installer	2026-10-23T07:01:04.3998290Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (macos-14, arm64)	Post Developer Python (same release as local T8 tooling)	﻿2026-10-23T07:01:04.4086380Z Post job cleanup.
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	﻿2026-10-23T07:01:04.5029520Z Post job cleanup.
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5723440Z [command]/opt/homebrew/bin/git version
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5765440Z git version 2.55.0
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5782540Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/30628c1e-7fee-4fb8-9131-863c8336aa01/.gitconfig'
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5789560Z Temporarily overriding HOME='/Users/runner/work/_temp/30628c1e-7fee-4fb8-9131-863c8336aa01' before making global git config changes
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5790150Z Adding repository directory to the temporary git global config as a safe directory
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5792940Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/mooneventeval/mooneventeval
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5832870Z Removing SSH command configuration
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5837740Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.5875660Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.6407020Z Removing HTTP extra header
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.6411720Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.6453660Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.7299360Z Removing includeIf entries pointing to credentials config files
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.7299850Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (macos-14, arm64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:04.7300770Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (macos-14, arm64)	Complete job	﻿2026-10-23T07:01:04.8142700Z Cleaning up orphan processes
+verify (macos-14, arm64)	Complete job	2026-10-23T07:01:05.2376460Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64)	Set up job	﻿2026-10-23T06:59:19.3076529Z Current runner version: '2.338.0'
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3104079Z ##[group]Runner Image Provisioner
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3104917Z Hosted Compute Agent
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3105505Z Version: 20261012.601
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3106278Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3106951Z Build Date: 2026-10-12T17:48:21Z
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3107640Z Worker ID: {87877853-257f-4f88-a9ae-83dfa04e728c}
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3108348Z Region: centralus
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3108901Z Cloud: Azure
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3109395Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3110654Z ##[group]Operating System
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3111305Z Ubuntu
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3111814Z 24.04.5
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3112258Z LTS
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3112794Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3113273Z ##[group]Runner Image
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3113846Z Image: ubuntu-24.04
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3114444Z Version: 20261012.334.1
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3115402Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3117320Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3118863Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3119841Z ##[group]GITHUB_TOKEN Permissions
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3121633Z Contents: read
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3122009Z Metadata: read
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3122340Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3123852Z Secret source: Actions
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3124403Z Cache mode: write
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.3125100Z Prepare workflow directory
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.5510031Z Prepare all required actions
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.5543679Z Getting action download info
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:19.7815952Z Download action repository 'actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd' (SHA:de0fac2e4500dabe0009e67214ff5f5447ce83dd)
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:20.5166524Z Download action repository 'actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405' (SHA:a309ff8b426b58ec0e2a45f0f869d46889d02405)
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:21.0639243Z Download action repository 'astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098' (SHA:5a095e7a2014a4212f075830d4f7277575a9d098)
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:22.3162104Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify (ubuntu-24.04, x86_64)	Set up job	2026-10-23T06:59:23.0998293Z Complete job name: verify (ubuntu-24.04, x86_64)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	﻿2026-10-23T06:59:23.2858172Z ##[group]Run actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2858612Z with:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2858784Z   fetch-depth: 0
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2858929Z   persist-credentials: false
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2859088Z   repository: z2823253773-p/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2860819Z   token: ***
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2860938Z   ssh-strict: true
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861067Z   ssh-user: git
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861196Z   clean: true
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861347Z   sparse-checkout-cone-mode: true
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861519Z   fetch-tags: false
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861673Z   show-progress: true
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861839Z   lfs: false
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2861964Z   submodules: false
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2862104Z   set-safe-directory: true
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2862476Z env:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2862634Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2862877Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2863207Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2863602Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2863972Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2864368Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.2864648Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.3938918Z Syncing repository: z2823253773-p/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.3940507Z ##[group]Getting Git version info
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.3941437Z Working directory is '/home/runner/work/mooneventeval/mooneventeval'
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.3942644Z [command]/usr/bin/git version
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.4033962Z git version 2.55.0
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.4087360Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.4094170Z Temporarily overriding HOME='/home/runner/work/_temp/4bac7d35-5650-40b0-a3b3-c733678ff03d' before making global git config changes
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.4095101Z Adding repository directory to the temporary git global config as a safe directory
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.4095854Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mooneventeval/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.5114952Z Deleting the contents of '/home/runner/work/mooneventeval/mooneventeval'
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.5118628Z ##[group]Initializing the repository
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.5123190Z [command]/usr/bin/git init /home/runner/work/mooneventeval/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6905451Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6906425Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6924041Z hint: to use in all of your new repositories, which will suppress this warning,
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6924785Z hint: call:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6925099Z hint:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6925505Z hint: 	git config --global init.defaultBranch <name>
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6925924Z hint:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6926658Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6928620Z hint: 'development'. The just-created branch can be renamed via this command:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6928979Z hint:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6929176Z hint: 	git branch -m <name>
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6929403Z hint:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6929697Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6930220Z Initialized empty Git repository in /home/runner/work/mooneventeval/mooneventeval/.git/
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.6931350Z [command]/usr/bin/git remote add origin https://github.com/z2823253773-p/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8965665Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8966552Z ##[group]Disabling automatic garbage collection
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:23.8967183Z [command]/usr/bin/git config --local gc.auto 0
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1070560Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1076867Z ##[group]Setting up auth
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1096844Z Removing SSH command configuration
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1103382Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1134596Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1714586Z Removing HTTP extra header
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1737347Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.1777736Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.2287237Z Removing includeIf entries pointing to credentials config files
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.2394831Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.2396336Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.2472958Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.2841378Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git.path /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.4738891Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.6703656Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.7095957Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.7577865Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.7578401Z ##[group]Fetching the repository
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:24.7582039Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6586852Z From https://github.com/z2823253773-p/mooneventeval
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6587234Z  * [new branch]        main       -> origin/main
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6677085Z [command]/usr/bin/git branch --list --remote origin/main
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6689477Z   origin/main
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6691791Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6692311Z c1e74f58b495e8bf83986715f57d6d8f3bff76bd
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6693408Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6693916Z ##[group]Determining the checkout info
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6694478Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6694846Z [command]/usr/bin/git sparse-checkout disable
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6730842Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6759780Z ##[group]Checking out the ref
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:26.6762802Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.7747129Z Updating files:  22% (24454/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.8257908Z Updating files:  23% (25541/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.8588787Z Updating files:  24% (26652/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.8958778Z Updating files:  25% (27762/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.9275527Z Updating files:  26% (28872/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:27.9608358Z Updating files:  27% (29983/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.3537292Z Updating files:  28% (31093/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.3847386Z Updating files:  29% (32204/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.4168050Z Updating files:  30% (33314/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.4488834Z Updating files:  31% (34425/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.4821421Z Updating files:  32% (35535/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.5172784Z Updating files:  33% (36646/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.5495617Z Updating files:  34% (37756/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.5821072Z Updating files:  35% (38867/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.6137537Z Updating files:  36% (39977/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.6459950Z Updating files:  37% (41088/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.6791822Z Updating files:  38% (42198/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.7112989Z Updating files:  39% (43308/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.7404069Z Updating files:  40% (44419/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.7449098Z Updating files:  40% (45378/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.7776754Z Updating files:  41% (45529/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:28.8104332Z Updating files:  42% (46640/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.7086432Z Updating files:  43% (47750/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.7402535Z Updating files:  44% (48861/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.7406812Z Updating files:  45% (49971/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.7715086Z Updating files:  45% (49975/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.8021402Z Updating files:  46% (51082/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.8334052Z Updating files:  47% (52192/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.8644167Z Updating files:  48% (53303/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.8956569Z Updating files:  49% (54413/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.9275877Z Updating files:  50% (55523/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.9594107Z Updating files:  51% (56634/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:29.9911706Z Updating files:  52% (57744/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.0292100Z Updating files:  53% (58855/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.0643315Z Updating files:  54% (59965/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.1355057Z Updating files:  55% (61076/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:30.1914052Z Updating files:  56% (62186/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.2895447Z Updating files:  57% (63297/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.2991784Z Updating files:  57% (64092/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.3310534Z Updating files:  58% (64407/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.3634953Z Updating files:  59% (65518/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.3954038Z Updating files:  60% (66628/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.4275055Z Updating files:  61% (67739/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.4604043Z Updating files:  62% (68849/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:31.4969972Z Updating files:  63% (69959/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.4207958Z Updating files:  64% (71070/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.4310484Z Updating files:  64% (71782/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.4643152Z Updating files:  65% (72180/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.4971689Z Updating files:  66% (73291/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.5308568Z Updating files:  67% (74401/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.5801541Z Updating files:  68% (75512/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.6251864Z Updating files:  69% (76622/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.7424118Z Updating files:  70% (77733/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.7471216Z Updating files:  70% (78631/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.7824703Z Updating files:  71% (78843/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.8136838Z Updating files:  72% (79954/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.8467193Z Updating files:  73% (81064/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.8815960Z Updating files:  74% (82175/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:32.9157915Z Updating files:  75% (83285/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.8063455Z Updating files:  76% (84395/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.8496876Z Updating files:  76% (84785/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.8826443Z Updating files:  77% (85506/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.9155110Z Updating files:  78% (86616/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.9486620Z Updating files:  79% (87727/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:33.9802706Z Updating files:  80% (88837/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.0121231Z Updating files:  81% (89948/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.0443034Z Updating files:  82% (91058/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.0825687Z Updating files:  83% (92169/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.1176960Z Updating files:  84% (93279/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.1539602Z Updating files:  85% (94390/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.1885205Z Updating files:  86% (95500/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.2216886Z Updating files:  87% (96611/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.2543038Z Updating files:  88% (97721/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.2862527Z Updating files:  89% (98831/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8013583Z Updating files:  90% (99942/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8154473Z Updating files:  90% (100561/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8523505Z Updating files:  91% (101052/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.8882580Z Updating files:  92% (102163/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9224758Z Updating files:  93% (103273/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9552061Z Updating files:  94% (104384/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:34.9876501Z Updating files:  95% (105494/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.5084715Z Updating files:  96% (106605/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.5420781Z Updating files:  97% (107715/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.5742618Z Updating files:  98% (108826/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.6116933Z Updating files:  99% (109936/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.6119274Z Updating files: 100% (111046/111046)
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.6119966Z Updating files: 100% (111046/111046), done.
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7192318Z Switched to a new branch 'main'
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7241513Z branch 'main' set up to track 'origin/main'.
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7243508Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7317345Z [command]/usr/bin/git log -1 --format=%H
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7348736Z c1e74f58b495e8bf83986715f57d6d8f3bff76bd
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7358286Z ##[group]Removing auth
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7358728Z Removing SSH command configuration
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7363221Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7419234Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7764390Z Removing HTTP extra header
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7769543Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.7830135Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8134527Z Removing includeIf entries pointing to credentials config files
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8138088Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8187017Z includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8194694Z includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8206853Z includeif.gitdir:/github/workspace/.git.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8226907Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8255198Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8256222Z /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8257876Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git.path /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8397138Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8452386Z /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8471464Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/mooneventeval/mooneventeval/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8523812Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8552279Z /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8560753Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8607605Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8635161Z /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8647039Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.8711845Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.9035208Z Removing credentials config '/home/runner/work/_temp/git-credentials-5b4a79ab-8740-4c71-bf4c-efd07e53a5ae.config'
+verify (ubuntu-24.04, x86_64)	Checkout exact dispatched commit and historical proof objects	2026-10-23T06:59:35.9048191Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	﻿2026-10-23T06:59:35.9342282Z ##[group]Run actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9342539Z with:
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9342669Z   python-version: 3.14.6
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9342811Z   check-latest: false
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9344358Z   token: ***
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9344482Z   update-environment: true
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9344625Z   allow-prereleases: false
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9344762Z   freethreaded: false
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9344884Z env:
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9345118Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9345346Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9345651Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9345964Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9346710Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9347071Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:35.9347383Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.0370420Z ##[group]Installed versions
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.0503801Z Version 3.14.6 was not found in the local cache
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.9419330Z Version 3.14.6 is available for downloading
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:36.9420335Z Download from "https://github.com/actions/python-versions/releases/download/3.14.6-27283001424/python-3.14.6-linux-24.04-x64.tar.gz"
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:38.1816269Z Extract downloaded archive
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:38.1935923Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1e01c9aa-b60c-4b81-ae28-123cce11c907 -f /home/runner/work/_temp/0ea9c8a6-4824-4326-bbf7-c4786311c23f
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:41.0432886Z Execute installation script
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:41.0551095Z Check if Python hostedtoolcache folder exist...
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:41.0559321Z Create Python 3.14.6 folder
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:41.0567321Z Copy Python binaries to hostedtoolcache folder
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:42.2654708Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:42.2695852Z Upgrading pip...
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.1003667Z Collecting pip
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.1604821Z Downloading pip-26.2.2-py3-none-any.whl.metadata (4.6 kB)
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.1762994Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2951691Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 18.1 MB/s  0:00:00
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.2957880Z 
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.3168329Z Installing collected packages: pip
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.3182988Z Attempting uninstall: pip
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.3197717Z Found existing installation: pip 26.1.2
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.3392832Z Uninstalling pip-26.1.2:
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:49.3437405Z Successfully uninstalled pip-26.1.2
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.1454085Z Successfully installed pip-26.2.2
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.2275947Z Create complete file
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.2315745Z Successfully set up CPython (3.14.6)
+verify (ubuntu-24.04, x86_64)	Developer Python (same release as local T8 tooling)	2026-10-23T06:59:50.2316792Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	﻿2026-10-23T06:59:50.2489871Z ##[group]Run python3 scripts/restore_ci_history.py
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2490185Z ^[[36;1mpython3 scripts/restore_ci_history.py^[[0m
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2696974Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2697223Z env:
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2697347Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2697544Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2697835Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2698127Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2698453Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2698807Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2699081Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2699335Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2699643Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2699851Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2700050Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2700256Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:50.2700433Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Restore exact original history and oversized historical proof	2026-10-23T06:59:51.9884842Z {"passed": true, "scope": "lossless original history/proof restoration, not qualification by itself", "original_tip": "4d5d3fbb93972e4d64866528b4f8919bc6d3c8aa", "bundle_sha256": "13b8ca0a030bc5918586b2788e159ea99a0b425b8d371442b145da08a544e630", "restored_proofs": {"evidence/T7/independent-review/evidence/candidate-final-tracked-diff/stdout": {"bytes": 150195290, "sha256": "20463bc4de0ce638b5e6c60ecbf7082f914833a9a7aa6e30e07c8f4437279c15"}}}
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	﻿2026-10-23T06:59:52.0165496Z ##[group]Run python3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ["EXPECTED_ARCH"]'
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0166273Z ^[[36;1mpython3 -c 'import os,platform; print(platform.system(),platform.machine()); assert platform.machine()==os.environ["EXPECTED_ARCH"]'^[[0m
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0221409Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0221635Z env:
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0221758Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0221962Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0222250Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0222539Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0222876Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0223215Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0223563Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0223789Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0224013Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0224214Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0224418Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0224626Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0224808Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Assert actual runner architecture	2026-10-23T06:59:52.0457415Z Linux x86_64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	﻿2026-10-23T06:59:52.1712532Z ##[group]Run astral-sh/setup-uv@5a095e7a2014a4212f075830d4f7277575a9d098
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1712902Z with:
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1713079Z   version: 0.11.14
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1713267Z   enable-cache: false
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1713473Z   activate-environment: false
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1713773Z   working-directory: /home/runner/work/mooneventeval/mooneventeval
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1715862Z   github-token: ***
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1716391Z   cache-dependency-glob: **/*requirements*.txt
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/*requirements*.in
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/*constraints*.txt
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/*constraints*.in
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/pyproject.toml
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/uv.lock
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	**/*.py.lock
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1716730Z   restore-cache: true
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1716853Z   save-cache: true
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1716968Z   prune-cache: true
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717083Z   cache-python: false
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717214Z   ignore-nothing-to-cache: false
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717361Z   ignore-empty-workdir: false
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717502Z   add-problem-matchers: true
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717639Z   resolution-strategy: highest
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717832Z env:
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1717941Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1718134Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1718422Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1718715Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1719037Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1719378Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1719664Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1719897Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1720122Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1720329Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1720536Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1720924Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.1721104Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.2756483Z UV_CACHE_DIR is already set to /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.2759302Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.2825581Z (node:2150) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.2826575Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.3256645Z manifest-file not provided, reading from local file.
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.3266688Z manifest-file does not contain version 0.11.14, arch x86_64, platform unknown-linux-gnu. Falling back to GitHub releases.
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.3276775Z Downloading uv from "https://github.com/astral-sh/uv/releases/download/0.11.14/uv-x86_64-unknown-linux-gnu.tar.gz" ...
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:52.6920273Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/bb1eb5d4-0968-4928-92bf-0cdf8d3df9b7 -f /home/runner/work/_temp/9c932e5a-e87c-4002-9a6b-117f0304c394
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.5996967Z Added /home/runner/.local/bin to the path
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.5998928Z Added /opt/hostedtoolcache/uv/0.11.14/x86_64 to the path
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.6000041Z Set UV_PYTHON_INSTALL_DIR to /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.6000753Z Added /home/runner/work/mooneventeval/mooneventeval/.tools/python to the path
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.6010467Z Set UV_CACHE_DIR to /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Pinned reference installer	2026-10-23T06:59:53.6012753Z Successfully installed uv version 0.11.14
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	﻿2026-10-23T06:59:53.7702354Z ##[group]Run python3 scripts/install_toolchain.py
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7702724Z ^[[36;1mpython3 scripts/install_toolchain.py^[[0m
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7756442Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7756662Z env:
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7756781Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7756975Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7757263Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7757560Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7757995Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7758419Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7758685Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7758911Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7759180Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7759383Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7759588Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7759791Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T06:59:53.7759970Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T07:00:04.7914938Z Finished. moon: ran 328 tasks, now up to date
+verify (ubuntu-24.04, x86_64)	Install and hash-verify pinned MoonBit binary/core	2026-10-23T07:00:04.8427738Z {"target": "linux-x86_64", "moonc": "v0.10.14+7d59c7ec9 (2026-09-18)", "binary_sha256": "9226694de9ff978db1ecf820b7710c4224e84ec7a76b19a222d96f0cd4e31b6a", "binary_provenance": "pinned digest matches publisher sidecar and archive", "core_sha256": "6f18b8fdea18f85e628a75e4a1bd3977c5a5c9c6a836fd8824192b0e6bd91b14", "core_provenance": "Historical single-machine digest, not a publisher attestation. Mismatch is fatal."}
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	﻿2026-10-23T07:00:04.9199965Z ##[group]Run uv python install 3.11.14
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9200295Z ^[[36;1muv python install 3.11.14^[[0m
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9200543Z ^[[36;1muv venv --python 3.11.14 .venv-reference^[[0m
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9201027Z ^[[36;1muv pip install --python .venv-reference/bin/python --require-hashes --only-binary :all: -r validation/reference-build.lock^[[0m
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9201885Z ^[[36;1muv pip sync --python .venv-reference/bin/python --require-hashes --no-build-isolation validation/reference.lock^[[0m
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9202372Z ^[[36;1muv pip check --python .venv-reference/bin/python^[[0m
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9262958Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9263174Z env:
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9263294Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9263493Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9263779Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9264073Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9264439Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9264780Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9265049Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9265274Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9265497Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9265697Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9265896Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9266251Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:04.9266430Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:05.2253923Z Downloading cpython-3.11.14-linux-x86_64-gnu (download) (29.8MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:05.8936874Z  Downloaded cpython-3.11.14-linux-x86_64-gnu (download)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.4239763Z Installed Python 3.11.14 in 1.29s
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.4241654Z  + cpython-3.11.14-linux-x86_64-gnu (python3.11)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.4253993Z warning: `/home/runner/work/mooneventeval/mooneventeval/.tools/python-bin` is not on your PATH. To use installed Python executables, run `$env:PATH = "/home/runner/work/mooneventeval/mooneventeval/.tools/python-bin;$env:PATH"` or `uv python update-shell`.
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.6602941Z Using CPython 3.11.14
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.6603666Z Creating virtual environment at: .venv-reference
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.6610536Z Activate with: .venv-reference/bin/activate
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:06.8909828Z Using Python 3.11.14 environment at: .venv-reference
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.3693056Z Resolved 1 package in 477ms
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.3839987Z Downloading setuptools (1.1MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.4822259Z  Downloaded setuptools
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.7009977Z Prepared 1 package in 331ms
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.9315584Z Installed 1 package in 229ms
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.9316231Z  + setuptools==80.9.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:07.9386382Z Using Python 3.11.14 environment at: .venv-reference
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.2818350Z Resolved 45 packages in 1.34s
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3200704Z Downloading fonttools (5.2MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3373053Z Downloading numpy (17.4MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3376532Z Downloading scikit-learn (8.9MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3377096Z Downloading llvmlite (56.9MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3377487Z Downloading soundfile (1.3MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3379034Z Downloading kiwisolver (1.4MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3380164Z Downloading scipy (33.7MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3393064Z Downloading numba (3.7MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3394000Z Downloading matplotlib (9.4MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3394386Z Downloading pillow (6.8MiB)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.3508245Z    Building sed-eval @ https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.5862655Z       Built sed-eval @ https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.6207734Z  Downloaded soundfile
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.6318487Z  Downloaded kiwisolver
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:09.6909561Z    Building dcase-util==0.2.20
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.0372305Z       Built dcase-util==0.2.20
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.0577763Z  Downloaded fonttools
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.1179608Z  Downloaded pillow
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.1810823Z  Downloaded numba
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.4035532Z  Downloaded numpy
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.4622631Z  Downloaded scikit-learn
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.4644315Z  Downloaded matplotlib
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.7553134Z  Downloaded llvmlite
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.8850663Z  Downloaded scipy
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:10.8944554Z Prepared 44 packages in 1.61s
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9218337Z Installed 44 packages in 1.02s
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9218927Z  + audioread==3.1.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9219398Z  + certifi==2026.10.19
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9219701Z  + cffi==2.1.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9219958Z  + charset-normalizer==3.5.2
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9220274Z  + cloudpickle==3.1.2
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9220528Z  + contourpy==1.3.3
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9220774Z  + cycler==0.12.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9221020Z  + dcase-util==0.2.20
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9221270Z  + decorator==5.3.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9221532Z  + fonttools==4.67.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9221781Z  + future==1.0.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9222011Z  + idna==3.20
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9222245Z  + joblib==1.6.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9222486Z  + kiwisolver==1.5.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9222743Z  + lazy-loader==0.6
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9222984Z  + librosa==0.11.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9223246Z  + llvmlite==0.50.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9223493Z  + matplotlib==3.11.2
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9223778Z  + msgpack==1.2.3
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9224039Z  + narwhals==2.27.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9224281Z  + numba==0.68.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9224545Z  + numpy==1.26.4
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9224788Z  + packaging==26.3
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9225048Z  + pillow==13.0.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9225298Z  + platformdirs==4.13.5
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9225590Z  + pooch==1.9.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9225830Z  + pycparser==3.11
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9226274Z  + pydot-ng==2.0.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9226510Z  + pyparsing==3.3.3
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9226768Z  + python-dateutil==2.9.0.post0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9227068Z  + python-magic==0.4.27
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9227324Z  + pyyaml==6.0.3
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9227584Z  + requests==2.34.2
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9227842Z  + scikit-learn==1.9.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9228112Z  + scipy==1.17.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9228654Z  + sed-eval==0.2.1 (from https://github.com/TUT-ARG/sed_eval/archive/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb.tar.gz)
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9229209Z  + six==1.17.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9229487Z  + soundfile==0.14.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9229751Z  + soxr==1.1.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9229992Z  + threadpoolctl==3.7.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9230254Z  + tqdm==4.70.1
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9230522Z  + typing-extensions==4.16.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9230804Z  + urllib3==2.8.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9231066Z  + validators==0.36.0
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9320886Z Using Python 3.11.14 environment at: .venv-reference
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9330142Z Checked 45 packages in 1ms
+verify (ubuntu-24.04, x86_64)	Create locked original reference environment	2026-10-23T07:00:11.9357538Z All installed packages are compatible
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	﻿2026-10-23T07:00:11.9410832Z ##[group]Run python3 scripts/verify.py --mode local --evidence evidence/T8/ci
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9411324Z ^[[36;1mpython3 scripts/verify.py --mode local --evidence evidence/T8/ci^[[0m
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9478871Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9479085Z env:
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9479208Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9479411Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9479701Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9479996Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9480315Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9480655Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9480932Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9481383Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9481633Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9481835Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9482039Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9482247Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:00:11.9482429Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Same complete verifier as local	2026-10-23T07:01:20.3874296Z {"passed": true, "git_head": "c1e74f58b495e8bf83986715f57d6d8f3bff76bd", "steps": 17, "error": null, "remote_ci": "CURRENT_JOB_ONLY"}
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	﻿2026-10-23T07:01:20.4034798Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035050Z with:
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035177Z   name: verification-ubuntu-24.04-x86_64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035331Z   path: evidence/T8/ci
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035457Z   if-no-files-found: error
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035589Z   retention-days: 14
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035724Z   compression-level: 6
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035843Z   overwrite: false
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4035960Z   include-hidden-files: false
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4036364Z env:
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4036470Z   EXPECTED_ARCH: x86_64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4036665Z   UV_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4036950Z   UV_PYTHON_INSTALL_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4037241Z   UV_PYTHON_BIN_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/python-bin
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4037561Z   MPLCONFIGDIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/matplotlib
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4037933Z   NUMBA_CACHE_DIR: /home/runner/work/mooneventeval/mooneventeval/.tools/reference-cache/numba
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4038200Z   pythonLocation: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4038425Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib/pkgconfig
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4038654Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4038857Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4039057Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.14.6/x64
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4039258Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.14.6/x64/lib
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.4039433Z ##[endgroup]
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.5241386Z (node:5912) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:20.5242260Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:21.3836334Z With the provided path, there will be 8145 files uploaded
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:21.3837026Z Artifact name is valid!
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:21.3837313Z Root directory input is valid!
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:21.6752784Z Beginning upload of artifact content to blob storage
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:24.2771724Z (node:5912) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:24.7174800Z Uploaded bytes 4272478
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:24.7545939Z Finished uploading artifact content to blob storage!
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:24.7547769Z SHA256 digest of uploaded artifact zip is c3bb64c99a53d8a2411ed40563a610090948afa5fa8519b163937c6f1b688983
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:24.7549271Z Finalizing artifact upload
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:25.2014782Z Artifact verification-ubuntu-24.04-x86_64.zip successfully finalized. Artifact ID 12483994868
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:25.2015667Z Artifact verification-ubuntu-24.04-x86_64 has been successfully uploaded! Final size is 4272478 bytes. Artifact ID is 12483994868
+verify (ubuntu-24.04, x86_64)	Keep actual receipts on success or failure	2026-10-23T07:01:25.2022565Z Artifact download URL: https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650/artifacts/12483994868
+verify (ubuntu-24.04, x86_64)	Post Pinned reference installer	﻿2026-10-23T07:01:25.2433336Z Post job cleanup.
+verify (ubuntu-24.04, x86_64)	Post Pinned reference installer	2026-10-23T07:01:25.3344721Z UV_CACHE_DIR is already set to /home/runner/work/mooneventeval/mooneventeval/.tools/uv-cache
+verify (ubuntu-24.04, x86_64)	Post Pinned reference installer	2026-10-23T07:01:25.3349427Z UV_PYTHON_INSTALL_DIR is already set to /home/runner/work/mooneventeval/mooneventeval/.tools/python
+verify (ubuntu-24.04, x86_64)	Post Pinned reference installer	2026-10-23T07:01:25.3350296Z (node:5934) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (ubuntu-24.04, x86_64)	Post Pinned reference installer	2026-10-23T07:01:25.3351068Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (ubuntu-24.04, x86_64)	Post Developer Python (same release as local T8 tooling)	﻿2026-10-23T07:01:25.3537564Z Post job cleanup.
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	﻿2026-10-23T07:01:25.4858537Z Post job cleanup.
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5563735Z [command]/usr/bin/git version
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5625643Z git version 2.55.0
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5666805Z Temporarily overriding HOME='/home/runner/work/_temp/9e849389-9d43-4464-9a44-3e02faaf99d4' before making global git config changes
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5667746Z Adding repository directory to the temporary git global config as a safe directory
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5674084Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mooneventeval/mooneventeval
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5767929Z Removing SSH command configuration
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5786971Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.5808063Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6606575Z Removing HTTP extra header
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6607410Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6651576Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6940645Z Removing includeIf entries pointing to credentials config files
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6947675Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (ubuntu-24.04, x86_64)	Post Checkout exact dispatched commit and historical proof objects	2026-10-23T07:01:25.6984216Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (ubuntu-24.04, x86_64)	Complete job	﻿2026-10-23T07:01:25.7389329Z Cleaning up orphan processes
+verify (ubuntu-24.04, x86_64)	Complete job	2026-10-23T07:01:25.7593968Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

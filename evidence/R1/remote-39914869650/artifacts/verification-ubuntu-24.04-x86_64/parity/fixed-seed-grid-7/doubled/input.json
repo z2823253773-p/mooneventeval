@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["A","B","unused"],"recordings":[{"id":"clip-01","reference":[{"id":"r0","label":"B","onset_s":"1.875","offset_s":"2.625"}],"prediction":[]},{"id":"clone:clip-01","reference":[{"id":"r0","label":"B","onset_s":"1.875","offset_s":"2.625"}],"prediction":[]}],"config":{"collar_s":"0.25","offset_ratio":"0.5"}}

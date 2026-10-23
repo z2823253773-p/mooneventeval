@@ -1,0 +1,10 @@
+{
+  "scope": "documentation-only closeout after actual CI; runtime/verifier/workflow unchanged",
+  "R1_manifest_sha256": "23754a792ef8d037a244713f396a9c9c4ef263bf6f07f1e0490d5eab2c869e56",
+  "export_tested_sha": "c1e74f58b495e8bf83986715f57d6d8f3bff76bd",
+  "original_author_code_sha": "69f544fdcfd6bdd13bff273279da7dd5fdfc56d6",
+  "run_id": 39914869650,
+  "run_url": "https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650",
+  "private": true,
+  "ignored_artifacts_forced_into_git": []
+}

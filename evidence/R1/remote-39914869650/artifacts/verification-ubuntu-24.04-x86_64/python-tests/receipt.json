@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.14.6/x64/bin/python3",
+    "-W",
+    "error::ResourceWarning",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "d31ed2712399052cad1f818b9ba6d05ffa108d98c6ee350403b3ab17060a12fb",
+  "name": "python-tests",
+  "elapsed_seconds": 14.2651,
+  "passed": true
+}

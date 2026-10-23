@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/tmp/mee-cli-fcjkjf__/schema",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "6b8e00f5ae7f2c91ed879ff3cf6fccd0b27ce6e84311cd676588042d930ac9fe",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

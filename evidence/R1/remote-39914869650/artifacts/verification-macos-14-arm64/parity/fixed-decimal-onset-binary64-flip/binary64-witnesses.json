@@ -1,0 +1,13 @@
+[
+  {
+    "recording_id": "clip-01",
+    "reference": "r",
+    "prediction": "p",
+    "exact_eligible": true,
+    "binary64_eligible": false,
+    "binary64_onset_delta": "0x1.99999999999c0p-3",
+    "binary64_collar": "0x1.999999999999ap-3",
+    "binary64_offset_delta": "0x1.99999999999c0p-3",
+    "binary64_offset_limit": "0x1.0000000000000p+0"
+  }
+]

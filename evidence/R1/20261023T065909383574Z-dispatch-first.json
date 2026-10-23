@@ -1,0 +1,19 @@
+{
+  "command": [
+    "gh",
+    "api",
+    "repos/z2823253773-p/mooneventeval/actions/workflows/ci.yml/dispatches",
+    "--method",
+    "POST",
+    "-f",
+    "ref=main"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-ci",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 1.959,
+  "log": "evidence/R1/20261023T065909383574Z-dispatch-first.log",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

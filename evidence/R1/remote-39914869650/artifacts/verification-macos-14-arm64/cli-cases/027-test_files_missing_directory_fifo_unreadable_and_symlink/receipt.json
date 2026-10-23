@@ -1,0 +1,11 @@
+{
+  "args": [
+    "evaluate",
+    "/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/mee-cli-stxjfeho/pipe",
+    "--format",
+    "json"
+  ],
+  "exit_code": 2,
+  "stdout_sha256": "d11f28dcbf1621dc2f43c978223d1a829064b3093b0f3e0fa475116a12311695",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

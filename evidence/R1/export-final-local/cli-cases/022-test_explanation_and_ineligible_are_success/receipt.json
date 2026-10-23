@@ -1,0 +1,17 @@
+{
+  "args": [
+    "explain-pair",
+    "/var/folders/l0/z510jl1d0rxc2cpk2jkvmks80000gn/T/mee-cli-_lfr91bf/outside.json",
+    "--recording",
+    "clip-01",
+    "--reference",
+    "r1",
+    "--prediction",
+    "p1",
+    "--format",
+    "json"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "3756475e0f1f13cebe47ed5d0ce960c8f940a12b01b71e210e0a8dd06b7bc880",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

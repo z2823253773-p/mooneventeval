@@ -1,0 +1,1 @@
+{"schema_version":1,"labels":["alarm"],"recordings":[{"id":"clip-01","reference":[{"id":"r","label":"alarm","onset_s":"11","offset_s":"13"}],"prediction":[{"id":"p","label":"alarm","onset_s":"11","offset_s":"14"}]}]}

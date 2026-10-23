@@ -1,0 +1,12 @@
+{
+  "command": [
+    "gh",
+    "api",
+    "repos/z2823253773-p/mooneventeval/actions/runs/39914869650"
+  ],
+  "cwd": "/Users/henryz/Desktop/\u6bd4\u8d5b/mooneventeval-t0",
+  "exit_code": 0,
+  "elapsed_seconds": 0.6521674580872059,
+  "stdout_sha256": "1af75eb1f0a3eec297a2027580d08de8060f8586c65c61d1e1f69dc64b07fd8a",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

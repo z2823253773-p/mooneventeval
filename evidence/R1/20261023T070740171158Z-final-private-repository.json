@@ -1,0 +1,17 @@
+{
+  "command": [
+    "gh",
+    "api",
+    "repos/z2823253773-p/mooneventeval",
+    "--jq",
+    "{full_name,private,default_branch,html_url}"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.614,
+  "log": "evidence/R1/20261023T070740171158Z-final-private-repository.log",
+  "log_sha256": "72e5d53790fa296258d30867ae2a7742ebea17f03f39e93f60cb89cdee888078",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

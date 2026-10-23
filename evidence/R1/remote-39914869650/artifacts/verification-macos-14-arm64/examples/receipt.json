@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
+    "scripts/check_examples.py",
+    "--source",
+    "/Users/runner/work/mooneventeval/mooneventeval",
+    "--bin",
+    "/Users/runner/work/mooneventeval/mooneventeval/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "--output",
+    "/Users/runner/work/mooneventeval/mooneventeval/evidence/T8/ci/example-cases"
+  ],
+  "cwd": "/Users/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "14ec6681fb6d2dd36cbcbd59d451e9a9d948f926a46bdf9c76b108a2195ba8f0",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "examples",
+  "elapsed_seconds": 0.0575,
+  "passed": true
+}

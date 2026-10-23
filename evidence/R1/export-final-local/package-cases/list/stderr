@@ -1,0 +1,43 @@
+Warning: 'repository' field is not set or empty in module manifest
+Running moon check ...
+Finished. moon: ran 10 tasks, now up to date
+Check passed
+EXAMPLES.md
+LICENSE
+LICENSES/moonbit-core-LICENSE
+LICENSES/moonbit-core-NOTICE
+README.md
+THIRD_PARTY_NOTICES.md
+VALIDATION.md
+cli/args.mbt
+cli/dispatch.mbt
+cli/moon.pkg
+cli/pkg.generated.mbti
+cmd/mooneventeval/io_stub.c
+cmd/mooneventeval/main.mbt
+cmd/mooneventeval/moon.pkg
+cmd/mooneventeval/native_io.mbt
+cmd/mooneventeval/pkg.generated.mbti
+docs/API.md
+docs/toolchain.lock.json
+eventeval/eligibility.mbt
+eventeval/errors.mbt
+eventeval/evaluation.mbt
+eventeval/explain.mbt
+eventeval/input.mbt
+eventeval/matching.mbt
+eventeval/model.mbt
+eventeval/moon.pkg
+eventeval/pkg.generated.mbti
+eventeval/report_json.mbt
+eventeval/report_text.mbt
+eventeval/serialization.mbt
+eventeval/time.mbt
+eventeval/validation.mbt
+examples/boundary.json
+examples/duplicate.json
+examples/greedy-trap.json
+moon.mod
+scripts/install_toolchain.py
+scripts/with-toolchain.sh
+Package to /Users/henryz/Desktop/比赛/mooneventeval-ci/_build/publish/local-mooneventeval-0.1.0.zip

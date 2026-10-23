@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/opt/hostedtoolcache/Python/3.14.6/x64/bin/python3",
+    "scripts/check_design_docs.py"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "091d7be4d2a8e3a8f93fdd8e648e6477b5ee64999bde0615e8a01b33ab0e6293",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "documentation",
+  "elapsed_seconds": 0.0291,
+  "passed": true
+}

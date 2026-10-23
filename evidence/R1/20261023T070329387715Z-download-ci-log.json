@@ -1,0 +1,19 @@
+{
+  "command": [
+    "gh",
+    "run",
+    "view",
+    "39914869650",
+    "--repo",
+    "z2823253773-p/mooneventeval",
+    "--log"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 4.215,
+  "log": "evidence/R1/20261023T070329387715Z-download-ci-log.log",
+  "log_sha256": "1a09671299671598d4b260d8862fdb42fb9ad073abac1976797e9332f53b99a8",
+  "scope": "R1",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

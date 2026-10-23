@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/home/runner/work/mooneventeval/mooneventeval/scripts/with-toolchain.sh",
+    "moon",
+    "version",
+    "--all"
+  ],
+  "cwd": "/home/runner/work/mooneventeval/mooneventeval",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "bf7e141491ec3da49cc848217ad8798b370dbbc4de89e5ce06776d8640c651ec",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "name": "versions",
+  "elapsed_seconds": 0.0337,
+  "passed": true
+}

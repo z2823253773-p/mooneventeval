@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/mee-unpacked-03u6cuqn/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+    "evaluate",
+    "examples/boundary.json",
+    "--format",
+    "json"
+  ],
+  "cwd": "/private/var/folders/s6/5hzmn6lx4dz5nxs7k_0slzph0000gn/T/mee-unpacked-03u6cuqn",
+  "exit_code": 0,
+  "timed_out": false,
+  "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
