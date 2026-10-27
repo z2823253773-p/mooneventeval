@@ -1,0 +1,20 @@
+{
+  "local-candidate.zip": {
+    "sha256": "0547cb8e2dab16911bf7b332ac4163c4575634991dfeb5a7b1dea814ba35224e",
+    "bytes": 4289013,
+    "files": 8174,
+    "scope": "verbatim P3-checks directory; timestamps/path receipts retained"
+  },
+  "local-final.zip": {
+    "sha256": "451a0aecb23a14406367c760341e27dedf80ad0b88f4e95bb2a1125b2f124c22",
+    "bytes": 4287162,
+    "files": 8174,
+    "scope": "verbatim P3-final directory; timestamps/path receipts retained"
+  },
+  "remote-artifacts.zip": {
+    "sha256": "70f84d631254738c4cbdf92b3f1094a7c372a9ff662cb4afdbe086e114a98f09",
+    "bytes": 9296628,
+    "files": 16340,
+    "scope": "verbatim downloaded run40447392163 artifacts"
+  }
+}

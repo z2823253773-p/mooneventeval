@@ -1,0 +1,19 @@
+{
+  "20261027T040717556100Z-verify-archived-acceptance.json": "cd58e7a1fccb360457be8ff46827d969377fafcfaaa6674380793373ee1b80df",
+  "20261027T040717556100Z-verify-archived-acceptance.log": "2dbb7e8e795f51c55349cab9b89e5308f321e4e15693d5bb7efdda0fdcee03bc",
+  "20261027T041035968038Z-final-docs.json": "ed764bd610ab74abee8ae40afd1bc719580ecd29aa71fad8bea7f85bc29530be",
+  "20261027T041035968038Z-final-docs.log": "8372bd334b6f2c8276eb9497297693e3306dbecb56978121549579a3de96e905",
+  "README.md": "642264bf4a0dae8a7e5ca6544c1f637b0dfe7ec2f99b60eb0ed9f918d5f93abe",
+  "archives.json": "000daeb8c75d69ada757ca516d9a0e3df81244c943597e229b125352f0d66edc",
+  "freeze.py": "d56e01882a7cb8c372fff168e8c9750a8fc9971d5658a764f1eda79ea5814e71",
+  "jobs.json": "c23aa423a090d69a91c9a2e0da2ab698b0d14aeb40d7c45fbfcba1980c617e26",
+  "local-candidate.zip": "0547cb8e2dab16911bf7b332ac4163c4575634991dfeb5a7b1dea814ba35224e",
+  "local-final.zip": "451a0aecb23a14406367c760341e27dedf80ad0b88f4e95bb2a1125b2f124c22",
+  "remote-artifacts.zip": "70f84d631254738c4cbdf92b3f1094a7c372a9ff662cb4afdbe086e114a98f09",
+  "repository.json": "f5b3f1cfbe2b970931a24643a71a8d6daaecea9bdf57ee51766f8c62ed99a175",
+  "review-resolution.json": "57df49ce0f2aadf544dd979308d2c1d69b959d6ecf3bd6ae62fc3c1aff50b726",
+  "run.json": "fba62d2a4db910d5aa11e3c72ca81d3656ccc573429c77e02db702cb06a92ed3",
+  "verified.json": "616674d842116158e50e7a49813213fb59d97a0eafe943b5830f16f46e6f30c3",
+  "verify.py": "10b40ab323e6411d2a3b1fe50868b102bb5cc7adc0ce179f5355e56a068d82ac",
+  "watch.log": "0d10b105f9fc31e19df4fa105007ca0875f5d46d743e714261efd2f66e8a02ef"
+}

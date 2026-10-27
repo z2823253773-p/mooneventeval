@@ -1,0 +1,39 @@
+{
+  "candidate": "5e43abb9cd4e239695eb5c9af2def221ace769ce",
+  "critical": 0,
+  "important": 0,
+  "minor": 2,
+  "second_independent_review": false,
+  "author_final": "074509f2da1a4b275d7c752399a7e5989f7e717a",
+  "export_tested": "a613579b615e4ac7fd74ddcd704d4333707bcc4b",
+  "rulings": [
+    "Fixed four pinned upstream source line anchors against hash-locked source",
+    "Explicit validation exceptions remain active under Python optimization; wrong-summary normal/-O before/after control archived"
+  ],
+  "optimization_before": {
+    "expected_rejected": false,
+    "results": {
+      "normal": {
+        "exit_code": 1,
+        "rejected": true
+      },
+      "optimized": {
+        "exit_code": 0,
+        "rejected": false
+      }
+    }
+  },
+  "optimization_after": {
+    "expected_rejected": true,
+    "results": {
+      "normal": {
+        "exit_code": 1,
+        "rejected": true
+      },
+      "optimized": {
+        "exit_code": 1,
+        "rejected": true
+      }
+    }
+  }
+}

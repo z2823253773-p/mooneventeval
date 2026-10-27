@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "evidence/P3-acceptance/verify.py"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 5.883,
+  "log": "evidence/P3-acceptance/20261027T040717556100Z-verify-archived-acceptance.log",
+  "log_sha256": "2dbb7e8e795f51c55349cab9b89e5308f321e4e15693d5bb7efdda0fdcee03bc",
+  "scope": "P3-acceptance",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}
