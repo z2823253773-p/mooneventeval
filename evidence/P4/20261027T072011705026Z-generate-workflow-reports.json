@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "demo/reproduce.py",
+    "--write",
+    "--reference-python",
+    ".venv-reference/bin/python",
+    "--output",
+    "evidence/P4/workflow-generation"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.891,
+  "log": "evidence/P4/20261027T072011705026Z-generate-workflow-reports.log",
+  "log_sha256": "d14cc6c134e2a0ebb11af1cc2065b8f9a82e60b56b706cba33ef2fb8c9530cf9",
+  "scope": "P4",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

@@ -20,6 +20,11 @@ PRODUCT = {
     'eligible-unselected.json': ['explain-pair', 'examples/duplicate.json', '--recording', 'clip-01', '--reference', 'r1', '--prediction', 'p2', '--format', 'json'],
     'wrong-label.json': ['evaluate', 'demo/inputs/wrong-label.json', '--format', 'json'],
     'decimal-boundary.json': ['evaluate', 'demo/inputs/decimal-boundary.json', '--format', 'json'],
+    'workflow-audio.json': ['evaluate', 'demo/workflows/inputs/audio.json', '--format', 'json'],
+    'workflow-video.json': ['evaluate', 'demo/workflows/inputs/video.json', '--format', 'json'],
+    'workflow-regression-old.json': ['evaluate', 'demo/workflows/inputs/regression-old.json', '--format', 'json'],
+    'workflow-regression-new.json': ['evaluate', 'demo/workflows/inputs/regression-new.json', '--format', 'json'],
+    'workflow-regression-explain.json': ['explain-pair', 'demo/workflows/inputs/regression-new.json', '--recording', 'regression-01', '--reference', 'r2', '--prediction', 'p2', '--format', 'json'],
 }
 REFERENCE = {
     'duplicate.json': 'examples/duplicate.json',
@@ -68,11 +73,18 @@ def replay(args):
             require(results[name]['status'] == 'completed', 'incomplete product report: '+name)
     for name, counts in {'duplicate.json': (1,1,0), 'greedy-trap.json': (2,0,0),
                          'boundary.json': (1,0,0), 'wrong-label.json': (0,1,1),
-                         'decimal-boundary.json': (1,0,0)}.items():
+                         'decimal-boundary.json': (1,0,0), 'workflow-audio.json': (1,1,1),
+                         'workflow-video.json': (2,0,0), 'workflow-regression-old.json': (2,0,0),
+                         'workflow-regression-new.json': (1,1,1)}.items():
         require(tuple(results[name]['summary']['counts'][key] for key in ['tp','fp','fn']) == counts, 'wrong counts: '+name)
     require(results['eligible-unselected.json']['basis']['eligible'] is True, 'expected eligible pair')
     require(results['duplicate.json']['false_positives'][0]['reason'] == 'unselected_in_maximum_matching', 'wrong unmatched reason')
     require(results['wrong-label.json']['matches'] == [], 'cross-label pair was selected')
+    require(results['workflow-regression-old.json']['summary']['f1'] == 1, 'old workflow F1')
+    require(results['workflow-regression-new.json']['summary']['f1'] == 0.5, 'new workflow F1')
+    basis = results['workflow-regression-explain.json']['basis']
+    require(basis['onset_delta_s'] == '0.21' and basis['onset_limit_s'] == '0.2', 'regression timing explanation')
+    require(basis['eligible'] is False and basis['onset_pass'] is False and basis['offset_pass'] is True, 'regression cause')
     readme = (ROOT/'README.md').read_text()
     section = readme.split('<!-- output-summary:start -->')[1].split('<!-- output-summary:end -->')[0]
     summary = json.loads(re.search(r'```json\n(.*?)```', section, re.S).group(1))

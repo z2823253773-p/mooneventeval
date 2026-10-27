@@ -2,6 +2,8 @@
 
 本目录交付的是已由真实 CLI 生成的报告快照。输入是带标签和时间区间的事件列表；输出是分数、配对明细与资格解释，不是识别结果或修复后的标注。
 
+完整用户任务的输入、命令和结果用途见[三个合成工作流程](workflows/README.md)。下文聚焦输出格式和规则边界，两者不作为真实采用证明。
+
 ## 1. 用户会拿到什么
 
 从仓库根目录构建后运行：
@@ -56,7 +58,7 @@ JSON 中：`matches[0]` 是 r1 与 p1；`false_positives[0]` 是未选中的 p2�
 python3 demo/reproduce.py --check --output /tmp/mooneventeval-report-check
 ```
 
-它实际运行8条产品命令，将stdout与本目录8份快照逐字节比较，并检查声明的计数、解释及README摘要。要同时重跑4个参考例子，需先按仓库的锁定参考环境准备步骤安装依赖，然后：
+它实际运行13条产品命令（原8条加5条完整流程命令），将stdout与本目录13份快照逐字节比较，并检查声明的计数、解释及README摘要。要同时重跑4个参考例子，需先按仓库的锁定参考环境准备步骤安装依赖，然后：
 
 ```sh
 python3 demo/reproduce.py --check --reference-python .venv-reference/bin/python --output /tmp/mooneventeval-reference-check

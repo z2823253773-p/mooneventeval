@@ -1,5 +1,7 @@
 # Three complete synthetic examples
 
+先看[三个完整预期工作流程](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/workflows/README.md)：声音批量评测、动作候选核对、模型回归定位，各含输入、命令、产物和下一步用途。下文三个案例是规则反例，不将它们称作真实用户场景。
+
 输出是一份评测报告，不是检测模型或音视频结果。`summary` 为整体指标；完整 JSON 还保留逐类别/录制指标、所选事件对、未匹配事件及判定依据。这里每个“Expected summary”代码块只展示 `summary` 字段。
 
 完整 [JSON 成品](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/output/duplicate.json)、[文本成品](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/output/duplicate.txt)及 [sed_eval 参考范围](THIRD_PARTY_NOTICES.md)可直接查看；仓库 demo 的快照能通过真实 CLI 重跑核对。

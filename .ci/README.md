@@ -2,7 +2,7 @@
 
 GitHub rejects ordinary Git blobs above100MiB. One original independent-review
 raw diff is150,195,290 bytes. The original local branch and all frozen proof stay
-unchanged. The private GitHub export omits only that path from its native commit
+unchanged. The GitHub export omits only that path from its native commit
 trees, preserving author/date/message and recording the commit-ID mapping.
 It carries original-history.bundle (about23MiB) with the exact full original
 history through4d5d3fbb, including the oversized blob. This is not an invented
@@ -20,6 +20,8 @@ and overwriting different existing data. Local fixture tests exercise those
 failures and exact repeatable restoration. The source package excludes .ci,
 reference environments and original raw evidence under its existing whitelist.
 
-The repository stays PRIVATE. This transport is for authorized remote CI;
-public disclosure, namespace/package publication and registration remain outside
-that authorization. Internal logs and binaries can contain build paths.
+This transport was originally introduced during the PRIVATE R1 phase. The
+repository was subsequently made PUBLIC under P2 authorization; see
+[the current state](../docs/PROJECT_STATE.md) for actual public/CI status.
+Namespace/package publication and registration are separate actions. Internal
+logs and binaries retain build paths; original historical proof is unchanged.

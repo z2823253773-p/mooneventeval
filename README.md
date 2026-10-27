@@ -37,6 +37,18 @@
 
 报告中的匹配以最大配对数为目标，不优化时间误差。`explain-pair` 的 `eligible=true` 仅表示满足候选条件，**不表示该对已被最大匹配选中**。分母为零的指标输出 `null`；输入或资源错误返回失败状态，不返回完成评分。JSON 字段与库接口见 [API](docs/API.md)。
 
+## 三个任务从材料到结果
+
+下列均为**合成的预期工作流程**，可按命令重跑；不是外部用户或真实数据试用记录。
+
+| 任务 | 输入与操作 | 输出如何用于下一步 |
+|---|---|---|
+| 多段声音事件评测 | 两段录制、两类别的参考/预测JSON，执行evaluate | 用逐录制/逐类指标及FP/FN事件定位重复预测与漏检 |
+| 动作片段核对 | 同类动作区间有多个候选，执行evaluate | 核对所选一对一配对，区分候选竞争和遗漏；只用collar口径，不算IoU/mAP |
+| 模型版本回归 | 分别评测两版预测，再解释变化事件对 | 外部脚本比较F1从1到0.5，解释定位到起点0.21>0.2越界 |
+
+输入文件、全部5条命令、完整成品及使用边界见[三个工作流程](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/workflows/README.md)。
+
 ## 与 sed_eval 的关系
 
 本项目是**参考事件级评测规则的 MoonBit 实现，不是 sed_eval 的全量移植或输出兼容替代品**。具体参考的是锁定提交的 `EventBasedMetrics`：同类别事件的起止点 collar 判定、终点按参考时长放宽的规则，以及 optimal 一对一最大匹配。sed_eval 本身已有 optimal 匹配，最大匹配不是本项目相对它的新算法。
@@ -45,14 +57,23 @@
 
 Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
 Native execution has been verified on **macOS arm64 and Linux x86_64** in
-[the complete two-platform CI run](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650).
+[the P3 two-platform CI run including published-report replay](https://github.com/z2823253773-p/mooneventeval/actions/runs/40447392163).
+That run tested `a613579b6`; the newly exposed workflow examples are separately
+rechecked in P4. Later documentation commits do not claim a fresh CI run.
 The module identity is **local/mooneventeval 0.1.0**, a source candidate that
 has not been published to a package registry. Python is development tooling,
 not the scoring implementation.
 
 ## Build and run
 
-Requires Python >=3.12, curl and a native C compiler. On a new checkout or
+Requires Python >=3.12, curl and a native C compiler. To obtain the full repository:
+
+```sh
+git clone https://github.com/z2823253773-p/mooneventeval.git
+cd mooneventeval
+```
+
+Skip these two commands if already in a checkout or unpacked source candidate. On a new checkout or
 unpacked candidate, install the pinned local toolchain:
 
 ```sh
@@ -126,6 +147,18 @@ Limits include equality: input 8 MiB, nesting depth 16, 1,000 recordings,
 ID/label, event times and collar at most 2,592,000 seconds (30 days), ratio 0–1,
 matching work 20,000,000 steps, final UTF-8 output including LF 16 MiB. A legal
 large graph may exhaust the work budget; no universal runtime guarantee is made.
+
+## 产品实现与开发验证
+
+| 入口 | 实现内容 |
+|---|---|
+| [time.mbt](eventeval/time.mbt)、[eligibility.mbt](eventeval/eligibility.mbt) | MoonBit精确时间解析与配对资格规则 |
+| [matching.mbt](eventeval/matching.mbt)、[evaluation.mbt](eventeval/evaluation.mbt) | MoonBit最大匹配、分组和评测 |
+| [report_json.mbt](eventeval/report_json.mbt)、[dispatch.mbt](cli/dispatch.mbt) | MoonBit报告、错误协议与CLI调度 |
+| [io_stub.c](cmd/mooneventeval/io_stub.c) | native文件/输出I/O适配，不实现评分 |
+| [validation](https://github.com/z2823253773-p/mooneventeval/tree/main/validation)、[开发脚本](https://github.com/z2823253773-p/mooneventeval/tree/main/scripts) | Python参考/独立验证、安装和打包工具，不是产品评分依赖 |
+
+GitHub语言栏统计整个仓库，包含Python开发验证和历史证据。产品逻辑的审阅入口是上述MoonBit文件；`evidence`是历史验证档案，初次使用先看报告、EXAMPLES和参考范围即可。没有真实用户采用、Windows支持或完整sed_eval兼容的声明。
 
 ## Evidence and licensing
 
