@@ -1,0 +1,20 @@
+{
+  "critical": 0,
+  "important": 1,
+  "minor": 2,
+  "risk_audit_baseline": "a8ee78dab1383be29f9d2328093fbe3a44ea4130",
+  "original_tested": "06ec1649b9526a67f33ea52badb7adad327ac07c",
+  "export_tested": "e106a5d4709b80ab3e4f6d5210707aea8eb45235",
+  "second_independent_review": false,
+  "author_corrections": [
+    "Expose prior P2 synthetic workflow materials/commands/reports/usefulness; correct actual-scenario wording",
+    "Update current CI entry with exact tested identity; metadata-only package rechecked",
+    "Label PRIVATE/macOS-only historical claims; product implementation map remains honest about developer Python"
+  ],
+  "remaining": [
+    "form screenshot prohibits AI-written proposal",
+    "no independent proof of participant understanding/real users",
+    "organizer topic/eligibility/count decision",
+    "partial formal charter retrieval, no registry publication claim"
+  ]
+}

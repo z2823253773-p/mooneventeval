@@ -1,8 +1,8 @@
 # MoonEventEval 当前状态
 
-更新2026-10-27（America/Phoenix）。**P4：再次评审风险检查中。独立审查1项呈现Important、2项状态Minor，已修订现成工作流程与入口；核心评分/schema/API不变，等待当前候选完整验收。** 剩余的正式申报写作、真实采用和组委会判断边界见[风险核查](delivery/REVIEW_RISKS.md)。
+更新2026-10-27（America/Phoenix）。**P4：再次风险审查与修订完成。1项呈现Important、2项状态Minor已修正；原始候选06ec1649b、远端被测e106a5d47在本地与双平台完整验收通过。** 剩余的正式申报写作、真实采用和组委会判断边界见[风险核查](delivery/REVIEW_RISKS.md)。
 
-P4把P2已有的4份流程输入和5条命令公开到demo/workflows，快照回放为13产品+4原版命令；它们是合成预期任务，不是外部使用证明。此前P3双平台通过保持其原SHA，不冒称P4已运行。
+P4把P2已有的4份流程输入和5条命令公开到demo/workflows，快照回放为13产品+4原版命令；它们是合成预期任务，不是外部使用证明。[本轮run40467323131](https://github.com/z2823253773-p/mooneventeval/actions/runs/40467323131)两OS各完整17步及13产品+4原版演示成功。各233源码hash一致并绑定公开Git，8144基础产物及35演示文件逐项检查。后续CI入口/证据元数据HEAD不冒称重跑全门；原核心与输入契约不变。
 
 用户提供的邮件截图显示2026-10-27 11:21的初审退回通知（截图未标注时区），允许10月31日前修改信息后重新审核。该通知取代P2“报名尚未提交”的状态；本代理未代提交表单。本轮按直接请求修订公开材料、可运行输出和参考范围，见[复审修订记录](delivery/REVIEW_REVISION.md)。
 
@@ -42,7 +42,7 @@ R1推送副本首轮本地总门暴露两份ignored reviewer binary未提交，�
 
 ## 复核与后续
 
-当前P3复核：`python3 evidence/P3-acceptance/freeze.py`。原始local与下载产物按字节归档为3个ZIP，保留SHA256与自动复核器，避免将本轮3万余原始小文件散入提交；首次候选与最终候选严格分开。
+当前P4复核：`python3 evidence/P4-acceptance/freeze.py`。P3旧证据仍可按`python3 evidence/P3-acceptance/freeze.py`复核。原始local与下载产物按字节归档为3个ZIP，保留SHA256与自动复核器，避免将本轮3万余原始小文件散入提交；首次候选与最终候选严格分开。
 
 
 独立克隆先导入[原始作者对象](../evidence/R1-provenance/README.md)，再按冻结原始SHA复核；不依赖本机Git缓存。该补充不改变产品代码或实际CI被测提交。
@@ -53,4 +53,4 @@ python3 evidence/R1/freeze.py
 python3 evidence/R1/verify_remote.py --check-only
 ```
 
-P3技术修订完成，尚无重新提交/复审通过回执；后续代理先读AGENTS、contracts、本文和REVIEW_REVISION，核实际git与远端run，不重做已完成阶段。仓库公开已完成；正式报名仍须满足表单要求，包括一页Markdown、不使用AI编写申报书、至少三个完整预期场景及有效开发记录。代理材料不声明由本人独立撰写，不替代正式报名或本人理解。
+P4技术修订完成，尚无重新提交/复审通过回执；后续代理先读AGENTS、contracts、本文和REVIEW_REVISION，核实际git与远端run，不重做已完成阶段。仓库公开已完成；正式报名仍须满足表单要求，包括一页Markdown、不使用AI编写申报书、至少三个完整预期场景及有效开发记录。代理材料不声明由本人独立撰写，不替代正式报名或本人理解。

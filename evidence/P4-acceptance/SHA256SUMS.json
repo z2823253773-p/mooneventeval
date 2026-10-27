@@ -1,0 +1,22 @@
+{
+  "20261027T073941218104Z-verify-current-acceptance.json": "453e102c3d9286c4473a03cc624262cdda6a7ecaa95706827e68eec650bb6533",
+  "20261027T073941218104Z-verify-current-acceptance.log": "a3446016900057a8220dea4270a0fbd52afa16f1dc1bda5bda2cdb399762c66a",
+  "20261027T080633845030Z-verify-final-acceptance.json": "2d1aa6a7e1dd50b0231e04ce26bc548df78d05d4734b4710f6bba84d2af141b4",
+  "20261027T080633845030Z-verify-final-acceptance.log": "7c2ce46df38fb6407764d4e83d297fef20723f20dec4a9671c9b5433a4a8266f",
+  "20261027T081057944783Z-final-documentation.json": "33e22250d769fd40afb746b40f3ecff592bd195b57993ad40f545175cbfea946",
+  "20261027T081057944783Z-final-documentation.log": "b1f6f6b6ca2ecc3aeb7c8108e8360fc2b3c901d2b29fc6b2debfc38f957571ce",
+  "README.md": "a37d9a0ab591feb7bce46c723c5adfcbde8ee8b8d686e572e3b6e68282701918",
+  "archives.json": "8c5807019c1e5a170dad5b9ad3a9c7c8351fe7ac53b093bd280717007cf12443",
+  "freeze.py": "0acb14a229efdf224c69927d4e55481533f9f510ccdfc91634b660e9e7d88ec3",
+  "jobs.json": "3cb476f42a0d6d46ab9cb781022d1618e0d9db8a6a019cf32773f62e52478956",
+  "local-final.zip": "68f01ce7929afdd85d3057ee2e1a3099e3609d62c88c73a71b6562f4513e516b",
+  "metadata-package.zip": "0cd4dfee6e34b996a44b3a3c4fcf952ef6e39e2a87225da90168f0742dc6be3b",
+  "remote-artifacts.zip": "66f3d4e331d2d93b29ace258deb5b9312db96c1aa8bde71d4f6894bb593e0f47",
+  "repository.json": "ad4d3c9da910ab52a5b95ff3259eb4525c49faa6e92e34276023143efda2e40f",
+  "review-resolution.json": "4edbe9c51196b96622c14e0e7eb9a81c4183b5421121eed26bcbab373b6b8846",
+  "rules-scope.json": "730444c9c3ea2c3a7dc1fc4da2ef0cca4ba9a813412a4fb4444ace23cb6a0df1",
+  "run.json": "c744dade99c55e814d7957e286cec49a8dccbb98edfc9510d99adf13670d5c6d",
+  "verified.json": "6d11dcf289f81b356ebc824e2e00453bdd89e56eb7ea303bab00b03ecce9feed",
+  "verify.py": "de700f8fec95a7a8501215966ef9fcf0a3caef0ee9fc20233c7e33f7eade2f2a",
+  "watch.log": "f2d774629ed6080329754d5536cddd79eb2322b4b2990895b69c81c0492f4822"
+}

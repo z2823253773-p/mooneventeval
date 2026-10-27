@@ -1,0 +1,287 @@
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* verify (ubuntu-24.04, x86_64) (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  * Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* verify (ubuntu-24.04, x86_64) (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+✓ verify (ubuntu-24.04, x86_64) in 2m2s (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64): .github#2
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+✓ verify (ubuntu-24.04, x86_64) in 2m2s (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64): .github#2
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ verify (ubuntu-24.04, x86_64) in 2m2s (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64): .github#2
+
+Refreshing run status every 20 seconds. Press Ctrl+C to quit.
+
+* main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+✓ verify (ubuntu-24.04, x86_64) in 2m2s (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+* verify (macos-14, arm64) (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  * Same complete verifier as local
+  * Replay published reports and scoped sed_eval comparisons
+  * Keep actual receipts on success or failure
+  * Post Pinned reference installer
+  * Post Developer Python (same release as local T8 tooling)
+  * Post Checkout exact dispatched commit and historical proof objects
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64): .github#2
+
+✓ main MoonEventEval local-equivalent verification · 40467323131
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ verify (ubuntu-24.04, x86_64) in 2m2s (ID 122065779658)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+✓ verify (macos-14, arm64) in 3m56s (ID 122065779789)
+  ✓ Set up job
+  ✓ Checkout exact dispatched commit and historical proof objects
+  ✓ Developer Python (same release as local T8 tooling)
+  ✓ Restore exact original history and oversized historical proof
+  ✓ Assert actual runner architecture
+  ✓ Pinned reference installer
+  ✓ Install and hash-verify pinned MoonBit binary/core
+  ✓ Create locked original reference environment
+  ✓ Same complete verifier as local
+  ✓ Replay published reports and scoped sed_eval comparisons
+  ✓ Keep actual receipts on success or failure
+  ✓ Post Pinned reference installer
+  ✓ Post Developer Python (same release as local T8 tooling)
+  ✓ Post Checkout exact dispatched commit and historical proof objects
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (ubuntu-24.04, x86_64): .github#2
+
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (macos-14, arm64): .github#2
+
+- Due to capacity constraints, jobs targeting macOS arm64 runners may experience longer queue times.
+verify (macos-14, arm64): .github#1
+

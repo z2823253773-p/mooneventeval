@@ -1,3 +1,5 @@
+P4最新（2026-10-27）：评审风险再查与作者修订完成；三个合成工作流程已公开，CLI核心/schema不变。原始候选06ec1649b、远端被测e106a5d47，[双平台run40467323131](https://github.com/z2823253773-p/mooneventeval/actions/runs/40467323131)各17步+13产品/4原版演示通过；参考风险见[REVIEW_RISKS](delivery/REVIEW_RISKS.md)。正式申报写作、真实采用、个案资格仍不是代理可认证事项；未代提交。后续元数据HEAD不冒称重跑完整CI。
+
 # MoonEventEval 当前交接
 
 更新2026-10-26。**P3修订完成：用户已提供初审退回通知；输出和sed_eval范围按[REVIEW_REVISION](delivery/REVIEW_REVISION.md)修订，[新CI](https://github.com/z2823253773-p/mooneventeval/actions/runs/40447392163)在a613579b6双平台通过17步及8+4演示；原始本地074509f2。本代理未重新提交报名，不能把技术通过当作复审通过。**

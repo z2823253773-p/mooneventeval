@@ -1,0 +1,26 @@
+{
+  "source": "https://bxup9uklfcb.feishu.cn/wiki/Dx4Bwd6D1i3GfHkajQCcF7SznEd",
+  "method": "direct web access failed; unauthenticated public text reader returned a partial document",
+  "retrieved_user_date": "2026-10-27",
+  "bytes": 5659,
+  "sha256": "a684b7a254fdadbb437061f959f12ef6ec6c9c1b1c783ac168ccdb01b8c4a4d3",
+  "complete": false,
+  "observed_sections": [
+    "event purpose",
+    "participation and teams",
+    "4.1 similar-project assessment",
+    "5.1 registration flow (partial)"
+  ],
+  "ends_at": "project-name item of proposal list",
+  "registry_requirement": "not established by retrieved excerpt",
+  "formal_proposal_ai_rule": "user supplied form screenshot explicitly prohibits AI writing; general charter AI documentation permission does not establish an override",
+  "related_repository_query": "sed_eval MoonBit in:readme",
+  "related_repository_results": [
+    {
+      "description": "MoonBit exact-time event evaluation library and native CLI",
+      "fullName": "z2823253773-p/mooneventeval",
+      "url": "https://github.com/z2823253773-p/mooneventeval"
+    }
+  ],
+  "uniqueness_claim": false
+}

@@ -1,0 +1,20 @@
+{
+  "local-final.zip": {
+    "sha256": "68f01ce7929afdd85d3057ee2e1a3099e3609d62c88c73a71b6562f4513e516b",
+    "bytes": 4292966,
+    "files": 8184,
+    "scope": "verbatim P4-final local full gate plus13+4 workflow replay"
+  },
+  "remote-artifacts.zip": {
+    "sha256": "66f3d4e331d2d93b29ace258deb5b9312db96c1aa8bde71d4f6894bb593e0f47",
+    "bytes": 9309689,
+    "files": 16360,
+    "scope": "verbatim public CI run40467323131 artifacts"
+  },
+  "metadata-package.zip": {
+    "sha256": "0cd4dfee6e34b996a44b3a3c4fcf952ef6e39e2a87225da90168f0742dc6be3b",
+    "bytes": 67173,
+    "files": 47,
+    "scope": "metadata-only latest CI link source package recheck, not full CI"
+  }
+}
