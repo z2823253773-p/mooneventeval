@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "evidence/P3/optimization_probe.py",
+    "--output",
+    "evidence/P3-fixes/optimized-before"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.15,
+  "log": "evidence/P3-fixes/20261027T035728942964Z-optimized-summary-before.log",
+  "log_sha256": "64e7fe7d6f8e0aadb0f80328dff55cbf279f700eb02c0ee62894305cf552fd86",
+  "scope": "P3-fixes",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}

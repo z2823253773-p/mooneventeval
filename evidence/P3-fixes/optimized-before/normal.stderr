@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<string>", line 4, in <module>
+    m.replay(argparse.Namespace(bin=pathlib.Path(sys.argv[3]),output=pathlib.Path(sys.argv[4]),write=False,check=True,reference_python=None))
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/reproduce.py", line 74, in replay
+    assert summary == results['duplicate.json']['summary'], 'README summary drift'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: README summary drift

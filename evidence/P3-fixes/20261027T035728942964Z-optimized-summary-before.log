@@ -1,0 +1,1 @@
+{"expected_rejected": false, "results": {"normal": {"exit_code": 1, "rejected": true}, "optimized": {"exit_code": 0, "rejected": false}}}

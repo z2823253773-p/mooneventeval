@@ -29,6 +29,11 @@ REFERENCE = {
 }
 
 
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
 def replay(args):
     binary = args.bin.resolve()
     output = args.output.resolve()
@@ -60,32 +65,32 @@ def replay(args):
     for name, command in PRODUCT.items():
         results[name] = execute([binary, *command], 'product-'+name, ROOT/'demo/output'/name, name.endswith('.json'))
         if name.endswith('.json'):
-            assert results[name]['status'] == 'completed'
+            require(results[name]['status'] == 'completed', 'incomplete product report: '+name)
     for name, counts in {'duplicate.json': (1,1,0), 'greedy-trap.json': (2,0,0),
                          'boundary.json': (1,0,0), 'wrong-label.json': (0,1,1),
                          'decimal-boundary.json': (1,0,0)}.items():
-        assert tuple(results[name]['summary']['counts'][key] for key in ['tp','fp','fn']) == counts
-    assert results['eligible-unselected.json']['basis']['eligible'] is True
-    assert results['duplicate.json']['false_positives'][0]['reason'] == 'unselected_in_maximum_matching'
-    assert results['wrong-label.json']['matches'] == []
+        require(tuple(results[name]['summary']['counts'][key] for key in ['tp','fp','fn']) == counts, 'wrong counts: '+name)
+    require(results['eligible-unselected.json']['basis']['eligible'] is True, 'expected eligible pair')
+    require(results['duplicate.json']['false_positives'][0]['reason'] == 'unselected_in_maximum_matching', 'wrong unmatched reason')
+    require(results['wrong-label.json']['matches'] == [], 'cross-label pair was selected')
     readme = (ROOT/'README.md').read_text()
     section = readme.split('<!-- output-summary:start -->')[1].split('<!-- output-summary:end -->')[0]
     summary = json.loads(re.search(r'```json\n(.*?)```', section, re.S).group(1))
-    assert summary == results['duplicate.json']['summary'], 'README summary drift'
+    require(summary == results['duplicate.json']['summary'], 'README summary drift')
     demo_text = (ROOT/'demo/README.md').read_text()
-    assert '```text\n'+results['duplicate.txt']+'```' in demo_text, 'complete text report drift'
+    require('```text\n'+results['duplicate.txt']+'```' in demo_text, 'complete text report drift')
     references = {}
     if args.reference_python:
         for name, source in REFERENCE.items():
             # Resolving this symlink would bypass pyvenv.cfg and lose the locked environment.
             references[name] = execute([args.reference_python.absolute(), ROOT/'validation/sed_reference.py', ROOT/source],
                                        'reference-'+name, ROOT/'demo/reference'/name, reference=True)
-        assert references['duplicate.json']['raw']['counts']['Ntp'] == 1
-        assert references['greedy-trap.json']['raw']['counts']['Ntp'] == 2
+        require(references['duplicate.json']['raw']['counts']['Ntp'] == 1, 'reference duplicate mismatch')
+        require(references['greedy-trap.json']['raw']['counts']['Ntp'] == 2, 'reference optimal mismatch')
         wrong = references['wrong-label.json']
-        assert tuple(wrong['raw']['counts'][key] for key in ['Ntp','Nsubs','Nfp','Nfn']) == (0,1,0,0)
-        assert tuple(wrong['projected']['counts'][key] for key in ['tp','fp','fn']) == (0,1,1)
-        assert references['decimal-boundary.json']['raw']['counts']['Ntp'] == 0
+        require(tuple(wrong['raw']['counts'][key] for key in ['Ntp','Nsubs','Nfp','Nfn']) == (0,1,0,0), 'reference raw substitution mismatch')
+        require(tuple(wrong['projected']['counts'][key] for key in ['tp','fp','fn']) == (0,1,1), 'reference projection mismatch')
+        require(references['decimal-boundary.json']['raw']['counts']['Ntp'] == 0, 'reference decimal boundary mismatch')
     report = dict(passed=True, product_calls=len(PRODUCT), reference_calls=len(references),
                   reference_checked=bool(references), mode='write' if args.write else 'check',
                   product_sha256=hashlib.sha256(binary.read_bytes()).hexdigest(), receipts=receipts,
