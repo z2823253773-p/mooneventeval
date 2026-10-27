@@ -1,8 +1,47 @@
 # MoonEventEval
 
-Evaluate labelled time events with exact decimal boundaries and deterministic
-maximum-cardinality one-to-one matching. Explain why a reference/prediction
-pair is eligible, including the exact onset and offset tolerances.
+**输入带类别、起点和终点的参考事件与预测事件，输出一份可追查到具体事件的评测报告。** 本项目交付 MoonBit 评测库和原生文件 CLI，适用于已取得标注与预测结果的事件级评测；不读取音视频、不训练模型、不生成检测结果。
+
+## 运行后得到什么
+
+`evaluate` 将 JSON 或文本报告写到 **stdout**，可以重定向保存为文件；`explain-pair` 输出一个指定事件对是否满足配对条件的解释。默认输出文本，加 `--format json` 得到机器报告。
+
+| 评测报告内容 | 可以据此回答的问题 |
+|---|---|
+| `summary` | 总参考数、总预测数、TP/FP/FN 和 Precision/Recall/F1 是多少？ |
+| `by_label`、`by_recording` | 哪个类别或哪段录制需要检查？ |
+| `matches` | 具体选中了哪些一对一配对，时间差和容差是多少？ |
+| `false_positives`、`false_negatives` | 哪条预测未匹配、哪条参考未检出？是没有合格候选，还是在本次最大匹配中未选中？ |
+| `work` | 本次候选检查、合格边和匹配工作步数是多少？ |
+
+例如一条参考、两条合格预测，得到 TP=1、FP=1、FN=0。下面是实际报告的 **`summary` 字段节选**：
+
+<!-- output-summary:start -->
+```json
+{
+  "counts": {
+    "reference": 1,
+    "prediction": 2,
+    "tp": 1,
+    "fp": 1,
+    "fn": 0
+  },
+  "precision": 0.5,
+  "recall": 1,
+  "f1": 0.6666666666666666
+}
+```
+<!-- output-summary:end -->
+
+完整成品：[JSON 报告](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/output/duplicate.json) · [文本报告](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/output/duplicate.txt) · [成品与对照说明](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/README.md)。输入和运行命令见下文及 [EXAMPLES](EXAMPLES.md)。
+
+报告中的匹配以最大配对数为目标，不优化时间误差。`explain-pair` 的 `eligible=true` 仅表示满足候选条件，**不表示该对已被最大匹配选中**。分母为零的指标输出 `null`；输入或资源错误返回失败状态，不返回完成评分。JSON 字段与库接口见 [API](docs/API.md)。
+
+## 与 sed_eval 的关系
+
+本项目是**参考事件级评测规则的 MoonBit 实现，不是 sed_eval 的全量移植或输出兼容替代品**。具体参考的是锁定提交的 `EventBasedMetrics`：同类别事件的起止点 collar 判定、终点按参考时长放宽的规则，以及 optimal 一对一最大匹配。sed_eval 本身已有 optimal 匹配，最大匹配不是本项目相对它的新算法。
+
+本项目实现范围是整数时间比较、确定性匹配、事件明细/解释、稳定 JSON/文本和 MoonBit API；不实现 sed_eval 的分段评测、替代/插入/删除错误率等完整指标。参考规则、未移植部分、计数差异、许可证和锁定源码链接见 [参考范围与来源](THIRD_PARTY_NOTICES.md)。
 
 Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
 Native execution has been verified on **macOS arm64 and Linux x86_64** in

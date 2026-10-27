@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/reproduce.py", line 95, in <module>
+    replay(parser.parse_args())
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/reproduce.py", line 72, in replay
+    references[name] = execute([args.reference_python.absolute(), ROOT/'validation/sed_reference.py', ROOT/source],
+                       ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                               'reference-'+name, ROOT/'demo/reference'/name)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/reproduce.py", line 46, in execute
+    raise ValueError('documented command failed: '+name)
+ValueError: documented command failed: reference-duplicate.json

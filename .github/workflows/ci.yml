@@ -83,6 +83,10 @@
           "run": "python3 scripts/verify.py --mode local --evidence evidence/T8/ci"
         },
         {
+          "name": "Replay published reports and scoped sed_eval comparisons",
+          "run": "python3 demo/reproduce.py --check --reference-python .venv-reference/bin/python --output evidence/T8/ci/public-demo"
+        },
+        {
           "name": "Keep actual receipts on success or failure",
           "if": "always()",
           "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",

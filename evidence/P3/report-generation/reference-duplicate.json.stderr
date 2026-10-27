@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 106, in <module>
+    result = evaluate_document(json.loads(args.input.read_text()))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 64, in evaluate_document
+    sed_eval = _reference_module()
+               ^^^^^^^^^^^^^^^^^^^
+  File "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py", line 41, in _reference_module
+    raise RuntimeError('locked reference environment missing sed_eval')
+RuntimeError: locked reference environment missing sed_eval

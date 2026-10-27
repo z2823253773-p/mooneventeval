@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "product_calls": 8,
+  "reference_calls": 4,
+  "reference_checked": true,
+  "mode": "write",
+  "product_sha256": "7a65bacefef1c3b70d4b851dc4fae1b337ce9114eea4addefddcf3be92f1940d",
+  "receipts": [
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/duplicate.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8ba3fd613e344877d14e3abce0cec7f32e1d49a608a281761b557244a80c5249",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/duplicate.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/duplicate.json",
+        "--format",
+        "text"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "808893dc43efe0947714b952ef247929fd29b8dced90e30746ac814dcfa64dd1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/duplicate.txt"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/greedy-trap.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a53eca16d553f1481b685f39d7f70f47e96f3d6b65b3402b572b0181e83ba8a8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/greedy-trap.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "examples/boundary.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "2104a11953443bc7d24e28d96804dfed12c2741f871849a747f926dfac00438c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/boundary.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/boundary.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p1",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "50bd43b3fbcb90e4c1d1f6bc5ae10e27073fd0f8659cca3a9a2d12f7a7d33e83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/boundary-explanation.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "explain-pair",
+        "examples/duplicate.json",
+        "--recording",
+        "clip-01",
+        "--reference",
+        "r1",
+        "--prediction",
+        "p2",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a57992bf08516f59d166798eb6a45005b36f4175bb8357da4e8fc28d86167a82",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/eligible-unselected.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "demo/inputs/wrong-label.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "0aaae26c05bd140a654c327ecc9a3c89c9648eb5aa1abbaafe3b9e61e0479821",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/wrong-label.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/_build/native/release/build/cmd/mooneventeval/mooneventeval.exe",
+        "evaluate",
+        "demo/inputs/decimal-boundary.json",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "8189cc778b27fd30b2dc65c9c58ed9e366275e8b0420e86490785e8b70192dc1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "snapshot": "demo/output/decimal-boundary.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/examples/duplicate.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "f77249823bcfd66bd24698aae765f8a0a1a6401be80496706f5af15aa2eee41b",
+      "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+      "snapshot": "demo/reference/duplicate.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/examples/greedy-trap.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "84ba47de88632762de4285c949e0bde163700a73f81aaa63dd6c113a5b4b7676",
+      "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+      "snapshot": "demo/reference/greedy-trap.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/inputs/wrong-label.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "b0ac9c18c5885490b3b79aaa0de314afb1039de0c793659190dce2d2160166ff",
+      "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+      "snapshot": "demo/reference/wrong-label.json"
+    },
+    {
+      "command": [
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/.venv-reference/bin/python",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/validation/sed_reference.py",
+        "/Users/henryz/Desktop/比赛/mooneventeval-t0/demo/inputs/decimal-boundary.json"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "784fb722fc6b4646e5a1d22419789b87a2d7c53b4cb32d5b725a7aa438d19331",
+      "stderr_sha256": "e4d7d254dd118c0760db8b533967257339d210893b557132648041f846482b97",
+      "snapshot": "demo/reference/decimal-boundary.json"
+    }
+  ],
+  "scope": "synthetic published-output replay; scoped original-reference demonstrations, not external user adoption"
+}

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "demo/reproduce.py",
+    "--write",
+    "--reference-python",
+    ".venv-reference/bin/python",
+    "--output",
+    "evidence/P3/report-generation-final"
+  ],
+  "cwd": "/Users/henryz/Desktop/比赛/mooneventeval-t0",
+  "exit_code": 0,
+  "reason": null,
+  "elapsed_seconds": 0.607,
+  "log": "evidence/P3/20261027T034901366094Z-generate-delivered-reports-final.log",
+  "log_sha256": "f358f7d7fbbc06af1e61abcb2d7ada6f904c8c8604a2a5ec926883a87d3282ac",
+  "scope": "P3",
+  "assessment": "command result only; not an automatic product acceptance claim"
+}
