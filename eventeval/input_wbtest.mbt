@@ -145,6 +145,24 @@ test "input_duplicate_keys_preserve_encoding_syntax_resource_priority" {
 
 ///|
 test "input_duplicate_keys_bound_diagnostic_preview" {
+  // The actual key must remain useful and safely quoted, rather than an empty
+  // or all-ellipsis diagnostic. This literal expectation is independent of
+  // the production preview/identity helpers.
+  let short = "{\"a\\n\\u202e😀\":1,\"a\\u000a\\u202e\\ud83d\\ude00\":2}"
+  match decode_task(@utf8.encode(short)) {
+    Ok(_) => fail("short duplicate key accepted")
+    Err(error) =>
+      inspect(error.message.contains("\"a\\n\\u202e😀\""), content="true")
+  }
+  let long = String::make(64, '😀') + "z"
+  match decode_task(@utf8.encode("{\"" + long + "\":1,\"" + long + "\":2}")) {
+    Ok(_) => fail("long duplicate key accepted")
+    Err(error) =>
+      inspect(
+        error.message.contains("\"" + String::make(64, '😀') + "...\""),
+        content="true",
+      )
+  }
   for bom in ["", "\u{feff}"] {
     // The second quote is at UTF-16 index 8, despite the first key being one
     // Unicode scalar; the optional BOM is removed before offset accounting.
