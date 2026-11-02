@@ -1,0 +1,17 @@
+{
+  "verify.py": "95aad413730253b415ed3aefcb7e5f104f53a02305f2dec4ccd69d80bfcb9498",
+  "README.md": "34ac8a4465e4bf846eb2dd3412713bf800ebf44a302e18adfdc505578c27f5af",
+  "archives.json": "6c235774207171385ac7761fe89cdaed552c9e5a14f1d387378ece64926aa78e",
+  "local.zip": "563f877c9f054d3b5a461a46f0c0c159ed1c59dbc1548bf61eabc0305d8a1a76",
+  "remote.zip": "bbb3ad59ac44fbc0191c4e5b72eeafb5601b5e8b90d7b78babebc20a5413f6b5",
+  "metadata.zip": "7898be59343b978a5b4ac834408a41e30b558f25f0dd6eec1950c4433e5c71ca",
+  "run.json": "d5207c5af8d05dce30bf7e135a91ce3dd17e0c3abb04ca797775c83973245b63",
+  "jobs.json": "383ea1fa740ee0adb5b707d42d2af9a93add45f54745b597a6f57a017707973a",
+  "repository.json": "d0991b916260a24108cecb39f43ecd8f5517546703e82a84f938da8a94a1fe8b",
+  "artifacts.json": "8bc213d67e7ff6e89dada48a5206096dd15b3a6ebbf039d1d0f462c6d14227ce",
+  "verified.json": "4986de6e0c6b218b9f9836889ca632cad89c86111fc5b878b2b786d4444b512b",
+  "ledger.md": "da6dac60d41db2bc5a6e2cc4ca8ddf62abd1f2b6a7ec243ce4605d4563d00b09",
+  "pre-push.json": "be7de32038ae4dfc3554ffff5a59239e9507a688444ce7ddb4d602893c35b3f9",
+  "mutation_check.py": "708ec3210f1da795a069754e287a0047b0eb0064eebf45d8f7fe24319dc5170f",
+  "independent-review/REVIEW.md": "5f00ba77dad01ea6017deb59d9c30801b4fd36dac2fa2ea83c3f2478f38ecb07"
+}

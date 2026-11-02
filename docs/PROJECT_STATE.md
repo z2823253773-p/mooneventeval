@@ -1,6 +1,12 @@
 # MoonEventEval 当前状态
 
-更新2026-11-02（America/Phoenix）。**P6 开发中：拒绝原始JSON重名键。** 用户已授权按建议继续开发，本阶段先落实输入契约v3。整份语法/Unicode/深度校验通过后，同对象解码键重复返回DUPLICATE_KEY（Input/exit2、path="$"），不再后值覆盖；正常输入的评分与typed API不变。原API与真实CLI已观察RED→GREEN，嵌套/转义/大键/错误优先级已定向通过；完整门、独立评审及新CI待完成。本轮计划：[P6](superpowers/plans/2026-11-02-duplicate-json-keys.md)，证据写入evidence/P6，旧冻结证据不改。
+更新2026-11-02（America/Phoenix）。**P6 已完成：拒绝原始JSON重名键。** 输入契约v3收紧旧last-wins：同对象解码键重复（含转义等价键）返回DUPLICATE_KEY、Input/exit2、path="$"，无部分评分；先完成UTF-8/JSON语法/深度校验，再查重，最后校验schema。错误含安全截断键预览及BOM剥离后的零基UTF16偏移。typed API、数学规则、正常报告及38文件包不变。
+
+原始最终实测 `7c46e83165a5565338715600c220ac3c37a472ec`，公开实测 `2a007a352dd349c45236bebb0f18b972ce2ac3a6`；[CI41446549940](https://github.com/z2823253773-p/mooneventeval/actions/runs/41446549940) 的macOS arm64 / Linux x86_64各完整17步、62 MoonBit / 29根Python / 42验证 / 16 CLI、1620资格验证调用、38文件打包/解包消费、13产品/4原版回放均通过。244源码hash相同并逐一绑定公开Git；各8192基础产物及35演示文件已下载、保存并复核。本地开发probe另56检查通过；三项可编译mutation被行为测试杀死。
+
+独立评审原候选3ceabc725，0 Critical / 1 Important / 1 Minor，未发现产品代码缺陷。Important为选题事实说明残留旧last-wins表述，作者已修正；Minor为键预览测试允许退化成省略号，作者补强短控制字符与64非BMP码点的精确断言，并使空预览mutation变红。评审独立生成500案例：410无重名输入与基线输出逐字节一致，90重名输入正确失败，另8边界通过；作者复跑其原脚本，不冒称第二次独立评审。两项发现后的最终提交均完成真实验收。证据与离线复核见[P6](../evidence/P6/README.md)。
+
+CI后的首页链接、状态、计划与证据收尾仅为后续文档提交；38文件源码包单独复验，不冒称后续HEAD又跑过完整CI。继续可执行 `python3 evidence/P6/verify.py` 核冻结归档；用户无需自行复测。下一阶段按已授权顺序定义薄TSV导入与公开数据流程，不自动发布包。计划：[P6](superpowers/plans/2026-11-02-duplicate-json-keys.md)。以下P5/P4段落仅是其历史阶段记录。
 
 更新2026-11-02（America/Phoenix）。**P5 已完成：MoonBit 独立接入示例与贡献入口。** 新增完整仓库内的独立模块，实际调用公开 API，演示评测、合格但未选中的事件对解释和非法数字时间的 Result 处理；补齐 CONTRIBUTING、CHANGELOG 与 README/API 的运行说明。评分、输入、CLI、包名及 38 文件源码包契约不变。
 

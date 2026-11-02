@@ -1,6 +1,6 @@
 # 拒绝 JSON 重名键实施计划
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** 原始文件/字节输入中同一对象的重名键明确失败，防止静默覆盖；用户“那你继续推进”授权实施上一轮建议，先完成此输入契约修订。
 
@@ -33,8 +33,8 @@
 
 **Interfaces:** decode_task(Bytes)、evaluate_json(Bytes)保持签名；新增DUPLICATE_KEY错误；typed API与正常报告不变。
 
-- [ ] 写真实decode/API与CLI行为反例，确认旧实现错误接受重复字段；记录RED。
-- [ ] 实现原文作用域检查，沿用标准解析器解码键；运行GREEN与边界/转义/作用域用例。
-- [ ] 更新当前契约及旧条款作废说明，更新开发probe；检查历史记录不被改写。
-- [ ] 跑完整17步、开发probe、13+4演示；独立评审并修复实质问题。
-- [ ] 保留真实提交，推送与双平台CI，复核产物并更新交接状态。
+- [x] 写真实decode/API与CLI行为反例，确认旧实现错误接受重复字段；记录RED。
+- [x] 实现原文作用域检查，沿用标准解析器解码键；运行GREEN与边界/转义/作用域用例。
+- [x] 更新当前契约及旧条款作废说明，更新开发probe；检查历史记录不被改写。
+- [x] 跑完整17步、开发probe、13+4演示；独立评审并修复实质问题。
+- [x] 保留真实提交，推送与双平台CI，复核产物并更新交接状态。
