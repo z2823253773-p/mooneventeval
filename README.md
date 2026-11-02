@@ -123,7 +123,12 @@ fractional digits. Time comparisons use Int64 microseconds and integer ppm;
 there is no floating-point time comparison, rounding or epsilon. Numeric times
 are rejected. IDs/labels are exact Unicode strings without trimming or
 normalization. Duplicate JSON object keys, including escape-equivalent keys,
-use the **last value**; raw input duplicate rejection is a known limitation.
+are **rejected with `DUPLICATE_KEY`**. Different objects may reuse field names.
+P6 tightens the earlier last-value behavior; duplicate-key inputs must be fixed
+at the source. UTF-8, JSON syntax and depth checks run first, then duplicate-key
+checks, then schema validation. Error path `$` identifies a raw-document
+failure; its bounded key preview and zero-based UTF-16 offset locate the second
+occurrence after removal of an optional initial BOM.
 Unknown schema fields, duplicate recording/event IDs and unknown labels fail
 the whole task. One initial UTF-8 BOM is allowed.
 

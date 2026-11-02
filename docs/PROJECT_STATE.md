@@ -1,5 +1,7 @@
 # MoonEventEval 当前状态
 
+更新2026-11-02（America/Phoenix）。**P6 开发中：拒绝原始JSON重名键。** 用户已授权按建议继续开发，本阶段先落实输入契约v3。整份语法/Unicode/深度校验通过后，同对象解码键重复返回DUPLICATE_KEY（Input/exit2、path="$"），不再后值覆盖；正常输入的评分与typed API不变。原API与真实CLI已观察RED→GREEN，嵌套/转义/大键/错误优先级已定向通过；完整门、独立评审及新CI待完成。本轮计划：[P6](superpowers/plans/2026-11-02-duplicate-json-keys.md)，证据写入evidence/P6，旧冻结证据不改。
+
 更新2026-11-02（America/Phoenix）。**P5 已完成：MoonBit 独立接入示例与贡献入口。** 新增完整仓库内的独立模块，实际调用公开 API，演示评测、合格但未选中的事件对解释和非法数字时间的 Result 处理；补齐 CONTRIBUTING、CHANGELOG 与 README/API 的运行说明。评分、输入、CLI、包名及 38 文件源码包契约不变。
 
 原始实测 `f75963024b584e232114024cb2d83018cfb1f037`，公开实测 `b06207ae936e4179064ba4ccf7941cac61773f6e`；[run41434748035](https://github.com/z2823253773-p/mooneventeval/actions/runs/41434748035) 的 macOS arm64 / Linux x86_64 均成功。每平台完整17步、58 MoonBit / 29根Python / 42验证 / 15 CLI测试、1620资格验证调用、38文件打包解包消费，以及13产品/4原版回放；243源码hash一致并逐一绑定公开Git，两平台各8144基础产物及35演示文件完整保存和复核。编译后的示例另在空PATH环境成功运行。
@@ -43,7 +45,7 @@ R1推送副本首轮本地总门暴露两份ignored reviewer binary未提交，�
 
 ## 固定边界、延期和未完成
 
-- 仅UTF8 JSON字符串时间；重名/转义等价键last-wins。TSV/CSV、数字时间、sed_eval dict、stdin、新评分仍[BACKLOG](../BACKLOG.md)。
+- 仅UTF8 JSON字符串时间；P6按输入契约v3拒绝同对象重名/转义等价键。TSV/CSV、数字时间、sed_eval dict、stdin、新评分仍[BACKLOG](../BACKLOG.md)。
 - T8 Minor：合法NUL ID可评测/API解释，literal OS argv不能选中。T6 Minor：超时非零，但部分stdout/stderr/process收据不完整。均未修复。
 - 本人讲解/外部反馈无实际证据；用户已取消自行复测，不作工程阻塞。历史“本人M2”混用作废，PRD M2机器条件已完成。
 - P1十九文件本地交付包、复制/ZIP解出程序三案例通过；本机binary含构建路径，未作公开脱敏。HTML结构/内容已验，file协议观察被浏览器安全策略拒绝，视觉核验未完成；不要求用户补测。
@@ -52,7 +54,7 @@ R1推送副本首轮本地总门暴露两份ignored reviewer binary未提交，�
 
 ## 复核与后续
 
-当前P4复核：`python3 evidence/P4-acceptance/freeze.py`。P3旧证据仍可按`python3 evidence/P3-acceptance/freeze.py`复核。原始local与下载产物按字节归档为3个ZIP，保留SHA256与自动复核器，避免将本轮3万余原始小文件散入提交；首次候选与最终候选严格分开。
+历史P4复核：`python3 evidence/P4-acceptance/freeze.py`。P3旧证据仍可按`python3 evidence/P3-acceptance/freeze.py`复核。原始local与下载产物按字节归档为3个ZIP，保留SHA256与自动复核器，避免将本轮3万余原始小文件散入提交；首次候选与最终候选严格分开。
 
 
 独立克隆先导入[原始作者对象](../evidence/R1-provenance/README.md)，再按冻结原始SHA复核；不依赖本机Git缓存。该补充不改变产品代码或实际CI被测提交。

@@ -22,7 +22,7 @@
 
 ## 使用边界仍公开保留
 
-仅自定义JSON字符串时间；不直接读TSV/CSV或识别媒体。相同起止点collar评测不等于IoU/mAP、完整sed_eval或所有基准协议。JSON重名键last-wins、NUL ID的literal CLI寻址限制、历史超时部分输出取证缺口仍披露；不以合成案例掩盖这些限制。
+仅自定义JSON字符串时间；不直接读TSV/CSV或识别媒体。相同起止点collar评测不等于IoU/mAP、完整sed_eval或所有基准协议。重名键last-wins是P4历史限制，P6输入契约v3改为DUPLICATE_KEY拒绝；NUL ID的literal CLI寻址限制和历史超时部分输出取证缺口仍披露；不以合成案例掩盖这些限制。
 
 ## 当前验证
 

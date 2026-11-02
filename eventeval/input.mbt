@@ -248,6 +248,93 @@ fn parse_bounded(text : String) -> Result[Json, EvalError] {
 }
 
 ///|
+fn duplicate_key_error(key : String, offset : Int) -> EvalError {
+  let preview = StringBuilder()
+  let mut count = 0
+  for ch in key.iter() {
+    if count == 64 {
+      preview.write_string("...")
+      break
+    }
+    preview.write_char(ch)
+    count = count + 1
+  }
+  input_error(
+    "DUPLICATE_KEY",
+    "Duplicate JSON object key \{text_identity(preview.to_string())} at UTF-16 offset \{offset} (zero-based)",
+    "$",
+  )
+}
+
+///|
+// Precondition: parse_bounded has accepted the whole document. This pass only
+// tracks object scopes and string boundaries; the pinned parser still owns
+// JSON grammar, depth and Unicode/escape decoding. Arrays require no scope map.
+fn reject_duplicate_keys(text : String) -> Result[Unit, EvalError] {
+  let objects : Array[Map[String, Bool]] = []
+  let units = text.code_units()
+  let mut index = 0
+  while index < units.length() {
+    match units[index].to_int() {
+      123 => { // {
+        objects.push(Map([]))
+        index = index + 1
+      }
+      125 => { // }
+        ignore(objects.pop())
+        index = index + 1
+      }
+      34 => { // opening quote
+        let start = index
+        index = index + 1
+        while index < units.length() && units[index].to_int() != 34 {
+          // A backslash escapes the next unit. The remaining hexadecimal
+          // units of a Unicode escape cannot be structural punctuation.
+          index = if units[index].to_int() == 92 {
+            index + 2
+          } else {
+            index + 1
+          }
+        }
+        index = index + 1
+        let mut next = index
+        while next < units.length() &&
+              (
+                units[next].to_int() == 32 ||
+                units[next].to_int() == 9 ||
+                units[next].to_int() == 10 ||
+                units[next].to_int() == 13
+              ) {
+          next = next + 1
+        }
+        // Only a property name can precede a colon in a valid JSON document.
+        if next < units.length() && units[next].to_int() == 58 {
+          let key = match parse_bounded(text[start:index].to_owned()) {
+            Ok(String(key)) => key
+            _ =>
+              return Err({
+                kind: Internal,
+                code: "INTERNAL_ERROR",
+                message: "Validated JSON key could not be decoded",
+                path: Some("$"),
+                limit: None,
+                observed: None,
+              })
+          }
+          let seen = objects[objects.length() - 1]
+          if seen.contains(key) {
+            return Err(duplicate_key_error(key, start))
+          }
+          seen[key] = true
+        }
+      }
+      _ => index = index + 1
+    }
+  }
+  Ok(())
+}
+
+///|
 pub fn decode_task(input : Bytes) -> Result[Task, EvalError] {
   if input.length() > 8_388_608 {
     return Err(resource_error("$", 8_388_608L, input.length().to_int64()))
@@ -258,6 +345,10 @@ pub fn decode_task(input : Bytes) -> Result[Task, EvalError] {
   let value = match parse_bounded(text) {
     Err(e) => return Err(e)
     Ok(v) => v
+  }
+  match reject_duplicate_keys(text) {
+    Err(e) => return Err(e)
+    Ok(_) => ()
   }
   Ok(decode_document(value)) catch {
     DecodeFailure(e) => Err(e)

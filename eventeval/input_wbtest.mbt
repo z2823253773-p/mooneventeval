@@ -54,7 +54,7 @@ test "input_encoding_syntax_duplicates_and_bom" {
   input_error_is("{", "INVALID_JSON", Some("$"))
   input_error_is("\"\\uD800\"", "INVALID_JSON", Some("$"))
   let t = decode_task(
-    b"\xEF\xBB\xBF{\"schema_version\":1,\"labels\":[\"wrong\"],\"labe\\u006cs\":[\"a\"],\"recordings\":[]}",
+    b"\xEF\xBB\xBF{\"schema_version\":1,\"labe\\u006cs\":[\"a\"],\"recordings\":[]}",
   ).unwrap()
   inspect(t.labels == ["a"], content="true")
   input_error_is(
@@ -62,6 +62,112 @@ test "input_encoding_syntax_duplicates_and_bom" {
     "DUPLICATE_ID",
     Some("labels[1]"),
   )
+}
+
+///|
+test "input_duplicate_keys_rejected_before_schema" {
+  for
+    text in [
+      "{\"schema_version\":2,\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[]}",
+      "{\"schema_version\":2,\"schema_versio\\u006e\":1,\"labels\":[\"a\"],\"recordings\":[]}",
+      "{\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[],\"config\":{\"collar_s\":\"0.1\",\"collar_s\":\"0.2\"}}",
+      "{\"unused\":{\"x\":1,\"x\":2}}", "{\"é\":1,\"\\u00e9\":2}", "{\"😀\":1,\"\\ud83d\\ude00\":2}",
+      "{\"a\":{\"x\":1},\"a\":2}", "{\"a\":[{\"x\":1}],\"a\":2}", "{\"a/b\":1,\"a\\/b\":2}",
+      "{\"a\\\"b\":1,\"a\\u0022b\":2}", "{\"a\\\\b\":1,\"a\\u005cb\":2}", "{\"\\n\":1,\"\\u000a\":2}",
+      "{\"\\u0000\":1,\"\\u0000\":2}", "[{\"a\":1},{\"b\":{\"x\":1,\"x\":2}}]",
+    ] {
+    input_error_is(text, "DUPLICATE_KEY", Some("$"))
+    match evaluate_json(@utf8.encode(text)) {
+      Ok(_) => fail("duplicate-key task was scored")
+      Err(error) => {
+        inspect(exit_code(error) == 2, content="true")
+        inspect(
+          error_json(error).contains("\"status\":\"failed\""),
+          content="true",
+        )
+        inspect(!error_json(error).contains("\"summary\""), content="true")
+      }
+    }
+  }
+}
+
+///|
+test "input_duplicate_keys_do_not_merge_scopes_or_values" {
+  input_error_is(
+    "{\"x\":{\"id\":1},\"y\":{\"id\":2}}",
+    "UNKNOWN_FIELD",
+    Some("x"),
+  )
+  input_error_is("{\"x\":[{\"id\":1},{\"id\":2}]}", "UNKNOWN_FIELD", Some("x"))
+  input_error_is(
+    "{\"é\":1,\"e\\u0301\":2}",
+    "UNKNOWN_FIELD",
+    Some("e\u{0301}"),
+  )
+  input_error_is(
+    "{\"x\":\"{\\\"x\\\":1,\\\"x\\\":2}\"}",
+    "UNKNOWN_FIELD",
+    Some("x"),
+  )
+  // Event field names repeat across distinct objects; event IDs can contain
+  // quotes, braces, slashes and key-like text without becoming JSON structure.
+  let id = "brace{} : \\\"id\\\": \\".quote_json()
+  let ev = "{\"id\":" +
+    id +
+    ",\"label\":\"a\",\"onset_s\":\"1\",\"offset_s\":\"2\"}"
+  let text = "{\"schema_version\":1,\"labels\":[\"a\"],\"recordings\":[{\"id\":\"x\",\"reference\":[" +
+    ev +
+    "],\"prediction\":[" +
+    ev +
+    "]}]}"
+  let result = evaluate(decode_task(@utf8.encode(text)).unwrap()).unwrap()
+  inspect(result.metrics().counts.tp == 1, content="true")
+}
+
+///|
+test "input_duplicate_keys_preserve_encoding_syntax_resource_priority" {
+  input_error_is("{\"x\":1,\"x\":2,}", "INVALID_JSON", Some("$"))
+  input_error_is("{\"x\":1,\"x\":\"\\ud800\"}", "INVALID_JSON", Some("$"))
+  input_error_is(
+    "{\"x\":0,\"x\":" +
+    String::make(16, '[') +
+    "0" +
+    String::make(16, ']') +
+    "}",
+    "RESOURCE_LIMIT",
+    Some("$"),
+  )
+  match decode_task(b"{\"x\":1,\"x\":2}\xff") {
+    Ok(_) => fail("invalid UTF-8 accepted")
+    Err(error) => inspect(error.code, content="INVALID_UTF8")
+  }
+}
+
+///|
+test "input_duplicate_keys_bound_diagnostic_preview" {
+  for bom in ["", "\u{feff}"] {
+    // The second quote is at UTF-16 index 8, despite the first key being one
+    // Unicode scalar; the optional BOM is removed before offset accounting.
+    let text = bom + "{\"😀\":1,\"\\ud83d\\ude00\":2}"
+    match decode_task(@utf8.encode(text)) {
+      Ok(_) => fail("escaped duplicate accepted")
+      Err(error) =>
+        inspect(
+          error.message.has_suffix("offset 8 (zero-based)"),
+          content="true",
+        )
+    }
+  }
+  let key = String::make(100_000, '😀')
+  let text = "{\"" + key + "\":1,\"" + key + "\":2}"
+  match decode_task(@utf8.encode(text)) {
+    Ok(_) => fail("large duplicate key accepted")
+    Err(error) => {
+      inspect(error.code, content="DUPLICATE_KEY")
+      inspect(@utf8.encode(error.message).length() < 1024, content="true")
+      inspect(@json.parse(error_json(error)) is Object(_), content="true")
+    }
+  }
 }
 
 ///|

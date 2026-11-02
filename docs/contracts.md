@@ -1,8 +1,10 @@
 # MoonEventEval 共享契约
 
+P6输入契约修订v3（2026-11-02，用户授权继续实施优化建议）：整份UTF-8/JSON语法与深度校验通过后，按原文顺序检查每个对象的解码键。同对象重复键（含转义等价键）返回Input/DUPLICATE_KEY，exit 2，path="$"；早于schema检查，无部分评分。不同对象可重用键；不做Unicode规范化。错误message保留最多64个Unicode码点的安全预览和第二次键的零基UTF-16偏移，基于剥离可选BOM后的文本。本修订显式替代旧last-wins条款，旧冻结探针只证明历史行为。未发布0.1.0候选身份、schema_version、数学规则、正常报告及38文件包契约不变；完整状态见PROJECT_STATE。
+
 P5（2026-11-02）：在现有 API 范围内新增独立 MoonBit 接入示例及贡献/变更说明，不改变下述产品语义、输入格式或最小包 38 文件契约。示例位于完整仓库 examples/moonbit-consumer，以本地 moon.work 解析源码库；输出三条独立 JSON 是示例流程，不是新增 CLI 协议。当前验证状态见 PROJECT_STATE。
 
-版本：评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。T7已有本地包外消费者及解包复验，尚无注册表发布或外部用户验证。已批准PRD的数学/资源/数据边界继续有效；T2 first-free修订已随用户“下一步”获得本阶段执行授权；仍明确标注的阶段顺序修订待相应批准。
+版本：输入契约修订 v3（P6），其余规则继承评审修订 v2，T0已获用户授权并完成，独立评审问题修复后主验收PASS。T7已有本地包外消费者及解包复验，尚无注册表发布或外部用户验证。已批准PRD的数学/资源/数据边界继续有效；T2 first-free修订已随用户“下一步”获得本阶段执行授权；仍明确标注的阶段顺序修订待相应批准。
 
 入口：docs/PROJECT_STATE.md。JSON字符串时间仍是唯一获批文件输入；TSV/CSV不在本轮已批准实施范围。
 
@@ -12,7 +14,7 @@ P5（2026-11-02）：在现有 API 范围内新增独立 MoonBit 接入示例及
 - T0兼容性已实跑，见[结果](reviews/2026-10-20-t0-results.md)。统一使用`moon.mod`/`moon.pkg`、普通`inspect(...)`，不用已被目标版拒绝的`inspect!(...)`。旧JSON清单在目标版仍可运行但有弃用提示，不用于产品/消费者。
 - 锁定工具链与运行命令来自`docs/toolchain.lock.json`和`scripts/with-toolchain.sh`；只在项目`.tools`安装，不能用默认版代替。core哈希仅与历史记录一致，不是发布者认证。
 - 深度调用实证为`@json.parse(input, max_nesting_depth=16)`；该参数已弃用，需在唯一的小型解析兼容函数上加`#warnings("-deprecated")`，其余包/调用仍执行`--deny-warn`。这是固定版本兼容例外，不允许全局关闭警告。数组/对象16层成功、17层抛`@json.DepthLimitExceeded`，映射RESOURCE_LIMIT；普通语法错误另行映射。
-- 严格字节解码使用`@utf8.decode`，不可用lossy版本；目标core直接拒绝孤立代理转义，合法代理对通过。重名及转义等价JSON键均后值覆盖，仍是显式已知限制。
+- 严格字节解码使用`@utf8.decode`，不可用lossy版本；目标core直接拒绝孤立代理转义，合法代理对通过。core本身后值覆盖；产品P6在schema解码前独立拒绝同对象重名及转义等价键。
 - Native借用声明`#borrow(path, buffer)`/`#borrow(buffer)`及`options("native-stub": ["io_stub.c"])`通过。C stub只同步使用借用指针、不持有/释放它们；用`int32_t`封装有限`ssize_t`返回，不能直接把libc read/write的ssize_t当MoonBit Int。T0只证明短合成文件，完整I/O硬化仍在T5/T6。
 - `moon package --list --frozen`与`moon package`均实跑，产物在模块`_build/publish/<module>-<version>.zip`；本地打包不等于包外消费或发布。
 - **T2本阶段实施策略：**保留最大基数及同版本确定性，在升序DFS前加入first-free搜索；用户“下一步”授权执行当前T2卡。T2立即验证500/1000完全图和穷举；切换HK须另记决定及重验，不能悄悄替换所选配对。
@@ -22,7 +24,7 @@ P5（2026-11-02）：在现有 API 范围内新增独立 MoonBit 接入示例及
 
 - 时间/比例只接受 ASCII 十进制字符串，语法 `^(0|[1-9][0-9]*)(\.[0-9]{1,6})?$`；秒转 Int64 微秒，比例转 ppm，无舍入、epsilon 或 Float64 时间判断。
 - 每个事件满足 `0 <= onset < offset <= 2592000` 秒；`collar_s` 范围 0–2592000 秒，默认 `"0.2"`；`offset_ratio` 范围 0–1，默认 `"0.5"`。
-- JSON `schema_version=1`；未知字段、缺失/错误类型、未知类别、重复录制 ID、同录制同侧重复事件 ID 为整任务错误；对象重名键后值覆盖；不去重事件。
+- JSON `schema_version=1`；未知字段、缺失/错误类型、未知类别、重复录制 ID、同录制同侧重复事件 ID 为整任务错误；P6对象重名键报DUPLICATE_KEY；不去重事件。
 - 输入 8 MiB，JSON 容器嵌套深度 16；录制/类别 1000/256；两侧合计 2000 事件；每个 ID/类别 256 个 Unicode 码点；匹配工作量 20000000 步；序列化报告 16 MiB，全部含等号。
 - 每次搜索邻接边检查、搜索顶点进入及增广配对改写各算一步，操作前扣预算；跨组累计。邻接表已由调用方构建；一次O(E)度数统计不属于搜索步，受2000事件的图规模上界约束。单边图为进入root、检查边、配对改写共3步。公开接口不增加预算配置字段。
 - 同录制同类别配对，起点 `abs(delta)<=collar`，终点 `abs(delta)*1000000<=max(collar*1000000, reference_duration*ratio_ppm)`；边界含等号，不增加区间相交要求。
@@ -70,7 +72,7 @@ P5（2026-11-02）：在现有 API 范围内新增独立 MoonBit 接入示例及
 ### 共享类型约定
 
 - `EvalError`：`kind: FailureKind`（Input/Resource/Internal）、`code: String`、`message: String`、`path: String?`、`limit: Int64?`、`observed: Int64?`；`exit_code(error)` 唯一映射 2/3/4。
-- 稳定 code 集合：`INVALID_JSON`、`INVALID_UTF8`、`INVALID_UNICODE`、`INVALID_SCHEMA`、`UNKNOWN_FIELD`、`MISSING_FIELD`、`INVALID_TYPE`、`INVALID_DECIMAL`、`OUT_OF_RANGE`、`DUPLICATE_ID`、`UNKNOWN_LABEL`、`ID_NOT_FOUND`、`INVALID_ARGUMENT`、`FILE_ERROR`、`RESOURCE_LIMIT`、`INTERNAL_ERROR`；任何资源种类用RESOURCE_LIMIT，path/limit/observed区分。深度超限不是INVALID_JSON，未知recording/event查询为ID_NOT_FOUND。
+- 稳定 code 集合：`INVALID_JSON`、`DUPLICATE_KEY`、`INVALID_UTF8`、`INVALID_UNICODE`、`INVALID_SCHEMA`、`UNKNOWN_FIELD`、`MISSING_FIELD`、`INVALID_TYPE`、`INVALID_DECIMAL`、`OUT_OF_RANGE`、`DUPLICATE_ID`、`UNKNOWN_LABEL`、`ID_NOT_FOUND`、`INVALID_ARGUMENT`、`FILE_ERROR`、`RESOURCE_LIMIT`、`INTERNAL_ERROR`；任何资源种类用RESOURCE_LIMIT，path/limit/observed区分。深度超限不是INVALID_JSON，未知recording/event查询为ID_NOT_FOUND。
 - `Event`、`Config`、`Recording`、`Task` 为封装类型；通过下列工厂创建。Task 不暴露内部数组，工厂验证并复制传入数组；新建事件/config 时也检查范围。
 - `Counts`：`reference/prediction/tp/fp/fn_count: Int`；`Metrics`：`counts: Counts`、`precision/recall/f1: Double?`。
 - `PairBasis`（包内）：`label_match/onset_pass/offset_pass/eligible: Bool`、`onset_delta_us/offset_delta_us/onset_limit_us/offset_limit_scaled: Int64`；scaled 的单位为微秒×1000000。
@@ -97,7 +99,7 @@ T3/T4实现如下形状，不能由不同任务各自命名：顶层 `schema_ver
 
 结构检查只证明文件结构；T0证明目标工具兼容性；T3证明核心行为；T6证明限定独立对照。命令、退出码、被测SHA、失败样例各自落盘，不能互相替代。
 
-JSON对象重名键仍依PRD后值覆盖，是已知限制；在T0/T3加入明确用例和文档警示。若改为拒绝，先设计能识别转义等价键的词法检查，另行修改契约，不引入天真的split预扫描。
+P6已授权替代旧重名键限制：标准解析成功后，以对象作用域扫描和原解析器的字符串解码识别转义等价键，不使用split或自写通用JSON解析器。先完成语法/资源校验才报重名键，避免改变历史错误优先级。T0/T3旧冻结用例只保留其当时的core/产品观测。
 
 ### T2确定性遍历细则（2026-10-21）
 

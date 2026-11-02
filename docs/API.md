@@ -58,6 +58,13 @@ Use Result handling in applications; this synthetic example unwraps known
 valid inputs and asserts expected counts.
 
 `decode_task(Bytes)` checks bounded strict UTF-8 JSON and typed factories.
+It rejects repeated keys within each JSON object, including differently escaped
+spellings of the same key, with input `DUPLICATE_KEY` / exit-code mapping 2.
+Encoding/syntax/depth errors take precedence; duplicate detection precedes
+schema validation. The error path is `$`; the message contains a bounded safe
+key preview and a zero-based UTF-16 offset in the text after an optional BOM.
+This P6 input-contract revision replaces the earlier last-value behavior;
+typed factories and scores for unique-key input are unchanged.
 `evaluate(Task)` returns an opaque `Evaluation`; `.metrics()` returns Counts
 and optional precision/recall/f1. Counts fields are reference/prediction/tp/fp/
 **fn_count**; the JSON field is **fn**. `.pairs()` returns copied tuples

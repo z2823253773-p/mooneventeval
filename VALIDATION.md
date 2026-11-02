@@ -55,8 +55,10 @@ author repaired eligibility/membership checking and strict machine-output
 parsing, then replayed five original corruptions successfully. This was author
 verification, not a second independent review. Deferred Minor M1: timeouts
 correctly fail, but the T6 comparator still does not persist partial captured
-stdout/stderr/process receipts. Runtime input duplicate-key last-wins remains
-an explicit limitation. Linux and remote CI were subsequently verified in
+stdout/stderr/process receipts. At that historical stage, duplicate JSON keys
+used the last value. P6 replaces this behavior with `DUPLICATE_KEY` rejection,
+including escape-equivalent keys, and tests object scopes, string punctuation,
+Unicode, error priority and bounded diagnostics. Linux and remote CI were subsequently verified in
 [run 39914869650](https://github.com/z2823253773-p/mooneventeval/actions/runs/39914869650):
 macOS arm64 and Ubuntu x86_64 each passed the same full 17-step gate, including
 58 MoonBit tests, 28 root Python tests, 42 reference/validator tests, 15 CLI tests

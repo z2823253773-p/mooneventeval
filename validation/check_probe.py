@@ -45,8 +45,8 @@ def main():
     doc=copy.deepcopy(base);doc['recordings'][0]['reference'][0]['label']='b';add('unknown-label',doc,'UNKNOWN_LABEL')
     doc=copy.deepcopy(base);doc['recordings'][0]['reference'][0]['offset_s']='1';add('zero-duration',doc,'OUT_OF_RANGE')
     cases.append(('bom',['\ufeff'+json.dumps(base)],0,None))
-    cases.append(('duplicate-key-last-wins',['{"schema_version":2,"schema_version":1,"labels":["a"],"recordings":[]}'],0,None))
-    cases.append(('escaped-duplicate-key-last-wins',['{"schema_version":2,"schema_versio\\u006e":1,"labels":["a"],"recordings":[]}'],0,None))
+    cases.append(('duplicate-key-rejected',['{"schema_version":2,"schema_version":1,"labels":["a"],"recordings":[]}'],2,'DUPLICATE_KEY'))
+    cases.append(('escaped-duplicate-key-rejected',['{"schema_version":2,"schema_versio\\u006e":1,"labels":["a"],"recordings":[]}'],2,'DUPLICATE_KEY'))
     cases.append(('explicit-defaults',[json.dumps({**base,'config':{}})],0,None))
     records=[]
     for name,arguments,exit_code,code in cases:

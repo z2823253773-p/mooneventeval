@@ -113,6 +113,27 @@ class NativeCli(unittest.TestCase):
         result = self.call('explain-pair', path, '--recording', '--format', '--reference', '--reference', '--prediction', '--format', '--format', 'json')
         self.assertEqual(json.loads(result.stdout)['recording_id'], '--format')
 
+    def test_duplicate_keys_fail_in_both_commands_and_formats(self):
+        for index, raw in enumerate([
+            b'{"schema_version":2,"schema_version":1,"labels":["a"],"recordings":[]}',
+            b'{"schema_version":1,"labels":["wrong"],"labe\\u006cs":["a"],"recordings":[]}',
+            b'\xef\xbb\xbf{"schema_version":1,"labels":["a"],"recordings":[],"config":{"collar_s":"0.1","collar_s":"0.2"}}',
+            b'{"schema_version":1,"labels":["a"],"recordings":[{"id":"c","reference":[{"id":"r","label":"a","onset_s":"1","onset_s":"1.1","offset_s":"2"}],"prediction":[]}]}',
+        ]):
+            with self.subTest(index=index):
+                path = self.folder / f'duplicate-key-{index}.json'
+                path.write_bytes(raw)
+                error = self.failure(path, 'DUPLICATE_KEY')
+                self.assertEqual(error['error']['path'], '$')
+                result = self.call('explain-pair', path, '--recording', 'c', '--reference', 'r',
+                                   '--prediction', 'p', '--format', 'json', expected=2)
+                self.assertEqual(json.loads(result.stdout)['error']['code'], 'DUPLICATE_KEY')
+                self.assertEqual(result.stderr, b'')
+                text = self.call('evaluate', path, expected=2)
+                self.assertEqual(text.stdout, b'')
+                self.assertIn(b'DUPLICATE_KEY', text.stderr)
+                self.assertEqual(path.read_bytes(), raw)
+
     def test_input_size_equal_and_plus_one(self):
         raw = b'{"schema_version":1,"labels":["a"],"recordings":[]}'
         path = self.folder / 'limit.json'
