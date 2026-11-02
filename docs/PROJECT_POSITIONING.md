@@ -1,5 +1,7 @@
 # MoonEventEval 已实现范围与选题事实
 
+当前输入规则以[P6共享契约](contracts.md)为准：同对象重名键（含转义等价键）已改为DUPLICATE_KEY拒绝；下文早期验收/选题过程按其历史阶段理解，最新执行状态见[PROJECT_STATE](PROJECT_STATE.md)。
+
 代理根据仓库代码及本地运行整理，供本人理解和改写；不是本人申报书或实际答辩记录。本地工程复核和作者修复验证已完成，边界见[T8结果](reviews/2026-10-22-t8-results.md)。
 
 MoonEventEval是参考sed_eval事件级collar/optimal规则的MoonBit评测组件，不是上游全量移植或兼容替代品。参考和差异以仓库THIRD_PARTY_NOTICES.md为准。
@@ -18,6 +20,6 @@ MoonEventEval处理带标签的参考/预测时间事件，提供可读报告、
 
 原版参考保留raw substitution/FP/FN并显式投影共同口径；具体binary64差异和零collar限制分开解释。产品无浮点时间比较不等于所有原版结果都一致。P2已公开仓库并成功运行双平台CI，见delivery/PUBLIC_RELEASE.md；当前没有外部用户反馈、注册表发布、复审通过或本人讲解证据。用户现提供了初审未通过通知，正在按输出与参考范围意见修订。PRD M2最小核心机器条件已完成；用户已取消自行复测。
 
-已知限制：输入JSON重名键last-wins；含NUL的合法ID可评测/API解释，literal OS argv不能选中；超时部分输出取证仍有历史缺口。不能宣传为所有异常取证完整。
+输入保护：P6拒绝同对象JSON重名键及转义等价键，不再last-wins。仍存在的限制：含NUL的合法ID可评测/API解释，literal OS argv不能选中；超时部分输出取证仍有历史缺口。不能宣传为所有异常取证完整。
 
 P4把原P2已有的完整预期流程公开到demo/workflows/README.md，区分材料、命令、报告和结果用途。声音/动作/版本回归均为合成演示，不能证明真实需求或外部采用。
