@@ -1,5 +1,18 @@
 # Public MoonBit API
 
+For a runnable separate module with evaluation, pair explanation and explicit
+Result/error handling, see the [complete MoonBit integration example](https://github.com/z2823253773-p/mooneventeval/tree/main/examples/moonbit-consumer).
+From the full repository root after toolchain installation:
+
+```sh
+scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target native --release --deny-warn
+```
+
+It resolves this library through a local `moon.work`, without Python scoring or
+a registry publication. It emits three independent JSON lines; the third is an
+intentionally handled validation failure. The example is full-repository-only;
+the standalone minimal candidate uses the setup below.
+
 Import `local/mooneventeval/eventeval` from the local source module. The module
 name is a development identity, not a registry publication. The following
 complete executable is the exact source compiled/run by the external consumer:

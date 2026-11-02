@@ -100,6 +100,18 @@ The three evaluations return TP/FP/FN **1/1/0**, **2/0/0**, **1/0/0**.
 See [complete examples](EXAMPLES.md) for inputs, output summaries and reasoning,
 and [public API](docs/API.md) for a standalone MoonBit consumer.
 
+## 在 MoonBit 项目中接入
+
+完整仓库内提供独立模块，使用本地 workspace 解析公开 API；在仓库根目录执行：
+
+```sh
+scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target native --release --deny-warn
+```
+
+依次输出评测、事件对解释和预期输入错误三条 JSON，演示 Result 处理及“满足条件但未选中”的区别。编译后的示例不使用 Python 或 sed_eval；[运行结果与接入说明](https://github.com/z2823253773-p/mooneventeval/blob/main/examples/moonbit-consumer/README.md)给出每条结果的用途。本示例随完整仓库提供，最小源码包使用上面的 CLI 与 API 说明。
+
+开发约定、完整验收与许可维护见 [贡献指南](https://github.com/z2823253773-p/mooneventeval/blob/main/CONTRIBUTING.md)；用户可见变化见 [变更记录](https://github.com/z2823253773-p/mooneventeval/blob/main/CHANGELOG.md)。
+
 ## Rules and input
 
 Input is a regular UTF-8 JSON file (symlinks to regular files are accepted),
