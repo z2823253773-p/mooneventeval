@@ -14,9 +14,10 @@ python3 -m unittest discover -s tests -p test_library_example.py -v
 
 第二条是独立 MoonBit 模块的接入演示，三条 JSON 的含义见[示例说明](examples/moonbit-consumer/README.md)。快速命令不替代完整交付验收。
 
-完整验收需要锁定的原版参考环境；安装和哈希校验步骤见 [validation/README](validation/README.md) 与 CI 配置。先提交本轮源码/文档，再从仓库根目录运行：
+完整验收需要锁定的原版参考环境；安装和哈希校验步骤见 [validation/README](validation/README.md) 与 CI 配置。公开 Git 仓库以哈希锁定的 bundle 携带一个超过 GitHub 单文件限制的历史证明；先按下面第一条命令还原历史对象与原始证明，保持 HEAD 不变，详见 [历史传输说明](.ci/README.md)。它只用于历史验收，普通构建/接入示例不需要此步骤。先提交本轮源码/文档，再从仓库根目录运行：
 
 ```sh
+python3 scripts/restore_ci_history.py
 python3 scripts/verify.py --mode local --evidence evidence/dev-local-001
 python3 demo/reproduce.py --check --reference-python .venv-reference/bin/python --output evidence/dev-demo-001
 ```
