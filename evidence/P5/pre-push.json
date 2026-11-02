@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "author_tested_sha": "f75963024b584e232114024cb2d83018cfb1f037",
+  "export_sha": "b06207ae936e4179064ba4ccf7941cac61773f6e",
+  "source_files": 243,
+  "source_mismatches": [],
+  "changed_files_checked": 14,
+  "credential_or_contact_findings": []
+}

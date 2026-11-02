@@ -31,8 +31,8 @@
 
 **Interfaces:** 使用 event/config/recording/task/evaluate/report_json/explain_pair/explanation_json/decode_task/error_json；输出依次为评测、合格但未选中事件对的解释、预期输入失败三条 JSON。
 
-- [ ] 写集成测试：实际运行文档命令，检查 TP/FP/FN=1/1/0、选中 p1、p2 eligible=true 且解释不含 summary、数字 onset_s 被拒绝且错误路径精确。
-- [ ] 运行测试，确认示例未实现时失败。
-- [ ] 实现本地独立模块和 Result 处理；完整命令无需用户修改路径。
-- [ ] 重跑测试、native suite、统一 17 步门及 13+4 演示回放；人工核对许可证、README、开发指南与包内容。
-- [ ] 独立评审后处理实质发现，提交真实工作，同步公开仓库，运行双平台 CI 并更新状态，记录实测提交与限制。
+- [x] 写集成测试：实际运行文档命令，检查 TP/FP/FN=1/1/0、选中 p1、p2 eligible=true 且解释不含 summary、数字 onset_s 被拒绝且错误路径精确。
+- [x] 运行测试，确认示例未实现时失败。
+- [x] 实现本地独立模块和 Result 处理；完整命令无需用户修改路径。
+- [x] 重跑测试、native suite、统一 17 步门及 13+4 演示回放；人工核对许可证、README、开发指南与包内容。
+- [x] 独立评审后处理实质发现，提交真实工作，同步公开仓库，运行双平台 CI 并更新状态，记录实测提交与限制。实测原始f75963024/公开b06207ae9，CI41434748035；评审和作者修复分列，见 evidence/P5。

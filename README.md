@@ -57,8 +57,8 @@
 
 Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
 Native execution has been verified on **macOS arm64 and Linux x86_64** in
-[the P4 two-platform CI run including 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/40467323131).
-That run tested `e106a5d47`. Later evidence and CI-link metadata commits do not
+[the P5 two-platform CI run including the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/41434748035).
+That run tested `b06207ae9`. Later evidence and CI-link metadata commits do not
 claim a fresh full CI run. [All workflow runs](https://github.com/z2823253773-p/mooneventeval/actions/workflows/ci.yml).
 The module identity is **local/mooneventeval 0.1.0**, a source candidate that
 has not been published to a package registry. Python is development tooling,
