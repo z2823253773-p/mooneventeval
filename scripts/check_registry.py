@@ -39,7 +39,7 @@ def check(archive, output):
     validate_members(names, expected_files(ROOT))
     output = fresh(output)
     report = dict(passed=False, module=MODULE, version=VERSION,
-                  archive_sha256=sha(archive), no_workspace=True, authenticated=False,
+                  archive_sha256=sha(archive), no_workspace=True, login_performed=False, checker_sha256=sha(Path(__file__)),
                   scope='developer-created native registry consumer, not external adoption', steps=[])
     save(output/'report.json', report)
     with tempfile.TemporaryDirectory(prefix='mee-registry-consumer-') as directory:

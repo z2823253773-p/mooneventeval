@@ -1,0 +1,22 @@
+{
+  "local.zip": {
+    "bytes": 4507971,
+    "sha256": "a0c3cf9f5c04e98e8cff4b4b05065e664f583a55216b760f9cda47fac784bf3e",
+    "files": 8368
+  },
+  "remote.zip": {
+    "bytes": 9483433,
+    "sha256": "555fcc51fe0b2d7b72a0caa7b2139e37889008d0ca6acae97b101250792cbbc6",
+    "files": 16596
+  },
+  "registry.zip": {
+    "bytes": 863761,
+    "sha256": "c91a4604ddc9130d8a457b7d82d4991a99fa5f6118b499cc0e0d01c00bd65a54",
+    "files": 51
+  },
+  "metadata.zip": {
+    "bytes": 79289,
+    "sha256": "f29025c56f55da0cea99f5278b5214577c3343f8e153d6d7072a083c80246514",
+    "files": 53
+  }
+}

@@ -57,10 +57,10 @@
 
 Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
 Native execution has been verified on **macOS arm64 and Linux x86_64** in
-[the P7 macOS 15 / Linux CI run including TSV import, the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/42176209407).
-That run tested `5874d6514`. Later evidence and CI-link metadata commits do not
+[the P8 formal-module macOS 15 / Linux CI run including TSV import, the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/42241701394).
+That run tested the published [v0.1.0 source](https://github.com/z2823253773-p/mooneventeval/tree/v0.1.0), `304d59057`. Later evidence and CI-link metadata commits do not
 claim a fresh full CI run. [All workflow runs](https://github.com/z2823253773-p/mooneventeval/actions/workflows/ci.yml).
-The module identity is **z2823253773-p/mooneventeval@0.1.0**.
+The published module is **[z2823253773-p/mooneventeval@0.1.0](https://mooncakes.io/docs/z2823253773-p/mooneventeval@0.1.0)**.
 Install the library from Mooncakes in a separate project with:
 
 ```sh
@@ -68,7 +68,7 @@ moon add z2823253773-p/mooneventeval@0.1.0
 ```
 
 Import `z2823253773-p/mooneventeval/eventeval`. See the [complete registry installation guide](docs/INSTALL.md) for the compiler requirement, package configuration, a runnable consumer and expected output. Python is development tooling, not the scoring implementation.
-The old `local/mooneventeval` name describes historical source candidates only.
+The old `local/mooneventeval` name describes historical source candidates only. [Release and registry-install receipts](https://github.com/z2823253773-p/mooneventeval/blob/main/docs/delivery/MOONCAKES_RELEASE.md) record the actual 200 OK publication and independent 43/43-file install verification.
 
 ## Build and run
 

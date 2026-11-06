@@ -1,0 +1,20 @@
+{
+  "module": "z2823253773-p/mooneventeval",
+  "version": "0.1.0",
+  "command": [
+    "moon",
+    "publish",
+    "--frozen"
+  ],
+  "started_utc": "2026-11-06T15:28:22.847877+00:00",
+  "exit_code": 0,
+  "server_status": "200 OK",
+  "author_source_sha": "affd168393780a9e8fc2fb757d156e0a6c6af938",
+  "public_source_sha": "304d590574d7ca54fd5a8c9d2781d7823f8802c9",
+  "ci_run": 42241701394,
+  "stdout_sha256": "2181a6efef819c2bd3fcaab6d86e725a80e36dc116431d7cdf24973f35cb5575",
+  "stderr_sha256": "bcce0a28db718d24384758d20c54b5d68eb0f20d763d6d2148d1c99834206724",
+  "credential_link_removed": true,
+  "reviewed_members_unchanged": true,
+  "publish_zip_sha256": "e34d6bd987e5f341c03b70a281ce29f93dc67c84302352dcf7de14c6e285784b"
+}

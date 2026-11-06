@@ -1,4 +1,10 @@
-更新2026-11-06：P8进行中。用户指出最后验收因核心模块未正式发布而未通过，本次明确要求补齐。已核对Mooncakes登录账号z2823253773-p，真实仓库外moon add正式0.1.0失败（module not found），证据evidence/P8/registry-red.*。迁移正式namespace并补安装指南，计划见superpowers/plans/2026-11-06-mooncakes-release.md；尚未宣称发布成功。以下为P7及以前历史记录。
+更新2026-11-06：**P8完成正式Mooncakes发布及注册表安装消费验证。** 用户明确要求补齐最终验收指出的注册表缺口；已按正式命名空间发布z2823253773-p/mooneventeval@0.1.0（exit0 / 200OK），MIT，43成员。公开v0.1.0标签绑定304d590574d7ca54fd5a8c9d2781d7823f8802c9（作者affd168393780a9e8fc2fb757d156e0a6c6af938）。完整[双平台CI42241701394](https://github.com/z2823253773-p/mooneventeval/actions/runs/42241701394)成功，每OS17步/65 MoonBit/29根Python/42验证/19 CLI、1620调用及43成员包/解包消费；255源码hash一致。
+
+真实仓库外、无workspace、未登录的客户端从网络安装精确版本，43/43文件与已审ZIP逐字节一致，7条安装/API/TSV/重复键/下载源码CLI构建及三案例命令全通过。版本页HTTP200。发布前独立评审0C/0I/1M，作者修正回执字段auth措辞并实跑注册表门，没有二次独立评审。收尾文档与字段变更不在已发布ZIP内，不声称收尾HEAD重跑双平台CI。
+
+[正式发布与安装回执](delivery/MOONCAKES_RELEASE.md)、[安装指南](INSTALL.md)、证据evidence/P8；离线复核python3 evidence/P8/verify.py，在线复验python3 scripts/check_registry.py --archive evidence/P8/release-0.1.0.zip --output /tmp/mooneventeval-registry-recheck（新目录）。用户无需自行重复技术验证。当前仅确认退回中的发布/安装技术项已补齐，未代提交表单、未声称组委会通过。后续公开数据流程或轻量CI按后续明确任务推进，不在本轮扩展。
+
+以下为P7及以前历史记录。
 
 # MoonEventEval 当前状态
 

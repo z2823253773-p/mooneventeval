@@ -1,0 +1,12 @@
+{
+  "author": "affd168393780a9e8fc2fb757d156e0a6c6af938",
+  "public": "304d590574d7ca54fd5a8c9d2781d7823f8802c9",
+  "counts": [
+    65,
+    29,
+    42,
+    19
+  ],
+  "package_members": 43,
+  "review": "0 Critical / 0 Important / 1 Minor; author will rename authenticated to login_performed; not independently re-reviewed"
+}
