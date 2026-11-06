@@ -11,7 +11,7 @@ import zipfile
 from release_support import ROOT,WRAPPER,fresh,record,save,sha
 import check_consumer
 
-FIXED={'moon.mod','README.md','EXAMPLES.md','VALIDATION.md','LICENSE','THIRD_PARTY_NOTICES.md',
+FIXED={'eventeval/tsv.mbt','docs/TSV.md','examples/tsv-reference.tsv','examples/tsv-prediction.tsv','moon.mod','README.md','EXAMPLES.md','VALIDATION.md','LICENSE','THIRD_PARTY_NOTICES.md',
        'LICENSES/moonbit-core-LICENSE','LICENSES/moonbit-core-NOTICE',
        'docs/API.md','docs/toolchain.lock.json','scripts/install_toolchain.py','scripts/with-toolchain.sh',
        'examples/duplicate.json','examples/greedy-trap.json','examples/boundary.json'}

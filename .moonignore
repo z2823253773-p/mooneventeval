@@ -46,3 +46,8 @@
 !/moon.mod
 !/scripts/install_toolchain.py
 !/scripts/with-toolchain.sh
+
+!/eventeval/tsv.mbt
+!/docs/TSV.md
+!/examples/tsv-reference.tsv
+!/examples/tsv-prediction.tsv

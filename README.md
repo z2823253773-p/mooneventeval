@@ -112,11 +112,15 @@ scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target na
 
 开发约定、完整验收与许可维护见 [贡献指南](https://github.com/z2823253773-p/mooneventeval/blob/main/CONTRIBUTING.md)；用户可见变化见 [变更记录](https://github.com/z2823253773-p/mooneventeval/blob/main/CHANGELOG.md)。
 
+## TSV 文件接入
+
+可先运行 `mooneventeval import-tsv REFERENCE.tsv --prediction PREDICTION.tsv > task.json`，再用 `evaluate task.json --format json` 评分。支持带精确四列表头的事件表、UTF-8/BOM、LF/CRLF；时间仍按字符串无损校验。行号生成事件ID，重复行保留，错误可回查两侧行列。完整命令、格式、限额与边界见 [TSV说明](docs/TSV.md)。
+
 ## Rules and input
 
 Input is a regular UTF-8 JSON file (symlinks to regular files are accepted),
 with `schema_version: 1`, declared labels, config and recordings. See the full
-[duplicate fixture](examples/duplicate.json). No stdin or TSV/CSV is accepted.
+[duplicate fixture](examples/duplicate.json). No stdin or general CSV is accepted. The separate TSV importer emits this JSON task format.
 
 Times and config values are ASCII decimal **strings**, with at most six
 fractional digits. Time comparisons use Int64 microseconds and integer ppm;

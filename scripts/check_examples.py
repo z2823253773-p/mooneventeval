@@ -51,6 +51,20 @@ def check(source,binary,output):
         expected=dict(label_match=True,onset_pass=True,offset_pass=True,eligible=True,onset_delta_s='0.2',offset_delta_s='0.2',onset_limit_s='0.2',offset_limit_s='1')
         if report.get('status')!='completed' or 'error' in report:differences.append('explain must be completed without error')
         if report['basis']!=expected or 'summary' in report or report['recording_id']!='clip-01':differences.append('explain basis')
+    # Import from the actual distributed TSV fixtures, then consume that JSON.
+    imported=record([binary,'import-tsv',source/'examples/tsv-reference.tsv','--prediction',source/'examples/tsv-prediction.tsv'],source,output/'tsv-import')
+    rows.append(imported)
+    if imported['exit_code']!=0: differences.append('TSV import failed')
+    else:
+        try:
+            raw=(output/'tsv-import/stdout').read_bytes()
+            task=machine_report(raw)
+            if task['recordings'][0]['reference'][0]['id']!='r2':differences.append('TSV row identity')
+            path=output/'tsv-task.json';path.write_bytes(raw)
+            scored=record([binary,'evaluate',path,'--format','json'],source,output/'tsv-evaluate');rows.append(scored)
+            counts=machine_report((output/'tsv-evaluate/stdout').read_bytes())['summary']['counts']
+            if scored['exit_code']!=0 or counts!=dict(reference=1,prediction=2,tp=1,fp=1,fn=0):differences.append('TSV evaluation')
+        except (ValueError,KeyError,TypeError) as error:differences.append('TSV protocol: '+str(error))
     # Docs/API.md's first MoonBit block is the exact source exercised by the external consumer.
     import re
     api=(source/'docs/API.md').read_text();blocks=re.findall(r'```moonbit\n(.*?)```',api,re.S)

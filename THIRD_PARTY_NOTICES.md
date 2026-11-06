@@ -46,7 +46,7 @@ made that the product uses its raw global metric definitions unchanged.
 | 共同口径对照 | 开发适配器保留 raw；另从 class-wise TP 和总事件数投影共同 FP/FN | 使用 TP=匹配数、FP=预测数-TP、FN=参考数-TP |
 | 空分母 | 原始 Python 指标可能是 NaN；开发适配器另作 JSON 安全标记 | 指标为 null，不暗中换成 0 |
 | 产品交付 | 声音事件评测工具集，含事件级、分段级及其他指标接口 | 有界事件级 CLI/库，报告具体事件配对、未匹配事件和候选资格解释 |
-| 本项目不提供 | — | 分段网格评测、IoU/mAP、substitution/插入/删除错误率、音视频识别、TSV/CSV 直接读取 |
+| 本项目不提供 | — | 分段网格评测、IoU/mAP、substitution/插入/删除错误率、音视频识别、通用CSV或全部DCASE输入格式 |
 
 “共有口径一致”只指适配器明确投影的计数和双方都有定义的指标；不是 raw 字段相等，也不是完整功能兼容。多解时两个实现可选中不同的合法最大匹配，不要求事件对身份完全相同。
 
@@ -60,3 +60,5 @@ made that the product uses its raw global metric definitions unchanged.
 完整输入、双方原始结果和重跑命令位于仓库 [demo](https://github.com/z2823253773-p/mooneventeval/tree/main/demo)。这里的四个例子是合成的规则演示，不代表真实数据兼容性认证；更广的有限验证范围见 [VALIDATION](VALIDATION.md)。
 
 上游依据：[EventBasedMetrics 参数与 optimal 说明](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1108-L1146)、[raw substitution 和 FP/FN 计数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1348-L1465)、[逐类计数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1468-L1595)、[起止点判定函数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1603-L1668)。
+
+P7新增独立四列TSV导入器（本项目MoonBit实现），转为既有任务JSON。它只支持[明确子集](docs/TSV.md)，不引入sed_eval或DCASE代码/数据，不声明完整协议兼容。

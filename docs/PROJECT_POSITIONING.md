@@ -14,7 +14,7 @@ MoonEventEval处理带标签的参考/预测时间事件，提供可读报告、
 2. 增广陷阱：r1可配p1/p2，r2只能配p1；增广将早期选择重排为两个合法配对，TP2。原版sed_eval optimal在这个案例同样TP2，不能宣传成超过它。
 3. 精确边界：10→10.2的起点差恰好0.2，等号合格。解释显示有符号差、容差、类别/起点/终点通过标志；解释不声称该对一定被匹配选中。
 
-可交付功能已包括：native文件CLI的evaluate/explain-pair、JSON/text输出、MoonBit公开工厂/评测/渲染API、资源限额、文件/输出错误处理、三完整案例、实际源包及解包后包外消费。输入仍仅自定义UTF-8 JSON/字符串时间，不支持直接DCASE TSV、CSV、sed_eval dict列表或stdin；这些增量仍在BACKLOG，不扩大宣传口径。
+可交付功能已包括：native文件CLI的evaluate/explain-pair、JSON/text输出、MoonBit公开工厂/评测/渲染API、资源限额、文件/输出错误处理、三完整案例、实际源包及解包后包外消费。P7增加有表头四列TSV导入，生成既有UTF-8 JSON任务；时间仍精确字符串。CSV、sed_eval dict、stdin及全部DCASE格式不在兼容声明内，见TSV.md。
 
 工程证据：小图独立部分注入oracle、精确有理数资格oracle、原版参考逐录制/类别/共同口径对照、四变形、实际资源边界、有限I/O故障注入、可编译算法mutation行为杀死、本地性能样本及端到端验收门。测试证明限定范围，不能据此承诺任意合法图的时间/内存或全部平台行为。
 

@@ -65,7 +65,8 @@ fn render(
         @eventeval.explanation_text(pair)
       }
     }
-    Help | Version => abort("help/version handled before input")
+    ImportTsv(_, _) | Help | Version =>
+      abort("help/version handled before input")
   }
 }
 
@@ -73,8 +74,9 @@ fn render(
 pub fn run(
   request : CliRequest,
   input : Result[Bytes, @eventeval.EvalError],
+  prediction? : Result[Bytes, @eventeval.EvalError] = Ok(b""),
 ) -> CliOutput {
-  let help = "MoonEventEval 0.1.0\nUsage:\n  mooneventeval evaluate FILE [--format text|json]\n  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]\n  mooneventeval --help\n  mooneventeval --version\nInput: UTF-8 JSON task; default output: text. Files are read only.\nExit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.\n"
+  let help = "MoonEventEval 0.1.0\nUsage:\n  mooneventeval import-tsv REFERENCE --prediction PREDICTION [--format json]\n  mooneventeval evaluate FILE [--format text|json]\n  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]\n  mooneventeval --help\n  mooneventeval --version\nInput: UTF-8 JSON task; default output: text. Files are read only.\nExit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.\n"
   match request.operation {
     Help => return { stdout: @utf8.encode(help), stderr: b"", exit_code: 0, }
     Version =>
@@ -85,7 +87,15 @@ pub fn run(
     Ok(b) => b
     Err(e) => return failure(request.format, e)
   }
-  match render(request, bytes) {
+  let rendered = if request.operation is ImportTsv(_, _) {
+    match prediction {
+      Err(e) => Err(e)
+      Ok(p) => @eventeval.import_tsv(bytes, p)
+    }
+  } else {
+    render(request, bytes)
+  }
+  match rendered {
     Err(e) => failure(request.format, e)
     Ok(text) => {
       let framed = if text.has_suffix("\n") { text } else { text + "\n" }

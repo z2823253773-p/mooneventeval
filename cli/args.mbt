@@ -9,6 +9,7 @@ pub extend OutputFormat with Eq::{equal, not_equal}
 
 ///|
 pub(all) enum Operation {
+  ImportTsv(String, String)
   Evaluate(String)
   ExplainPair(String, String, String, String)
   Help
@@ -49,7 +50,11 @@ fn arg_error(format : OutputFormat) -> ArgFailure {
 pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
   // Error format is selected before rejecting any other syntax.
   let mut format_count = 0
-  let mut format = Text
+  let mut format = if args.length() > 0 && args[0] == "import-tsv" {
+    Json
+  } else {
+    Text
+  }
   let mut bad_format = false
   // Skip the command and positional file when present. A leading --format or
   // missing file still selects the diagnostic protocol before syntax fails.
@@ -65,7 +70,9 @@ pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
         bad_format = true
       } else if args[i + 1] == "json" {
         format = Json
-      } else if args[i + 1] != "text" {
+      } else if args[i + 1] == "text" {
+        format = Text
+      } else {
         bad_format = true
       }
     }
@@ -88,7 +95,9 @@ pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
     return Err(arg_error(format))
   }
   let command = args[0]
-  if command != "evaluate" && command != "explain-pair" {
+  if command != "evaluate" &&
+    command != "explain-pair" &&
+    command != "import-tsv" {
     return Err(arg_error(format))
   }
   let path = args[1]
@@ -114,11 +123,18 @@ pub fn parse_args(args : Array[String]) -> Result[CliRequest, ArgFailure] {
         recording = Some(value)
       "--reference" if command == "explain-pair" && reference is None =>
         reference = Some(value)
-      "--prediction" if command == "explain-pair" && prediction is None =>
-        prediction = Some(value)
+      "--prediction" if (command == "explain-pair" || command == "import-tsv") &&
+        prediction is None => prediction = Some(value)
       _ => return Err(arg_error(format))
     }
     i = i + 2
+  }
+  if command == "import-tsv" {
+    return match prediction {
+      Some(p) if format == Json =>
+        Ok({ operation: ImportTsv(path, p), format, })
+      _ => Err(arg_error(format))
+    }
   }
   if command == "evaluate" {
     return Ok({ operation: Evaluate(path), format, })

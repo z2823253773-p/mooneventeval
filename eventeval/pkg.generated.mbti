@@ -24,6 +24,8 @@ pub fn explanation_json(PairExplanation) -> Result[String, EvalError]
 
 pub fn explanation_text(PairExplanation) -> Result[String, EvalError]
 
+pub fn import_tsv(Bytes, Bytes) -> Result[String, EvalError]
+
 pub fn recording(String, Array[Event], Array[Event]) -> Result[Recording, EvalError]
 
 pub fn report_json(Evaluation) -> Result[String, EvalError]

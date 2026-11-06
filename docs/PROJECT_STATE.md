@@ -1,5 +1,7 @@
 # MoonEventEval 当前状态
 
+更新2026-11-05。**P7开发中：四列TSV导入。** 用户已授权继续；当前已实现MoonBit import_tsv、native import-tsv双文件读取、行追溯与错误映射；API/CLI定向测试正在完成。最小包新增导入器、说明和两合成TSV，目标42文件。计划见[TSV计划](superpowers/plans/2026-11-02-tsv-import.md)，格式见[TSV](TSV.md)。旧阶段所称“不支持TSV”只描述P6及以前，现由P7适配v4替代；完整验收/独立评审/新CI待执行。
+
 更新2026-11-02（America/Phoenix）。**P6 已完成：拒绝原始JSON重名键。** 输入契约v3收紧旧last-wins：同对象解码键重复（含转义等价键）返回DUPLICATE_KEY、Input/exit2、path="$"，无部分评分；先完成UTF-8/JSON语法/深度校验，再查重，最后校验schema。错误含安全截断键预览及BOM剥离后的零基UTF16偏移。typed API、数学规则、正常报告及38文件包不变。
 
 原始最终实测 `7c46e83165a5565338715600c220ac3c37a472ec`，公开实测 `2a007a352dd349c45236bebb0f18b972ce2ac3a6`；[CI41446549940](https://github.com/z2823253773-p/mooneventeval/actions/runs/41446549940) 的macOS arm64 / Linux x86_64各完整17步、62 MoonBit / 29根Python / 42验证 / 16 CLI、1620资格验证调用、38文件打包/解包消费、13产品/4原版回放均通过。244源码hash相同并逐一绑定公开Git；各8192基础产物及35演示文件已下载、保存并复核。本地开发probe另56检查通过；三项可编译mutation被行为测试杀死。

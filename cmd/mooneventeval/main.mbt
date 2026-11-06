@@ -35,11 +35,20 @@ fn main {
       Err(e) => @cli.render_arg_failure(e)
       Ok(request) => {
         let input = match request.operation {
-          @cli.Evaluate(path) | @cli.ExplainPair(path, _, _, _) =>
-            read_file_bounded(path)
+          @cli.ImportTsv(path, _)
+          | @cli.Evaluate(path)
+          | @cli.ExplainPair(path, _, _, _) => read_file_bounded(path)
           @cli.Help | @cli.Version => Ok(b"")
         }
-        @cli.run(request, input)
+        let prediction = match request.operation {
+          @cli.ImportTsv(_, path) =>
+            match input {
+              Ok(_) => read_file_bounded(path)
+              Err(_) => Ok(b"")
+            }
+          _ => Ok(b"")
+        }
+        @cli.run(request, input, prediction~)
       }
     }
     terminate(emit(output))

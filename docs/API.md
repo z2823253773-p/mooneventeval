@@ -91,3 +91,7 @@ without a CLI terminal LF; the file CLI appends/checks the LF within 16 MiB.
 
 See [rules and limits](../README.md), [examples](../EXAMPLES.md) and
 [validation scope](../VALIDATION.md). Only local native consumption is claimed.
+
+## TSV adaptation
+
+`import_tsv(reference: Bytes, prediction: Bytes) -> Result[String, EvalError]` converts the [four-column TSV subset](TSV.md) to task JSON. Success has no terminal LF; pass its UTF-8 bytes to decode_task/evaluate. Default config is 0.2/0.5; combined source bytes and framed output are capped at 8 MiB. INVALID_TSV identifies row structure; existing factory errors retain codes with side/line/column paths. Both header-only inputs fail because no label can be inferred.

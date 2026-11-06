@@ -160,3 +160,21 @@ test "dispatch_machine_errors_and_zero_success" {
     content="true",
   )
 }
+
+///|
+test "args_tsv_format_and_required_prediction" {
+  let r = @cli.parse_args(["import-tsv", "r.tsv", "--prediction", "p.tsv"]).unwrap()
+  inspect(
+    r.operation == @cli.ImportTsv("r.tsv", "p.tsv") && r.format == @cli.Json,
+    content="true",
+  )
+  for
+    args in [
+      ["import-tsv", "r.tsv"],
+      ["import-tsv", "r.tsv", "--prediction", "p", "--format", "text"],
+      ["import-tsv", "r.tsv", "--prediction", "p", "--prediction", "q"],
+      ["import-tsv", "r.tsv", "--prediction", "p", "--recording", "q"],
+    ] {
+    inspect(@cli.parse_args(args) is Err(_), content="true")
+  }
+}
