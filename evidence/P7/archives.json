@@ -1,0 +1,17 @@
+{
+  "local.zip": {
+    "bytes": 18069300,
+    "files": 33300,
+    "sha256": "f1993e8fe3fc2f14037548bee64d1891b1089770a15e73ea108ef5de284e5138"
+  },
+  "remote.zip": {
+    "bytes": 9478509,
+    "files": 16596,
+    "sha256": "dfaa394fe0e5b4cafd72cfba173f35004dd65464a99d9084d49bc5d5f53628cc"
+  },
+  "metadata.zip": {
+    "bytes": 76900,
+    "files": 53,
+    "sha256": "c53fad403715cd7e44e98d8809c760a88405475b96ec9815c136baf90005f30c"
+  }
+}

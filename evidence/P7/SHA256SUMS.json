@@ -1,0 +1,22 @@
+{
+  "verify.py": "a1e5e338a1467310aea85fedcebfee7fca912e5104778e55f5a1b96d994eabd0",
+  "README.md": "2c8f0470c13cf8c157d7182a5655ab051b041fc036844832b0c667cf29f768ed",
+  "archives.json": "aa8b55d4c5a2819dfcfd1ce778b14c9c41e44123de1fe0262b254d1db901db0b",
+  "bindings.json": "fdfc21b4eda0f54fea118e45ff277a0d94cb9a30eeb0f5af5d6880c8443eee98",
+  "local.zip": "f1993e8fe3fc2f14037548bee64d1891b1089770a15e73ea108ef5de284e5138",
+  "remote.zip": "dfaa394fe0e5b4cafd72cfba173f35004dd65464a99d9084d49bc5d5f53628cc",
+  "metadata.zip": "c53fad403715cd7e44e98d8809c760a88405475b96ec9815c136baf90005f30c",
+  "run.json": "5438da211bd7160fd80c371913fcc8fd91ae51dde918f965fe766d979d6fe75f",
+  "jobs.json": "e153780daff5934e9f78bf938b9e39490e886cf9a2c713d33f4bab6fbfa87ab2",
+  "repository.json": "fcf143f7101846bdbb09e70e0648cb7b7941d9f2f97a875ec1f50fec71c2d226",
+  "artifacts.json": "7b1bc777bd5b2c963af4025e0937b68a3d86a07699842657fd5c59083085fc84",
+  "verified.json": "301982a131368684cfab3b29c63d2bdaf10361c292c805d81e911e6abcc46483",
+  "ledger.md": "b6d0333a6acff17952e5a08134a9e1cf252cee96194c29ff29deaadb4c81ddde",
+  "pre-push.json": "757069fc241be3c7a98e1ce22351f5f2b7b4f397963399da7becc5b8e2ced1a1",
+  "pre-runner-push.json": "117a5ff1c47e61a8fad5263fbf894097a67b0c1b984e8553201418613e864d38",
+  "retired-run.json": "eb45511e72727f41b4d7b4f5bc2a62366ca25597e05ea5249bea5e8b59dbd330",
+  "retired-jobs.json": "48ce097f37d92f740f7ec836eb9590de3fba25c532fb29760805ac3db9382e67",
+  "retired-annotations.json": "c547a08b8f2b5fc291105cc0bad35ca350ffc8b52ea6fe96074cd92fe6fc266f",
+  "help-final.txt": "1ad833ab54865d278832bc4241ac0c5805044ba8c2dc2b48ba8720d9b027f94b",
+  "independent-review/REVIEW.md": "ca1f951a20eb06fc5fc99bb17013e15b5393d54cbb789c62fcd79d0f042cd70d"
+}

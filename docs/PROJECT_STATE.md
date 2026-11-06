@@ -1,6 +1,12 @@
 # MoonEventEval 当前状态
 
-更新2026-11-05。**P7开发中：四列TSV导入。** 用户已授权继续；当前已实现MoonBit import_tsv、native import-tsv双文件读取、行追溯与错误映射；API/CLI定向测试正在完成。最小包新增导入器、说明和两合成TSV，目标42文件。计划见[TSV计划](superpowers/plans/2026-11-02-tsv-import.md)，格式见[TSV](TSV.md)。旧阶段所称“不支持TSV”只描述P6及以前，现由P7适配v4替代；完整验收/独立评审/新CI待执行。
+更新2026-11-05。**P7已完成：四列TSV导入。** MoonBit import_tsv与native import-tsv把两份有表头事件表生成可直接评测的任务JSON；时间精确、原行追溯、重复行保留，支持BOM/LF/CRLF，格式与范围错误映射文件侧/行/列。文档见[TSV](TSV.md)，计划见[P7](superpowers/plans/2026-11-02-tsv-import.md)。输入适配v4替代旧“仅JSON输入”限制；数学和原JSON报告不变，最小源码包42文件。
+
+当前最终实测原始c05cb165281777a86356fe86f4079f9ed72e6de5 / 公开5874d6514d4ef3c34292ecced56446ea02c764a8。[CI42176209407](https://github.com/z2823253773-p/mooneventeval/actions/runs/42176209407)的macOS15 arm64 / Ubuntu24.04 x86_64各完整17步通过：65 MoonBit / 29根Python / 42验证 / 19 CLI、1620资格验证调用、42文件包/解包导入→评测、13产品/4原版回放。251源码hash一致并绑定公开Git，各8262基础产物及35演示文件已下载核验。
+
+独立评审候选500b44a52，0 Critical / 0 Important / 1 Minor。作者已修正帮助文案对导入默认输出的误导，并完成最终实测；没有第二次独立评审。评审另核对40随机双侧Unicode输入、10旧CLI对照、8MiB制表符边界及实际42成员解包重建。原run42175638875的Mac14因镜像退役未分配runner就取消；按实际annotation和官方说明迁移Mac15后重新全门。一次本地验证跨提交被保护检查正确拒绝，固定最终提交后重跑通过；失败证据保留。
+
+CI后的README链接、状态/计划/契约及证据归档属于后续文档提交，42成员源码包单独复验，不冒称后续HEAD又跑完整CI。离线核对：`python3 evidence/P7/verify.py`，见[P7证据](../evidence/P7/README.md)。用户无需自行复测。下一阶段公开数据完整使用流程、发包准备与轻量CI按已授权方向推进；正式注册表发布与报名仍独立，不自动操作。下方P6/P5仅保留历史阶段。
 
 更新2026-11-02（America/Phoenix）。**P6 已完成：拒绝原始JSON重名键。** 输入契约v3收紧旧last-wins：同对象解码键重复（含转义等价键）返回DUPLICATE_KEY、Input/exit2、path="$"，无部分评分；先完成UTF-8/JSON语法/深度校验，再查重，最后校验schema。错误含安全截断键预览及BOM剥离后的零基UTF16偏移。typed API、数学规则、正常报告及38文件包不变。
 

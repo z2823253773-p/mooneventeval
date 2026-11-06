@@ -57,8 +57,8 @@
 
 Source repository: [z2823253773-p/mooneventeval](https://github.com/z2823253773-p/mooneventeval).
 Native execution has been verified on **macOS arm64 and Linux x86_64** in
-[the P6 two-platform CI run including duplicate-key rejection, the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/41446549940).
-That run tested `2a007a352`. Later evidence and CI-link metadata commits do not
+[the P7 macOS 15 / Linux CI run including TSV import, the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/42176209407).
+That run tested `5874d6514`. Later evidence and CI-link metadata commits do not
 claim a fresh full CI run. [All workflow runs](https://github.com/z2823253773-p/mooneventeval/actions/workflows/ci.yml).
 The module identity is **local/mooneventeval 0.1.0**, a source candidate that
 has not been published to a package registry. Python is development tooling,
@@ -186,7 +186,7 @@ GitHub语言栏统计整个仓库，包含Python开发验证和历史证据。�
 [Validation](VALIDATION.md) explains the independent original-reference scope,
 exact boundary differences, resource tests, mutations and remaining gaps.
 The linked CI run passed all 17 verification steps on each platform, including
-62 MoonBit tests, 16 CLI tests and 1,620 actual product invocations per platform.
+65 MoonBit tests, 19 CLI tests and 1,620 actual product invocations per platform.
 These are synthetic developer checks, not user feedback, personal presentation
 proof or competition acceptance.
 

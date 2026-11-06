@@ -1,0 +1,1 @@
+{"passed": true, "stage": "P7", "run_id": 42176209407, "tested_public_sha": "5874d6514d4ef3c34292ecced56446ea02c764a8", "source_files": 251, "jobs": [{"platform": "Darwin/arm64", "gates": 17, "artifact_files": 8262}, {"platform": "Linux/x86_64", "gates": 17, "artifact_files": 8262}], "registry_published": false}

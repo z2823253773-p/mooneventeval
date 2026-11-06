@@ -1,6 +1,6 @@
 # 薄 TSV 导入实施计划
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** 两份四列事件TSV直接生成可评测的任务JSON，保留精确时间与原始行追溯；用户已授权继续此增量。
 
@@ -35,8 +35,8 @@
 
 **Interfaces:** import_tsv(reference:Bytes,prediction:Bytes)->Result[String,EvalError]；Operation新增ImportTsv；run增加可选prediction输入结果，原调用仍有效。
 
-- [ ] 写实际CLI导入/评测/错误测试，旧程序RED。
-- [ ] 写工厂、边界与行追溯测试；实现MoonBit转换与CLI，定向GREEN。
-- [ ] 将导入流程纳入打包解包与使用示例检查，更新契约/文档/演示来源。
-- [ ] 独立评审，处理实质发现；完整17步与旧13+4回放，本地与双平台CI。
-- [ ] 提交真实历史，归档证据、校验公开源码与产物，更新状态。旧阶段冻结证据不变。
+- [x] 写实际CLI导入/评测/错误测试，旧程序RED。
+- [x] 写工厂、边界与行追溯测试；实现MoonBit转换与CLI，定向GREEN。
+- [x] 将导入流程纳入打包解包与使用示例检查，更新契约/文档/演示来源。
+- [x] 独立评审，处理实质发现；完整17步与旧13+4回放，本地与双平台CI。
+- [x] 提交真实历史，归档证据、校验公开源码与产物，更新状态。旧阶段冻结证据不变。
