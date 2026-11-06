@@ -24,7 +24,7 @@ class VerificationFailure(RuntimeError):
 
 def project_identity(root):
     root=Path(root).resolve();manifest=root/'moon.mod'
-    if not manifest.is_file() or not re.search(r'^name\s*=\s*"local/mooneventeval"\s*$',manifest.read_text(),re.M):
+    if not manifest.is_file() or not re.search(r'^name\s*=\s*"z2823253773-p/mooneventeval"\s*$',manifest.read_text(),re.M):
         raise ValueError('current directory is not the MoonEventEval module root')
     for name in ['eventeval/moon.pkg','cmd/mooneventeval/moon.pkg','docs/toolchain.lock.json']:
         if not (root/name).is_file():raise ValueError('incomplete MoonEventEval checkout: '+name)

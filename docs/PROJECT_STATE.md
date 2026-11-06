@@ -1,3 +1,5 @@
+更新2026-11-06：P8进行中。用户指出最后验收因核心模块未正式发布而未通过，本次明确要求补齐。已核对Mooncakes登录账号z2823253773-p，真实仓库外moon add正式0.1.0失败（module not found），证据evidence/P8/registry-red.*。迁移正式namespace并补安装指南，计划见superpowers/plans/2026-11-06-mooncakes-release.md；尚未宣称发布成功。以下为P7及以前历史记录。
+
 # MoonEventEval 当前状态
 
 更新2026-11-05。**P7已完成：四列TSV导入。** MoonBit import_tsv与native import-tsv把两份有表头事件表生成可直接评测的任务JSON；时间精确、原行追溯、重复行保留，支持BOM/LF/CRLF，格式与范围错误映射文件侧/行/列。文档见[TSV](TSV.md)，计划见[P7](superpowers/plans/2026-11-02-tsv-import.md)。输入适配v4替代旧“仅JSON输入”限制；数学和原JSON报告不变，最小源码包42文件。

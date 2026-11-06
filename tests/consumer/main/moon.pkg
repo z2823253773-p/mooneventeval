@@ -1,4 +1,4 @@
 import {
-  "local/mooneventeval/eventeval",
+  "z2823253773-p/mooneventeval/eventeval",
 }
 pkgtype(kind: "executable")

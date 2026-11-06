@@ -40,7 +40,7 @@ def check(source,output,*,main_text=None):
         else:differences.append('public consumer build failed')
         report=dict(passed=not differences,source=str(source),source_manifest_sha256=sha(source/'moon.mod'),
                     public_api_sha256=sha(source/'eventeval/pkg.generated.mbti'),
-                    consumer_imports=['local/mooneventeval/eventeval'],consumer_source_sha256=sha(output/'consumer/main/main.mbt'),
+                    consumer_imports=['z2823253773-p/mooneventeval/eventeval'],consumer_source_sha256=sha(output/'consumer/main/main.mbt'),
                     build=build,run=run,differences=differences,report=parsed,
                     scope='fresh external module with path dependency; no copied product implementation; local native only')
         save(output/'report.json',report)

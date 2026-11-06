@@ -57,7 +57,7 @@ class UnifiedGate(unittest.TestCase):
     def test_archive_without_license_never_passes(self):
         with tempfile.TemporaryDirectory() as directory:
             archive=Path(directory)/'missing.zip'
-            with zipfile.ZipFile(archive,'w') as z:z.writestr('moon.mod','name = "local/mooneventeval"\n')
+            with zipfile.ZipFile(archive,'w') as z:z.writestr('moon.mod','name = "z2823253773-p/mooneventeval"\n')
             with self.assertRaisesRegex(ValueError,'LICENSE'):verify.validate_package_archive(archive)
 
     def test_ci_permissions_and_unpinned_action_never_validate(self):

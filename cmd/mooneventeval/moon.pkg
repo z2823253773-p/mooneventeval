@@ -1,6 +1,6 @@
 import {
-  "local/mooneventeval/cli",
-  "local/mooneventeval/eventeval",
+  "z2823253773-p/mooneventeval/cli",
+  "z2823253773-p/mooneventeval/eventeval",
   "moonbitlang/core/env",
   "moonbitlang/core/encoding/utf8",
   "moonbitlang/core/buffer",

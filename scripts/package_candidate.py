@@ -11,7 +11,7 @@ import zipfile
 from release_support import ROOT,WRAPPER,fresh,record,save,sha
 import check_consumer
 
-FIXED={'eventeval/tsv.mbt','docs/TSV.md','examples/tsv-reference.tsv','examples/tsv-prediction.tsv','moon.mod','README.md','EXAMPLES.md','VALIDATION.md','LICENSE','THIRD_PARTY_NOTICES.md',
+FIXED={'docs/INSTALL.md','eventeval/tsv.mbt','docs/TSV.md','examples/tsv-reference.tsv','examples/tsv-prediction.tsv','moon.mod','README.md','EXAMPLES.md','VALIDATION.md','LICENSE','THIRD_PARTY_NOTICES.md',
        'LICENSES/moonbit-core-LICENSE','LICENSES/moonbit-core-NOTICE',
        'docs/API.md','docs/toolchain.lock.json','scripts/install_toolchain.py','scripts/with-toolchain.sh',
        'examples/duplicate.json','examples/greedy-trap.json','examples/boundary.json'}
@@ -66,8 +66,8 @@ def package(source,output):
     if listing['exit_code']!=0:raise RuntimeError('package list failed')
     build=record([WRAPPER,'moon','package','--frozen'],source,output/'package')
     if build['exit_code']!=0:raise RuntimeError('package failed')
-    # Module name/version are fixed local development identity, never registry claims.
-    archive=source/'_build/publish/local-mooneventeval-0.1.0.zip'
+    # Formal module identity; packaging itself does not claim registry publication.
+    archive=source/'_build/publish/z2823253773-p-mooneventeval-0.1.0.zip'
     saved=output/archive.name;shutil.copyfile(archive,saved)
     names=archive_members(saved);validate_members(names,expected)
     lines=(output/'list/stderr').read_text().splitlines()

@@ -1,3 +1,5 @@
+P8发布身份修订v5（2026-11-06）：用户明确要求修复未发布导致的验收退回，授权正式公开发布。当前模块迁移为z2823253773-p/mooneventeval@0.1.0，公开API路径同步更新；首次正式版本保留implementation_version=0.1.0、schema1和现有数学规则。源码包加入INSTALL，42→43成员。发布前本地/双平台全门与独立审查，发布后必须无workspace的注册表安装实测并逐文件比对。正式发布状态以本阶段回执为准。下文local身份、未获发包授权、未发布均限定为P7及以前，不再作为当前身份和权限。报名变更和外发消息仍未授权。
+
 # MoonEventEval 共享契约
 
 P7输入适配v4（2026-11-05；CI由已退役macos-14迁往macos-15 arm64）：用户已授权薄TSV导入。新增import_tsv(Bytes,Bytes)及import-tsv REFERENCE --prediction PREDICTION，输出schema1任务JSON，再由既有evaluate评分。严格四列表头、行号ID、精确时间、错误位置及资源边界见[TSV契约](TSV.md)。最小包38→42文件；旧冻结包保持历史形状。正常JSON输入、数学和报告不变。以下“JSON唯一输入/TSV不在范围”均限定为P6及以前，现由本修订替代。

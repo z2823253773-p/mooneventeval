@@ -1,3 +1,5 @@
+> P8（2026-11-06）已按用户最终验收反馈启动正式namespace发布；当前状态见[发布验收记录](MOONCAKES_RELEASE.md)。以下内容保留其历史阶段范围，不能当作当前包名或发布状态。
+
 # P4 再次复审风险核查
 
 更新2026-10-27 America/Phoenix。目的为降低材料与可核查性风险，不承诺组委会通过。基线原始a8ee78dab / 公开b78349435。独立只读审查0 Critical / 1 Important / 2 Minor（证据evidence/P4/independent-review）。本轮不新增输入格式、评分、模型或平台承诺。

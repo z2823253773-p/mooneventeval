@@ -9,12 +9,11 @@ scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target na
 ```
 
 It resolves this library through a local `moon.work`, without Python scoring or
-a registry publication. It emits three independent JSON lines; the third is an
+a registry download. It emits three independent JSON lines; the third is an
 intentionally handled validation failure. The example is full-repository-only;
-the standalone minimal candidate uses the setup below.
+registry consumers use the [installation guide](INSTALL.md); local source consumers use the setup below.
 
-Import `local/mooneventeval/eventeval` from the local source module. The module
-name is a development identity, not a registry publication. The following
+Import `z2823253773-p/mooneventeval/eventeval`. The following
 complete executable is the exact source compiled/run by the external consumer:
 
 ```moonbit
@@ -38,10 +37,10 @@ Create a separate module with `moon.mod`:
 name = "local/mooneventeval_consumer"
 version = "0.0.0"
 preferred_target = "native"
-import { "local/mooneventeval@0.1.0" }
+import { "z2823253773-p/mooneventeval@0.1.0" }
 ```
 
-In its `main/moon.pkg`, import only `local/mooneventeval/eventeval` and set
+In its `main/moon.pkg`, import only `z2823253773-p/mooneventeval/eventeval` and set
 `pkgtype(kind: "executable")`. A temporary `moon.work` lists the absolute paths
 of this consumer and the source module in `members`. The locked toolchain
 resolves that import locally. Build the consumer's `main` with native/release/
@@ -90,7 +89,7 @@ contain status failed and error, without scores. Library renderers return JSON
 without a CLI terminal LF; the file CLI appends/checks the LF within 16 MiB.
 
 See [rules and limits](../README.md), [examples](../EXAMPLES.md) and
-[validation scope](../VALIDATION.md). Only local native consumption is claimed.
+[validation scope](../VALIDATION.md). The supported product target is native (macOS arm64 and Linux x86_64); see the registry installation guide.
 
 ## TSV adaptation
 

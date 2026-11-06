@@ -1,6 +1,6 @@
 # 在自己的 MoonBit 程序中使用 MoonEventEval
 
-这是一个独立模块，通过公开的 `local/mooneventeval/eventeval` 接口使用本地源码，未复制评分实现。事件均为合成数据；示例适合学习接口和作为接入起点，不代表真实数据集试用。
+这是一个独立模块，通过公开的 `z2823253773-p/mooneventeval/eventeval` 接口使用本地源码，未复制评分实现。事件均为合成数据；示例适合学习接口和作为接入起点，不代表真实数据集试用。
 
 ## 运行
 
@@ -10,7 +10,7 @@
 scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target native --release --deny-warn
 ```
 
-`moon.work` 以相对路径同时引用本示例和两层目录之上的评测库，不需要更改绝对路径、全局安装或从注册表下载本库。`local/mooneventeval@0.1.0` 只是源码模块身份，尚未发布。
+`moon.work` 以相对路径同时引用本示例和两层目录之上的评测库，不需要更改绝对路径、全局安装或从注册表下载本库。此仓库内示例用workspace解析源码，正式依赖为 `z2823253773-p/mooneventeval@0.1.0`；不依赖workspace的注册表安装见 [安装指南](../../docs/INSTALL.md)。
 
 命令成功退出时，stdout 依次输出三条单行 JSON：
 
@@ -30,4 +30,4 @@ scripts/with-toolchain.sh moon -C examples/moonbit-consumer run main --target na
 - `report_json`/`report_text` 输出评测；`explain_pair` 及相应 renderer 输出资格解释。解释不执行最大匹配，不证明已选中。
 - 移到自己的目录时，调整 `moon.work` 的两个 members；模块与包配置可直接参考本目录文件，路径依赖仍需指向实际库源码。
 
-本目录仅随完整 Git 仓库提供，不在 38 文件最小源码包内。配置和代码遵循仓库 [MIT](../../LICENSE)，依赖声明见 [第三方说明](../../THIRD_PARTY_NOTICES.md)。完整接口见 [API](../../docs/API.md)；所有输入、评分与资源限制仍适用。
+本目录仅随完整 Git 仓库提供，不在 43 文件源码包内。配置和代码遵循仓库 [MIT](../../LICENSE)，依赖声明见 [第三方说明](../../THIRD_PARTY_NOTICES.md)。完整接口见 [API](../../docs/API.md)；所有输入、评分与资源限制仍适用。

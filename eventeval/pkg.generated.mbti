@@ -1,5 +1,5 @@
 // Generated using `moon info`, DON'T EDIT IT
-package "local/mooneventeval/eventeval"
+package "z2823253773-p/mooneventeval/eventeval"
 
 // Values
 pub fn config(String, String) -> Result[Config, EvalError]

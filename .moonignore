@@ -1,4 +1,4 @@
-# Local source candidate: closed file allowlist; private development files stay out.
+# Public release source: closed file allowlist; private development files stay out.
 *
 !/LICENSES/
 !/cli/
@@ -51,3 +51,5 @@
 !/docs/TSV.md
 !/examples/tsv-reference.tsv
 !/examples/tsv-prediction.tsv
+
+!/docs/INSTALL.md

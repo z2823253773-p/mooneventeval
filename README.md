@@ -60,9 +60,15 @@ Native execution has been verified on **macOS arm64 and Linux x86_64** in
 [the P7 macOS 15 / Linux CI run including TSV import, the standalone MoonBit consumer and 13 product / 4 reference report replays](https://github.com/z2823253773-p/mooneventeval/actions/runs/42176209407).
 That run tested `5874d6514`. Later evidence and CI-link metadata commits do not
 claim a fresh full CI run. [All workflow runs](https://github.com/z2823253773-p/mooneventeval/actions/workflows/ci.yml).
-The module identity is **local/mooneventeval 0.1.0**, a source candidate that
-has not been published to a package registry. Python is development tooling,
-not the scoring implementation.
+The module identity is **z2823253773-p/mooneventeval@0.1.0**.
+Install the library from Mooncakes in a separate project with:
+
+```sh
+moon add z2823253773-p/mooneventeval@0.1.0
+```
+
+Import `z2823253773-p/mooneventeval/eventeval`. See the [complete registry installation guide](docs/INSTALL.md) for the compiler requirement, package configuration, a runnable consumer and expected output. Python is development tooling, not the scoring implementation.
+The old `local/mooneventeval` name describes historical source candidates only.
 
 ## Build and run
 
