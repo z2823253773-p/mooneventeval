@@ -76,7 +76,7 @@ pub fn run(
   input : Result[Bytes, @eventeval.EvalError],
   prediction? : Result[Bytes, @eventeval.EvalError] = Ok(b""),
 ) -> CliOutput {
-  let help = "MoonEventEval 0.1.0\nUsage:\n  mooneventeval import-tsv REFERENCE --prediction PREDICTION [--format json]\n  mooneventeval evaluate FILE [--format text|json]\n  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]\n  mooneventeval --help\n  mooneventeval --version\nInput: UTF-8 JSON task; default output: text. Files are read only.\nExit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.\n"
+  let help = "MoonEventEval 0.1.0\nUsage:\n  mooneventeval import-tsv REFERENCE --prediction PREDICTION [--format json]\n  mooneventeval evaluate FILE [--format text|json]\n  mooneventeval explain-pair FILE --recording ID --reference ID --prediction ID [--format text|json]\n  mooneventeval --help\n  mooneventeval --version\nInput: JSON tasks for evaluate/explain-pair; two headered TSV files for import-tsv.\nOutput: evaluate/explain-pair default text; import-tsv JSON task. Files are read only.\nExit: 0 completed; 2 input/argument/file; 3 resource limit; 4 internal.\n"
   match request.operation {
     Help => return { stdout: @utf8.encode(help), stderr: b"", exit_code: 0, }
     Version =>
