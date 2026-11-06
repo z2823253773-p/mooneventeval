@@ -1,6 +1,6 @@
 # MoonEventEval 共享契约
 
-P7输入适配v4（2026-11-05）：用户已授权薄TSV导入。新增import_tsv(Bytes,Bytes)及import-tsv REFERENCE --prediction PREDICTION，输出schema1任务JSON，再由既有evaluate评分。严格四列表头、行号ID、精确时间、错误位置及资源边界见[TSV契约](TSV.md)。最小包38→42文件；旧冻结包保持历史形状。正常JSON输入、数学和报告不变。以下“JSON唯一输入/TSV不在范围”均限定为P6及以前，现由本修订替代。
+P7输入适配v4（2026-11-05；CI由已退役macos-14迁往macos-15 arm64）：用户已授权薄TSV导入。新增import_tsv(Bytes,Bytes)及import-tsv REFERENCE --prediction PREDICTION，输出schema1任务JSON，再由既有evaluate评分。严格四列表头、行号ID、精确时间、错误位置及资源边界见[TSV契约](TSV.md)。最小包38→42文件；旧冻结包保持历史形状。正常JSON输入、数学和报告不变。以下“JSON唯一输入/TSV不在范围”均限定为P6及以前，现由本修订替代。
 
 P6输入契约修订v3（2026-11-02，用户授权继续实施优化建议）：整份UTF-8/JSON语法与深度校验通过后，按原文顺序检查每个对象的解码键。同对象重复键（含转义等价键）返回Input/DUPLICATE_KEY，exit 2，path="$"；早于schema检查，无部分评分。不同对象可重用键；不做Unicode规范化。错误message保留最多64个Unicode码点的安全预览和第二次键的零基UTF-16偏移，基于剥离可选BOM后的文本。本修订显式替代旧last-wins条款，旧冻结探针只证明历史行为。未发布0.1.0候选身份、schema_version、数学规则、正常报告及38文件包契约不变；完整状态见PROJECT_STATE。
 
@@ -74,7 +74,7 @@ P5（2026-11-02）：在现有 API 范围内新增独立 MoonBit 接入示例及
 ### 共享类型约定
 
 - `EvalError`：`kind: FailureKind`（Input/Resource/Internal）、`code: String`、`message: String`、`path: String?`、`limit: Int64?`、`observed: Int64?`；`exit_code(error)` 唯一映射 2/3/4。
-- 稳定 code 集合：`INVALID_JSON`、`DUPLICATE_KEY`、`INVALID_UTF8`、`INVALID_UNICODE`、`INVALID_SCHEMA`、`UNKNOWN_FIELD`、`MISSING_FIELD`、`INVALID_TYPE`、`INVALID_DECIMAL`、`OUT_OF_RANGE`、`DUPLICATE_ID`、`UNKNOWN_LABEL`、`ID_NOT_FOUND`、`INVALID_ARGUMENT`、`FILE_ERROR`、`RESOURCE_LIMIT`、`INTERNAL_ERROR`；任何资源种类用RESOURCE_LIMIT，path/limit/observed区分。深度超限不是INVALID_JSON，未知recording/event查询为ID_NOT_FOUND。
+- 稳定 code 集合：`INVALID_JSON`、`INVALID_TSV`、`DUPLICATE_KEY`、`INVALID_UTF8`、`INVALID_UNICODE`、`INVALID_SCHEMA`、`UNKNOWN_FIELD`、`MISSING_FIELD`、`INVALID_TYPE`、`INVALID_DECIMAL`、`OUT_OF_RANGE`、`DUPLICATE_ID`、`UNKNOWN_LABEL`、`ID_NOT_FOUND`、`INVALID_ARGUMENT`、`FILE_ERROR`、`RESOURCE_LIMIT`、`INTERNAL_ERROR`；任何资源种类用RESOURCE_LIMIT，path/limit/observed区分。深度超限不是INVALID_JSON，未知recording/event查询为ID_NOT_FOUND。
 - `Event`、`Config`、`Recording`、`Task` 为封装类型；通过下列工厂创建。Task 不暴露内部数组，工厂验证并复制传入数组；新建事件/config 时也检查范围。
 - `Counts`：`reference/prediction/tp/fp/fn_count: Int`；`Metrics`：`counts: Counts`、`precision/recall/f1: Double?`。
 - `PairBasis`（包内）：`label_match/onset_pass/offset_pass/eligible: Bool`、`onset_delta_us/offset_delta_us/onset_limit_us/offset_limit_scaled: Int64`；scaled 的单位为微秒×1000000。

@@ -146,7 +146,7 @@ def validate_ci_config(root):
     if workflow['on']!={'workflow_dispatch':{}} or workflow['permissions']!={'contents':'read'}:
         raise ValueError('CI trigger or permissions changed')
     job=workflow['jobs']['verify'];matrix=job['strategy']['matrix']['include']
-    if {(r['os'],r['arch']) for r in matrix}!={('macos-14','arm64'),('ubuntu-24.04','x86_64')}:
+    if {(r['os'],r['arch']) for r in matrix}!={('macos-15','arm64'),('ubuntu-24.04','x86_64')}:
         raise ValueError('CI platform matrix changed')
     steps=job['steps'];uses={step['uses'] for step in steps if 'uses' in step}
     if uses!={name+'@'+row['sha'] for name,row in lock['actions'].items()}:
