@@ -9,6 +9,8 @@ import sys
 
 ROOT=Path(__file__).resolve().parents[2]
 DATA=Path(__file__).resolve().parent
+SOURCE_MANIFEST_SHA256='13f1e8601520bc532d347d8cf789f216ce338fce75c7e27eb0fb65d9631e7281'
+COMMAND_TIMEOUT_SECONDS=60
 FIRST='1Ro0FgMWTUE_120_130.wav'
 SECOND='G5wlhYFdlxw_508_518.wav'
 BASE=dict(reference=11,prediction=11,tp=11,fp=0,fn=0)
@@ -26,7 +28,9 @@ def save(path,row):path.write_text(json.dumps(row,ensure_ascii=False,indent=2,al
 
 
 def verify_source(data):
-    source=json.loads((data/'SOURCE.json').read_bytes())
+    manifest=(data/'SOURCE.json').read_bytes()
+    require(sha(manifest)==SOURCE_MANIFEST_SHA256,'source attribution/provenance manifest changed')
+    source=json.loads(manifest)
     require(source['license']=='CC-BY-4.0' and source['doi']=='10.5281/zenodo.3588172','unexpected source/license')
     for name,want in source['sha256'].items():
         require(sha((data/name).read_bytes())==want,'input hash changed: '+name)
@@ -57,16 +61,23 @@ def replay(args):
         snapshots=data/'output';receipts=[];results={}
         report['receipts']=receipts
         def run(name,argv):
-            process=subprocess.run([str(binary),*map(str,argv)],capture_output=True,timeout=60)
-            (out/(name+'.json')).write_bytes(process.stdout)
-            (out/(name+'.stderr')).write_bytes(process.stderr)
-            receipts.append(dict(name=name,args=list(map(str,argv)),exit_code=process.returncode,
-                                 stdout_sha256=sha(process.stdout),stderr_sha256=sha(process.stderr)))
+            timed_out=False
+            try:
+                process=subprocess.run([str(binary),*map(str,argv)],capture_output=True,timeout=COMMAND_TIMEOUT_SECONDS)
+                stdout,stderr,exit_code=process.stdout,process.stderr,process.returncode
+            except subprocess.TimeoutExpired as error:
+                stdout,stderr,exit_code=error.stdout or b'',error.stderr or b'',None
+                timed_out=True
+            (out/(name+'.json')).write_bytes(stdout)
+            (out/(name+'.stderr')).write_bytes(stderr)
+            receipts.append(dict(name=name,args=list(map(str,argv)),exit_code=exit_code,timed_out=timed_out,
+                                 stdout_sha256=sha(stdout),stderr_sha256=sha(stderr)))
             report['product_calls']=len(receipts);save(out/'report.json',report)
-            require(process.returncode==0 and process.stderr==b'','product command failed: '+name)
-            require(process.stdout.endswith(b'\n') and not process.stdout.endswith(b'\n\n'),'invalid JSON framing')
-            actual=json.loads(process.stdout)
-            if not args.write:require(process.stdout==(snapshots/(name+'.json')).read_bytes(),'snapshot changed: '+name)
+            require(not timed_out,'product command timed out: '+name)
+            require(exit_code==0 and stderr==b'','product command failed: '+name)
+            require(stdout.endswith(b'\n') and not stdout.endswith(b'\n\n'),'invalid JSON framing')
+            actual=json.loads(stdout)
+            if not args.write:require(stdout==(snapshots/(name+'.json')).read_bytes(),'snapshot changed: '+name)
             results[name]=actual
             return actual
         for variant in ['baseline','regressed']:

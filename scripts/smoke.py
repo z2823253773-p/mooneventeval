@@ -41,7 +41,7 @@ def smoke(output):
         for name,command in commands:
             report['steps'].append(run_step(name,command,ROOT,out,{}))
         report['moon_tests']=check_test_protocol(out/'native-tests','moon',65)
-        report['workflow_tests']=check_test_protocol(out/'public-workflow-tests','python',2)
+        report['workflow_tests']=check_test_protocol(out/'public-workflow-tests','python',4)
         require_pass_report(out/'synthetic-output/report.json')
         public=require_pass_report(out/'public-output/report.json')
         require_pass_report(out/'consumer-output/report.json')

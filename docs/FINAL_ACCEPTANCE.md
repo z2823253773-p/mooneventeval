@@ -45,7 +45,7 @@ python3 demo/public-data/reproduce.py --check --output /tmp/mooneventeval-final-
 python3 scripts/smoke.py --output /tmp/mooneventeval-final-smoke
 ```
 
-它检查格式、native编译/65项MoonBit测试、2项公开流程测试（含两类篡改反例）、13条合成产品命令、6条公开数据命令与包外MoonBit消费者。它不运行sed_eval、不恢复旧历史，也不声称注册表安装或完整资格对照。
+它检查格式、native编译/65项MoonBit测试、4项公开流程测试（含数据/结果/来源篡改和真实进程超时反例）、13条合成产品命令、6条公开数据命令与包外MoonBit消费者。它不运行sed_eval、不恢复旧历史，也不声称注册表安装或完整资格对照。
 
 完整开发门（需要[贡献指南](../CONTRIBUTING.md)中的参考环境和原始历史还原）：
 
