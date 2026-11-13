@@ -1,6 +1,6 @@
 # MoonEventEval 最终验收入口
 
-更新2026-11-13。用户已确认初审通过；最终验收由组委会评定。本页按已申报的事件评测库/CLI范围组织工程交付，不以合成例、测试数或AI材料充当真实用户采用。
+更新2026-11-13。用户已确认初审通过；本轮最终候选已通过本地完整门、GitHub自动快速门及macOS/Linux完整门，最终验收仍由组委会评定。本页按已申报的事件评测库/CLI范围组织工程交付，不以合成例、测试数或AI材料充当真实用户采用。
 
 ## 当前交付是什么
 
@@ -55,7 +55,7 @@ python3 demo/reproduce.py --check --reference-python .venv-reference/bin/python 
 python3 demo/public-data/reproduce.py --check --output /tmp/mooneventeval-final-data
 ```
 
-P9最终被测SHA、独立评审处置、实际远端结果和冻结证据将按真实结果记入PROJECT_STATE及evidence/P9，不把工作流配置、预检或旧绿色记录当作新HEAD验收完成。P8历史发布证据仍可运行`python3 evidence/P8/verify.py`离线核对。
+P9最终被测公开SHA为`de2c8e200cbb2e392f3368f262fda3e07ba70c53`，作者SHA为`173864bb285abad4a1e7bd3ee63d09a557a43f3f`。[完整双平台run43410461615](https://github.com/z2823253773-p/mooneventeval/actions/runs/43410461615)及[自动快速run43410412628](https://github.com/z2823253773-p/mooneventeval/actions/runs/43410412628)实际成功。每OS完整17步/65MoonBit/33根Python/42验证/19CLI，275源码hash绑定公开Git，另6条公开数据命令。唯一独立评审的1Important/1Minor经作者反例测试修复后，以最终SHA重跑全部门；无二次独立复审。`python3 evidence/P9/verify.py`可离线核对本轮归档。后续证据/链接收尾HEAD不冒称重跑完整CI。P8历史发布证据仍可运行`python3 evidence/P8/verify.py`离线核对。
 
 ## 已知边界
 

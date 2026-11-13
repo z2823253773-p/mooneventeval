@@ -39,6 +39,8 @@
 
 ## 当前验收与完整接入
 
+最新最终候选`de2c8e200`已通过[macOS/Linux完整CI](https://github.com/z2823253773-p/mooneventeval/actions/runs/43410461615)和[自动快速CI](https://github.com/z2823253773-p/mooneventeval/actions/runs/43410412628)。本轮新增公开标注接入、持续CI和验收入口，正式库0.1.0的评分/API/CLI保持不变；后续收尾提交不冒称重跑完整门。
+
 [最终验收入口](https://github.com/z2823253773-p/mooneventeval/blob/main/docs/FINAL_ACCEPTANCE.md)集中列出正式包、安装、运行、许可、测试和已知限制；[三分钟演示与算法讲解](https://github.com/z2823253773-p/mooneventeval/blob/main/docs/demo.md)便于复现与说明。
 
 新增[公开标注接入与受控回归示例](https://github.com/z2823253773-p/mooneventeval/tree/main/demo/public-data)：有来源/许可的DESED事件标注，经两份TSV导入→评测→解释，给出具体错误定位。预测为受控构造，不能当作真实模型成绩。

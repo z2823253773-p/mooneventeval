@@ -1,0 +1,27 @@
+{
+  "local.zip": {
+    "bytes": 11136257,
+    "sha256": "735f9b5dc051a3e15ac50dfabf56eff464420c5d1f6dd319008f6faae47df144",
+    "files": 17080
+  },
+  "ci-macos.zip": {
+    "bytes": 4367535,
+    "sha256": "5125351d7008c5258a69bb7de796441e13b91ca9ee8b2d61c328bffab5ac6b09",
+    "files": 8312
+  },
+  "ci-linux.zip": {
+    "bytes": 4362896,
+    "sha256": "618c1fa331ede343be84648d290dcd63905679aee24468358b99841cb834b55c",
+    "files": 8312
+  },
+  "ci-smoke.zip": {
+    "bytes": 47997,
+    "sha256": "ad9f6a5da5cda741f3d3c325a37a45771952dbab01b4ba563fd225dd42d5a3bb",
+    "files": 79
+  },
+  "metadata.zip": {
+    "bytes": 80410,
+    "sha256": "64967c7d31b2b3544d22cebb4b3c9dfb81c0f3161144d3952e9d4c7d1fa36c4b",
+    "files": 53
+  }
+}

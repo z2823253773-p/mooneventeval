@@ -1,0 +1,34 @@
+{
+  "id": "1430669766",
+  "name": "mooneventeval",
+  "owner": {
+    "login": "z2823253773-p",
+    "id": 235035337,
+    "type": "User",
+    "avatar_url": "https://avatars.githubusercontent.com/u/235035337?v=4",
+    "url": "https://api.github.com/users/z2823253773-p"
+  },
+  "repository_full_name": "z2823253773-p/mooneventeval",
+  "permissions": {
+    "admin": true,
+    "maintain": true,
+    "pull": true,
+    "push": true,
+    "triage": true
+  },
+  "allow_auto_merge": null,
+  "allow_merge_commit": null,
+  "allow_rebase_merge": null,
+  "allow_squash_merge": null,
+  "allow_update_branch": null,
+  "clone_url": "https://github.com/z2823253773-p/mooneventeval.git",
+  "size": 138977,
+  "default_branch": "main",
+  "git_commits_url": "https://api.github.com/repos/z2823253773-p/mooneventeval/git/commits{/sha}",
+  "git_refs_url": "https://api.github.com/repos/z2823253773-p/mooneventeval/git/refs{/sha}",
+  "git_url": "git://github.com/z2823253773-p/mooneventeval.git",
+  "master_branch": null,
+  "visibility": "public",
+  "archived": false,
+  "is_code_search_indexed": null
+}

@@ -1,4 +1,4 @@
-> 当前验收以[FINAL_ACCEPTANCE](FINAL_ACCEPTANCE.md)为入口。P8已完成正式Mooncakes安装发布，P9当前工作见PROJECT_STATE；下表保留2026-10-22历史范围，不能把旧“未发布/未做Linux”当作当前事实。
+> 当前验收以[FINAL_ACCEPTANCE](FINAL_ACCEPTANCE.md)为入口。P8已完成正式Mooncakes安装发布，P9完整本地/双平台门及自动快速门已通过，实际被测SHA与归档见PROJECT_STATE；下表保留2026-10-22历史范围，不能把旧“未发布/未做Linux”当作当前事实。
 
 # 验收证据地图
 

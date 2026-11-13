@@ -1,0 +1,30 @@
+{
+  "record_url": "https://zenodo.org/records/3588172",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "creators": [
+    {
+      "name": "Turpault, Nicolas",
+      "affiliation": "Université de Lorraine, CNRS, Inria, Loria, F-54000 Nancy, France"
+    },
+    {
+      "name": "Serizel, Romain",
+      "affiliation": "Université de Lorraine, CNRS, Inria, Loria, F-54000 Nancy, France"
+    },
+    {
+      "name": "Shah, Ankit",
+      "affiliation": "Language Technologies Institute, Carnegie Mellon University, Pittsburgh PA, United States"
+    },
+    {
+      "name": "Salamon, Justin",
+      "affiliation": "Adobe Research, San Francisco CA, United States"
+    }
+  ],
+  "dataset_title": "DESED_public_eval",
+  "access_right": "open",
+  "data_url": "https://raw.githubusercontent.com/turpaultn/DESED/0686178dd218b431ef1606e5a2139df7c543b07b/data/real/metadata/eval/public.tsv",
+  "sha256": "da3f978674311b6a7a86224a58ebab9e45d66c1d0b32ad3bd6c126cb4af76f5d",
+  "bytes": 119823,
+  "checked_on": "2026-11-13"
+}
