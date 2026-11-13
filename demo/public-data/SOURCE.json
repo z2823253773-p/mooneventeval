@@ -1,0 +1,66 @@
+{
+  "dataset": "DESED_public_eval",
+  "doi": "10.5281/zenodo.3588172",
+  "record_url": "https://zenodo.org/records/3588172",
+  "authors": [
+    "Turpault, Nicolas",
+    "Serizel, Romain",
+    "Shah, Ankit",
+    "Salamon, Justin"
+  ],
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "repository": "https://github.com/turpaultn/DESED",
+  "commit": "0686178dd218b431ef1606e5a2139df7c543b07b",
+  "source_path": "data/real/metadata/eval/public.tsv",
+  "source_url": "https://raw.githubusercontent.com/turpaultn/DESED/0686178dd218b431ef1606e5a2139df7c543b07b/data/real/metadata/eval/public.tsv",
+  "source_sha256": "da3f978674311b6a7a86224a58ebab9e45d66c1d0b32ad3bd6c126cb4af76f5d",
+  "source_bytes": 119823,
+  "source_data_rows": 2765,
+  "selected_physical_lines": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "selected_recordings": [
+    "1Ro0FgMWTUE_120_130.wav",
+    "G5wlhYFdlxw_508_518.wav"
+  ],
+  "header": "filename\tonset\toffset\tevent_label",
+  "sha256": {
+    "reference.tsv": "70e02165887ca3048e003c2a0c28e32d057fad573d61330116f0ab24310ddf4e",
+    "prediction-baseline.tsv": "70e02165887ca3048e003c2a0c28e32d057fad573d61330116f0ab24310ddf4e",
+    "prediction-regressed.tsv": "c91a1f02a3cbe5601586b908fa336fa34adee77407254dfaaa92c0d5ac276b82",
+    "source/public-eval.tsv.gz": "8353318f84ada0a1d4e86b881440e8f2dae1d2426bb24b554f3d259d4ec0b0c1"
+  },
+  "changes": [
+    "Reference: retain exact original header and first two complete recordings in source order; no rounding or relabeling.",
+    "Baseline predictions: exact copy of selected reference; not a model output.",
+    "Regressed predictions: selected row2 onset2.618->2.819 (+0.201s); remove last Dishes row; append copy of selected row9 Dishes. All other values unchanged."
+  ],
+  "expected": {
+    "baseline": {
+      "reference": 11,
+      "prediction": 11,
+      "tp": 11,
+      "fp": 0,
+      "fn": 0
+    },
+    "regressed": {
+      "reference": 11,
+      "prediction": 11,
+      "tp": 9,
+      "fp": 2,
+      "fn": 2
+    }
+  },
+  "scope": "Public annotation ingestion with developer-constructed predictions; no audio, model inference, full DCASE benchmark certification or external adoption."
+}

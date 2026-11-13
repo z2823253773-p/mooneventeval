@@ -62,3 +62,7 @@ made that the product uses its raw global metric definitions unchanged.
 上游依据：[EventBasedMetrics 参数与 optimal 说明](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1108-L1146)、[raw substitution 和 FP/FN 计数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1348-L1465)、[逐类计数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1468-L1595)、[起止点判定函数](https://github.com/TUT-ARG/sed_eval/blob/0cb1b6d11ceec4fe500cc9b31079c9d8666ed6eb/sed_eval/sound_event.py#L1603-L1668)。
 
 P7新增独立四列TSV导入器（本项目MoonBit实现），转为既有任务JSON。它只支持[明确子集](docs/TSV.md)，不引入sed_eval或DCASE代码/数据，不声明完整协议兼容。
+
+## P9 public annotation example (repository only)
+
+The full repository adds DESED_public_eval annotation data, attributed to Nicolas Turpault, Romain Serizel, Ankit Shah and Justin Salamon, under **CC BY4.0**, as declared in [Zenodo record3588172](https://zenodo.org/records/3588172). These data and derived fixtures/annotation-bearing outputs retain that license, not this repository's MIT code license. Exact source revision/hash, selection, attribution and controlled changes are documented in the [example notice](https://github.com/z2823253773-p/mooneventeval/blob/main/demo/public-data/NOTICE.md) and SOURCE.json. No audio is redistributed. Predictions are developer-constructed, not model performance or external adoption. The data/example are excluded from the 43-member Mooncakes0.1.0 library package.

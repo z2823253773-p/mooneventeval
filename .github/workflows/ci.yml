@@ -87,6 +87,10 @@
           "run": "python3 demo/reproduce.py --check --reference-python .venv-reference/bin/python --output evidence/T8/ci/public-demo"
         },
         {
+          "name": "Replay public annotation ingestion with controlled predictions",
+          "run": "python3 demo/public-data/reproduce.py --check --output evidence/T8/ci/public-data"
+        },
+        {
           "name": "Keep actual receipts on success or failure",
           "if": "always()",
           "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",

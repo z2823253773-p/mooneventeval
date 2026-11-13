@@ -1,0 +1,63 @@
+{
+  "name": "Fast product checks",
+  "on": {
+    "push": {
+      "branches": [
+        "main"
+      ]
+    },
+    "pull_request": {},
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "concurrency": {
+    "group": "smoke-${{ github.workflow }}-${{ github.ref }}",
+    "cancel-in-progress": true
+  },
+  "jobs": {
+    "smoke": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 15,
+      "steps": [
+        {
+          "name": "Checkout product without large historical proofs",
+          "uses": "actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd",
+          "with": {
+            "fetch-depth": 1,
+            "persist-credentials": false,
+            "sparse-checkout-cone-mode": false,
+            "sparse-checkout": "/*\n!/.ci/\n!/evidence/\n!/validation/\n!/spikes/"
+          }
+        },
+        {
+          "name": "Developer Python",
+          "uses": "actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405",
+          "with": {
+            "python-version": "3.14.6"
+          }
+        },
+        {
+          "name": "Install verified pinned MoonBit toolchain",
+          "run": "python3 scripts/install_toolchain.py"
+        },
+        {
+          "name": "Run product gate without reference environment",
+          "run": "python3 scripts/smoke.py --output evidence/smoke"
+        },
+        {
+          "name": "Preserve actual product receipts",
+          "if": "always()",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "smoke-linux-x86_64",
+            "path": "evidence/smoke",
+            "if-no-files-found": "error",
+            "retention-days": 14
+          }
+        }
+      ]
+    }
+  }
+}

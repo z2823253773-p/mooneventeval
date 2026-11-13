@@ -37,6 +37,12 @@
 
 报告中的匹配以最大配对数为目标，不优化时间误差。`explain-pair` 的 `eligible=true` 仅表示满足候选条件，**不表示该对已被最大匹配选中**。分母为零的指标输出 `null`；输入或资源错误返回失败状态，不返回完成评分。JSON 字段与库接口见 [API](docs/API.md)。
 
+## 当前验收与完整接入
+
+[最终验收入口](https://github.com/z2823253773-p/mooneventeval/blob/main/docs/FINAL_ACCEPTANCE.md)集中列出正式包、安装、运行、许可、测试和已知限制；[三分钟演示与算法讲解](https://github.com/z2823253773-p/mooneventeval/blob/main/docs/demo.md)便于复现与说明。
+
+新增[公开标注接入与受控回归示例](https://github.com/z2823253773-p/mooneventeval/tree/main/demo/public-data)：有来源/许可的DESED事件标注，经两份TSV导入→评测→解释，给出具体错误定位。预测为受控构造，不能当作真实模型成绩。
+
 ## 三个任务从材料到结果
 
 下列均为**合成的预期工作流程**，可按命令重跑；不是外部用户或真实数据试用记录。
@@ -199,3 +205,13 @@ proof or competition acceptance.
 Own source/docs: [MIT](LICENSE). External core/runtime notices are retained in
 [third-party notices](THIRD_PARTY_NOTICES.md). The source candidate excludes
 reference environments, local toolchains, probes, internal plans and raw logs.
+
+## 持续验证
+
+[自动快速CI](https://github.com/z2823253773-p/mooneventeval/actions/workflows/smoke.yml)在main推送和PR时运行MoonBit编译/测试、13条合成产品回放、6条公开标注工作流及包外MoonBit消费者，不依赖sed_eval环境和历史大证据。它补充原[手动双平台完整CI](https://github.com/z2823253773-p/mooneventeval/actions/workflows/ci.yml)，不替代完整对照与包检查。
+
+```sh
+python3 scripts/smoke.py --output /tmp/mooneventeval-smoke
+```
+
+先准备锁定工具链，使用新空目录。完整开发验收仍按贡献指南执行scripts/verify.py；两种门的范围与证据分别记录。
